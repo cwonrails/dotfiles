@@ -1,0 +1,4 @@
+:verbose: false
+install: --no-document
+update: --no-document
+:disable_default_gem_***REMOVED***: true

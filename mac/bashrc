@@ -1,0 +1,129 @@
+# Set command prompt options
+PS1="\n\u @\h [\d \@]\n\w "
+
+# Enable command prompt coloring
+export CLICOLOR=1
+
+# Set vim as default editor
+export EDITOR='vim'
+
+# Have command line run in vi mode
+set -o vi
+
+# Enable homebrew-installed bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+# Enable aws cli bash completion
+complete -C aws_completer aws
+
+# Enable nvm (no autoloading because system is iojs)
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
+
+# nvm node version shortcuts
+alias "n10"="nvm use v0.10"
+alias "ns"="nvm use stable"
+alias "nio"="nvm use iojs"
+
+***REMOVED***
+HOMEBREW_GITHUB_API_TOKEN=7cffb89f52fb2938e010b71c793ba4cd1b8aa6b
+
+# Enable chruby
+. /usr/local/share/chruby/chruby.sh
+
+# Enable gem_home
+. /usr/local/share/gem_home/gem_home.sh
+
+# Set Ruby version
+chruby ruby-2.2.0
+
+# Stream twitter timeline
+alias ts="t stream timeline"
+
+# Golang env variables
+export GOPATH=/Users/christopherwatson/go/
+export GOBIN=$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+
+# Enable gitignore.io
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+# Enable perlbrew
+. ~/perl5/perlbrew/etc/bashrc
+
+# Enable z (intelligent directory autojumping)
+. ~/z/z.sh
+
+# Copy all .jpeg and .png images in directory to web images "pre" folder
+alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre"
+
+# Run all Imageoptim-CLI operations and move optimized images to "post" folder
+alias io="imageoptim -j -a -q -d ~/webimages/pre && mv ~/webimages/pre/* ~/webimages/post"
+
+# Quickly edit dotfiles
+alias bp="vim ~/.bash_profile"
+alias br="vim ~/.bashrc"
+alias tc="vim ~/.tmux.conf"
+alias vr="vim ~/.vimrc"
+
+# Backup OSX dotfiles to local directory
+alias dfb="cd ~/; cp ~/.bashrc .bash_profile .tmux.conf .vimrc ~/localdotfilesbackup"
+
+# Easy Ghost pull request testing (http://dev.ghost.org/easy-git-pr-test/)
+alias pr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
+
+# Set database for td (Golang CLI todo list)
+export TODO_DB_PATH=$HOME/Dropbox/todo.json
+
+# Go back to previous directory
+alias b="cd - "
+
+# Navigate backwards in directories
+alias ..="cd .."
+alias ...="cd ../../../"
+alias ....="cd ../../../../"
+alias .....="cd ../../../../../"
+alias ......="cd ../../../../../../"
+
+# Clear scrollback (works with tmux)
+alias c="clear"
+
+# Open current directory in Finder
+alias f="open ."
+
+# Go to desktop directory
+alias d="cd ~/Desktop"
+
+# Go to downloads directory
+alias dl="cd ~/Downloads"
+
+# Go to home directory
+alias h="cd ~/"
+
+# List hidden files
+alias lh="ls -d .*"
+
+# Reload shell
+alias r=". ~/.bashrc"
+
+# Force delete trash
+alias te="sudo rm -rf ~/.Trash/*"
+
+# Update and clean up all Homebrew installs
+alias bu="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor"
+
+# Update all gems
+alias gu="gem update"
+
+# Install, clean up, and update vim plugins via Vundle
+alias vu="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
+
+# daily OSX update
+alias du="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; vim +PluginUpdate +qall"
+
+# Rapidly exit shell
+alias x="exit"

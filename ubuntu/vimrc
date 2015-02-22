@@ -1,0 +1,127 @@
+set nocompatible
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'bling/vim-airline'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'leshill/vim-json'
+Plugin 'mhinz/vim-signify'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/tComment'
+
+call vundle#end()
+filetype plugin indent on
+
+" Automatically reload .vimrc when saved
+augroup reload_vimrc " {
+	autocmd!
+	autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+" Enable 256 colors in terminal
+set t_Co=256
+
+" Remap Escape key to home row
+imap jk <esc>
+
+" Remap leader key to space bar
+let mapleader=" "
+
+" Navigate by visual rather than actual lines
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
+
+" Enable syntax highlighting
+syntax enable
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Open new split panes to right and bottom
+set splitbelow
+set splitright
+
+" Enable Airline Powerline symbols
+let g:airline_powerline_fonts = 1
+
+" Invoke CtrlP with CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Comment and uncomment lines
+nnoremap <leader>c :TComment<CR>
+
+" Clear search highlighting
+nnoremap <leader>h :noh<CR>
+
+" Save file and quit
+nnoremap <leader>q :wq<CR>
+
+" Save file
+nnoremap <leader>s :w<CR>
+
+" Strip whitespace
+nnoremap <leader>w :StripWhitespace<CR>
+
+" Recognize specific filetypes based on extension
+autocmd BufRead,BufNewFile *.hbs set filetype=handlebars
+autocmd BufNewFile,BufRead *.mustache,*.hogan,*.hulk,*.hjs set filetype=html.mustache syntax=mustache
+autocmd BufNewFile,BufRead *.handlebars,*.hbs set filetype=html.handlebars syntax=mustache
+
+" Enable spellchecking for Markdown
+autocmd FileType markdown setlocal spell
+
+" Disable capitalization checking in Markdown
+set spellcapcheck=
+
+" Core non-plugin Vim settings
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set backupdir=$HOME/.vim/tmp/backup
+set clipboard=unnamed
+set directory=$HOME/.vim/tmp/swap
+set encoding=utf8
+set history=1000
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set lazyredraw
+set noshowmode
+set nrformats-=octal
+set number
+set relativenumber
+set ruler
+set shiftwidth=2
+set showcmd
+set showmatch
+set softtabstop=2
+set smartcase
+set smartindent
+set smarttab
+set tabstop=2
+set ttimeout
+set ttimeoutlen=100
+set ttyfast
+set undodir=$HOME/.vim/tmp/undo
+set undofile
+set undolevels=1000
+set undoreload=1000
+set wildmenu
+set wildmode=list:longest,full

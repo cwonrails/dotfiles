@@ -43,9 +43,6 @@ chruby ruby-2.2.1
 # Stream twitter timeline
 alias ts="t stream timeline"
 
-***REMOVED***
-***REMOVED***
-
 # Golang env variables
 export GOPATH=/Users/christopherwatson/go/
 export GOBIN=$GOPATH/bin

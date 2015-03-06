@@ -8,6 +8,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'christoomey/vim-run-interactive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
@@ -15,7 +16,6 @@ Plugin 'fatih/vim-go'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'honza/vim-snippets'
 Plugin 'itspriddle/vim-marked'
-Plugin 'junegunn/vim-easy-align'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'leshill/vim-json'
 Plugin 'marijnh/tern_for_vim'
@@ -33,7 +33,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
-Plugin 'sjl/vitality.vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
@@ -46,6 +45,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
+Plugin 'wellle/tmux-complete.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -146,14 +146,11 @@ nnoremap <leader>w :StripWhitespace<CR>
 
 " Recognize specific filetypes based on extension
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.hbs set filetype=handlebars
-autocmd BufNewFile,BufRead *.mustache,*.hogan,*.hulk,*.hjs set filetype=html.mustache syntax=mustache
-autocmd BufNewFile,BufRead *.handlebars,*.hbs set filetype=html.handlebars syntax=mustache
 
 " Enable spellchecking for Markdown
 autocmd FileType markdown setlocal spell
 
-" Diable highlighting for non-capitalized terms
+" Diable highlighting of non-capitalized terms
 set spellcapcheck=
 
 " Disable YouCompleteMe for Markdown (and other filetypes)
@@ -179,6 +176,12 @@ let g:UltiSnipsEditSplit="vertical"
 " Enable tern completion in JavaScript files
 autocmd FileType javascript setlocal omnifunc=tern#Complete
 
+" Stop Syntastic html-tidy errors showing up in handlebars files
+let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
+
+" Enable tmux-complete completion
+let g:tmuxcomplete#trigger = 'omnifunc'
+
 " Core non-plugin Vim settings
 set autoindent
 set autoread
@@ -188,7 +191,7 @@ set clipboard=unnamed
 set complete-=i
 set directory=$HOME/.vim/swap
 set encoding=utf-8
-set fileformats+=mac
+set fileformats+=unix,mac,dos
 set history=1000
 set hlsearch
 set ignorecase

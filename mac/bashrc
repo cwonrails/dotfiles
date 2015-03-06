@@ -15,20 +15,21 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-# Enable aws cli bash completion
-complete -C aws_completer aws
-
 # Enable nvm (no autoloading because system is iojs)
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
 # nvm node version shortcuts
-alias "n10"="nvm use v0.10"
-alias "ns"="nvm use stable"
-alias "nio"="nvm use iojs"
+alias ns="nvm use system"
+alias n10="nvm use v0.10"
+alias n12="nvm use v0.12"
+alias uio="nvm use iojs"
 
-***REMOVED***
-HOMEBREW_GITHUB_API_TOKEN=7cffb89f52fb2938e010b71c793ba4cd1b8aa6b
+# List top-level npm global modules
+alias "ng"="npm -g ls --depth=0"
+
+# Enable aws cli bash completion
+complete -C aws_completer aws
 
 # Enable chruby
 . /usr/local/share/chruby/chruby.sh
@@ -37,10 +38,13 @@ HOMEBREW_GITHUB_API_TOKEN=7cffb89f52fb2938e010b71c793ba4cd1b8aa6b
 . /usr/local/share/gem_home/gem_home.sh
 
 # Set Ruby version
-chruby ruby-2.2.0
+chruby ruby-2.2.1
 
 # Stream twitter timeline
 alias ts="t stream timeline"
+
+***REMOVED***
+***REMOVED***
 
 # Golang env variables
 export GOPATH=/Users/christopherwatson/go/
@@ -56,13 +60,13 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 . ~/perl5/perlbrew/etc/bashrc
 
 # Enable z (intelligent directory autojumping)
-. ~/z/z.sh
+. `brew --prefix`/etc/profile.d/z.sh
 
 # Copy all .jpeg and .png images in directory to web images "pre" folder
-alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre"
+alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre; cp *.jpeg ~/webimages/pre"
 
 # Run all Imageoptim-CLI operations and move optimized images to "post" folder
-alias io="imageoptim -j -a -q -d ~/webimages/pre && mv ~/webimages/pre/* ~/webimages/post"
+alias io="n10 && imageoptim -j -a -q -d ~/webimages/pre && mv ~/webimages/pre/* ~/webimages/post && b"
 
 # Quickly edit dotfiles
 alias bp="vim ~/.bash_profile"
@@ -104,8 +108,17 @@ alias dl="cd ~/Downloads"
 # Go to home directory
 alias h="cd ~/"
 
+# Go to Launch Academy challenge directory
+alias l="cd ~/launchchallenge"
+
 # List hidden files
 alias lh="ls -d .*"
+
+# Move webimages to Lightroom folder
+alias lr="cp -R ~/webimages/post/ ~/webimages-lightroom"
+
+# Start tmuxinator project session
+alias m="mux startup"
 
 # Reload shell
 alias r=". ~/.bashrc"
@@ -120,10 +133,10 @@ alias bu="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune
 alias gu="gem update"
 
 # Install, clean up, and update vim plugins via Vundle
-alias vu="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
+alias vp="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
 
 # daily OSX update
-alias du="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; vim +PluginUpdate +qall"
+alias du="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
 
 # Rapidly exit shell
 alias x="exit"

@@ -1,3 +1,1 @@
-:verbose: false
 gem: --no-document
-:disable_default_gem_***REMOVED***: true

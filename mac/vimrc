@@ -5,10 +5,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-
+Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'christoomey/vim-run-interactive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
@@ -20,12 +19,11 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'leshill/vim-json'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'othree/html5.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
 Plugin 'rizzatti/dash.vim'
@@ -45,7 +43,6 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
-Plugin 'wellle/tmux-complete.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -74,13 +71,6 @@ nnoremap gj j
 " Enable syntax highlighting
 syntax enable
 
-" if has ('gui_running')
-"		set guifont=Sauce\ Code\ Powerline\ 12
-" 	set background=light
-" else
-" 	set background=dark
-" endif
-
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -99,15 +89,6 @@ let g:airline_powerline_fonts = 1
 
 " Have Syntastic check on open
 let g:syntastic_check_on_open = 1
-
-" Strip whitespace upon saving
-let g:ToggleWhiteSpaceOnSave = 1
-
-" Gist.vim settings
-let g:gist_post_private = 1
-let g:gist_detect_filetype = 1
-let g:gist_clip_command = 'pbcopy'
-let g:gist_open_browser_after_post = 1
 
 " Press CtrlP to start CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -144,11 +125,11 @@ nnoremap <leader>t :TagbarToggle<CR>
 " Strip whitespace
 nnoremap <leader>w :StripWhitespace<CR>
 
-" Recognize specific filetypes based on extension
+" Automatically reocgnize Markdown files
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " Enable spellchecking for Markdown
-autocmd FileType markdown setlocal spell
+autocmd fileType markdown setlocal spell
 
 " Diable highlighting of non-capitalized terms
 set spellcapcheck=
@@ -173,14 +154,11 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " Have UltiSnips split window when editing
 let g:UltiSnipsEditSplit="vertical"
 
-" Enable tern completion in JavaScript files
-autocmd FileType javascript setlocal omnifunc=tern#Complete
+" Look up word underneath cursor in Dash
+nmap <silent> <leader>d <Plug>DashSearch
 
-" Stop Syntastic html-tidy errors showing up in handlebars files
+" Stop html-tidy from finding false errors in Handlebars files
 let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
-
-" Enable tmux-complete completion
-let g:tmuxcomplete#trigger = 'omnifunc'
 
 " Core non-plugin Vim settings
 set autoindent
@@ -198,6 +176,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
+set nofoldenable
 set noshowmode
 set nrformats-=octal
 set number
@@ -219,8 +198,3 @@ set undolevels=10000
 set undoreload=10000
 set wildmenu
 set wildmode=list:longest,full
-
-" Use local config if available
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif

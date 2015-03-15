@@ -6,14 +6,11 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'bling/vim-airline'
-" Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'chriskempson/tomorrow-theme'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'leshill/vim-json'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'majutsushi/tagbar'
 Plugin 'mileszs/ack.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -94,9 +91,6 @@ nnoremap <leader>h :noh<CR>
 " Toggle NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-" Toggle Tagbar
-nnoremap <leader>t :TagbarToggle<CR>
-
 " Save file
 nnoremap <leader>s :w<CR>
 
@@ -106,18 +100,7 @@ nnoremap <leader>q :wq<CR>
 " Strip whitespace
 nnoremap <leader>w :StripWhitespace<CR>
 
-" Automatically recognize filetypes by extension
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile, *.hbs set filetype=handlebars
-
-" Enable spellchecking for Markdown
-autocmd FileType markdown setlocal spell
-
-" Disable capitalization checking in Markdown
-set spellcapcheck=
-
-" Stop html-tidy from finding false errors in Handlebars files
-let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html.handlebars syntax=mustache
 
 " Core non-plugin Vim settings
 set autoindent
@@ -128,7 +111,6 @@ set clipboard=unnamed
 set complete-=i
 set directory=$HOME/.vim/tmp/swap
 set encoding=utf8
-set fileformats+=unix,mac,dos
 set history=1000
 set hlsearch
 set ignorecase

@@ -8,14 +8,15 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'honza/vim-snippets'
 Plugin 'itspriddle/vim-marked'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'majutsushi/tagbar'
 Plugin 'mileszs/ack.vim'
@@ -28,6 +29,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
@@ -36,8 +38,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 
 call vundle#end()
@@ -105,6 +105,10 @@ nnoremap <leader>h :noh<CR>
 " Preview markdown files in Marked.app
 nnoremap <leader>mo :MarkedOpen<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
+
+"Instant Markdown Preview plugin settings
+let g:instant_markdown_autostart = 0
+nnoremap <leader>mp: :InstantMarkdownPreview<CR>
 
 " Toggle NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>

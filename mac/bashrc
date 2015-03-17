@@ -114,7 +114,7 @@ alias bu="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune
 # Update all Go packages
 alias gu="go get -u all"
 
-# Update global node packages
+# Update global npm packages
 alias nu="npm -g update"
 
 # Run all rubygems operations

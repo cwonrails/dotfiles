@@ -72,7 +72,7 @@ let g:airline_powerline_fonts = 1
 " Check for syntax errors on open
 let g:syntastic_check_on_open = 1
 
-" Start CtrlP with CtrlP
+" Remap CtrlP with CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -100,7 +100,15 @@ nnoremap <leader>q :wq<CR>
 " Strip whitespace
 nnoremap <leader>w :StripWhitespace<CR>
 
-au BufRead,BufNewFile *.handlebars,*.hbs set ft=html.handlebars syntax=mustache
+" Assign syntax checkers to specific filetypes
+let g:syntastic_javascript_checkers = ['jshint']
+
+" Automatically recognize filetypes by extension
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile, *.hbs set filetype=html.handlebars syntax=mustache
+
+" Stop html-tidy from finding false errors in Handlebars files
+let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 
 " Core non-plugin Vim settings
 set autoindent
@@ -111,6 +119,7 @@ set clipboard=unnamed
 set complete-=i
 set directory=$HOME/.vim/tmp/swap
 set encoding=utf8
+set fileformats+=unix,mac,dos
 set history=1000
 set hlsearch
 set ignorecase

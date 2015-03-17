@@ -21,9 +21,9 @@ export NVM_DIR=~/.nvm
 
 # nvm node version shortcuts
 alias ns="nvm use system"
-alias n10="nvm use v0.10"
+alias n10="nvm use v0.10.36"
 alias n12="nvm use v0.12"
-alias uio="nvm use iojs"
+alias nio="nvm use iojs"
 
 # List top-level npm global modules
 alias "ng"="npm -g ls --depth=0"
@@ -40,18 +40,12 @@ complete -C aws_completer aws
 # Set Ruby version
 chruby ruby-2.2.1
 
-# Stream twitter timeline
-alias ts="t stream timeline"
-
 # Golang env variables
 export GOPATH=/Users/christopherwatson/go/
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-
-# Enable gitignore.io
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 # Enable perlbrew
 . ~/perl5/perlbrew/etc/bashrc
@@ -63,7 +57,7 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre; cp *.jpeg ~/webimages/pre"
 
 # Run all Imageoptim-CLI operations and move optimized images to "post" folder
-alias io="n10 && imageoptim -j -a -q -d ~/webimages/pre && mv ~/webimages/pre/* ~/webimages/post && b"
+alias io="n10 && imageoptim -j -a -q -d ~/webimages/pre && mv ~/webimages/pre/* ~/webimages/post"
 
 # Quickly edit dotfiles
 alias bp="vim ~/.bash_profile"
@@ -73,9 +67,6 @@ alias vr="vim ~/.vimrc"
 
 # Backup OSX dotfiles to local directory
 alias dfb="cd ~/; cp ~/.bashrc .bash_profile .tmux.conf .vimrc ~/localdotfilesbackup"
-
-# Easy Ghost pull request testing (http://dev.ghost.org/easy-git-pr-test/)
-alias pr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
 
 # Set database for td (Golang CLI todo list)
 export TODO_DB_PATH=$HOME/Dropbox/todo.json
@@ -96,26 +87,20 @@ alias c="clear"
 # Open current directory in Finder
 alias f="open ."
 
-# Go to desktop directory
+# Go to Desktop directory
 alias d="cd ~/Desktop"
 
-# Go to downloads directory
+# Go to Downloads directory
 alias dl="cd ~/Downloads"
 
-# Go to home directory
+# Go to Home directory
 alias h="cd ~/"
-
-# Go to Launch Academy challenge directory
-alias l="cd ~/launchchallenge"
 
 # List hidden files
 alias lh="ls -d .*"
 
-# Move webimages to Lightroom folder
-alias lr="cp -R ~/webimages/post/ ~/webimages-lightroom"
-
-# Start tmuxinator project session
-alias m="mux startup"
+# Exit shell
+alias x="exit"
 
 # Reload shell
 alias r=". ~/.bashrc"
@@ -123,17 +108,20 @@ alias r=". ~/.bashrc"
 # Force delete trash
 alias te="sudo rm -rf ~/.Trash/*"
 
-# Update and clean up all Homebrew installs
+# Run all Homebrew operations
 alias bu="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
-# Update all gems
-alias gu="gem update"
+# Update all Go packages
+alias gu="go get -u all"
+
+# Update global node packages
+alias nu"npm -g update"
+
+# Run all rubygems operations
+alias ru="gem update; gem cleanup"
 
 # Install, clean up, and update vim plugins via Vundle
 alias vp="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
 
-# daily OSX update
-alias du="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
-
-# Rapidly exit shell
-alias x="exit"
+# Daily OS X update
+alias du="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; gem cleanup; npm -g update; vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall; go get -u all"

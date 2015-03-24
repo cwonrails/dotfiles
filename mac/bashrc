@@ -49,9 +49,6 @@ chruby ruby-2.2.1
 # Enable z (intelligent directory autojumping)
 . `brew --prefix`/etc/profile.d/z.sh
 
-# ***REMOVED***
-***REMOVED***
-
 # Golang env variables
 export GOPATH=/Users/christopherwatson/go/
 export GOBIN=$GOPATH/bin

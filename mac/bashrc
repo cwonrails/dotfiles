@@ -7,7 +7,7 @@ export CLICOLOR=1
 # Set vim as default editor
 export EDITOR='vim'
 
-# Have command line run in vi mode
+# Enable vi mode in shell
 set -o vi
 
 # Enable homebrew-installed bash completion
@@ -15,18 +15,21 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-# Enable nvm (no autoloading because system is iojs)
+# Enable nvm
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
 # nvm node version shortcuts
 alias ns="nvm use system"
-alias n10="nvm use v0.10.36"
+alias n10="nvm use v0.10"
 alias n12="nvm use v0.12"
 alias nio="nvm use iojs"
 
 # List top-level npm global modules
 alias "ng"="npm -g ls --depth=0"
+
+# List top-level npm local modules
+alias "nl"="npm ls --depth=0"
 
 # Enable aws cli bash completion
 complete -C aws_completer aws
@@ -40,6 +43,15 @@ complete -C aws_completer aws
 # Set Ruby version
 chruby ruby-2.2.1
 
+# Enable perlbrew
+. ~/perl5/perlbrew/etc/bashrc
+
+# Enable z (intelligent directory autojumping)
+. `brew --prefix`/etc/profile.d/z.sh
+
+# ***REMOVED***
+***REMOVED***
+
 # Golang env variables
 export GOPATH=/Users/christopherwatson/go/
 export GOBIN=$GOPATH/bin
@@ -47,11 +59,8 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
-# Enable perlbrew
-. ~/perl5/perlbrew/etc/bashrc
-
-# Enable z (intelligent directory autojumping)
-. `brew --prefix`/etc/profile.d/z.sh
+# Clone Ghost master repo
+alias cg="git clone git@github.com:tryghost/ghost.git"
 
 # Copy all .jpeg and .png images in directory to web images "pre" folder
 alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre; cp *.jpeg ~/webimages/pre"
@@ -111,17 +120,11 @@ alias te="sudo rm -rf ~/.Trash/*"
 # Run all Homebrew operations
 alias bu="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
-# Update all Go packages
-alias gu="go get -u all"
-
-# Update global npm packages
-alias nu="npm -g update"
-
-# Run all rubygems operations
-alias ru="gem update; gem cleanup"
+# Update and clean up all gems
+alias gu="gem update; gem cleanup"
 
 # Install, clean up, and update vim plugins via Vundle
 alias vp="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
 
 # Daily OS X update
-alias du="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; gem cleanup; npm -g update; vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall; go get -u all"
+alias du="bu && gu && vp"

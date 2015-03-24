@@ -47,10 +47,9 @@ augroup END
 " Enable 256 colors in terminal
 set t_Co=256
 
-" Enable syntax highlighting
-
-" Solarized
+" Configure Solarized
 syntax enable
+set background=dark
 colorscheme solarized
 
 " Remap Escape key to jk

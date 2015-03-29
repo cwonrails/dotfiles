@@ -50,10 +50,8 @@ augroup END
 " Enable 256 colors in terminal
 set t_Co=256
 
-" Enable syntax highlighting
+" Configure Solarized
 syntax enable
-
-" Enable Solarized Dark
 set background=dark
 colorscheme solarized
 

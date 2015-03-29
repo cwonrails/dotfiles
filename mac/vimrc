@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
@@ -18,12 +19,14 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'honza/vim-snippets'
 Plugin 'itspriddle/vim-marked'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'leshill/vim-json'
 Plugin 'mileszs/ack.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
@@ -40,17 +43,18 @@ filetype plugin indent on
 
 " Automatically reload .vimrc when saved
 augroup reload_vimrc
-autocmd!
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
+	autocmd!
+	autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
 " Enable 256 colors in terminal
 set t_Co=256
 
 " Enable syntax highlighting
-
-" Solarized
 syntax enable
+
+" Enable Solarized Dark
+set background=dark
 colorscheme solarized
 
 " Remap Escape key to jk
@@ -101,6 +105,9 @@ nnoremap <leader>h :noh<CR>
 nnoremap <leader>mp :MarkedOpen<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
+" Toggle NERDTree
+nnoremap <leader>n :NERDTreeToggle<CR>
+
 " Save file
 nnoremap <leader>s :w<CR>
 
@@ -118,6 +125,9 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 " Stop html-tidy from finding false errors in Handlebars files
 let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
+
+" Use 'HTML Tidy for HTML5' instead of 'HTML Tidy'
+let g:syntastic_html_tidy_exec = 'tidy5'
 
 " Automatically recognize filetypes by extension
 autocmd BufRead,BufNewFile *.md set filetype=markdown
@@ -175,13 +185,14 @@ set showcmd
 set showmatch
 set softtabstop=2
 set smartcase
+set smartindent
 set smarttab
 set tabstop=2
 set ttimeout
 set ttimeoutlen=100
 set ttyfast
-set undofile
 set undodir=$HOME/.vim/undo
+set undofile
 set undolevels=10000
 set undoreload=10000
 set wildmenu

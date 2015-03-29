@@ -15,14 +15,10 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-# Enable nvm
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
-
 # nvm node version shortcuts
 alias ns="nvm use system"
-alias n10="nvm use v0.10"
-alias n12="nvm use v0.12"
+alias n10="nvm use 0.10"
+alias n12="nvm use 0.12"
 alias nio="nvm use iojs"
 
 # List top-level npm global modules
@@ -34,17 +30,14 @@ alias "nl"="npm ls --depth=0"
 # Enable aws cli bash completion
 complete -C aws_completer aws
 
+# Alias required to enable gitjk
+alias gitjk="history | tail -r -n 10 | gitjk_cmd"
+
 # Enable chruby
 . /usr/local/share/chruby/chruby.sh
 
-# Enable gem_home
-. /usr/local/share/gem_home/gem_home.sh
-
 # Set Ruby version
 chruby ruby-2.2.1
-
-# Enable perlbrew
-. ~/perl5/perlbrew/etc/bashrc
 
 # Enable z (intelligent directory autojumping)
 . `brew --prefix`/etc/profile.d/z.sh
@@ -55,9 +48,6 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-
-# Clone Ghost master repo
-alias cg="git clone git@github.com:tryghost/ghost.git"
 
 # Copy all .jpeg and .png images in directory to web images "pre" folder
 alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre; cp *.jpeg ~/webimages/pre"

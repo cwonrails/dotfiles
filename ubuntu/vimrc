@@ -17,6 +17,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
@@ -86,6 +87,9 @@ nnoremap <leader>g :GundoToggle<CR>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
+
+" Toggle NERDTree
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Save file
 nnoremap <leader>s :w<CR>

@@ -10,10 +10,14 @@ export EDITOR='vim'
 # Enable vi mode in shell
 set -o vi
 
-# Enable homebrew-installed bash completion
+# Enable Homebrew-installed bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+# Enable nvm
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
 
 # nvm node version shortcuts
 alias ns="nvm use system"
@@ -30,7 +34,7 @@ alias "nl"="npm ls --depth=0"
 # Enable aws cli bash completion
 complete -C aws_completer aws
 
-# Alias required to enable gitjk
+# Required alias for gitjk
 alias gitjk="history | tail -r -n 10 | gitjk_cmd"
 
 # Enable chruby
@@ -64,11 +68,8 @@ alias vr="vim ~/.vimrc"
 # Backup OSX dotfiles to local directory
 alias dfb="cd ~/; cp ~/.bashrc .bash_profile .tmux.conf .vimrc ~/localdotfilesbackup"
 
-# Set database for td (Golang CLI todo list)
-export TODO_DB_PATH=$HOME/Dropbox/todo.json
-
-# Go back to previous directory
-alias b="cd - "
+# Force delete trash
+alias te="sudo rm -rf ~/.Trash/*"
 
 # Navigate backwards in directories
 alias ..="cd .."
@@ -76,6 +77,9 @@ alias ...="cd ../../../"
 alias ....="cd ../../../../"
 alias .....="cd ../../../../../"
 alias ......="cd ../../../../../../"
+
+# Go back previous directory
+alias b="cd - "
 
 # Clear scrollback (works with tmux)
 alias c="clear"
@@ -92,26 +96,41 @@ alias dl="cd ~/Downloads"
 # Go to Home directory
 alias h="cd ~/"
 
+# Faster ls
+alias l="ls"
+
 # List hidden files
 alias lh="ls -d .*"
-
-# Exit shell
-alias x="exit"
 
 # Reload shell
 alias r=". ~/.bashrc"
 
-# Force delete trash
-alias te="sudo rm -rf ~/.Trash/*"
+# Faster vim
+alias v="vim"
+
+# Exit shell
+alias x="exit"
+
+# Go to writing folder
+alias w="cd ~/writing"
 
 # Run all Homebrew operations
 alias bu="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
-# Update and clean up all gems
-alias gu="gem update; gem cleanup"
+# Run GitHub clone update script
+alias cu="sh ~/gitclones/gitupdate.sh"
 
-# Install, clean up, and update vim plugins via Vundle
-alias vp="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
+# Update all Go packages
+alias gu="go get -u all"
 
-# Daily OS X update
-alias du="bu && gu && vp"
+# Update all npm global packages
+alias nu="npm -g update"
+
+# Update and clean up all Ruby gems
+alias ru="gem update; gem cleanup"
+
+# Install, clean up, and update Vim plugins via Vundle
+alias vu="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
+
+# Update all of the above
+alias ua="bu && cu && gu && nu && ru && vu"

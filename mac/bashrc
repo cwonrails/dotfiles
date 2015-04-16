@@ -10,14 +10,23 @@ export EDITOR='vim'
 # Enable vi mode in shell
 set -o vi
 
+# Enable iTerm2 shell integration
+source /Users/christopherwatson/.iterm2_shell_integration.bash
+
 # Enable Homebrew-installed bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+# Enable aws-cli bash completion
+complete -C aws_completer aws
+
+# Enable z (intelligent directory autojumping)
+. `brew --prefix`/etc/profile.d/z.sh
+
 # Enable nvm
 export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
+source $(brew --prefix nvm)/nvm.sh
 
 # nvm node version shortcuts
 alias ns="nvm use system"
@@ -31,21 +40,6 @@ alias "ng"="npm -g ls --depth=0"
 # List top-level npm local modules
 alias "nl"="npm ls --depth=0"
 
-# Enable aws cli bash completion
-complete -C aws_completer aws
-
-# Required alias for gitjk
-alias gitjk="history | tail -r -n 10 | gitjk_cmd"
-
-# Enable chruby
-. /usr/local/share/chruby/chruby.sh
-
-# Set Ruby version
-chruby ruby-2.2.1
-
-# Enable z (intelligent directory autojumping)
-. `brew --prefix`/etc/profile.d/z.sh
-
 # Golang env variables
 export GOPATH=/Users/christopherwatson/go/
 export GOBIN=$GOPATH/bin
@@ -53,11 +47,11 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
-# Copy all .jpeg and .png images in directory to web images "pre" folder
+# Copy all .jpg, .jpeg and .png images in current directory to webimages "pre" folder
 alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre; cp *.jpeg ~/webimages/pre"
 
-# Run all Imageoptim-CLI operations and move optimized images to "post" folder
-alias io="n10 && imageoptim -j -a -q -d ~/webimages/pre && mv ~/webimages/pre/* ~/webimages/post"
+# Run all Imageoptim-CLI operations on images in "pre" folder and move output to "post"
+alias oi="imageoptim -j -a -q -d ~/webimages/pre && mv ~/webimages/pre/* ~/webimages/post"
 
 # Quickly edit dotfiles
 alias bp="vim ~/.bash_profile"
@@ -78,14 +72,11 @@ alias ....="cd ../../../../"
 alias .....="cd ../../../../../"
 alias ......="cd ../../../../../../"
 
-# Go back previous directory
+# Go back to previous directory
 alias b="cd - "
 
 # Clear scrollback (works with tmux)
 alias c="clear"
-
-# Open current directory in Finder
-alias f="open ."
 
 # Go to Desktop directory
 alias d="cd ~/Desktop"
@@ -93,11 +84,26 @@ alias d="cd ~/Desktop"
 # Go to Downloads directory
 alias dl="cd ~/Downloads"
 
+# Open current directory in Finder
+alias f="open ."
+
+# Clone Ghost master repo
+alias gcgm="git clone git@github.com:TryGhost/Ghost.git"
+
+# Clone Ghost stable repo
+alias gcgs="git clone -b stable git@github.com:TryGhost/Ghost.git"
+
+# Test Ghost pull requests
+alias gpr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
+
 # Go to Home directory
 alias h="cd ~/"
 
-# Faster ls
+# Quicker ls
 alias l="ls"
+
+# Verbose ls
+alias la="ls -la"
 
 # List hidden files
 alias lh="ls -d .*"
@@ -105,7 +111,7 @@ alias lh="ls -d .*"
 # Reload shell
 alias r=". ~/.bashrc"
 
-# Faster vim
+# Quicker vim
 alias v="vim"
 
 # Exit shell
@@ -117,20 +123,8 @@ alias w="cd ~/writing"
 # Run all Homebrew operations
 alias bu="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
-# Run GitHub clone update script
-alias cu="sh ~/gitclones/gitupdate.sh"
-
-# Update all Go packages
-alias gu="go get -u all"
-
-# Update all npm global packages
-alias nu="npm -g update"
-
-# Update and clean up all Ruby gems
-alias ru="gem update; gem cleanup"
+# Update and cleanup all Ruby gems
+alias gu="gem update; gem cleanup"
 
 # Install, clean up, and update Vim plugins via Vundle
-alias vu="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
-
-# Update all of the above
-alias ua="bu && cu && gu && nu && ru && vu"
+alias vp="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"

@@ -21,6 +21,9 @@ fi
 # Enable aws-cli bash completion
 complete -C aws_completer aws
 
+# Enable t completion (Twitter CLI client)
+. ~/t/etc/t-completion.sh
+
 # Enable z (intelligent directory autojumping)
 . `brew --prefix`/etc/profile.d/z.sh
 
@@ -46,6 +49,9 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+
+# Enable Halcyon
+eval "$( HALCYON_NO_SELF_UPDATE=1 "/app/halcyon/halcyon" paths )"
 
 # Copy all .jpg, .jpeg and .png images in current directory to webimages "pre" folder
 alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre; cp *.jpeg ~/webimages/pre"
@@ -78,11 +84,11 @@ alias b="cd - "
 # Clear scrollback (works with tmux)
 alias c="clear"
 
-# Go to Desktop directory
-alias d="cd ~/Desktop"
-
 # Go to Downloads directory
 alias dl="cd ~/Downloads"
+
+# Go to Desktop directory
+alias dt="cd ~/Desktop"
 
 # Open current directory in Finder
 alias f="open ."
@@ -96,11 +102,20 @@ alias gcgs="git clone -b stable git@github.com:TryGhost/Ghost.git"
 # Test Ghost pull requests
 alias gpr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
 
+# Go to Ghost-Vagrant-Shell folder
+alias gvs='cd ~/Ghost-Vagrant-Shell'
+
+# Required for awesome undo program: https://github.com/nvbn/thefuck
+alias fuck='$(thefuck $(fc -ln -1))'
+
 # Go to Home directory
 alias h="cd ~/"
 
 # Quicker ls
 alias l="ls"
+
+# Whoops! ls typo
+alias sl="ls"
 
 # Verbose ls
 alias la="ls -la"
@@ -111,6 +126,9 @@ alias lh="ls -d .*"
 # Reload shell
 alias r=". ~/.bashrc"
 
+# Start tmuxinator server session
+alias s="mux servers"
+
 # Quicker vim
 alias v="vim"
 
@@ -120,11 +138,23 @@ alias x="exit"
 # Go to writing folder
 alias w="cd ~/writing"
 
+# Daily update (run all below)
+alias du="bu && gu && nu && pu && ru && vp"
+
 # Run all Homebrew operations
 alias bu="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
+# Update all Go packages
+alias gu="go get -u all"
+
+# Update global node packages
+alias nu="npm -g update"
+
+# Update and cleanup all Python packages
+alias pu="yolk --upgrade"
+
 # Update and cleanup all Ruby gems
-alias gu="gem update; gem cleanup"
+alias ru="gem update; gem cleanup"
 
 # Install, clean up, and update Vim plugins via Vundle
 alias vp="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"

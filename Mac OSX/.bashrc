@@ -46,9 +46,6 @@ export PATH="/usr/local/Cellar/findutils/4.4.2/bin:$PATH"
 # Enable z (intelligent directory autojumping)
 . `brew --prefix`/etc/profile.d/z.sh
 
-# Set default PHP to Homebrew PHP56
-export PATH="(brew --prefix homebrew/php/php56)/bin/$PATH"
-
 # Enable nvm
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh

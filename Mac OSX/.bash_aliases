@@ -11,11 +11,17 @@ alias hist="history"
 # List current jobs
 alias j="jobs"
 
+# Fix $PATH
+alias fixpath="sh ~/bashscripts/fixpath.sh"
+
 # Print human-readable $PATH
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# Reload bash
+alias r="source ~/.bashrc"
+
 # Reload shell
-alias r="exec $SHELL -l"
+alias reload="exec $SHELL -l"
 
 # Exit shell
 alias x="exit"
@@ -34,10 +40,10 @@ alias tc="vim ~/.tmux.conf"
 alias vr="vim ~/.vimrc"
 
 # Backup OSX dotfiles to local directory
-alias dfb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .curlrc .extras .editorconfig .hushlogin .profile .tmux.conf .vimrc .wgetrc ~/dotfilesbackup"
+alias dfb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .curlrc .extras .editorconfig .gitattributes .gvimrc .hushlogin .inputrc .profile .tmux.conf .vimrc .wgetrc ~/dotfilesbackup"
 
 # Update dotfiles GitHub dotfiles repo
-alias dfg="cd ~/github/repos/dotfiles; git pull --force; cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .editorconfig .gemrc .gitattributes .hushlogin .profile .tmux.conf .vimrc ~/github/repos/dotfiles/Mac\ OSX/; cd ~/github/repos/dotfiles/Mac\ OSX/; git status"
+alias dfg="cd ~/github/repos/dotfiles; git pull --force; cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .editorconfig .gemrc .gitattributes .gvimrc .hushlogin .inputrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/Mac\ OSX/; cd ~/github/repos/dotfiles/Mac\ OSX/; git status"
 
 ## Ghost ##
 # Clone Ghost master repo
@@ -82,6 +88,9 @@ alias ......="cd ../../../../../../"
 
 # Go back to previous directory
 alias b="cd - "
+
+# Go to bash scripts folder
+alias bs="cd ~/bashscripts"
 
 # Go to Downloads folder
 alias dl="cd ~/Downloads"

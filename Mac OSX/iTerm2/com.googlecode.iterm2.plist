@@ -246,7 +246,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/mac/untitled folder</string>
+	<string>~/github/repos/dotfiles/Mac OSX/iTerm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -277,13 +277,19 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>212 112 784 324 0 0 1920 1177 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>947 565 796 475 0 0 1920 1177 </string>
+	<string>947 660 796 475 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3 31 1914 1142 0 0 1920 1177 </string>
+	<string>3 10 954 1161 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>3 676 650 477 0 0 1920 1177 </string>
+	<string>3 10 954 1161 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>268 104 650 502 0 0 1920 1177 </string>
+	<string>3 10 1914 1161 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>963 10 954 1161 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>310 63 650 477 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>3 10 1914 1161 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1534,6 +1540,8 @@
 			<string>/Users/christopherwatson</string>
 		</dict>
 	</array>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PassOnControlClick</key>
@@ -1572,15 +1580,21 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/christopherwatson/dotfiles/mac/iTerm2</string>
+	<string>/Users/christopherwatson/github/repos/dotfiles/Mac OSX/iTerm2</string>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
 	<string>https://iterm2.com/appcasts/nightly.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2015-05-05T01:26:28Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowPaneTitles</key>
@@ -1592,6 +1606,10 @@
 	<key>UseBorder</key>
 	<false/>
 	<key>WindowNumber</key>
+	<false/>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
 	<string>2.9.20150504-nightly</string>

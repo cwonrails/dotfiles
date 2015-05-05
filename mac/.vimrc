@@ -15,6 +15,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ekalinin/dockerfile.vim'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
+Plugin 'godlygeek/tabular'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'honza/vim-snippets'
 Plugin 'itspriddle/vim-marked'
@@ -27,12 +28,12 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
@@ -159,6 +160,11 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " Have UltiSnips split window when editing or creating snippets
 let g:UltiSnipsEditSplit="vertical"
+
+" Ensure Vim mouse reporting compatibility with iTerm2
+if has('mouse_sgr')
+	set ttymouse=sgr
+endif
 
 " Core non-plugin Vim settings
 set autoindent

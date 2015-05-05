@@ -1,1 +1,1 @@
-Dotfiles for MacBook Pro, Ubuntu (servers), and Linux Mint (revived 2008 white MacBook.)
+Dotfiles for MacBook Pro and Ubuntu 14.04 Server

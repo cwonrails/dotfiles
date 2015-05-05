@@ -11,6 +11,9 @@ alias hist="history"
 # List current jobs
 alias j="jobs"
 
+# Print human-readable $PATH
+alias path='echo $PATH | tr -s ":" "\n"'
+
 # Reload shell
 alias r="exec $SHELL -l"
 
@@ -34,7 +37,7 @@ alias vr="vim ~/.vimrc"
 alias dfb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .curlrc .extras .editorconfig .hushlogin .profile .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup"
 
 # Update dotfiles GitHub dotfiles repo
-alias dfg="cd ~/dotfiles; git pull --force; cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .curlrc .extras .editorconfig .gemrc .gitattributes .hushlogin .profile .tmux.conf .vimrc .wgetrc ~/dotfiles/mac/; cd ~/dotfiles/mac/; git add -A"
+alias dfg="cd ~/dotfiles; git pull --force; cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .curlrc .extras .editorconfig .gemrc .gitattributes .hushlogin .profile .tmux.conf .vimrc .wgetrc ~/dotfiles/Mac\ OSX/; cd ~/dotfiles/Mac\ OSX/; git status"
 
 ## Ghost ##
 # Clone Ghost master repo

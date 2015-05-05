@@ -34,10 +34,10 @@ alias tc="vim ~/.tmux.conf"
 alias vr="vim ~/.vimrc"
 
 # Backup OSX dotfiles to local directory
-alias dfb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .curlrc .extras .editorconfig .hushlogin .profile .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup"
+alias dfb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .curlrc .extras .editorconfig .hushlogin .profile .tmux.conf .vimrc .wgetrc ~/dotfilesbackup"
 
 # Update dotfiles GitHub dotfiles repo
-alias dfg="cd ~/dotfiles; git pull --force; cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .curlrc .extras .editorconfig .gemrc .gitattributes .hushlogin .profile .tmux.conf .vimrc .wgetrc ~/dotfiles/Mac\ OSX/; cd ~/dotfiles/Mac\ OSX/; git status"
+alias dfg="cd ~/github/repos/dotfiles; git pull --force; cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .editorconfig .gemrc .gitattributes .hushlogin .profile .tmux.conf .vimrc ~/github/repos/dotfiles/Mac\ OSX/; cd ~/github/repos/dotfiles/Mac\ OSX/; git status"
 
 ## Ghost ##
 # Clone Ghost master repo

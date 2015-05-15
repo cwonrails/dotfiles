@@ -5,32 +5,22 @@ alias sudo='sudo '
 # Clear scrollback (works with tmux)
 alias c="clear"
 
-# List bash history
-alias hist="history"
+# Enable mkdir to create nested directories
+alias mkdir="mkdir -p"
 
-# List current jobs
-alias j="jobs"
-
-# Fix $PATH
-alias fixpath="sh ~/bashscripts/fixpath.sh"
-
-# Print human-readable $PATH
+# Print human-readable $PATH (source: https://github.com/thoughtbot/dotfiles/blob/master/aliases)
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # Reload bash
 alias r="source ~/.bashrc"
 
-# Reload shell
+# Reload shell (agnostic)
 alias reload="exec $SHELL -l"
 
 # Exit shell
 alias x="exit"
 
-# Quicker Vim
-alias v="vim"
-
 ## Dotfiles management ##
-
 # Quickly edit dotfiles
 alias ba="vim ~/.bash_aliases"
 alias bp="vim ~/.bash_profile"
@@ -55,13 +45,6 @@ alias gcgs="git clone -b stable git@github.com:TryGhost/Ghost.git"
 # Test Ghost pull requests
 alias gpr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
 
-## Imageoptim-CLI ##
-# Copy all .jpg, .jpeg and .png images in current directory to webimages "pre" folder
-alias ci="cp *.jpg ~/webimages/pre; cp *.png ~/webimages/pre; cp *.jpeg ~/webimages/pre"
-
-# Run all optimization operations on images in "pre" folder and move output to "post"
-alias io="imageoptim -j -a -q -d ~/webimages/pre && mv ~/webimages/pre/* ~/webimages/post"
-
 ## Mac ##
 # Open current directory in Finder
 alias f="open ."
@@ -72,11 +55,6 @@ alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# Disable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-# Enable Spotlight
-alias spoton="sudo mdutil -a -i on"
 
 ## Navigation ##
 # Go back from current directory
@@ -110,31 +88,49 @@ alias ghf="cd ~/github/forks"
 # Go to Github repos folder
 alias ghr="cd ~/github/repos"
 
-# Go to Home folder
+# Go to Home directory
 alias h="cd $HOME"
+
+# Update fzf (https://github.com/junegunn/fzf)
+alias fzfu="cd ~/.fzf && git pull && ./install"
 
 ## Node ##
 # nvm node version shortcuts
-alias ns="nvm use system"
-alias n10="nvm use 0.10"
 alias n12="nvm use 0.12"
-alias nio="nvm use iojs"
 
 # List top-level npm global modules
-alias "ng"="npm -g ls --depth=0"
+alias ng="npm -g ls --depth=0"
 
 # List top-level npm local modules
-alias "nl"="npm ls --depth=0"
+alias nl="npm ls --depth=0"
+
+# List outdated npm global modules
+alias ngo="npm-check-updates -g"
+
+# List outdated npm local modules
+alias nlo="npm-check-updates"
+
+# Update outdated npm global modules (interactive)
+alias ngu="npm-check -u"
+
+# Update outdated npm local modules (interactive)
+alias nlu="npm-check -u"
 
 ## Updates ##
-# Update all packages (combines everything below)
-alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; gem cleanup; vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
+# Daily update (combines all below operations)
+alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; gem update; gem cleanup; vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"
 
-# Run all Homebrew operations
+# Update, upgrade, and clean up all Homebrew installs + prune symbolic links, and check for errors
 alias bu="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
+# Update all Go packages
+alias gu="go get -u all"
+
+# Upgrade all pip packages (source: https://stackoverflow.com/a/3452888)
+alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+
 # Update and cleanup all Ruby gems
-alias gu="gem update; gem cleanup"
+alias ru="gem update; gem cleanup"
 
 # Install, cleanup, and update all Vim plugins
 alias vp="vim +PluginInstall +qall; vim +PluginClean +qall; vim +PluginUpdate +qall"

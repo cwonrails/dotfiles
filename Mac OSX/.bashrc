@@ -1,5 +1,3 @@
-#### Core configuration ####
-
 # Set command prompt options
 PS1="\n\u @\h [\d \@]\n\w "
 
@@ -14,7 +12,7 @@ set -o vi
 
 # Enable bash aliases if present
 if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
 # Enable Homebrew-installed bash completion
@@ -24,6 +22,9 @@ fi
 
 # Enable aws-cli bash completion
 complete -C aws_completer aws
+
+# Enable t completion (Twitter CLI client)
+. ~/t/etc/t-completion.sh
 
 # Use GNU coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -40,8 +41,8 @@ export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 # Use GNU findutils
 export PATH="/usr/local/Cellar/findutils/4.4.2/bin:$PATH"
 
-# Enable t completion (Twitter CLI client)
-. ~/t/etc/t-completion.sh
+# Enable td (Golang todo list CLI)
+export TODO_DB_PATH=$HOME/todo/todo.json
 
 # Enable z (intelligent directory autojumping)
 . `brew --prefix`/etc/profile.d/z.sh
@@ -51,11 +52,15 @@ export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
 # Golang env variables
-export GOPATH=/Users/christopherwatson/go/
-export GOBIN=$GOPATH/bin
-export PATH=$GOPATH/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
 
 # Enable thefuck: https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
@@ -63,13 +68,11 @@ alias fuck='$(thefuck $(fc -ln -1))'
 # Enable Halcyon
 eval "$( HALCYON_NO_SELF_UPDATE=1 "/app/halcyon/halcyon" paths )"
 
-### from Mathias' dotfiles ####
+### From Mathias' dotfiles (https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile) ###
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -101,6 +104,21 @@ if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_c
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
+
+# Enable tab completion for `g` by marking it as an alias for `git`
+if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+	complete -o default -o nospace -F _git g;
+fi;
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults;
+
+# Add `killall` tab completion for common apps
+complete -o "nospace" -W "Airmail Chromium Contacts Dock Finder Google Chrome Google Chrome Canary Firefox iTunes Safari SystemUIServer Terminal Twitter Tweetbot" killall;
 
 # Fix "GREP_OPTIONS is depreciated" error
 alias grep="/usr/bin/grep $GREP_OPTIONS"

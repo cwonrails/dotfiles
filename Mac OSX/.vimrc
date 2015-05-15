@@ -1,48 +1,45 @@
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-Plugin 'gmarik/Vundle.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'chase/vim-ansible-yaml'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'ervandew/supertab'
+Plug 'fatih/vim-go'
+Plug 'godlygeek/tabular'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'honza/vim-snippets'
+Plug 'itspriddle/vim-marked'
+Plug 'kchmck/vim-coffee-script'
+Plug 'leshill/vim-json'
+Plug 'marijnh/tern_for_vim'
+Plug 'mileszs/ack.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'raimondi/delimitmate'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/preservenoeol'
+Plug 'vim-scripts/nginx.vim'
+Plug 'vim-scripts/tComment'
 
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ekalinin/dockerfile.vim'
-Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
-Plugin 'godlygeek/tabular'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'honza/vim-snippets'
-Plugin 'itspriddle/vim-marked'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'leshill/vim-json'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'raimondi/delimitmate'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/nginx.vim'
-Plugin 'vim-scripts/tComment'
-
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " Automatically reload .vimrc when saved
 augroup reload_vimrc
@@ -133,8 +130,9 @@ let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 let g:syntastic_html_tidy_exec = 'tidy5'
 
 " Automatically recognize filetypes by extension
+autocmd BufRead,BufNewFile *.hbs set filetype=html.handlebars syntax=mustache
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile, *.hbs set filetype=html.handlebars syntax=mustache
+autocmd BufRead,BufNewFile *.styl set filetype=stylus
 
 " Enable spellchecking for Markdown
 autocmd fileType markdown setlocal spell
@@ -166,7 +164,10 @@ if has('mouse_sgr')
 	set ttymouse=sgr
 endif
 
-" Core non-plugin Vim settings
+" Supply path to editorconfig binary
+let g:EditorConfig_exec_path='usr/local/bin/editorconfig'
+
+" Core non-Plug Vim settings
 set autoindent
 set autoread
 set backspace=indent,eol,start

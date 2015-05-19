@@ -11,11 +11,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'godlygeek/tabular'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'leshill/vim-json'
 Plug 'marijnh/tern_for_vim'
@@ -26,20 +27,23 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeTogle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
-Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/nginx.vim'
 Plug 'vim-scripts/tComment'
 
 call plug#end()
+
+" Enable fzf
+set rtp+=~/.fzf
 
 " Automatically reload .vimrc when saved
 augroup reload_vimrc

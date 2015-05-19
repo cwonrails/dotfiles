@@ -1,4 +1,5 @@
 {
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
@@ -32,7 +33,6 @@
 	"match_brackets": true,
 	"match_brackets_angle": true,
 	"remember_open_files": false,
-	"close_windows_when_empty": false,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_size": 2,

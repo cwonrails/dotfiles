@@ -14,7 +14,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'godlygeek/tabular'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'leshill/vim-json'
 Plug 'marijnh/tern_for_vim'
@@ -30,7 +30,7 @@ Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/nginx.vim'
@@ -39,7 +39,7 @@ Plug 'vim-scripts/tComment'
 call plug#end()
 
 " Enable fzf
-set rtp+=~/.fzf
+" set rtp+=~/.fzf
 
 " Automatically reload .vimrc when saved
 augroup reload_vimrc

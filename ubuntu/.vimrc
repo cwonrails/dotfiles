@@ -55,7 +55,7 @@ syntax enable
 
 " Enable Solarized Dark
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 " Remap Escape key to jk
 imap jk <esc>

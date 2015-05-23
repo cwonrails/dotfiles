@@ -22,6 +22,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+# Enable perlbrew
+. ~/perl5/perlbrew/etc/bashrc
+
 # Enable aws-cli bash completion
 complete -C aws_completer aws
 
@@ -39,7 +42,6 @@ export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 
 # Use GNU findutils
 # export PATH="/usr/local/Cellar/findutils/4.4.2/bin:$PATH"
-
 # export PATH="$(brew --prefix)/Cellar/findutils/4.4.2/bin:$PATH"
 
 # Enable t completion (Twitter CLI client)
@@ -106,7 +108,7 @@ elif [ -f /etc/bash_completion ]; then
 fi;
 
 # Fix "GREP_OPTIONS is depreciated" error
-alias grep="/usr/bin/grep $GREP_OPTIONS"
+alias grep="/usr/local/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
 
 # Detect which `ls` flavor is in use

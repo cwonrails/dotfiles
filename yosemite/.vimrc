@@ -26,6 +26,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
+Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeTogle' }
 Plug 'scrooloose/syntastic'

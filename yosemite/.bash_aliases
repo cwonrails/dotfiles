@@ -1,18 +1,33 @@
 ## Core functions ##
 # Enable aliases to be sudo’ed
-alias sudo='sudo '
+alias sudo="sudo "
 
 # Print human-readable $PATH
-alias path='echo $PATH | tr -s ":" "\n"'
+alias path="echo $PATH | tr -s ":" "\n""
 
-# Reload bash
-alias r="source ~/.bashrc"
+# Clear screen (works in tmux)
+alias c="clear"
+
+# Print history
+alias h="history"
+
+# Show jobs
+alias j="jobs"
+
+# Reload shell
+alias r=". ~/.bashrc"
 
 # Open current directory in vim
 alias vd="vim `pwd`"
 
 # Exit shell
 alias x="exit"
+
+## GNU findutils aliases (brew install findutils --with-default-names causes brew to throw errors)
+alias find="gfind"
+alias locate="glocate"
+alias updatedb="gupdatedb"
+alias xargs="gxargs"
 
 ## Dotfiles management ##
 # Quickly edit dotfiles
@@ -24,10 +39,10 @@ alias tc="vim ~/.tmux.conf"
 alias vr="vim ~/.vimrc"
 
 # Back up OSX dotfiles to local directory
-alias dflb="cd ~/; cp ~/.agignore .bash_aliases .bashrc .bash_profile .bash_prompt .extras .editorconfig .gemrc .gitattributes .gitconfig .gitignore .hgignore .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc ~/localdotfilesbackup"
+alias dflb="cd ~/; cp ~/.agignore .bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .hgignore .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc ~/localdotfilesbackup"
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb="cd ~/; cp ~/.agignore .bash_aliases .bashrc .bash_profile .bash_prompt .extras .editorconfig .gemrc .gitattributes .gitconfig .gitignore .hgignore .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc ~/Dropbox/dotfiles"
+alias dfdb="cd ~/; cp ~/.agignore .bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .hgignore .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc ~/Dropbox/dotfiles"
 
 # Back up OSX dotfiles to Github repo
 alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .agignore .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .hgignore .hushlogin .tmux.conf .vimrc ~/github/repos/dotfiles/yosemite && cd ~/github/repos/dotfiles/yosemite && git status"
@@ -87,8 +102,8 @@ alias ghf="cd ~/github/forks"
 # Go to Github repos folder
 alias ghr="cd ~/github/repos"
 
-# Go to Home folder
-alias h="cd $HOME"
+# Go to Home directory
+alias hd="cd $HOME"
 
 ## Node ##
 # change node version with nvm
@@ -110,14 +125,14 @@ alias ngo="npm-check-updates -g"
 alias nlo="npm-check-updates"
 
 # Update outdated npm global modules (interactive)
-alias ngu="npm-check -u"
+alias ngu="npm-check -g -u"
 
 # Update outdated npm local modules (interactive)
 alias nlu="npm-check -u"
 
 ## Updates ##
-# Daily update (runs operations below and checks for outdated npm global modules)
-alias du="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; gem update; gem cleanup; vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall; npm-check-updates -g"
+# Update all (runs below operations and checks for outdated npm global modules)
+alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; gem update; gem cleanup; vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall; npm-check-updates -g"
 
 # Run all Homebrew operations
 alias bu="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor"

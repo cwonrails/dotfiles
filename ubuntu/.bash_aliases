@@ -11,10 +11,7 @@ alias aua="sudo apt-get update && sudo apt-get upgrade && sudo apt-get update &&
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # Reload bash
-alias reload="source ~/.bashrc"
-
-# Reboot server
-alias reboot="sudo shutdown -r now"
+alias r="source ~/.bashrc"
 
 # Exit shell
 alias x="exit"

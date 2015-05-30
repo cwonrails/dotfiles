@@ -6,6 +6,9 @@ alias sudo='sudo '
 # Clear screen (works in tmux)
 alias c='clear'
 
+# Start distraction-free writing
+alias dfw='vim +Goyo '
+
 # Print history
 alias h='history'
 
@@ -46,6 +49,13 @@ alias f="open ."
 
 # Force delete all trash on Mac
 alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+## Git ##
+
+alias ga='git add '
+alias gaa='git add -A'
+alias gc='git commit'
+alias gp='git push'
 
 ## Navigation ##
 # Go back from current directory

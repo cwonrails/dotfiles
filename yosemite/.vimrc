@@ -26,8 +26,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'kballard/vim-swift', { 'for': 'swift'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'leshill/vim-json', { 'for': 'json' }
@@ -40,19 +40,21 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
 Plug 'raimondi/delimitmate'
+Plug 'reedes/vim-colors-pencil'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeTogle' }
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'SirVer/ultisnips', { 'on': [] }
+Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'on': [], 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
@@ -110,18 +112,17 @@ let g:airline_powerline_fonts = 1
 " Fix GitGutter column color
 highlight clear SignColumn
 
-" Load Limelight with Goyo
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
-
 " Comment and uncomment lines
 nnoremap <leader>c :TComment<CR>
 
-" Look up selection in Dash
-nnoremap <leader>d :Dash<CR>
+" Set background to dark
+nnoremap <leader>db :set background=dark<CR>
 
-" Start Goyo
-nnoremap <leader>g :Goyo<CR>
+" Look up selection in Dash
+nnoremap <leader>dl :Dash<CR>
+
+" Toggle distraction-free writing
+nnoremap <leader>dfw :Goyo<CR>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
@@ -136,33 +137,26 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " Run command in interactive shell
 nnoremap <leader>ri :RunInteractiveShell<space>
 
+" Set background to light
+nnoremap <leader>sl :set background=light<CR>
+
 " Toggle Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
-
-" Toggle Gundo (undo history tree)
-nnoremap <leader>u :GundoToggle<CR>
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
 
-" Save file
-nnoremap <leader>s :w<CR>
+" Write file
+nnoremap <leader>w :w<CR>
 
-" Exit (quit without saving)
-nnoremap <leader>x :q!<CR>
-
-" Strip whitespace
-nnoremap <leader>w :StripWhitespace<CR>
+" Toggle Gundo (undo tree)
+nnoremap <leader>u :GundoToggle<CR>
 
 " Strip whitespace on save
 let g:StripWhitespaceOnSave = 1
 
-
 " Check for syntax errors on open
 let g:syntastic_check_on_open = 1
-
-" Disable syntax checking for Markdown
-let g:syntastic_markdown_checkers = ['']
 
 " Assign syntax checkers to specific filetypes
 let g:syntastic_javascript_checkers=['jshint']
@@ -178,7 +172,6 @@ let g:EditorConfig_exec_path='usr/local/bin/editorconfig'
 
 " Automatically recognize filetypes by extension
 autocmd BufRead,BufNewFile *.hbs set filetype=html.handlebars syntax=mustache
-autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
 
 " Enable spellchecking for Markdown
@@ -187,12 +180,39 @@ autocmd fileType markdown setlocal spell
 " Disable highlighting of non-capitalized terms
 set spellcapcheck=
 
-" Load UltiSnips and YouCompleteMe upon entering insert mode the first time
-augroup load_us_ycm
-  autocmd!
-  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
-                     \| call youcompleteme#Enable() | autocmd! load_us_ycm
-augroup END
+" Distraction-free writing environment
+function! s:goyo_enter()
+	silent !tmux set status off
+	colorscheme pencil
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+	silent !tmux set status on
+  colorscheme solarized
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 "YouCompleteMe and UltiSnips conflict solution with SuperTab
 let g:ycm_key_list_select_completion=['<C-n>', '<Down>']

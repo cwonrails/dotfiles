@@ -112,11 +112,14 @@ let g:airline_powerline_fonts = 1
 " Fix GitGutter column color
 highlight clear SignColumn
 
+" Set background to dark
+nnoremap <leader>bd :set background=dark<CR>
+
+" Set background to light
+nnoremap <leader>bl :set background=light<CR>
+
 " Comment and uncomment lines
 nnoremap <leader>c :TComment<CR>
-
-" Set background to dark
-nnoremap <leader>db :set background=dark<CR>
 
 " Look up selection in Dash
 nnoremap <leader>dl :Dash<CR>
@@ -135,22 +138,22 @@ nnoremap <leader>mq :MarkedQuit<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Run command in interactive shell
-nnoremap <leader>ri :RunInteractiveShell<space>
-
-" Set background to light
-nnoremap <leader>sl :set background=light<CR>
+nnoremap <leader>rs :RunInteractiveShell<space>
 
 " Toggle Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
 
-" Save file and quit
+" Toggle Gundo (undo tree)
+nnoremap <leader>ut :GundoToggle<CR>
+
+" Write file and quit
 nnoremap <leader>q :wq<CR>
 
 " Write file
 nnoremap <leader>w :w<CR>
 
-" Toggle Gundo (undo tree)
-nnoremap <leader>u :GundoToggle<CR>
+" Exit without writing file
+nnoremap <leader>x :q!<CR>
 
 " Strip whitespace on save
 let g:StripWhitespaceOnSave = 1
@@ -184,6 +187,7 @@ set spellcapcheck=
 function! s:goyo_enter()
 	silent !tmux set status off
 	colorscheme pencil
+	set background=dark
   set noshowmode
   set noshowcmd
   set scrolloff=999

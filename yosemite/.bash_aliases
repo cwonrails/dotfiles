@@ -1,22 +1,25 @@
 #!/usr/bin/env bash
 
 # Enable aliases to be sudo’ed
-alias sudo="sudo "
+alias sudo='sudo '
 
 # Clear screen (works in tmux)
-alias c="clear"
+alias c='clear'
 
 # Print history
-alias h="history"
+alias h='history'
 
 # Show jobs
-alias j="jobs"
+alias j='jobs'
 
-# Reload shell
-alias r=". ~/.bashrc"
+# Allow making nested directories
+alias mkdir='mkdir -p'
 
-# Open current directory in vim
-alias vd='vim `pwd`'
+# Quick neovim
+alias nv='nvim'
+
+# Reload bash
+alias r='. ~/.bashrc'
 
 # Exit shell
 alias x="exit"
@@ -55,6 +58,9 @@ alias ......="cd ../../../../../../"
 # Go back to previous directory
 alias b="cd - "
 
+# Go to bash scripts directory
+alias bs="cd ~/bashscripts"
+
 # Go to Downloads folder
 alias dl="cd ~/Downloads"
 
@@ -75,6 +81,9 @@ alias ghr="cd ~/github/repos"
 
 # Go to Home directory
 alias hd="cd ~/"
+
+# Go to IDEA Projects folder
+alias ip="cd ~/IdeaProjects"
 
 ## node ##
 # change node version with nvm

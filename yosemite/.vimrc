@@ -12,30 +12,31 @@ call plug#begin('~/.vim/bundle')
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
-Plug 'chase/vim-ansible-yaml', { 'for': 'ansible' }
+Plug 'chase/vim-ansible-yaml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-run-interactive', { 'on': 'RunInteractiveShell' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'fatih/vim-nginx', { 'for': 'nginx' }
+Plug 'fatih/vim-go'
+Plug 'fatih/vim-nginx'
 Plug 'godlygeek/tabular'
-Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'kballard/vim-swift', { 'for': 'swift'}
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-Plug 'leshill/vim-json', { 'for': 'json' }
+Plug 'kballard/vim-swift'
+Plug 'kchmck/vim-coffee-script'
+Plug 'leshill/vim-json'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'mattn/emmet-vim'
+Plug 'mattn/gist-vim'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx', { 'for': '.jsx' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/html5.vim'
@@ -45,17 +46,17 @@ Plug 'raimondi/delimitmate'
 Plug 'reedes/vim-colors-pencil'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 Plug 'rking/ag.vim'
-Plug 'rust-lang/rust.vim', { 'for': 'rust'}
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
-Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'sjl/gundo.vim'
+Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
 
@@ -140,17 +141,17 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " Run command in interactive shell
 nnoremap <leader>rs :RunInteractiveShell<space>
 
+" Save file
+nnoremap <leader>s :w<CR>
+
 " Toggle Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
-
-" Toggle Gundo (undo tree)
-nnoremap <leader>ut :GundoToggle<CR>
 
 " Write file and quit
 nnoremap <leader>q :wq<CR>
 
-" Write file
-nnoremap <leader>w :w<CR>
+" Toggle Gundo (undo tree)
+nnoremap <leader>u :GundoToggle<CR>
 
 " Exit without writing file
 nnoremap <leader>x :q!<CR>

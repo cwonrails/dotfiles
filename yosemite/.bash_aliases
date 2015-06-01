@@ -51,7 +51,6 @@ alias f="open ."
 alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 ## Git ##
-
 alias ga='git add '
 alias gaa='git add -A'
 alias gc='git commit'

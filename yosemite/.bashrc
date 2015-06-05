@@ -26,29 +26,29 @@ fi
 complete -C aws_completer aws
 
 # Use GNU coreutils
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 # Default to GNU coreutils man pages
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
 # Use GNU versions of grep, sed, awk etc.
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 
 # Default to GNU grep, sed, and awk manpages
-export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 
 # Use GNU findutils
-export PATH="/usr/local/Cellar/findutils/4.4.2/bin:$PATH"
+export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
 
 # Enable t completion (Twitter CLI client)
-. ~/t/etc/t-completion.sh
+source ~/t/etc/t-completion.sh
 
 # Enable z (intelligent directory autojumping)
-. "$(brew --prefix)/etc/profile.d/z.sh"
+source "$(brew --prefix)/etc/profile.d/z.sh"
 
 # Enable nvm
 export NVM_DIR=~/.nvm
-. "$(brew --prefix nvm)/nvm.sh"
+source "$(brew --prefix nvm)/nvm.sh"
 
 # Golang env variables
 export GOPATH=/Users/christopherwatson/go
@@ -70,9 +70,7 @@ eval "$( HALCYON_NO_SELF_UPDATE=1 "/app/halcyon/halcyon" paths )"
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
-# Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
+# Load extra dotfiles if available
 for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;

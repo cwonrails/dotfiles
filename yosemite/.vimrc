@@ -15,6 +15,7 @@ Plug 'bling/vim-airline'
 Plug 'chase/vim-ansible-yaml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-run-interactive', { 'on': 'RunInteractiveShell' }
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'ervandew/supertab'
@@ -36,27 +37,29 @@ Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mileszs/ack.vim'
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'pbrisbin/vim-mkdir'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'raimondi/delimitmate'
-Plug 'reedes/vim-colors-pencil'
+Plug 'reedes/vim-colors-pencil', { 'on': 'Goyo' }
+Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 Plug 'rking/ag.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
-Plug 'SirVer/ultisnips'
-Plug 'sjl/gundo.vim'
-Plug 'slim-template/vim-slim'
+Plug 'SirVer/ultisnips', { 'on': [] }
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe'
-Plug 'vim-ruby/vim-ruby'
+Plug 'Valloric/YouCompleteMe', { 'on': [] }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
 
@@ -110,6 +113,10 @@ set diffopt+=vertical
 " Enable Airline Powerline symbols
 let g:airline_powerline_fonts = 1
 
+" Start CtrlP with CtrlP
+let g:ctrp_map = '<c-p>'
+let g:ctrp_cmd = 'CtrlP'
+
 " Fix GitGutter column color
 highlight clear SignColumn
 
@@ -139,7 +146,7 @@ nnoremap <leader>mq :MarkedQuit<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Run command in interactive shell
-nnoremap <leader>rs :RunInteractiveShell<space>
+nnoremap <leader>ri :RunInteractiveShell<space>
 
 " Save file
 nnoremap <leader>s :w<CR>
@@ -175,8 +182,9 @@ let g:syntastic_html_tidy_exec = 'tidy5'
 let g:EditorConfig_exec_path='usr/local/bin/editorconfig'
 
 " Automatically recognize filetypes by extension
-autocmd BufRead,BufNewFile *.hbs set filetype=html.handlebars syntax=mustache
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
+autocmd BufRead,BufNewFile *.hbs set filetype=html.handlebars syntax=mustache
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " Enable spellchecking for Markdown
 autocmd fileType markdown setlocal spell
@@ -193,10 +201,10 @@ function! s:goyo_enter()
   set noshowcmd
   set scrolloff=999
   Limelight
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+  let b:quitting=0
+  let b:quitting_bang=0
+  autocmd QuitPre <buffer> let b:quitting=1
+  cabbrev <buffer> q! let b:quitting_bang=1 <bar> q!
 endfunction
 
 function! s:goyo_leave()
@@ -219,6 +227,13 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
+" Only load YouCompleteMe and UltiSnips upon first entering insert mode
+augroup load_us_ycm
+  autocmd!
+  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
+                     \| call youcompleteme#Enable() | autocmd! load_us_ycm
+augroup END
+
 "YouCompleteMe and UltiSnips conflict solution with SuperTab
 let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
@@ -232,12 +247,12 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " Have UltiSnips split window when editing or creating snippets
 let g:UltiSnipsEditSplit="vertical"
 
-" Disable YouCompleteMe for Markdown and text files
+" Disable YouCompleteMe for specific filetypes
 let g:ycm_filetype_blacklist = {
 			\ 'markdown' : 1,
+			\ 'tagbar' : 1,
 			\ 'text' : 1
 			\}
-
 " Ensure Vim mouse reporting compatibility with iTerm2
 if has('mouse_sgr')
 	set ttymouse=sgr
@@ -245,6 +260,9 @@ endif
 
 " Allow saving of files as sudo if not opened with sudo vim
 cmap w!! w !sudo tee > /dev/null %
+
+" Make vim use the default shell
+set shell=$SHELL
 
 " Core non-Plug Vim settings
 set autoindent

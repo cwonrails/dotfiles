@@ -32,17 +32,18 @@ alias ba="vim ~/.bash_aliases"
 alias bp="vim ~/.bash_profile"
 alias br="vim ~/.bashrc"
 alias ec="vim ~/.editorconfig"
+alias gr="vim ~/.gvimrc"
 alias tc="vim ~/.tmux.conf"
 alias vr="vim ~/.vimrc"
 
 # Back up OSX dotfiles to local directory
-alias dflb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc ~/localdotfilesbackup"
+alias dflb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc ~/localdotfilesbackup"
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc ~/Dropbox/dotfiles"
+alias dfdb="cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc ~/Dropbox/dotfiles"
 
 # Back up OSX dotfiles to Github repo
-alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .hushlogin .tmux.conf .vimrc ~/github/repos/dotfiles/yosemite && cd ~/github/repos/dotfiles/yosemite && git status"
+alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .tmux.conf .vimrc ~/github/repos/dotfiles/yosemite && cd ~/github/repos/dotfiles/yosemite && git status"
 
 # Open current directory in Finder
 alias f="open ."
@@ -97,8 +98,7 @@ alias hd="cd ~/"
 # Go to IDEA Projects directory
 alias ip="cd ~/IdeaProjects"
 
-## node ##
-# change node version with nvm
+## nvm ##
 alias ns='nvm use system'
 alias n10='nvm use 0.10'
 alias n12='nvm use 0.12'
@@ -123,6 +123,7 @@ alias ngu='npm-check -g -u'
 # Update outdated npm local modules (interactive)
 alias nlu='npm-check -u'
 
+## Writing ##
 # Start distraction-free writing in terminal Vim
 alias tw='vim +Goyo'
 
@@ -137,7 +138,7 @@ alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew
 alias bu="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
 # Update all Go packages
-alias ggu="go get -u all"
+alias gga="go get -u all"
 
 # Update and cleanup all Ruby gems
 alias gu="gem update; gem cleanup"

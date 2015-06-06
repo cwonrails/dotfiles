@@ -1,11 +1,3 @@
-#!usr/bin/env bash
-
-# Set command prompt options
-PS1="\n\u @\h [\d \@]\n\w "
-
-# Enable command prompt coloring
-export CLICOLOR=1
-
 # Set vim as default editor
 export EDITOR='vim'
 
@@ -57,6 +49,7 @@ export PATH=$GOPATH/bin:$PATH
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+export PATH="$HOME/bin:$PATH";
 
 # Enable thefuck: https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
@@ -66,9 +59,6 @@ eval "$( HALCYON_NO_SELF_UPDATE=1 "/app/halcyon/halcyon" paths )"
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
 
 # Load extra dotfiles if available
 for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do

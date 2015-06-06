@@ -36,6 +36,7 @@ Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
 Plug 'ntpeters/vim-better-whitespace'
@@ -48,7 +49,6 @@ Plug 'raimondi/delimitmate'
 Plug 'reedes/vim-colors-pencil', { 'on': 'Goyo' }
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
-Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
@@ -81,7 +81,6 @@ set t_Co=256
 syntax enable
 
 " Enable Solarized Dark
-set background=dark
 colorscheme solarized
 
 " Remap Escape key to jk
@@ -113,6 +112,12 @@ set diffopt+=vertical
 " Enable Airline Powerline symbols
 let g:airline_powerline_fonts = 1
 
+" Enable Airline Tab Line
+" let g:airline#extensions#tabline#enabled = 1
+
+" Enable Airline tmuxline extension
+" let g:airline#extensions#tmuxline#enabled = 1
+
 " Start CtrlP with CtrlP
 let g:ctrp_map = '<c-p>'
 let g:ctrp_cmd = 'CtrlP'
@@ -121,10 +126,10 @@ let g:ctrp_cmd = 'CtrlP'
 highlight clear SignColumn
 
 " Set background to dark
-nnoremap <leader>bd :set background=dark<CR>
+nnoremap <leader>db :set background=dark<CR>
 
 " Set background to light
-nnoremap <leader>bl :set background=light<CR>
+nnoremap <leader>lb :set background=light<CR>
 
 " Comment and uncomment lines
 nnoremap <leader>c :TComment<CR>
@@ -134,6 +139,9 @@ nnoremap <leader>dl :Dash<CR>
 
 " Toggle distraction-free writing
 nnoremap <leader>dfw :Goyo<CR>
+
+" Get current filetype
+nnoremap <leader>ft :set filetype?<CR>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>

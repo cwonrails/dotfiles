@@ -21,7 +21,6 @@ dropbox
 dropbox-cli
 expac
 firefox
-fish
 git
 git-extras
 go
@@ -62,6 +61,7 @@ spotify
 subversion
 thefuck
 the_silver_searcher
+tmux
 vagrant
 vim
 wget
@@ -74,4 +74,3 @@ xorg-server
 xorg-xinit
 xorg-xmodmap
 yajl
-zsh

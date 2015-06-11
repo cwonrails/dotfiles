@@ -1,6 +1,9 @@
 # Set vim as default editor
 export EDITOR='vim'
 
+# Enable iTerm2 shell integration
+source /Users/christopherwatson/.iterm2_shell_integration.bash
+
 # Enable vi mode in shell
 set -o vi
 

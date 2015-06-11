@@ -1,0 +1,16 @@
+aurvote
+broadcom-wl
+chromium-pepper-flash
+compton-git
+cower
+git-extras
+jdk
+jre
+mpd-git
+mpv-git
+ncmpcpp-git
+nvm
+powerline-fonts-git
+ranger-git
+speedtest-cli
+xf86-input-mtrack-git

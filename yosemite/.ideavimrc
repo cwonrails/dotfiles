@@ -1,0 +1,11 @@
+inoremap jk <Esc>
+vnoremap jk <Esc>
+
+" noremap <C-F> <C-D>
+" noremap <C-B> <C-U>
+"
+" nnoremap Y y$
+" nnoremap Q @q
+
+set incsearch hlsearch
+set ignorecase smartcase

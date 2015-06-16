@@ -21,6 +21,9 @@ alias r='. ~/.bashrc'
 # Quicker vim
 alias v='vim'
 
+# Open current directory in vim
+alias vd='vim `pwd`'
+
 # Exit shell
 alias x='exit'
 
@@ -136,7 +139,6 @@ alias mw='mvim +Goyo'
 # Start distraction-free writing in terminal Vim
 alias tw='vim +Goyo'
 
-
 ## Package Managers ##
 
 # Check deps for installed brews
@@ -152,13 +154,13 @@ alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew
 alias bu="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
 # Update all Go packages
-alias gu="go get -u all"
+alias gg="go get -u all"
+
+# Update and cleanup all Ruby gems
+alias gu="gem update; gem cleanup"
 
 # Upgrade all pip packages (source: https://stackoverflow.com/a/3452888)
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
-
-# Update and cleanup all Ruby gems
-alias ru="gem update; gem cleanup"
 
 # Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
 alias vu="vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall"

@@ -185,7 +185,7 @@ let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 
 " Use 'HTML Tidy for HTML5' executable instead of 'HTML Tidy'
-let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy5'
 
 " Supply path to editorconfig binary
 let g:EditorConfig_exec_path='usr/local/bin/editorconfig'

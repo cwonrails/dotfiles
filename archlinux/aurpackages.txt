@@ -1,4 +1,3 @@
-aura-bin
 aurvote
 awesome-git
 broadcom-wl
@@ -15,6 +14,7 @@ ncmpcpp-git
 nvm
 powerline-fonts-git
 ranger-git
+shellcheck
 speedtest-cli
 ttf-google-fonts-git
 xf86-input-mtrack

@@ -15,8 +15,13 @@ alias j='jobs'
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
+# Make directory and cd into it
+function mdcd() {
+	mkdir -p "$1" && cd "$1";
+}
+
 # Reload bash
-alias r='. ~/.bashrc'
+alias r='exec $SHELL -l'
 
 # Quicker vim
 alias v='vim'
@@ -68,9 +73,6 @@ alias b="cd - "
 # Go to bash scripts directory
 alias bs="cd ~/bashscripts"
 
-# Go to client work directory
-alias cw="cd ~/github/repos/clientwork"
-
 # Go to Downloads folder
 alias dl="cd ~/Downloads"
 
@@ -92,20 +94,12 @@ alias ghr="cd ~/github/repos"
 # Go to Home directory
 alias hd="cd ~/"
 
-## Git ##
-alias ga='git add a'
-alias gaa='git add -A'
-alias gc='git commit'
-alias gp='git push'
+
+## git ##
+alias g="git"
 
 # Alias hub to git
-eval "$(hub alias -s)"
-
-# Go to Webstorm projects directory
-alias storm="cd ~/WebstormProjects"
-
-# Go to IDEA Projects directory
-alias idea="cd ~/IdeaProjects"
+# eval "$(hub alias -s)"
 
 ## nvm ##
 alias ns='nvm use system'
@@ -136,31 +130,37 @@ alias nlu='npm-check -u'
 # Start distraction-free writing in MacVim
 alias mw='mvim +Goyo'
 
-# Start distraction-free writing in terminal Vim
+# Start distraction-free writing in terminal vim
 alias tw='vim +Goyo'
 
 ## Package Managers ##
 
+# List installed homebrew packages
+alias bl='brew list'
+
 # Check deps for installed brews
-alias bdep='brew uses --installed'
+alias brewdep='brew uses --installed'
 
 # Force cleanup homebrew cache
-alias bclean='brew cleanup -s --force'
+alias brewclean='brew cleanup -s --force'
+
+# Get ip address
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Update all (runs below operations and checks for outdated npm global modules)
 alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; gem update; gem cleanup; vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall; npm-check-updates -g"
 
-# Run all Homebrew operations
+# Run all homebrew operations
 alias bu="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
 # Update all Go packages
-alias gg="go get -u all"
-
-# Update and cleanup all Ruby gems
-alias gu="gem update; gem cleanup"
+alias gu="go get -u all"
 
 # Upgrade all pip packages (source: https://stackoverflow.com/a/3452888)
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+
+# Update and cleanup all Ruby gems
+alias ru="gem update; gem cleanup"
 
 # Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
 alias vu="vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall"

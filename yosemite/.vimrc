@@ -14,7 +14,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'chase/vim-ansible-yaml'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-run-interactive', { 'on': 'RunInteractiveShell' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/dockerfile.vim'
@@ -26,11 +25,10 @@ Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown'}
-Plug 'jaxbot/browserlink.vim'
+Plug 'jceb/vim-hier'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'kballard/vim-swift'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leshill/vim-json'
 Plug 'majutsushi/tagbar'
@@ -41,7 +39,6 @@ Plug 'mattn/webapi-vim'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'pbrisbin/vim-mkdir'
@@ -55,12 +52,12 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips', { 'on': [] }
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', { 'on': [] }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
 
@@ -116,9 +113,6 @@ let g:airline_powerline_fonts = 1
 " Enable Airline Tab Line
 " let g:airline#extensions#tabline#enabled = 1
 
-" Enable Airline tmuxline extension
-" let g:airline#extensions#tmuxline#enabled = 1
-
 " Start CtrlP with CtrlP
 let g:ctrp_map = '<c-p>'
 let g:ctrp_cmd = 'CtrlP'
@@ -154,9 +148,6 @@ nnoremap <leader>mq :MarkedQuit<CR>
 " Toggle NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-" Run command in interactive shell
-nnoremap <leader>ri :RunInteractiveShell<space>
-
 " Save file
 nnoremap <leader>s :w<CR>
 
@@ -173,22 +164,23 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>x :q!<CR>
 
 " Strip whitespace on save
-let g:StripWhitespaceOnSave = 1
+let g:StripWhitespaceOnSave=1
 
 " Check for syntax errors on open
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open=1
 
 " Assign syntax checkers to specific filetypes
 let g:syntastic_javascript_checkers=['jshint']
 
-" Stop html-tidy from finding false errors in Handlebars files
+" Use tidy-html5 instead of tidy
+let g:syntastic_html_tidy_exec='/usr/local/bin/tidy5'
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng -"]
+
+" Stop html-tidy from complaining about errors in handlebars files
 let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 
-" Use 'HTML Tidy for HTML5' executable instead of 'HTML Tidy'
-let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy5'
-
 " Supply path to editorconfig binary
-let g:EditorConfig_exec_path='usr/local/bin/editorconfig'
+let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 
 " Automatically recognize filetypes by extension
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
@@ -246,9 +238,7 @@ augroup END
 "YouCompleteMe and UltiSnips conflict solution with SuperTab
 let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
-
 let g:SuperTabDefaultCompletionType = '<C-n>'
-
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
@@ -262,6 +252,7 @@ let g:ycm_filetype_blacklist = {
 			\ 'tagbar' : 1,
 			\ 'text' : 1
 			\}
+
 " Ensure Vim mouse reporting compatibility with iTerm2
 if has('mouse_sgr')
 	set ttymouse=sgr

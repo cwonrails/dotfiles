@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 mkdir -p ~/AUR
 cd ~/AUR
 wget https://aur.archlinux.org/packages/br/broadcom-wl/broadcom-wl.tar.gz

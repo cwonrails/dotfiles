@@ -1,0 +1,2 @@
+broadcom-wl
+xf86-input-mtrack-git

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ## Core functions ##
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -34,7 +36,7 @@ alias .....="cd ../../../../../"
 alias ......="cd ../../../../../../"
 
 # Go to Home folder
-alias h="cd $HOME"
+alias h='cd $HOME'
 
 ## Node ##
 # List top-level npm global modules

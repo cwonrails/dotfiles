@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
+if [ -f ~/.bashrc ]; then
 . ~/.bashrc
-
-source /Users/christopherwatson/.iterm2_shell_integration.bash
+fi

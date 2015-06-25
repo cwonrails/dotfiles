@@ -6,6 +6,9 @@ alias sudo='sudo '
 # Clear terminal screen (works well in tmux)
 alias c='clear'
 
+# Open current directory in OSX Finder
+alias f='open .'
+
 # Print history
 alias h='history'
 
@@ -16,15 +19,12 @@ alias j='jobs'
 alias mkdir='mkdir -p'
 
 # Make directory and cd into it
-function mdcd() {
+function mkcd() {
 	mkdir -p "$1" && cd "$1";
 }
 
 # Reload bash
 alias r='exec $SHELL -l'
-
-# Quicker vim
-alias v='vim'
 
 # Open current directory in vim
 alias vd='vim `pwd`'
@@ -36,27 +36,19 @@ alias x='exit'
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
-alias cr='vim ~/.curlrc'
-alias ec='vim ~/.editorconfig'
-alias gr='vim ~/.gvimrc'
 alias ir='vim ~/.inputrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
-alias wr='vim ~/.wgetrc'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~/; cp ~/.agignore .aliases .bash_aliases .bashrc .bash_profile .bash_prompt .curlrc .extra .editorconfig .functions .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup'
+alias dflb='cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/localdotfilesbackup'
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~/; cp ~/.agignore .aliases .bash_aliases .bashrc .bash_profile .bash_prompt .curlrc .extra .editorconfig .functions .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc .wgetrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .npmrc .path .profile .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
 # Back up OSX dotfiles to Github repo
-alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .agignore .aliases .bash_aliases .bashrc .bash_profile .bash_prompt .curlrc .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .ideavimrc .npmrc .path .profile .tmux.conf .vimrc .wgetrc ~/github/repos/dotfiles/yosemite && cd ~/github/repos/dotfiles/yosemite && git status"
+alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/yosemite && cd ~/github/repos/dotfiles/yosemite && git status"
 
-# Toggle dark mode
-alias dm="dark-mode"
-
-# Force delete all trash on Mac
 alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 ## Navigation ##
@@ -94,19 +86,6 @@ alias ghr="cd ~/github/repos"
 # Go to Home directory
 alias hd="cd ~/"
 
-
-## git ##
-alias g="git"
-
-# Alias hub to git
-# eval "$(hub alias -s)"
-
-## nvm ##
-alias ns='nvm use system'
-alias n10='nvm use 0.10'
-alias n12='nvm use 0.12'
-alias nio='nvm use iojs'
-
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'
@@ -127,16 +106,10 @@ alias ngu='npm-check -g -u'
 alias nlu='npm-check -u'
 
 ## Writing ##
-# Start distraction-free writing in MacVim
-alias mw='mvim +Goyo'
-
 # Start distraction-free writing in terminal vim
-alias tw='vim +Goyo'
+alias df='vim +Goyo'
 
 ## Package Managers ##
-
-# List installed homebrew packages
-alias bl='brew list'
 
 # Check deps for installed brews
 alias brewdep='brew uses --installed'
@@ -147,20 +120,20 @@ alias brewclean='brew cleanup -s --force'
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-# Update all (runs below operations and checks for outdated npm global modules)
+# Update all (runs below minus Go packages + checks for outdated npm global modules)
 alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; gem update; gem cleanup; vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall; npm-check-updates -g"
 
 # Run all homebrew operations
 alias bu="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor"
 
+# Update and cleanup all Ruby gems
+alias gu="gem update; gem cleanup"
+
 # Update all Go packages
-alias gu="go get -u all"
+alias ggu="go get -u all"
 
 # Upgrade all pip packages (source: https://stackoverflow.com/a/3452888)
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
-
-# Update and cleanup all Ruby gems
-alias ru="gem update; gem cleanup"
 
 # Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
 alias vu="vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall"

@@ -40,6 +40,9 @@ alias ir='vim ~/.inputrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
+# Go to dotfiles folder
+alias dff='cd ~/github/repos/dotfiles'
+
 # Back up OSX dotfiles to local directory
 alias dflb='cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/localdotfilesbackup'
 
@@ -86,6 +89,12 @@ alias ghr="cd ~/github/repos"
 # Go to Home directory
 alias hd="cd ~/"
 
+## Git ##
+alias ga='git add '
+alias gaa='git add -A'
+alias gc='git commit'
+alias gp='git push'
+
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'
@@ -107,7 +116,7 @@ alias nlu='npm-check -u'
 
 ## Writing ##
 # Start distraction-free writing in terminal vim
-alias df='vim +Goyo'
+alias dfw='vim +Goyo'
 
 ## Package Managers ##
 

@@ -40,9 +40,6 @@ alias ir='vim ~/.inputrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
-# Go to dotfiles folder
-alias dff='cd ~/github/repos/dotfiles'
-
 # Back up OSX dotfiles to local directory
 alias dflb='cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra .editorconfig .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/localdotfilesbackup'
 
@@ -93,6 +90,7 @@ alias hd="cd ~/"
 alias ga='git add '
 alias gaa='git add -A'
 alias gc='git commit'
+alias ge='git add -A && git commit && git push'
 alias gp='git push'
 
 ## npm ##

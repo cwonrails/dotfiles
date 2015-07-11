@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Make pacaur point towards AUR4
+alias aur4='--domain=aur4.archlinux.org'
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 

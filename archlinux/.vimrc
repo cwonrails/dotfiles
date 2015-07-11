@@ -24,7 +24,7 @@ Plug 'godlygeek/tabular'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'kchmck/vim-coffee-script'
@@ -59,7 +59,7 @@ Plug 'vim-scripts/tComment'
 call plug#end()
 
 " Enable fzf
-set rtp+=~/.fzf
+" set rtp+=~/.fzf
 
 " Automatically reload .vimrc when saved
 augroup reload_vimrc

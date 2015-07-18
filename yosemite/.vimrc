@@ -52,10 +52,12 @@ Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips', { 'on': [] }
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'on': [] }
+Plug 'Valloric/YouCompleteMe', { 'on': [], 'do': './install.sh' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
@@ -79,6 +81,7 @@ syntax enable
 
 " Enable Solarized Dark
 colorscheme solarized
+set background=dark
 
 " Remap Escape key to jk
 imap jk <esc>
@@ -169,7 +172,7 @@ let g:StripWhitespaceOnSave=1
 let g:syntastic_check_on_open=1
 
 " Assign syntax checkers to specific filetypes
-let g:syntastic_javascript_checkers=['jshint']
+let g:syntastic_javascript_checkers=['jshint', 'eslint']
 
 " Use tidy-html5 instead of tidy
 let g:syntastic_html_tidy_exec='/usr/local/bin/tidy5'
@@ -185,6 +188,9 @@ let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
 autocmd BufRead,BufNewFile *.hbs set filetype=html.handlebars syntax=mustache
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" Allow stylesheets to autocomplete hyphenated words
+autocmd fileType css,scss,sass setlocal iskeyword+=-
 
 " Enable spellchecking for Markdown
 autocmd fileType markdown setlocal spell
@@ -269,6 +275,7 @@ set autoread
 set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
 set clipboard=unnamed
+" set colorcolumn=+1
 set complete-=i
 set directory=$HOME/.vim/swap
 set encoding=utf-8
@@ -283,6 +290,7 @@ set nofoldenable
 set noshowmode
 set nrformats-=octal
 set number
+" set numberwidth=5
 set relativenumber
 set ruler
 set shiftwidth=2
@@ -293,6 +301,7 @@ set smartcase
 set smartindent
 set smarttab
 set tabstop=2
+set textwidth=80
 set ttimeout
 set ttimeoutlen=100
 set ttyfast

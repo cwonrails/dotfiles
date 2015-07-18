@@ -4,14 +4,14 @@
 export EDITOR='vim'
 
 # Enable iTerm2 shell integration
-source /Users/christopherwatson/.iterm2_shell_integration.bash
+. /Users/christopherwatson/.iterm2_shell_integration.bash
 
 # Enable vi mode in shell
 set -o vi
 
 # Enable bash aliases if present
 if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
+		. ~/.bash_aliases
 fi
 
 # Enable Homebrew-installed bash completion
@@ -21,13 +21,15 @@ fi
 
 # Source additional bash completion settings
 if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-	source "$(brew --prefix)/share/bash-completion/bash_completion";
+	. "$(brew --prefix)/share/bash-completion/bash_completion";
 elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion;
+	. /etc/bash_completion;
 fi
 
 # Enable aws-cli bash completion
 complete -C aws_completer aws
+
+# export PATH="$HOME/.cabal/bin:$PATH"
 
 # Use GNU coreutils
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -45,14 +47,14 @@ export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
 
 # Enable t completion (Twitter CLI client)
-source ~/t/etc/t-completion.sh
+. ~/t/etc/t-completion.sh
 
 # Enable z (intelligent directory autojumping)
-source "$(brew --prefix)/etc/profile.d/z.sh"
+. "$(brew --prefix)/etc/profile.d/z.sh"
 
 # Enable nvm
 export NVM_DIR=~/.nvm
-source "$(brew --prefix nvm)/nvm.sh"
+. "$(brew --prefix nvm)/nvm.sh"
 
 # Golang env variables
 export GOPATH=$HOME/go
@@ -71,7 +73,7 @@ alias fuck='$(thefuck $(fc -ln -1))'
 
 # Load extra dotfiles if present
 for file in ~/.{bash_prompt,exports,aliases,extra}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+	[ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
 
@@ -102,5 +104,7 @@ alias ls='command ls --color'
 
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 
+# export PATH=/Users/christopherwatson/local/bin:/Users/christopherwatson/bin:/usr/local/sbin:/usr/local/bin:/Users/christopherwatson/go/bin:/usr/local/Cellar/findutils/4.4.2/bin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/Users/christopherwatson/bin:/usr/local/sbin:/usr/local/bin:/Users/christopherwatson/go/bin:/usr/local/Cellar/findutils/4.4.2/bin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/christopherwatson/.fzf/bin:/usr/local/bin
+
 # Enable fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash

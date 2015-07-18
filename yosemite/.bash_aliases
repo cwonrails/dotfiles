@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
+# Go to websites repo folder
+alias sites='cd ~/github/repos/websites'
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
 # Clear terminal screen (works well in tmux)
 alias c='clear'
 
-# Open current directory in OSX Finder
-alias f='open .'
+# Go to dotfiles folder
+alias dff='cd ~/github/repos/dotfiles'
 
 # Print history
 alias h='history'
@@ -23,8 +26,15 @@ function mkcd() {
 	mkdir -p "$1" && cd "$1";
 }
 
+# Open current directory in OSX Finder
+alias o='open .'
+
 # Reload bash
 alias r='exec $SHELL -l'
+
+# Go to Vagrant Boxes folder
+alias vb='cd ~/vagrantboxes'
+alias vbu='cd ~/vagrantboxes/ubuntu/trusty64/'
 
 # Open current directory in vim
 alias vd='vim `pwd`'
@@ -90,8 +100,13 @@ alias hd="cd ~/"
 alias ga='git add '
 alias gaa='git add -A'
 alias gc='git commit'
-alias ge='git add -A && git commit && git push'
 alias gp='git push'
+
+## nvm ##
+alias ns='nvm use system'
+alias n10='nvm use v0.10'
+alias n12='nvm use v0.12'
+alias nio='nvm use iojs'
 
 ## npm ##
 # List top-level npm global modules

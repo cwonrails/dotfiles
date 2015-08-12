@@ -1,16 +1,61 @@
 #!/usr/bin/env bash
 
-# Make pacaur point towards AUR4
-alias aur4='--domain=aur4.archlinux.org'
+## Package Management ##
+
+# Build package from AUR
+aurb() {
+    cd ~/ && git clone https://aur.archlinux.org/"$1" && cd "$1" && makepkg -sci
+}
+
+# Clone package from AUR
+aurd() {
+    cd ~/ && git clone https://aur.archlinux.org/"$1"
+}
+
+# Get AUR package information
+alias auri='pacaur -i'
+
+# Search AUR with pacaur
+alias aurs='pacaur -s'
+
+# Update AUR package in the current directory
+auru() {
+    git pull && rm -f ./*.pkg.tar.xz || true && makepkg -sci
+}
+
+# Make package
+alias mp='makepkg -sci'
+
+# Build package with pacman
+alias pb='sudo pacman -S --needed --noconfirm'
+
+# Get standard repo package info
+alias pi='sudo pacman -Qi'
+
+# Search standard packages
+alias ps='pacsearch'
+
+# Upgrade pacman packages
+alias pu='sudo pacman -Syu'
+
+# Upgrade all packages
+alias pua='pacaur -Syu'
+
+# Install packages from list
+installfromlist() {
+pacman -S --needed $(cat ($1).txt)
+}
+
+# Remove packages from list
+removefromlist () {
+pacman -Rs $(cat ($1).txt)
+}
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
 # Clear terminal screen (works well in tmux)
 alias c='clear'
-
-# Go to dotfiles repo folder
-alias dff='cd ~/github/repos/dotfiles/archlinux'
 
 # Print history
 alias h='history'
@@ -21,16 +66,8 @@ alias j='jobs'
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
-# Make directory and cd into it
-function mkcd() {
-	mkdir -p "$1" && cd "$1";
-}
-
 # Reload shell
 alias r='exec $SHELL -l'
-
-# Open current directory in vim
-alias vd='vim `pwd`'
 
 # Exit shell
 alias x='exit'
@@ -42,6 +79,11 @@ alias br='vim ~/.bashrc'
 alias ir='vim ~/.inputrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
+alias xr='vim ~/.xinitrc'
+
+# Back up arch dotfiles to Github repo
+alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/archlinux/ && cd ~/github/repos/archlinux/ && git status"
+
 
 ## Navigation ##
 # Go back from current directory
@@ -74,13 +116,6 @@ alias ghr="cd ~/github/repos"
 
 # Go to Home directory
 alias hd="cd ~/"
-
-## Git ##
-alias ga='git add '
-alias gaa='git add -A'
-alias gc='git commit'
-alias ge='git add -A && git commit && git push'
-alias gp='git push'
 
 ## npm ##
 # List top-level npm global modules

@@ -1,2 +1,0 @@
-
-sudo pacman -Qqe > installedpackages-pacman.txt

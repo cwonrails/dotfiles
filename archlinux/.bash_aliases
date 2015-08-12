@@ -81,9 +81,11 @@ alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 alias xr='vim ~/.xinitrc'
 
-# Back up arch dotfiles to Github repo
-alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/archlinux/ && cd ~/github/repos/archlinux/ && git status"
+# Go to dotfiles Github repo folder
+alias dff='cd ~/github/repos/dotfiles'
 
+# Back up arch dotfiles to Github repo
+alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/archlinux/ && cd ~/github/repos/dotfiles && git status"
 
 ## Navigation ##
 # Go back from current directory

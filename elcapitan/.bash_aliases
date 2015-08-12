@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
-# Go to websites repo folder
-alias sites='cd ~/github/repos/websites'
-
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-# Clear terminal screen (works well in tmux)
+# Clear terminal screen (works in tmux)
 alias c='clear'
 
-# Go to dotfiles folder
-alias dff='cd ~/github/repos/dotfiles'
+# Run checksums
+alias checksum='md5sum'
 
 # Print history
 alias h='history'
@@ -21,23 +18,20 @@ alias j='jobs'
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
-# Make directory and cd into it
-function mkcd() {
-	mkdir -p "$1" && cd "$1";
-}
-
 # Open current directory in OSX Finder
 alias o='open .'
 
 # Reload bash
 alias r='exec $SHELL -l'
 
+# List files and directories in folder by size
+alias size='find . -type f -printf "%s\t%p\n" | sort -n'
+
+# List hard drive space
+alias space='df -m'
+
 # Go to Vagrant Boxes folder
 alias vb='cd ~/vagrantboxes'
-alias vbu='cd ~/vagrantboxes/ubuntu/trusty64/'
-
-# Open current directory in vim
-alias vd='vim `pwd`'
 
 # Exit shell
 alias x='exit'
@@ -59,6 +53,7 @@ alias dfdb='cd ~/; cp ~/.bash_aliases .bashrc .bash_profile .bash_prompt .extra 
 # Back up OSX dotfiles to Github repo
 alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/elcapitan && cd ~/github/repos/dotfiles/elcapitan && git status"
 
+# Force empty all trashed files
 alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 ## Navigation ##
@@ -96,11 +91,8 @@ alias ghr="cd ~/github/repos"
 # Go to Home directory
 alias hd="cd ~/"
 
-## Git ##
-alias ga='git add '
-alias gaa='git add -A'
-alias gc='git commit'
-alias gp='git push'
+# Go to Music folder
+alias mf="cd ~/Music"
 
 ## nvm ##
 alias ns='nvm use system'
@@ -115,11 +107,11 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
-# List outdated npm global modules
-alias ngo='npm-check-updates -g'
-
 # List outdated npm local modules
-alias nlo='npm-check-updates'
+alias nlo='npm-check'
+
+# List outdated npm global modules
+alias ngo='npm-check -g'
 
 # Update outdated npm global modules (interactive)
 alias ngu='npm-check -g -u'
@@ -133,7 +125,7 @@ alias dfw='vim +Goyo'
 
 ## Package Managers ##
 
-# Check deps for installed brews
+# Check dependencies for installed brews
 alias brewdep='brew uses --installed'
 
 # Force cleanup homebrew cache
@@ -143,7 +135,7 @@ alias brewclean='brew cleanup -s --force'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Update all (runs below minus Go packages + checks for outdated npm global modules)
-alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; gem update; gem cleanup; vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall; npm-check-updates -g"
+alias ua="bu && gu && ggu && pu && vu"
 
 # Run all homebrew operations
 alias bu="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor"
@@ -157,5 +149,5 @@ alias ggu="go get -u all"
 # Upgrade all pip packages (source: https://stackoverflow.com/a/3452888)
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
-# Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
+# Upgrade vim-plug, update plugins, install new plugins, and automatically remove unused plugins
 alias vu="vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall"

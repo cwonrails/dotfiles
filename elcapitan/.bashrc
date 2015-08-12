@@ -46,6 +46,9 @@ export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 # Use GNU findutils
 export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
 
+# Enable perlbrew
+# source ~/perl5/perlbrew/etc/bashrc
+
 # Enable t completion (Twitter CLI client)
 . ~/t/etc/t-completion.sh
 
@@ -55,6 +58,12 @@ export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
 # Enable nvm
 export NVM_DIR=~/.nvm
 . "$(brew --prefix nvm)/nvm.sh"
+
+# Alias hub to git
+eval "$(hub alias -s)"
+
+# Use Homebrew PHP
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Golang env variables
 export GOPATH=$HOME/go

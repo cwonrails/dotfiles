@@ -46,12 +46,13 @@ Plug 'raimondi/delimitmate'
 Plug 'reedes/vim-colors-pencil', { 'on': 'Goyo' }
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips', { 'on': [] }
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'slim-template/vim-slim'
+Plug 'szw/vim-ctrlspace'
+Plug 'thoughtbot/pick.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -61,6 +62,7 @@ Plug 'Valloric/YouCompleteMe', { 'on': [], 'do': './install.sh' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -82,6 +84,10 @@ syntax enable
 " Enable Solarized Dark
 colorscheme solarized
 set background=dark
+
+" Use ag (The Silver Searcher)
+let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Remap Escape key to jk
 imap jk <esc>
@@ -114,6 +120,9 @@ let g:airline_powerline_fonts = 1
 
 " Enable Airline Tab Line
 " let g:airline#extensions#tabline#enabled = 1
+
+" Enable installed Go file engine for Vim-Ctrlspace
+let g:CtrlSpaceEngine = "file_engine_darwin_amd64"
 
 " Start CtrlP with CtrlP
 let g:ctrp_map = '<c-p>'
@@ -280,6 +289,7 @@ set complete-=i
 set directory=$HOME/.vim/swap
 set encoding=utf-8
 set fileformats+=unix,mac,dos
+set hidden
 set history=1000
 set hlsearch
 set ignorecase

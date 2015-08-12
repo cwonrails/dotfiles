@@ -30,6 +30,12 @@ export PATH=$GOPATH/bin:$PATH
 # Enable thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
 
+# Enable hub as git wrapper
+eval "$(hub alias -s)"
+
+# Make list of installed packages
+alias makelist='pacaur -Q'
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 

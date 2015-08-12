@@ -7,6 +7,9 @@ aurb() {
     cd ~/ && git clone https://aur.archlinux.org/"$1" && cd "$1" && makepkg -sci
 }
 
+# Check AUR updates
+alias aurc='cower -vdu'
+
 # Clone package from AUR
 aurd() {
     cd ~/ && git clone https://aur.archlinux.org/"$1"
@@ -23,23 +26,29 @@ auru() {
     git pull && rm -f ./*.pkg.tar.xz || true && makepkg -sci
 }
 
-# Make package
-alias mp='makepkg -sci'
+# Check for available updates from official repositories
+alias cu='checkupdates'
+
+# Build package
+alias pb='makepkg -sci'
 
 # Build package with pacman
-alias pb='sudo pacman -S --needed --noconfirm'
+alias pacb='sudo pacman -S --needed --noconfirm'
 
 # Get standard repo package info
-alias pi='sudo pacman -Qi'
+alias paci='sudo pacman -Si'
 
 # Search standard packages
-alias ps='pacsearch'
+alias pacs='pacsearch'
 
 # Upgrade pacman packages
-alias pu='sudo pacman -Syu'
+alias pacu='sudo pacman -Syu'
 
 # Upgrade all packages
-alias pua='pacaur -Syu'
+alias upgradeall='pacaur -Syu'
+
+# Make list of installed packages
+alias makelist='pacaur -Q'
 
 # Install packages from list
 installfromlist() {
@@ -85,7 +94,7 @@ alias xr='vim ~/.xinitrc'
 alias dff='cd ~/github/repos/dotfiles'
 
 # Back up arch dotfiles to Github repo
-alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/archlinux/ && cd ~/github/repos/dotfiles && git status"
+alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/archlinux/ && cd ~/github/repos/dotfiles/archlinux && git status"
 
 ## Navigation ##
 # Go back from current directory
@@ -119,6 +128,13 @@ alias ghr="cd ~/github/repos"
 # Go to Home directory
 alias hd="cd ~/"
 
+## node ##
+
+alias ns='nvm use system'
+alias n10='nvm use 10'
+alias n12='nvm use 12'
+alias nio='nvm use iojs'
+
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'
@@ -137,6 +153,7 @@ alias ngu='npm-check -g -u'
 
 # Update outdated npm local modules (interactive)
 alias nlu='npm-check -u'
+
 
 # Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
 alias vu="vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall"

@@ -1,5 +1,83 @@
 #!/usr/bin/env bash
 
+## Docker Machine ##
+
+# Print active machine
+alias dma='docker-machine active'
+
+# Create a new machine (assumes Virtualbox)
+dmcr() {
+	docker-machine create --driver virtualbox "$1"
+}
+
+# Get a machine's connection config
+dmconf(){
+	docker-machine config "$1"
+}
+
+# Get a machine's ip
+dmip() {
+	docker-machine ip "$1"
+}
+
+# Inspect a machine
+dminspect() {
+	docker-machine inspect "$1"
+}
+
+# Kill a machine
+dmkill() {
+	docker-machine kill "$1"
+}
+
+# List existing machines
+alias dml='docker-machine ls'
+
+# Regenerate certs for a machine
+dmrc() {
+	docker-machine regenerate-certs "$1"
+}
+
+# Remove an existing machine
+dmrm() {
+	docker-machine rm "$1"
+}
+
+# Restart a machine
+dmrs() {
+	docker-machine restart "$1"
+}
+
+# Run a command or ssh into a machine
+dmssh() {
+	docker-machine restart "$1"
+}
+
+# Get a machine's status
+dmstat() {
+	docker-machine status "$1"
+}
+
+# Start a machine
+dmstart() {
+	eval $(docker-machine env "$1")
+}
+
+# Stop a machine
+dmstop() {
+ docker-machine stop "$1"
+}
+
+# Upgrade a machine to most recent version of Docker
+dmupgrade() {
+	docker-machine upgrade "$1"
+}
+
+# Get a machine's URL
+dmurl() {
+ docker-machine url "$1"
+}
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
@@ -123,7 +201,7 @@ alias nlu='npm-check -u'
 # Start distraction-free writing in terminal vim
 alias dfw='vim +Goyo'
 
-## Package Managers ##
+## Package Management ##
 
 # Check dependencies for installed brews
 alias brewdep='brew uses --installed'
@@ -134,7 +212,7 @@ alias brewclean='brew cleanup -s --force'
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-# Update all (runs below minus Go packages + checks for outdated npm global modules)
+# Update all - runs all below and checks for outdated global npm modules
 alias ua="bu && gu && ggu && pu && vu"
 
 # Run all homebrew operations

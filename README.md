@@ -1,4 +1,4 @@
-Dotfiles for OSX Yosemite and Ubuntu 14.04 Server running [Ghost](https://github.com/tryghost/Ghost) on [DigitalOcean](https://www.digitalocean.com/) ([Arch Linux](https://wiki.archlinux.org/index.php/The_Arch_Way) coming soon!)
+Setup(s) for making things.
 
 License
 -------

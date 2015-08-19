@@ -2,7 +2,7 @@
 
 ## Docker Machine ##
 
-# Print active machine
+# Print currently active machine
 alias dma='docker-machine active'
 
 # Create a new machine (assumes Virtualbox)
@@ -31,7 +31,7 @@ dmkill() {
 }
 
 # List existing machines
-alias dml='docker-machine ls'
+alias dmls='docker-machine ls'
 
 # Regenerate certs for a machine
 dmrc() {
@@ -60,7 +60,7 @@ dmstat() {
 
 # Start a machine
 dmstart() {
-	eval $(docker-machine env "$1")
+ docker-machine start "$1"
 }
 
 # Stop a machine
@@ -76,6 +76,11 @@ dmupgrade() {
 # Get a machine's URL
 dmurl() {
  docker-machine url "$1"
+}
+
+# Use a machine
+dmenv() {
+	eval $(docker-machine env "$1")
 }
 
 # Enable aliases to be sudo’ed
@@ -213,7 +218,7 @@ alias brewclean='brew cleanup -s --force'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Update all - runs all below and checks for outdated global npm modules
-alias ua="bu && gu && ggu && pu && vu"
+alias ua="bu && gu && ggu; pu && vu"
 
 # Run all homebrew operations
 alias bu="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor"

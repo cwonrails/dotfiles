@@ -3,6 +3,10 @@
 # Set vim as default editor
 export EDITOR='vim'
 
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=$HOME/bin:$PATH
+
 # Enable iTerm2 shell integration
 . /Users/christopherwatson/.iterm2_shell_integration.bash
 
@@ -29,25 +33,29 @@ fi
 # Enable aws-cli bash completion
 complete -C aws_completer aws
 
-# export PATH="$HOME/.cabal/bin:$PATH"
-
-# Use GNU coreutils
+# Use GNU core utilities
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-
-# Default to GNU coreutils man pages
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
-
-# Use GNU versions of grep, sed, awk etc.
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-
-# Default to GNU grep, sed, and awk manpages
-export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
+export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
 
 # Use GNU findutils
-export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
+export PATH=/usr/local/opt/findutils/bin:$PATH
+export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
 
-# Enable perlbrew
-# source ~/perl5/perlbrew/etc/bashrc
+# Use GNU grep
+export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
+
+# Use GNU sed
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
+
+# Use Gnu which
+export PATH=/usr/local/opt/gnu-which/bin/which:$PATH
+export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
+
+# Use GNU tar
+export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable t completion (Twitter CLI client)
 . ~/t/etc/t-completion.sh
@@ -68,11 +76,7 @@ export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 # Golang env variables
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$GOPATH/bin:$PATH
-
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=$HOME/bin:$PATH
+export PATH=/usr/local/opt/go/libexec/bin:$PATH
 
 # Enable thefuck
 alias fuck='$(thefuck $(fc -ln -1))'

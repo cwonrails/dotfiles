@@ -5,7 +5,7 @@ colorscheme solarized
 " Use 13-point patched Monaco font
 set guifont=Monaco\ for\ Powerline:h13
 
-" Disable all cursor blinking
+" Disable cursor blinking
 set guicursor+=a:blinkon0
 
 " Disable right-side scrollbar

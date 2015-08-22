@@ -8,7 +8,7 @@ alias gvu='cd ~/vagrantboxes/ghost-vagrant/upstream'
 ## Docker Machine ##
 
 # Print currently active machine
-alias dma='docker-machine active'
+alias dmactive='docker-machine active'
 
 # Create a new machine (assumes Virtualbox)
 dmcreate() {
@@ -55,7 +55,7 @@ dmrs() {
 
 # Run a command or ssh into a machine
 dmssh() {
-	docker-machine restart "$1"
+	docker-machine ssh "$1"
 }
 
 # Get a machine's status
@@ -83,7 +83,7 @@ dmurl() {
  docker-machine url "$1"
 }
 
-# Use a machine (two functions due to docker-machine prompt)
+# Use a machine (two shortcuts; former matches docker-machine prompt.)
 dmenv() {
 	eval $(docker-machine env "$1")
 }

@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
+## Ghost-Vagrant ##
+
+alias gvf='cd ~/vagrantboxes/ghost-vagrant/fork/Ghost-Vagrant'
+alias gvu='cd ~/vagrantboxes/ghost-vagrant/upstream'
+
 ## Docker Machine ##
 
 # Print currently active machine
 alias dma='docker-machine active'
 
 # Create a new machine (assumes Virtualbox)
-dmcr() {
+dmcreate() {
 	docker-machine create --driver virtualbox "$1"
 }
 
@@ -78,8 +83,12 @@ dmurl() {
  docker-machine url "$1"
 }
 
-# Use a machine
+# Use a machine (two functions due to docker-machine prompt)
 dmenv() {
+	eval $(docker-machine env "$1")
+}
+
+dmuse() {
 	eval $(docker-machine env "$1")
 }
 

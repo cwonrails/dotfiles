@@ -9,6 +9,13 @@ export PATH=$HOME/bin:$PATH
 
 # Enable iTerm2 shell integration
 . /Users/christopherwatson/.iterm2_shell_integration.bash
+# test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+
+# Enable perlbrew
+. ~/perl5/perlbrew/etc/bashrc
+
+# Load perlbrew perl by default
+perlbrew use default >> /dev/null 2>&1
 
 # Enable vi mode in shell
 set -o vi

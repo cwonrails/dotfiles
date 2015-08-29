@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+## Test Ghost pull requests
+alias tpr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
+
 ## Ghost-Vagrant ##
 
 alias gvf='cd ~/vagrantboxes/ghost-vagrant/fork/Ghost-Vagrant'
@@ -8,7 +11,7 @@ alias gvu='cd ~/vagrantboxes/ghost-vagrant/upstream'
 ## Docker Machine ##
 
 # Print currently active machine
-alias dmactive='docker-machine active'
+alias dma='docker-machine active'
 
 # Create a new machine (assumes Virtualbox)
 dmcreate() {
@@ -200,16 +203,10 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 # List outdated npm local modules
-alias nlo='npm-check'
+alias nlo='npm-check -u'
 
 # List outdated npm global modules
-alias ngo='npm-check -g'
-
-# Update outdated npm global modules (interactive)
-alias ngu='npm-check -g -u'
-
-# Update outdated npm local modules (interactive)
-alias nlu='npm-check -u'
+alias ngo='npm-check -u -g'
 
 ## Writing ##
 # Start distraction-free writing in terminal vim

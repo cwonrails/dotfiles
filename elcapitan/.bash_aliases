@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Quicker vim
+alias v='vim'
+
 ## Test Ghost pull requests
 alias tpr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
 
@@ -106,6 +109,9 @@ alias checksum='md5sum'
 
 # Print history
 alias h='history'
+
+# Get ip address
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Show jobs
 alias j='jobs'
@@ -219,9 +225,6 @@ alias brewdep='brew uses --installed'
 
 # Force cleanup homebrew cache
 alias brewclean='brew cleanup -s --force'
-
-# Get ip address
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Update all - runs all below and checks for outdated global npm modules
 alias ua="bu && gu && ggu; pu && vu"

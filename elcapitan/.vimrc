@@ -32,7 +32,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'leshill/vim-json'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mileszs/ack.vim'
@@ -51,9 +51,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-Plug 'slim-template/vim-slim'
-Plug 'szw/vim-ctrlspace'
-Plug 'thoughtbot/pick.vim'
+" Plug 'slim-template/vim-slim'
+" Plug 'szw/vim-ctrlspace'
+" Plug 'thoughtbot/pick.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -63,8 +63,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'Wutzara/vim-materialtheme'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 

@@ -25,7 +25,6 @@ Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown'}
-Plug 'jscappini/material.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -38,6 +37,7 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -64,6 +64,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Wutzara/vim-materialtheme'
 
 call plug#end()
 
@@ -81,10 +82,6 @@ set t_Co=256
 
 " Enable syntax highlighting
 syntax enable
-
-" Enable Solarized Dark
-" colorscheme material
-" set background=dark
 
 " Use ag (The Silver Searcher)
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -131,6 +128,10 @@ let g:ctrp_cmd = 'CtrlP'
 
 " Fix GitGutter column color
 highlight clear SignColumn
+
+" Enable Material Theme
+set background=dark
+colorscheme PaperColor
 
 " Set background to dark
 nnoremap <leader>db :set background=dark<CR>

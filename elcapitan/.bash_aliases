@@ -3,8 +3,9 @@
 # Quicker vim
 alias v='vim'
 
-## Test Ghost pull requests
-alias tpr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
+# Git diff and merge with Kaleidoscope
+alias gm='git mergetool'
+alias gt='git difftool'
 
 ## Ghost-Vagrant ##
 
@@ -22,7 +23,7 @@ dmcreate() {
 }
 
 # Get a machine's connection config
-dmconf(){
+dmconf() {
 	docker-machine config "$1"
 }
 

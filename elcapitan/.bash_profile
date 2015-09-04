@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
+# this file is sourced by login shells only
 
-if [ -f ~/.bashrc ]; then
-. ~/.bashrc
-fi
-
-test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+# source everything else
+[[ -e ~/.bashrc ]] && source ~/.bashrc

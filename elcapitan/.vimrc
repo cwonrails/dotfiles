@@ -10,7 +10,7 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'chase/vim-ansible-yaml'
 Plug 'christoomey/vim-tmux-navigator'
@@ -25,6 +25,7 @@ Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown'}
+Plug 'jscappini/material.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/limelight.vim'
@@ -82,8 +83,8 @@ set t_Co=256
 syntax enable
 
 " Enable Solarized Dark
-colorscheme solarized
-set background=dark
+" colorscheme material
+" set background=dark
 
 " Use ag (The Silver Searcher)
 let g:ackprg = 'ag --nogroup --nocolor --column'

@@ -1,5 +1,31 @@
 #!usr/bin/env bash
 
+## Override OSX BSD versions of core Unix tools ##
+
+# Use GNU core utilities
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
+
+# Use GNU findutils
+export PATH=/usr/local/opt/findutils/bin:$PATH
+export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
+
+# Use GNU grep
+export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
+
+# Use GNU sed
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
+
+# Use Gnu which
+export PATH=/usr/local/opt/gnu-which/bin/which:$PATH
+export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
+
+# Use GNU tar
+export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
+
 ## Core settings ##
 
 # Enable iTerm2 shell integration
@@ -8,7 +34,6 @@
 
 # Make vim default editor
 export EDITOR='vim'
-export VISUAL='vim'
 
 # Enable vi mode in shell
 set -o vi
@@ -55,31 +80,6 @@ eval "$(hub alias -s)"
 # Enable t completion (Twitter CLI client)
 . ~/t/etc/t-completion.sh
 
-## Override OSX BSD versions of core Unix tools ##
-
-# Use GNU core utilities
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
-
-# Use GNU findutils
-export PATH=/usr/local/opt/findutils/bin:$PATH
-export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
-
-# Use GNU grep
-export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
-
-# Use GNU sed
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
-
-# Use Gnu which
-export PATH=/usr/local/opt/gnu-which/bin/which:$PATH
-export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
-
-# Use GNU tar
-export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 ## Language version managers, environments and alternate installs ##
 
@@ -96,13 +96,13 @@ export NVM_DIR=~/.nvm
 
 # Perl #
 # Enable perlbrew
-. ~/perl5/perlbrew/etc/bashrc
+# . ~/perl5/perlbrew/etc/bashrc
 # Load perlbrew-built perl by default (quiet output on session start)
-perlbrew use default >> /dev/null 2>&1
+# perlbrew use default >> /dev/null 2>&1
 
 # PHP #
 # Use Homebrew PHP
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+export PATH=/usr/local/opt/php56/bin:$PATH
 
 ## Additional ClI executables ##
 

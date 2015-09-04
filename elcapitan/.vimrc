@@ -27,36 +27,36 @@ Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown'}
 Plug 'jscappini/material.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-" Plug 'junegunn/goyo.vim'
-" Plug 'junegunn/limelight.vim'
-" Plug 'kchmck/vim-coffee-script'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'kchmck/vim-coffee-script'
 Plug 'leshill/vim-json'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-" Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-" Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'pbrisbin/vim-mkdir'
+Plug 'pbrisbin/vim-mkdir'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'raimondi/delimitmate'
-" Plug 'reedes/vim-colors-pencil', { 'on': 'Goyo' }
+Plug 'reedes/vim-colors-pencil', { 'on': 'Goyo' }
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-" Plug 'slim-template/vim-slim'
-" Plug 'szw/vim-ctrlspace'
-" Plug 'thoughtbot/pick.vim'
+Plug 'slim-template/vim-slim'
+Plug 'szw/vim-ctrlspace'
+Plug 'thoughtbot/pick.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'

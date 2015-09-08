@@ -10,7 +10,8 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'airblade/vim-gitgutter'
-" Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
+Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
 Plug 'chase/vim-ansible-yaml'
 Plug 'christoomey/vim-tmux-navigator'
@@ -26,34 +27,28 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leshill/vim-json'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-" Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'raimondi/delimitmate'
-Plug 'reedes/vim-colors-pencil', { 'on': 'Goyo' }
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-" Plug 'slim-template/vim-slim'
-" Plug 'szw/vim-ctrlspace'
-" Plug 'thoughtbot/pick.vim'
+Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -63,7 +58,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'wellle/tmux-complete.vim'
 
 call plug#end()
 
@@ -73,8 +68,6 @@ set rtp+=~/.fzf
 " Automatically reload .vimrc when saved
 augroup reload_vimrc
 	autocmd!
-	autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END
 
 " Enable 256 colors in terminal
 set t_Co=256
@@ -115,12 +108,6 @@ set diffopt+=vertical
 " Enable Airline Powerline symbols
 let g:airline_powerline_fonts = 1
 
-" Enable Airline Tab Line
-" let g:airline#extensions#tabline#enabled = 1
-
-" Enable installed Go file engine for Vim-Ctrlspace
-let g:CtrlSpaceEngine = "file_engine_darwin_amd64"
-
 " Start CtrlP with CtrlP
 let g:ctrp_map = '<c-p>'
 let g:ctrp_cmd = 'CtrlP'
@@ -128,9 +115,9 @@ let g:ctrp_cmd = 'CtrlP'
 " Fix GitGutter column color
 highlight clear SignColumn
 
-" Enable Material Theme
+" Enable Solarized Dark
 set background=dark
-colorscheme PaperColor
+colorscheme solarized
 
 " Set background to dark
 nnoremap <leader>db :set background=dark<CR>
@@ -207,41 +194,6 @@ autocmd fileType markdown setlocal spell
 
 " Disable highlighting of non-capitalized terms
 set spellcapcheck=
-
-" Distraction-free writing environment
-function! s:goyo_enter()
-	silent !tmux set status off
-	colorscheme pencil
-	set background=dark
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  Limelight
-  let b:quitting=0
-  let b:quitting_bang=0
-  autocmd QuitPre <buffer> let b:quitting=1
-  cabbrev <buffer> q! let b:quitting_bang=1 <bar> q!
-endfunction
-
-function! s:goyo_leave()
-	silent !tmux set status on
-  colorscheme solarized
-  set showmode
-  set showcmd
-  set scrolloff=5
-  Limelight!
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 "YouCompleteMe and UltiSnips conflict solution with SuperTab
 let g:ycm_key_list_select_completion=['<C-n>', '<Down>']

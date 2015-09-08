@@ -3,6 +3,9 @@
 # Quicker vim
 alias v='vim'
 
+# Quicker neovim
+alias nv='nvim'
+
 # Git diff and merge with Kaleidoscope
 alias gm='git mergetool'
 alias gt='git difftool'

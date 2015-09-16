@@ -80,7 +80,6 @@ eval "$(hub alias -s)"
 # Enable t completion (Twitter CLI client)
 . ~/t/etc/t-completion.sh
 
-
 ## Language version managers, environments and alternate installs ##
 
 # Go #
@@ -93,12 +92,6 @@ export PATH=/usr/local/opt/go/libexec/bin:$PATH
 # Enable nvm
 export NVM_DIR=~/.nvm
 . "$(brew --prefix nvm)/nvm.sh"
-
-# Perl #
-# Enable perlbrew
-# . ~/perl5/perlbrew/etc/bashrc
-# Load perlbrew-built perl by default (quiet output on session start)
-# perlbrew use default >> /dev/null 2>&1
 
 # PHP #
 # Use Homebrew PHP

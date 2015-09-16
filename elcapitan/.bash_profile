@@ -1,4 +1,3 @@
-# this file is sourced by login shells only
+#!usr/bin/env bash
 
-# source everything else
-[[ -e ~/.bashrc ]] && source ~/.bashrc
+. ~/.bashrc

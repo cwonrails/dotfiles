@@ -20,7 +20,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
 " Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
-" Plug 'fatih/vim-nginx'
+Plug 'fatih/vim-nginx'
 Plug 'Glench/Vim-Jinja2-Syntax'
 " Plug 'godlygeek/tabular'
 Plug 'groenewege/vim-less'
@@ -31,7 +31,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'kchmck/vim-coffee-script'
 " Plug 'leshill/vim-json'
 " Plug 'majutsushi/tagbar'
-" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 " Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -318,7 +318,7 @@ set nrformats-=octal
 set number
 
 " set numberwidth=5
-" set relativenumber
+set relativenumber
 "
 set ruler
 set shiftwidth=2

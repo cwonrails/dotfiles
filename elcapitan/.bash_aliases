@@ -226,7 +226,7 @@ alias dfw='vim +Goyo'
 ## Package Management ##
 
 # Update all - runs all below and checks for outdated global npm modules
-alias ua="brew update && brew upgrade --all && brew cleanup && brew cask cleanup && brew prune && brew doctor && gem update && gem cleanup && go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && npm -g outdated"
+alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; gem cleanup; go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && npm -g outdated"
 
 # Check dependencies for installed brews
 alias brewdep='brew uses --installed'

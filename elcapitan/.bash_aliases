@@ -111,6 +111,9 @@ alias c='clear'
 # Run checksums
 alias checksum='md5sum'
 
+# Get file size
+alias fs='ls -sh'
+
 # Print history
 alias h='history'
 
@@ -201,7 +204,7 @@ alias mf="cd ~/Music"
 
 ## nvm ##
 alias ns='nvm use system'
-alias n4='nvm use v4.0.0'
+alias n4='nvm use v4.1.0'
 alias n10='nvm use v0.10'
 alias n12='nvm use v0.12'
 alias nio='nvm use iojs'

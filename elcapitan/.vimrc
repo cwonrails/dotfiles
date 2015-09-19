@@ -11,14 +11,14 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-" Plug 'benmills/vimux'
+Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
 Plug 'chase/vim-ansible-yaml'
-" Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
-" Plug 'ervandew/supertab'
+Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-nginx'
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -28,9 +28,9 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
-" Plug 'leshill/vim-json'
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 " Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
@@ -40,7 +40,7 @@ Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'pbrisbin/vim-mkdir'
+Plug 'pbrisbin/vim-mkdir'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'raimondi/delimitmate'
 Plug 'rhysd/committia.vim'
@@ -49,17 +49,15 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-" Plug 'tmux-plugins/vim-tmux'
-" Plug 'tpope/vim-endwise'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-rails'
-" Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-surround'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
-" Plug 'vim-scripts/preservenoeol'
+Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/tComment'
-" Plug 'wellle/tmux-complete.vim'
+Plug 'wellle/tmux-complete.vim'
 
 call plug#end()
 
@@ -135,6 +133,8 @@ nnoremap <leader>dl :Dash<CR>
 " Toggle distraction-free writing
 nnoremap <leader>dfw :Goyo<CR>
 
+" Open all folds
+
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
@@ -185,7 +185,6 @@ let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 
 " Automatically recognize filetypes by extension
 
-autocmd BufRead,BufNewFile Dockerfile* set filetype=dockerfile
 autocmd BufRead,BufNewFile *.hbs set filetype=html.handlebars syntax=mustache
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.styl set filetype=stylus

@@ -30,10 +30,14 @@ export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
 . /Users/christopherwatson/.iterm2_shell_integration.bash
-# test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+test -e "${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash"
 
 # Make vim default editor
-export EDITOR='vim'
+export VISUAL=vim
+export EDITOR=vim
+
+# Use English UTF-8 as default
+export LANG=en_US.UTF-8
 
 # Enable vi mode in shell
 set -o vi
@@ -47,14 +51,16 @@ export PATH=$HOME/bin:$PATH
 
 # Enable bash aliases if present
 if [ -f ~/.bash_aliases ]; then
-		. ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
 # Load extra dotfiles if present
-for file in ~/.{bash_prompt,exports,aliases,extra,path}; do
+for file in ~/.{aliases,bash_prompt,exports,extra,functions,path}; do
 	[ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
+
+export COPYFILE_DISABLE=true
 
 # Enable Homebrew-installed bash completion
 if [ -f "$(brew --prefix)"/etc/bash_completion ]; then
@@ -101,6 +107,7 @@ export PATH=/usr/local/opt/php56/bin:$PATH
 
 # Enable fzf
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--extended'
 
 # Enable thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
@@ -119,6 +126,9 @@ shopt -s histappend;
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
+# Check the window size after each command ($LINES, $COLUMNS)
+shopt -s checkwinsize
+
 ## Terminal colors ##
 
 # List all - Long list of all files in colorized format
@@ -131,3 +141,8 @@ alias lh="ls -d .*"
 alias ls='command ls --color'
 
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+
+# Environment variables
+# --------------------------------------------------------------------
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:/usr/local/lib

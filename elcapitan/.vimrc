@@ -14,12 +14,10 @@ Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-nginx'
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
@@ -35,13 +33,13 @@ Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-" Plug 'mbbill/undotree', { 'on': 'UndotreeToggle'   }
 Plug 'mhinz/vim-signify'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'pearofducks/ansible-vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
@@ -52,6 +50,7 @@ Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
@@ -159,9 +158,6 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng -"]
 " Stop html-tidy from complaining about errors in handlebars files
 let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
 " Supply path to editorconfig binary
 let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 
@@ -178,12 +174,6 @@ autocmd fileType markdown setlocal spell
 
 " Disable highlighting of non-capitalized terms
 set spellcapcheck=
-
-" Get off my lawn (via Thoughtbot)
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab
@@ -221,6 +211,12 @@ function! s:super_duper_tab(k, o)
 endfunction
 
 if has_key(g:plugs, 'ultisnips')
+  " UltiSnips will be loaded only when tab is first pressed in insert mode
+  if !exists(':UltiSnipsEdit')
+    inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
+    imap <tab> <Plug>(tab)
+  endif
+
   let g:SuperTabMappingForward  = "<tab>"
   let g:SuperTabMappingBackward = "<s-tab>"
   function! SuperTab(m)
@@ -1009,26 +1005,12 @@ nnoremap <Leader>gd :Gdiff<CR>
 " ack.vim
 " ----------------------------------------------------------------------------
 
-" This is Junegunn's version "
-" if executable('ag')
-"   let &grepprg = 'ag --nogroup --nocolor --column'
-" else
-"   let &grepprg = 'grep -rn $* *'
-" endif
-" command! -nargs=1 -bar Grep execute 'silent! grep! <q-args>' | redraw! | copen
-
-" This is Thoughtbot's version "
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  let &grepprg = 'ag --nogroup --nocolor --column'
+else
+  let &grepprg = 'grep -rn $* *'
 endif
+command! -nargs=1 -bar Grep execute 'silent! grep! <q-args>' | redraw! | copen
 
 " ----------------------------------------------------------------------------
 " vim-after-object

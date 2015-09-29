@@ -88,11 +88,20 @@ eval "$(docker-machine env "$1")"
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# Clean up homebrew cached downloads
+alias brewclean='brew cleanup -s --force'
+
+# Fix homebrew permissions due to SIP
+alias brewfix='sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local'
+
 # Clear terminal screen (works in tmux)
 alias c='clear'
 
 # Run checksums
 alias checksum='md5sum'
+
+# Correct incorrectly typed commands
+alias f='fuck'
 
 # Get file size
 alias fs='ls -sh'
@@ -119,7 +128,7 @@ alias r='exec $SHELL -l'
 alias size='find . -type f -printf "%s\t%p\n" | sort -n'
 
 # List hard drive space
-alias space='df -m'
+alias ds='df -m'
 
 # Go to Vagrant Boxes folder
 alias vb='cd ~/vagrantboxes'
@@ -173,9 +182,6 @@ alias doc='cd ~/Documents'
 
 # Go to Downloads folder
 alias dl='cd ~/Downloads'
-
-# Go to GitHub folder
-alias gh='cd ~/github'
 
 # Go to GitHub clones folder
 alias ghc='cd ~/github/clones'

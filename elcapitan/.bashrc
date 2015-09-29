@@ -1,32 +1,25 @@
 #!usr/bin/env bash
 
-## Override OSX BSD versions of core Unix tools ##
+# Additional $PATH entries
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=$HOME/bin:$PATH
 
-# Use GNU core utilities
+
+# Use GNU versions of core Unix tools
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
-
-# Use GNU findutils
 export PATH=/usr/local/opt/findutils/bin:$PATH
+export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
 export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
-
-# Use GNU grep
 export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
-
-# Use GNU sed
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
-
-# Use Gnu which
 export PATH=/usr/local/opt/gnu-which/bin/which:$PATH
 export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
-
-# Use GNU tar
 export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
-
-## Core settings ##
 
 # Enable iTerm2 shell integration
 . /Users/christopherwatson/.iterm2_shell_integration.bash
@@ -36,16 +29,11 @@ test -e "${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_
 export VISUAL=vim
 export EDITOR=vim
 
-# Use English UTF-8 as default
-export LANG=en_US.UTF-8
-
 # Enable vi mode in shell
 set -o vi
 
-# Additional $PATH entries
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=$HOME/bin:$PATH
+# Use English UTF-8 as default
+export LANG=en_US.UTF-8
 
 ## Completions ##
 
@@ -145,4 +133,4 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 # Environment variables
 # --------------------------------------------------------------------
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:/usr/local/lib
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:/usr/local/lib

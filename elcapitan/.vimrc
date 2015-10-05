@@ -1,4 +1,6 @@
-set nocompatible
+if &compatible
+	set nocompatible
+end
 
 " Install vim-plug if missing
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -8,15 +10,16 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
+
 Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
-Plug 'fatih/vim-nginx'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
@@ -33,6 +36,7 @@ Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
+Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -45,20 +49,19 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+Plug 'sukima/xmledit',
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
-Plug 'vim-scripts/ReplaceWithRegister'
+" Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/tComment'
 Plug 'wellle/tmux-complete.vim'
-Plug 'whatyouhide/vim-gotham'
-
 call plug#end()
 
 " Enable fzf
@@ -251,6 +254,9 @@ endif
 
 " Keep the cursor on the same column
 set nostartofline
+
+" Have vim-gtfo use iTerm on Mac
+" let g:gtfo#terminals = { 'mac' : 'iterm' }
 
 " }}}
 " ============================================================================

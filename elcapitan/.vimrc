@@ -152,7 +152,7 @@ let g:StripWhitespaceOnSave=1
 let g:syntastic_check_on_open=1
 
 " Assign syntax checkers to specific filetypes
-let g:syntastic_javascript_checkers=['jshint', 'eslint']
+let g:syntastic_javascript_checkers=['eslint', 'jshint']
 
 " Use tidy-html5 instead of tidy
 let g:syntastic_javascript_checkers=['tidy']

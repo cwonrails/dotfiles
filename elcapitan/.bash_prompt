@@ -60,7 +60,7 @@ if tput setaf 1 &> /dev/null; then
 	tput sgr0; # reset colors
 	bold=$(tput bold);
 	reset=$(tput sgr0);
-	# Solarized colors, taken from http://git.io/solarized-colors.
+  # Solarized colors (https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized#the-values)
 	black=$(tput setaf 0);
 	blue=$(tput setaf 33);
 	cyan=$(tput setaf 37);

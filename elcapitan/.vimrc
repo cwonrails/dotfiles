@@ -1,5 +1,5 @@
 if &compatible
-	set nocompatible
+  set nocompatible
 end
 
 " Install vim-plug if missing
@@ -11,14 +11,17 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
+Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
@@ -28,6 +31,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-gtfo'
 Plug 'kchmck/vim-coffee-script'
+Plug 'klen/python-mode'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
@@ -35,33 +39,43 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mileszs/ack.vim'
-Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'pearofducks/ansible-vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'pearofducks/ansible-vim'
+Plug 'plasticboy/vim-markdown'
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 Plug 'rstacruz/vim-hyperstyle'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
+Plug 'slim-template/vim-slim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-Plug 'sukima/xmledit',
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-rails'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/preservenoeol'
-" Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/tComment'
 Plug 'wellle/tmux-complete.vim'
+Plug 'ynkdir/vim-vimlparser'
+
 call plug#end()
 
 " Enable fzf
@@ -152,10 +166,9 @@ let g:StripWhitespaceOnSave=1
 let g:syntastic_check_on_open=1
 
 " Assign syntax checkers to specific filetypes
-let g:syntastic_javascript_checkers=['eslint', 'jshint']
+let g:syntastic_javascript_checkers=['jshint', 'eslint', 'gjslint']
 
 " Use tidy-html5 instead of tidy
-let g:syntastic_javascript_checkers=['tidy']
 let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng -"]
 
@@ -166,9 +179,9 @@ let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 
 " Automatically recognize filetypes by extension
-autocmd BufRead,BufNewFile *.hbs set filetype=html.handlebars syntax=mustache
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
+autocmd BufRead,BufNewFile *.json set filetype=json
 
 " Allow stylesheets to autocomplete hyphenated words
 autocmd fileType css,scss,sass setlocal iskeyword+=-
@@ -197,8 +210,7 @@ set completeopt=menuone,preview,longest
 set directory=$HOME/.vim/swap
 set encoding=utf-8
 set expandtab
-set foldlevelstart=99
-set grepformat=%f:%l:%c:%m,%f:%l:%m
+" set grepformat=%f:%l:%c:%m,%f:%l:%m
 set hidden
 set history=1000
 set hlsearch
@@ -214,6 +226,7 @@ set noshowmode
 set nrformats=hex
 set number
 set numberwidth=5
+set relativenumber
 set ruler
 set scrolloff=5
 set sessionoptions-=options
@@ -252,11 +265,10 @@ if exists('&colorcolumn')
   set colorcolumn=80
 endif
 
-" Keep the cursor on the same column
-set nostartofline
-
-" Have vim-gtfo use iTerm on Mac
-" let g:gtfo#terminals = { 'mac' : 'iterm' }
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
 " }}}
 " ============================================================================
@@ -360,7 +372,7 @@ endif
 function! s:goog(pat)
   let q = '"'.substitute(a:pat, '["\n]', ' ', 'g').'"'
   let q = substitute(q, '[[:punct:] ]',
-       \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
+           \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
   call system('open https://www.google.com/search?q='.q)
 endfunction
 
@@ -374,18 +386,69 @@ nmap     <Leader>gs :Gstatus<CR>gg<c-n>
 nnoremap <Leader>gd :Gdiff<CR>
 
 " ----------------------------------------------------------------------------
-" ack.vim
-" ----------------------------------------------------------------------------
-
-if executable('ag')
-  let &grepprg = 'ag --nogroup --nocolor --column'
-else
-  let &grepprg = 'grep -rn $* *'
-endif
-command! -nargs=1 -bar Grep execute 'silent! grep! <q-args>' | redraw! | copen
-
-" ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
 let g:signify_vcs_list = ['git']
 
+" ----------------------------------------------------------------------------
+" vimawesome.com
+" ----------------------------------------------------------------------------
+function! VimAwesomeComplete() abort
+  let prefix = matchstr(strpart(getline('.'), 0, col('.') - 1), '[.a-zA-Z0-9_/-]*$')
+  echohl WarningMsg
+  echo 'Downloading plugin list from VimAwesome'
+  echohl None
+ruby << EOF
+  require 'json'
+  require 'open-uri'
+
+  query = VIM::evaluate('prefix').gsub('/', '%20')
+  items = 1.upto(max_pages = 3).map do |page|
+    Thread.new do
+      url  = "http://vimawesome.com/api/plugins?page=#{page}&query=#{query}"
+      data = open(url).read
+      json = JSON.parse(data, symbolize_names: true)
+      json[:plugins].map do |info|
+        pair = info.values_at :github_owner, :github_repo_name
+        next if pair.any? { |e| e.nil? || e.empty? }
+        {word: pair.join('/'),
+         menu: info[:category].to_s,
+         info: info.values_at(:short_desc, :author).compact.join($/)}
+      end.compact
+    end
+  end.each(&:join).map(&:value).inject(:+)
+  VIM::command("let cands = #{JSON.dump items}")
+EOF
+  if !empty(cands)
+    inoremap <buffer> <c-v> <c-n>
+    augroup _VimAwesomeComplete
+      autocmd!
+      autocmd CursorMovedI,InsertLeave * iunmap <buffer> <c-v>
+            \| autocmd! _VimAwesomeComplete
+    augroup END
+
+    call complete(col('.') - strchars(prefix), cands)
+  endif
+  return ''
+endfunction
+
+augroup VimAwesomeComplete
+  autocmd!
+  autocmd FileType vim inoremap <c-x><c-v> <c-r>=VimAwesomeComplete()<cr>
+augroup END
+
+" Start CtrlP with CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif

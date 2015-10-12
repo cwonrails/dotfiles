@@ -155,7 +155,7 @@ alias dflb='cd ~/; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bash
 alias dfdb='cd ~/; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .extra .gemrc .functions .gitattributes .gitconfig .gitignore .gvimrc .hgignore .hushlogin .npmrc .path .profile .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
 # Back up OSX dotfiles to Github repo
-alias dfg='cd ~/github/repos/public/dotfiles && git pull --force && cd ~/ && cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .gemrc .gitattributes .gitignore .gvimrc .hgignore .hushlogin .npmrc .path .profile .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git status'
+alias dfg='cd ~/github/repos/public/dotfiles && git pull --force && cd ~/ && cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .gemrc .gitattributes .gitignore .gvimrc .hgignore .hushlogin .npmrc .path .profile .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles; git status'
 
 # Force empty all trashed files
 alias te='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl'

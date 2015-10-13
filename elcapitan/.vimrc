@@ -12,7 +12,7 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
 Plug 'Chiel92/vim-autoformat'
@@ -25,13 +25,14 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'hdima/python-syntax'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-gtfo'
 Plug 'kchmck/vim-coffee-script'
-Plug 'klen/python-mode'
+" Plug 'klen/python-mode'
+" Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
@@ -40,7 +41,9 @@ Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
+" Plug 'neovimhaskell/haskell-vim'
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
+" Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -54,17 +57,17 @@ Plug 'rstacruz/vim-hyperstyle'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
-Plug 'slim-template/vim-slim'
+" Plug 'slim-template/vim-slim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
+" Plug 'tpope/vim-projectionist'
+" Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
@@ -74,7 +77,7 @@ Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/tComment'
 Plug 'wellle/tmux-complete.vim'
-Plug 'ynkdir/vim-vimlparser'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
@@ -82,13 +85,17 @@ call plug#end()
 set rtp+=~/.fzf
 
 " Enable 256 colors in terminal
-set t_Co=256
+" set t_Co=256
+set term=screen-256color
+" set term=xterm-256color
+
+" let g:enable_bold_font = 1
 
 " Reload .vimrc on save
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+" augroup reload_vimrc " {
+    " autocmd!
+    " autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" augroup END " }
 
 " Enable syntax highlighting
 syntax enable
@@ -106,8 +113,6 @@ nnoremap j gj
 nnoremap gk k
 nnoremap gj j
 
-let g:airline_powerline_fonts = 1
-
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -123,7 +128,9 @@ set diffopt+=filler,vertical
 
 " Choose colorscheme
 set background=dark
-colorscheme solarized
+colorscheme hybrid
+
+let g:airline_powerline_fonts = 1
 
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
@@ -210,7 +217,7 @@ set completeopt=menuone,preview,longest
 set directory=$HOME/.vim/swap
 set encoding=utf-8
 set expandtab
-" set grepformat=%f:%l:%c:%m,%f:%l:%m
+set grepformat=%f:%l:%c:%m,%f:%l:%m
 set hidden
 set history=1000
 set hlsearch
@@ -221,6 +228,7 @@ set lazyredraw
 set list
 set listchars=tab:\|\ ,
 set nocursorline
+set novisualbell
 set nojoinspaces
 set noshowmode
 set nrformats=hex
@@ -367,88 +375,7 @@ else
 endif
 
 " ----------------------------------------------------------------------------
-" <Leader>? | Google it
-" ----------------------------------------------------------------------------
-function! s:goog(pat)
-  let q = '"'.substitute(a:pat, '["\n]', ' ', 'g').'"'
-  let q = substitute(q, '[[:punct:] ]',
-           \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
-  call system('open https://www.google.com/search?q='.q)
-endfunction
-
-nnoremap <leader>? :call <SID>goog(expand("<cWORD>"))<cr>
-xnoremap <leader>? "gy:call <SID>goog(@g)<cr>gv
-
-" ----------------------------------------------------------------------------
-" vim-fugitive
-" ----------------------------------------------------------------------------
-nmap     <Leader>gs :Gstatus<CR>gg<c-n>
-nnoremap <Leader>gd :Gdiff<CR>
-
-" ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
 let g:signify_vcs_list = ['git']
 
-" ----------------------------------------------------------------------------
-" vimawesome.com
-" ----------------------------------------------------------------------------
-function! VimAwesomeComplete() abort
-  let prefix = matchstr(strpart(getline('.'), 0, col('.') - 1), '[.a-zA-Z0-9_/-]*$')
-  echohl WarningMsg
-  echo 'Downloading plugin list from VimAwesome'
-  echohl None
-ruby << EOF
-  require 'json'
-  require 'open-uri'
-
-  query = VIM::evaluate('prefix').gsub('/', '%20')
-  items = 1.upto(max_pages = 3).map do |page|
-    Thread.new do
-      url  = "http://vimawesome.com/api/plugins?page=#{page}&query=#{query}"
-      data = open(url).read
-      json = JSON.parse(data, symbolize_names: true)
-      json[:plugins].map do |info|
-        pair = info.values_at :github_owner, :github_repo_name
-        next if pair.any? { |e| e.nil? || e.empty? }
-        {word: pair.join('/'),
-         menu: info[:category].to_s,
-         info: info.values_at(:short_desc, :author).compact.join($/)}
-      end.compact
-    end
-  end.each(&:join).map(&:value).inject(:+)
-  VIM::command("let cands = #{JSON.dump items}")
-EOF
-  if !empty(cands)
-    inoremap <buffer> <c-v> <c-n>
-    augroup _VimAwesomeComplete
-      autocmd!
-      autocmd CursorMovedI,InsertLeave * iunmap <buffer> <c-v>
-            \| autocmd! _VimAwesomeComplete
-    augroup END
-
-    call complete(col('.') - strchars(prefix), cands)
-  endif
-  return ''
-endfunction
-
-augroup VimAwesomeComplete
-  autocmd!
-  autocmd FileType vim inoremap <c-x><c-v> <c-r>=VimAwesomeComplete()<cr>
-augroup END
-
-" Start CtrlP with CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif

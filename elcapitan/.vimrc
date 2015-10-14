@@ -11,73 +11,74 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'airblade/vim-gitgutter'
-" Plug 'altercation/vim-colors-solarized'
+" Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
-Plug 'Chiel92/vim-autoformat'
+" Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
-Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/', 'for': 'dockerfile' }
+Plug 'elzr/vim-json'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go'
-Plug 'groenewege/vim-less'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'hdima/python-syntax'
+" Plug 'facebook/vim-flow',
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+" Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
-" Plug 'klen/python-mode'
+Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'majutsushi/tagbar'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'mattn/emmet-vim'
+" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+" Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-signify'
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 " Plug 'neovimhaskell/haskell-vim'
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 " Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 Plug 'rstacruz/vim-hyperstyle'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
+Plug 'Shougo/vimproc.vim'
 Plug 'SirVer/ultisnips'
-" Plug 'slim-template/vim-slim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tmux-plugins/vim-tmux'
-" Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-rails'
-" Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-perl/vim-perl'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/tComment'
 Plug 'wellle/tmux-complete.vim'
-Plug 'w0ng/vim-hybrid'
+" Plug 'w0ng/vim-hybrid'
+Plug 'ynkdir/vim-vimlparser'
 
 call plug#end()
 
@@ -85,17 +86,13 @@ call plug#end()
 set rtp+=~/.fzf
 
 " Enable 256 colors in terminal
-" set t_Co=256
-set term=screen-256color
-" set term=xterm-256color
-
-" let g:enable_bold_font = 1
+set t_Co=256
 
 " Reload .vimrc on save
-" augroup reload_vimrc " {
-    " autocmd!
-    " autocmd BufWritePost $MYVIMRC source $MYVIMRC
-" augroup END " }
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
 
 " Enable syntax highlighting
 syntax enable
@@ -104,8 +101,8 @@ syntax enable
 imap jk <esc>
 
 " Remap leader key to space bar
-let mapleader= ' '
-let maplocalleader= ' '
+let g:mapleader= ' '
+let g:maplocalleader= ' '
 
 " Navigate by visual rather than actual lines
 nnoremap k gk
@@ -128,7 +125,7 @@ set diffopt+=filler,vertical
 
 " Choose colorscheme
 set background=dark
-colorscheme hybrid
+colorscheme solarized
 
 let g:airline_powerline_fonts = 1
 
@@ -163,6 +160,9 @@ nnoremap <leader>t :TagbarToggle<CR>
 " Write file and quit
 nnoremap <leader>q :wq<CR>
 
+" Run vimproc
+nnoremap <leader>vp :VimProcBang<space>
+
 " Exit without writing file
 nnoremap <leader>x :q!<CR>
 
@@ -173,7 +173,7 @@ let g:StripWhitespaceOnSave=1
 let g:syntastic_check_on_open=1
 
 " Assign syntax checkers to specific filetypes
-let g:syntastic_javascript_checkers=['jshint', 'eslint', 'gjslint']
+let g:syntastic_javascript_checkers=['jshint', 'eslint', 'jscs', 'gslint']
 
 " Use tidy-html5 instead of tidy
 let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
@@ -186,12 +186,13 @@ let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 
 " Automatically recognize filetypes by extension
+autocmd BufRead,BufNewFile *.go set filetype=go
+autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
-autocmd BufRead,BufNewFile *.json set filetype=json
 
 " Allow stylesheets to autocomplete hyphenated words
-autocmd fileType css,scss,sass setlocal iskeyword+=-
+" autocmd fileType css,scss,sass setlocal iskeyword+=-
 
 " Enable spellchecking for Markdown
 autocmd fileType markdown setlocal spell
@@ -212,12 +213,12 @@ set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
 set clipboard=unnamed
 set colorcolumn=+1
-set complete-=i
-set completeopt=menuone,preview,longest
+" set complete-=i
+" set completeopt=menuone,preview,longest
 set directory=$HOME/.vim/swap
 set encoding=utf-8
-set expandtab
-set grepformat=%f:%l:%c:%m,%f:%l:%m
+" set expandtab
+" set grepformat=%f:%l:%c:%m,%f:%l:%m
 set hidden
 set history=1000
 set hlsearch
@@ -229,17 +230,17 @@ set list
 set listchars=tab:\|\ ,
 set nocursorline
 set novisualbell
-set nojoinspaces
+" set nojoinspaces
 set noshowmode
-set nrformats=hex
+" set nrformats=hex
 set number
 set numberwidth=5
-set relativenumber
+" set relativenumber
 set ruler
 set scrolloff=5
 set sessionoptions-=options
 set shiftwidth=2
-set shortmess=aIT
+" set shortmess=aIT
 set showcmd
 set showmatch
 set softtabstop=2
@@ -252,31 +253,31 @@ set ttimeout
 set ttimeoutlen=500
 set undodir=$HOME/.vim/undo
 set undofile
-set undolevels=50000
-set undoreload=50000
-set virtualedit=block
-set whichwrap=b,s
+set undolevels=1000
+set undoreload=1000
+" set virtualedit=block
+" set whichwrap=b,s
 set wildmenu
 set wildmode=list:longest,full
 
-silent! set cryptmethod=blowfish2
+" silent! set cryptmethod=blowfish2
 
-set formatoptions+=j
+" set formatoptions+=j
 
 " Ensure mouse compatibility
 silent! set ttymouse=xterm2
 set mouse=a
 
 " 80 chars/line
-set textwidth=0
-if exists('&colorcolumn')
-  set colorcolumn=80
-endif
+" set textwidth=0
+" if exists('&colorcolumn')
+  " set colorcolumn=80
+" endif
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
+" if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  " runtime! macros/matchit.vim
+" endif
 
 " }}}
 " ============================================================================
@@ -287,95 +288,86 @@ endif
 " Basic mappings
 " ----------------------------------------------------------------------------
 
-" Disable CTRL-A on tmux or on screen
-if $TERM =~ 'screen'
-  nnoremap <C-a> <nop>
-  nnoremap <Leader><C-a> <C-a>
-endif
-
-" Jump list (to newer position)
-nnoremap <C-p> <C-i>
-
 " Movement in insert mode
-inoremap <C-h> <C-o>h
-inoremap <C-l> <C-o>a
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-^> <C-o><C-^>
+" inoremap <C-h> <C-o>h
+" inoremap <C-l> <C-o>a
+" inoremap <C-j> <C-o>j
+" inoremap <C-k> <C-o>k
+" inoremap <C-^> <C-o><C-^>
 
 " Make Y behave like other capitals
-nnoremap Y y$
+" nnoremap Y y$
 
 " qq to record, Q to replay
-nmap Q @q
+" nmap Q @q
 
 " ----------------------------------------------------------------------------
 " Quickfix
 " ----------------------------------------------------------------------------
-nnoremap ]q :cnext<cr>zz
-nnoremap [q :cprev<cr>zz
+" nnoremap ]q :cnext<cr>zz
+" nnoremap [q :cprev<cr>zz
 
 " ----------------------------------------------------------------------------
 " Buffers
 " ----------------------------------------------------------------------------
-nnoremap ]b :bnext<cr>
-nnoremap [b :bprev<cr>
+" nnoremap ]b :bnext<cr>
+" nnoremap [b :bprev<cr>
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab
 " ----------------------------------------------------------------------------
-function! s:can_complete(func, prefix)
-  if empty(a:func) || call(a:func, [1, '']) < 0
-    return 0
-  endif
-  let result = call(a:func, [0, matchstr(a:prefix, '\k\+$')])
-  return !empty(type(result) == type([]) ? result : result.words)
-endfunction
-
-function! s:super_duper_tab(k, o)
-  if pumvisible()
-    return a:k
-  endif
-
-  let line = getline('.')
-  let col = col('.') - 2
-  if line[col] !~ '\k\|[/~.]'
-    return a:o
-  endif
-
-  let prefix = expand(matchstr(line[0:col], '\S*$'))
-  if prefix =~ '^[~/.]'
-    return "\<c-x>\<c-f>"
-  endif
-  if s:can_complete(&omnifunc, prefix)
-    return "\<c-x>\<c-o>"
-  endif
-  if s:can_complete(&completefunc, prefix)
-    return "\<c-x>\<c-u>"
-  endif
-  return a:k
-endfunction
-
-if has_key(g:plugs, 'ultisnips')
-  " UltiSnips will be loaded only when tab is first pressed in insert mode
-  if !exists(':UltiSnipsEdit')
-    inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
-    imap <tab> <Plug>(tab)
-  endif
-
-  let g:SuperTabMappingForward  = "<tab>"
-  let g:SuperTabMappingBackward = "<s-tab>"
-  function! SuperTab(m)
-    return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
-                           \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
-  endfunction
-else
-  inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
-  inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
-endif
+" function! s:can_complete(func, prefix)
+"   if empty(a:func) || call(a:func, [1, '']) < 0
+"     return 0
+"   endif
+"   let result = call(a:func, [0, matchstr(a:prefix, '\k\+$')])
+"   return !empty(type(result) == type([]) ? result : result.words)
+" endfunction
+"
+" function! s:super_duper_tab(k, o)
+"   if pumvisible()
+"     return a:k
+"   endif
+"
+"   let line = getline('.')
+"   let col = col('.') - 2
+"   if line[col] !~ '\k\|[/~.]'
+"     return a:o
+"   endif
+"
+"   let prefix = expand(matchstr(line[0:col], '\S*$'))
+"   if prefix =~ '^[~/.]'
+"     return "\<c-x>\<c-f>"
+"   endif
+"   if s:can_complete(&omnifunc, prefix)
+"     return "\<c-x>\<c-o>"
+"   endif
+"   if s:can_complete(&completefunc, prefix)
+"     return "\<c-x>\<c-u>"
+"   endif
+"   return a:k
+" endfunction
+"
+" if has_key(g:plugs, 'ultisnips')
+"   " UltiSnips will be loaded only when tab is first pressed in insert mode
+"   if !exists(':UltiSnipsEdit')
+"     inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
+"     imap <tab> <Plug>(tab)
+"   endif
+"
+"   let g:SuperTabMappingForward  = "<tab>"
+"   let g:SuperTabMappingBackward = "<s-tab>"
+"   function! SuperTab(m)
+"     return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
+"                            \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
+"   endfunction
+" else
+"   inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
+"   inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
+" endif
 
 " ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
-let g:signify_vcs_list = ['git']
+" let g:signify_vcs_list = ['git']
 

@@ -92,7 +92,7 @@ alias sudo='sudo '
 alias brewclean='brew cleanup -s --force'
 
 # Fix homebrew permissions due to SIP
-alias brewfix='sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local'
+alias brewfix='sudo chown -R $(whoami):admin /usr/local'
 
 # Clear terminal screen (works in tmux)
 alias c='clear'

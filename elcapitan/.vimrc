@@ -17,7 +17,7 @@ Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/', 'for': 'dockerfile' }
 Plug 'elzr/vim-json'
@@ -26,13 +26,14 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'hdima/python-syntax', { 'for': 'python' }
+" Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'junegunn/fzf.vim'
+Plug 'jlong/sass-convert.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+" Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'klen/python-mode', { 'for': 'python' }
+" Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
@@ -40,14 +41,14 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-signify'
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 " Plug 'neovimhaskell/haskell-vim'
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 " Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
@@ -64,14 +65,14 @@ Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-projectionist'
+" Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
+" Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-perl/vim-perl'
+" Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/ReplaceWithRegister'
@@ -213,11 +214,12 @@ set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
 set clipboard=unnamed
 set colorcolumn=+1
-" set complete-=i
+set complete-=i
 " set completeopt=menuone,preview,longest
+set completeopt=menuone,preview
 set directory=$HOME/.vim/swap
 set encoding=utf-8
-" set expandtab
+set expandtab
 " set grepformat=%f:%l:%c:%m,%f:%l:%m
 set hidden
 set history=1000
@@ -243,7 +245,7 @@ set shiftwidth=2
 " set shortmess=aIT
 set showcmd
 set showmatch
-set softtabstop=2
+" set softtabstop=2
 set smartcase
 " set smartindent
 set smarttab
@@ -288,29 +290,29 @@ endif
 " ----------------------------------------------------------------------------
 
 " Movement in insert mode
-inoremap <C-h> <C-o>h
-inoremap <C-l> <C-o>a
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-^> <C-o><C-^>
+" inoremap <C-h> <C-o>h
+" inoremap <C-l> <C-o>a
+" inoremap <C-j> <C-o>j
+" inoremap <C-k> <C-o>k
+" inoremap <C-^> <C-o><C-^>
 
 " Make Y behave like other capitals
-nnoremap Y y$
+" nnoremap Y y$
 
 " qq to record, Q to replay
-nmap Q @q
+" nmap Q @q
 
 " ----------------------------------------------------------------------------
 " Quickfix
 " ----------------------------------------------------------------------------
-nnoremap ]q :cnext<cr>zz
-nnoremap [q :cprev<cr>zz
+" nnoremap ]q :cnext<cr>zz
+" nnoremap [q :cprev<cr>zz
 
 " ----------------------------------------------------------------------------
 " Buffers
 " ----------------------------------------------------------------------------
-nnoremap ]b :bnext<cr>
-nnoremap [b :bprev<cr>
+" nnoremap ]b :bnext<cr>
+" nnoremap [b :bprev<cr>
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab

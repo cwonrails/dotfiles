@@ -34,33 +34,27 @@ set -o vi
 # Use English UTF-8 as default
 export LANG=en_US.UTF-8
 
-# eval `dircolors /Users/christopherwatson/.dir_colors`
-
 ## Completions ##
 
 # Enable bash aliases if present
 if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 
 # Load extra dotfiles if present
 for file in ~/.{aliases,bash_prompt,exports,extra,functions,path}; do
-	[ -r "$file" ] && [ -f "$file" ] && . "$file";
+  [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
 
-export COPYFILE_DISABLE=true
-
 # Enable Homebrew-installed bash completion
 if [ -f "$(brew --prefix)"/etc/bash_completion ]; then
-    . "$(brew --prefix)"/etc/bash_completion
+  . "$(brew --prefix)"/etc/bash_completion
 fi
 
 # Source additional bash completion entries
 if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-	. "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion;
+  . "$(brew --prefix)/share/bash-completion/bash_completion";
 fi
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards

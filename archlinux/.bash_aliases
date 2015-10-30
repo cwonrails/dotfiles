@@ -1,69 +1,53 @@
 #!/usr/bin/env bash
 
-## Package Management ##
+## Arch-Specific ##
 
 # Build package from AUR
 aurb() {
     cd ~/ && git clone https://aur.archlinux.org/"$1" && cd "$1" && makepkg -sci
 }
 
-# Check AUR updates
-alias aurc='cower -vdu'
-
-# Clone package from AUR
+# Download package from AUR
 aurd() {
     cd ~/ && git clone https://aur.archlinux.org/"$1"
 }
-
-# Get AUR package information
-alias auri='pacaur -i'
-
-# Search AUR with pacaur
-alias aurs='pacaur -s'
 
 # Update AUR package in the current directory
 auru() {
     git pull && rm -f ./*.pkg.tar.xz || true && makepkg -sci
 }
 
-# Check for available updates from official repositories
-alias cu='checkupdates'
+# Get AUR package information
+alias aurinfo='pacaur -i'
 
-# Build package
-alias pb='makepkg -sci'
+# Get standard repo package information
+alias pacinfo='sudo pacman -Si'
 
-# Build package with pacman
-alias pacb='sudo pacman -S --needed --noconfirm'
+# Search AUR with pacaur
+alias aursearch='pacaur -s'
 
-# Get standard repo package info
-alias paci='sudo pacman -Si'
-
-# Search standard packages
-alias pacs='pacsearch'
-
-# Upgrade pacman packages
-alias pacu='sudo pacman -Syu'
-
-# Upgrade all packages
-alias upgradeall='pacaur -Syu'
+# Install pacman packages
+alias pacinstall='sudo pacman -S --needed --noconfirm'
 
 # Make list of installed packages
 alias makelist='pacaur -Q'
 
 # Install packages from list
-installfromlist() {
+listinstall () {
 pacman -S --needed $(cat ($1).txt)
 }
 
 # Remove packages from list
-removefromlist () {
+listremove () {
 pacman -Rs $(cat ($1).txt)
 }
+
+## General ##
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-# Clear terminal screen (works well in tmux)
+# Clear terminal screen (works in tmux)
 alias c='clear'
 
 # Print history
@@ -90,22 +74,16 @@ alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 alias xr='vim ~/.xinitrc'
 
-# Go to dotfiles Github repo folder
-alias dff='cd ~/github/repos/dotfiles'
-
-# Back up arch dotfiles to Github repo
-alias dfg="cd ~/github/repos/dotfiles && git pull --force && cd ~/ && cp .bash_aliases .bashrc .bash_profile .bash_prompt .editorconfig .gemrc .gitattributes .gitignore .gvimrc .hushlogin .npmrc .profile .tmux.conf .vimrc ~/github/repos/dotfiles/archlinux/ && cd ~/github/repos/dotfiles/archlinux && git status"
-
 ## Navigation ##
 # Go back from current directory
-alias ..="cd .."
-alias ...="cd ../../../"
-alias ....="cd ../../../../"
-alias .....="cd ../../../../../"
-alias ......="cd ../../../../../../"
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../../'
+alias ......='cd ../../../../../../'
 
 # Go back to previous directory
-alias b="cd - "
+alias b='cd - '
 
 # Go to Downloads folder
 alias dl="cd ~/Downloads"
@@ -117,23 +95,23 @@ alias dt="cd ~/Desktop"
 alias gh="cd ~/github"
 
 # Go to GitHub clones folder
-alias ghc="cd ~/github/clones"
+alias ghc='cd ~/github/clones'
 
 # Go to Github forks folder
-alias ghf="cd ~/github/forks"
+alias ghf='cd ~/github/forks'
 
 # Go to Github repos folder
-alias ghr="cd ~/github/repos"
+alias ghr='cd ~/github/repos'
 
 # Go to Home directory
-alias hd="cd ~/"
+alias hd='cd ~/'
 
-## node ##
-
+## nvm ##
 alias ns='nvm use system'
-alias n10='nvm use 10'
-alias n12='nvm use 12'
-alias nio='nvm use iojs'
+alias n4='nvm use 4'
+alias nio='nvm use 3'
+alias n12='nvm use 0.12'
+alias n10='nvm use 0.10'
 
 ## npm ##
 # List top-level npm global modules
@@ -142,18 +120,17 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
-# List outdated npm global modules
-alias ngo='npm-check-updates -g'
+# List outdated global modules
+alias ngo='ncu -g'
 
-# List outdated npm local modules
-alias nlo='npm-check-updates'
+# List outdated local modules
+alias nlo='ncu'
 
-# Update outdated npm global modules (interactive)
-alias ngu='npm-check -g -u'
+# Update outdated local modules
+alias nlu='ncu -u'
 
-# Update outdated npm local modules (interactive)
-alias nlu='npm-check -u'
-
+# Update outdated global modules (*except* npm)
+alias nlu='ncu -g -u'
 
 # Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
 alias vu="vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall"

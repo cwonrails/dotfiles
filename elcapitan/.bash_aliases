@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-# Quicker vim
-alias v='vim'
+# Git aliases
+alias gs='git status'
+
+# Correct 'ls' typo
+alias sl='ls'
 
 ## Docker Machine ##
 
@@ -128,7 +131,10 @@ alias r='exec $SHELL -l'
 alias size='find . -type f -printf "%s\t%p\n" | sort -n'
 
 # List hard drive space
-alias ds='df -m'
+alias space='df -m'
+
+# Go to Otto Apps folder
+alias oa='cd ~/ottoapps'
 
 # Go to Vagrant Boxes folder
 alias vb='cd ~/vagrantboxes'
@@ -140,7 +146,6 @@ alias x='exit'
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
-alias bre='vim ~/.bashrc-extra'
 alias ga='vim ~/.gitattributes'
 alias gc='vim ~/.gitconfig'
 alias gi='vim ~/.gitignore'
@@ -203,10 +208,10 @@ alias mu='cd ~/Music'
 
 ## nvm ##
 alias ns='nvm use system'
-alias n3='nvm use v3.3.1'
-alias n4='nvm use v4'
-alias n10='nvm use v0.10'
-alias n12='nvm use v0.12'
+alias n4='nvm use 4'
+alias nio='nvm use 3'
+alias n12='nvm use 0.12'
+alias n10='nvm use 0.10'
 
 ## npm ##
 # List top-level npm global modules

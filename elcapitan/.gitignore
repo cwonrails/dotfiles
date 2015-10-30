@@ -2,29 +2,62 @@
 config.codekit
 /min
 
+### GPG ###
+secring.*
+
+### JetBrains ###
+*.iml
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/shelf
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/gradle.xml
+.idea/libraries
+.idea/mongoSettings.xml
+*.ipr
+*.iws
+/out/
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+### LibreOffice ###
+.~lock.*#
+
 ### Linux ###
 *~
+.directory
 .Trash-*
 
-### Node ###
-logs
-*.log
-npm-debug.log*
-pids
-*.pid
-*.seed
-lib-cov
-coverage
-.grunt
-.lock-wscript
-build/Release
-node_modules
+### Mercurial ###
+.hg/
+.hgignore
+.hgsigs
+.hgsub
+.hgsubstate
+.hgtags
 
-### OSX ###
+### Microsoft Office ###
+*.tmp
+~$*.doc*
+~$*.xls*
+*.xlk
+~$*.ppt*
+
+### OSX #####
 .DS_Store
 .AppleDouble
 .LSOverride
-Icon
+Icon
 ._*
 .DocumentRevisions-V100
 .fseventsd
@@ -47,21 +80,48 @@ Temporary Items
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
+sftp configuration file
 sftp-config.json
+
+### Tags ###
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
 
 ### Vagrant ###
 .vagrant/
 
-### Vim ###
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-*.un~
-Session.vim
-.netrwhist
-*~
+### Virtualenv ###
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+pip-selfcheck.json
 
 ### Visual Studio Code ###
 .vscode
 
-### Webstorm ###
-.idea/
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk

@@ -30,8 +30,8 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'jlong/sass-convert.vim'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
 " Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kristijanhusak/vim-hybrid-material'
@@ -41,7 +41,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-signify'
-" Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 " Plug 'neovimhaskell/haskell-vim'
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
@@ -74,10 +74,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 " Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/tComment'
-Plug 'wellle/tmux-complete.vim'
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+" Plug 'wellle/tmux-complete.vim'
 " Plug 'w0ng/vim-hybrid'
 Plug 'ynkdir/vim-vimlparser'
 
@@ -174,9 +176,9 @@ let g:StripWhitespaceOnSave=1
 let g:syntastic_check_on_open=1
 
 " Assign syntax checkers to specific filetypes
-let g:syntastic_javascript_checkers=['jscs', 'jshint']
-let g:formatters_javscript=['jscs']
-" let g:syntastic_javascript_checkers=['jshint', 'eslint', 'jscs', 'gslint']
+let g:syntastic_javascript_checkers=['jscs', 'eslint', 'gslint', 'jshint']
+let g:formatters_javscript=['JSCS']
+let g:syntastic_scss_chckers = ['scss_lint']
 
 " Use tidy-html5 instead of tidy
 " let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
@@ -189,7 +191,9 @@ let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 " Automatically recognize filetypes by extension
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.json set filetype=json
+autocmd BufRead,BufNewFile *.less set filetype=less
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.rb set filetype=ruby
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
 
 " Allow stylesheets to autocomplete hyphenated words
@@ -366,6 +370,11 @@ else
   inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
   inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
 endif
+
+" ----------------------------------------------------------------------------
+" ack.vim
+" ----------------------------------------------------------------------------
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " ----------------------------------------------------------------------------
 " vim-signify

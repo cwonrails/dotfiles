@@ -81,7 +81,8 @@ export PATH=/usr/local/opt/go/libexec/bin:$PATH
 # Node #
 # Enable nvm
 export NVM_DIR=~/.nvm
-. "$(brew --prefix nvm)/nvm.sh"
+. ~/.nvm/nvm.sh
+# . "$(brew --prefix nvm)/nvm.sh"
 
 # PHP #
 # Use Homebrew PHP
@@ -151,3 +152,6 @@ fd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+
+# added by travis gem
+[ -f /Users/christopherwatson/.travis/travis.sh ] && source /Users/christopherwatson/.travis/travis.sh

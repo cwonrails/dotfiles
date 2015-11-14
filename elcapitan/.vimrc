@@ -11,44 +11,50 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'benmills/vimux'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'bling/vim-airline'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/', 'for': 'dockerfile' }
-Plug 'elzr/vim-json'
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'facebook/vim-flow',
+Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
+" Plug 'google/vim-codefmt'
+" Plug 'google/vim-glaive'
+" Plug 'google/vim-maktaba'
+Plug 'google/vim-searchindex'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-" Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'jlong/sass-convert.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'kchmck/vim-coffee-script'
-" Plug 'klen/python-mode', { 'for': 'python' }
-" Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'majutsushi/tagbar'
+Plug 'KabbAmine/gulp-vim', {'on': ['Gulp', 'GulpExt', 'GulpFile', 'GulpTasks']}
+            \| Plug 'tpope/vim-dispatch'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+Plug 'kewah/vim-cssfmt', { 'for': 'css' }
+Plug 'klen/python-mode', { 'for': 'python' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-Plug 'mhinz/vim-signify'
+Plug 'mbbill/undotree'
+" Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
-" Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
-" Plug 'NLKNguyen/papercolor-theme'
 Plug 'ntpeters/vim-better-whitespace'
+" Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/html5.vim'
-" Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
@@ -60,28 +66,27 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim'
 Plug 'SirVer/ultisnips'
-Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'terryma/vim-multiple-cursors'
+" Plug 'thinca/vim-quickrun'
+" Plug 'todesking/vint-syntastic'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 " Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'vim-scripts/dbext.vim'
+" Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/tComment'
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
-" Plug 'wellle/tmux-complete.vim'
-" Plug 'w0ng/vim-hybrid'
-Plug 'ynkdir/vim-vimlparser'
+" Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
 
@@ -101,7 +106,9 @@ augroup END " }
 syntax enable
 
 " Remap Escape key to jk
-imap jk <esc>
+cnoremap jk <esc>
+inoremap jk <esc>
+xnoremap jk <esc>
 
 " Remap leader key to space bar
 let g:mapleader= ' '
@@ -128,7 +135,7 @@ set diffopt+=filler,vertical
 
 " Choose colorscheme
 set background=dark
-colorscheme solarized
+  colorscheme solarized
 
 let g:airline_powerline_fonts = 1
 
@@ -141,8 +148,6 @@ nnoremap <leader>d :Dash<CR>
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
-" Toggle Gundo
-nnoremap <leader>g :Gundo<CR>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
@@ -158,7 +163,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>s :w<CR>
 
 " Toggle Tagbar
-nnoremap <leader>t :TagbarToggle<CR>
+" nnoremap <leader>t :TagbarToggle<CR>
 
 " Write file and quit
 nnoremap <leader>q :wq<CR>
@@ -169,35 +174,52 @@ nnoremap <leader>vp :VimProcBang<space>
 " Exit without writing file
 nnoremap <leader>x :q!<CR>
 
+" Toggle Undotree
+nnoremap <leader>u :UndotreeToggle<CR>
+
 " Strip whitespace on save
 let g:StripWhitespaceOnSave=1
 
 " Check for syntax errors on open
 let g:syntastic_check_on_open=1
 
-" Assign syntax checkers to specific filetypes
-let g:syntastic_javascript_checkers=['jscs', 'eslint', 'gslint', 'jshint']
+" Javascript linting
+let g:syntastic_javascript_checkers=['jscs', 'eslint', 'gjslint', 'closurecompiler', 'jshint', 'flow', 'standard']
 let g:formatters_javscript=['JSCS']
-let g:syntastic_scss_chckers = ['scss_lint']
+let g:syntastic_closure_compiler_script='usr/local/bin/closure-compiler'
+let g:syntastic_gjslint_exec='usr/local/bin/gjslint'
 
-" Use tidy-html5 instead of tidy
-" let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
-let g:syntastic_html_tidy_exec='/usr/local/Cellar/tidy-html5/5.0.0/bin/tidy'
-" let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng -"]
+" HTML linting: Use tidy-html5 instead of tidy
+let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
+
+" JSON linting
+let g:syntastic_json_checkers=['jsonlint']
+
+" Sass linting
+let g:syntastic_sass_checkers=['sassc', 'scss_lint']
+
+" Shell script / bash linting
+let g:syntastic_sh_checkers=['shellcheck', 'bashate', 'sh']
+
+" Viml linting
+let g:syntastic_vim_checkers=['vimlint']
 
 " Supply path to editorconfig binary
 let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 
 " Automatically recognize filetypes by extension
+autocmd BufRead,BufNewFile *.coffee = set filetype=coffeescript
 autocmd BufRead,BufNewFile *.go set filetype=go
+autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.less set filetype=less
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.py set filetype=python
 autocmd BufRead,BufNewFile *.rb set filetype=ruby
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
 
 " Allow stylesheets to autocomplete hyphenated words
-" autocmd fileType css,scss,sass setlocal iskeyword+=-
+autocmd fileType css,scss,sass setlocal iskeyword+=-
 
 " Enable spellchecking for Markdown
 autocmd fileType markdown setlocal spell
@@ -219,12 +241,12 @@ set backupdir=$HOME/.vim/backup
 set clipboard=unnamed
 set colorcolumn=+1
 set complete-=i
-" set completeopt=menuone,preview,longest
 set completeopt=menuone,preview
 set directory=$HOME/.vim/swap
 set encoding=utf-8
 set expandtab
-" set grepformat=%f:%l:%c:%m,%f:%l:%m
+set foldlevelstart=99
+set grepformat=%f:%l:%c:%m,%f:%l:%m
 set hidden
 set history=1000
 set hlsearch
@@ -236,22 +258,24 @@ set list
 set listchars=tab:\|\ ,
 set nocursorline
 set novisualbell
-" set nojoinspaces
+set nojoinspaces
 set noshowmode
-" set nrformats=hex
+set nostartofline
+set nrformats=hex
 set number
 set numberwidth=5
-" set relativenumber
+set relativenumber
 set ruler
 set scrolloff=5
+set formatoptions+=j
 set sessionoptions-=options
 set shiftwidth=2
-" set shortmess=aIT
+set shortmess=aIT
 set showcmd
 set showmatch
-" set softtabstop=2
+set softtabstop=2
 set smartcase
-" set smartindent
+set smartindent
 set smarttab
 set tabstop=2
 set textwidth=80
@@ -261,18 +285,12 @@ set undodir=$HOME/.vim/undo
 set undofile
 set undolevels=1000
 set undoreload=1000
-" set virtualedit=block
-" set whichwrap=b,s
+set virtualedit=block
+set whichwrap=b,s
 set wildmenu
 set wildmode=list:longest,full
 
-" silent! set cryptmethod=blowfish2
-
-" set formatoptions+=j
-
-" Ensure mouse compatibility
-" silent! set ttymouse=xterm2
-" set mouse=a
+silent! set cryptmethod=blowfish2
 
 " 80 chars/line
 set textwidth=0
@@ -285,38 +303,14 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
-" ============================================================================
-" MAPPINGS {{{
-" ============================================================================
-
 " ----------------------------------------------------------------------------
-" Basic mappings
-" ----------------------------------------------------------------------------
-
 " Movement in insert mode
-" inoremap <C-h> <C-o>h
-" inoremap <C-l> <C-o>a
-" inoremap <C-j> <C-o>j
-" inoremap <C-k> <C-o>k
-" inoremap <C-^> <C-o><C-^>
-
-" Make Y behave like other capitals
-" nnoremap Y y$
-
-" qq to record, Q to replay
-" nmap Q @q
-
 " ----------------------------------------------------------------------------
-" Quickfix
-" ----------------------------------------------------------------------------
-" nnoremap ]q :cnext<cr>zz
-" nnoremap [q :cprev<cr>zz
 
-" ----------------------------------------------------------------------------
-" Buffers
-" ----------------------------------------------------------------------------
-" nnoremap ]b :bnext<cr>
-" nnoremap [b :bprev<cr>
+inoremap <C-h> <C-o>h
+inoremap <C-l> <C-o>a
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab
@@ -360,8 +354,8 @@ if has_key(g:plugs, 'ultisnips')
     imap <tab> <Plug>(tab)
   endif
 
-  let g:SuperTabMappingForward  = "<tab>"
-  let g:SuperTabMappingBackward = "<s-tab>"
+  let g:SuperTabMappingForward  = '<tab>'
+  let g:SuperTabMappingBackward = '<s-tab>'
   function! SuperTab(m)
     return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
                            \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
@@ -377,7 +371,15 @@ endif
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " ----------------------------------------------------------------------------
-" vim-signify
+" vim-fugitive
 " ----------------------------------------------------------------------------
-let g:signify_vcs_list = ['git']
+nmap     <Leader>gs :Gstatus<CR>gg<c-n>
+nnoremap <Leader>gd :Gdiff<CR>
 
+" ----------------------------------------------------------------------------
+" splitjoin
+" ----------------------------------------------------------------------------
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nnoremap gss :SplitjoinSplit<cr>
+nnoremap gsj :SplitjoinJoin<cr>

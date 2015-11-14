@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Quicker vim
+alias v='vim'
+
 # Git aliases
 alias gs='git status'
 
@@ -208,10 +211,11 @@ alias mu='cd ~/Music'
 
 ## nvm ##
 alias ns='nvm use system'
+alias n5='nvm use 5'
 alias n4='nvm use 4'
 alias nio='nvm use 3'
-alias n12='nvm use 0.12'
 alias n10='nvm use 0.10'
+alias n12='nvm use 0.12'
 
 ## npm ##
 # List top-level npm global modules

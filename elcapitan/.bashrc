@@ -8,9 +8,9 @@ export PATH=$HOME/bin:$PATH
 # Use GNU versions of core Unix tools
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
-export PATH=/usr/local/opt/findutils/bin:$PATH
-export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
-export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
+# export PATH=/usr/local/opt/findutils/bin:$PATH
+# export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
+# export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
 export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
@@ -89,8 +89,6 @@ export NVM_DIR=~/.nvm
 export PATH=/usr/local/opt/php56/bin:$PATH
 
 ## Additional ClI executables ##
-
-
 
 # Enable thefuck
 alias fuck='$(thefuck $(fc -ln -1))'

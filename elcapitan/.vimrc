@@ -11,17 +11,17 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'bling/vim-airline'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/', 'for': 'dockerfile' }
+Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'facebook/vim-flow', { 'for': 'javascript' }
+" Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'google/vim-codefmt'
 " Plug 'google/vim-glaive'
@@ -40,20 +40,22 @@ Plug 'KabbAmine/gulp-vim', {'on': ['Gulp', 'GulpExt', 'GulpFile', 'GulpTasks']}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'kewah/vim-cssfmt', { 'for': 'css' }
 Plug 'klen/python-mode', { 'for': 'python' }
+" Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-" Plug 'mhinz/vim-signify'
-" Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
+Plug 'millermedeiros/vim-esformatter', { 'for': 'javascript' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'osyo-manga/vim-watchdogs'
+Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
@@ -68,30 +70,31 @@ Plug 'Shougo/vimproc.vim'
 Plug 'SirVer/ultisnips'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'terryma/vim-multiple-cursors'
-" Plug 'thinca/vim-quickrun'
-" Plug 'todesking/vint-syntastic'
+Plug 'thinca/vim-quickrun'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-" Plug 'vim-perl/vim-perl'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-" Plug 'vim-scripts/dbext.vim'
+Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/tComment'
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
-" Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
 
 " Enable fzf
-set rtp+=~/.fzf
+" set rtp+=~/.fzf
 
 " Enable 256 colors in terminal
 set t_Co=256
@@ -137,7 +140,10 @@ set diffopt+=filler,vertical
 set background=dark
   colorscheme solarized
 
+" Enable powerline fonts for airline
 let g:airline_powerline_fonts = 1
+
+let g:airline#extensions#tagbar#enabled = 1
 
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
@@ -147,7 +153,6 @@ nnoremap <leader>d :Dash<CR>
 
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
-
 
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
@@ -163,7 +168,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>s :w<CR>
 
 " Toggle Tagbar
-" nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 
 " Write file and quit
 nnoremap <leader>q :wq<CR>
@@ -184,8 +189,8 @@ let g:StripWhitespaceOnSave=1
 let g:syntastic_check_on_open=1
 
 " Javascript linting
-let g:syntastic_javascript_checkers=['jscs', 'eslint', 'gjslint', 'closurecompiler', 'jshint', 'flow', 'standard']
-let g:formatters_javscript=['JSCS']
+let g:syntastic_javascript_checkers=['eslint', 'jscs', 'gjslint', 'closurecompiler', 'jshint', 'standard']
+autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != '' ? ['jscs'] : ['jshint']
 let g:syntastic_closure_compiler_script='usr/local/bin/closure-compiler'
 let g:syntastic_gjslint_exec='usr/local/bin/gjslint'
 
@@ -206,6 +211,9 @@ let g:syntastic_vim_checkers=['vimlint']
 
 " Supply path to editorconfig binary
 let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
+
+" Map fzf to ctrl-p
+nnoremap <c-p> :FZF<cr>
 
 " Automatically recognize filetypes by extension
 autocmd BufRead,BufNewFile *.coffee = set filetype=coffeescript
@@ -254,7 +262,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
-set list
+" set list
 set listchars=tab:\|\ ,
 set nocursorline
 set novisualbell
@@ -371,15 +379,22 @@ endif
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " ----------------------------------------------------------------------------
-" vim-fugitive
-" ----------------------------------------------------------------------------
-nmap     <Leader>gs :Gstatus<CR>gg<c-n>
-nnoremap <Leader>gd :Gdiff<CR>
-
-" ----------------------------------------------------------------------------
 " splitjoin
 " ----------------------------------------------------------------------------
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
 nnoremap gss :SplitjoinSplit<cr>
 nnoremap gsj :SplitjoinJoin<cr>
+
+" ----------------------------------------------------------------------------
+" vim-fugitive
+" ----------------------------------------------------------------------------
+nmap     <Leader>gs :Gstatus<CR>gg<c-n>
+nnoremap <Leader>gd :Gdiff<CR>
+
+" ----------------------------------------------------------------------------
+" vim-signify
+" ----------------------------------------------------------------------------
+
+let g:signify_vcs_list = ['git']
+

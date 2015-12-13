@@ -1,5 +1,8 @@
 #!usr/bin/env bash
 
+# Set environment variables
+# export PLATFORM=$(uname -s)
+
 # Additional $PATH entries
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -66,6 +69,9 @@ complete -C aws_completer aws
 
 # Alias hub to git (additional git aliases)
 eval "$(hub alias -s)"
+
+# Enable gulp completion
+eval "$(gulp --completion=shell)"
 
 # Enable t completion (Twitter CLI client)
 . ~/t/etc/t-completion.sh

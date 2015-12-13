@@ -17,30 +17,33 @@ Plug 'bling/vim-airline'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'digitaltoad/vim-jade'
 Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
-" Plug 'google/vim-codefmt'
-" Plug 'google/vim-glaive'
-" Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'google/vim-maktaba'
 Plug 'google/vim-searchindex'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'KabbAmine/gulp-vim', {'on': ['Gulp', 'GulpExt', 'GulpFile', 'GulpTasks']}
             \| Plug 'tpope/vim-dispatch'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'kewah/vim-cssfmt', { 'for': 'css' }
 Plug 'klen/python-mode', { 'for': 'python' }
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
@@ -68,6 +71,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim'
 Plug 'SirVer/ultisnips'
+" Plug 'svermeulen/vim-easyclip'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thinca/vim-quickrun'
@@ -143,7 +147,7 @@ set background=dark
 " Enable powerline fonts for airline
 let g:airline_powerline_fonts = 1
 
-let g:airline#extensions#tagbar#enabled = 1
+" let g:airline#extensions#tagbar#enabled = 1
 
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
@@ -162,7 +166,7 @@ nnoremap <leader>mp :MarkedOpen<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NERDTree
-nnoremap <leader>n :NERDTreeToggle<CR>
+" nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Save file
 nnoremap <leader>s :w<CR>
@@ -188,10 +192,19 @@ let g:StripWhitespaceOnSave=1
 " Check for syntax errors on open
 let g:syntastic_check_on_open=1
 
+" Suppress html-tidy errors for handlebars
+let g:syntastic_html_tidy_ignore_errors = [
+    \  'plain text isn''t allowed in <head> elements',
+    \  'discarding unexpected <body>',
+    \  '<script> escaping malformed URI reference',
+    \  '<link> attribute with missing trailing quote mark',
+    \  '<script> attribute with missing trailing quote mark',
+    \  '</head> isn''t allowed in <body> elements'
+    \ ]
+
 " Javascript linting
-let g:syntastic_javascript_checkers=['eslint', 'jscs', 'gjslint', 'closurecompiler', 'jshint', 'standard']
-autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != '' ? ['jscs'] : ['jshint']
-let g:syntastic_closure_compiler_script='usr/local/bin/closure-compiler'
+let g:syntastic_javascript_checkers=['eslint', 'gjslint', 'closurecompiler', 'jshint', 'standard']
+let g:syntastic_closure_compiler_patd='usr/local/bin/closure-compiler'
 let g:syntastic_gjslint_exec='usr/local/bin/gjslint'
 
 " HTML linting: Use tidy-html5 instead of tidy
@@ -216,7 +229,7 @@ let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 nnoremap <c-p> :FZF<cr>
 
 " Automatically recognize filetypes by extension
-autocmd BufRead,BufNewFile *.coffee = set filetype=coffeescript
+autocmd BufRead,BufNewFile *.coffee set filetype=coffee
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
 autocmd BufRead,BufNewFile *.json set filetype=json

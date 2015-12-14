@@ -71,7 +71,7 @@ complete -C aws_completer aws
 eval "$(hub alias -s)"
 
 # Enable gulp completion
-eval "$(gulp --completion=shell)"
+eval "$(gulp --completion=bash)"
 
 # Enable t completion (Twitter CLI client)
 . ~/t/etc/t-completion.sh

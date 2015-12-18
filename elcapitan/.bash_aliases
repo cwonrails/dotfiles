@@ -44,13 +44,16 @@ alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~; cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .tmux.conf .vimrc ~/localdotfilesbackup'
+alias dflb='cd ~; cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .gvimrc .inputrc .npmrc .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup'
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~; cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .tmux.conf .vimrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~; cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .gvimrc .inputrc .npmrc .tmux.conf .vimrc .wgetrc ~/Dropbox/dotfiles'
 
-# Back up OSX dotfiles to Github repo and check status
-alias dfg='cd ~/github/repos/public/dotfiles && git pull && cd ~ && cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles && git status'
+# Back up OSX dotfiles to Github repo and check diff
+alias dfgb='cd ~; cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .gvimrc .inputrc .npmrc .tmux.conf .vimrc .wgetrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles && git diff'
+
+# Check status for dotfiles GitHub repo
+alias dfgs='cd ~/github/repos/public/dotfiles && git status'
 
 # Force empty all trashed files
 alias te='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl'

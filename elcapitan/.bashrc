@@ -1,14 +1,5 @@
 #!usr/bin/env bash
 
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
-function tre() {
-	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
-}
-
-
 # Additional $PATH entries
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -52,7 +43,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Load extra dotfiles if present
-for file in ~/.{bash_prompt,secrets}; do
+for file in ~/.{bash_prompt,extras,inputrc}; do
   [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
@@ -126,45 +117,7 @@ export LESS_TERMCAP_md="${yellow}";
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
-# Make Tab autocomplete regardless of filename case
-set completion-ignore-case on
-
-# List all matches in case multiple possible completions are possible
-set show-all-if-ambiguous on
-
-# Immediately add a trailing slash when autocompleting symlinks to directories
-set mark-symlinked-directories on
-
-# commands (i.e. more intelligent Up/Down behavior)
-"\e[B": history-search-forward
-"\e[A": history-search-backward
-
-# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
-set match-hidden-files off
-
-# Show all autocomplete results at once
-set page-completions off
-
-# If there are more than 200 possible completions for a word, ask to show them all
-set completion-query-items 200
-
-# Show extra file information when completing, like `ls -F` does
-set visible-stats on
-
-# Be more intelligent when autocompleting by also looking at the text after
-# the cursor. For example, when the current line is "cd ~/src/mozil", and
-# the cursor is on the "z", pressing Tab will not autocomplete it to "cd
-# ~/src/mozillail", but to "cd ~/src/mozilla". (Supported by the Readline
-# version used in Bash 4.)
-set skip-completed-text on
-
-# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
-set input-meta on
-set output-meta on
-set convert-meta off
-
 ## ls colors and aliases ##
-
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 
 # List all - Long list of all files in colorized format
@@ -192,6 +145,13 @@ if [ $? -eq 0 ]; then
 	}
 fi;
 
+# Use the text that has already been typed as the prefix for searching through
+# commands (i.e. more intelligent Up/Down behavior)
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+# Use Alt/Meta + Delete to delete the preceding word
+bind "\e[3;3~": kill-word
 
 # Added by Travis-CI gem
 [ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh

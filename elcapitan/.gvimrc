@@ -2,7 +2,7 @@
 set background=light
 colorscheme solarized
 
-" Use 13-point patched Monaco font
+" Use 13-point Powerline-patched Monaco font
 set guifont=Monaco\ for\ Powerline:h13
 
 " Disable cursor blinking

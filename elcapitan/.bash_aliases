@@ -18,6 +18,9 @@ alias f='fuck'
 # Print history
 alias h='history'
 
+# Go to home directory
+alias hd='cd ~'
+
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
@@ -42,6 +45,9 @@ alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
+
+# Perform all dotfiles backup operations'
+alias dfbu='dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
 alias dflb='cd ~; cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .gvimrc .inputrc .npmrc .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup'

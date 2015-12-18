@@ -27,6 +27,9 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # Show jobs
 alias j='jobs'
 
+# Diff with Kaleidoscope
+alias ksd='ksdiff'
+
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 

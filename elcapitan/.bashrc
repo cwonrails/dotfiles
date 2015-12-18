@@ -22,7 +22,7 @@ export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
-. ~/.iterm2_shell_integration.bash
+source ~/.iterm2_shell_integration.`basename $SHELL`
 
 # Make vim default editor
 export VISUAL=vim
@@ -149,6 +149,11 @@ fi;
 # commands (i.e. more intelligent Up/Down behavior)
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+
+# Git-Friendly configuration
+export GIT_FRIENDLY_NOBUNDLE
+export GIT_FRIENDLY_NO_NPM
+export GIT_FRIENDLY_NO_BOWER
 
 # Added by Travis-CI gem
 [ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh

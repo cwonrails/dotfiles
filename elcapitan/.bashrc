@@ -150,8 +150,5 @@ fi;
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-# Use Alt/Meta + Delete to delete the preceding word
-bind "\e[3;3~": kill-word
-
 # Added by Travis-CI gem
 [ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh

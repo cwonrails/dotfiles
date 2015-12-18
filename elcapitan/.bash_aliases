@@ -1,116 +1,19 @@
 #!/usr/bin/env bash
 
-# Quicker vim
-alias v='vim'
-
-# Git aliases
-alias gs='git status'
-
-# Correct 'ls' typo
-alias sl='ls'
-
-## Docker Machine ##
-
-# Print currently active machine
-alias dma='docker-machine active'
-
-# Create a new machine (assumes Virtualbox)
-dmcreate() {
-docker-machine create --driver virtualbox "$1"
-}
-
-# Get a machine's connection config
-dmconf() {
-docker-machine config "$1"
-}
-
-# Get a machine's ip
-dmip() {
-docker-machine ip "$1"
-}
-
-# Inspect a machine
-dminspect() {
-docker-machine inspect "$1"
-}
-
-# Kill a machine
-dmkill() {
-docker-machine kill "$1"
-}
-
-# List existing machines
-alias dmls='docker-machine ls'
-
-# Remove an existing machine
-dmrm() {
-docker-machine rm "$1"
-}
-
-# Restart a machine
-dmrestart() {
-docker-machine restart "$1"
-}
-
-# Run a command or ssh into a machine
-dmssh() {
-docker-machine ssh "$1"
-}
-
-# Get a machine's status
-dmstatus() {
-docker-machine status "$1"
-}
-
-# Start a machine
-dmstart() {
- docker-machine start "$1"
-}
-
-# Stop a machine
-dmstop() {
- docker-machine stop "$1"
-}
-
-# Upgrade a machine to most recent version of Docker
-dmupgrade() {
-docker-machine upgrade "$1"
-}
-
-# Get a machine's URL
-dmurl() {
-docker-machine url "$1"
-}
-
-# Use a machine (two shortcuts; former matches docker-machine prompt.)
-dmenv() {
-eval "$(docker-machine env "$1")"
-}
-
-dmuse() {
-eval "$(docker-machine env "$1")"
-}
-
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force'
 
-# Fix homebrew permissions due to SIP
-alias brewfix='sudo chown -R $(whoami):admin /usr/local'
+# List installed formulas that depend on the given formula
+alias brewdepends='brew deps --installed'
 
 # Clear terminal screen (works in tmux)
 alias c='clear'
 
-# Run checksums
-alias checksum='md5sum'
-
 # Correct incorrectly typed commands
 alias f='fuck'
-
-# Get file size
-alias fs='ls -sh'
 
 # Print history
 alias h='history'
@@ -130,18 +33,6 @@ alias o='open .'
 # Reload shell
 alias r='exec $SHELL -l'
 
-# List files and directories in folder by size
-alias size='find . -type f -printf "%s\t%p\n" | sort -n'
-
-# List hard drive space
-alias space='df -m'
-
-# Go to Otto Apps folder
-alias oa='cd ~/ottoapps'
-
-# Go to Vagrant Boxes folder
-alias vb='cd ~/vagrantboxes'
-
 # Exit shell
 alias x='exit'
 
@@ -149,21 +40,17 @@ alias x='exit'
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
-alias ga='vim ~/.gitattributes'
-alias gc='vim ~/.gitconfig'
-alias gi='vim ~/.gitignore'
-alias ir='vim ~/.inputrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~/; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gemrc .gitattributes .gitconfig .gitignore .gvimrc .hushlogin .npmrc .path .profile .tmux.conf .vimrc ~/localdotfilesbackup'
+alias dflb='cd ~; cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .tmux.conf .vimrc ~/localdotfilesbackup'
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~/; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .exports .extra .gemrc .functions .gitattributes .gitconfig .gitignore .gvimrc .hgignore .hushlogin .npmrc .path .profile .tmux.conf .vimrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~; cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
-# Back up OSX dotfiles to Github repo
-alias dfg='cd ~/github/repos/public/dotfiles && git pull --force && cd ~/ && cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .exports .functions .gemrc .gitattributes .gitignore .gvimrc .hgignore .hushlogin .npmrc .path .profile .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles; git status'
+# Back up OSX dotfiles to Github repo and check status
+alias dfg='cd ~/github/repos/public/dotfiles && git pull && cd ~ && cp ~/.bash_aliases .bash_profile .bash_prompt .bashrc .gemrc .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles && git status'
 
 # Force empty all trashed files
 alias te='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl'
@@ -179,76 +66,40 @@ alias ......='cd ../../../../../../'
 # Go back to previous directory
 alias b='cd - '
 
-# Go to bash scripts directory
-alias bs='cd ~/bashscripts'
-
-# Go to Desktop folder
-alias dt='cd ~/Desktop'
-
-# Go to Documents folder
-alias doc='cd ~/Documents'
-
-# Go to Downloads folder
-alias dl='cd ~/Downloads'
-
-# Go to GitHub clones folder
-alias ghc='cd ~/github/clones'
-
-# Go to GitHub delete repos folder
-alias ghdr='cd ~/github/deletedrepos'
-
-# Go to Github forks folder
-alias ghf='cd ~/github/forks'
-
-# Go to Github repos folder
-alias ghr='cd ~/github/repos'
-
-# Go to Home directory
-alias hd='cd ~/'
-
-# Go to Music folder
-alias mu='cd ~/Music'
-
 ## nvm ##
 alias ns='nvm use system'
-alias n5='nvm use 5'
 alias n4='nvm use 4'
-alias nio='nvm use 3'
-alias n10='nvm use 0.10'
-alias n12='nvm use 0.12'
+alias n5='nvm use 5'
 
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'
 
 # List outdated npm global modules
-alias ngo='npm-check -u -g'
+alias ngo='npm -g outdated'
 
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
 # List outdated npm local modules
-alias nlo='npm-check -u'
+alias nlo='npm outdated'
 
-## Package Management ##
+## Package system updates ##
 
-# Update all - runs all below and checks for outdated global npm modules
-alias ua="brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor; gem update; gem cleanup; go get -u all; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && npm -g outdated"
+# Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins)
+alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; gem update; gem cleanup; go get -u all; gitup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && npm -g outdated"
 
-# Run all homebrew operations
+# Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
 
-# Upgrade all go packages
-alias ggu='go get -u all'
-
-# Update and cleanup all Ruby gems
+# Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
 
-# Upgrade all pip packages
+# Python: Upgrade all pip packages
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
-# Install, update, and remove unused tmux plugins
-alias tu='~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/clean_plugins'
+# Tmux: Update, install, and remove unused plugins
+alias tu='~/.tmux/plugins/tpm/bin/update_plugins all &~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
 
-# Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
+# Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'

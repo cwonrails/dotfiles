@@ -157,3 +157,5 @@ export GIT_FRIENDLY_NO_BOWER
 
 # Added by Travis-CI gem
 [ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -18,9 +18,6 @@ alias f='fuck'
 # Print history
 alias h='history'
 
-# Go to home directory
-alias hd='cd ~'
-
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
@@ -77,6 +74,15 @@ alias ......='cd ../../../../../../'
 
 # Go back to previous directory
 alias b='cd - '
+
+# Go to downloads directory
+alias dl='cd ~/Downloads'
+
+# Go to desktop directory
+alias dt='cd ~/Desktop'
+
+# Go to home directory
+alias hd='cd ~'
 
 ## nvm ##
 alias ns='nvm use system'

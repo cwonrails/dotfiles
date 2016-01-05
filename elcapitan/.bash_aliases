@@ -30,6 +30,9 @@ alias ksd='ksdiff'
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
+# Copy default package.json to current folder
+alias boilerplate='cp ~/default.package.json/package.json `pwd`'
+
 # Open current directory in OSX Finder
 alias o='open .'
 
@@ -81,8 +84,20 @@ alias dl='cd ~/Downloads'
 # Go to desktop directory
 alias dt='cd ~/Desktop'
 
+# Go to GitHub clones directory
+alias ghc='cd ~/github/clones'
+
+# Go to GitHub forks directory
+alias ghf='cd ~/github/forks'
+
+# Go to GitHub repos directory
+alias ghr='cd ~/github/repos'
+
 # Go to home directory
 alias hd='cd ~'
+
+# Go to Vagrant boxes directory
+alias vb='cd ~/vagrantboxes'
 
 ## nvm ##
 alias ns='nvm use system'

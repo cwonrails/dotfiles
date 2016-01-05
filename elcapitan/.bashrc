@@ -1,5 +1,9 @@
 #!usr/bin/env bash
 
+export PLATFORM=$(uname -s)
+
+# BASE=$(dirname $(readlink $BASH_SOURCE))
+
 # Additional $PATH entries
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -23,6 +27,10 @@ export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
 source ~/.iterm2_shell_integration.`basename $SHELL`
+
+# export PATH=/usr/local/opt/ruby/bin:$PATH
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+chruby ruby 2.3
 
 # Make vim default editor
 export VISUAL=vim

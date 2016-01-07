@@ -20,26 +20,26 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'altercation/vim-colors-solarized'
-" Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 Plug 'bling/vim-airline'
-" Plug 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ciaranm/detectindent'
-" Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'derekwyatt/vim-scale', { 'for': 'scala' }
-" Plug 'digitaltoad/vim-jade'
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'digitaltoad/vim-jade'
 Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-" Plug 'easymotion/vim-easymotion'
-" Plug 'maksimr/vim-jsbeautify'
+Plug 'easymotion/vim-easymotion'
+Plug 'maksimr/vim-jsbeautify'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
-" Plug 'google/vim-codefmt'
-" Plug 'google/vim-glaive'
-" Plug 'google/vim-jsonnet'
-" Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'google/vim-jsonnet'
+Plug 'google/vim-maktaba'
 Plug 'google/vim-searchindex'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -48,58 +48,59 @@ Plug 'honza/vim-snippets'
 if s:darwin
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
-" Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
+Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'junegunn/vim-easy-align'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
-" Plug 'KabbAmine/gulp-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'KabbAmine/gulp-vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 " if s:darwin
-" Plug 'keith/investigate.vim'
+Plug 'keith/investigate.vim'
 " endif
-" Plug 'kewah/vim-cssfmt', { 'for': 'css' }
+Plug 'kewah/vim-cssfmt', { 'for': 'css' }
 " Plug 'klen/python-mode', { 'for': 'python' }
-" Plug 'lfv89/vim-interestingwords'
-" Plug 'jelera/vim-javascript-syntax'
+Plug 'lfv89/vim-interestingwords'
+Plug 'jelera/vim-javascript-syntax'
 " Plug 'majutsushi/tagbar'
-" Plug 'maksimr/vim-jsbeautify'
-" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'maksimr/vim-jsbeautify'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-" Plug 'mbbill/undotree'
-" Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'mbbill/undotree'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'mhinz/vim-signify'
-" Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
+Plug 'mtscout6/syntastic-local-eslint.vim', { 'for': 'javascript' }
 Plug 'mustache/vim-mustache-handlebars'
-" Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'osyo-manga/vim-watchdogs'
+Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/html5.vim'
-" Plug 'othree/javascript-libraries-syntax.vim'
-" Plug 'othree/yajs.vim'
-" Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
-" Plug 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'rhysd/committia.vim'
 if s:darwin
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 endif
 " Plug 'rking/ag.vim'
-" Plug 'rstacruz/vim-hyperstyle'
-" Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
-" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'rstacruz/vim-hyperstyle'
+Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'SirVer/ultisnips'
 " Plug  'slim-template/vim-slim'
 " Plug 'svermeulen/vim-easyclip'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
 Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-abolish'
@@ -116,11 +117,11 @@ Plug 'tpope/vim-surround'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-" Plug 'vim-scripts/dbext.vim'
+Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/preservenoeol'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/tComment'
-" Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
 
@@ -190,7 +191,7 @@ nnoremap <leader>mp :MarkedOpen<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NERDTree
-" nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Save file
 nnoremap <leader>s :w<CR>
@@ -205,7 +206,7 @@ nnoremap <leader>vp :VimProcBang<space>
 nnoremap <leader>x :q!<CR>
 
 " Toggle Undotree
-" nnoremap <leader>u :UndotreeToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " Strip whitespace on save
 let g:StripWhitespaceOnSave=1
@@ -218,7 +219,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
 
 " Javascript linting
-" let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_checkers=['eslint']
 
 " JSON linting
 let g:syntastic_json_checkers=['jsonlint']
@@ -356,15 +357,13 @@ let g:signify_vcs_list = ['git']
 
 " ------------------------------------------------------------------------------
 
-au BufReadPost,BufNewFile * set relativenumber
-
-" Handlebars {{{
+" Handlebars
 augroup filetype_hbs
   autocmd!
   au BufRead,BufNewFile *.hbs,*.handlebars,*.hbs.erb,*.handlebars.erb setl ft=mustache syntax=mustache
 augroup END
 
-" Airline.vim {{{
+" Airline.vim
 augroup airline_config
   autocmd!
   let g:airline_powerline_fonts = 1
@@ -374,5 +373,3 @@ augroup airline_config
   let g:airline#extensions#tabline#fnamecollapse = 0
   let g:airline#extensions#tabline#fnamemod = ':t'
 augroup END
-" }}}
-"

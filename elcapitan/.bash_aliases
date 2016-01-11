@@ -7,13 +7,16 @@ alias sudo='sudo '
 alias brewclean='brew cleanup -s --force'
 
 # List installed formulas that depend on the given formula
-alias brewdepends='brew deps --installed'
+alias brewdeps='brew deps --installed'
 
 # Clear terminal screen (works in tmux)
 alias c='clear'
 
 # Correct incorrectly typed commands
 alias f='fuck'
+
+# Git status
+alias g='git status'
 
 # Print history
 alias h='history'
@@ -25,13 +28,13 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias j='jobs'
 
 # Diff with Kaleidoscope
-alias ksd='ksdiff'
+# alias ksd='ksdiff'
+
+# Long list
+alias ll='ls -al'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
-
-# Copy default package.json to current folder
-alias boilerplate='cp ~/default.package.json/package.json `pwd`'
 
 # Open current directory in OSX Finder
 alias o='open .'

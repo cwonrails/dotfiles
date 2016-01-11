@@ -2,8 +2,6 @@
 
 export PLATFORM=$(uname -s)
 
-# BASE=$(dirname $(readlink $BASH_SOURCE))
-
 # Additional $PATH entries
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -26,10 +24,10 @@ export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
-source ~/.iterm2_shell_integration.`basename $SHELL`
+. ~/.iterm2_shell_integration.`basename $SHELL`
 
 # export PATH=/usr/local/opt/ruby/bin:$PATH
-source /usr/local/opt/chruby/share/chruby/chruby.sh
+. /usr/local/opt/chruby/share/chruby/chruby.sh
 chruby ruby 2.3
 
 # Make vim default editor
@@ -89,7 +87,7 @@ export PATH=/usr/local/opt/go/libexec/bin:$PATH
 # Node #
 # Enable nvm
 export NVM_DIR=~/.nvm
-. ~/.nvm/nvm.sh
+. $HOME/.nvm/nvm.sh
 
 # Enable gulp completion
 eval "$(gulp --completion=bash)"
@@ -103,7 +101,10 @@ export PATH=/usr/local/opt/php56/bin:$PATH
 alias fuck='$(thefuck $(fc -ln -1))'
 
 # Enable z (intelligent directory autojumping)
-. "$(brew --prefix)/etc/profile.d/z.sh"
+# . "$(brew --prefix)/etc/profile.d/z.sh"
+
+# Enable fasd (more advanced version of z)
+eval "$(fasd --init auto)"
 
 ### Bash modifications ###
 

@@ -24,11 +24,18 @@ export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
-. ~/.iterm2_shell_integration.`basename $SHELL`
+. $HOME/.iterm2_shell_integration.`basename $SHELL`
+
+
+# Enable rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+. $HOME/.rbenv/completions/rbenv.bash
+rbenv global 2.3.0
 
 # export PATH=/usr/local/opt/ruby/bin:$PATH
-. /usr/local/opt/chruby/share/chruby/chruby.sh
-chruby ruby 2.3
+# . /usr/local/opt/chruby/share/chruby/chruby.sh
+# chruby ruby 2.3
 
 # Make vim default editor
 export VISUAL=vim

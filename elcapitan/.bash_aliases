@@ -12,9 +12,6 @@ alias brewdeps='brew uses --installed'
 # Clear terminal screen (works in tmux)
 alias c='clear'
 
-# Correct incorrectly typed commands
-alias f='fuck'
-
 # Git status
 alias g='git status'
 
@@ -25,10 +22,10 @@ alias h='history'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Show jobs
-alias j='jobs'
+# alias j='jobs'
 
 # Diff with Kaleidoscope
-# alias ksd='ksdiff'
+alias ksd='ksdiff'
 
 # Long list
 alias ll='ls -al'
@@ -38,6 +35,9 @@ alias mkdir='mkdir -p'
 
 # Open current directory in OSX Finder
 alias o='open .'
+
+# Copy default package.json to current folder
+alias pj='cp ~/default.package.json/package.json `pwd`'
 
 # Reload shell
 alias r='exec $SHELL -l'

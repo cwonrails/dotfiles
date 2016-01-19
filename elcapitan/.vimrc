@@ -20,13 +20,14 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'altercation/vim-colors-solarized'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 Plug 'bling/vim-airline'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'camthompson/vim-ember'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'chrisbra/unicode.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -40,11 +41,11 @@ Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 Plug 'dockyard/vim-easydir'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elzr/vim-json'
+Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
 " Plug 'facebook/vim-flow', { 'for': 'javascript' }
-" Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'garbas/vim-snipmate'
 " Plug 'gavocanov/vim-js-indent'
 " Plug 'godlygeek/tabular'
@@ -55,7 +56,7 @@ Plug 'elzr/vim-json'
 Plug 'google/vim-searchindex'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
 " Plug 'gregsexton/MatchTag'
-Plug 'groenewege/vim-less'
+Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
@@ -69,7 +70,7 @@ Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'jistr/vim-nerdtree-tabs'
-" Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'JulesWang/css.vim'
 " Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -97,7 +98,7 @@ Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
@@ -121,7 +122,7 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 " Plug 'pangloss/vim-javascript'
 " Plug 'pbrisbin/vim-mkdir'
 " Plug 'pearofducks/ansible-vim'
-" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'ramitos/jsctags'
 Plug 'rhysd/committia.vim'
 Plug 'rhysd/conflict-marker.vim'
@@ -131,9 +132,9 @@ endif
 " Plug 'rking/ag.vim'
 Plug 'rodjek/vim-puppet'
 " Plug 'romainl/flattened'
-" Plug 'rstacruz/vim-hyperstyle'
+Plug 'rstacruz/vim-hyperstyle'
 " Plug 'ruanyl/vim-fixmyjs'
-" Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
+Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
 " Plug 'ruanyl/vim-gh-line'
 " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -148,7 +149,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'SirVer/ultisnips'
 " Plug 'sjl/gundo.vim'
-" Plug 'slim-template/vim-slim'
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
 " Plug 'svermeulen/vim-easyclip'
 " Plug 'suan/vim-instant-markdown'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
@@ -166,6 +167,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 " Plug 'tpope/vim-haml'
 " Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
@@ -177,7 +179,7 @@ Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-vinegar'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Plug 'vim-pandoc/vim-pandoc-syntax'
-" Plug 'vim-perl/vim-perl'
+Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/PreserveNoEOL'
@@ -263,6 +265,12 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " Save file
 nnoremap <leader>s :w<CR>
 
+" Run specific syntax checker
+nnoremap <leader>sc: SyntacticCheck<CR>
+
+" Get Syntastic info for current buffer
+nnoremap <leader>si :SyntasticInfo<CR>
+
 " Write file and quit
 nnoremap <leader>q :wq<CR>
 
@@ -282,12 +290,19 @@ autocmd BufWritePre * StripWhitespace
 " Check for syntax errors on open
 let g:syntastic_check_on_open=1
 
+" let g:syntastic_html_tidy_ignore_errors = [
+"     \  'plain text isn''t allowed in <head> elements',
+"     \  '<base> escaping malformed URI reference',
+"     \  'discarding unexpected <body>',
+"     \  '<script> escaping malformed URI reference',
+    " \  '</head> isn''t allowed in <body> elements'
+    " \ ]
+
 " HTML linting: Use tidy-html5 instead of tidy
 let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
 
 " Javascript linting
 let g:syntastic_javascript_checkers=['eslint']
-" let g:syntastic_javascript_checkers=['standard']
 
 " JSON linting
 let g:syntastic_json_checkers=['jsonlint']
@@ -299,16 +314,17 @@ let g:syntastic_json_checkers=['jsonlint']
 let g:syntastic_sh_checkers=['shellcheck', 'bashate', 'sh']
 
 " VimL linting
-let g:syntastic_vim_checkers=['vimlint']
+let g:syntastic_vim_checkers=['vint', 'vimlint']
 
 " Supply path to editorconfig binary
 let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
 
 " Automatically recognize filetypes by extension
-" autocmd BufRead,BufNewFile *.coffee set filetype=coffee
+autocmd BufRead,BufNewFile *.coffee set filetype=coffee
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
 autocmd BufRead,BufNewFile .{babel,jscs,jshint,eslint}rc set filetype=json
+" autocmd BufRead,BufNewFile *.hbs set filetype=handlebars
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.less set filetype=less
 autocmd BufRead,BufNewFile *.md set filetype=markdown
@@ -431,7 +447,7 @@ nnoremap <Leader>gd :Gdiff<CR>
 " vim-signify
 " ----------------------------------------------------------------------------
 
-let g:signify_vcs_list = ['git']
+" let g:signify_vcs_list = ['git']
 
 " ----------------------------------------------------------------------------
 " Airline.vim

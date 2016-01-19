@@ -10,7 +10,7 @@ export PATH=$HOME/bin:$PATH
 # Use GNU versions of core Unix tools
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
-## note: disabled as findutils can make things messy on OSX ###
+## note: disabled as findutils can make things messy on OSX ##
 # export PATH=/usr/local/opt/findutils/bin:$PATH
 # export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
 # export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
@@ -24,18 +24,13 @@ export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
-. $HOME/.iterm2_shell_integration.`basename $SHELL`
-
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
 
 # Enable rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 . $HOME/.rbenv/completions/rbenv.bash
 rbenv global 2.3.0
-
-# export PATH=/usr/local/opt/ruby/bin:$PATH
-# . /usr/local/opt/chruby/share/chruby/chruby.sh
-# chruby ruby 2.3
 
 # Make vim default editor
 export VISUAL=vim
@@ -75,7 +70,7 @@ fi
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # Enable aws-cli bash completion
-complete -C aws_completer aws
+# complete -C aws_completer aws
 
 # Alias hub to git (additional git aliases)
 eval "$(hub alias -s)"
@@ -89,6 +84,7 @@ eval "$(hub alias -s)"
 # Env configuation
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
 
 # Node #
@@ -112,6 +108,9 @@ alias fuck='$(thefuck $(fc -ln -1))'
 
 # Enable fasd (more advanced version of z)
 eval "$(fasd --init auto)"
+
+# Enable jump (more focused version of fasd)
+eval "$(jump shell bash)"
 
 ### Bash modifications ###
 

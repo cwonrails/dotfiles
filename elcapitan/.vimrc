@@ -132,7 +132,7 @@ endif
 " Plug 'rking/ag.vim'
 Plug 'rodjek/vim-puppet'
 " Plug 'romainl/flattened'
-Plug 'rstacruz/vim-hyperstyle'
+" Plug 'rstacruz/vim-hyperstyle'
 " Plug 'ruanyl/vim-fixmyjs'
 Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
 " Plug 'ruanyl/vim-gh-line'

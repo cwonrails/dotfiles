@@ -1,5 +1,6 @@
 #!usr/bin/env bash
 
+# Enables distinguishing between Mac (Darwin) and Linux
 export PLATFORM=$(uname -s)
 
 # Additional $PATH entries
@@ -10,7 +11,8 @@ export PATH=$HOME/bin:$PATH
 # Use GNU versions of core Unix tools
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
-## note: disabled as findutils can make things messy on OSX ##
+export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
 # export PATH=/usr/local/opt/findutils/bin:$PATH
 # export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
 # export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
@@ -25,12 +27,6 @@ export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
 test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
-
-# Enable rbenv
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
-. $HOME/.rbenv/completions/rbenv.bash
-rbenv global 2.3.0
 
 # Make vim default editor
 export VISUAL=vim
@@ -51,7 +47,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Load extra dotfiles if present
-for file in ~/.{bash_prompt,extras,inputrc}; do
+for file in ~/.{bash_prompt,extras,inputrc,functions}; do
   [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
@@ -72,11 +68,22 @@ fi
 # Enable aws-cli bash completion
 # complete -C aws_completer aws
 
-# Alias hub to git (additional git aliases)
+# Alias hub to git for additional git aliases
 eval "$(hub alias -s)"
 
+# Enable gulp completion
+# eval "$(gulp --completion=bash)"
+
+# Enable grc (terminal output colors)
+# source "`brew --prefix`/etc/grc.bashrc"
+
 # Enable t completion (Twitter CLI client)
-. ~/t/etc/t-completion.sh
+# . ~/t/etc/t-completion.sh
+
+# Enable tab completion for `g` by marking it as an alias for `git`
+if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+	complete -o default -o nospace -F _git g;
+fi;
 
 ## Language version managers, environments and alternate installs ##
 
@@ -90,24 +97,18 @@ export PATH=/usr/local/opt/go/libexec/bin:$PATH
 # Node #
 # Enable nvm
 export NVM_DIR=~/.nvm
-. $HOME/.nvm/nvm.sh
-
-# Enable gulp completion
-eval "$(gulp --completion=bash)"
-
-# PHP #
-# Use Homebrew PHP
-export PATH=/usr/local/opt/php56/bin:$PATH
+. $(brew --prefix nvm)/nvm.sh
 
 ## Additional CLI executables ##
-# Enable thefuck
-alias fuck='$(thefuck $(fc -ln -1))'
+
+# Enable thefuck (suggest fixes for mistyped commands)
+eval "$(thefuck --alias)"
 
 # Enable z (intelligent directory autojumping)
 # . "$(brew --prefix)/etc/profile.d/z.sh"
 
 # Enable fasd (more advanced version of z)
-eval "$(fasd --init auto)"
+# eval "$(fasd --init auto)"
 
 # Enable jump (more focused version of fasd)
 eval "$(jump shell bash)"
@@ -165,12 +166,8 @@ fi;
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-# Git-Friendly configuration
-export GIT_FRIENDLY_NOBUNDLE
-export GIT_FRIENDLY_NO_NPM
-export GIT_FRIENDLY_NO_BOWER
-
 # Added by Travis-CI gem
 [ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh
 
+# FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

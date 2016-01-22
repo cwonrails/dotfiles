@@ -7,7 +7,7 @@ alias sudo='sudo '
 alias brewclean='brew cleanup -s --force'
 
 # List installed formulas that depend on the given formula
-alias brewdeps='brew uses --installed'
+alias brewdep='brew uses --installed'
 
 # Clear terminal screen (works in tmux)
 alias c='clear'

@@ -74,7 +74,7 @@ Plug 'hail2u/vim-css3-syntax'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'honza/vim-snippets'
 " Plug 'ingydotnet/yaml-vim'
-" Plug 'isRuslan/vim-es6'
+Plug 'isRuslan/vim-es6'
 " Plug 'itchyny/calendar.vim'
 " Plug 'itchyny/lightline.vim'
 if s:darwin
@@ -110,13 +110,14 @@ endif
 " Plug 'kewah/vim-cssfmt'
 " Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
-" Plug 'leafgarland/typescript-vim'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install && npm install --save tern-webidl' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -133,7 +134,7 @@ Plug 'mhinz/vim-startify'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
@@ -145,7 +146,7 @@ Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
 " Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
@@ -163,7 +164,7 @@ endif
 " Plug 'romainl/flattened'
 " Plug 'rstacruz/vim-hyperstyle'
 " Plug 'ruanyl/vim-fixmyjs'
-" Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
+Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
 " Plug 'ruanyl/vim-gh-line'
 " Plug 'ryanss/vim-hackernews'
 " Plug 'scrooloose/nerdcommenter'
@@ -178,7 +179,7 @@ Plug 'scrooloose/syntastic'
 " Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'SirVer/ultisnips'
-" Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 " Plug 'stephenway/postcss.snippets'
 " Plug 'svermeulen/vim-easyclip'
@@ -325,9 +326,8 @@ autocmd BufWritePre * StripWhitespace
 
 " Check for syntax errors on open
 let g:syntastic_check_on_open=1
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-
+" let g:syntastic_always_populate_loc_list=1
+" let g:syntastic_auto_loc_list=1
 
 " CSS linting
 let g:syntastic_css_checkers=['stylelint']
@@ -421,6 +421,7 @@ set novisualbell
 set nojoinspaces
 set noshowmode
 set nostartofline
+" set nowrap
 set nrformats=hex
 set nu
 set numberwidth=5
@@ -478,6 +479,7 @@ inoremap <C-k> <C-o>k
 
 augroup airline_config
   autocmd!
+  " let g:airline_theme = "hybrid"
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#syntastic#enabled = 1
   let g:airline#extensions#tabline#buffer_nr_format = '%s '

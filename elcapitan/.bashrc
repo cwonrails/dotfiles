@@ -13,9 +13,6 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
 export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
-# export PATH=/usr/local/opt/findutils/bin:$PATH
-# export PATH=/usr/local/Cellar/findutils/4.4.2/bin:$PATH
-# export MANPATH=/usr/local/opt/findutils/share/man:$MANPATH
 export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
@@ -27,6 +24,11 @@ export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
 test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+
+# if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+#     GIT_PROMPT_THEME=Default
+#     source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+# fi
 
 # Make vim default editor
 export VISUAL=vim
@@ -71,9 +73,6 @@ fi
 # Alias hub to git for additional git aliases
 eval "$(hub alias -s)"
 
-# Enable gulp completion
-# eval "$(gulp --completion=bash)"
-
 # Enable grc (terminal output colors)
 # source "`brew --prefix`/etc/grc.bashrc"
 
@@ -96,19 +95,14 @@ export PATH=/usr/local/opt/go/libexec/bin:$PATH
 
 # Node #
 # Enable nvm
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+. ~/.nvm/bash_completion
+
+# Enable gulp completion
+# eval "$(gulp --completion=bash)"
 
 ## Additional CLI executables ##
-
-# Enable thefuck (suggest fixes for mistyped commands)
-eval "$(thefuck --alias)"
-
-# Enable z (intelligent directory autojumping)
-# . "$(brew --prefix)/etc/profile.d/z.sh"
-
-# Enable fasd (more advanced version of z)
-# eval "$(fasd --init auto)"
 
 # Enable jump (more focused version of fasd)
 eval "$(jump shell bash)"

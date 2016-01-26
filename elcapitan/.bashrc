@@ -98,6 +98,7 @@ export PATH=/usr/local/opt/go/libexec/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 . ~/.nvm/bash_completion
+`nvm use --delete-prefix v5.5.0 --silent`
 
 # Enable gulp completion
 # eval "$(gulp --completion=bash)"

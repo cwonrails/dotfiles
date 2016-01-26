@@ -107,7 +107,7 @@ Plug 'kchmck/vim-coffee-script'
 if s:darwin
 Plug 'keith/investigate.vim'
 endif
-" Plug 'kewah/vim-cssfmt'
+Plug 'kewah/vim-cssfmt'
 " Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -330,7 +330,7 @@ let g:syntastic_check_on_open=1
 " let g:syntastic_auto_loc_list=1
 
 " CSS linting
-let g:syntastic_css_checkers=['stylelint']
+" let g:syntastic_css_checkers=['stylelint']
 
 " HTML linting
 let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'

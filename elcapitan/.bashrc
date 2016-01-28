@@ -23,12 +23,7 @@ export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
-test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
-
-# if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-#     GIT_PROMPT_THEME=Default
-#     source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
-# fi
+# test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
 
 # Make vim default editor
 export VISUAL=vim
@@ -54,6 +49,15 @@ for file in ~/.{bash_prompt,extras,inputrc,functions}; do
 done;
 unset file;
 
+# Node #
+# Enable nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# . ~/.nvm/bash_completion
+
+# Enable n
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
 # Enable Homebrew-installed bash completion
 if [ -f "$(brew --prefix)"/etc/bash_completion ]; then
   . "$(brew --prefix)"/etc/bash_completion
@@ -67,21 +71,12 @@ fi
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Enable aws-cli bash completion
-# complete -C aws_completer aws
-
 # Alias hub to git for additional git aliases
 eval "$(hub alias -s)"
 
-# Enable grc (terminal output colors)
-# source "`brew --prefix`/etc/grc.bashrc"
-
-# Enable t completion (Twitter CLI client)
-# . ~/t/etc/t-completion.sh
-
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-	complete -o default -o nospace -F _git g;
+  complete -o default -o nospace -F _git g;
 fi;
 
 ## Language version managers, environments and alternate installs ##
@@ -92,12 +87,6 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
-
-# Node #
-# Enable nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-. ~/.nvm/bash_completion
 
 # Enable gulp completion
 # eval "$(gulp --completion=bash)"
@@ -150,9 +139,9 @@ alias egrep='egrep --color=auto'
 # Use Git’s colored diff when available
 hash git &>/dev/null;
 if [ $? -eq 0 ]; then
-	function diff() {
-		git diff --no-index --color-words "$@";
-	}
+  function diff() {
+    git diff --no-index --color-words "$@";
+  }
 fi;
 
 # Use the text that has already been typed as the prefix for searching through

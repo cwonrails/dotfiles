@@ -5,3 +5,10 @@ vendor
 .git/
 bower_components/
 node_modules/
+.cache/
+.cocoapods/
+.codeintel/
+.local/
+.node-gyp/
+.cpan/
+.pia_manager

@@ -25,11 +25,13 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Plug 'blueyed/vim-diminactive'
 " Plug 'cakebaker/scss-syntax.vim'
 " Plug 'camthompson/vim-ember'
 " Plug 'Chiel92/vim-autoformat'
+" Plug 'chrisbra/csv.vim'
 " Plug 'chrisbra/NrrwRgn'
 " Plug 'chrisbra/unicode.vim'
 " Plug 'chriskempson/vim-tommorow-theme'
@@ -48,8 +50,10 @@ Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
-" Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
+" Plug 'edkolev/promptline.vim'
+" Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
@@ -120,6 +124,7 @@ endif
 " Plug 'marijnh/tern_for_vim', { 'do': 'npm install && npm install --save tern-webidl' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
+" Plug 'mattn/livestyle-vim'
 Plug 'mattn/webapi-vim'
 " Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-grepper'
@@ -130,6 +135,7 @@ Plug 'mattn/webapi-vim'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
 " Plug 'mitsuhiko/jinja2', { 'branch': 'master', 'rtp': 'ext/Vim' }
+" Plug 'mkitt/tabline.vim'
 " Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 " Plug 'mtscout6/syntastic-local-eslint.vim'
@@ -484,70 +490,12 @@ inoremap <C-k> <C-o>k
 augroup airline_config
   autocmd!
   let g:airline_powerline_fonts = 1
-  " let g:airline#extensions#syntastic#enabled = 1
-  " let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  " let g:airline#extensions#tabline#buffer_nr_show = 1
-  " let g:airline#extensions#tabline#enabled = 1
-  " let g:airline#extensions#tabline#fnamecollapse = 0
-  " let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#branch#enanbled = 1
+  let g:airline#extensions#hunks#enabled = 1
+  let g:airline#extensions#syntastic#enabled = 1
+  let g:airline#extensions#tabline#buffer_nr_format = '%s '
+  let g:airline#extensions#tabline#buffer_nr_show = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamecollapse = 0
+  let g:airline#extensions#tabline#fnamemod = ':t'
 augroup END
-
-" ----------------------------------------------------------------------------
-" <tab> / <s-tab> / <c-v><tab> | super-duper-tab
-" ----------------------------------------------------------------------------
-
-" function! s:can_complete(func, prefix)
-"   if empty(a:func) || call(a:func, [1, '']) < 0
-"     return 0
-"   endif
-"   let result = call(a:func, [0, matchstr(a:prefix, '\k\+$')])
-"   return !empty(type(result) == type([]) ? result : result.words)
-" endfunction
-"
-" function! s:super_duper_tab(k, o)
-"   if pumvisible()
-"     return a:k
-"   endif
-"
-"   let line = getline('.')
-"   let col = col('.') - 2
-"   if line[col] !~ '\k\|[/~.]'
-"     return a:o
-"   endif
-"
-"   let prefix = expand(matchstr(line[0:col], '\S*$'))
-"   if prefix =~ '^[~/.]'
-"     return "\<c-x>\<c-f>"
-"   endif
-"   if s:can_complete(&omnifunc, prefix)
-"     return "\<c-x>\<c-o>"
-"   endif
-"   if s:can_complete(&completefunc, prefix)
-"     return "\<c-x>\<c-u>"
-"   endif
-"   return a:k
-" endfunction
-"
-" if has_key(g:plugs, 'ultisnips')
-"   " UltiSnips will be loaded only when tab is first pressed in insert mode
-"   if !exists(':UltiSnipsEdit')
-"     inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
-"     imap <tab> <Plug>(tab)
-"   endif
-"
-"   let g:SuperTabMappingForward  = "<tab>"
-"   let g:SuperTabMappingBackward = "<s-tab>"
-"   function! SuperTab(m)
-"     return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
-"                            \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
-"   endfunction
-" else
-"   inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
-"   inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
-" endif
-
-" ----------------------------------------------------------------------------
-" vim-fugitive
-" ----------------------------------------------------------------------------
-" nmap     <Leader>gs :Gstatus<CR>gg<c-n>
-" nnoremap <Leader>dd :Gdiff<CR>

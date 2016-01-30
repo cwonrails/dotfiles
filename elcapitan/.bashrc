@@ -23,7 +23,7 @@ export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
 # Enable iTerm2 shell integration
-# test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
 
 # Make vim default editor
 export VISUAL=vim
@@ -67,6 +67,9 @@ fi
 if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
   . "$(brew --prefix)/share/bash-completion/bash_completion";
 fi
+
+# Use Homebrew-installed PHP
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;

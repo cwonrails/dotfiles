@@ -21,7 +21,7 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
-Plug 'ajh17/VimCompletesMe'
+" Plug 'ajh17/VimCompletesMe'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
@@ -40,7 +40,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ciaranm/detectindent'
 Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'davidosomething/vim-jsdoc'
+Plug 'davidosomething/vim-jsdoc'
 Plug 'davidosomething/syntastic-hbstidy'
 Plug 'dbakker/vim-lint'
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
@@ -48,7 +48,7 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
-" Plug 'duggiefresh/vim-easydir'
+Plug 'duggiefresh/vim-easydir'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
@@ -63,7 +63,6 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'garbas/vim-snipmate'
 " Plug 'gavocanov/vim-js-indent'
 " Plug 'godlygeek/csapprox'
-Plug 'godlygeek/tabular'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 " Plug 'google/vim-jsonnet'
@@ -115,13 +114,13 @@ Plug 'kewah/vim-cssfmt'
 Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
+Plug 'leafgarland/typescript-vim'
 " Plug 'ludovicchabant/vim-gutentags'
 Plug 'lfv89/vim-interestingwords'
 Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install && npm install --save tern-webidl' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm -i && npm -i --save tern-webidl' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/livestyle-vim'
@@ -156,7 +155,6 @@ Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'powerline/powerline'
 " Plug 'Raimondi/delimitMate'
 Plug 'ramitos/jsctags'
@@ -203,7 +201,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-git'
@@ -224,6 +222,7 @@ Plug 'tpope/vim-surround'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
@@ -246,7 +245,7 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
-" Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
+Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -349,6 +348,13 @@ let g:syntastic_auto_loc_list=1
 " CSS linting
 let g:syntastic_css_checkers=['stylelint']
 
+" Handlebars linting
+let g:syntastic_filetype_map = {
+  \ 'html.handlebars': 'handlebars',
+  \ }
+
+let g:syntastic_handlebars_checkers = ['handlebars', 'hbstidy']
+
 " HTML linting
 if s:darwin
 let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
@@ -386,9 +392,6 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.py set filetype=python
 autocmd BufRead,BufNewFile *.rb set filetype=ruby
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
-
-" Allow stylesheets to autocomplete hyphenated words
-autocmd fileType css,scss,sass setlocal iskeyword+=-
 
 " Enable spellchecking for Markdown
 autocmd fileType markdown setlocal spell
@@ -518,3 +521,56 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+" ----------------------------------------------------------------------------
+" <tab> / <s-tab> / <c-v><tab> | super-duper-tab
+" ----------------------------------------------------------------------------
+function! s:can_complete(func, prefix)
+  if empty(a:func) || call(a:func, [1, '']) < 0
+    return 0
+  endif
+  let result = call(a:func, [0, matchstr(a:prefix, '\k\+$')])
+  return !empty(type(result) == type([]) ? result : result.words)
+endfunction
+
+function! s:super_duper_tab(k, o)
+  if pumvisible()
+    return a:k
+  endif
+
+  let line = getline('.')
+  let col = col('.') - 2
+  if line[col] !~ '\k\|[/~.]'
+    return a:o
+  endif
+
+  let prefix = expand(matchstr(line[0:col], '\S*$'))
+  if prefix =~ '^[~/.]'
+    return "\<c-x>\<c-f>"
+  endif
+  if s:can_complete(&omnifunc, prefix)
+    return "\<c-x>\<c-o>"
+  endif
+  if s:can_complete(&completefunc, prefix)
+    return "\<c-x>\<c-u>"
+  endif
+  return a:k
+endfunction
+
+if has_key(g:plugs, 'ultisnips')
+  " UltiSnips will be loaded only when tab is first pressed in insert mode
+  if !exists(':UltiSnipsEdit')
+    inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
+    imap <tab> <Plug>(tab)
+  endif
+
+  let g:SuperTabMappingForward  = "<tab>"
+  let g:SuperTabMappingBackward = "<s-tab>"
+  function! SuperTab(m)
+    return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
+                           \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
+  endfunction
+else
+  inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
+  inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
+endif

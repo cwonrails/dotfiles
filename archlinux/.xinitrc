@@ -5,18 +5,13 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
+# Use GTK widgets in place of QT
+# export QT_STYLE_OVERRIDE=GTK+
+
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -24,15 +19,7 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -54,5 +41,34 @@ fi
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
 
-# exec i3
-exec cinnamon-session
+# make Caps Lock an additional CTRL key
+setxkbmap -option ctrl:nocaps
+
+# enable use of xset to manipulate keyboard LEDs
+# xkbcomp "$DISPLAY" /tmp/xkbconf
+# sed 's/\!allowExplicit/allowExplicit/' </tmp/xkbconf >/tmp/xkbconfnew
+# xkbcomp /tmp/xkbconfnew "$DISPLAY"
+# rm -f '/tmp/xkbconf' '/tmp/xkbconfnew'
+
+# keyboard shortcuts for bspwm
+# sxhkd -f 100 &
+
+
+# screen temperature adjustment
+# adjust the coordinates for your location.
+# redshift -r -l 35.22:-80.84 &
+
+# desktop wallpaper
+# sh ~/.fehbg &
+
+# hide x11 cursor
+# unclutter &
+
+# urxvt daemon
+# urxvtd -q -f -o &
+
+# window manager
+# exec bspwm
+
+exec i3
+# exec cinnamon-session

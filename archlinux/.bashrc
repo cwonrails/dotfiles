@@ -8,39 +8,31 @@ set -o vi
 
 # Enable bash aliases if present
 if [ -f ~/.bash_aliases ]; then
-		. ~/.bash_aliases
+    . ~/.bash_aliases
 fi
 
 # Enable z
-source ~/z/z.sh
-
-# Enable nvm
-export NVM_DIR=~/.nvm
-source /usr/share/nvm/init-nvm.sh
+. ~/z/z.sh
 
 # Enable chruby
-source /usr/share/chruby/chruby.sh
-chruby ruby 2.2.2
+. /usr/share/chruby/chruby.sh
+chruby ruby 2.3.0
 
 # Golang env variables
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
 
-# Enable thefuck
-alias fuck='$(thefuck $(fc -ln -1))'
-
-# Enable hub as git wrapper
-eval "$(hub alias -s)"
-
-# Make list of installed packages
-alias makelist='pacaur -Q'
+# Enable nvm
+export NVM_DIR="$HOME/.nvm"
+. /usr/share/nvm/nvm.sh
+. /usr/share/nvm/bash_completion
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # Load extra dotfiles if present
-for file in ~/.{bash_prompt,exports,aliases,extra}; do
+for file in ~/.{bash_prompt,exports,inputrc,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
@@ -48,7 +40,7 @@ unset file;
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
-# Append to the Bash history file, rather than overwriting it
+# Append to the Bash history file rather than overwriting it
 shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
@@ -71,6 +63,7 @@ eval `dircolors ~/.dir_colors`
 # Enable fzf
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
+# npm no sudo fix
 export NPM_PACKAGES="/home/cwonarch/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"

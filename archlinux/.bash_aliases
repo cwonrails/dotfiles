@@ -17,32 +17,8 @@ auru() {
     git pull && rm -f ./*.pkg.tar.xz || true && makepkg -sci
 }
 
-# Get AUR package information
-alias aurinfo='pacaur -i'
-
-# Get standard repo package information
-alias pacinfo='sudo pacman -Si'
-
-# Search AUR with pacaur
-alias aursearch='pacaur -s'
-
-# Install pacman packages
-alias pacinstall='sudo pacman -S --needed --noconfirm'
-
 # Make list of installed packages
 alias makelist='pacaur -Q'
-
-# Install packages from list
-listinstall () {
-pacman -S --needed $(cat ($1).txt)
-}
-
-# Remove packages from list
-listremove () {
-pacman -Rs $(cat ($1).txt)
-}
-
-## General ##
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -69,20 +45,19 @@ alias x='exit'
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
-alias ir='vim ~/.inputrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 alias xr='vim ~/.xinitrc'
 
 ## Navigation ##
-# Go back from current directory
+# Go backwards from current directory
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias .....='cd ../../../../../'
 alias ......='cd ../../../../../../'
 
-# Go back to previous directory
+# Return to previous directory
 alias b='cd - '
 
 # Go to Downloads folder
@@ -103,15 +78,14 @@ alias ghf='cd ~/github/forks'
 # Go to Github repos folder
 alias ghr='cd ~/github/repos'
 
-# Go to Home directory
-alias hd='cd ~/'
+# Go to Github public repos folder
+alias ghpublic='cd ~/github/repos/public'
 
-## nvm ##
-alias ns='nvm use system'
-alias n4='nvm use 4'
-alias nio='nvm use 3'
-alias n12='nvm use 0.12'
-alias n10='nvm use 0.10'
+# Go to Github public repos folder
+alias ghprivate='cd ~/github/repos/private'
+
+# Go to Home directory
+alias hd='cd ~'
 
 ## npm ##
 # List top-level npm global modules
@@ -125,12 +99,6 @@ alias ngo='ncu -g'
 
 # List outdated local modules
 alias nlo='ncu'
-
-# Update outdated local modules
-alias nlu='ncu -u'
-
-# Update outdated global modules (*except* npm)
-alias nlu='ncu -g -u'
 
 # Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
 alias vu="vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall"

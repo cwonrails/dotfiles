@@ -24,7 +24,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
-Plug 'ap/vim-buftabline'
+" Plug 'ap/vim-buftabline'
 " Plug 'benekastah/neomake'
 " Plug 'blueyed/vim-diminactive'
 Plug 'cakebaker/scss-syntax.vim'
@@ -41,7 +41,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'davidosomething/vim-jsdoc'
-" Plug 'davidosomething/syntastic-hbstidy'
+Plug 'davidosomething/syntastic-hbstidy'
 Plug 'dbakker/vim-lint'
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
@@ -52,7 +52,7 @@ Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
-Plug 'edkolev/tmuxline.vim'
+" Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
@@ -71,13 +71,13 @@ Plug 'google/vim-maktaba'
 Plug 'google/vim-searchindex'
 Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
-" Plug 'gregsexton/MatchTag'
+Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
-" Plug 'ingydotnet/yaml-vim'
-" Plug 'isRuslan/vim-es6'
+Plug 'ingydotnet/yaml-vim'
+Plug 'isRuslan/vim-es6'
 " Plug 'itchyny/calendar.vim'
 " Plug 'itchyny/lightline.vim'
 if s:darwin
@@ -117,7 +117,7 @@ Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 " Plug 'ludovicchabant/vim-gutentags'
-" Plug 'lfv89/vim-interestingwords'
+Plug 'lfv89/vim-interestingwords'
 Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
@@ -131,7 +131,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-janah'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 " Plug 'mhinz/vim-signify'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
 " Plug 'mitsuhiko/jinja2', { 'branch': 'master', 'rtp': 'ext/Vim' }
@@ -166,7 +166,7 @@ if s:darwin
 Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 endif
 " Plug 'rking/ag.vim'
-" Plug 'rodjek/vim-puppet'
+Plug 'rodjek/vim-puppet'
 " Plug 'romainl/flattened'
 " Plug 'rstacruz/vim-hyperstyle'
 " Plug 'ruanyl/vim-fixmyjs'
@@ -227,9 +227,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/dbext.vim'
+" Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/PreserveNoEOL'
-Plug 'vim-scripts/ReplaceWithRegister'
+" Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxRange'
 " Plug 'vimwiki/vimwiki'
 " Plug 'vim-scripts/IndentTab'
@@ -246,7 +246,7 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
-Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
+" Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -500,8 +500,8 @@ augroup airline_config
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#fnamecollapse = 0
   let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline_theme='solarized'
 augroup END
-
 
 " ----------------------------------------------------------------------------
 " NERDTreeGit

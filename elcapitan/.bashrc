@@ -43,7 +43,19 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# function _update_ps1() {
+#     PS1="$(~/github/clones/powerline-shell/powerline-shell.py $? 2> /dev/null)"
+# }
+
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
+
 # Load extra dotfiles if present
+# for file in ~/.{extras,inputrc,functions}; do
+#   [ -r "$file" ] && [ -f "$file" ] && . "$file";
+# done;
+# unset file;
 for file in ~/.{bash_prompt,extras,inputrc,functions}; do
   [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
@@ -77,6 +89,9 @@ export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 # Alias hub to git for additional git aliases
 eval "$(hub alias -s)"
 
+# Alias thefuck
+eval "$(thefuck --alias)"
+
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   complete -o default -o nospace -F _git g;
@@ -92,7 +107,7 @@ export PATH=$GOBIN:$PATH
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
 
 # Enable gulp completion
-# eval "$(gulp --completion=bash)"
+eval "$(gulp --completion=bash)"
 
 ## Additional CLI executables ##
 

@@ -22,10 +22,12 @@ call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
-Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
+" Plug 'arkwright/vim-radar'
 " Plug 'benekastah/neomake'
+" Plug 'blindFS/vim-taskwarrior'
 " Plug 'blueyed/vim-diminactive'
 Plug 'cakebaker/scss-syntax.vim'
 " Plug 'camthompson/vim-ember'
@@ -40,7 +42,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ciaranm/detectindent'
 Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'davidosomething/vim-jsdoc'
+" Plug 'davidosomething/vim-jsdoc'
 Plug 'davidosomething/syntastic-hbstidy'
 Plug 'dbakker/vim-lint'
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
@@ -48,7 +50,7 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
-Plug 'duggiefresh/vim-easydir'
+" Plug 'duggiefresh/vim-easydir'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
@@ -60,15 +62,16 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'fmoralesc/vim-pad'
 " Plug 'FredKSchott/CoVim'
+" Plug 'freitass/todo.txt-vim'
 " Plug 'garbas/vim-snipmate'
 " Plug 'gavocanov/vim-js-indent'
 " Plug 'godlygeek/csapprox'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
+" Plug 'google/vim-codefmt'
+" Plug 'google/vim-glaive'
 " Plug 'google/vim-jsonnet'
-Plug 'google/vim-maktaba'
-Plug 'google/vim-searchindex'
-Plug 'google/vim-syncopate'
+" Plug 'google/vim-maktaba'
+" Plug 'google/vim-searchindex'
+" Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
 Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -76,6 +79,7 @@ Plug 'hail2u/vim-css3-syntax'
 " Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'ingydotnet/yaml-vim'
+" Plug 'int3/vim-extradite'
 Plug 'isRuslan/vim-es6'
 " Plug 'itchyny/calendar.vim'
 " Plug 'itchyny/lightline.vim'
@@ -92,9 +96,9 @@ Plug 'jistr/vim-nerdtree-tabs', { 'for': 'NERDTreeToggle' }
 Plug 'JulesWang/css.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/gv.vim'
-Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/gv.vim'
+" Plug 'junegunn/limelight.vim'
 " Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 " Plug 'junegunn/vim-github-dashboard'
@@ -115,8 +119,10 @@ Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'leafgarland/typescript-vim'
+Plug 'low-ghost/nerdtree-fugitive', { 'on': 'NerdTreeToggle' }
 " Plug 'ludovicchabant/vim-gutentags'
 Plug 'lfv89/vim-interestingwords'
+Plug 'lukaszkorecki/workflowish'
 Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
@@ -146,18 +152,19 @@ Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-watchdogs'
-" Plug 'othree/csscomplete.vim'
+Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/jspc.vim'
+" Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
 " Plug 'powerline/powerline'
+Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'Raimondi/delimitMate'
-Plug 'ramitos/jsctags'
+" Plug 'ramitos/jsctags'
 Plug 'rhysd/committia.vim'
 " Plug 'rhysd/conflict-marker.vim'
 if s:darwin
@@ -182,6 +189,7 @@ Plug 'scrooloose/syntastic'
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'SirVer/ultisnips'
 " Plug 'sickill/vim-paste'
 " Plug 'sjl/gundo.vim'
@@ -197,23 +205,34 @@ Plug 'todesking/vint-syntastic', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
 " Plug 'tomtom/tlib_vim'
 Plug 'tmux-plugins/vim-tmux'
+" Plug 'tpope/fireplace.vim'
 " Plug 'tpope/vim-abolish'
+" Plug 'tpope/vim-afterimage'
+" Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-capslock'
+" Plug 'tpope/vim-characterize'
+" Plug 'tpope/vim-classpath'
 " Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-git'
 " Plug 'tpope/vim-haml'
+" Plug 'tpope/vim-haystack'
+" Plug 'tpope/vim-heroku'
 " Plug 'tpope/vim-markdown'
+" Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rhubarb'
 " Plug 'tpope/vim-rsi'
+" Plug 'tpope/vim-salve'
 " Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-tbone'
 " Plug 'tpope/vim-unimpaired'
@@ -222,7 +241,7 @@ Plug 'tpope/vim-surround'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ctrlspace/vim-ctrlspace'
+" Plug 'vim-ctrlspace/vim-ctrlspace'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
@@ -243,7 +262,7 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plug 'Yggdroot/indentline'
+" Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
 Plug 'ryanoasis/vim-devicons'
@@ -253,6 +272,7 @@ call plug#end()
 " Enable 256 colors in terminal
 set t_Co=256
 
+" Enable indentation for specific filetypes
 filetype plugin indent on
 
 " Reload .vimrc on save
@@ -342,8 +362,8 @@ autocmd BufWritePre * StripWhitespace
 
 " Check for syntax errors on open
 let g:syntastic_check_on_open=1
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
+" let g:syntastic_always_populate_loc_list=1
+" let g:syntastic_auto_loc_list=1
 
 " CSS linting
 let g:syntastic_css_checkers=['stylelint']
@@ -417,6 +437,7 @@ set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview
 set directory=$HOME/.vim/swap
+" set display+=lastline
 set encoding=utf-8
 set expandtab
 set foldlevelstart=99
@@ -427,6 +448,7 @@ set history=1000
 set hlsearch
 set ignorecase
 set incsearch
+" set langnoremap
 set laststatus=2
 set lazyredraw
 set list
@@ -442,6 +464,7 @@ set nu
 set numberwidth=5
 set relativenumber
 set ruler
+" set scrolloff=1
 set scrolloff=5
 set sessionoptions-=options
 set shiftwidth=2
@@ -449,14 +472,17 @@ set shortmess=aIT
 set showcmd
 set showmatch
 set showtabline=2
+" set sidescrolloff=5
 set softtabstop=2
 set smartcase
 set smartindent
 set smarttab
 set tabstop=2
+" set tabpagemax=50
 set textwidth=80
 set ttimeout
 set ttimeoutlen=10
+" set ttimeoutlen=100
 set ttyfast
 set undodir=$HOME/.vim/undo
 set undofile
@@ -465,7 +491,8 @@ set undoreload=1000
 set virtualedit=block
 set whichwrap=b,s
 set wildmenu
-set wildmode=list:longest,list:full
+set wildmode=list:longest,full
+" set wildmode=list:longest,list:full
 
 silent! set cryptmethod=blowfish2
 
@@ -478,6 +505,12 @@ endif
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
+
+" If swap file exists for current file, edit the swap file instead
+" if !exists('*EditExisting')  && findfile('plugin/editexisting.vim', &rtp) ==# ''
+"   runtime! macros/editexisting.vim
+" endif
+
 
 " ----------------------------------------------------------------------------
 " Movement in insert mode

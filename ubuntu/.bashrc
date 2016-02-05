@@ -24,6 +24,7 @@ fi
 export GOPATH=/Users/christopherwatson/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 # export PATH=/usr/local/bin:$PATH
 # export PATH=/usr/local/sbin:$PATH

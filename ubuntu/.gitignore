@@ -1,4 +1,4 @@
-### CodeKit ###
+## CodeKit ###
 config.codekit
 /min
 
@@ -75,7 +75,6 @@ Temporary Items
 .otto/
 
 ### Sublime Text ###
-# cache files for sublime text
 *.tmlanguage.cache
 *.tmPreferences.cache
 *.stTheme.cache

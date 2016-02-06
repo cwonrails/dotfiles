@@ -26,8 +26,11 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 
-# export PATH=/usr/local/bin:$PATH
-# export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+
+# Terraform
+export PATH=/usr/local/terraform/bin:$HOME/terraform:$PATH
 
 # Enable thefuck: https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'

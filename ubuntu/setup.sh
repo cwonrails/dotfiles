@@ -6,7 +6,7 @@ sudo apt-get update
 sudo apt-get autoclean
 sudo apt-get autoremove
 
-sudo apt-get -y install build-essential software-properties-common vim git wget clang editorconfig sakura chromium-browser silversearcher-ag zip
+sudo apt-get -y install build-essential software-properties-common vim git wget clang editorconfig sakura chromium-browser silversearcher-ag zip i3 aptitude synaptic
 sudo apt-get update
 sudo apt-get autoclean
 sudo apt-get autoremove
@@ -15,7 +15,6 @@ sudo apt-get autoremove
 cd ~
 sudo cp /etc/apt/sources.list ~/
 sudo cp .bashrc bashrc
-sudo cp
 
 # vim
 mkdir -p ~/.vim/backup
@@ -41,7 +40,7 @@ sudo apt-get -y build-dep tmux
 sudo apt-get update
 wget https://github.com/tmux/tmux/releases/download/2.1/tmux-2.1.tar.gz
 tar -xvf tmux*.tar.gz
-cd tmux-2.1
+cd tmux*
 ./configure && make
 sudo make install
 cd ~/
@@ -87,7 +86,6 @@ wget https://releases.hashicorp.com/terraform/0.6.11/terraform_0.6.11_linux_amd6
 mkdir terraform
 unzip terraform_0.5.11_linux_amd64.zip -d ~/terraform
 sudo mv terraform usr/local
-## need to add to $PATH ##
 
 # spotify
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886

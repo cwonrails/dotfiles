@@ -19,7 +19,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'AndrewRadev/splitjoin.vim'
@@ -314,7 +314,7 @@ set diffopt+=filler,vertical
 
 " Choose colorscheme
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>

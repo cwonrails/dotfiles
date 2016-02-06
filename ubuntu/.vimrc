@@ -19,10 +19,10 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-" Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
-" Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
@@ -31,10 +31,10 @@ Plug 'ap/vim-css-color'
 " Plug 'blueyed/vim-diminactive'
 Plug 'cakebaker/scss-syntax.vim'
 " Plug 'camthompson/vim-ember'
-" Plug 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 " Plug 'chrisbra/csv.vim'
 " Plug 'chrisbra/NrrwRgn'
-Plug 'chrisbra/unicode.vim'
+" Plug 'chrisbra/unicode.vim'
 " Plug 'chriskempson/vim-tommorow-theme'
 " Plug 'christoomey/vim-run-interactive'
 " Plug 'christoomey/vim-system-copy'
@@ -66,17 +66,17 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'garbas/vim-snipmate'
 " Plug 'gavocanov/vim-js-indent'
 " Plug 'godlygeek/csapprox'
-" Plug 'google/vim-codefmt'
-" Plug 'google/vim-glaive'
-" Plug 'google/vim-jsonnet'
-" Plug 'google/vim-maktaba'
-" Plug 'google/vim-searchindex'
-" Plug 'google/vim-syncopate'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'google/vim-jsonnet'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-searchindex'
+Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
 Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax'
-" Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'ingydotnet/yaml-vim'
 " Plug 'int3/vim-extradite'
@@ -91,7 +91,7 @@ Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'jceb/vim-orgmode'
-Plug 'jistr/vim-nerdtree-tabs', { 'for': 'NERDTreeToggle' }
+" Plug 'jistr/vim-nerdtree-tabs', { 'for': 'NERDTreeToggle' }
 " Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'JulesWang/css.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -119,17 +119,17 @@ Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'leafgarland/typescript-vim'
-Plug 'low-ghost/nerdtree-fugitive', { 'on': 'NerdTreeToggle' }
+" Plug 'low-ghost/nerdtree-fugitive', { 'on': 'NerdTreeToggle' }
 " Plug 'ludovicchabant/vim-gutentags'
-Plug 'lfv89/vim-interestingwords'
-Plug 'lukaszkorecki/workflowish'
+" Plug 'lfv89/vim-interestingwords'
+" Plug 'lukaszkorecki/workflowish'
 Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm -i && npm -i --save tern-webidl' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-Plug 'mattn/livestyle-vim'
+" Plug 'mattn/livestyle-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-grepper'
@@ -152,7 +152,7 @@ Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-watchdogs'
-Plug 'othree/csscomplete.vim'
+" Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
@@ -163,6 +163,7 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
 " Plug 'powerline/powerline'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'poxar/vim-clipbored'
 " Plug 'Raimondi/delimitMate'
 " Plug 'ramitos/jsctags'
 Plug 'rhysd/committia.vim'
@@ -195,7 +196,7 @@ Plug 'SirVer/ultisnips'
 " Plug 'sjl/gundo.vim'
 " Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'stephenway/postcss.snippets'
-" Plug 'svermeulen/vim-easyclip'
+Plug 'svermeulen/vim-easyclip'
 " Plug 'suan/vim-instant-markdown'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 " Plug 'terryma/vim-multiple-cursors'
@@ -247,7 +248,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/PreserveNoEOL'
-" Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxRange'
 " Plug 'vimwiki/vimwiki'
 " Plug 'vim-scripts/IndentTab'
@@ -261,11 +262,11 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 " Plug 'xolox/vim-easytags'
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+" Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 " Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -437,7 +438,7 @@ set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview
 set directory=$HOME/.vim/swap
-" set display+=lastline
+set display+=lastline
 set encoding=utf-8
 set expandtab
 set foldlevelstart=99
@@ -460,11 +461,10 @@ set nojoinspaces
 set noshowmode
 set nostartofline
 set nrformats=hex
-set nu
+set number
 set numberwidth=5
 set relativenumber
 set ruler
-" set scrolloff=1
 set scrolloff=5
 set sessionoptions-=options
 set shiftwidth=2
@@ -478,11 +478,12 @@ set smartcase
 set smartindent
 set smarttab
 set tabstop=2
-" set tabpagemax=50
+set tabpagemax=50
 set textwidth=80
 set ttimeout
 set ttimeoutlen=10
 " set ttimeoutlen=100
+" set ttimeoutlen=500
 set ttyfast
 set undodir=$HOME/.vim/undo
 set undofile
@@ -536,24 +537,24 @@ augroup airline_config
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#fnamecollapse = 0
   let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline_theme='solarized'
+  " let g:airline_theme='solarized'
 augroup END
 
 " ----------------------------------------------------------------------------
 " NERDTreeGit
 " ----------------------------------------------------------------------------
 
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
+" let g:NERDTreeIndicatorMapCustom = {
+    " \ "Modified"  : "✹",
+    " \ "Staged"    : "✚",
+    " \ "Untracked" : "✭",
+    " \ "Renamed"   : "➜",
+    " \ "Unmerged"  : "═",
+    " \ "Deleted"   : "✖",
+    " \ "Dirty"     : "✗",
+    " \ "Clean"     : "✔︎",
+    " \ "Unknown"   : "?"
+    " \ }
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab

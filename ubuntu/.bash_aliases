@@ -32,6 +32,15 @@ alias br="vim ~/.bashrc"
 alias tc="vim ~/.tmux.conf"
 alias vr="vim ~/.vimrc"
 
+# Back up Ubuntu dotfiles to local directory
+alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gvimrc .hgignore .inputrc .sift.conf .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup'
+
+# Back up OSX dotfiles to Dropbox
+alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gvimrc .hgignore .inputrc .sift.conf .tmux.conf .vimrc .wgetrc ~/Dropbox/dotfiles/ubuntu'
+
+# Back up OSX dotfiles to Github repo and check diff
+alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gvimrc .hgignore .inputrc .sift.conf .tmux.conf .vimrc .wgetrc ~/github/repos/public/dotfiles/ubuntu && cd ~/github/repos/public/dotfiles && git diff'
+
 ## Navigation ##
 # Go back from current directory
 alias ..="cd .."

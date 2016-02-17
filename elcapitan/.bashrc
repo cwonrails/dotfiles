@@ -1,103 +1,76 @@
-#!usr/bin/env bash
+# Set Platform variable for base system
 
-# Enables distinguishing between Mac (Darwin) and Linux
 export PLATFORM=$(uname -s)
+[ -f /etc/bashrc ] && . /etc/bashrc
 
 # Additional $PATH entries
+export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export PATH=$HOME/bin:$PATH
 
-# Use GNU versions of core Unix tools
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
-export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
-export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
-export PATH=/usr/local/opt/gnu-which/bin/which:$PATH
-export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
-export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 
-# Enable iTerm2 shell integration
-test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
-
-# Make vim default editor
+# Set vim as default editor
 export VISUAL=vim
 export EDITOR=vim
 
 # Enable vi mode in shell
 set -o vi
 
-# Use English UTF-8 as default
+# Set default language as English UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-## Completions ##
-
-# Enable bash aliases if present
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
-# function _update_ps1() {
-#     PS1="$(~/github/clones/powerline-shell/powerline-shell.py $? 2> /dev/null)"
-# }
-
-# if [ "$TERM" != "linux" ]; then
-#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-# fi
-
-# Load extra dotfiles if present
-# for file in ~/.{extras,inputrc,functions}; do
-#   [ -r "$file" ] && [ -f "$file" ] && . "$file";
-# done;
-# unset file;
-for file in ~/.{bash_prompt,extras,inputrc,functions}; do
+# Source additional dotfiles if present
+for file in $HOME/.{aliases,bash_aliases,bash_prompt,extras,inputrc,functions,path}; do
   [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
 
-# Node #
-# Enable nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-# . ~/.nvm/bash_completion
-
-# Enable n
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-# Enable Homebrew-installed bash completion
-if [ -f "$(brew --prefix)"/etc/bash_completion ]; then
-  . "$(brew --prefix)"/etc/bash_completion
-fi
-
-# Enable additional Homebrew-installed bash completion
-if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-  . "$(brew --prefix)/share/bash-completion/bash_completion";
-fi
-
-# Use Homebrew-installed PHP
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+# t bash completion
+. ~/t/etc/t-completion.sh
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Alias hub to git for additional git aliases
+# Mac-specific settings
+if [[ "$PLATFORM" = 'Darwin' ]]; then
+
+  # Enable iTerm2 shell integration
+  test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+
+  # Use GNU versions of core Unix tools on Mac
+  export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+  export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
+  export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
+  export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
+  export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
+  export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
+  export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+  export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
+  export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
+  export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
+  export PATH=/usr/local/opt/gnu-which/bin/which:$PATH
+  export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
+
+  # Enable homebrew bash completion
+  if [ -f "$(brew --prefix)"/etc/bash_completion ]; then
+    . "$(brew --prefix)"/etc/bash_completion
+  fi
+
+  # Enable additional homebrew bash completion
+  if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+    . "$(brew --prefix)/share/bash-completion/bash_completion";
+  fi
+
+  # Use brew-installed php
+  export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+fi
+
+# Alias hub to git
 eval "$(hub alias -s)"
 
-# Alias thefuck
+# Enable thefuck
 eval "$(thefuck --alias)"
-
-# Enable tab completion for `g` by marking it as an alias for `git`
-if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  complete -o default -o nospace -F _git g;
-fi;
-
-## Language version managers, environments and alternate installs ##
 
 # Go #
 # Env configuation
@@ -106,15 +79,15 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
 
+# Enable n (https://github.com/tj/n) for nodejs version management
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+
 # Enable gulp completion
 eval "$(gulp --completion=bash)"
 
-## Additional CLI executables ##
-
 # Enable jump (more focused version of fasd)
 eval "$(jump shell bash)"
-
-### Bash modifications ###
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;

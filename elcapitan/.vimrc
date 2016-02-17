@@ -1,6 +1,7 @@
 if &compatible
   set nocompatible
 end
+set viminfo=
 
 " Install vim-plug if missing
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -20,7 +21,7 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
@@ -45,12 +46,13 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'davidosomething/vim-jsdoc'
 Plug 'davidosomething/syntastic-hbstidy'
 Plug 'dbakker/vim-lint'
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+" Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
+Plug 'dyng/ctrlfs.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
@@ -60,6 +62,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'evidens/vim-twig'
 " Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
+" Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'fmoralesc/vim-pad'
 " Plug 'FredKSchott/CoVim'
 " Plug 'freitass/todo.txt-vim'
@@ -87,6 +90,7 @@ if s:darwin
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 " Plug 'jamessan/vim-gnupg'
+" Plug 'jaxbot/semantic-highlight.vim'
 Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax'
 Plug 'jiangmiao/auto-pairs'
@@ -99,8 +103,11 @@ Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'junegunn/seoul256.vim'
+" Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-emoji'
 " Plug 'junegunn/vim-github-dashboard'
 " Plug 'junegunn/vim-journal'
 " Plug 'junegunn/vim-oblique'
@@ -135,7 +142,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-" Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 " Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
@@ -151,6 +158,7 @@ Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
+" Plug 'osyo-manga/vim-over'
 " Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
@@ -238,6 +246,7 @@ Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-vinegar'
 " Plug 'tpope/vim-vividchalk'
+" Plug 'tweekmonster/braceless.vim'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -245,15 +254,17 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
-" Plug 'vim-scripts/dbext.vim'
+Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
+" Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
 " Plug 'vimwiki/vimwiki'
 " Plug 'vim-scripts/IndentTab'
 " Plug 'vim-scripts/ingo-library'
 " Plug 'vim-scripts/tComment'
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'wellle/targets.vim'
 " Plug 'wellle/tmux-complete.vim'
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'wincent/command-t'
@@ -264,7 +275,9 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 " Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
-Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
+if s:darwin
+  Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
+endif
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -278,7 +291,7 @@ filetype plugin indent on
 " Reload .vimrc on save
 augroup reload_vimrc " {
     autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
 augroup END " }
 
 " Enable syntax highlighting
@@ -437,34 +450,34 @@ set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview
 set directory=$HOME/.vim/swap
-" set display+=lastline
+set display+=lastline
 set encoding=utf-8
 set expandtab
 set foldlevelstart=99
-set formatoptions+=j
+" set formatoptions+=j
+set formatoptions+=tcqj
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 set hidden
-set history=1000
+set history=10000
 set hlsearch
 set ignorecase
 set incsearch
-" set langnoremap
 set laststatus=2
 set lazyredraw
 set list
 set listchars=tab:\|\ ,
+set mouse=a
 set nocursorline
 set noerrorbells
 set novisualbell
 set nojoinspaces
 set noshowmode
 set nostartofline
-set nrformats=hex
+set nrformats=bin,hex
 set nu
 set numberwidth=5
 set relativenumber
 set ruler
-" set scrolloff=1
 set scrolloff=5
 set sessionoptions-=options
 set shiftwidth=2
@@ -472,17 +485,16 @@ set shortmess=aIT
 set showcmd
 set showmatch
 set showtabline=2
-" set sidescrolloff=5
+set sidescrolloff=5
 set softtabstop=2
 set smartcase
 set smartindent
 set smarttab
 set tabstop=2
-" set tabpagemax=50
+set tabpagemax=50
 set textwidth=80
 set ttimeout
-set ttimeoutlen=10
-" set ttimeoutlen=100
+set ttimeoutlen=500
 set ttyfast
 set undodir=$HOME/.vim/undo
 set undofile
@@ -492,7 +504,6 @@ set virtualedit=block
 set whichwrap=b,s
 set wildmenu
 set wildmode=list:longest,full
-" set wildmode=list:longest,list:full
 
 silent! set cryptmethod=blowfish2
 
@@ -554,6 +565,12 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+
+" ----------------------------------------------------------------------------
+" vim-signify
+" ----------------------------------------------------------------------------
+let g:signify_vcs_list = ['git']
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab

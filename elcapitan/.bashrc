@@ -1,3 +1,5 @@
+#!usr/bin/env bash
+
 # Set Platform variable for base system
 
 export PLATFORM=$(uname -s)
@@ -25,6 +27,9 @@ for file in $HOME/.{aliases,bash_aliases,bash_prompt,extras,inputrc,functions,pa
   [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
+
+# Enable colorized logfiles and command output
+. `brew --prefix`/etc/grc.bashrc
 
 # t bash completion
 . ~/t/etc/t-completion.sh
@@ -76,8 +81,8 @@ eval "$(thefuck --alias)"
 # Env configuation
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
-export PATH=/usr/local/opt/go/libexec/bin:$PATH
+# export PATH=$GOBIN:$PATH
+# export PATH=/usr/local/opt/go/libexec/bin:$PATH
 
 # Enable n (https://github.com/tj/n) for nodejs version management
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

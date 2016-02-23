@@ -52,7 +52,7 @@ Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
-Plug 'dyng/ctrlfs.vim'
+Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
@@ -69,12 +69,12 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'garbas/vim-snipmate'
 " Plug 'gavocanov/vim-js-indent'
 " Plug 'godlygeek/csapprox'
-" Plug 'google/vim-codefmt'
-" Plug 'google/vim-glaive'
-" Plug 'google/vim-jsonnet'
-" Plug 'google/vim-maktaba'
-" Plug 'google/vim-searchindex'
-" Plug 'google/vim-syncopate'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'google/vim-jsonnet'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-searchindex'
+Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
 Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -250,7 +250,7 @@ Plug 'tpope/vim-surround'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
@@ -275,6 +275,7 @@ Plug 'wellle/targets.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 " Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+" Plug 'zenbro/mirror.vim'
 if s:darwin
   Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
 endif

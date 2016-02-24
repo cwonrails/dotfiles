@@ -1,0 +1,25 @@
+# Make Tab autocomplete regardless of filename case
+set completion-ignore-case on
+
+# List all matches in case multiple possible completions are possible
+set show-all-if-ambiguous on
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+
+# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+set match-hidden-files off
+
+# Show all autocomplete results at once
+set page-completions off
+
+# If there are more than 200 possible completions for a word, ask to show them all
+set completion-query-items 200
+
+# Show extra file information when completing, like `ls -F` does
+set visible-stats on
+
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+set input-meta on
+set output-meta on
+set convert-meta off

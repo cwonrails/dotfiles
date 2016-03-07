@@ -54,7 +54,7 @@ Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
-Plug 'dyng/ctrlsf.vim'
+" Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
@@ -603,7 +603,7 @@ let g:NERDTreeIndicatorMapCustom = {
 " ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
-" let g:signify_vcs_list = ['git']
+let g:signify_vcs_list = ['git']
 
 " ----------------------------------------------------------------------------
 " ----------------------------------------------------------------------------

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+## General aliases ##
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
@@ -12,23 +13,20 @@ alias brewdep='brew uses --installed'
 # Clear terminal screen (works in tmux)
 alias c='clear'
 
-# Git status
-alias g='git status'
+# Copy default package.json to current folder
+alias dfpj='cp ~/default.package.json/package.json `pwd`'
+
+# Recursively delete `.DS_Store` files
+alias dskill="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Print history
 alias h='history'
 
+# run htop without sudo
+alias htop='sudo htop'
+
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-
-# Show jobs
-# alias j='jobs'
-
-# Diff with Kaleidoscope
-alias ksd='ksdiff'
-
-# Long list
-alias ll='ls -al'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
@@ -36,18 +34,22 @@ alias mkdir='mkdir -p'
 # Open current directory in OSX Finder
 alias o='open .'
 
-# Copy default package.json to current folder
-alias pj='cp ~/default.package.json/package.json `pwd`'
-
 # Reload shell
 alias r='exec $SHELL -l'
 
 # Fix 'ls' typing errors
 alias sl='ls'
 
+# Force delete trash on local + mounted file systems; trash Apple System Logs
+alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
 # Exit shell
 alias x='exit'
 
+## Git ##
+alias g='git'
+
+## Dotfiles management ##
 # Quickly edit dotfiles
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
@@ -66,12 +68,6 @@ alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashr
 
 # Back up OSX dotfiles to Github repo and check diff
 alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gvimrc .hgignore .inputrc .sift.conf .tmux.conf .vimrc .wgetrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles && git diff'
-
-# Check status for dotfiles GitHub repo
-alias dfgs='cd ~/github/repos/public/dotfiles && git status'
-
-# Force empty all trashed files
-alias te='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl'
 
 ## Navigation ##
 # Go back from current directory
@@ -105,28 +101,16 @@ alias hd='cd ~'
 # Go to Vagrant boxes directory
 alias vb='cd ~/vagrantboxes'
 
-## nvm ##
-alias ns='nvm use system'
-alias n4='nvm use 4'
-alias n5='nvm use 5'
-
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'
 
-# List outdated npm global modules
-alias ngo='npm -g outdated'
-
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
-# List outdated npm local modules
-alias nlo='npm outdated'
-
-## Package system updates ##
-
-# Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins)
-alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; gem update; gem cleanup; gitup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && npm -g outdated"
+## Package manager updates ##
+# Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and empty trash
+alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && npm -g outdated; te"
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'

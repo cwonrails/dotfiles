@@ -18,11 +18,13 @@ else
   let $GIT_SSL_NO_VERIFY = 'true'
 endif
 
-call plug#begin('~/.vim/bundle')
+" call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
 " Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
+" Plug 'amdt/vim-niji'
 " Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
@@ -45,7 +47,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'davidosomething/vim-jsdoc'
 Plug 'davidosomething/syntastic-hbstidy'
-Plug 'dbakker/vim-lint'
+" Plug 'dbakker/vim-lint'
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
@@ -56,7 +58,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
-" Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
@@ -69,15 +71,17 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'garbas/vim-snipmate'
 " Plug 'gavocanov/vim-js-indent'
 " Plug 'godlygeek/csapprox'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-Plug 'google/vim-jsonnet'
-Plug 'google/vim-maktaba'
-Plug 'google/vim-searchindex'
-Plug 'google/vim-syncopate'
+" Plug 'google/vim-codefmt'
+" Plug 'google/vim-glaive'
+" Plug 'google/vim-jsonnet'
+" Plug 'google/vim-maktaba'
+" Plug 'google/vim-searchindex'
+" Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
 Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less', { 'for': 'less' }
+" Plug 'guns/vim-clojure-static'
+" Plug 'guns/vim-sexp'
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
@@ -87,7 +91,7 @@ Plug 'isRuslan/vim-es6'
 " Plug 'itchyny/calendar.vim'
 " Plug 'itchyny/lightline.vim'
 if s:darwin
-Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+Plug 'itspriddle/vim-marked'
 endif
 " Plug 'jamessan/vim-gnupg'
 " Plug 'jaxbot/semantic-highlight.vim'
@@ -154,12 +158,11 @@ Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-over'
-" Plug 'osyo-manga/vim-watchdogs'
+Plug 'osyo-manga/vim-watchdogs'
 Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -169,10 +172,13 @@ Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'powerline/powerline'
-Plug 'PotatoesMaster/i3-vim-syntax'
+" Plug 'PotatoesMaster/i3-vim-syntax'
+" Plug 'PotatoesMaster/vim-movelines'
 " Plug 'Raimondi/delimitMate'
 " Plug 'ramitos/jsctags'
+" Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'rhysd/committia.vim'
 " Plug 'rhysd/conflict-marker.vim'
 if s:darwin
@@ -181,6 +187,7 @@ endif
 " Plug 'rking/ag.vim'
 Plug 'rodjek/vim-puppet'
 " Plug 'romainl/flattened'
+" Plug 'romainl/vim-qf'
 " Plug 'rstacruz/vim-hyperstyle'
 " Plug 'ruanyl/vim-fixmyjs'
 " Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
@@ -208,29 +215,29 @@ Plug 'stephenway/postcss.snippets'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
-Plug 'todesking/vint-syntastic', { 'for': 'vim' }
+" Plug 'todesking/vint-syntastic'
 " Plug 'tomasr/molokai'
-Plug 'tomtom/tComment_vim'
+" Plug 'tomtom/tComment_vim'
 " Plug 'tomtom/tlib_vim'
 Plug 'tmux-plugins/vim-tmux'
-" Plug 'tpope/fireplace.vim'
 " Plug 'tpope/vim-abolish'
 " Plug 'tpope/vim-afterimage'
 " Plug 'tpope/vim-bundler'
 " Plug 'tpope/vim-capslock'
 " Plug 'tpope/vim-characterize'
 " Plug 'tpope/vim-classpath'
-" Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-fireplace.vim'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-git'
+Plug 'tpope/vim-git'
 " Plug 'tpope/vim-haml'
 " Plug 'tpope/vim-haystack'
 " Plug 'tpope/vim-heroku'
-" Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-ragtag'
@@ -239,22 +246,25 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 " Plug 'tpope/vim-rsi'
 " Plug 'tpope/vim-salve'
+" Plug 'tpope/vim-sensible'
+" Plug 'tpope/vim-vim-sexp-mappings-for-regular-people'
 " Plug 'tpope/vim-sleuth'
 " Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-tbone'
-" Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-vinegar'
 " Plug 'tpope/vim-vividchalk'
 " Plug 'tweekmonster/braceless.vim'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ctrlspace/vim-ctrlspace'
+" Plug 'vim-ctrlspace/vim-ctrlspace'
+" Plug 'vim-pandoc/vim-pandoc'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/dbext.vim'
+" Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
@@ -264,7 +274,7 @@ Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ingo-library'
 " Plug 'vim-scripts/tComment'
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
-Plug 'wellle/targets.vim'
+" Plug 'wellle/targets.vim'
 " Plug 'wellle/tmux-complete.vim'
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'wincent/command-t'
@@ -289,10 +299,10 @@ set t_Co=256
 " Enable indentation for specific filetypes
 filetype plugin indent on
 
-" Reload .vimrc on save
+" Reload vimrc after saving
 augroup reload_vimrc " {
     autocmd!
-    autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
 " Enable syntax highlighting
@@ -331,7 +341,7 @@ set background=dark
 colorscheme solarized
 
 " Comment one or more lines
-nnoremap <leader>c :TComment<CR>
+nnoremap <leader>c :Commentary<CR>
 
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
@@ -374,10 +384,12 @@ nnoremap <leader>x :q!<CR>
 let g:StripWhitespaceOnSave=1
 autocmd BufWritePre * StripWhitespace
 
-" Check for syntax errors on open
+" Syntastic base settings
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
-" let g:syntastic_always_populate_loc_list=1
-" let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_wq=1
+
 
 " CSS linting
 let g:syntastic_css_checkers=['stylelint']
@@ -394,6 +406,18 @@ if s:darwin
 let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
 endif
 
+let g:syntastic_html_tidy_ignore_errors = [
+  \ '<simpla-block> is not recognized!',
+  \ '<simpla-text> is not recognized!',
+  \ '<simpla-img> is not recognized!',
+  \ 'discarding unexpected <simpla-text>',
+  \ 'discarding unexpected </simpla-text>',
+  \ 'discarding unexpected <simpla-block>',
+  \ 'discarding unexpected </simpla-block>',
+  \ 'discarding unexpected <simpla-img>',
+  \ 'discarding unexpected </simpla-img>'
+  \ ]
+
 " Javascript linting
 let g:syntastic_javascript_checkers=['eslint']
 
@@ -409,11 +433,6 @@ let g:syntastic_sh_checkers=['shellcheck']
 " VimL linting
 let g:syntastic_vim_checkers=['vimlint']
 
-" Supply path to editorconfig binary
-if s:darwin
-let g:EditorConfig_exec_path='/usr/local/bin/editorconfig'
-endif
-
 " Automatically recognize filetypes by extension
 autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
 autocmd BufRead,BufNewFile *.go set filetype=go
@@ -428,7 +447,8 @@ autocmd BufRead,BufNewFile *.rb set filetype=ruby
 autocmd BufRead,BufNewFile *.styl set filetype=stylus
 
 " Enable spellchecking for Markdown
-autocmd fileType markdown setlocal spell
+autocmd filetype markdown setlocal spell
+" autocmd filetype pandoc setlocal spell
 
 " Disable highlighting of non-capitalized terms
 set spellcapcheck=
@@ -440,6 +460,14 @@ cmap w!! w !sudo tee > /dev/null %
 if s:darwin
 set shell=/usr/local/bin/bash
 endif
+
+" Set path to editorconfig core executable
+if s:darwin
+let g:EditorConfig_exec_path='usr/local/bin/editorconfig'
+endif
+
+" Ensure editorconfig compatibility with fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Core non-Plug Vim settings
 set autoindent
@@ -479,6 +507,7 @@ set nu
 set numberwidth=5
 set relativenumber
 set ruler
+scriptencoding utf-8
 set scrolloff=5
 set sessionoptions-=options
 set shiftwidth=2
@@ -493,7 +522,7 @@ set smartindent
 set smarttab
 set tabstop=2
 set tabpagemax=50
-set textwidth=80
+" set textwidth=80
 set ttimeout
 set ttimeoutlen=500
 set ttyfast
@@ -523,6 +552,11 @@ endif
 "   runtime! macros/editexisting.vim
 " endif
 
+" ----------------------------------------------------------------------------
+" Fix for Y yanking text both before and after cursor
+" ----------------------------------------------------------------------------
+
+nnoremap Y y$
 
 " ----------------------------------------------------------------------------
 " Movement in insert mode
@@ -548,7 +582,6 @@ augroup airline_config
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#fnamecollapse = 0
   let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline_theme='solarized'
 augroup END
 
 " ----------------------------------------------------------------------------
@@ -567,11 +600,31 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-
 " ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
-let g:signify_vcs_list = ['git']
+" let g:signify_vcs_list = ['git']
+
+" ----------------------------------------------------------------------------
+" ----------------------------------------------------------------------------
+" Quickfix
+" ----------------------------------------------------------------------------
+nnoremap ]q :cnext<cr>zz
+nnoremap [q :cprev<cr>zz
+nnoremap ]l :lnext<cr>zz
+nnoremap [l :lprev<cr>zz
+
+" ----------------------------------------------------------------------------
+" Buffers
+" ----------------------------------------------------------------------------
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprev<cr>
+
+" ----------------------------------------------------------------------------
+" Tabs
+" ----------------------------------------------------------------------------
+nnoremap ]t :tabn<cr>
+nnoremap [t :tabp<cr>
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab
@@ -625,3 +678,8 @@ else
   inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
   inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
 endif
+
+" ----------------------------------------------------------------------------
+" #!! | Shebang
+" ----------------------------------------------------------------------------
+inoreabbrev <expr> #!! "#!/usr/bin/env" . (empty(&filetype) ? '' : ' '.&filetype)

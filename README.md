@@ -5,7 +5,6 @@ License
 
 [MIT](https://github.com/cwonrails/dotfiles/blob/master/LICENSE)
 
-
 Attribution
 -----------
 

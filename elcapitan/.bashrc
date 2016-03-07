@@ -1,7 +1,6 @@
 #!usr/bin/env bash
 
-# Set Platform variable for base system
-
+# Set Platform variable for operating system
 export PLATFORM=$(uname -s)
 [ -f /etc/bashrc ] && . /etc/bashrc
 
@@ -9,7 +8,8 @@ export PLATFORM=$(uname -s)
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-
+export PATH=~/.local/bin:$PATH
+# export PATH=/usr/local/share/python:$PATH
 
 # Set vim as default editor
 export VISUAL=vim
@@ -23,16 +23,10 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Source additional dotfiles if present
-for file in $HOME/.{aliases,bash_aliases,bash_prompt,extras,inputrc,functions,path}; do
+for file in $HOME/.{bash_aliases,bash_prompt,extras,inputrc,functions,path}; do
   [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file;
-
-# Enable colorized logfiles and command output
-. `brew --prefix`/etc/grc.bashrc
-
-# t bash completion
-. ~/t/etc/t-completion.sh
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
@@ -41,7 +35,7 @@ unset file;
 if [[ "$PLATFORM" = 'Darwin' ]]; then
 
   # Enable iTerm2 shell integration
-  test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+  test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
   # Use GNU versions of core Unix tools on Mac
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -67,29 +61,36 @@ if [[ "$PLATFORM" = 'Darwin' ]]; then
     . "$(brew --prefix)/share/bash-completion/bash_completion";
   fi
 
-  # Use brew-installed php
+  # Enable colorized logfiles and command output with grc
+  . `brew --prefix`/etc/grc.bashrc
+
+  # Enable lunchy
+  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+  if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
+    . $LUNCHY_DIR/lunchy-completion.bash
+  fi
+
+  # Use homebrew-installed php
   export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 fi
 
-# Alias hub to git
+# Enable hub by aliasing to git
 eval "$(hub alias -s)"
 
 # Enable thefuck
 eval "$(thefuck --alias)"
 
+# t bash completion
+. $HOME/t/etc/t-completion.sh
+
 # Go #
 # Env configuation
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-# export PATH=$GOBIN:$PATH
-# export PATH=/usr/local/opt/go/libexec/bin:$PATH
 
+## node and npm ##
 # Enable n (https://github.com/tj/n) for nodejs version management
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-
-# Enable gulp completion
-eval "$(gulp --completion=bash)"
 
 # Enable jump (more focused version of fasd)
 eval "$(jump shell bash)"
@@ -121,6 +122,9 @@ alias la='ls -laF --color'
 # List only hidden files
 alias lh="ls -d .*"
 
+# Long list
+alias ll='ls -al'
+
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
@@ -142,8 +146,8 @@ fi;
 
 # Use the text that has already been typed as the prefix for searching through
 # commands (i.e. more intelligent Up/Down behavior)
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+# bind '"\e[A": history-search-backward'
+# bind '"\e[B": history-search-forward'
 
 # Added by Travis-CI gem
 [ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh

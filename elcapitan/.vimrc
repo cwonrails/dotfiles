@@ -81,7 +81,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
-Plug 'ingydotnet/yaml-vim'
+" Plug 'ingydotnet/yaml-vim'
 " Plug 'int3/vim-extradite'
 " Plug 'isRuslan/vim-es6'
 " Plug 'itchyny/calendar.vim'
@@ -174,7 +174,15 @@ Plug 'pbrisbin/vim-mkdir'
 " Plug 'PotatoesMaster/vim-movelines'
 " Plug 'Raimondi/delimitMate'
 " Plug 'ramitos/jsctags'
-" Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+" Plug 'reedes/vim-colors-pencil'
+" Plug 'reedes/vim-lexical'
+" Plug 'reedes/vim-litecorrect'
+" Plug 'reedes/vim-pencil'
+" Plug 'reedes/vim-thematic'
+" Plug 'reedes/vim-textobj-quote'
+" Plug 'reedes/vim-textobj-usr'
+" Plug 'reedes/vim-wheel'
+" Plug 'reedes/vim-wordy'
 Plug 'rhysd/committia.vim'
 " Plug 'rhysd/conflict-marker.vim'
 if s:darwin
@@ -261,7 +269,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
-" Plug 'vim-scripts/PreserveNoEOL'
+Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
@@ -360,6 +368,9 @@ nnoremap <leader>q :wq<CR>
 
 " Save file
 nnoremap <leader>s :w<CR>
+
+" Check file with Syntastic
+nnoremap <leader>sc :SyntasticCheck<CR>
 
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
@@ -600,25 +611,24 @@ augroup END
 let g:signify_vcs_list = ['git']
 
 " ----------------------------------------------------------------------------
-" ----------------------------------------------------------------------------
 " Quickfix
 " ----------------------------------------------------------------------------
-" nnoremap ]q :cnext<cr>zz
-" nnoremap [q :cprev<cr>zz
-" nnoremap ]l :lnext<cr>zz
-" nnoremap [l :lprev<cr>zz
+nnoremap ]q :cnext<cr>zz
+nnoremap [q :cprev<cr>zz
+nnoremap ]l :lnext<cr>zz
+nnoremap [l :lprev<cr>zz
 
 " ----------------------------------------------------------------------------
 " Buffers
 " ----------------------------------------------------------------------------
-" nnoremap ]b :bnext<cr>
-" nnoremap [b :bprev<cr>
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprev<cr>
 
 " ----------------------------------------------------------------------------
 " Tabs
 " ----------------------------------------------------------------------------
-" nnoremap ]t :tabn<cr>
-" nnoremap [t :tabp<cr>
+nnoremap ]t :tabn<cr>
+nnoremap [t :tabp<cr>
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab
@@ -677,3 +687,4 @@ endif
 " #!! | Shebang
 " ----------------------------------------------------------------------------
 " inoreabbrev <expr> #!! "#!/usr/bin/env" . (empty(&filetype) ? '' : ' '.&filetype)
+"

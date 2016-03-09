@@ -40,6 +40,7 @@
 [diff]
 
   renames = copies
+  tool = Kaleidoscope
 
 [diff "bin"]
 
@@ -66,6 +67,7 @@
 [merge]
 
   log = true
+  tool = Kaleidoscope
 
 [pager]
 
@@ -104,3 +106,12 @@
 [url "git://gist.github.com/"]
 
   insteadOf = "gist:"
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustexitcode = true
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = false

@@ -1,9 +1,7 @@
 if &compatible
   set nocompatible
 end
-
-" set viminfo=
-set viminfo^=!
+set viminfo=
 
 " Install vim-plug if missing
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -14,11 +12,17 @@ endif
 
 let s:darwin = has ('mac')
 
+if s:darwin
+  let g:plug_url_format = 'git@github.com:%s.git'
+else
+  let $GIT_SSL_NO_VERIFY = 'true'
+endif
+
 " call plug#begin('~/.vim/bundle')
 call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'amdt/vim-niji'
 " Plug 'AndrewRadev/splitjoin.vim'
@@ -33,7 +37,7 @@ Plug 'cakebaker/scss-syntax.vim'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'chrisbra/csv.vim'
 " Plug 'chrisbra/NrrwRgn'
-" Plug 'chrisbra/unicode.vim'
+Plug 'chrisbra/unicode.vim'
 " Plug 'chriskempson/vim-tommorow-theme'
 " Plug 'christoomey/vim-run-interactive'
 " Plug 'christoomey/vim-system-copy'
@@ -43,23 +47,23 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'davidosomething/vim-jsdoc'
 Plug 'davidosomething/syntastic-hbstidy'
-Plug 'dbakker/vim-lint', { 'for': 'vim' }
+" Plug 'dbakker/vim-lint'
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
-" Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
-" Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
+Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
 " Plug 'dyng/ctrlsf.vim'
-" Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
-" Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
 " Plug 'facebook/vim-flow', { 'for': 'javascript' }
-" Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'fmoralesc/vim-pad'
 " Plug 'FredKSchott/CoVim'
@@ -74,28 +78,29 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'google/vim-searchindex'
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
-" Plug 'gregsexton/MatchTag'
-" Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'gregsexton/MatchTag'
+Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
-" Plug 'ingydotnet/yaml-vim'
+Plug 'ingydotnet/yaml-vim'
 " Plug 'int3/vim-extradite'
-" Plug 'isRuslan/vim-es6'
+Plug 'isRuslan/vim-es6'
 " Plug 'itchyny/calendar.vim'
 " Plug 'itchyny/lightline.vim'
+" Plug 'itspriddle/vim-jquery'
 if s:darwin
 Plug 'itspriddle/vim-marked'
 endif
 " Plug 'jamessan/vim-gnupg'
 " Plug 'jaxbot/semantic-highlight.vim'
-" Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
+Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'jceb/vim-orgmode'
-" Plug 'jistr/vim-nerdtree-tabs', { 'for': 'NERDTreeToggle' }
+Plug 'jistr/vim-nerdtree-tabs', { 'for': 'NERDTreeToggle' }
 " Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'JulesWang/css.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -116,58 +121,59 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'justinmk/vim-dirvish'
 " Plug 'justinmk/vim-gtfo'
 " Plug 'justinmk/vim-sneak'
-" Plug 'KabbAmine/gulp-vim'
-" Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+Plug 'KabbAmine/gulp-vim'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 if s:darwin
-" Plug 'keith/investigate.vim'
+Plug 'keith/investigate.vim'
 endif
-" Plug 'kewah/vim-cssfmt'
-" Plug 'klen/python-mode', { 'for': 'python' }
+Plug 'kewah/vim-cssfmt'
+Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
-" Plug 'low-ghost/nerdtree-fugitive', { 'on': 'NerdTreeToggle' }
+Plug 'leafgarland/typescript-vim'
+Plug 'low-ghost/nerdtree-fugitive', { 'on': 'NerdTreeToggle' }
 " Plug 'ludovicchabant/vim-gutentags'
-" Plug 'lfv89/vim-interestingwords'
-" Plug 'lukaszkorecki/workflowish'
-" Plug 'majutsushi/tagbar'
+Plug 'lfv89/vim-interestingwords'
+Plug 'lukaszkorecki/workflowish'
+Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-" Plug 'mattn/livestyle-vim'
+Plug 'mattn/livestyle-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 " Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
 " Plug 'mitsuhiko/jinja2', { 'branch': 'master', 'rtp': 'ext/Vim' }
 " Plug 'mkitt/tabline.vim'
-" Plug 'moll/vim-node'
+Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
-" Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
+" Plug 'nelstorm/vim-markdown-folding'
+Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-over'
-" Plug 'osyo-manga/vim-watchdogs'
-" Plug 'othree/csscomplete.vim'
+Plug 'osyo-manga/vim-watchdogs'
+Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
-" Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
-" Plug 'othree/es.next.syntax.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
-" Plug 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim'
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'powerline/powerline'
 " Plug 'PotatoesMaster/i3-vim-syntax'
@@ -194,11 +200,10 @@ Plug 'rodjek/vim-puppet'
 " Plug 'romainl/vim-qf'
 " Plug 'rstacruz/vim-hyperstyle'
 " Plug 'ruanyl/vim-fixmyjs'
-" Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
 " Plug 'ruanyl/vim-gh-line'
 " Plug 'ryanss/vim-hackernews'
 " Plug 'scrooloose/nerdcommenter'
-" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 " Plug 'Shougo/neco-syntax', { 'for': 'scss' }
 " Plug 'Shougo/neco-vim', { 'for': 'vim' }
@@ -207,19 +212,18 @@ Plug 'scrooloose/syntastic'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim'
-" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'SirVer/ultisnips'
 " Plug 'sickill/vim-paste'
 " Plug 'sjl/gundo.vim'
-" Plug 'slim-template/vim-slim'
-" Plug 'stephenway/postcss.snippets'
+" Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'stephenway/postcss.snippets'
 " Plug 'svermeulen/vim-easyclip'
 " Plug 'suan/vim-instant-markdown'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
-" Plug 'todesking/vint-syntastic'
 " Plug 'tomasr/molokai'
 " Plug 'tomtom/tComment_vim'
 " Plug 'tomtom/tlib_vim'
@@ -232,12 +236,12 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
-" Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace.vim'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-git'
+Plug 'tpope/vim-git'
 " Plug 'tpope/vim-haml'
 " Plug 'tpope/vim-haystack'
 " Plug 'tpope/vim-heroku'
@@ -245,9 +249,9 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-ragtag'
-" Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rhubarb'
 " Plug 'tpope/vim-rsi'
 " Plug 'tpope/vim-salve'
 " Plug 'tpope/vim-sensible'
@@ -256,7 +260,7 @@ Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-tbone'
-" Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-vinegar'
 " Plug 'tpope/vim-vividchalk'
 " Plug 'tweekmonster/braceless.vim'
@@ -264,6 +268,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-ctrlspace/vim-ctrlspace'
+" Plug 'vim-outliner/vim-outliner'
 " Plug 'vim-pandoc/vim-pandoc'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
@@ -277,7 +282,8 @@ Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/IndentTab'
 " Plug 'vim-scripts/ingo-library'
 " Plug 'vim-scripts/tComment'
-" Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+" Plug 'wcdicarlo/vim-notebook'
 " Plug 'wellle/targets.vim'
 " Plug 'wellle/tmux-complete.vim'
 " Plug 'whatyouhide/vim-gotham'
@@ -286,13 +292,13 @@ Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'xolox/vim-easytags'
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
-" Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 " Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 " Plug 'zenbro/mirror.vim'
-if s:darwin
+" if s:darwin
   " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
-endif
+" endif
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -348,7 +354,7 @@ colorscheme solarized
 nnoremap <leader>c :Commentary<CR>
 
 " Get current filetype
-" nnoremap <leader>ft :set filetype?<CR>
+nnoremap <leader>ft :set filetype?<CR>
 
 " FZF
 nnoremap <leader>fzf :FZF<CR>
@@ -361,7 +367,7 @@ nnoremap <leader>mp :MarkedOpen<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NERDTree
-" nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Write file and quit
 nnoremap <leader>q :wq<CR>
@@ -369,20 +375,17 @@ nnoremap <leader>q :wq<CR>
 " Save file
 nnoremap <leader>s :w<CR>
 
-" Check file with Syntastic
-nnoremap <leader>sc :SyntasticCheck<CR>
-
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
 
 " Toggle Tagbar
-" nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " Run vimproc
-" nnoremap <leader>vp :VimProcBang<space>
+nnoremap <leader>vp :VimProcBang<space>
 
 " Exit without writing file
 nnoremap <leader>x :q!<CR>
@@ -392,14 +395,13 @@ let g:StripWhitespaceOnSave=1
 autocmd BufWritePre * StripWhitespace
 
 " Syntastic base settings
-" let g:syntastic_always_populate_loc_list=1
-" let g:syntastic_auto_loc_list=1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
-" let g:syntastic_check_on_wq=1
-
+let g:syntastic_check_on_wq=1
 
 " CSS linting
-" let g:syntastic_css_checkers=['stylelint']
+let g:syntastic_css_checkers=['stylelint']
 
 " Handlebars linting
 let g:syntastic_filetype_map = {
@@ -490,11 +492,11 @@ set display+=lastline
 set encoding=utf-8
 set expandtab
 set foldlevelstart=99
-set formatoptions+=j
-" set formatoptions+=tcqj
+" set formatoptions+=j
+set formatoptions+=tcqj
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 set hidden
-set history=1000
+set history=10000
 set hlsearch
 set ignorecase
 set incsearch
@@ -509,15 +511,15 @@ set novisualbell
 set nojoinspaces
 set noshowmode
 set nostartofline
-" set nrformats=bin,hex
-set nrformats-=octal
+set nrformats=bin,hex
+" set nrformats-=octal
 set nu
 set numberwidth=5
 set relativenumber
 set ruler
 scriptencoding utf-8
-set scrolloff=1
-" set scrolloff=5
+" set scrolloff=1
+set scrolloff=5
 set sessionoptions-=options
 set shiftwidth=2
 set shortmess=aIT
@@ -533,8 +535,8 @@ set tabstop=2
 set tabpagemax=50
 " set textwidth=80
 set ttimeout
-" set ttimeoutlen=500
-set ttimeoutlen=100
+set ttimeoutlen=500
+" set ttimeoutlen=100
 set ttyfast
 set undodir=$HOME/.vim/undo
 set undofile
@@ -556,6 +558,11 @@ endif
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
+
+" If swap file exists for current file, edit the swap file instead
+" if !exists('*EditExisting')  && findfile('plugin/editexisting.vim', &rtp) ==# ''
+"   runtime! macros/editexisting.vim
+" endif
 
 " ----------------------------------------------------------------------------
 " Fix for Y yanking text both before and after cursor
@@ -593,22 +600,22 @@ augroup END
 " NERDTreeGit
 " ----------------------------------------------------------------------------
 
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "✹",
-"     \ "Staged"    : "✚",
-"     \ "Untracked" : "✭",
-"     \ "Renamed"   : "➜",
-"     \ "Unmerged"  : "═",
-"     \ "Deleted"   : "✖",
-"     \ "Dirty"     : "✗",
-"     \ "Clean"     : "✔︎",
-"     \ "Unknown"   : "?"
-"     \ }
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 " ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
-let g:signify_vcs_list = ['git']
+" let g:signify_vcs_list = ['git']
 
 " ----------------------------------------------------------------------------
 " Quickfix
@@ -683,8 +690,3 @@ else
   inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
 endif
 
-" ----------------------------------------------------------------------------
-" #!! | Shebang
-" ----------------------------------------------------------------------------
-" inoreabbrev <expr> #!! "#!/usr/bin/env" . (empty(&filetype) ? '' : ' '.&filetype)
-"

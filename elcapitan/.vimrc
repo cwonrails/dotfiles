@@ -1,7 +1,6 @@
 if &compatible
   set nocompatible
 end
-set viminfo=
 
 " Install vim-plug if missing
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -12,19 +11,13 @@ endif
 
 let s:darwin = has('mac')
 
-" if s:darwin
-"   let g:plug_url_format = 'git@github.com:%s.git'
-" else
-"   let $GIT_SSL_NO_VERIFY = 'true'
-" endif
-
 call plug#begin('~/.vim/plug')
 
 Plug 'altercation/vim-colors-solarized'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'amdt/vim-niji'
-Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
@@ -36,7 +29,7 @@ Plug 'cakebaker/scss-syntax.vim'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'chrisbra/csv.vim'
 " Plug 'chrisbra/NrrwRgn'
-Plug 'chrisbra/unicode.vim'
+" Plug 'chrisbra/unicode.vim'
 " Plug 'chriskempson/vim-tommorow-theme'
 " Plug 'christoomey/vim-run-interactive'
 " Plug 'christoomey/vim-system-copy'
@@ -44,19 +37,19 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ciaranm/detectindent'
 Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dag/vim-fish'
+" Plug 'dag/vim-fish'
 " Plug 'davidosomething/vim-jsdoc'
-Plug 'davidosomething/syntastic-hbstidy'
-Plug 'dbakker/vim-lint'
+" Plug 'davidosomething/syntastic-hbstidy'
+" Plug 'dbakker/vim-lint', { 'for': 'vim' }
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
-Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+" Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
 " Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
-" Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
 " Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -78,24 +71,24 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'google/vim-searchindex'
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
-Plug 'gregsexton/MatchTag'
+" Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
-Plug 'ingydotnet/yaml-vim'
+" Plug 'ingydotnet/yaml-vim'
 " Plug 'int3/vim-extradite'
-Plug 'isRuslan/vim-es6'
+" Plug 'isRuslan/vim-es6'
 " Plug 'itchyny/calendar.vim'
 " Plug 'itchyny/lightline.vim'
 " Plug 'itspriddle/vim-jquery'
 if s:darwin
   Plug 'itspriddle/vim-marked'
 endif
-Plug 'jamessan/vim-gnupg'
-Plug 'jaxbot/semantic-highlight.vim'
+" Plug 'jamessan/vim-gnupg'
+" Plug 'jaxbot/semantic-highlight.vim'
 Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax'
 Plug 'jiangmiao/auto-pairs'
@@ -105,11 +98,11 @@ Plug 'JulesWang/css.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/gv.vim'
+" Plug 'junegunn/gv.vim'
 Plug 'junegunn/limelight.vim'
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/vim-after-object'
+" Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-easy-align'
 " Plug 'junegunn/vim-emoji'
 " Plug 'junegunn/vim-github-dashboard'
@@ -118,21 +111,21 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'junegunn/vim-peekaboo'
 " Plug 'junegunn/vim-xmark'
 " Plug 'justinmk/vim-dirvish'
-Plug 'justinmk/vim-gtfo'
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-gtfo'
+" Plug 'justinmk/vim-sneak'
 Plug 'KabbAmine/gulp-vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 if s:darwin
   Plug 'keith/investigate.vim'
 endif
 " Plug 'kewah/vim-cssfmt'
-Plug 'klen/python-mode', { 'for': 'python' }
+" Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 " Plug 'ludovicchabant/vim-gutentags'
-Plug 'lfv89/vim-interestingwords'
-Plug 'lukaszkorecki/workflowish'
+" Plug 'lfv89/vim-interestingwords'
+" Plug 'lukaszkorecki/workflowish'
 Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
@@ -145,13 +138,13 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-Plug 'mhinz/vim-signify'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
-Plug 'mitsuhiko/jinja2', { 'branch': 'master', 'rtp': 'ext/Vim' }
+" Plug 'mitsuhiko/jinja2', { 'branch': 'master', 'rtp': 'ext/Vim' }
 " Plug 'mkitt/tabline.vim'
-Plug 'moll/vim-node'
+" Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
@@ -162,22 +155,22 @@ Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-over'
-Plug 'osyo-manga/vim-watchdogs'
+" Plug 'osyo-manga/vim-watchdogs'
 " Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/jspc.vim'
+" Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'pearofducks/ansible-vim'
+" Plug 'pbrisbin/vim-mkdir'
+" Plug 'pearofducks/ansible-vim'
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'powerline/powerline'
-Plug 'PotatoesMaster/i3-vim-syntax'
+" Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'PotatoesMaster/vim-movelines'
 " Plug 'Raimondi/delimitMate'
-" Plug 'ramitos/jsctags'
+Plug 'ramitos/jsctags'
 " Plug 'reedes/vim-colors-pencil'
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
@@ -211,16 +204,16 @@ Plug 'scrooloose/syntastic'
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'shumphrey/fugitive-gitlab.vim'
+" Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'SirVer/ultisnips'
 " Plug 'sickill/vim-paste'
 " Plug 'sjl/gundo.vim'
-Plug 'slim-template/vim-slim', { 'for': 'slim' }
-Plug 'solarnz/thrift.vim'
+" Plug 'slim-template/vim-slim', { 'for': 'slim' }
+" Plug 'solarnz/thrift.vim'
 " Plug 'stephenway/postcss.snippets'
 " Plug 'svermeulen/vim-easyclip'
 " Plug 'suan/vim-instant-markdown'
-Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+" Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
 " Plug 'tomasr/molokai'
@@ -234,9 +227,9 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-characterize'
 " Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace.vim'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -248,14 +241,14 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
+" Plug 'tpope/vim-rhubarb'
 " Plug 'tpope/vim-rsi'
 " Plug 'tpope/vim-salve'
 " Plug 'tpope/vim-sensible'
 " Plug 'tpope/vim-vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 " Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-tbone'
@@ -273,8 +266,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
-" Plug 'vim-scripts/PreserveNoEOL'
-Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'vim-scripts/PreserveNoEOL'
+" Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
 " Plug 'vimwiki/vimwiki'
@@ -283,7 +276,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/tComment'
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 " Plug 'wcdicarlo/vim-notebook'
-Plug 'wellle/targets.vim'
+" Plug 'wellle/targets.vim'
 " Plug 'wellle/tmux-complete.vim'
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'wincent/command-t'
@@ -292,7 +285,7 @@ Plug 'wellle/targets.vim'
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
 Plug 'Yggdroot/indentline'
-Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+" Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 " Plug 'zenbro/mirror.vim'
 " if s:darwin
   " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
@@ -355,7 +348,7 @@ nnoremap <leader>c :Commentary<CR>
 nnoremap <leader>ft :set filetype?<CR>
 
 " FZF
-nnoremap <leader>fzf :FZF<CR>
+" nnoremap <leader>fzf :FZF<CR>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
@@ -388,10 +381,6 @@ nnoremap <leader>vp :VimProcBang<space>
 " Exit without writing file
 nnoremap <leader>x :q!<CR>
 
-" Strip whitespace on save
-let g:StripWhitespaceOnSave=1
-" autocmd BufWritePre * StripWhitespace
-
 " Syntastic base settings
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
@@ -410,7 +399,7 @@ let g:syntastic_handlebars_checkers = ['handlebars', 'hbstidy']
 
 " HTML linting
 if s:darwin
-let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
+  let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
 endif
 
 let g:syntastic_html_tidy_ignore_errors = [
@@ -462,19 +451,20 @@ set spellcapcheck=
 
 " Allow saving of files as sudo if not opened with sudo vim
 cmap w!! w !sudo tee > /dev/null %
+" noremap <leader>W :w ! sudo tee % > /dev/null<CR>
 
 " Make vim use homebrew-installed bash
 if s:darwin
-set shell=/usr/local/bin/bash
+  set shell=/usr/local/bin/bash
 endif
 
 " Set path to editorconfig core executable
-" if s:darwin
-  " let g:EditorConfig_exec_path='usr/local/bin/editorconfig'
-" endif
+if s:darwin
+  let g:EditorConfig_exec_path='usr/local/bin/editorconfig'
+endif
 
 " Ensure editorconfig compatibility with fugitive
-" let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Core non-Plug Vim settings
 set autoindent
@@ -482,7 +472,7 @@ set autoread
 set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
 set clipboard=unnamed
-" set colorcolumn=+1
+set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview
 set directory=$HOME/.vim/swap
@@ -491,8 +481,9 @@ set encoding=utf-8
 set expandtab
 set foldlevelstart=99
 set formatoptions+=j
-" set formatoptions+=tcqj
-" set grepformat=%f:%l:%c:%m,%f:%l:%m
+set gdefault
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+" set guioptions-=e
 set hidden
 set history=10000
 set hlsearch
@@ -502,8 +493,9 @@ set laststatus=2
 set lazyredraw
 set list
 set listchars=tab:\|\ ,
+" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 " set modelines=2
-set mouse=a
+" set modelines=4
 set nocursorline
 set noerrorbells
 set novisualbell
@@ -511,13 +503,15 @@ set nojoinspaces
 set noshowmode
 set nostartofline
 set nrformats=hex
-" set nrformats-=octal
 set nu
-set numberwidth=5
-" set relativenumber
+" set numberwidth=5
+if exists("&relativenumber")
+  set relativenumber
+  au BufReadPost * set relativenumber
+endif
 set ruler
-" scriptencoding utf-8
-" set scrolloff=1
+scriptencoding utf-8
+" set scrolloff=3
 set scrolloff=5
 set sessionoptions-=options
 set shiftwidth=2
@@ -525,7 +519,7 @@ set shortmess=aIT
 set showcmd
 set showmatch
 set showtabline=2
-" set sidescrolloff=5
+set sidescrolloff=5
 set softtabstop=2
 set smartcase
 set smartindent
@@ -533,20 +527,20 @@ set smarttab
 set synmaxcol=1000
 set tabstop=2
 set tabpagemax=50
-" set textwidth=80
 set ttimeout
-set ttimeoutlen=500
+set ttimeoutlen=50
+" set ttimeoutlen=500
 " set ttimeoutlen=100
 set ttyfast
 set undodir=$HOME/.vim/undo
 set undofile
 set undolevels=1000
 set undoreload=1000
+" set viminfo=%,'9999,s512,n~/.vim/viminfo
 set virtualedit=block
 set whichwrap=b,s
 set wildmenu
-" set wildmode=list:longest,full
-set wildmode=full
+set wildmode=list:longest,full
 
 silent! set cryptmethod=blowfish2
 
@@ -556,12 +550,13 @@ if exists('&colorcolumn')
   set colorcolumn=80
 endif
 
+" Enable mouse
 silent! set ttymouse=xterm2
+set mouse=a
 
 " ----------------------------------------------------------------------------
 " Fix for Y yanking text both before and after cursor
 " ----------------------------------------------------------------------------
-
 nnoremap Y y$
 
 " ----------------------------------------------------------------------------
@@ -574,27 +569,9 @@ inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 
 " ----------------------------------------------------------------------------
-" Airline.vim
-" ----------------------------------------------------------------------------
-
-augroup airline_config
-  autocmd!
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#branch#enanbled = 1
-  let g:airline#extensions#hunks#enabled = 1
-  let g:airline#extensions#syntastic#enabled = 1
-  let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  let g:airline#extensions#tabline#buffer_nr_show = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamecollapse = 0
-  let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline#extensions#tagbar#enabled = 1
-augroup END
-
-" ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
-let g:signify_vcs_list = ['git']
+" let g:signify_vcs_list = ['git']
 
 " ----------------------------------------------------------------------------
 " Quickfix
@@ -626,11 +603,6 @@ nnoremap <Leader>d :Gdiff<CR>
 " matchit.vim
 " ----------------------------------------------------------------------------
 runtime macros/matchit.vim
-
-" ----------------------------------------------------------------------------
-" MatchParen delay
-" ----------------------------------------------------------------------------
-let g:matchparen_insert_timeout=5
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab
@@ -685,112 +657,29 @@ else
   inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
 endif
 
-" ----------------------------------------------------------------------------
-" goyo.vim + limelight.vim
-" ----------------------------------------------------------------------------
-let g:limelight_paragraph_span = 1
-let g:limelight_priority = -1
-
-function! s:goyo_enter()
-  if has('gui_running')
-    set fullscreen
-    set background=light
-    set linespace=7
-  elseif exists('$TMUX')
-    silent !tmux set status off
-  endif
-  " hi NonText ctermfg=101
-  Limelight
-endfunction
-
-function! s:goyo_leave()
-  if has('gui_running')
-    set nofullscreen
-    set background=dark
-    set linespace=0
-  elseif exists('$TMUX')
-    silent !tmux set status on
-  endif
-  Limelight!
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-nnoremap <Leader>G :Goyo<CR>
-
-" ----------------------------------------------------------------------------
+" " ----------------------------------------------------------------------------
 " undotree
-" ----------------------------------------------------------------------------
+" " ----------------------------------------------------------------------------
 let g:undotree_WindowLayout = 2
 
 " ----------------------------------------------------------------------------
-" splitjoin
+" Airline.vim
 " ----------------------------------------------------------------------------
-let g:splitjoin_split_mapping = ''
-let g:splitjoin_join_mapping = ''
-nnoremap gss :SplitjoinSplit<cr>
-nnoremap gsj :SplitjoinJoin<cr>
-
-" ----------------------------------------------------------------------------
-" vimawesome.com
-" ----------------------------------------------------------------------------
-function! VimAwesomeComplete() abort
-  let prefix = matchstr(strpart(getline('.'), 0, col('.') - 1), '[.a-zA-Z0-9_/-]*$')
-  echohl WarningMsg
-  echo 'Downloading plugin list from VimAwesome'
-  echohl None
-ruby << EOF
-  require 'json'
-  require 'open-uri'
-
-  query = VIM::evaluate('prefix').gsub('/', '%20')
-  items = 1.upto(max_pages = 3).map do |page|
-    Thread.new do
-      url  = "http://vimawesome.com/api/plugins?page=#{page}&query=#{query}"
-      data = open(url).read
-      json = JSON.parse(data, symbolize_names: true)
-      json[:plugins].map do |info|
-        pair = info.values_at :github_owner, :github_repo_name
-        next if pair.any? { |e| e.nil? || e.empty? }
-        {word: pair.join('/'),
-         menu: info[:category].to_s,
-         info: info.values_at(:short_desc, :author).compact.join($/)}
-      end.compact
-    end
-  end.each(&:join).map(&:value).inject(:+)
-  VIM::command("let cands = #{JSON.dump items}")
-EOF
-  if !empty(cands)
-    inoremap <buffer> <c-v> <c-n>
-    augroup _VimAwesomeComplete
-      autocmd!
-      autocmd CursorMovedI,InsertLeave * iunmap <buffer> <c-v>
-            \| autocmd! _VimAwesomeComplete
-    augroup END
-
-    call complete(col('.') - strchars(prefix), cands)
-  endif
-  return ''
-endfunction
-
-augroup VimAwesomeComplete
+augroup airline_config
   autocmd!
-  autocmd FileType vim inoremap <c-x><c-v> <c-r>=VimAwesomeComplete()<cr>
-augroup END
-
-" ----------------------------------------------------------------------------
-" Help in new tabs
-" ----------------------------------------------------------------------------
-function! s:helptab()
-  if &buftype == 'help'
-    wincmd T
-    nnoremap <buffer> q :q<cr>
-  endif
-endfunction
-
-augroup vimrc_help
-  autocmd!
-  autocmd BufEnter *.txt call s:helptab()
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#branch#enabled = 1
+  let g:airline#extensions#branch#empty_message = ''
+  let g:airline#extensions#hunks#enabled = 1
+  " let g:airline#extensions#hunks#non_zero_only = 0
+  " let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+  let g:airline#extensions#syntastic#enabled = 1
+  " let g:airline#extensions#tabline#buffer_nr_format = '%s '
+  " let g:airline#extensions#tabline#buffer_nr_show = 1
+  let g:airline#extensions#tabline#enabled = 1
+  " let g:airline#extensions#tabline#fnamecollapse = 1
+  " let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#tagbar#enabled = 1
+  let g:airline#extensions#whitespace#enabled = 1
 augroup END
 

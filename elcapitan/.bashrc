@@ -9,7 +9,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=~/.local/bin:$PATH
-# export PATH=/usr/local/share/python:$PATH
+export PATH=/usr/local/share/python:$PATH
 
 # Set vim as default editor
 export VISUAL=vim
@@ -62,13 +62,13 @@ if [[ "$PLATFORM" = 'Darwin' ]]; then
   fi
 
   # Enable colorized logfiles and command output with grc
-  # . `brew --prefix`/etc/grc.bashrc
+  . `brew --prefix`/etc/grc.bashrc
 
   # Enable lunchy
-  # LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-  # if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
-  #   . $LUNCHY_DIR/lunchy-completion.bash
-  # fi
+  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+  if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
+    . $LUNCHY_DIR/lunchy-completion.bash
+  fi
 
   # Use homebrew-installed php
   export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
@@ -137,12 +137,12 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Use Git’s colored diff when available
-# hash git &>/dev/null;
-# if [ $? -eq 0 ]; then
-#   function diff() {
-#     git diff --no-index --color-words "$@";
-#   }
-# fi;
+hash git &>/dev/null;
+if [ $? -eq 0 ]; then
+  function diff() {
+    git diff --no-index --color-words "$@";
+  }
+fi;
 
 # Use the text that has already been typed as the prefix for searching through
 # commands (i.e. more intelligent Up/Down behavior)

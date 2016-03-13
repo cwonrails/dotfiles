@@ -1,6 +1,6 @@
 #!usr/bin/env bash
 
-# Set Platform variable for operating system
+# Set operating system variable
 export PLATFORM=$(uname -s)
 [ -f /etc/bashrc ] && . /etc/bashrc
 
@@ -9,7 +9,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=~/.local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
+# export PATH=/usr/local/share/python:$PATH
 
 # Set vim as default editor
 export VISUAL=vim

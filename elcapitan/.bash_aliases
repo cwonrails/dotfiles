@@ -31,6 +31,9 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
+# Update nvm
+alias nvm-update='cd "$NVM_DIR" && git pull origin master && git checkout `git describe --abbrev=0 --tags`'
+
 # Open current directory in OSX Finder
 alias o='open .'
 
@@ -41,7 +44,7 @@ alias r='exec $SHELL -l'
 alias sl='ls'
 
 # Force delete trash on local + mounted file systems; trash Apple System Logs
-alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Exit shell
 alias x='exit'
@@ -79,6 +82,9 @@ alias ......='cd ../../../../../../'
 
 # Go back to previous directory
 alias b='cd - '
+
+# Go to Dropbox directory
+alias db='cd ~/Dropbox'
 
 # Go to downloads directory
 alias dl='cd ~/Downloads'

@@ -89,7 +89,7 @@ endif
 " Plug 'jelera/vim-javascript-syntax'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'JulesWang/css.vim'
+" Plug 'JulesWang/css.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
@@ -110,9 +110,9 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'justinmk/vim-sneak'
 " Plug 'KabbAmine/gulp-vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-" if s:darwin
-  " Plug 'keith/investigate.vim'
-" endif
+if s:darwin
+  Plug 'keith/investigate.vim'
+endif
 " Plug 'kewah/vim-cssfmt'
 " Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
@@ -182,7 +182,7 @@ Plug 'rhysd/committia.vim'
 if s:darwin
   Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 endif
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
 " Plug 'rodjek/vim-puppet'
 " Plug 'romainl/flattened'
 " Plug 'romainl/vim-qf'
@@ -389,7 +389,7 @@ let g:syntastic_check_on_open=1
 " let g:syntastic_check_on_wq=1
 
 " CSS linting
-autocmd FileType css setlocal iskeyword+=-
+" autocmd FileType css setlocal iskeyword+=-
 
 " Handlebars linting
 
@@ -479,7 +479,6 @@ set directory=$HOME/.vim/swap
 set display+=lastline
 set encoding=utf-8
 set expandtab
-set exrc
 set foldlevelstart=99
 set formatoptions+=j
 set gdefault

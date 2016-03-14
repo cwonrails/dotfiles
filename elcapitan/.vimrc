@@ -1,27 +1,18 @@
-if &compatible
-  set nocompatible
-end
-
-" Install vim-plug if missing
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
+set nocompatible
 
 let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plug')
 
-" Plug 'amperser/proselint', { 'branch': 'master', 'rtp': 'plugins/vim/syntastic_proselint' }
 Plug 'altercation/vim-colors-solarized'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'amdt/vim-niji'
 " Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
+Plug 'bendavis78/vim-polymer'
 " Plug 'benekastah/neomake'
 " Plug 'blindFS/vim-taskwarrior'
 " Plug 'blueyed/vim-diminactive'
@@ -37,19 +28,19 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ciaranm/detectindent'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'dag/vim-fish'
 " Plug 'davidosomething/vim-jsdoc'
 " Plug 'davidosomething/syntastic-hbstidy'
-" Plug 'dbakker/vim-lint', { 'for': 'vim' }
+Plug 'dbakker/vim-lint', { 'for': 'vim' }
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
-" Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'dockerfile' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
 " Plug 'dyng/ctrlsf.vim'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
 " Plug 'edkolev/tmuxline.vim'
@@ -58,7 +49,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'evidens/vim-twig'
 " Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'FelikZ/ctrlp-py-matcher'
+" Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'fmoralesc/vim-pad'
 " Plug 'FredKSchott/CoVim'
 " Plug 'freitass/todo.txt-vim'
@@ -72,13 +63,13 @@ Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'google/vim-searchindex'
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
-Plug 'gregsexton/MatchTag'
+" Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
+" Plug 'haya14busa/incsearch.vim'
+" Plug 'haya14busa/incsearch-fuzzy.vim'
 " Plug 'honza/dockerfile'
 Plug 'honza/vim-snippets'
 " Plug 'ingydotnet/yaml-vim'
@@ -93,14 +84,14 @@ endif
 " Plug 'jamessan/vim-gnupg'
 " Plug 'jaxbot/browserlink.vim'
 " Plug 'jaxbot/semantic-highlight.vim'
-Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
+" Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'jceb/vim-orgmode'
 " Plug 'jelera/vim-javascript-syntax'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'JulesWang/css.vim'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
@@ -117,13 +108,13 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'justinmk/vim-dirvish'
 " Plug 'justinmk/vim-gtfo'
 " Plug 'justinmk/vim-sneak'
-Plug 'KabbAmine/gulp-vim'
+" Plug 'KabbAmine/gulp-vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-if s:darwin
-  Plug 'keith/investigate.vim'
-endif
+" if s:darwin
+  " Plug 'keith/investigate.vim'
+" endif
 " Plug 'kewah/vim-cssfmt'
-Plug 'klen/python-mode', { 'for': 'python' }
+" Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
@@ -143,13 +134,13 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-" Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 " Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
-Plug 'mitsuhiko/jinja2', { 'branch': 'master', 'rtp': 'ext/Vim' }
+" Plug 'mitsuhiko/jinja2', { 'branch': 'master', 'rtp': 'ext/Vim' }
 " Plug 'mkitt/tabline.vim'
-Plug 'moll/vim-node'
+" Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
@@ -157,25 +148,26 @@ Plug 'mxw/vim-jsx'
 Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'nelstorm/vim-markdown-folding'
 Plug 'nginx/nginx', { 'branch': 'master', 'rtp': 'contrib/vim' }
+Plug 'Nitwoe/proselint-vim'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-over'
-Plug 'osyo-manga/vim-watchdogs'
-Plug 'othree/csscomplete.vim'
+" Plug 'osyo-manga/vim-watchdogs'
+" Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
-Plug 'othree/es.next.syntax.vim'
+" Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
+" Plug 'pbrisbin/vim-mkdir'
 " Plug 'pearofducks/ansible-vim'
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'powerline/powerline'
 " Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'PotatoesMaster/vim-movelines'
 " Plug 'Raimondi/delimitMate'
-Plug 'ramitos/jsctags'
+" Plug 'ramitos/jsctags'
 " Plug 'reedes/vim-colors-pencil'
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
@@ -199,7 +191,7 @@ Plug 'rking/ag.vim'
 " Plug 'ruanyl/vim-gh-line'
 " Plug 'ryanss/vim-hackernews'
 " Plug 'scrooloose/nerdcommenter'
-" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 " Plug 'Shougo/neco-syntax', { 'for': 'scss' }
 " Plug 'Shougo/neco-vim', { 'for': 'vim' }
@@ -218,7 +210,7 @@ Plug 'SirVer/ultisnips'
 " Plug 'stephenway/postcss.snippets'
 " Plug 'suan/vim-instant-markdown'
 " Plug 'svermeulen/vim-easyclip'
-Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+" Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
 " Plug 'tomasr/molokai'
@@ -271,8 +263,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
-Plug 'vim-scripts/PreserveNoEOL'
-Plug 'vim-scripts/ReplaceWithRegister'
+" Plug 'vim-scripts/PreserveNoEOL'
+" Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
 " Plug 'vimwiki/vimwiki'
@@ -297,7 +289,7 @@ Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 " if s:darwin
   " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
 " endif
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -353,10 +345,7 @@ let g:solarized_termtrans=1
 nnoremap <leader>c :Commentary<CR>
 
 " Get current filetype
-" nnoremap <leader>ft :set filetype?<CR>
-
-" FZF
-" nnoremap <leader>fzf :FZF<CR>
+nnoremap <leader>ft :set filetype?<CR>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
@@ -366,7 +355,7 @@ nnoremap <leader>mp :MarkedOpen<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NERDTree
-" nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Write file if modified and quit
 nnoremap <leader>q :wq<CR>
@@ -394,25 +383,10 @@ nnoremap <leader>x :q!<CR>
 autocmd BufWritePre * StripWhitespace
 
 " Syntastic base settings
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
+" let g:syntastic_always_populate_loc_list=1
+" let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=1
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
+" let g:syntastic_check_on_wq=1
 
 " CSS linting
 autocmd FileType css setlocal iskeyword+=-
@@ -433,23 +407,21 @@ let g:syntastic_html_tidy_ignore_errors = [
   \ 'discarding unexpected <simpla-block>',
   \ 'discarding unexpected </simpla-block>',
   \ 'discarding unexpected <simpla-img>',
-  \ 'discarding unexpected </simpla-img>'
+  \ 'discarding unexpected </simpla-img>',
+  \ 'proprietary attribute "simpla-api"'
   \ ]
 
-let g:html_indent_tags = 'li\|p'
-
 " Javascript linting
-" let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_checkers=['eslint']
 
 " JSON linting
-" let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_json_checkers=['jsonlint']
 
 " Markdown linting
-" let g:syntastic_markdown_checkers=['proselint']
+let g:syntastic_markdown_checkers=['proselint']
 
 " Sass linting
-" let g:syntastic_sass_checkers=['sassc']
-autocmd FileType scss set iskeyword+=-
+let g:syntastic_sass_checkers=['sassc']
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers=['shellcheck']
@@ -480,7 +452,6 @@ set spellcapcheck=
 
 " Allow saving of files as sudo if not opened with sudo vim
 cmap w!! w !sudo tee > /dev/null %
-" noremap <leader>W :w ! sudo tee % > /dev/null<CR>
 
 " Make vim use homebrew-installed bash
 if s:darwin
@@ -512,10 +483,10 @@ set exrc
 set foldlevelstart=99
 set formatoptions+=j
 set gdefault
-" set grepformat=%f:%l:%c:%m,%f:%l:%m
+set grepformat=%f:%l:%c:%m,%f:%l:%m
 set guioptions-=e
 set hidden
-set history=1000
+set history=10000
 set hlsearch
 set ignorecase
 set incsearch
@@ -523,9 +494,7 @@ set laststatus=2
 set lazyredraw
 set list
 set listchars=tab:\|\ ,
-" set mouse=a
-set modelines=2
-" set modelines=4
+set mouse=a
 set nocursorline
 set noerrorbells
 set novisualbell
@@ -535,14 +504,9 @@ set nostartofline
 set nrformats=hex
 set number
 set numberwidth=5
-" if exists("&relativenumber")
-"   set relativenumber
-"   au BufReadPost * set relativenumber
-" endif
 set relativenumber
 set ruler
 scriptencoding utf-8
-" set scrolloff=3
 set scrolloff=5
 set secure
 set sessionoptions-=options
@@ -560,8 +524,6 @@ set synmaxcol=1000
 set tabstop=2
 set tabpagemax=50
 set ttimeout
-" set ttimeoutlen=50
-" set ttimeoutlen=100
 set ttimeoutlen=500
 set ttyfast
 set undodir=$HOME/.vim/undo
@@ -569,10 +531,10 @@ set undofile
 set undolevels=1000
 set undoreload=1000
 set viminfo=%,'9999,s512,n~/.vim/viminfo
-" set virtualedit=block
+set virtualedit=block
 set whichwrap=b,s
 set wildmenu
-" set wildmode=list:longest,full
+set wildmode=list:longest,full
 
 silent! set cryptmethod=blowfish2
 
@@ -592,58 +554,9 @@ set mouse=a
 nnoremap Y y$
 
 " ----------------------------------------------------------------------------
-" qq to record macros, Q to replay (recursive mapping)
-" ----------------------------------------------------------------------------
-nmap Q @q
-
-" ----------------------------------------------------------------------------
-" AutoSave
-" ----------------------------------------------------------------------------
-function! s:autosave(enable)
-  augroup autosave
-    autocmd!
-    if a:enable
-      autocmd TextChanged,InsertLeave <buffer>
-            \  if empty(&buftype) && !empty(bufname(''))
-            \|   silent! update
-            \| endif
-    endif
-  augroup END
-endfunction
-
-command! -bang AutoSave call s:autosave(<bang>1)
-
-" ----------------------------------------------------------------------------
-" SaveMacro / LoadMacro
-" ----------------------------------------------------------------------------
-function! s:save_macro(name, file)
-  let content = eval('@'.a:name)
-  if !empty(content)
-    call writefile(split(content, "\n"), a:file)
-    echom len(content) . " bytes save to ". a:file
-  endif
-endfunction
-command! -nargs=* SaveMacro call <SID>save_macro(<f-args>)
-
-function! s:load_macro(file, name)
-  let data = join(readfile(a:file), "\n")
-  call setreg(a:name, data, 'c')
-  echom "Macro loaded to @". a:name
-endfunction
-command! -nargs=* LoadMacro call <SID>load_macro(<f-args>)
-
-" ----------------------------------------------------------------------------
-" Movement in insert mode
-" ----------------------------------------------------------------------------
-" inoremap <C-h> <C-o>h
-" inoremap <C-l> <C-o>a
-" inoremap <C-j> <C-o>j
-" inoremap <C-k> <C-o>k
-
-" ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
-" let g:signify_vcs_list = ['git']
+let g:signify_vcs_list = ['git']
 
 " ----------------------------------------------------------------------------
 " Quickfix
@@ -654,18 +567,10 @@ nnoremap ]l :lnext<cr>zz
 nnoremap [l :lprev<cr>zz
 
 " ----------------------------------------------------------------------------
-" <Leader>lc Close quickfix/location window
-" ----------------------------------------------------------------------------
-nnoremap <leader>lc :cclose<bar>lclose<cr>
-
-" ----------------------------------------------------------------------------
 " Buffers
 " ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
-nnoremap <Leader>bd :bd<cr>
-nnoremap <Leader>bun :bun<cr>
-nnoremap <Leader>bw :bw<cr>
 
 " ----------------------------------------------------------------------------
 " Tabs
@@ -674,73 +579,9 @@ nnoremap ]t :tabn<cr>
 nnoremap [t :tabp<cr>
 
 " ----------------------------------------------------------------------------
-" vim-fugitive
-" ----------------------------------------------------------------------------
-nnoremap <Leader>gd :Gdiff<CR>
-nmap     <Leader>gs :Gstatus<CR>gg<c-n>
-
-" ----------------------------------------------------------------------------
 " matchit.vim
 " ----------------------------------------------------------------------------
-" runtime macros/matchit.vim
-
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-
-" ----------------------------------------------------------------------------
-" <tab> / <s-tab> / <c-v><tab> | super-duper-tab
-" ----------------------------------------------------------------------------
-" function! s:can_complete(func, prefix)
-"   if empty(a:func) || call(a:func, [1, '']) < 0
-"     return 0
-"   endif
-"   let result = call(a:func, [0, matchstr(a:prefix, '\k\+$')])
-"   return !empty(type(result) == type([]) ? result : result.words)
-" endfunction
-
-" function! s:super_duper_tab(k, o)
-"   if pumvisible()
-"     return a:k
-"   endif
-
-"   let line = getline('.')
-"   let col = col('.') - 2
-"   if line[col] !~ '\k\|[/~.]'
-"     return a:o
-"   endif
-
-"   let prefix = expand(matchstr(line[0:col], '\S*$'))
-  " if prefix =~ '^[~/.]'
-  "   return "\<c-x>\<c-f>"
-  " endif
-  " if s:can_complete(&omnifunc, prefix)
-  "   return "\<c-x>\<c-o>"
-  " endif
-  " if s:can_complete(&completefunc, prefix)
-  "   return "\<c-x>\<c-u>"
-  " endif
-  " return a:k
-" endfunction
-
-" if has_key(g:plugs, 'ultisnips')
-  " UltiSnips will be loaded only when tab is first pressed in insert mode
-  " if !exists(':UltiSnipsEdit')
-  "   inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
-  "   imap <tab> <Plug>(tab)
-  " endif
-
-  " let g:SuperTabMappingForward  = "<tab>"
-  " let g:SuperTabMappingBackward = "<s-tab>"
-  " function! SuperTab(m)
-  "   return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
-  "                          \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
-  " endfunction
-" else
-  " inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
-  " inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
-" endif
+runtime macros/matchit.vim
 
 " ----------------------------------------------------------------------------
 " undotree
@@ -756,41 +597,14 @@ augroup airline_config
   let g:airline#extensions#branch#enabled = 1
   let g:airline#extensions#branch#empty_message = ''
   let g:airline#extensions#hunks#enabled = 1
-  " let g:airline#extensions#hunks#non_zero_only = 0
-  " let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+  let g:airline#extensions#hunks#non_zero_only = 0
+  let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
   let g:airline#extensions#syntastic#enabled = 1
-  " let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  " let g:airline#extensions#tabline#buffer_nr_show = 1
+  let g:airline#extensions#tabline#buffer_nr_format = '%s '
+  let g:airline#extensions#tabline#buffer_nr_show = 1
   let g:airline#extensions#tabline#enabled = 1
-  " let g:airline#extensions#tabline#fnamecollapse = 1
-  " let g:airline#extensions#tabline#fnamemod = ':t'
-  " let g:airline#extensions#tagbar#enabled = 1
+  let g:airline#extensions#tabline#fnamecollapse = 1
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#tagbar#enabled = 1
   let g:airline#extensions#whitespace#enabled = 1
 augroup END
-
-" CtrlP.vim {{{
-augroup ctrlp_config
-  autocmd!
-  let g:ctrlp_clear_cache_on_exit = 0 " Do not clear filenames cache, to improve CtrlP startup
-  let g:ctrlp_lazy_update = 350 " Set delay to prevent extra search
-  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' } " Use python fuzzy matcher for better performance
-  " let g:ctrlp_match_window_bottom = 0 " Show at top of window
-  let g:ctrlp_max_files = 0 " Set no file limit, we are building a big project
-augroup END
-" }}}
-
-" ag (The Silver Searcher) {{{
-augroup ag_config
-  autocmd!
-
-  if executable("ag")
-    " Note we extract the column as well as the file and line number
-    set grepprg=ag\ --nogroup\ --nocolor\ --column
-    set grepformat=%f:%l:%c%m
-    let b:ag_command = 'ag %s -i --nocolor --nogroup'
-    let b:ag_command = b:ag_command . ' --hidden -g ""'
-    let g:ctrlp_user_command = b:ag_command
-  endif
-augroup END
-" }}}
-

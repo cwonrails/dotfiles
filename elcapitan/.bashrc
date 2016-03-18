@@ -87,6 +87,7 @@ eval "$(thefuck --alias)"
 # Env configuation
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
 
 ## node and npm ##
 # Enable n (https://github.com/tj/n) for nodejs version management

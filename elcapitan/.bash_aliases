@@ -107,6 +107,9 @@ alias hd='cd ~'
 # Go to Vagrant boxes directory
 alias vb='cd ~/vagrantboxes'
 
+# Go to WebStorm projects folder
+alias wsp='cd ~/WebstormProjects/'
+
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'

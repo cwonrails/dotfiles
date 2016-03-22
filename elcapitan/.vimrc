@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plug')
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
-Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
@@ -30,11 +30,11 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'dag/vim-fish'
 " Plug 'davidosomething/vim-jsdoc'
 " Plug 'davidosomething/syntastic-hbstidy'
-Plug 'dbakker/vim-lint', { 'for': 'vim' }
+" Plug 'dbakker/vim-lint', { 'for': 'vim' }
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
-Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'dockerfile' }
+Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
 " Plug 'dyng/ctrlsf.vim'
@@ -65,7 +65,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
-Plug 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 " Plug 'honza/dockerfile'
@@ -85,7 +85,7 @@ endif
 " Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'jceb/vim-orgmode'
 " Plug 'jelera/vim-javascript-syntax'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -107,7 +107,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'justinmk/vim-gtfo'
 " Plug 'justinmk/vim-sneak'
 " Plug 'KabbAmine/gulp-vim'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+" Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 if s:darwin
   Plug 'keith/investigate.vim'
 endif
@@ -136,14 +136,14 @@ Plug 'mhinz/vim-signify'
 " Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
-Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
+" Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
 " Plug 'mkitt/tabline.vim'
 " Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'nelstorm/vim-markdown-folding'
 Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
 Plug 'ntpeters/vim-better-whitespace'
@@ -153,8 +153,8 @@ Plug 'ntpeters/vim-better-whitespace'
 " Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-" Plug 'othree/jspc.vim'
-" Plug 'othree/es.next.syntax.vim'
+Plug 'othree/jspc.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
 " Plug 'pbrisbin/vim-mkdir'
@@ -221,7 +221,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-characterize'
 " Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
 " Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
@@ -281,7 +281,7 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
 " Plug 'Yggdroot/indentline'
-Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+" Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 " Plug 'zenbro/mirror.vim'
 " if s:darwin
   " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
@@ -300,30 +300,10 @@ syntax enable
 filetype plugin indent on
 
 " Reload vimrc after saving (simple)
-" augroup reload_vimrc " {
-"     autocmd!
-"     autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
-" augroup END " }
-
-" ============================================================================
-" Reload vimrc after saving (Junegunn)
-" ============================================================================
-
-augroup vimrc
-  autocmd!
-
-  au BufWritePost vimrc,.vimrc nested if expand('%') !~ 'fugitive' | source % | endif
-
-  " Included syntax
-  au FileType,ColorScheme * call <SID>file_type_handler()
-
-  " Close preview window
-  if exists('##CompleteDone')
-    au CompleteDone * pclose
-  else
-    au InsertLeave * if !pumvisible() && (!exists('*getcmdwintype') || empty(getcmdwintype())) | pclose | endif
-  endif
-augroup END
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END " }
 
 " ============================================================================
 " Basic rebindings
@@ -337,6 +317,13 @@ let g:maplocalleader= ' '
 cnoremap jk <esc>
 inoremap jk <esc>
 xnoremap jk <esc>
+
+" Movement in insert mode
+inoremap <C-h> <C-o>h
+inoremap <C-l> <C-o>a
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-^> <C-o><C-^>
 
 " Navigate by visual rather than actual lines
 nnoremap k gk
@@ -368,6 +355,9 @@ nnoremap <leader>c :Commentary<CR>
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
+" Launch FZF
+nnoremap <leader>fzf :FZF<space>
+
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
 
@@ -379,24 +369,24 @@ nnoremap <leader>mq :MarkedQuit<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Write file if modified and quit
-nnoremap <leader>q :wq<CR>
+" nnoremap <leader>q :wq<CR>
 
 " Save file
-nnoremap <leader>s :write<CR>
-nnoremap <leader>w :update<CR>
+" nnoremap <leader>s :write<CR>
+" nnoremap <leader>w :update<CR>
 
 " Save (junegunn)
-" inoremap <C-s>     <C-O>:update<cr>
-" nnoremap <C-s>     :update<cr>
-" nnoremap <leader>s :update<cr>
-" nnoremap <leader>w :update<cr>
+inoremap <C-s>     <C-O>:update<cr>
+nnoremap <C-s>     :update<cr>
+nnoremap <leader>s :update<cr>
+nnoremap <leader>w :update<cr>
 
 " Quit (junegunn)
-" inoremap <C-Q>     <esc>:q<cr>
-" nnoremap <C-Q>     :q<cr>
-" vnoremap <C-Q>     <esc>
-" nnoremap <Leader>q :q<cr>
-" nnoremap <Leader>Q :qa!<cr>
+inoremap <C-Q>     <esc>:q<cr>
+nnoremap <C-Q>     :q<cr>
+vnoremap <C-Q>     <esc>
+nnoremap <Leader>q :q<cr>
+nnoremap <Leader>Q :qa!<cr>
 
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
@@ -423,6 +413,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " CSS linting
+let g:syntastic_css_checkers=['stylelint']
 autocmd FileType css setlocal iskeyword+=-
 
 " HTML linting
@@ -431,6 +422,7 @@ if s:darwin
 endif
 
 let g:syntastic_html_tidy_ignore_errors = [
+  \ '<html> attribute "lang" lacks value',
   \ '<simpla-block> is not recognized!',
   \ '<simpla-text> is not recognized!',
   \ '<simpla-img> is not recognized!',
@@ -459,11 +451,11 @@ let g:syntastic_sass_checkers=['sassc']
 let g:syntastic_sh_checkers=['shellcheck']
 
 " VimL linting
-let g:syntastic_vim_checkers=['vimlint']
+" let g:syntastic_vim_checkers=['vimlint']
 
 " Automatically recognize filetypes by extension
-autocmd BufRead,BufNewFile Dockerfile* set filetype=dockerfile
-autocmd BufRead,BufNewFile .{babel,eslint,jscs,jshint,stylelint}rc set filetype=json
+autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
+autocmd BufRead,BufNewFile *.conf set filetype=nginx
 autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell

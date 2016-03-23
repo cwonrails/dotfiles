@@ -22,6 +22,10 @@ alias dskill="find . -name '*.DS_Store' -type f -ls -delete"
 # Print history
 alias h='history'
 
+# Hide and show OSX desktop
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
 # run htop without sudo
 alias htop='sudo htop'
 
@@ -52,6 +56,9 @@ alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv 
 # Exit shell
 alias x='exit'
 
+# Get current week of the month
+alias week='date +%V'
+
 ## Git ##
 alias g='git'
 
@@ -67,13 +74,13 @@ alias vr='vim ~/.vimrc'
 alias dfbu='dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitconfig .gvimrc .hgignore .inputrc .sift.conf .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup'
+alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup'
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitconfig .gvimrc .hgignore .inputrc .sift.conf .tmux.conf .vimrc .wgetrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc .wgetrc ~/Dropbox/dotfiles'
 
 # Back up OSX dotfiles to Github repo and check diff
-alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitconfig .gvimrc .hgignore .inputrc .sift.conf .tmux.conf .vimrc .wgetrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
+alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc .wgetrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
 
 ## Navigation ##
 # Go back from current directory
@@ -138,3 +145,33 @@ alias tu='~/.tmux/plugins/tpm/bin/update_plugins all &~/.tmux/plugins/tpm/bin/in
 
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
+
+## ls colors and aliases ##
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  colorflag="--color"
+else # OS X `ls`
+  colorflag="-G"
+fi
+
+# Set ls colors
+export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+
+# List all files in long format
+alias la="ls -laF ${colorflag}"
+
+# List only directories
+alias ld="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# List only hidden files
+alias lh="ls -d .* ${colorflag}"
+
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+

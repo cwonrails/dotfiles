@@ -33,7 +33,8 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'dbakker/vim-lint', { 'for': 'vim' }
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
-Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'digitaltoad/vim-pug'
+" Plug 'digitaltoad/vim-jade'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
@@ -117,8 +118,8 @@ endif
 " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'leafgarland/typescript-vim'
-" Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lfv89/vim-interestingwords'
+" Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lukaszkorecki/workflowish'
 Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
@@ -413,12 +414,17 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " CSS linting
-let g:syntastic_css_checkers=['stylelint']
+" available checkers: csslint, prettycss, stylelint
+" let g:syntastic_css_checkers=['']
 autocmd FileType css setlocal iskeyword+=-
 
+" Docker linting
+" available checkers: dockerfile_lint
+
 " HTML linting
+" available checkers: jshint, proselint, textlint, tidy, validator, w3
 if s:darwin
-  let g:syntastic_html_tidy_exec='/usr/local/bin/tidy'
+  let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 endif
 
 let g:syntastic_html_tidy_ignore_errors = [
@@ -435,20 +441,37 @@ let g:syntastic_html_tidy_ignore_errors = [
   \ 'proprietary attribute "simpla-api"'
   \ ]
 
+" Jade linting
+let g:syntastic_jade_checkers = ['jade_lint']
+
 " Javascript linting
-let g:syntastic_javascript_checkers=['eslint']
+" available checkers: closure compiler, eslint, flow, jscs, jshint, standard
+let g:syntastic_javascript_checkers = ['eslint']
 
 " JSON linting
-let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_json_checkers = ['jsonlint']
+
+" LESS linting
+let g:syntastic_less_checkers = ['lessc']
+
+" Lua linting
+let g:syntastic_lua_checkers = ['luac', 'luacheck']
+let g:syntastic_lua_luacheck_args = '--no-unused-args'
 
 " Markdown linting
-let g:syntastic_markdown_checkers=['proselint']
+" available checkers: markdownlint, proselint, texlint
+let g:syntastic_markdown_checkers = ['proselint', 'texlint']
+" let g:syntastic_markdown_mdl_args = ''
+
+" Nix linting
+let g:syntastic_nix_checkers = ['nix.vim']
 
 " Sass linting
-let g:syntastic_sass_checkers=['sassc']
+let g:syntastic_sass_checkers = ['sassc']
+autocmd FileType scss setlocal iskeyword+=-
 
 " Shell script / bash linting
-let g:syntastic_sh_checkers=['shellcheck']
+let g:syntastic_sh_checkers = ['shellcheck', 'sh']
 
 " VimL linting
 " let g:syntastic_vim_checkers=['vimlint']
@@ -459,7 +482,7 @@ autocmd BufRead,BufNewFile *.conf set filetype=nginx
 autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
-autocmd BufRead,BufNewFile *.jade set filetype=jade
+" autocmd BufRead,BufNewFile *.jade set filetype=jade
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.less set filetype=less
 autocmd BufRead,BufNewFile *.md set filetype=markdown
@@ -491,14 +514,17 @@ set autoindent
 set autoread
 set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
+set binary
 set clipboard=unnamed
 set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview
+" set cursorline
 set directory=$HOME/.vim/swap
 set display+=lastline
 set encoding=utf-8
 set expandtab
+" set exrc
 set foldlevelstart=99
 set formatoptions+=j
 set gdefault
@@ -513,6 +539,9 @@ set laststatus=2
 set lazyredraw
 set list
 set listchars=tab:\|\ ,
+" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" set modeline
+" set modelines=4
 set mouse=a
 set nocursorline
 set noerrorbells
@@ -523,11 +552,16 @@ set nostartofline
 set nrformats=hex
 set number
 set numberwidth=5
-set relativenumber
+" set relativenumber
+if exists("&relativenumber")
+  set relativenumber
+  au BufReadPost * set relativenumber
+endif
 set ruler
 scriptencoding utf-8
-set scrolloff=5
-set secure
+set scrolloff=3
+" set scrolloff=5
+" set secure
 set sessionoptions-=options
 set shiftwidth=2
 set shortmess=aIT

@@ -2,11 +2,17 @@
 set background=light
 colorscheme solarized
 
-" Use 13-point Powerline-patched Monaco font
-set guifont=Monaco\ for\ Powerline:h13
+" Use 14pt Source Code Pro font
+set guifont=Source\ Code\ Pro:h14
 
-" Disable cursor blinking
+" Disable all cursor blinking
 set guicursor+=a:blinkon0
+
+" Disable cursor blinking in insert mode
+" set guicursor=n:blinkon0
 
 " Disable right-side scrollbar
 set guioptions-=r
+
+" Better line-height
+" set linespace=8

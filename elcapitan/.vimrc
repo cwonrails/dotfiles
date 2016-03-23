@@ -181,7 +181,7 @@ if s:darwin
   Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 endif
 " Plug 'rking/ag.vim'
-" Plug 'rodjek/vim-puppet'
+Plug 'rodjek/vim-puppet'
 " Plug 'romainl/flattened'
 " Plug 'romainl/vim-qf'
 " Plug 'rstacruz/vim-hyperstyle'
@@ -261,7 +261,7 @@ Plug 'tpope/vim-surround'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
-" Plug 'vim-scripts/PreserveNoEOL'
+Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
@@ -772,7 +772,6 @@ endif
 " ============================================================================
 " vim-bracketed-paste minus the plugin
 " ============================================================================
-
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
@@ -809,7 +808,6 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " ============================================================================
 " lightline.vim
 " ============================================================================
-
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }

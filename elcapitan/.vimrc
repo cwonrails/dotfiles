@@ -4,8 +4,9 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plug')
 
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
+" Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 " Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
@@ -29,20 +30,21 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ciaranm/detectindent'
 " Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'cwonrails/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
+" Plug 'csscomb/vim-csscomb'
+" Plug 'cwonrails/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 " Plug 'dag/vim-fish'
 " Plug 'davidosomething/vim-jsdoc'
-Plug 'davidosomething/syntastic-hbstidy'
+" Plug 'davidosomething/syntastic-hbstidy'
 " Plug 'dbakker/vim-lint', { 'for': 'vim' }
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
-Plug 'digitaltoad/vim-pug'
+" Plug 'digitaltoad/vim-pug'
 " Plug 'digitaltoad/vim-jade'
-Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
+" Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
 " Plug 'dyng/ctrlsf.vim'
-" Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
 " Plug 'edkolev/tmuxline.vim'
@@ -67,10 +69,10 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
 " Plug 'gregsexton/MatchTag'
-Plug 'groenewege/vim-less', { 'for': 'less' }
+" Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
-Plug 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 " Plug 'hashivim/vim-consul'
 " Plug 'hashivim/vim-nomadproject'
 " Plug 'hashivim/vim-ottoproject'
@@ -86,7 +88,7 @@ Plug 'honza/vim-snippets'
 " Plug 'int3/vim-extradite'
 " Plug 'isRuslan/vim-es6'
 " Plug 'itchyny/calendar.vim'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 " Plug 'itspriddle/vim-jquery'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
@@ -101,7 +103,7 @@ Plug 'janko-m/vim-test'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
@@ -109,7 +111,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'junegunn/seoul256.vim'
 " Plug 'junegunn/vim-after-object'
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 " Plug 'junegunn/vim-emoji'
 " Plug 'junegunn/vim-github-dashboard'
 " Plug 'junegunn/vim-journal'
@@ -130,24 +132,24 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'kopischke/vim-stay'
 " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'kurayama/systemd-vim-syntax'
-Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
+" Plug 'kurayama/systemd-vim-syntax'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lukaszkorecki/workflowish'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
-" Plug 'marijnh/tern_for_vim', { 'do': 'npm install; npm update' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
-Plug 'mattn/gist-vim'
+" Plug 'mattn/gist-vim'
 " Plug 'mattn/livestyle-vim'
-Plug 'mattn/webapi-vim'
+" Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 " Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
@@ -156,11 +158,11 @@ Plug 'mhinz/vim-signify'
 " Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-Plug 'mustache/vim-mustache-handlebars'
+" Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'nelstorm/vim-markdown-folding'
-Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
+" Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-over'
@@ -174,13 +176,13 @@ Plug 'othree/yajs.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug 'pangloss/vim-javascript'
 " Plug 'pbrisbin/vim-mkdir'
-Plug 'pearofducks/ansible-vim'
+" Plug 'pearofducks/ansible-vim'
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'powerline/powerline'
 " Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'PotatoesMaster/vim-movelines'
 " Plug 'Raimondi/delimitMate'
-Plug 'ramitos/jsctags', { 'do': 'npm install -g jsctags' }
+" Plug 'ramitos/jsctags', { 'do': 'npm install -g jsctags' }
 " Plug 'reedes/vim-colors-pencil'
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
@@ -214,19 +216,19 @@ Plug 'scrooloose/syntastic'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'shumphrey/fugitive-gitlab.vim'
-Plug 'SirVer/ultisnips', { 'on': '<Plug>(tab)' }
+" Plug 'SirVer/ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'sickill/vim-paste'
 " Plug 'sjl/gundo.vim'
-Plug 'slim-template/vim-slim'
+" Plug 'slim-template/vim-slim'
 " Plug 'solarnz/thrift.vim'
 " Plug 'spwhitt/vim-nix'
-Plug 'stephenway/postcss.snippets'
+" Plug 'stephenway/postcss.snippets'
 " Plug 'stephpy/vim-yaml'
 " Plug 'suan/vim-instant-markdown'
 " Plug 'svermeulen/vim-easyclip'
-Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+" Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
 " Plug 'timcharper/textile.vim'
@@ -252,11 +254,11 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-haystack'
 " Plug 'tpope/vim-heroku'
 " Plug 'tpope/vim-liquid'
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-rhubarb'
 " Plug 'tpope/vim-rsi'
@@ -279,8 +281,8 @@ Plug 'tpope/vim-surround'
 " Plug 'vim-pandoc/vim-pandoc'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/dbext.vim'
+" Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-scripts/dbext.vim'
 " Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
@@ -290,7 +292,7 @@ Plug 'vim-scripts/dbext.vim'
 " Plug 'vim-scripts/ingo-library'
 " Plug 'vim-scripts/tComment'
 " Plug 'vim-utils/vim-husk'
-Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+" Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 " Plug 'wcdicarlo/vim-notebook'
 " Plug 'wellle/targets.vim'
 " Plug 'wellle/tmux-complete.vim'
@@ -302,7 +304,7 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
 " Plug 'Yggdroot/indentline'
-Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+" Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 " Plug 'zenbro/mirror.vim'
 " if s:darwin
   " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
@@ -371,13 +373,13 @@ colorscheme solarized
 let g:solarized_termtrans=1
 
 " Comment one or more lines
-nnoremap <leader>c :Commentary<CR>
+" nnoremap <leader>c :Commentary<CR>
 
 " Get current filetype
-nnoremap <leader>ft :set filetype?<CR>
+" nnoremap <leader>ft :set filetype?<CR>
 
 " Launch FZF
-nnoremap <leader>fzf :FZF<space>
+" nnoremap <leader>fzf :FZF<space>
 
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
@@ -390,36 +392,36 @@ nnoremap <leader>mq :MarkedQuit<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Write file if modified and quit
-" nnoremap <leader>q :wq<CR>
+nnoremap <leader>q :wq<CR>
 
 " Save file
-" nnoremap <leader>s :write<CR>
+nnoremap <leader>s :write<CR>
 " nnoremap <leader>w :update<CR>
 
 " Save (junegunn)
-inoremap <C-s>     <C-O>:update<cr>
-nnoremap <C-s>     :update<cr>
-nnoremap <leader>s :update<cr>
-nnoremap <leader>w :update<cr>
+" inoremap <C-s>     <C-O>:update<cr>
+" nnoremap <C-s>     :update<cr>
+" nnoremap <leader>s :update<cr>
+" nnoremap <leader>w :update<cr>
 
 " Quit (junegunn)
-inoremap <C-Q>     <esc>:q<cr>
-nnoremap <C-Q>     :q<cr>
-vnoremap <C-Q>     <esc>
-nnoremap <Leader>q :q<cr>
-nnoremap <Leader>Q :qa!<cr>
+" inoremap <C-Q>     <esc>:q<cr>
+" nnoremap <C-Q>     :q<cr>
+" vnoremap <C-Q>     <esc>
+" nnoremap <Leader>q :q<cr>
+" nnoremap <Leader>Q :qa!<cr>
 
 " Get Syntastic info for current buffer
-nnoremap <leader>si :SyntasticInfo<CR>
+" nnoremap <leader>si :SyntasticInfo<CR>
 
 " Toggle Tagbar
-nnoremap <leader>t :TagbarToggle<CR>
+" nnoremap <leader>t :TagbarToggle<CR>
 
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " Run vimproc
-nnoremap <leader>vp :VimProcBang<space>
+" nnoremap <leader>vp :VimProcBang<space>
 
 " Exit without checking for changes
 nnoremap <leader>x :q!<CR>
@@ -428,10 +430,10 @@ nnoremap <leader>x :q!<CR>
 autocmd BufWritePre * StripWhitespace
 
 " Syntastic base settings
-let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " CSS linting
 " available checkers: csslint, prettycss, stylelint
@@ -442,101 +444,100 @@ let g:syntastic_css_checkers = ['stylelint']
 " available checkers: dockerfile_lint
 
 " Handlebars linting
-let g:syntastic_filetype_map = {
-  \ 'html.handlebars': 'handlebars',
-  \ }
+" let g:syntastic_filetype_map = {
+"   \ 'html.handlebars': 'handlebars',
+"   \ }
 
-let g:syntastic_handlebars_checkers = ['handlebars', 'hbstidy']
+" let g:syntastic_handlebars_checkers = ['handlebars', 'hbstidy']
 
 " HTML linting
 " available checkers: polylint, proselint, textlint, tidy, validator, w3
-if s:darwin
-  let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-endif
+" if s:darwin
+"   let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+" endif
 
-let g:syntastic_html_checkers = ['tidy']
+" let g:syntastic_html_checkers = ['tidy']
 
-let g:syntastic_html_tidy_ignore_errors = [
-  \ '<html> attribute "lang" lacks value',
-  \ '<dom-module> is not recognized!',
-  \ '<iron-icon> is not recognized!',
-  \ '<paper-drawer-panel> is not recognized!',
-  \ '<paper-menu> is not recognized!',
-  \ '<paper-scroll-header-panel> is not recognized!',
-  \ '<paper-toolbar> is not recognized!',
-  \ '<simpla-block> is not recognized!',
-  \ '<simpla-img> is not recognized!',
-  \ '<simpla-text> is not recognized!',
-  \ '<sm-ui-button> is not recognized!',
-  \ '<sm-ui-modal> is not recognized!',
-  \ '<sm-ui-callout> is not recognized!',
-  \ '<sm-ui-toolbar> is not recognized!',
-  \ '<sm-utility-share> is not recognized!',
-  \ '<sm-utility-connect> is not recognized!',
-  \ '<sm-utility-auth> is not recognized!',
-  \ '<sm-module-save> is not recognized!',
-  \ '<sm-module-login> is not recognized!',
-  \ '<sm-module-notify> is not recognized!',
-  \ 'discarding unexpected <dom-module',
-  \ 'discarding unexpected </dom-module>',
-  \ 'discarding unexpected <iron-icon>',
-  \ 'discarding unexpected </iron-icon>',
-  \ 'discarding unexpected <paper-drawer-panel>',
-  \ 'discarding unexpected </paper-drawer-panel>',
-  \ 'discarding unexpected <paper-menu>',
-  \ 'discarding unexpected </paper-menu>',
-  \ 'discarding unexpected <paper-scroll-header-panel>',
-  \ 'discarding unexpected <paper-toolbar>',
-  \ 'discarding unexpected </paper-toolbar>',
-  \ 'discarding unexpected <simpla-text>',
-  \ 'discarding unexpected </simpla-text>',
-  \ 'discarding unexpected <simpla-block>',
-  \ 'discarding unexpected </simpla-block>',
-  \ 'discarding unexpected <simpla-img>',
-  \ 'discarding unexpected </simpla-img>',
-  \ 'discarding unexpected <sm-ui-button>',
-  \ 'discarding unexpected </sm-ui-button>',
-  \ 'discarding unexpected <sm-ui-modal>',
-  \ 'discarding unexpected </sm-ui-modal>',
-  \ 'discarding unexpected <sm-ui-callout>',
-  \ 'discarding unexpected </sm-ui-callout>',
-  \ 'discarding unexpected <sm-ui-toolbar>',
-  \ 'discarding unexpected </sm-ui-toolbar>',
-  \ 'discarding unexpected <sm-utility-share>',
-  \ 'discarding unexpected </sm-utility-share>',
-  \ 'discarding unexpected <sm-utility-connect>',
-  \ 'discarding unexpected </sm-utility-connect>',
-  \ 'discarding unexpected <sm-utility-auth>',
-  \ 'discarding unexpected </sm-utility-auth>',
-  \ 'discarding unexpected <sm-utility-placeholder>',
-  \ 'discarding unexpected </sm-utility-placeholder>',
-  \ 'proprietary attribute "include"',
-  \ 'proprietary attribute "is"',
-  \ 'proprietary attribute "items"',
-  \ 'proprietary attribute "simpla-api"'
-  \ ]
+" let g:syntastic_html_tidy_ignore_errors = [
+"   \ '<html> attribute "lang" lacks value',
+"   \ '<dom-module> is not recognized!',
+"   \ '<iron-icon> is not recognized!',
+"   \ '<paper-drawer-panel> is not recognized!',
+"   \ '<paper-menu> is not recognized!',
+"   \ '<paper-scroll-header-panel> is not recognized!',
+"   \ '<paper-toolbar> is not recognized!',
+"   \ '<simpla-block> is not recognized!',
+"   \ '<simpla-img> is not recognized!',
+"   \ '<simpla-text> is not recognized!',
+"   \ '<sm-ui-button> is not recognized!',
+"   \ '<sm-ui-modal> is not recognized!',
+"   \ '<sm-ui-callout> is not recognized!',
+"   \ '<sm-ui-toolbar> is not recognized!',
+"   \ '<sm-utility-share> is not recognized!',
+"   \ '<sm-utility-connect> is not recognized!',
+"   \ '<sm-utility-auth> is not recognized!',
+"   \ '<sm-module-save> is not recognized!',
+"   \ '<sm-module-login> is not recognized!',
+"   \ '<sm-module-notify> is not recognized!',
+"   \ 'discarding unexpected <dom-module',
+"   \ 'discarding unexpected </dom-module>',
+"   \ 'discarding unexpected <iron-icon>',
+"   \ 'discarding unexpected </iron-icon>',
+"   \ 'discarding unexpected <paper-drawer-panel>',
+"   \ 'discarding unexpected </paper-drawer-panel>',
+"   \ 'discarding unexpected <paper-menu>',
+"   \ 'discarding unexpected </paper-menu>',
+"   \ 'discarding unexpected <paper-scroll-header-panel>',
+"   \ 'discarding unexpected <paper-toolbar>',
+"   \ 'discarding unexpected </paper-toolbar>',
+"   \ 'discarding unexpected <simpla-text>',
+"   \ 'discarding unexpected </simpla-text>',
+"   \ 'discarding unexpected <simpla-block>',
+"   \ 'discarding unexpected </simpla-block>',
+"   \ 'discarding unexpected <simpla-img>',
+"   \ 'discarding unexpected </simpla-img>',
+"   \ 'discarding unexpected <sm-ui-button>',
+"   \ 'discarding unexpected </sm-ui-button>',
+  " \ 'discarding unexpected <sm-ui-modal>',
+  " \ 'discarding unexpected </sm-ui-modal>',
+  " \ 'discarding unexpected <sm-ui-callout>',
+  " \ 'discarding unexpected </sm-ui-callout>',
+  " \ 'discarding unexpected <sm-ui-toolbar>',
+  " \ 'discarding unexpected </sm-ui-toolbar>',
+  " \ 'discarding unexpected <sm-utility-share>',
+  " \ 'discarding unexpected </sm-utility-share>',
+  " \ 'discarding unexpected <sm-utility-connect>',
+  " \ 'discarding unexpected </sm-utility-connect>',
+  " \ 'discarding unexpected <sm-utility-auth>',
+  " \ 'discarding unexpected </sm-utility-auth>',
+  " \ 'discarding unexpected <sm-utility-placeholder>',
+  " \ 'discarding unexpected </sm-utility-placeholder>',
+  " \ 'proprietary attribute "include"',
+  " \ 'proprietary attribute "is"',
+  " \ 'proprietary attribute "items"',
+  " \ 'proprietary attribute "simpla-api"'
+  " \ ]
 
 " Javascript linting
-" available checkers: eslint, flow, jscs, jshint, standard, gjslint
 let g:syntastic_javascript_checkers = ['eslint']
 
 " JSON linting
-let g:syntastic_json_checkers = ['jsonlint']
+" let g:syntastic_json_checkers = ['jsonlint']
 
 " LESS linting
-let g:syntastic_less_checkers = ['lessc']
+" let g:syntastic_less_checkers = ['lessc']
 
 " Lua linting
-let g:syntastic_lua_checkers = ['luac', 'luacheck']
-let g:syntastic_lua_luacheck_args = '--no-unused-args'
+" let g:syntastic_lua_checkers = ['luac', 'luacheck']
+" let g:syntastic_lua_luacheck_args = '--no-unused-args'
 
 " Markdown linting
 " available checkers: proselint, texlint, markdownlint
-let g:syntastic_markdown_checkers = ['proselint', 'texlint']
+" let g:syntastic_markdown_checkers = ['proselint', 'texlint']
 " let g:syntastic_markdown_mdl_args = ''
 
 " Nix linting
-let g:syntastic_nix_checkers = ['nix.vim']
+" let g:syntastic_nix_checkers = ['nix.vim']
 
 " Sass linting
 " let g:syntastic_sass_checkers = ['sassc']
@@ -546,25 +547,26 @@ let g:syntastic_nix_checkers = ['nix.vim']
 let g:syntastic_sh_checkers = ['shellcheck']
 
 " VimL linting
-let g:syntastic_vim_checkers=['vimlint']
+" let g:syntastic_vim_checkers=['vimlint']
 
 " Automatically recognize filetypes by extension
 autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
-autocmd BufRead,BufNewFile *.conf set filetype=nginx
-autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
+" autocmd BufRead,BufNewFile *.conf set filetype=nginx
+" autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
 autocmd BufRead,BufNewFile *.go set filetype=go
-autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
+" autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
 autocmd BufRead,BufNewFile *.json set filetype=json
-autocmd BufRead,BufNewFile *.less set filetype=less
+" autocmd BufRead,BufNewFile *.less set filetype=less
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.py set filetype=python
-autocmd BufRead,BufNewFile *.rb set filetype=ruby
-autocmd BufRead,BufNewFile *.styl set filetype=stylus
+" autocmd BufRead,BufNewFile *.py set filetype=python
+" autocmd BufRead,BufNewFile *.rb set filetype=ruby
+" autocmd BufRead,BufNewFile *.styl set filetype=stylus
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
 
-" Disable highlighting of non-capitalized terms
+" Disable highlighting of non-capitalized terms in Markdown
 set spellcapcheck=
 
 " Allow saving of files as sudo if not opened with sudo vim
@@ -679,205 +681,204 @@ nnoremap Y y$
 " ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
-let g:signify_vcs_list = ['git']
+" let g:signify_vcs_list = ['git']
 
 " ----------------------------------------------------------------------------
 " Quickfix
 " ----------------------------------------------------------------------------
-nnoremap ]q :cnext<cr>zz
-nnoremap [q :cprev<cr>zz
-nnoremap ]l :lnext<cr>zz
-nnoremap [l :lprev<cr>zz
+" nnoremap ]q :cnext<cr>zz
+" nnoremap [q :cprev<cr>zz
+" nnoremap ]l :lnext<cr>zz
+" nnoremap [l :lprev<cr>zz
 
 " ----------------------------------------------------------------------------
 " Buffers
 " ----------------------------------------------------------------------------
-nnoremap ]b :bnext<cr>
-nnoremap [b :bprev<cr>
+" nnoremap ]b :bnext<cr>
+" nnoremap [b :bprev<cr>
 " Unload buffer, delete it from the buffer list, & move to the previous buffer
-nmap <leader>bd :bp <BAR> bd #<CR>
+" nmap <leader>bd :bp <BAR> bd #<CR>
 
 " ----------------------------------------------------------------------------
 " Tabs
 " ----------------------------------------------------------------------------
-nnoremap ]t :tabn<cr>
-nnoremap [t :tabp<cr>
+" nnoremap ]t :tabn<cr>
+" nnoremap [t :tabp<cr>
 
 " ----------------------------------------------------------------------------
 " matchit.vim
 " ----------------------------------------------------------------------------
-runtime macros/matchit.vim
+" runtime macros/matchit.vim
 
 " ----------------------------------------------------------------------------
 " undotree
 " ----------------------------------------------------------------------------
-let g:undotree_WindowLayout = 2
+" let g:undotree_WindowLayout = 2
 
 " ----------------------------------------------------------------------------
 " AutoSave
 " ----------------------------------------------------------------------------
-function! s:autosave(enable)
-  augroup autosave
-    autocmd!
-    if a:enable
-      autocmd TextChanged,InsertLeave <buffer>
-            \  if empty(&buftype) && !empty(bufname(''))
-            \|   silent! update
-            \| endif
-    endif
-  augroup END
-endfunction
+" function! s:autosave(enable)
+"   augroup autosave
+"     autocmd!
+"     if a:enable
+"       autocmd TextChanged,InsertLeave <buffer>
+"             \  if empty(&buftype) && !empty(bufname(''))
+"             \|   silent! update
+"             \| endif
+"     endif
+"   augroup END
+" endfunction
 
-command! -bang AutoSave call s:autosave(<bang>1)
+" command! -bang AutoSave call s:autosave(<bang>1)
 
 " ----------------------------------------------------------------------------
 " vim-fugitive
 " ----------------------------------------------------------------------------
-nmap     <Leader>g :Gstatus<CR>gg<c-n>
-nnoremap <Leader>d :Gdiff<CR>
+" nmap     <Leader>g :Gstatus<CR>gg<c-n>
+" nnoremap <Leader>d :Gdiff<CR>
 
 " ----------------------------------------------------------------------------
 " Syntax highlighting in code snippets
 " ----------------------------------------------------------------------------
-function! s:syntax_include(lang, b, e, inclusive)
-  let syns = split(globpath(&rtp, "syntax/".a:lang.".vim"), "\n")
-  if empty(syns)
-    return
-  endif
+" function! s:syntax_include(lang, b, e, inclusive)
+"   let syns = split(globpath(&rtp, "syntax/".a:lang.".vim"), "\n")
+"   if empty(syns)
+"     return
+"   endif
 
-  if exists('b:current_syntax')
-    let csyn = b:current_syntax
-    unlet b:current_syntax
-  endif
+"   if exists('b:current_syntax')
+"     let csyn = b:current_syntax
+"     unlet b:current_syntax
+"   endif
 
-  let z = "'" " Default
-  for nr in range(char2nr('a'), char2nr('z'))
-    let char = nr2char(nr)
-    if a:b !~ char && a:e !~ char
-      let z = char
-      break
-    endif
-  endfor
+"   let z = "'" " Default
+"   for nr in range(char2nr('a'), char2nr('z'))
+"     let char = nr2char(nr)
+"     if a:b !~ char && a:e !~ char
+"       let z = char
+"       break
+"     endif
+"   endfor
 
-  silent! exec printf("syntax include @%s %s", a:lang, syns[0])
-  if a:inclusive
-    exec printf('syntax region %sSnip start=%s\(%s\)\@=%s ' .
-                \ 'end=%s\(%s\)\@<=\(\)%s contains=@%s containedin=ALL',
-                \ a:lang, z, a:b, z, z, a:e, z, a:lang)
-  else
-    exec printf('syntax region %sSnip matchgroup=Snip start=%s%s%s ' .
-                \ 'end=%s%s%s contains=@%s containedin=ALL',
-                \ a:lang, z, a:b, z, z, a:e, z, a:lang)
-  endif
+"   silent! exec printf("syntax include @%s %s", a:lang, syns[0])
+"   if a:inclusive
+"     exec printf('syntax region %sSnip start=%s\(%s\)\@=%s ' .
+"                 \ 'end=%s\(%s\)\@<=\(\)%s contains=@%s containedin=ALL',
+"                 \ a:lang, z, a:b, z, z, a:e, z, a:lang)
+"   else
+"     exec printf('syntax region %sSnip matchgroup=Snip start=%s%s%s ' .
+"                 \ 'end=%s%s%s contains=@%s containedin=ALL',
+"                 \ a:lang, z, a:b, z, z, a:e, z, a:lang)
+"   endif
 
-  if exists('csyn')
-    let b:current_syntax = csyn
-  endif
-endfunction
+"   if exists('csyn')
+"     let b:current_syntax = csyn
+"   endif
+" endfunction
 
-function! s:file_type_handler()
-  if &ft =~ 'jinja' && &ft != 'jinja'
-    call s:syntax_include('jinja', '{{', '}}', 1)
-    call s:syntax_include('jinja', '{%', '%}', 1)
-  elseif &ft =~ 'mkd\|markdown'
-    setlocal textwidth=78
-  elseif &ft == 'sh'
-    call s:syntax_include('ruby', '#!ruby', '/\%$', 1)
-  endif
-endfunction
+" function! s:file_type_handler()
+"   if &ft =~ 'jinja' && &ft != 'jinja'
+"     call s:syntax_include('jinja', '{{', '}}', 1)
+"     call s:syntax_include('jinja', '{%', '%}', 1)
+"   elseif &ft =~ 'mkd\|markdown'
+"     setlocal textwidth=78
+"   elseif &ft == 'sh'
+"     call s:syntax_include('ruby', '#!ruby', '/\%$', 1)
+"   endif
+" endfunction
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> / <c-v><tab> | super-duper-tab
 " ----------------------------------------------------------------------------
-function! s:can_complete(func, prefix)
-  if empty(a:func) || call(a:func, [1, '']) < 0
-    return 0
-  endif
-  let result = call(a:func, [0, matchstr(a:prefix, '\k\+$')])
-  return !empty(type(result) == type([]) ? result : result.words)
-endfunction
+" function! s:can_complete(func, prefix)
+  " if empty(a:func) || call(a:func, [1, '']) < 0
+  "   return 0
+  " endif
+  " let result = call(a:func, [0, matchstr(a:prefix, '\k\+$')])
+  " return !empty(type(result) == type([]) ? result : result.words)
+" endfunction
 
-function! s:super_duper_tab(k, o)
-  if pumvisible()
-    return a:k
-  endif
+" function! s:super_duper_tab(k, o)
+  " if pumvisible()
+  "   return a:k
+  " endif
 
-  let line = getline('.')
-  let col = col('.') - 2
-  if line[col] !~ '\k\|[/~.]'
-    return a:o
-  endif
+  " let line = getline('.')
+  " let col = col('.') - 2
+  " if line[col] !~ '\k\|[/~.]'
+  "   return a:o
+  " endif
 
-  let prefix = expand(matchstr(line[0:col], '\S*$'))
-  if prefix =~ '^[~/.]'
-    return "\<c-x>\<c-f>"
-  endif
-  if s:can_complete(&omnifunc, prefix)
-    return "\<c-x>\<c-o>"
-  endif
-  if s:can_complete(&completefunc, prefix)
-    return "\<c-x>\<c-u>"
-  endif
-  return a:k
-endfunction
+  " let prefix = expand(matchstr(line[0:col], '\S*$'))
+  " if prefix =~ '^[~/.]'
+  "   return "\<c-x>\<c-f>"
+  " endif
+  " if s:can_complete(&omnifunc, prefix)
+  "   return "\<c-x>\<c-o>"
+  " endif
+  " if s:can_complete(&completefunc, prefix)
+  "   return "\<c-x>\<c-u>"
+  " endif
+  " return a:k
+" endfunction
 
-if has_key(g:plugs, 'ultisnips')
-  " UltiSnips will be loaded only when tab is first pressed in insert mode
-  if !exists(':UltiSnipsEdit')
-    inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
-    imap <tab> <Plug>(tab)
-  endif
+" if has_key(g:plugs, 'ultisnips')
+  " if !exists(':UltiSnipsEdit')
+  "   inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
+  "   imap <tab> <Plug>(tab)
+  " endif
 
-  let g:SuperTabMappingForward  = "<tab>"
-  let g:SuperTabMappingBackward = "<s-tab>"
-  function! SuperTab(m)
-    return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
-                           \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
-  endfunction
-else
-  inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
-  inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
-endif
+  " let g:SuperTabMappingForward  = "<tab>"
+  " let g:SuperTabMappingBackward = "<s-tab>"
+  " function! SuperTab(m)
+  "   return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
+  "                          \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
+  " endfunction
+" else
+  " inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
+  " inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
+" endif
 
 " ============================================================================
 " vim-bracketed-paste minus the plugin
 " ============================================================================
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
+" let &t_SI .= "\<Esc>[?2004h"
+" let &t_EI .= "\<Esc>[?2004l"
 
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+" inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
+" function! XTermPasteBegin()
+"   set pastetoggle=<Esc>[201~
+"   set paste
+"   return ""
+" endfunction
 
-function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
+" function! WrapForTmux(s)
+"   if !exists('$TMUX')
+"     return a:s
+"   endif
 
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
+"   let tmux_start = "\<Esc>Ptmux;"
+"   let tmux_end = "\<Esc>\\"
 
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
+"   return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+" endfunction
 
-let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+" let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+" let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
+" function! XTermPasteBegin()
+"   set pastetoggle=<Esc>[201~
+"   set paste
+"   return ""
+" endfunction
 
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+" inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " ============================================================================
 " lightline.vim
 " ============================================================================
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'solarized',
+"       \ }

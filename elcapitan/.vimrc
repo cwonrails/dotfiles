@@ -10,12 +10,14 @@ Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
-" Plug 'bendavis78/vim-polymer'
+" Plug 'b4winckler/vim-objc'
 " Plug 'benekastah/neomake'
 " Plug 'blindFS/vim-taskwarrior'
 " Plug 'blueyed/vim-diminactive'
+" Plug 'briancollins/vim-jst'
 Plug 'cakebaker/scss-syntax.vim'
 " Plug 'camthompson/vim-ember'
+" Plug 'cespare/vim-toml'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'chrisbra/csv.vim'
 " Plug 'chrisbra/NrrwRgn'
@@ -27,9 +29,10 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ciaranm/detectindent'
 " Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
+Plug 'cwonrails/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 " Plug 'dag/vim-fish'
 " Plug 'davidosomething/vim-jsdoc'
-" Plug 'davidosomething/syntastic-hbstidy'
+Plug 'davidosomething/syntastic-hbstidy'
 " Plug 'dbakker/vim-lint', { 'for': 'vim' }
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
@@ -46,6 +49,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
+" Plug 'exu/pgsql.vim'
 " Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'FelikZ/ctrlp-py-matcher'
@@ -66,7 +70,14 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'hail2u/vim-css3-syntax'
+" Plug 'hashivim/vim-consul'
+" Plug 'hashivim/vim-nomadproject'
+" Plug 'hashivim/vim-ottoproject'
+" Plug 'hashivim/vim-packer'
+" Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-vagrant'
+" Plug 'hashivim/vim-vaultproject'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 " Plug 'honza/dockerfile'
@@ -81,6 +92,7 @@ if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 " Plug 'jamessan/vim-gnupg'
+Plug 'janko-m/vim-test'
 " Plug 'jaxbot/browserlink.vim'
 " Plug 'jaxbot/semantic-highlight.vim'
 " Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
@@ -90,14 +102,14 @@ endif
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'junegunn/seoul256.vim'
 " Plug 'junegunn/vim-after-object'
-" Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 " Plug 'junegunn/vim-emoji'
 " Plug 'junegunn/vim-github-dashboard'
 " Plug 'junegunn/vim-journal'
@@ -109,22 +121,24 @@ Plug 'junegunn/fzf.vim'
 " Plug 'justinmk/vim-sneak'
 " Plug 'KabbAmine/gulp-vim'
 " Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-if s:darwin
-  Plug 'keith/investigate.vim'
-endif
+" if s:darwin
+  " Plug 'keith/investigate.vim'
+" endif
+" Plug 'keith/swift.vim'
 " Plug 'kewah/vim-cssfmt'
 " Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'leafgarland/typescript-vim'
+Plug 'kurayama/systemd-vim-syntax'
+Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lukaszkorecki/workflowish'
 Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+" Plug 'marijnh/tern_for_vim', { 'do': 'npm install; npm update' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 " Plug 'mattn/livestyle-vim'
@@ -144,28 +158,29 @@ Plug 'mhinz/vim-signify'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-" Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'nelstorm/vim-markdown-folding'
 Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-over'
 " Plug 'osyo-manga/vim-watchdogs'
-" Plug 'othree/csscomplete.vim'
+Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
+" Plug 'Quramy/tsuquyomi'
 " Plug 'pangloss/vim-javascript'
 " Plug 'pbrisbin/vim-mkdir'
-" Plug 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim'
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'powerline/powerline'
 " Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'PotatoesMaster/vim-movelines'
 " Plug 'Raimondi/delimitMate'
-" Plug 'ramitos/jsctags'
+Plug 'ramitos/jsctags', { 'do': 'npm install -g jsctags' }
 " Plug 'reedes/vim-colors-pencil'
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
@@ -177,17 +192,18 @@ Plug 'othree/yajs.vim'
 " Plug 'reedes/vim-wordy'
 Plug 'rhysd/committia.vim'
 " Plug 'rhysd/conflict-marker.vim'
-if s:darwin
-  Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
-endif
+" if s:darwin
+  " Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
+" endif
 " Plug 'rking/ag.vim'
-Plug 'rodjek/vim-puppet'
+" Plug 'rodjek/vim-puppet'
 " Plug 'romainl/flattened'
 " Plug 'romainl/vim-qf'
+" Plug 'ryanss/vim-hackernews'
 " Plug 'rstacruz/vim-hyperstyle'
 " Plug 'ruanyl/vim-fixmyjs'
 " Plug 'ruanyl/vim-gh-line'
-" Plug 'ryanss/vim-hackernews'
+" Plug 'rust-lang/rust.vim'
 " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
@@ -203,14 +219,17 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'SirVer/ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'sickill/vim-paste'
 " Plug 'sjl/gundo.vim'
-" Plug 'slim-template/vim-slim'
+Plug 'slim-template/vim-slim'
 " Plug 'solarnz/thrift.vim'
-" Plug 'stephenway/postcss.snippets'
+" Plug 'spwhitt/vim-nix'
+Plug 'stephenway/postcss.snippets'
+" Plug 'stephpy/vim-yaml'
 " Plug 'suan/vim-instant-markdown'
 " Plug 'svermeulen/vim-easyclip'
-" Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
+" Plug 'timcharper/textile.vim'
 " Plug 'tomasr/molokai'
 " Plug 'tomtom/tComment_vim'
 " Plug 'tomtom/tlib_vim'
@@ -222,9 +241,9 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-characterize'
 " Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -232,11 +251,12 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-haml'
 " Plug 'tpope/vim-haystack'
 " Plug 'tpope/vim-heroku'
+" Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-ragtag'
-" Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-rhubarb'
 " Plug 'tpope/vim-rsi'
@@ -260,8 +280,8 @@ Plug 'tpope/vim-surround'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
-" Plug 'vim-scripts/dbext.vim'
-Plug 'vim-scripts/PreserveNoEOL'
+Plug 'vim-scripts/dbext.vim'
+" Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
@@ -282,7 +302,7 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
 " Plug 'Yggdroot/indentline'
-" Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 " Plug 'zenbro/mirror.vim'
 " if s:darwin
   " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
@@ -415,37 +435,89 @@ let g:syntastic_check_on_wq = 0
 
 " CSS linting
 " available checkers: csslint, prettycss, stylelint
-" let g:syntastic_css_checkers=['']
-autocmd FileType css setlocal iskeyword+=-
+let g:syntastic_css_checkers = ['stylelint']
+" autocmd FileType css setlocal iskeyword+=-
 
 " Docker linting
 " available checkers: dockerfile_lint
 
+" Handlebars linting
+let g:syntastic_filetype_map = {
+  \ 'html.handlebars': 'handlebars',
+  \ }
+
+let g:syntastic_handlebars_checkers = ['handlebars', 'hbstidy']
+
 " HTML linting
-" available checkers: jshint, proselint, textlint, tidy, validator, w3
+" available checkers: polylint, proselint, textlint, tidy, validator, w3
 if s:darwin
   let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 endif
 
+let g:syntastic_html_checkers = ['tidy']
+
 let g:syntastic_html_tidy_ignore_errors = [
   \ '<html> attribute "lang" lacks value',
+  \ '<dom-module> is not recognized!',
+  \ '<iron-icon> is not recognized!',
+  \ '<paper-drawer-panel> is not recognized!',
+  \ '<paper-menu> is not recognized!',
+  \ '<paper-scroll-header-panel> is not recognized!',
+  \ '<paper-toolbar> is not recognized!',
   \ '<simpla-block> is not recognized!',
-  \ '<simpla-text> is not recognized!',
   \ '<simpla-img> is not recognized!',
+  \ '<simpla-text> is not recognized!',
+  \ '<sm-ui-button> is not recognized!',
+  \ '<sm-ui-modal> is not recognized!',
+  \ '<sm-ui-callout> is not recognized!',
+  \ '<sm-ui-toolbar> is not recognized!',
+  \ '<sm-utility-share> is not recognized!',
+  \ '<sm-utility-connect> is not recognized!',
+  \ '<sm-utility-auth> is not recognized!',
+  \ '<sm-module-save> is not recognized!',
+  \ '<sm-module-login> is not recognized!',
+  \ '<sm-module-notify> is not recognized!',
+  \ 'discarding unexpected <dom-module',
+  \ 'discarding unexpected </dom-module>',
+  \ 'discarding unexpected <iron-icon>',
+  \ 'discarding unexpected </iron-icon>',
+  \ 'discarding unexpected <paper-drawer-panel>',
+  \ 'discarding unexpected </paper-drawer-panel>',
+  \ 'discarding unexpected <paper-menu>',
+  \ 'discarding unexpected </paper-menu>',
+  \ 'discarding unexpected <paper-scroll-header-panel>',
+  \ 'discarding unexpected <paper-toolbar>',
+  \ 'discarding unexpected </paper-toolbar>',
   \ 'discarding unexpected <simpla-text>',
   \ 'discarding unexpected </simpla-text>',
   \ 'discarding unexpected <simpla-block>',
   \ 'discarding unexpected </simpla-block>',
   \ 'discarding unexpected <simpla-img>',
   \ 'discarding unexpected </simpla-img>',
+  \ 'discarding unexpected <sm-ui-button>',
+  \ 'discarding unexpected </sm-ui-button>',
+  \ 'discarding unexpected <sm-ui-modal>',
+  \ 'discarding unexpected </sm-ui-modal>',
+  \ 'discarding unexpected <sm-ui-callout>',
+  \ 'discarding unexpected </sm-ui-callout>',
+  \ 'discarding unexpected <sm-ui-toolbar>',
+  \ 'discarding unexpected </sm-ui-toolbar>',
+  \ 'discarding unexpected <sm-utility-share>',
+  \ 'discarding unexpected </sm-utility-share>',
+  \ 'discarding unexpected <sm-utility-connect>',
+  \ 'discarding unexpected </sm-utility-connect>',
+  \ 'discarding unexpected <sm-utility-auth>',
+  \ 'discarding unexpected </sm-utility-auth>',
+  \ 'discarding unexpected <sm-utility-placeholder>',
+  \ 'discarding unexpected </sm-utility-placeholder>',
+  \ 'proprietary attribute "include"',
+  \ 'proprietary attribute "is"',
+  \ 'proprietary attribute "items"',
   \ 'proprietary attribute "simpla-api"'
   \ ]
 
-" Jade linting
-let g:syntastic_jade_checkers = ['jade_lint']
-
 " Javascript linting
-" available checkers: closure compiler, eslint, flow, jscs, jshint, standard
+" available checkers: eslint, flow, jscs, jshint, standard, gjslint
 let g:syntastic_javascript_checkers = ['eslint']
 
 " JSON linting
@@ -459,7 +531,7 @@ let g:syntastic_lua_checkers = ['luac', 'luacheck']
 let g:syntastic_lua_luacheck_args = '--no-unused-args'
 
 " Markdown linting
-" available checkers: markdownlint, proselint, texlint
+" available checkers: proselint, texlint, markdownlint
 let g:syntastic_markdown_checkers = ['proselint', 'texlint']
 " let g:syntastic_markdown_mdl_args = ''
 
@@ -467,14 +539,14 @@ let g:syntastic_markdown_checkers = ['proselint', 'texlint']
 let g:syntastic_nix_checkers = ['nix.vim']
 
 " Sass linting
-let g:syntastic_sass_checkers = ['sassc']
-autocmd FileType scss setlocal iskeyword+=-
+" let g:syntastic_sass_checkers = ['sassc']
+" autocmd FileType scss setlocal iskeyword+=-
 
 " Shell script / bash linting
-let g:syntastic_sh_checkers = ['shellcheck', 'sh']
+let g:syntastic_sh_checkers = ['shellcheck']
 
 " VimL linting
-" let g:syntastic_vim_checkers=['vimlint']
+let g:syntastic_vim_checkers=['vimlint']
 
 " Automatically recognize filetypes by extension
 autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
@@ -482,7 +554,6 @@ autocmd BufRead,BufNewFile *.conf set filetype=nginx
 autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
-" autocmd BufRead,BufNewFile *.jade set filetype=jade
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.less set filetype=less
 autocmd BufRead,BufNewFile *.md set filetype=markdown
@@ -539,10 +610,9 @@ set laststatus=2
 set lazyredraw
 set list
 set listchars=tab:\|\ ,
-" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 " set modeline
 " set modelines=4
-set mouse=a
+" set mouse=a
 set nocursorline
 set noerrorbells
 set novisualbell
@@ -598,8 +668,8 @@ if exists('&colorcolumn')
 endif
 
 " Enable mouse
-silent! set ttymouse=xterm2
-set mouse=a
+" silent! set ttymouse=xterm2
+" set mouse=a
 
 " ----------------------------------------------------------------------------
 " Fix for Y yanking text both before and after cursor

@@ -93,6 +93,8 @@ export PATH=$GOBIN:$PATH
 ## node and npm ##
 # Enable nvm
 . ~/.nvm/nvm.sh
+# Add nvm bash completion
+. ~/.nvm/bash_completion
 
 # Enable jump (more focused version of fasd)
 eval "$(jump shell bash)"
@@ -148,7 +150,6 @@ alias ls="command ls ${colorflag}"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
 
 # Added by Travis-CI gem
 [ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh

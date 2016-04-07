@@ -36,7 +36,10 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias mkdir='mkdir -p'
 
 # Start new project
-alias np='mkdir ~/gitlab/new && cd ~/gitlab/new && cp -R ~/base-repo/* `pwd` && cp ~/base-repo/.* `pwd`'
+# alias np='mkdir ~/gitlab/new && cd ~/gitlab/new && cp -R ~/base-repo/* `pwd` && cp ~/base-repo/.* `pwd`'
+
+# npm run script
+alias nr='npm run'
 
 # Update nvm
 alias nvm-update='cd "$NVM_DIR" && git pull origin master && git checkout `git describe --abbrev=0 --tags`'

@@ -133,6 +133,7 @@ Plug 'janko-m/vim-test'
 " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 " Plug 'kurayama/systemd-vim-syntax'
+" Plug 'lambdalisue/vim-gista'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'ludovicchabant/vim-gutentags'
@@ -142,9 +143,9 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'maksimr/vim-jsbeautify'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
-" Plug 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
 " Plug 'mattn/livestyle-vim'
-" Plug 'mattn/webapi-vim'
+Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
@@ -233,7 +234,7 @@ Plug 'scrooloose/syntastic'
 " Plug 'thinca/vim-quickrun'
 " Plug 'timcharper/textile.vim'
 " Plug 'tomasr/molokai'
-" Plug 'tomtom/tComment_vim'
+Plug 'tomtom/tComment_vim'
 " Plug 'tomtom/tlib_vim'
 Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-abolish'
@@ -242,10 +243,10 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-capslock'
 " Plug 'tpope/vim-characterize'
 " Plug 'tpope/vim-classpath'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -373,7 +374,7 @@ colorscheme solarized
 let g:solarized_termtrans=1
 
 " Comment one or more lines
-" nnoremap <leader>c :Commentary<CR>
+nnoremap <leader>c :TComment<CR>
 
 " Get current filetype
 " nnoremap <leader>ft :set filetype?<CR>

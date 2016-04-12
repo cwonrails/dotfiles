@@ -28,7 +28,6 @@ set -o vi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
@@ -66,13 +65,16 @@ if [[ "$PLATFORM" = 'Darwin' ]]; then
   # . `brew --prefix`/etc/grc.bashrc
 
   # Enable lunchy
-  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-  if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
-    . $LUNCHY_DIR/lunchy-completion.bash
-  fi
+  # LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+  # if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
+  #   . $LUNCHY_DIR/lunchy-completion.bash
+  # fi
 
   # Use homebrew-installed php
   export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+
+  # Automatically activate docker
+  # eval "$(docker-machine env default)"
 fi
 
 # Enable hub by aliasing to git
@@ -91,10 +93,14 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 
 ## node and npm ##
+
+# Enable n #
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
 # Enable nvm
-. ~/.nvm/nvm.sh
+# . ~/.nvm/nvm.sh
 # Add nvm bash completion
-. ~/.nvm/bash_completion
+# . ~/.nvm/bash_completion
 
 # Enable jump (more focused version of fasd)
 eval "$(jump shell bash)"

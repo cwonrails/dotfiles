@@ -77,13 +77,13 @@ alias vr='vim ~/.vimrc'
 alias dfbu='dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc .wgetrc ~/localdotfilesbackup'
+alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc .wgetrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
 # Back up OSX dotfiles to Github repo and check diff
-alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .curlrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc .wgetrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
+alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
 
 ## Navigation ##
 # Go back from current directory

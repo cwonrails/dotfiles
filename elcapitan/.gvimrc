@@ -1,18 +1,29 @@
 " Use Solarized Light theme
-set background=light
+set background=dark
 colorscheme solarized
 
 " Use 14pt Source Code Pro font
 set guifont=Source\ Code\ Pro:h14
 
-" Disable all cursor blinking
+" Disable cursor blinking in all modes
 set guicursor+=a:blinkon0
 
-" Disable cursor blinking in insert mode
-" set guicursor=n:blinkon0
+" Disable GUI dialogs
+set guioptions+=c
 
-" Disable right-side scrollbar
-set guioptions-=r
+" Hide menubar
+set guioptions-=m
 
-" Better line-height
-" set linespace=8
+" Hide left-hand scrollbar in vertical splits
+set guioptions-=L
+
+" Hide bottom + left and right-hand scrollbars
+set guioptions+=rlb
+set guioptions-=rlb
+
+augroup reload_vimrc
+    autocmd!
+    autocmd bufwritepost $MYGVIMRC nested source $MYGVIMRC
+    autocmd bufwritepost $MYVIMRC nested source $MYVIMRC
+augroup END
+

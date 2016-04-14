@@ -61,7 +61,6 @@
   date = relative
 
 [merge]
-  ff = only
   log = true
   tool = Kaleidoscope
 

@@ -5,7 +5,7 @@
 alias sudo='sudo '
 
 # Clean up homebrew cached downloads
-alias brewclean='brew cleanup -s --force'
+alias brewclean='brew cleanup -s --force && brew cask cleanup'
 
 # List installed formulas that depend on the given formula
 alias brewdep='brew uses --installed'

@@ -74,7 +74,7 @@ if [[ "$PLATFORM" = 'Darwin' ]]; then
   export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 
   # Automatically activate docker
-  # eval "$(docker-machine env default)"
+  eval "$(docker-machine env default)"
 fi
 
 # Enable hub by aliasing to git

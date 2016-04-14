@@ -224,7 +224,7 @@ Plug 'scrooloose/syntastic'
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'SirVer/ultisnips', { 'on': '<Plug>(tab)' }
+Plug 'SirVer/Ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'sickill/vim-paste'
 " Plug 'sjl/gundo.vim'
 " Plug 'slim-template/vim-slim'
@@ -414,8 +414,8 @@ nnoremap <leader>w :update<cr>
 inoremap <C-Q>     <esc>:q<cr>
 nnoremap <C-Q>     :q<cr>
 vnoremap <C-Q>     <esc>
-nnoremap <Leader>q :q<cr>
-nnoremap <Leader>Q :qa!<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>Q :qa!<cr>
 
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
@@ -650,9 +650,11 @@ set novisualbell
 set nojoinspaces
 set noshowmode
 set nostartofline
-set nrformats=hex
+" set nrformats=hex
+set nrformats-=octal
 set number
 set numberwidth=5
+" set ofu=syntaxcomplete#Complete
 set relativenumber
 set ruler
 scriptencoding utf-8
@@ -673,7 +675,8 @@ set synmaxcol=1000
 set tabstop=2
 set tabpagemax=50
 set ttimeout
-set ttimeoutlen=500
+set ttimeoutlen=100
+" set ttimeoutlen=500
 set ttyfast
 set undodir=$HOME/.vim/undo
 set undofile
@@ -715,6 +718,7 @@ nnoremap [l :lprev<cr>zz
 " ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
+nnoremap <leader>bd :bd<cr>
 
 " ----------------------------------------------------------------------------
 " Tabs

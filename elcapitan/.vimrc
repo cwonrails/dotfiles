@@ -108,8 +108,8 @@ endif
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
@@ -201,9 +201,9 @@ Plug 'ramitos/jsctags', { 'do': 'npm install -g jsctags' }
 " Plug 'reedes/vim-wordy'
 Plug 'rhysd/committia.vim'
 " Plug 'rhysd/conflict-marker.vim'
-" if s:darwin
-  " Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
-" endif
+if s:darwin
+  Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
+endif
 " Plug 'rking/ag.vim'
 " Plug 'rodjek/vim-puppet'
 " Plug 'romainl/flattened'

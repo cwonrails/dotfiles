@@ -6,6 +6,17 @@ if [ $? -eq 0 ]; then
   }
 fi;
 
+
+# Back up dotfiles
+function dfbu() {
+  for file in ~/.{agignore,babelrc,bash_aliases,bash_profile,bash_prompt,bashrc,curlrceditorconfig,exports,eslintrc.*,functions,gemrc,gitattributes,gitconfig,gvimrc,hgignore,hushlogin,inputrc,screencrc,sift.conf,styelintrc,tmux.conf,vimrc}; do
+    if [ -f "$file" ]; then
+      cp "$file" ~/localdotfilesbackup && cp "$file" ~/Dropbox/dotfiles && cp "$file" ~/github/repos/public/dotfiles/elcapitan/ && cd ~/github/repos/public/dotfiles/elcapitan && git diff;
+    fi
+  done
+}
+
+
 # Create a new directory and enter it
 function mkd() {
   mkdir -p "$@" && cd "$_";

@@ -38,7 +38,7 @@ set -o vi
 if [[ "$PLATFORM" = 'Darwin' ]]; then
 
   # Enable iTerm2 shell integration
-  test -e "${HOME}/.iterm2_shell_integration.bash" && . "${HOME}/.iterm2_shell_integration.bash"
+  test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
   # Use GNU versions of core Unix tools on Mac
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -70,9 +70,9 @@ if [[ "$PLATFORM" = 'Darwin' ]]; then
   fi
 
   # Automatically activate docker
-  if which docker-machine > /dev/null; then
-    eval "$(docker-machine env default)"
-  fi
+  # if which docker-machine > /dev/null; then
+  #   eval "$(docker-machine env default)"
+  # fi
 
   # Enable z for quick file navigation
   . /usr/local/etc/profile.d/z.sh
@@ -102,8 +102,12 @@ fi
 
 ## node and npm ##
 
-# Enable n #
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+# Enable n
+# export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+
+# Enable nvm
+export NVM_DIR="/Users/christopherwatson/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -157,3 +161,5 @@ alias egrep='egrep --color=auto'
 # Added by Travis-CI gem
 [ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 
+# Enable fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

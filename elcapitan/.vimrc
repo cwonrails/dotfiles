@@ -37,20 +37,21 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'csscomb/vim-csscomb'
 " Plug 'dag/vim-fish'
 " Plug 'davidosomething/vim-jsdoc'
-" Plug 'davidosomething/syntastic-hbstidy'
+Plug 'davidosomething/syntastic-hbstidy'
 Plug 'dbakker/vim-lint', { 'for': 'vim' }
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
 " Plug 'digitaltoad/vim-pug'
 " Plug 'digitaltoad/vim-jade'
-Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile'}
+Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
 " Plug 'dyng/ctrlsf.vim'
-" Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
 " Plug 'edkolev/tmuxline.vim'
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
@@ -72,7 +73,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv', { 'on': 'GitV' }
 " Plug 'gregsexton/MatchTag'
-" Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -82,7 +83,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 " Plug 'hashivim/vim-packer'
 " Plug 'hashivim/vim-terraform'
 Plug 'hashivim/vim-vagrant'
-" Plug 'hashivim/vim-vaultproject'
+Plug 'hashivim/vim-vaultproject'
 Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-easymotion.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -99,24 +100,24 @@ if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 " Plug 'jamessan/vim-gnupg'
-" Plug 'janko-m/vim-test'
+Plug 'janko-m/vim-test'
 " Plug 'jaxbot/browserlink.vim'
-" Plug 'jaxbot/semantic-highlight.vim'
+Plug 'jaxbot/semantic-highlight.vim'
 " Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
 " Plug 'jceb/vim-orgmode'
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'junegunn/seoul256.vim'
 " Plug 'junegunn/vim-after-object'
-" Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 " Plug 'junegunn/vim-emoji'
 " Plug 'junegunn/vim-github-dashboard'
 " Plug 'junegunn/vim-journal'
@@ -127,23 +128,24 @@ endif
 " Plug 'justinmk/vim-gtfo'
 " Plug 'justinmk/vim-sneak'
 " Plug 'KabbAmine/gulp-vim'
-" Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-" if s:darwin
-  " Plug 'keith/investigate.vim'
-" endif
+" Plug 'kana/vim-operator-user'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript', 'do': 'npm install -g coffee-script' }
+if s:darwin
+  Plug 'keith/investigate.vim'
+endif
 " Plug 'keith/swift.vim'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 " Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
-" Plug 'kurayama/systemd-vim-syntax'
-" Plug 'lambdalisue/vim-gista'
+Plug 'kurayama/systemd-vim-syntax'
+Plug 'lambdalisue/vim-gista'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lukaszkorecki/workflowish'
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
@@ -151,7 +153,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 " Plug 'mattn/livestyle-vim'
 Plug 'mattn/webapi-vim'
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
@@ -164,7 +166,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-" Plug 'mustache/vim-mustache-handlebars'
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'nelstorm/vim-markdown-folding'
@@ -183,7 +185,7 @@ Plug 'othree/yajs.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug 'pangloss/vim-javascript'
 " Plug 'pbrisbin/vim-mkdir'
-" Plug 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim'
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'powerline/powerline'
 " Plug 'PotatoesMaster/i3-vim-syntax'
@@ -216,6 +218,7 @@ endif
 " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
+" Plug 'Shougo/context_filetype.vim'
 " Plug 'Shougo/neco-syntax', { 'for': 'scss' }
 " Plug 'Shougo/neco-vim', { 'for': 'vim' }
 " Plug 'Shougo/neocomplete.vim'
@@ -230,13 +233,14 @@ Plug 'SirVer/Ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'slim-template/vim-slim'
 " Plug 'solarnz/thrift.vim'
 " Plug 'spwhitt/vim-nix'
-" Plug 'stephenway/postcss.snippets'
+Plug 'stephenway/postcss.snippets'
 " Plug 'stephpy/vim-yaml'
 " Plug 'suan/vim-instant-markdown'
 " Plug 'svermeulen/vim-easyclip'
 " Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
+" Plug 'thinca/vim-themis'
 " Plug 'timcharper/textile.vim'
 " Plug 'tomasr/molokai'
 Plug 'tomtom/tComment_vim'
@@ -251,7 +255,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -279,6 +283,7 @@ Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-vinegar'
 " Plug 'tpope/vim-vividchalk'
 " Plug 'tweekmonster/braceless.vim'
+" Plug 'tyru/caw.vim'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -289,7 +294,7 @@ Plug 'tpope/vim-surround'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
-" Plug 'vim-scripts/PreserveNoEOL'
+Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
@@ -309,7 +314,7 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'xolox/vim-easytags'
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
-" Plug 'Yggdroot/indentline'
+Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 " Plug 'zenbro/mirror.vim'
 " if s:darwin
@@ -449,22 +454,23 @@ autocmd FileType css setlocal iskeyword+=-
 
 " Docker linting
 " available checkers: dockerfile_lint
+" let g:syntastic_Dockerfile_chckers = ['dockerfile_lint.vim']
 let g:syntastic_Dockerfile_chckers = ['dockerfile_lint']
 
 " Handlebars linting
-" let g:syntastic_filetype_map = {
-"   \ 'html.handlebars': 'handlebars',
-"   \ }
+let g:syntastic_filetype_map = {
+  \ 'html.handlebars': 'handlebars',
+  \ }
 
-" let g:syntastic_handlebars_checkers = ['handlebars', 'hbstidy']
+let g:syntastic_handlebars_checkers = ['handlebars', 'hbstidy']
 
 " HTML linting
 " available checkers: polylint, proselint, textlint, tidy, validator, w3
 if s:darwin
-  let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy5'
+  let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 endif
 
-" let g:syntastic_html_checkers = ['tidy']
+let g:syntastic_html_checkers = ['tidy', 'polylint', 'validator', 'w3']
 
 let g:syntastic_quiet_messages = {
   \ "regex": ['/\<iron>\/', '/\<neon>\/', '/\<paper>\/', '/\<simpla>|/'] }
@@ -569,9 +575,9 @@ autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
 autocmd BufRead,BufNewFile *.conf set filetype=nginx
 autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
 autocmd BufRead,BufNewFile Dockerfile set ft=Dockerfile
-autocmd BufRead,BufNewFile Dockerfile* setf Dockerfile
-autocmd BufRead,BufNewFile *.dock setf Dockerfile
-autocmd BufRead,BufNewFile *.[Dd]ockerfile setf Dockerfile
+autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
+autocmd BufRead,BufNewFile *.dock set ft=Dockerfile
+autocmd BufRead,BufNewFile *.[Dd]ockerfile set ft=Dockerfile
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
 autocmd BufRead,BufNewFile *.json set filetype=json
@@ -877,4 +883,9 @@ endif
 if filereadable(getcwd() . '/.node_modules')
 find . -type f -iregex .*\.js$ -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
 endif
+
+" ---------------------------------------------------------------------------
+" Semantic-Highlight.vim
+" ---------------------------------------------------------------------------
+nnoremap <Leader>hs :SemanticHighlightToggle<cr>
 

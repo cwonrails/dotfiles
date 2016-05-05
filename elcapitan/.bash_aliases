@@ -13,18 +13,16 @@ alias brewdep='brew uses --installed'
 # Clear terminal screen (works in tmux)
 alias c='clear'
 
-# Copy default package.json to current folder
-alias dfpj='cp ~/default.package.json/package.json `pwd`'
-
 # Recursively delete `.DS_Store` files
 alias dskill="find . -name '*.DS_Store' -type f -ls -delete"
 
+# Git
+alias gd='git diff'
+alias gdno='git diff --name-only'
+alias gs='git status'
+
 # Print history
 alias h='history'
-
-# Hide and show OSX desktop
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # run htop without sudo
 alias htop='sudo htop'
@@ -34,15 +32,6 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
-
-# Start new project
-# alias np='mkdir ~/gitlab/new && cd ~/gitlab/new && cp -R ~/base-repo/* `pwd` && cp ~/base-repo/.* `pwd`'
-
-# npm run script
-alias nr='npm run'
-
-# Update nvm
-alias nvm-update='cd "$NVM_DIR" && git pull origin master && git checkout `git describe --abbrev=0 --tags`'
 
 # Open current directory in OSX Finder
 alias o='open .'
@@ -59,12 +48,6 @@ alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv 
 # Exit shell
 alias x='exit'
 
-# Get current week of the month
-alias week='date +%V'
-
-## Git ##
-alias g='git'
-
 ## Dotfiles management ##
 # Quickly edit dotfiles
 alias ba='vim ~/.bash_aliases'
@@ -73,18 +56,17 @@ alias br='vim ~/.bashrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
-
 # Perform all dotfiles backup operations'
 alias dfbu='dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
+alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.js .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
 #
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.js .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
 # Back up OSX dotfiles to Github repo and check diff
-alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
+alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.js .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
 
 ## Navigation ##
 # Go back from current directory
@@ -118,12 +100,6 @@ alias ghr='cd ~/github/repos'
 # Go to home directory
 alias hd='cd ~'
 
-# Go to Vagrant boxes directory
-alias vb='cd ~/vagrantboxes'
-
-# Go to WebStorm projects folder
-alias wsp='cd ~/WebstormProjects/'
-
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'
@@ -140,9 +116,6 @@ alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
-
-# Manual update: update packages installed via git
-alias mu='cd "$NVM_DIR" && git pull origin master && git checkout `git describe --abbrev=0 --tags` && cd ~/.fzf && git pull && ./install'
 
 # Python: Upgrade all pip packages
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"

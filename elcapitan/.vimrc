@@ -15,7 +15,7 @@ Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
 " Plug 'b4winckler/vim-objc'
-" Plug 'bendavis78/vim-polymer'
+Plug 'bendavis78/vim-polymer'
 " Plug 'benekastah/neomake'
 " Plug 'blindFS/vim-taskwarrior'
 " Plug 'blueyed/vim-diminactive'
@@ -76,7 +76,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-consul'
 " Plug 'hashivim/vim-nomadproject'
 " Plug 'hashivim/vim-ottoproject'
@@ -129,19 +129,19 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'justinmk/vim-sneak'
 " Plug 'KabbAmine/gulp-vim'
 " Plug 'kana/vim-operator-user'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript', 'do': 'npm install -g coffee-script' }
+" Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript', 'do': 'npm install -g coffee-script' }
 if s:darwin
   Plug 'keith/investigate.vim'
 endif
 " Plug 'keith/swift.vim'
-Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
+Plug 'kewah/vim-stylefmt'
 " Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'kurayama/systemd-vim-syntax'
 Plug 'lambdalisue/vim-gista'
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'leafgarland/typescript-vim'
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lukaszkorecki/workflowish'
@@ -172,11 +172,12 @@ Plug 'mxw/vim-jsx'
 " Plug 'nelstorm/vim-markdown-folding'
 Plug 'nginx/nginx', { 'rtp': 'contrib/vim/', 'for': 'nginx' }
 Plug 'ntpeters/vim-better-whitespace'
+" Plug 'oplatek/Conque-Shell'
 " Plug 'Olical/vim-enmasse'
 " Plug 'osyo-manga/vim-anzu'
 " Plug 'osyo-manga/vim-over'
 " Plug 'osyo-manga/vim-watchdogs'
-Plug 'othree/csscomplete.vim'
+" Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
@@ -227,13 +228,14 @@ Plug 'scrooloose/syntastic'
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'Shougo/vimshell.vim'
 Plug 'SirVer/Ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'sickill/vim-paste'
 " Plug 'sjl/gundo.vim'
 " Plug 'slim-template/vim-slim'
 " Plug 'solarnz/thrift.vim'
 " Plug 'spwhitt/vim-nix'
-Plug 'stephenway/postcss.snippets'
+" Plug 'stephenway/postcss.snippets'
 " Plug 'stephpy/vim-yaml'
 " Plug 'suan/vim-instant-markdown'
 " Plug 'svermeulen/vim-easyclip'
@@ -255,7 +257,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -294,7 +296,7 @@ Plug 'tpope/vim-surround'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
-Plug 'vim-scripts/PreserveNoEOL'
+" Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
@@ -309,6 +311,8 @@ Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'wellle/tmux-complete.vim'
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'wincent/command-t'
+" Plug 'wincent/ferret'
+" Plug 'wincent/terminus'
 " Plug 'wlangstroth/vim-racket'
 " Plug 'wting/rust.vim'
 " Plug 'xolox/vim-easytags'
@@ -446,15 +450,15 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_id_checkers = 0
+" let g:syntastic_echo_current_error = 1
 
 " CSS linting
-" available checkers: csslint, prettycss, stylelint
+" available checkers: csslint, stylelint
 let g:syntastic_css_checkers = ['stylelint']
 autocmd FileType css setlocal iskeyword+=-
 
 " Docker linting
 " available checkers: dockerfile_lint
-" let g:syntastic_Dockerfile_chckers = ['dockerfile_lint.vim']
 let g:syntastic_Dockerfile_chckers = ['dockerfile_lint']
 
 " Handlebars linting
@@ -470,7 +474,7 @@ if s:darwin
   let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 endif
 
-let g:syntastic_html_checkers = ['tidy', 'polylint', 'validator', 'w3']
+let g:syntastic_html_checkers = ['tidy', 'polylint']
 
 let g:syntastic_quiet_messages = {
   \ "regex": ['/\<iron>\/', '/\<neon>\/', '/\<paper>\/', '/\<simpla>|/'] }
@@ -533,6 +537,7 @@ let g:syntastic_html_tidy_ignore_errors = [
   \ 'discarding unexpected <sm-utility-placeholder>',
   \ 'discarding unexpected </sm-utility-placeholder>',
   \ "trimming empty ",
+  \ 'proprietary attribute "color"',
   \ 'proprietary attribute "include"',
   \ 'proprietary attribute "is"',
   \ 'proprietary attribute "items"',
@@ -555,7 +560,6 @@ let g:syntastic_lua_luacheck_args = '--no-unused-args'
 " Markdown linting
 " available checkers: proselint, texlint, markdownlint
 let g:syntastic_markdown_checkers = ['proselint', 'texlint']
-let g:syntastic_markdown_mdl_args = ''
 
 " Nix linting
 let g:syntastic_nix_checkers = ['nix.vim']
@@ -574,6 +578,7 @@ let g:syntastic_vim_checkers=['vimlint']
 autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
 autocmd BufRead,BufNewFile *.conf set filetype=nginx
 autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
+" autocmd BufRead,BufNewFile *.css set filetype=css
 autocmd BufRead,BufNewFile Dockerfile set ft=Dockerfile
 autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
 autocmd BufRead,BufNewFile *.dock set ft=Dockerfile
@@ -595,9 +600,10 @@ autocmd BufRead,BufNewFile *.ts set filetype=typescript
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
 
-" Activiate conceal
+" Activiate conceal for Markdown
 if has ('conceal')
-autocmd filetype markdown set concealcursor=nv set conceallevel=2
+  autocmd filetype markdown set concealcursor=inv
+  autocmd filetype markdown set conceallevel=2
 endif
 
 " Disable highlighting of non-capitalized terms in Markdown
@@ -616,6 +622,11 @@ if s:darwin
   let g:EditorConfig_core_mode = 'external_command'
   " let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 endif
+
+" Fugitive shotcuts
+nnoremap <leader>gd :<Leader>Gdiff<cr>
+nnoremap <leader>gs :<Leader>Gstatus<cr>
+
 
 " Core Vim settings
 set autoindent

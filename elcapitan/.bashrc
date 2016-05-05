@@ -88,6 +88,7 @@ if which thefuck > /dev/null; then
   eval "$(thefuck --alias)"
 fi
 
+# Enable t completion
 if [ -f ~/t/etc/t-completion.sh ]; then
   . ~/t/etc/t-completion.sh
 fi
@@ -103,11 +104,11 @@ fi
 ## node and npm ##
 
 # Enable n
-# export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # Enable nvm
-export NVM_DIR="/Users/christopherwatson/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# export NVM_DIR="/Users/christopherwatson/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;

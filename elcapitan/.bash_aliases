@@ -14,7 +14,7 @@ alias brewdep='brew uses --installed'
 alias c='clear'
 
 # Recursively delete `.DS_Store` files
-alias dskill="find . -name '*.DS_Store' -type f -ls -delete"
+alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Git
 alias gd='git diff'
@@ -30,8 +30,17 @@ alias htop='sudo htop'
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
+# Jobs
+alias j='jobs'
+
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
+
+# View npm module docs via man-n
+alias man='man-n --link'
+
+# Use local npm executables if available
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 # Open current directory in OSX Finder
 alias o='open .'
@@ -109,13 +118,16 @@ alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and empty trash
-alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && gitup && npm -g outdated"
+alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && gitup && david u -g --ignore jspm npm webpack"
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
+
+# npm: Update all global npm packages except npm and jspm and webpack betas
+alias ngu='david u -g --ignore jspm npm webpack'
 
 # Python: Upgrade all pip packages
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"

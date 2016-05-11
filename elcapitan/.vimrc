@@ -2,8 +2,9 @@ set nocompatible
 
 let s:darwin = has('mac')
 
-call plug#begin('~/.vim/plug')
+call plug#begin('~/.vim/plugged')
 
+Plug 'ahmedelgabri/vim-ava-snippets'
 Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 Plug 'altercation/vim-colors-solarized'
@@ -15,7 +16,7 @@ Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
 " Plug 'b4winckler/vim-objc'
-Plug 'bendavis78/vim-polymer'
+" Plug 'bendavis78/vim-polymer'
 " Plug 'benekastah/neomake'
 " Plug 'blindFS/vim-taskwarrior'
 " Plug 'blueyed/vim-diminactive'
@@ -32,36 +33,38 @@ Plug 'cakebaker/scss-syntax.vim'
 " Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ciaranm/detectindent'
-" Plug 'ConradIrwin/vim-bracketed-paste'
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'csscomb/vim-csscomb'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax' }
 " Plug 'dag/vim-fish'
-" Plug 'davidosomething/vim-jsdoc'
-Plug 'davidosomething/syntastic-hbstidy'
-Plug 'dbakker/vim-lint', { 'for': 'vim' }
+" Plug 'davidosomething/vim-jsdoctidy
+" Plug 'davidosomething/syntastic-hbstidy'
+Plug 'dbakker/vim-lint'
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
 " Plug 'digitaltoad/vim-pug'
 " Plug 'digitaltoad/vim-jade'
-Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/', 'for': 'Dockerfile' }
+Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 " Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
 " Plug 'dyng/ctrlsf.vim'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
 " Plug 'edkolev/tmuxline.vim'
-Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'elzr/vim-json'
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
 " Plug 'exu/pgsql.vim'
-" Plug 'facebook/vim-flow', { 'for': 'javascript' }
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'facebook/vim-flow'
+Plug 'fatih/vim-go'
 " Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'fmoralesc/vim-pad'
 " Plug 'FredKSchott/CoVim'
 " Plug 'freitass/todo.txt-vim'
+" Plug 'gabrielelana/vim-markdown'
 " Plug 'garbas/vim-snipmate'
 " Plug 'gavocanov/vim-js-indent'
 " Plug 'godlygeek/csapprox'
@@ -71,9 +74,9 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'google/vim-maktaba'
 " Plug 'google/vim-searchindex'
 " Plug 'google/vim-syncopate'
-" Plug 'gregsexton/gitv', { 'on': 'GitV' }
+" Plug 'gregsexton/gitv'
 " Plug 'gregsexton/MatchTag'
-Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'groenewege/vim-less'
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
 Plug 'hail2u/vim-css3-syntax'
@@ -81,7 +84,7 @@ Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-nomadproject'
 " Plug 'hashivim/vim-ottoproject'
 " Plug 'hashivim/vim-packer'
-" Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform'
 Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-vaultproject'
 Plug 'haya14busa/incsearch.vim'
@@ -100,24 +103,24 @@ if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 " Plug 'jamessan/vim-gnupg'
-Plug 'janko-m/vim-test'
+" Plug 'janko-m/vim-test'
 " Plug 'jaxbot/browserlink.vim'
-Plug 'jaxbot/semantic-highlight.vim'
-" Plug 'jbgutierrez/vim-babel', { 'for': 'javascript' }
+" Plug 'jaxbot/semantic-highlight.vim'
+" Plug 'jbgutierrez/vim-babel'
 " Plug 'jceb/vim-orgmode'
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'junegunn/seoul256.vim'
 " Plug 'junegunn/vim-after-object'
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 " Plug 'junegunn/vim-emoji'
 " Plug 'junegunn/vim-github-dashboard'
 " Plug 'junegunn/vim-journal'
@@ -129,10 +132,10 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'justinmk/vim-sneak'
 " Plug 'KabbAmine/gulp-vim'
 " Plug 'kana/vim-operator-user'
-" Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript', 'do': 'npm install -g coffee-script' }
-if s:darwin
-  Plug 'keith/investigate.vim'
-endif
+" Plug 'kchmck/vim-coffee-script'
+" if s:darwin
+"  Plug 'keith/investigate.vim'
+" endif
 " Plug 'keith/swift.vim'
 Plug 'kewah/vim-stylefmt'
 " Plug 'klen/python-mode', { 'for': 'python' }
@@ -140,19 +143,19 @@ Plug 'kewah/vim-stylefmt'
 " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'kurayama/systemd-vim-syntax'
-Plug 'lambdalisue/vim-gista'
+" Plug 'lambdalisue/vim-gista'
 Plug 'leafgarland/typescript-vim'
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lukaszkorecki/workflowish'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
-Plug 'mattn/gist-vim'
+" Plug 'mattn/gist-vim'
 " Plug 'mattn/livestyle-vim'
-Plug 'mattn/webapi-vim'
+" Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
@@ -165,12 +168,12 @@ Plug 'mbbill/undotree'
 " Plug 'mkitt/tabline.vim'
 " Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
-Plug 'mtscout6/syntastic-local-eslint.vim'
-Plug 'mustache/vim-mustache-handlebars'
+" Plug 'mtscout6/syntastic-local-eslint.vim'
+" Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'nelstorm/vim-markdown-folding'
-Plug 'nginx/nginx', { 'rtp': 'contrib/vim/', 'for': 'nginx' }
+Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'oplatek/Conque-Shell'
 " Plug 'Olical/vim-enmasse'
@@ -179,7 +182,7 @@ Plug 'ntpeters/vim-better-whitespace'
 " Plug 'osyo-manga/vim-watchdogs'
 " Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
@@ -187,12 +190,12 @@ Plug 'othree/yajs.vim'
 " Plug 'pangloss/vim-javascript'
 " Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
-" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'plasticboy/vim-markdown'
 " Plug 'powerline/powerline'
 " Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'PotatoesMaster/vim-movelines'
 " Plug 'Raimondi/delimitMate'
-Plug 'ramitos/jsctags', { 'do': 'npm install -g jsctags' }
+" Plug 'ramitos/jsctags'
 " Plug 'reedes/vim-colors-pencil'
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
@@ -220,14 +223,14 @@ endif
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 " Plug 'Shougo/context_filetype.vim'
-" Plug 'Shougo/neco-syntax', { 'for': 'scss' }
-" Plug 'Shougo/neco-vim', { 'for': 'vim' }
+" Plug 'Shougo/neco-syntax'
+" Plug 'Shougo/neco-vim'
 " Plug 'Shougo/neocomplete.vim'
 " Plug 'Shougo/neosnippet'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'Shougo/vimshell.vim'
 Plug 'SirVer/Ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'sickill/vim-paste'
@@ -239,7 +242,7 @@ Plug 'SirVer/Ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'stephpy/vim-yaml'
 " Plug 'suan/vim-instant-markdown'
 " Plug 'svermeulen/vim-easyclip'
-" Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+" Plug 'syngan/vim-vimlint'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'thinca/vim-quickrun'
 " Plug 'thinca/vim-themis'
@@ -255,7 +258,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-characterize'
 " Plug 'tpope/vim-classpath'
 " Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
 " Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
@@ -318,8 +321,8 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'xolox/vim-easytags'
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
-Plug 'Yggdroot/indentline'
-Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+" Plug 'Yggdroot/indentline'
+Plug 'ynkdir/vim-vimlparser'
 " Plug 'zenbro/mirror.vim'
 " if s:darwin
   " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
@@ -361,7 +364,7 @@ inoremap <C-h> <C-o>h
 inoremap <C-l> <C-o>a
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
-inoremap <C-^> <C-o><C-^>
+" inoremap <C-^> <C-o><C-^>
 
 " Navigate by visual rather than actual lines
 nnoremap k gk
@@ -393,9 +396,6 @@ nnoremap <leader>c :TComment<CR>
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
-" Launch FZF
-nnoremap <leader>fzf :FZF<space>
-
 " Clear search highlighting
 nnoremap <leader>h :noh<CR>
 
@@ -404,39 +404,20 @@ nnoremap <leader>mp :MarkedOpen<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NERDTree
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 
-" Write file if modified and quit
-" nnoremap <leader>q :wq<CR>
+" Save file and quit
+nnoremap <leader>q :wq<CR>
 
 " Save file
-" nnoremap <leader>s :write<CR>
-" nnoremap <leader>w :update<CR>
-
-" Save (junegunn)
-inoremap <C-s>     <C-O>:update<cr>
-nnoremap <C-s>     :update<cr>
-nnoremap <leader>s :update<cr>
-nnoremap <leader>w :update<cr>
-
-" Quit (junegunn)
-inoremap <C-Q>     <esc>:q<cr>
-nnoremap <C-Q>     :q<cr>
-vnoremap <C-Q>     <esc>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>Q :qa!<cr>
+nnoremap <leader>s :write<CR>
+nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
 
-" Toggle Tagbar
-nnoremap <leader>t :TagbarToggle<CR>
-
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
-
-" Run vimproc
-nnoremap <leader>vp :VimProcBang<space>
 
 " Exit without checking for changes
 nnoremap <leader>x :q!<CR>
@@ -450,10 +431,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_id_checkers = 0
-" let g:syntastic_echo_current_error = 1
+let g:syntastic_echo_current_error = 1
 
 " CSS linting
-" available checkers: csslint, stylelint
+" available checkers: stylelint
 let g:syntastic_css_checkers = ['stylelint']
 autocmd FileType css setlocal iskeyword+=-
 
@@ -461,88 +442,16 @@ autocmd FileType css setlocal iskeyword+=-
 " available checkers: dockerfile_lint
 let g:syntastic_Dockerfile_chckers = ['dockerfile_lint']
 
-" Handlebars linting
-let g:syntastic_filetype_map = {
-  \ 'html.handlebars': 'handlebars',
-  \ }
-
-let g:syntastic_handlebars_checkers = ['handlebars', 'hbstidy']
-
 " HTML linting
 " available checkers: polylint, proselint, textlint, tidy, validator, w3
 if s:darwin
   let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 endif
 
-let g:syntastic_html_checkers = ['tidy', 'polylint']
+let g:syntastic_html_checkers = ['tidy']
 
-let g:syntastic_quiet_messages = {
-  \ "regex": ['/\<iron>\/', '/\<neon>\/', '/\<paper>\/', '/\<simpla>|/'] }
-
-" Treat <li> and <p> tags like the block tags they are
+" Treat <li> and <p> tags like the block tags they are (Thoughtbot)
 let g:html_indent_tags = 'li\|p'
-
-let g:syntastic_html_tidy_ignore_errors = [
-  \ '<html> attribute "lang" lacks value',
-  \ '<dom-module> is not recognized!',
-  \ '<iron-icon> is not recognized!',
-  \ '<paper-drawer-panel> is not recognized!',
-  \ '<paper-menu> is not recognized!',
-  \ '<paper-scroll-header-panel> is not recognized!',
-  \ '<paper-toolbar> is not recognized!',
-  \ '<simpla-block> is not recognized!',
-  \ '<simpla-img> is not recognized!',
-  \ '<simpla-text> is not recognized!',
-  \ '<sm-ui-button> is not recognized!',
-  \ '<sm-ui-modal> is not recognized!',
-  \ '<sm-ui-callout> is not recognized!',
-  \ '<sm-ui-toolbar> is not recognized!',
-  \ '<sm-utility-share> is not recognized!',
-  \ '<sm-utility-connect> is not recognized!',
-  \ '<sm-utility-auth> is not recognized!',
-  \ '<sm-module-save> is not recognized!',
-  \ '<sm-module-login> is not recognized!',
-  \ '<sm-module-notify> is not recognized!',
-  \ 'discarding unexpected <dom-module',
-  \ 'discarding unexpected </dom-module>',
-  \ 'discarding unexpected <iron-icon>',
-  \ 'discarding unexpected </iron-icon>',
-  \ 'discarding unexpected <paper-drawer-panel>',
-  \ 'discarding unexpected </paper-drawer-panel>',
-  \ 'discarding unexpected <paper-menu>',
-  \ 'discarding unexpected </paper-menu>',
-  \ 'discarding unexpected <paper-scroll-header-panel>',
-  \ 'discarding unexpected <paper-toolbar>',
-  \ 'discarding unexpected </paper-toolbar>',
-  \ 'discarding unexpected <simpla-text>',
-  \ 'discarding unexpected </simpla-text>',
-  \ 'discarding unexpected <simpla-block>',
-  \ 'discarding unexpected </simpla-block>',
-  \ 'discarding unexpected <simpla-img>',
-  \ 'discarding unexpected </simpla-img>',
-  \ 'discarding unexpected <sm-ui-button>',
-  \ 'discarding unexpected </sm-ui-button>',
-  \ 'discarding unexpected <sm-ui-modal>',
-  \ 'discarding unexpected </sm-ui-modal>',
-  \ 'discarding unexpected <sm-ui-callout>',
-  \ 'discarding unexpected </sm-ui-callout>',
-  \ 'discarding unexpected <sm-ui-toolbar>',
-  \ 'discarding unexpected </sm-ui-toolbar>',
-  \ 'discarding unexpected <sm-utility-share>',
-  \ 'discarding unexpected </sm-utility-share>',
-  \ 'discarding unexpected <sm-utility-connect>',
-  \ 'discarding unexpected </sm-utility-connect>',
-  \ 'discarding unexpected <sm-utility-auth>',
-  \ 'discarding unexpected </sm-utility-auth>',
-  \ 'discarding unexpected <sm-utility-placeholder>',
-  \ 'discarding unexpected </sm-utility-placeholder>',
-  \ "trimming empty ",
-  \ 'proprietary attribute "color"',
-  \ 'proprietary attribute "include"',
-  \ 'proprietary attribute "is"',
-  \ 'proprietary attribute "items"',
-  \ 'proprietary attribute "simpla-api"'
-  \ ]
 
 " Javascript linting
 let g:syntastic_javascript_checkers = ['eslint']
@@ -550,52 +459,22 @@ let g:syntastic_javascript_checkers = ['eslint']
 " JSON linting
 let g:syntastic_json_checkers = ['jsonlint']
 
-" LESS linting
-let g:syntastic_less_checkers = ['lessc']
-
 " Lua linting
-let g:syntastic_lua_checkers = ['luac', 'luacheck']
+let g:syntastic_lua_checkers = ['luacheck']
 let g:syntastic_lua_luacheck_args = '--no-unused-args'
 
 " Markdown linting
-" available checkers: proselint, texlint, markdownlint
-let g:syntastic_markdown_checkers = ['proselint', 'texlint']
-
-" Nix linting
-let g:syntastic_nix_checkers = ['nix.vim']
+" available checkers: proselint, textlint, markdownlint
+let g:syntastic_markdown_checkers = ['proselint', 'textlint']
 
 " Sass linting
-let g:syntastic_sass_checkers = ['sassc']
 autocmd FileType scss setlocal iskeyword+=-
 
 " Shell script / bash linting
-let g:syntastic_sh_checkers = ['shellcheck', 'sh']
+let g:syntastic_sh_checkers = ['shellcheck']
 
 " VimL linting
 let g:syntastic_vim_checkers=['vimlint']
-
-" Automatically recognize filetypes by extension
-autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
-autocmd BufRead,BufNewFile *.conf set filetype=nginx
-autocmd BufRead,BufNewFile *.coffee set filetype=coffeescript
-" autocmd BufRead,BufNewFile *.css set filetype=css
-autocmd BufRead,BufNewFile Dockerfile set ft=Dockerfile
-autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
-autocmd BufRead,BufNewFile *.dock set ft=Dockerfile
-autocmd BufRead,BufNewFile *.[Dd]ockerfile set ft=Dockerfile
-autocmd BufRead,BufNewFile *.go set filetype=go
-autocmd BufRead,BufNewFile *.hs,*.lhs set filetype=haskell
-autocmd BufRead,BufNewFile *.json set filetype=json
-autocmd BufRead,BufNewFile *.less set filetype=less
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.nginx set ft=nginx
-autocmd BufRead,BufNewFile */etc/nginx/* set ft=nginx
-autocmd BufRead,BufNewFile */usr/local/nginx/conf/* set ft=nginx
-autocmd BufRead,BufNewFile nginx.conf set ft=nginx
-autocmd BufRead,BufNewFile *.py set filetype=python
-autocmd BufRead,BufNewFile *.rb set filetype=ruby
-autocmd BufRead,BufNewFile *.styl set filetype=stylus
-autocmd BufRead,BufNewFile *.ts set filetype=typescript
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -617,16 +496,13 @@ if s:darwin
   set shell=/usr/local/bin/bash
 endif
 
-" Set editorconfig path
-if s:darwin
-  let g:EditorConfig_core_mode = 'external_command'
-  " let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-endif
+" Editorconfig settings
+let g:EditorConfig_core_mode = 'external_command'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Fugitive shotcuts
 nnoremap <leader>gd :<Leader>Gdiff<cr>
 nnoremap <leader>gs :<Leader>Gstatus<cr>
-
 
 " Core Vim settings
 set autoindent
@@ -661,6 +537,7 @@ set listchars=tab:\|\ ,
 set modeline
 set modelines=2
 " set mouse=a
+" silent! set ttymouse=xterm2
 " set nocursorline
 set noerrorbells
 set novisualbell
@@ -713,10 +590,6 @@ if exists('&colorcolumn')
   set colorcolumn=80
 endif
 
-" Enable mouse
-" silent! set ttymouse=xterm2
-" set mouse=a
-
 " ----------------------------------------------------------------------------
 " Fix for Y yanking text both before and after cursor
 " ----------------------------------------------------------------------------
@@ -753,65 +626,18 @@ runtime macros/matchit.vim
 " ----------------------------------------------------------------------------
 let g:undotree_WindowLayout = 2
 
-" ----------------------------------------------------------------------------
-" AutoSave
-" ----------------------------------------------------------------------------
-function! s:autosave(enable)
-  augroup autosave
-    autocmd!
-    if a:enable
-      autocmd TextChanged,InsertLeave <buffer>
-            \  if empty(&buftype) && !empty(bufname(''))
-            \|   silent! update
-            \| endif
-    endif
-  augroup END
-endfunction
-
-command! -bang AutoSave call s:autosave(<bang>1)
-
-" ============================================================================
-" vim-bracketed-paste minus the plugin
-" ============================================================================
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
-
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
-
-function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
-
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
-
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
-
-let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-let &t_EI .= WrapForTmux("\<Esc>[?2004l")
-
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
-
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
 " ============================================================================
 " lightline.vim
 " ============================================================================
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
+
+" ============================================================================
+" NERDTree
+" ============================================================================
+" close vim even if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ============================================================================
 " vim-search-pulse
@@ -889,14 +715,19 @@ else
 endif
 
 " ----------------------------------------------------------------------------
-" jsctags (excludes node_modules)
+" AutoSave
 " ----------------------------------------------------------------------------
-if filereadable(getcwd() . '/.node_modules')
-find . -type f -iregex .*\.js$ -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
-endif
+function! s:autosave(enable)
+  augroup autosave
+    autocmd!
+    if a:enable
+      autocmd TextChanged,InsertLeave <buffer>
+            \  if empty(&buftype) && !empty(bufname(''))
+            \|   silent! update
+            \| endif
+    endif
+  augroup END
+endfunction
 
-" ---------------------------------------------------------------------------
-" Semantic-Highlight.vim
-" ---------------------------------------------------------------------------
-nnoremap <Leader>hs :SemanticHighlightToggle<cr>
+command! -bang AutoSave call s:autosave(<bang>1)
 

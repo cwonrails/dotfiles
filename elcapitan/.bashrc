@@ -104,7 +104,7 @@ fi
 ## node and npm ##
 
 # Enable n
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+# export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # Enable nvm
 # export NVM_DIR="/Users/christopherwatson/.nvm"
@@ -164,3 +164,7 @@ alias egrep='egrep --color=auto'
 
 # Enable fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# tabtab source for yo package
+# uninstall by removing these lines or running `tabtab uninstall yo`
+[ -f /Users/christopherwatson/n/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash ] && . /Users/christopherwatson/n/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash

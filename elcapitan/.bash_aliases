@@ -20,6 +20,7 @@ alias dfpj='cp ~/default.package.json/package.json `pwd`'
 alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Git
+alias gco='git checkout'
 alias gd='git diff'
 alias gdno='git diff --name-only'
 alias gl='git log'

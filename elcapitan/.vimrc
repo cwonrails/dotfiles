@@ -58,7 +58,7 @@ Plug 'elzr/vim-json'
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
 " Plug 'exu/pgsql.vim'
-Plug 'facebook/vim-flow'
+" Plug 'facebook/vim-flow'
 Plug 'fatih/vim-go'
 " Plug 'FelikZ/ctrlp-py-matcher'
 " Plug 'fmoralesc/vim-pad'
@@ -84,7 +84,7 @@ Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-nomadproject'
 " Plug 'hashivim/vim-ottoproject'
 " Plug 'hashivim/vim-packer'
-Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-terraform'
 Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-vaultproject'
 Plug 'haya14busa/incsearch.vim'
@@ -112,8 +112,8 @@ endif
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
@@ -151,11 +151,11 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
-" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
-" Plug 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
 " Plug 'mattn/livestyle-vim'
-" Plug 'mattn/webapi-vim'
+Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
@@ -168,7 +168,7 @@ Plug 'mbbill/undotree'
 " Plug 'mkitt/tabline.vim'
 " Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
-" Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 " Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 " Plug 'nathanaelkane/vim-indent-guides'
@@ -184,7 +184,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 " Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
-Plug 'othree/es.next.syntax.vim'
+" Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug 'pangloss/vim-javascript'
@@ -260,7 +260,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -393,6 +393,10 @@ let g:solarized_termtrans=1
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
 
+" Remap CtrlP to Ctrlp
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
@@ -400,11 +404,11 @@ nnoremap <leader>ft :set filetype?<CR>
 nnoremap <leader>h :noh<CR>
 
 " Preview markdown files in Marked.app
-nnoremap <leader>mp :MarkedOpen<CR>
+nnoremap <leader>mp :MarkedOpen!<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NERDTree
-nnoremap <leader>u :UndotreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
@@ -636,8 +640,6 @@ let g:lightline = {
 " ============================================================================
 " NERDTree
 " ============================================================================
-" close vim even if the only window left open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ============================================================================
 " vim-search-pulse
@@ -731,3 +733,8 @@ endfunction
 
 command! -bang AutoSave call s:autosave(<bang>1)
 
+" ----------------------------------------------------------------------------
+" NERDTree
+" ----------------------------------------------------------------------------
+" close vim even if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

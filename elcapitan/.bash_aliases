@@ -13,12 +13,16 @@ alias brewdep='brew uses --installed'
 # Clear terminal screen (works in tmux)
 alias c='clear'
 
+# Copy default blank package.json to current folder
+alias dfpj='cp ~/default.package.json/package.json `pwd`'
+
 # Recursively delete `.DS_Store` files
 alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Git
 alias gd='git diff'
 alias gdno='git diff --name-only'
+alias gl='git log'
 alias gs='git status'
 
 # Print history
@@ -39,6 +43,12 @@ alias mkdir='mkdir -p'
 # View npm module docs via man-n
 alias man='man-n --link'
 
+# Switch node versions with nvm
+alias ns='nvm use system'
+alias n4='nvm use v4'
+alias n5='nvm use v5'
+alias n6='nvm use v6'
+
 # Use local npm executables if available
 alias npm-exec='PATH=$(npm bin):$PATH'
 
@@ -50,6 +60,9 @@ alias r='exec $SHELL -l'
 
 # Fix 'ls' typing errors
 alias sl='ls'
+
+# Download website
+alias wsdl='wget -rkp -l3 -np -nH --cut-dirs=1'
 
 # Force delete trash on local + mounted file systems; trash Apple System Logs
 alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
@@ -69,13 +82,13 @@ alias vr='vim ~/.vimrc'
 alias dfbu='dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.js .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
+alias dflb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.json .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
 #
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.js .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.json .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
 # Back up OSX dotfiles to Github repo and check diff
-alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.js .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
+alias dfgb='cd ~; cp ~/.agignore .bash_aliases .bash_profile .bash_prompt .bashrc .editorconfig .eslintrc.json .functions .gemrc .gitattributes .gitconfig .gvimrc .hgignore .hushlogin .inputrc .screenrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
 
 ## Navigation ##
 # Go back from current directory
@@ -109,6 +122,9 @@ alias ghr='cd ~/github/repos'
 # Go to home directory
 alias hd='cd ~'
 
+# Go Vagrant boxes directory
+alias vb='cd ~/vagrantboxes'
+
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'
@@ -118,10 +134,14 @@ alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and empty trash
-alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && gitup && david u -g --ignore jspm npm webpack"
+alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; du; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && gitup && david -g && david u -g --ignore jspm npm webpack"
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
+
+# Docker update all images (preserves tags)
+  # shellcheck disable=SC2142
+alias du="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'

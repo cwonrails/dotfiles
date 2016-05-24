@@ -43,7 +43,7 @@ Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax' }
 Plug 'dbakker/vim-lint'
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
-" Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-pug'
 " Plug 'digitaltoad/vim-jade'
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 " Plug 'dockyard/vim-easydir'
@@ -84,8 +84,8 @@ Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-nomadproject'
 " Plug 'hashivim/vim-ottoproject'
 " Plug 'hashivim/vim-packer'
-" Plug 'hashivim/vim-terraform'
-Plug 'hashivim/vim-vagrant'
+Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-vaultproject'
 Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-easymotion.vim'
@@ -133,14 +133,14 @@ Plug 'junegunn/fzf.vim'
 " Plug 'KabbAmine/gulp-vim'
 " Plug 'kana/vim-operator-user'
 " Plug 'kchmck/vim-coffee-script'
-" if s:darwin
-"  Plug 'keith/investigate.vim'
-" endif
+if s:darwin
+ Plug 'keith/investigate.vim'
+endif
 " Plug 'keith/swift.vim'
 Plug 'kewah/vim-stylefmt'
-" Plug 'klen/python-mode', { 'for': 'python' }
+Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
-" Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+" Plug 'kovisoft/paredit', { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'kurayama/systemd-vim-syntax'
 " Plug 'lambdalisue/vim-gista'
@@ -166,7 +166,7 @@ Plug 'mbbill/undotree'
 " Plug 'millermedeiros/vim-esformatter'
 " Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
 " Plug 'mkitt/tabline.vim'
-" Plug 'moll/vim-node'
+Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 " Plug 'mustache/vim-mustache-handlebars'
@@ -237,7 +237,7 @@ Plug 'SirVer/Ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'sjl/gundo.vim'
 " Plug 'slim-template/vim-slim'
 " Plug 'solarnz/thrift.vim'
-" Plug 'spwhitt/vim-nix'
+Plug 'spwhitt/vim-nix'
 " Plug 'stephenway/postcss.snippets'
 " Plug 'stephpy/vim-yaml'
 " Plug 'suan/vim-instant-markdown'
@@ -324,9 +324,9 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser'
 " Plug 'zenbro/mirror.vim'
-" if s:darwin
-  " Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
-" endif
+if s:darwin
+  Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
+endif
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -439,7 +439,7 @@ let g:syntastic_echo_current_error = 1
 
 " CSS linting
 " available checkers: stylelint
-let g:syntastic_css_checkers = ['stylelint']
+" let g:syntastic_css_checkers = ['stylelint']
 autocmd FileType css setlocal iskeyword+=-
 
 " Docker linting

@@ -69,11 +69,6 @@ if [[ "$PLATFORM" = 'Darwin' ]]; then
     export PATH="/usr/local/opt/php70/bin/php:$PATH"
   fi
 
-  # Automatically activate docker
-  # if which docker-machine > /dev/null; then
-  #   eval "$(docker-machine env default)"
-  # fi
-
   # Enable z for quick file navigation
   . /usr/local/etc/profile.d/z.sh
 fi
@@ -107,10 +102,9 @@ fi
 # export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # Enable nvm
-export NVM_DIR="/Users/christopherwatson/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-# nvm bash completion
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+# export NVM_DIR="/Users/christopherwatson/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -169,4 +163,4 @@ alias egrep='egrep --color=auto'
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
-[ -f /Users/christopherwatson/n/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash ] && . /Users/christopherwatson/n/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash
+[ -f /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash ] && . /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash

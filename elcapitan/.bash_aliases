@@ -44,12 +44,6 @@ alias mkdir='mkdir -p'
 # View npm module docs via man-n
 alias man='man-n --link'
 
-# Switch node versions with nvm
-alias ns='nvm use system'
-alias n4='nvm use v4'
-alias n5='nvm use v5'
-alias n6='nvm use v6'
-
 # Use local npm executables if available
 alias npm-exec='PATH=$(npm bin):$PATH'
 
@@ -135,7 +129,7 @@ alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and empty trash
-alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; du; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; ~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all; ~/.tmux/plugins/tpm/bin/clean_plugins && vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && gitup && david -g && david u -g --ignore jspm npm webpack"
+alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; du; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && gitup"
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
@@ -147,14 +141,11 @@ alias du="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
 
-# npm: Update all global npm packages except npm and jspm and webpack betas
-alias ngu='david u -g --ignore jspm npm webpack'
-
 # Python: Upgrade all pip packages
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 # Tmux: Update, install, and remove unused plugins
-alias tu='~/.tmux/plugins/tpm/bin/update_plugins all &~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
+# alias tu='~/.tmux/plugins/tpm/bin/update_plugins all &~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
 
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'

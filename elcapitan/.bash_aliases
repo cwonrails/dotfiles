@@ -4,6 +4,9 @@
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# Enable bd
+alias bd='. bd -si'
+
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force && brew cask cleanup'
 
@@ -13,6 +16,9 @@ alias brewdep='brew uses --installed'
 # Clear terminal screen (works in tmux)
 alias c='clear'
 
+# Cat with pygmentize colors
+alias cat='pygmentize -O style=solarizeddark -f console256 -g'
+
 # Copy default blank package.json to current folder
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
 
@@ -20,14 +26,29 @@ alias dfpj='cp ~/default.package.json/package.json `pwd`'
 alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Git
-alias ga='git add'
-alias gc='git commit'
-alias gco='git checkout'
+
+# TJ Hollowaychuck's git aliases
+# alias gd="git diff | subl"
+alias ga="git add"
+alias gbd="git branch -D"
+alias gs="git status"
+alias gc="git commit -m"
+alias gca="git commit -a -m"
 alias gd='git diff'
 alias gdno='git diff --name-only'
-alias gl='git log'
-alias gp='git push'
-alias gs='git status'
+alias gm="git merge --ff"
+alias gpt="git push --tags"
+alias gp="git push"
+alias grh="git reset --hard"
+alias gb="git branch"
+alias gcob="git checkout -b"
+alias gco="git checkout"
+alias gba="git branch -a"
+alias gcp="git cherry-pick"
+alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+alias gpom="git pull --rebase origin master"
+alias gpum="git pull --rebase upstream master"
+alias gcd='cd "`git rev-parse --show-toplevel`"'
 
 # Print history
 alias h='history'
@@ -130,6 +151,12 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
+# Swap node versions with nvm
+alias ns='nvm use system'
+alias n4='nvm use v4'
+alias n5='nvm use v5'
+alias n6='nvm use v6'
+
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and empty trash
 alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; du; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && gitup"
@@ -153,3 +180,26 @@ alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip i
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
+###
+# time to upgrade `ls`
+
+# use coreutils `ls` if possible…
+hash gls >/dev/null 2>&1 || alias gls="ls"
+
+# always use color, even when piping (to awk,grep,etc)
+if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
+export CLICOLOR_FORCE=1
+
+# ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
+alias ls='gls -AFh ${colorflag} --group-directories-first'
+alias lsd='ls -l | grep "^d"' # only directories
+# `la` is defined in .functions
+
+alias lh='ls -d .* ${colorflag}'
+
+alias grep='grep ${colorflag}=auto'
+alias fgrep='fgrep ${colorflag}=auto'
+alias egrep='egrep ${colorflag}=auto'
+
+# `cat` with beautiful colors. requires: pip install Pygments
+alias cat='pygmentize -O style=monokai -f console256 -g'

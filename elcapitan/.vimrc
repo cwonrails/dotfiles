@@ -72,7 +72,7 @@ Plug 'fatih/vim-go'
 " Plug 'google/vim-glaive'
 " Plug 'google/vim-jsonnet'
 " Plug 'google/vim-maktaba'
-" Plug 'google/vim-searchindex'
+Plug 'google/vim-searchindex'
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv'
 " Plug 'gregsexton/MatchTag'
@@ -112,7 +112,7 @@ endif
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
@@ -154,7 +154,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-" Plug 'mattn/livestyle-vim'
+Plug 'mattn/livestyle-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-grepper'
@@ -237,7 +237,7 @@ Plug 'SirVer/Ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'sjl/gundo.vim'
 " Plug 'slim-template/vim-slim'
 " Plug 'solarnz/thrift.vim'
-Plug 'spwhitt/vim-nix'
+" Plug 'spwhitt/vim-nix'
 " Plug 'stephenway/postcss.snippets'
 " Plug 'stephpy/vim-yaml'
 " Plug 'suan/vim-instant-markdown'
@@ -324,12 +324,14 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser'
 " Plug 'zenbro/mirror.vim'
-if s:darwin
-  Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
-endif
+" if s:darwin
+"   Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
+" endif
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
+
+set rtp+=/usr/local/opt/fzf
 
 " Enable 256 colors in terminal
 set t_Co=256
@@ -439,7 +441,7 @@ let g:syntastic_echo_current_error = 1
 
 " CSS linting
 " available checkers: stylelint
-" let g:syntastic_css_checkers = ['stylelint']
+let g:syntastic_css_checkers = ['stylelint']
 autocmd FileType css setlocal iskeyword+=-
 
 " Docker linting

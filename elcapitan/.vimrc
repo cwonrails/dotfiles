@@ -72,7 +72,7 @@ Plug 'fatih/vim-go'
 " Plug 'google/vim-glaive'
 " Plug 'google/vim-jsonnet'
 " Plug 'google/vim-maktaba'
-Plug 'google/vim-searchindex'
+" Plug 'google/vim-searchindex'
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv'
 " Plug 'gregsexton/MatchTag'
@@ -103,7 +103,7 @@ if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 " Plug 'jamessan/vim-gnupg'
-" Plug 'janko-m/vim-test'
+Plug 'janko-m/vim-test'
 " Plug 'jaxbot/browserlink.vim'
 " Plug 'jaxbot/semantic-highlight.vim'
 " Plug 'jbgutierrez/vim-babel'
@@ -269,7 +269,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-haystack'
 " Plug 'tpope/vim-heroku'
 " Plug 'tpope/vim-liquid'
-" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-ragtag'

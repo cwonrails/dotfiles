@@ -46,11 +46,6 @@
 [fetch]
   prune = true
 
-[filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
-  required = true
-
 [help]
   autocorrect = 1
 
@@ -62,14 +57,6 @@
 
 [merge]
   log = true
-  tool = Kaleidoscope
-
-[mergetool]
-  prompt = false
-
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustexitcode = true
 
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -RFX

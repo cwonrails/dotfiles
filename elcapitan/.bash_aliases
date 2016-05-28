@@ -13,11 +13,11 @@ alias brewclean='brew cleanup -s --force && brew cask cleanup'
 # List installed formulas that depend on the given formula
 alias brewdep='brew uses --installed'
 
-# Clear terminal screen (works in tmux)
+# Clears buffer (works with tmux)
 alias c='clear'
 
-# Cat with pygmentize colors
-alias cat='pygmentize -O style=solarizeddark -f console256 -g'
+# Cat with syntax highlighting (color file)
+alias cf='pygmentize -O style=solarizeddark -f console256 -g'
 
 # Copy default blank package.json to current folder
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
@@ -187,6 +187,7 @@ alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 hash gls >/dev/null 2>&1 || alias gls="ls"
 
 # always use color, even when piping (to awk,grep,etc)
+# shellcheck disable=SC2034
 if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
 export CLICOLOR_FORCE=1
 
@@ -200,6 +201,3 @@ alias lh='ls -d .* ${colorflag}'
 alias grep='grep ${colorflag}=auto'
 alias fgrep='fgrep ${colorflag}=auto'
 alias egrep='egrep ${colorflag}=auto'
-
-# `cat` with beautiful colors. requires: pip install Pygments
-alias cat='pygmentize -O style=monokai -f console256 -g'

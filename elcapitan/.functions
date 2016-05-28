@@ -1,12 +1,4 @@
-#!usr/bin/env bash
-
-function printcolors() {
-  for code in {0..255}
-      do echo -e "\e[38;5;${code}m"'\\e[38;5;'"$code"m"\e[0m"
-  done
-}
-
-# All functions courtesy of Paul Irish's dotfiles #
+#!/bin/bash
 
 # Create a new directory and enter it
 function md() {

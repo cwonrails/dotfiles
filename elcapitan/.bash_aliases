@@ -1,52 +1,17 @@
 #!/usr/bin/env bash
 
 ## General aliases ##
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
-# Enable bd
-alias bd='. bd -si'
-
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force && brew cask cleanup'
 
 # List installed formulas that depend on the given formula
 alias brewdep='brew uses --installed'
 
-# Cat with syntax highlighting (color file)
-alias c='pygmentize -O style=solarizeddark -f console256 -g'
-
 # Copy default blank package.json to current folder
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
 
 # Recursively delete `.DS_Store` files
 alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
-
-## Git ##
-
-# TJ Hollowaychuck's git aliases
-# alias gd="git diff | subl"
-alias ga="git add"
-alias gbd="git branch -D"
-alias gs="git status"
-alias gc="git commit -m"
-alias gac="git commit -a -m"
-alias gd='git diff'
-alias gdno='git diff --name-only'
-alias gm="git merge --ff"
-alias gpt="git push --tags"
-alias gp="git push"
-alias grh="git reset --hard"
-alias gb="git branch"
-alias gcob="git checkout -b"
-alias gco="git checkout"
-alias gba="git branch -a"
-alias gcp="git cherry-pick"
-alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
-alias gpom="git pull --rebase origin master"
-alias gpum="git pull --rebase upstream master"
-alias grau="git remote add upstream"
-alias gcd='cd "`git rev-parse --show-toplevel`"'
 
 # Print history
 alias h='history'
@@ -84,8 +49,8 @@ alias s='sift'
 # Fix 'ls' typing errors
 alias sl='ls'
 
-# Force tmux to support 256 colors
-alias tmux='tmux -2'
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
 
 # Download website
 alias wsdl='wget -rkp -l3 -np -nH --cut-dirs=1'
@@ -108,13 +73,39 @@ alias vr='vim ~/.vimrc'
 alias dfbu='dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
+alias dflb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
 #
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
 # Back up OSX dotfiles to Github repo and check diff
-alias dfgb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
+alias dfgb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/elcapitan && cd ~/github/repos/public/dotfiles/elcapitan && git diff'
+
+## Git ##
+
+# TJ Hollowaychuck's git aliases
+# alias gd="git diff | subl"
+alias ga="git add"
+alias gbd="git branch -D"
+alias gs="git status"
+alias gc="git commit -m"
+alias gac="git commit -a -m"
+alias gd='git diff'
+alias gdno='git diff --name-only'
+alias gm="git merge --ff"
+alias gpt="git push --tags"
+alias gp="git push"
+alias grh="git reset --hard"
+alias gb="git branch"
+alias gcob="git checkout -b"
+alias gco="git checkout"
+alias gba="git branch -a"
+alias gcp="git cherry-pick"
+alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+alias gpom="git pull --rebase origin master"
+alias gpum="git pull --rebase upstream master"
+alias grau="git remote add upstream"
+alias gcd='cd "`git rev-parse --show-toplevel`"'
 
 ## Navigation ##
 # Go back from current directory
@@ -158,15 +149,9 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
-# Swap node versions with nvm
-# alias ns='nvm use system'
-# alias n4='nvm use v4'
-# alias n5='nvm use v5'
-# alias n6='nvm use v6'
-
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and empty trash
-alias ua="brew update; brew upgrade --all; brew prune; brew doctor; brew cleanup -s --force; du; gem update; gem cleanup; pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U; vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall && gitup"
+alias ua="bu && du && gu && pu && vu"
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
@@ -187,23 +172,3 @@ alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip i
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
-# upgrade `ls`
-
-# use coreutils `ls` (i.e. GNU ls) if possible
-hash gls >/dev/null 2>&1 || alias gls="ls"
-
-# always use color, even when piping (to awk,grep,etc)
-# shellcheck disable=SC2034
-if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi
-export CLICOLOR_FORCE=1
-
-# ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-
-# `la` is defined in .functions
-alias lh='ls -d .* ${colorflag}' # list only hidden files and directories
-alias lhd='ls -d .* ${colorflag}' # list only files and directories
-alias ls='gls -AFh ${colorflag} --group-directories-first' # list all which directories first
-
-alias grep='grep ${colorflag}=auto'
-alias fgrep='fgrep ${colorflag}=auto'
-alias egrep='egrep ${colorflag}=auto'

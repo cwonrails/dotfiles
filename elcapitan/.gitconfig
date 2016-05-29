@@ -5,11 +5,7 @@
 
 [core]
   autocrlf = false
-  attributesfile = ~/.gitattributes
-  editor = vim
   excludesfile = ~/.gitignore
-  precomposeunicode = false
-  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [color]
   ui = auto
@@ -30,27 +26,22 @@
   changed = green
   untracked = cyan
 
-[diff]
-  renames = copies
-  tool = Kaleidoscope
-
-[diff "bin"]
-  textconv = hexdump -v -C
-
-[difftool]
-  prompt = false
-
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
 [fetch]
   prune = true
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 
 [help]
   autocorrect = 1
 
 [include]
   path = ~/.gitconfig.local
+
+[interactive]
+  diffFilter = "diff-so-fancy"
 
 [log]
   date = relative
@@ -59,29 +50,24 @@
   log = true
 
 [pager]
-  diff = diff-so-fancy | less --tabs=1,5 -RFX
-  show = diff-so-fancy | less --tabs=1,5 -RFX
+  diff = diff-so-fancy | less --tabs=4 -RFX
+  show = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
   default = current
-  followTags = true
 
 [rebase]
   autosquash = true
 
 [url "git@github.com:"]
   insteadOf = "gh:"
+  insteadOf = "git://github.com"
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
 
-[url "git://github.com/"]
-  insteadOf = "github:"
-
 [url "git@gist.github.com:"]
   insteadOf = "gst:"
+  insteadOf = "gist:"
   pushInsteadOf = "gist:"
   pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-  insteadOf = "gist:"
 

@@ -1,4 +1,5 @@
 #!usr/bin/env bash
+# shellcheck disable=SC2139
 
 # Set operating system variable
 export PLATFORM
@@ -123,7 +124,6 @@ bind '"\e[B": history-search-forward'
 hash gls >/dev/null 2>&1 || alias gls="ls"
 
 # Always use color, even when piping (to awk,grep,etc)
-# shellcheck disable=SC2034
 if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi
 export CLICOLOR_FORCE=1
 

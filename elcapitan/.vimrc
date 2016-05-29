@@ -4,7 +4,7 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ahmedelgabri/vim-ava-snippets'
+" Plug 'ahmedelgabri/vim-ava-snippets'
 Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 Plug 'altercation/vim-colors-solarized'
@@ -43,7 +43,7 @@ Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax' }
 Plug 'dbakker/vim-lint'
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
-Plug 'digitaltoad/vim-pug'
+" Plug 'digitaltoad/vim-pug'
 " Plug 'digitaltoad/vim-jade'
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 " Plug 'dockyard/vim-easydir'
@@ -84,9 +84,9 @@ Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-nomadproject'
 " Plug 'hashivim/vim-ottoproject'
 " Plug 'hashivim/vim-packer'
-Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-terraform'
 " Plug 'hashivim/vim-vagrant'
-Plug 'hashivim/vim-vaultproject'
+" Plug 'hashivim/vim-vaultproject'
 Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-easymotion.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -103,7 +103,7 @@ if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 " Plug 'jamessan/vim-gnupg'
-Plug 'janko-m/vim-test'
+" Plug 'janko-m/vim-test'
 " Plug 'jaxbot/browserlink.vim'
 " Plug 'jaxbot/semantic-highlight.vim'
 " Plug 'jbgutierrez/vim-babel'
@@ -113,7 +113,7 @@ Plug 'janko-m/vim-test'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
@@ -133,12 +133,12 @@ Plug 'junegunn/fzf.vim'
 " Plug 'KabbAmine/gulp-vim'
 " Plug 'kana/vim-operator-user'
 " Plug 'kchmck/vim-coffee-script'
-if s:darwin
- Plug 'keith/investigate.vim'
-endif
+" if s:darwin
+"  Plug 'keith/investigate.vim'
+" endif
 " Plug 'keith/swift.vim'
 Plug 'kewah/vim-stylefmt'
-Plug 'klen/python-mode', { 'for': 'python' }
+" Plug 'klen/python-mode', { 'for': 'python' }
 " Plug 'kopischke/vim-stay'
 " Plug 'kovisoft/paredit', { 'for': 'clojure' }
 " Plug 'kristijanhusak/vim-hybrid-material'
@@ -151,10 +151,10 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-Plug 'mattn/livestyle-vim'
+" Plug 'mattn/livestyle-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-grepper'
@@ -166,7 +166,7 @@ Plug 'mbbill/undotree'
 " Plug 'millermedeiros/vim-esformatter'
 " Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
 " Plug 'mkitt/tabline.vim'
-Plug 'moll/vim-node'
+" Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 " Plug 'mustache/vim-mustache-handlebars'
@@ -260,7 +260,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'

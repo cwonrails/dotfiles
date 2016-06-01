@@ -7,6 +7,9 @@ alias brewclean='brew cleanup -s --force && brew cask cleanup'
 # List installed formulas that depend on the given formula
 alias brewdep='brew uses --installed'
 
+# Clear screen quickly (works in tmux)
+alias c='clear'
+
 # Copy default blank package.json to current folder
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
 

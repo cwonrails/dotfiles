@@ -1,5 +1,12 @@
 #!usr/bin/env bash
-# shellcheck disable=SC2139
+
+# iTerm2 Shell Integration
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Add $PATH entries
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Set operating system variable
 export PLATFORM
@@ -26,11 +33,6 @@ for file in ~/.{bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
     . "$file"
   fi
 done
-
-# Add $PATH entries
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=$HOME/bin:$PATH
 
 # Set vim as default editor
 export EDITOR=vim
@@ -142,4 +144,3 @@ alias lh="ls -d .* ${colorflag}"
 # List only directories
 alias lsd='ls -l | grep "^d"'
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

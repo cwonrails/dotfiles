@@ -4,14 +4,14 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'ahmedelgabri/vim-ava-snippets'
-Plug 'airblade/vim-gitgutter'
+Plug 'ahmedelgabri/vim-ava-snippets'
+" Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 Plug 'altercation/vim-colors-solarized'
 Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 " Plug AndrewRadev/inline_edit.vim
 " Plug AndrewRadev/linediff.vim
-" Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
@@ -112,8 +112,8 @@ endif
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
@@ -148,7 +148,7 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lukaszkorecki/workflowish'
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
 " Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
@@ -160,7 +160,7 @@ Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-grepper'
 " Plug 'mhinz/vim-janah'
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-" Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 " Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
@@ -221,6 +221,15 @@ endif
 " Plug 'rust-lang/rust.vim'
 " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+augroup nerd_loader
+  autocmd!
+  autocmd VimEnter * silent! autocmd! FileExplorer
+  autocmd BufEnter,BufNew *
+        \  if isdirectory(expand('<amatch>'))
+        \|   call plug#load('nerdtree')
+        \|   execute 'autocmd! nerd_loader'
+        \| endif
+augroup END
 Plug 'scrooloose/syntastic'
 " Plug 'Shougo/context_filetype.vim'
 " Plug 'Shougo/neco-syntax'
@@ -259,7 +268,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-classpath'
 " Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-dispatch'
-" Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 " Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
@@ -300,7 +309,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
 " Plug 'vim-scripts/PreserveNoEOL'
-" Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
 " Plug 'vimwiki/vimwiki'
@@ -330,8 +339,6 @@ Plug 'ynkdir/vim-vimlparser'
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
-set rtp+=/usr/local/opt/fzf
 
 " Enable 256 colors in terminal
 set t_Co=256
@@ -543,7 +550,7 @@ set listchars=tab:\|\ ,
 set modeline
 set modelines=2
 " set mouse=a
-" silent! set ttymouse=xterm2
+silent! set ttymouse=xterm2
 " set nocursorline
 set noerrorbells
 set novisualbell
@@ -638,10 +645,6 @@ let g:undotree_WindowLayout = 2
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
-
-" ============================================================================
-" NERDTree
-" ============================================================================
 
 " ============================================================================
 " vim-search-pulse
@@ -740,3 +743,9 @@ command! -bang AutoSave call s:autosave(<bang>1)
 " ----------------------------------------------------------------------------
 " close vim even if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" ----------------------------------------------------------------------------
+" vim-signify
+" ----------------------------------------------------------------------------
+let g:signify_vcs_list = ['git']

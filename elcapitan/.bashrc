@@ -1,16 +1,18 @@
 #!usr/bin/env bash
 
+# Set operating system variable
+PLATFORM=$(uname -s)
+export PLATFORM
+
+[ -f /etc/bashrc ] && . /etc/bashrc
+
 # iTerm2 Shell Integration
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+test -e "${HOME}/.iterm2_shell_integration.bash" && . "${HOME}/.iterm2_shell_integration.bash"
 
 # Add $PATH entries
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export PATH=$HOME/bin:$PATH
-
-# Set operating system variable
-export PLATFORM
-PLATFORM=$(uname -s)
+export PATH="$HOME/bin":$PATH
 
 # Use GNU versions of core Unix tools on Mac
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -42,30 +44,11 @@ export VISUAL=vim
 set -o vi
 
 # Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-  source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion;
-fi
+[ -f /etc/bash_completion ] && . /etc/bash_completion
+[ -f /usr/local/share/bash-completion/bash_completion ] && . /usr/local/share/bash-completion/bash_completion
 
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh
-
-# Enable some Bash 4 features when possible:
-# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
-# * Recursive globbing, e.g. `echo **/*.txt`
-for option in autocd globstar; do
-  shopt -s "$option" 2> /dev/null;
-done;
-
-# Add tab completion for `defaults read|write NSGlobalDomain`
-# You could just use `-g` instead, but I like being explicit
-complete -W "NSGlobalDomain" defaults
-
-# Ignore shellcheck sourcing errors
-if which shellcheck > /dev/null; then
-  export SHELLCHECK_OPTS="-s bash -e SC1090 -e SC1091 -x"
-fi
+# Enable grc (generic colorizer)
+[ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
 # Use homebrew-installed php
 if [ -f /usr/local/opt/php70/bin/php ]; then
@@ -73,9 +56,7 @@ if [ -f /usr/local/opt/php70/bin/php ]; then
 fi
 
 # Enable z
-if [ -f ~/z/z.sh ]; then
-  . ~/z/z.sh
-fi
+[ -f "$HOME/z/z.sh" ] && . "$HOME/z/z.sh"
 
 # Alias hub to git
 if which hub > /dev/null; then
@@ -89,14 +70,15 @@ fi
 
 # Enable t completion (Twitter CLI client)
 if which t > /dev/null; then
-  . ~/t/etc/t-completion.sh
+  . "$HOME/t/etc/t-completion.sh"
 fi
 
 # Go #
 # Env configuation
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
+export PATH=/usr/local/opt/go/libexec/bin:$PATH
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -114,9 +96,6 @@ bind '"\e[B": history-search-forward'
 # Added by Travis-CI gem
 [ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 
-# Enable fzf
-[ -f ~/.fzf.bash ] && . ~/.fzf.bash
-
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
 [ -f /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash ] && . /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash
@@ -125,22 +104,28 @@ bind '"\e[B": history-search-forward'
 # Use coreutils `ls` if possible
 hash gls >/dev/null 2>&1 || alias gls="ls"
 
-# Always use color, even when piping (to awk,grep,etc)
-if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi
+# Always use color, even when piping
+if gls --color > /dev/null 2>&1; then
+  export colorflag="--color";
+else
+  export colorflag="-G";
+fi
+
 export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-alias ls="gls -AFh ${colorflag} --group-directories-first"
+alias ls='gls -AFh ${colorflag} --group-directories-first'
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+alias l='ls -lF ${colorflag}'
 
 # List all files colorized in long format, including dotfiles
-alias la="ls -laF ${colorflag}"
+alias la='ls -laF ${colorflag}'
 
 # List only hidden files
-alias lh="ls -d .* ${colorflag}"
+alias lh='ls -d .* ${colorflag}'
 
 # List only directories
 alias lsd='ls -l | grep "^d"'
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

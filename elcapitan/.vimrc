@@ -4,14 +4,14 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ahmedelgabri/vim-ava-snippets'
+" Plug 'ahmedelgabri/vim-ava-snippets'
 " Plug 'airblade/vim-gitgutter'
 " Plug 'ajh17/VimCompletesMe'
 Plug 'altercation/vim-colors-solarized'
 Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 " Plug AndrewRadev/inline_edit.vim
 " Plug AndrewRadev/linediff.vim
-Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'ap/vim-buftabline'
 " Plug 'arkwright/vim-radar'
@@ -43,7 +43,7 @@ Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax' }
 Plug 'dbakker/vim-lint'
 " Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 " Plug 'dhruvasagar/vim-dotoo'
-" Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-pug'
 " Plug 'digitaltoad/vim-jade'
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 " Plug 'dockyard/vim-easydir'
@@ -53,7 +53,7 @@ Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'edkolev/promptline.vim'
 " Plug 'edkolev/tmuxline.vim'
-Plug 'ekalinin/Dockerfile.vim'
+" Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
 " Plug 'ervandew/supertab'
 " Plug 'evidens/vim-twig'
@@ -76,7 +76,7 @@ Plug 'fatih/vim-go'
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv'
 " Plug 'gregsexton/MatchTag'
-Plug 'groenewege/vim-less'
+" Plug 'groenewege/vim-less'
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
 Plug 'hail2u/vim-css3-syntax'
@@ -148,7 +148,7 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'lfv89/vim-interestingwords'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'lukaszkorecki/workflowish'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+" Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'maksimr/vim-jsbeautify'
 " Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
@@ -164,9 +164,9 @@ Plug 'mhinz/vim-signify'
 " Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
-" Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
+Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
 " Plug 'mkitt/tabline.vim'
-" Plug 'moll/vim-node'
+Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 " Plug 'mustache/vim-mustache-handlebars'
@@ -220,16 +220,16 @@ endif
 " Plug 'ruanyl/vim-gh-line'
 " Plug 'rust-lang/rust.vim'
 " Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-augroup nerd_loader
-  autocmd!
-  autocmd VimEnter * silent! autocmd! FileExplorer
-  autocmd BufEnter,BufNew *
-        \  if isdirectory(expand('<amatch>'))
-        \|   call plug#load('nerdtree')
-        \|   execute 'autocmd! nerd_loader'
-        \| endif
-augroup END
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" augroup nerd_loader
+"   autocmd!
+"   autocmd VimEnter * silent! autocmd! FileExplorer
+"   autocmd BufEnter,BufNew *
+"         \  if isdirectory(expand('<amatch>'))
+"         \|   call plug#load('nerdtree')
+"         \|   execute 'autocmd! nerd_loader'
+"         \| endif
+" augroup END
 Plug 'scrooloose/syntastic'
 " Plug 'Shougo/context_filetype.vim'
 " Plug 'Shougo/neco-syntax'
@@ -268,7 +268,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-classpath'
 " Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 " Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
@@ -278,7 +278,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-haystack'
 " Plug 'tpope/vim-heroku'
 " Plug 'tpope/vim-liquid'
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-ragtag'
@@ -309,7 +309,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/dbext.vim'
 " Plug 'vim-scripts/PreserveNoEOL'
-Plug 'vim-scripts/ReplaceWithRegister'
+" Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'vim-scripts/SyntaxComplete'
 " Plug 'vim-scripts/SyntaxRange'
 " Plug 'vimwiki/vimwiki'
@@ -333,9 +333,9 @@ Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser'
 " Plug 'zenbro/mirror.vim'
-" if s:darwin
-"   Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
-" endif
+if s:darwin
+  Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
+endif
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -443,13 +443,13 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_id_checkers = 0
+let g:syntastic_id_checkers = 1
 let g:syntastic_echo_current_error = 1
 
 " CSS linting
 " available checkers: stylelint
 let g:syntastic_css_checkers = ['stylelint']
-autocmd FileType css setlocal iskeyword+=-
+" autocmd FileType css setlocal iskeyword+=-
 
 " Docker linting
 " available checkers: dockerfile_lint
@@ -464,7 +464,7 @@ endif
 let g:syntastic_html_checkers = ['tidy']
 
 " Treat <li> and <p> tags like the block tags they are (Thoughtbot)
-let g:html_indent_tags = 'li\|p'
+" let g:html_indent_tags = 'li\|p'
 
 " Javascript linting
 let g:syntastic_javascript_checkers = ['eslint']
@@ -473,15 +473,15 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers = ['jsonlint']
 
 " Lua linting
-let g:syntastic_lua_checkers = ['luacheck']
-let g:syntastic_lua_luacheck_args = '--no-unused-args'
+" let g:syntastic_lua_checkers = ['luacheck']
+" let g:syntastic_lua_luacheck_args = '--no-unused-args'
 
 " Markdown linting
 " available checkers: proselint, textlint, markdownlint
 let g:syntastic_markdown_checkers = ['proselint', 'textlint']
 
 " Sass linting
-autocmd FileType scss setlocal iskeyword+=-
+" autocmd FileType scss setlocal iskeyword+=-
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']
@@ -704,7 +704,6 @@ function! s:super_duper_tab(k, o)
 endfunction
 
 if has_key(g:plugs, 'ultisnips')
-  " UltiSnips will be loaded only when tab is first pressed in insert mode
   if !exists(':UltiSnipsEdit')
     inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
     imap <tab> <Plug>(tab)
@@ -742,8 +741,7 @@ command! -bang AutoSave call s:autosave(<bang>1)
 " NERDTree
 " ----------------------------------------------------------------------------
 " close vim even if the only window left open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ----------------------------------------------------------------------------
 " vim-signify

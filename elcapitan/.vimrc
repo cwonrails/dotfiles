@@ -464,7 +464,7 @@ endif
 let g:syntastic_html_checkers = ['tidy']
 
 " Treat <li> and <p> tags like the block tags they are (Thoughtbot)
-" let g:html_indent_tags = 'li\|p'
+let g:html_indent_tags = 'li\|p'
 
 " Javascript linting
 let g:syntastic_javascript_checkers = ['eslint']
@@ -473,15 +473,15 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers = ['jsonlint']
 
 " Lua linting
-" let g:syntastic_lua_checkers = ['luacheck']
-" let g:syntastic_lua_luacheck_args = '--no-unused-args'
+let g:syntastic_lua_checkers = ['luacheck']
+let g:syntastic_lua_luacheck_args = '--no-unused-args'
 
 " Markdown linting
 " available checkers: proselint, textlint, markdownlint
 let g:syntastic_markdown_checkers = ['proselint', 'textlint']
 
 " Sass linting
-" autocmd FileType scss setlocal iskeyword+=-
+autocmd FileType scss setlocal iskeyword+=-
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']

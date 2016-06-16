@@ -91,7 +91,7 @@ Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-easymotion.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 " Plug 'honza/dockerfile'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 " Plug 'ingydotnet/yaml-vim'
 Plug 'inside/vim-search-pulse'
 " Plug 'int3/vim-extradite'
@@ -241,7 +241,7 @@ Plug 'scrooloose/syntastic'
 " Plug 'Shougo/vimfiler.vim'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'Shougo/vimshell.vim'
-Plug 'SirVer/Ultisnips', { 'on': '<Plug>(tab)' }
+" Plug 'SirVer/Ultisnips'
 " Plug 'sickill/vim-paste'
 " Plug 'sjl/gundo.vim'
 " Plug 'slim-template/vim-slim'
@@ -669,58 +669,6 @@ autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
 " ----------------------------------------------------------------------------
-" <tab> / <s-tab> / <c-v><tab> | super-duper-tab
-" ----------------------------------------------------------------------------
-function! s:can_complete(func, prefix)
-  if empty(a:func) || call(a:func, [1, '']) < 0
-    return 0
-  endif
-  let result = call(a:func, [0, matchstr(a:prefix, '\k\+$')])
-  return !empty(type(result) == type([]) ? result : result.words)
-endfunction
-
-function! s:super_duper_tab(k, o)
-  if pumvisible()
-    return a:k
-  endif
-
-  let line = getline('.')
-  let col = col('.') - 2
-  if line[col] !~ '\k\|[/~.]'
-    return a:o
-  endif
-
-  let prefix = expand(matchstr(line[0:col], '\S*$'))
-  if prefix =~ '^[~/.]'
-    return "\<c-x>\<c-f>"
-  endif
-  if s:can_complete(&omnifunc, prefix)
-    return "\<c-x>\<c-o>"
-  endif
-  if s:can_complete(&completefunc, prefix)
-    return "\<c-x>\<c-u>"
-  endif
-  return a:k
-endfunction
-
-if has_key(g:plugs, 'ultisnips')
-  if !exists(':UltiSnipsEdit')
-    inoremap <silent> <Plug>(tab) <c-r>=plug#load('ultisnips')?UltiSnips#ExpandSnippet():''<cr>
-    imap <tab> <Plug>(tab)
-  endif
-
-  let g:SuperTabMappingForward  = "<tab>"
-  let g:SuperTabMappingBackward = "<s-tab>"
-  function! SuperTab(m)
-    return s:super_duper_tab(a:m == 'n' ? "\<c-n>" : "\<c-p>",
-                           \ a:m == 'n' ? "\<tab>" : "\<s-tab>")
-  endfunction
-else
-  inoremap <expr> <tab>   <SID>super_duper_tab("\<c-n>", "\<tab>")
-  inoremap <expr> <s-tab> <SID>super_duper_tab("\<c-p>", "\<s-tab>")
-endif
-
-" ----------------------------------------------------------------------------
 " AutoSave
 " ----------------------------------------------------------------------------
 function! s:autosave(enable)
@@ -747,3 +695,4 @@ command! -bang AutoSave call s:autosave(<bang>1)
 " vim-signify
 " ----------------------------------------------------------------------------
 let g:signify_vcs_list = ['git']
+

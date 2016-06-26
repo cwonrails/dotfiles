@@ -553,6 +553,7 @@ set modelines=2
 silent! set ttymouse=xterm2
 " set nocursorline
 set noerrorbells
+" set nofoldenable
 set novisualbell
 set nojoinspaces
 set noshowmode

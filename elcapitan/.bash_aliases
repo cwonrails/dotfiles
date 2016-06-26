@@ -152,9 +152,14 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
+## nvm ##
+alias ns='nvm use system'
+alias n4='nvm use v4'
+alias n6='nvm use v6'
+
 ## Package manager updates ##
-# Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and empty trash
-alias ua="bu && du && gu && pu && vu"
+# Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
+alias ua="bu && du && gitup && gu && pu && vu && ncu -g"
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
@@ -170,7 +175,7 @@ alias gu='gem update; gem cleanup'
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 # Tmux: Update, install, and remove unused plugins
-# alias tu='~/.tmux/plugins/tpm/bin/update_plugins all &~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
+# alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
 
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'

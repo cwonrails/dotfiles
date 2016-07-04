@@ -30,11 +30,9 @@ export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
 
 # Source additional dotfiles
 for file in ~/.{bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
-  [ -r "$file" ] && [ -f "$file" ] && . "$file"
-  if [ -f "$file" ]; then
-    . "$file"
-  fi
-done
+  [ -r "$file" ] && [ -f "$file" ] && . "$file";
+done;
+unset file
 
 # Set vim as default editor
 export EDITOR=vim
@@ -44,8 +42,16 @@ export VISUAL=vim
 set -o vi
 
 # Add tab completion for many Bash commands
-[ -f /etc/bash_completion ] && . /etc/bash_completion
-[ -f /usr/local/share/bash-completion/bash_completion ] && . /usr/local/share/bash-completion/bash_completion
+if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+  source "$(brew --prefix)/share/bash-completion/bash_completion";
+elif [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion;
+fi;
+
+# Enable tab completion `g` by marking it as an alias for `git`
+if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+  complete -o default -o nospace -F _git g;
+fi;
 
 # Enable grc (generic colorizer)
 [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
@@ -55,12 +61,26 @@ if [ -f /usr/local/opt/php70/bin/php ]; then
   export PATH=/usr/local/opt/php70/bin/php:$PATH
 fi
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # Enable z
 [ -f "$HOME/z/z.sh" ] && . "$HOME/z/z.sh"
 
 # Alias hub to git
 if which hub > /dev/null; then
   eval "$(hub alias -s)"
+fi
+
+# Enable Grunt completion
+if which grunt > /dev/null; then
+  eval "$(grunt --completion=bash)"
+fi
+
+# Enable Gulp completion
+if which gulp > /dev/null; then
+  eval "$(gulp --completion=bash)"
 fi
 
 # Enable thefuck
@@ -128,4 +148,9 @@ alias lh='ls -d .* ${colorflag}'
 # List only directories
 alias lsd='ls -l | grep "^d"'
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults;

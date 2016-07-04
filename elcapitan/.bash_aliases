@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-## General aliases ##
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force && brew cask cleanup'
 
@@ -9,6 +8,9 @@ alias brewdep='brew uses --installed'
 
 # Clear screen quickly (works in tmux)
 alias c='clear'
+
+# Colorize cat output with pygments
+alias cat='pygmentize -O style=solarizeddark -f console256 -g'
 
 # Copy default blank package.json to current folder
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
@@ -28,11 +30,14 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # Jobs
 alias j='jobs'
 
-# Enable making nested directories by default
-alias mkdir='mkdir -p'
-
 # View npm module docs via man-n
 alias man='man-n --link'
+
+# Use GNU make
+alias make='gmake'
+
+# Enable making nested directories by default
+alias mkdir='mkdir -p'
 
 # Use local npm executables if available
 alias npm-exec='PATH=$(npm bin):$PATH'
@@ -47,10 +52,13 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias r='exec $SHELL -l'
 
 # Fast searching with sift
-alias s='sift'
+# alias s='sift'
 
 # Fix 'ls' typing errors
 alias sl='ls'
+
+# Fix weird Sublime Text 3 behavior with 'subl'
+alias subl='subl -w'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -104,7 +112,8 @@ alias gcob="git checkout -b"
 alias gco="git checkout"
 alias gba="git branch -a"
 alias gcp="git cherry-pick"
-alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+# alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gpom="git pull --rebase origin master"
 alias gpum="git pull --rebase upstream master"
 alias grau="git remote add upstream"
@@ -155,11 +164,13 @@ alias nl='npm ls --depth=0'
 ## nvm ##
 alias ns='nvm use system'
 alias n4='nvm use v4'
+alias n5='nvm use v5'
 alias n6='nvm use v6'
+alias nvm-update='cd "$NVM_DIR" && git fetch origin && git checkout `git describe --abbrev=0 --tags`'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
-alias ua="bu && du && gitup && gu && pu && vu && ncu -g"
+alias ua='bu && du && gitup && gu && vu && pu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'

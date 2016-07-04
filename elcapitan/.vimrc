@@ -1,4 +1,6 @@
-set nocompatible
+if &compatible
+  set nocompatible
+end
 
 let s:darwin = has('mac')
 
@@ -36,7 +38,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'csscomb/vim-csscomb'
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax' }
+" Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax' }
 " Plug 'dag/vim-fish'
 " Plug 'davidosomething/vim-jsdoctidy
 " Plug 'davidosomething/syntastic-hbstidy'
@@ -46,7 +48,7 @@ Plug 'dbakker/vim-lint'
 Plug 'digitaltoad/vim-pug'
 " Plug 'digitaltoad/vim-jade'
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
-" Plug 'dockyard/vim-easydir'
+Plug 'dockyard/vim-easydir'
 " Plug 'duggiefresh/vim-easydir'
 " Plug 'dyng/ctrlsf.vim'
 " Plug 'easymotion/vim-easymotion'
@@ -76,7 +78,7 @@ Plug 'fatih/vim-go'
 " Plug 'google/vim-syncopate'
 " Plug 'gregsexton/gitv'
 " Plug 'gregsexton/MatchTag'
-" Plug 'groenewege/vim-less'
+Plug 'groenewege/vim-less'
 " Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
 Plug 'hail2u/vim-css3-syntax'
@@ -91,7 +93,7 @@ Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-easymotion.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 " Plug 'honza/dockerfile'
-" Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 " Plug 'ingydotnet/yaml-vim'
 Plug 'inside/vim-search-pulse'
 " Plug 'int3/vim-extradite'
@@ -112,8 +114,8 @@ endif
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'JulesWang/css.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/gv.vim'
 " Plug 'junegunn/limelight.vim'
@@ -164,12 +166,12 @@ Plug 'mhinz/vim-signify'
 " Plug 'mhinz/vim-startify'
 " Plug 'mileszs/ack.vim'
 " Plug 'millermedeiros/vim-esformatter'
-Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
+" Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
 " Plug 'mkitt/tabline.vim'
 Plug 'moll/vim-node'
 " Plug 'msanders/snipmate.vim'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-" Plug 'mustache/vim-mustache-handlebars'
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'nelstorm/vim-markdown-folding'
@@ -184,7 +186,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 " Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
-" Plug 'othree/es.next.syntax.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " Plug 'Quramy/tsuquyomi'
 " Plug 'pangloss/vim-javascript'
@@ -231,7 +233,7 @@ endif
 "         \| endif
 " augroup END
 Plug 'scrooloose/syntastic'
-" Plug 'Shougo/context_filetype.vim'
+Plug 'Shougo/context_filetype.vim'
 " Plug 'Shougo/neco-syntax'
 " Plug 'Shougo/neco-vim'
 " Plug 'Shougo/neocomplete.vim'
@@ -269,7 +271,7 @@ Plug 'tmux-plugins/vim-tmux'
 " Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
@@ -333,9 +335,9 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'Yggdroot/indentline'
 Plug 'ynkdir/vim-vimlparser'
 " Plug 'zenbro/mirror.vim'
-if s:darwin
-  Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
-endif
+" if s:darwin
+"   Plug 'zerowidth/vim-copy-as-rtf', { 'on': 'CopyRTF' }
+" endif
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -345,6 +347,7 @@ set t_Co=256
 
 " Enable syntax highlighting
 syntax enable
+" syntax on
 
 " Enable indentation for specific filetypes
 filetype plugin indent on
@@ -442,14 +445,14 @@ autocmd BufWritePre * StripWhitespace
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_check_on_wq = 0
 let g:syntastic_id_checkers = 1
-let g:syntastic_echo_current_error = 1
+" let g:syntastic_echo_current_error = 1
 
 " CSS linting
 " available checkers: stylelint
 let g:syntastic_css_checkers = ['stylelint']
-" autocmd FileType css setlocal iskeyword+=-
+autocmd FileType css setlocal iskeyword+=-
 
 " Docker linting
 " available checkers: dockerfile_lint
@@ -466,6 +469,9 @@ let g:syntastic_html_checkers = ['tidy']
 " Treat <li> and <p> tags like the block tags they are (Thoughtbot)
 let g:html_indent_tags = 'li\|p'
 
+" Ignore Apple's W3-invalid html pinned favicon code
+let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
+
 " Javascript linting
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -480,11 +486,12 @@ let g:syntastic_lua_luacheck_args = '--no-unused-args'
 " available checkers: proselint, textlint, markdownlint
 let g:syntastic_markdown_checkers = ['proselint', 'textlint']
 
-" Sass linting
+" SCSS linting
 autocmd FileType scss setlocal iskeyword+=-
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']
+" let g:is_posix = 1
 
 " VimL linting
 let g:syntastic_vim_checkers=['vimlint']
@@ -520,12 +527,17 @@ nnoremap <leader>gs :<Leader>Gstatus<cr>
 " Core Vim settings
 set autoindent
 set autoread
+" set autowrite
 set backspace=indent,eol,start
+" set backspace=2
 set backupdir=$HOME/.vim/backup
 set binary
 set clipboard=unnamed
 set colorcolumn=+1
 set complete-=i
+" set complete-=t
+" set completeopt-=preview
+" set completeopt+=menu,menuone
 set completeopt=menuone,preview
 " set cursorline
 set directory=$HOME/.vim/swap
@@ -533,13 +545,13 @@ set display+=lastline
 set encoding=utf-8
 set expandtab
 " set exrc
-set foldlevelstart=99
+" set foldlevelstart=99
 set formatoptions+=j
 set gdefault
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 set guioptions-=e
 set hidden
-set history=10000
+set history=1000
 " set hlsearch
 set ignorecase
 " set incsearch
@@ -547,17 +559,21 @@ set laststatus=2
 set lazyredraw
 set list
 set listchars=tab:\|\ ,
+" set listchars=tab:»·,trail:·,nbsp:·
 set modeline
 set modelines=2
 " set mouse=a
 silent! set ttymouse=xterm2
+" set nobackup
 " set nocursorline
 set noerrorbells
-" set nofoldenable
+set nofoldenable
 set novisualbell
 set nojoinspaces
 set noshowmode
 set nostartofline
+" set noswapfile
+" set notimeout
 " set nrformats=hex
 set nrformats-=octal
 set number
@@ -579,17 +595,19 @@ set softtabstop=2
 set smartcase
 set smartindent
 set smarttab
+" set synmaxcol=512
 set synmaxcol=1000
 set tabstop=2
 set tabpagemax=50
 set ttimeout
+" set ttimeoutlen=10
 set ttimeoutlen=100
 " set ttimeoutlen=500
 set ttyfast
 set undodir=$HOME/.vim/undo
 set undofile
 set undolevels=1000
-set undoreload=1000
+set undoreload=10000
 set viminfo=%,'9999,s512,n~/.vim/viminfo
 set virtualedit=block
 set whichwrap=b,s
@@ -633,7 +651,9 @@ nnoremap [t :tabp<cr>
 " ----------------------------------------------------------------------------
 " matchit.vim
 " ----------------------------------------------------------------------------
-runtime macros/matchit.vim
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
 " ----------------------------------------------------------------------------
 " undotree
@@ -672,19 +692,19 @@ autocmd User IncSearchExecute :call search_pulse#Pulse()
 " ----------------------------------------------------------------------------
 " AutoSave
 " ----------------------------------------------------------------------------
-function! s:autosave(enable)
-  augroup autosave
-    autocmd!
-    if a:enable
-      autocmd TextChanged,InsertLeave <buffer>
-            \  if empty(&buftype) && !empty(bufname(''))
-            \|   silent! update
-            \| endif
-    endif
-  augroup END
-endfunction
-
-command! -bang AutoSave call s:autosave(<bang>1)
+" function! s:autosave(enable)
+"   augroup autosave
+"     autocmd!
+"     if a:enable
+"       autocmd TextChanged,InsertLeave <buffer>
+"             \  if empty(&buftype) && !empty(bufname(''))
+"             \|   silent! update
+"             \| endif
+"     endif
+"   augroup END
+" endfunction
+"
+" command! -bang AutoSave call s:autosave(<bang>1)
 
 " ----------------------------------------------------------------------------
 " NERDTree
@@ -697,3 +717,43 @@ command! -bang AutoSave call s:autosave(<bang>1)
 " ----------------------------------------------------------------------------
 let g:signify_vcs_list = ['git']
 
+" ----------------------------------------------------------------------------
+" CtrlP
+" ----------------------------------------------------------------------------
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+" if executable('ag')
+  " Use Ag over Grep
+  " set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  " let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+"   let g:ctrlp_use_caching = 0
+" endif
+
+" ----------------------------------------------------------------------------
+" Tab completion (Thoughtbot)
+" ----------------------------------------------------------------------------
+" function! InsertTabWrapper()
+"     let col = col('.') - 1
+"     if !col || getline('.')[col - 1] !~ '\k'
+"         return "\<tab>"
+"     else
+"         return "\<c-p>"
+"     endif
+" endfunction
+" inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+" inoremap <S-Tab> <c-n>
+
+" ----------------------------------------------------------------------------
+" Ultisnips
+" ----------------------------------------------------------------------------
+
+" Trigger configuration.
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Make UltiSnipsEdit split window.
+" let g:UltiSnipsEditSplit="vertical"

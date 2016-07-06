@@ -149,6 +149,9 @@ nnoremap <leader>mq :MarkedQuit<CR>
 " Save file and quit
 nnoremap <leader>q :wq<CR>
 
+" Automatically close quickfix and location list upon closing buffer
+:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+
 " Save file
 nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>

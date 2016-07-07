@@ -195,6 +195,9 @@ endif
 
 let g:syntastic_html_checkers = ['tidy']
 
+" Ignore Apple's W3-invalid html pinned favicon code
+let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
+
 " Javascript linting
 let g:syntastic_javascript_checkers = ['eslint']
 

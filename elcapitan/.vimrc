@@ -16,28 +16,22 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax' }
-Plug 'davidosomething/syntastic-hbstidy'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'exu/pgsql.vim'
-Plug 'facebook/vim-flow'
 Plug 'fatih/vim-go'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'hashivim/vim-vagrant'
-Plug 'hashivim/vim-vaultproject'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
 Plug 'itchyny/lightline.vim'
-Plug 'itspriddle/vim-jquery'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 Plug 'junegunn/vim-easy-align'
 Plug 'kewah/vim-stylefmt'
-Plug 'klen/python-mode', { 'for': 'python' }
 Plug 'kurayama/systemd-vim-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
@@ -59,7 +53,7 @@ Plug 'othree/yajs.vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'rhysd/committia.vim'
 if s:darwin
-  Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
+  Plug 'rizzatti/dash.vim'
 endif
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/Ultisnips'
@@ -74,7 +68,7 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/dbext.vim'
@@ -88,7 +82,6 @@ set t_Co=256
 
 " Enable syntax highlighting
 syntax enable
-" syntax on
 
 " Enable indentation for specific filetypes
 filetype plugin indent on
@@ -182,12 +175,6 @@ let g:syntastic_echo_current_error = 1
 " CSS linting
 let g:syntastic_css_checkers = ['stylelint']
 
-" Handlebars linting
-let g:syntastic_filetype_map = {
-      \   'html.handlebars': 'handlebars',
-      \ }
-let g:syntastic_handlebars_checkers  = ['handlebars', 'hbstidy']
-
 " HTML linting
 if s:darwin
   let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
@@ -195,7 +182,7 @@ endif
 
 let g:syntastic_html_checkers = ['tidy']
 
-" Ignore Apple's W3-invalid html pinned favicon code
+" Ignore Apple's W3-invalid html code for pinned favicons
 let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
 
 " Javascript linting
@@ -203,6 +190,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " JSON linting
 let g:syntastic_json_checkers = ['jsonlint']
+
+" Pug linting
+let g:syntastic_pug_checkers = ['pug_lint']
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']
@@ -251,9 +241,7 @@ set expandtab
 set formatoptions+=j
 set hidden
 set history=1000
-" set hlsearch
 set ignorecase
-" set incsearch
 set laststatus=2
 set lazyredraw
 set list

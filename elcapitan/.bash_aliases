@@ -10,7 +10,7 @@ alias brewdep='brew uses --installed'
 alias c='clear'
 
 # Colorize cat output with pygments
-alias cat='pygmentize -O style=solarizeddark -f console256 -g'
+alias catcolor='pygmentize -O style=solarizeddark -f console256 -g'
 
 # Copy default blank package.json to current folder
 alias dfpj='cp ~/default.package.json/package.json `pwd`'

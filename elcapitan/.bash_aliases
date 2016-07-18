@@ -58,7 +58,7 @@ alias r='exec $SHELL -l'
 alias sl='ls'
 
 # Fix weird Sublime Text 3 behavior with 'subl'
-alias subl='subl -w'
+# alias subl='subl -w'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -118,6 +118,10 @@ alias gpom="git pull --rebase origin master"
 alias gpum="git pull --rebase upstream master"
 alias grau="git remote add upstream"
 alias gcd='cd "`git rev-parse --show-toplevel`"'
+
+# Personal Git aliases
+# Quick repository optimization'
+alias ggc='git gc'
 
 ## Navigation ##
 # Go back from current directory

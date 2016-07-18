@@ -59,7 +59,7 @@ Plug 'scrooloose/syntastic'
 Plug 'SirVer/Ultisnips'
 Plug 'slim-template/vim-slim'
 Plug 'stephpy/vim-yaml'
-Plug 'syngan/vim-vimlint'
+Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
@@ -73,7 +73,7 @@ Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/PreserveNoEOL'
-Plug 'ynkdir/vim-vimlparser'
+Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
 

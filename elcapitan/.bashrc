@@ -79,9 +79,9 @@ if which hub > /dev/null; then
 fi
 
 # Enable Grunt completion
-if which grunt > /dev/null; then
-  eval "$(grunt --completion=bash)"
-fi
+# if which grunt > /dev/null; then
+#   eval "$(grunt --completion=bash)"
+# fi
 
 # Enable Gulp completion
 if which gulp > /dev/null; then

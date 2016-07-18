@@ -35,6 +35,7 @@ alias man='man-n --link'
 
 # Use GNU make
 alias make='gmake'
+# alias gmake='make'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
@@ -58,7 +59,7 @@ alias r='exec $SHELL -l'
 alias sl='ls'
 
 # Fix weird Sublime Text 3 behavior with 'subl'
-# alias subl='subl -w'
+alias subl='subl -n'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '

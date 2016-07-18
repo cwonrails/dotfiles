@@ -21,7 +21,7 @@ Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'exu/pgsql.vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': 'GoInstallBinaries' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'

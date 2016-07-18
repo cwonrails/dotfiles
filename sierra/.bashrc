@@ -7,7 +7,7 @@ export PLATFORM
 [ -f /etc/bashrc ] && . /etc/bashrc
 
 # iTerm2 Shell Integration
-# test -e "${HOME}/.iterm2_shell_integration.bash" && . "${HOME}/.iterm2_shell_integration.bash"
+test -e "${HOME}/.iterm2_shell_integration.bash" && . "${HOME}/.iterm2_shell_integration.bash"
 
 # Add $PATH entries
 export PATH=/usr/local/bin:$PATH
@@ -50,16 +50,6 @@ elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;
 fi;
 
-# Enable tab completion `g` by marking it as an alias for `git`
-# if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  # complete -o default -o nospace -F _git g;
-# fi;
-
-# s bash completion
-if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
-    . $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
-fi
-
 # Enable grc (generic colorizer)
 [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
@@ -67,10 +57,6 @@ fi
 if [ -f /usr/local/opt/php70/bin/php ]; then
   export PATH=/usr/local/opt/php70/bin/php:$PATH
 fi
-
-# nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Enable z
 [ -f "$HOME/z/z.sh" ] && . "$HOME/z/z.sh"
@@ -104,8 +90,14 @@ fi
 # Env configuation
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
 export GOPATH="$HOME/go"
+export GOOS="darwin"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
+
+# s bash completion
+if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
+    . $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
+fi
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;

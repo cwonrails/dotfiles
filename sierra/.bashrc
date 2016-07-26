@@ -4,31 +4,37 @@
 PLATFORM=$(uname -s)
 export PLATFORM
 
-[ -f /etc/bashrc ] && . /etc/bashrc
-
-# iTerm2 Shell Integration
-test -e "${HOME}/.iterm2_shell_integration.bash" && . "${HOME}/.iterm2_shell_integration.bash"
-
 # Add $PATH entries
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH="$HOME/bin":$PATH
 
-# Use GNU versions of core Unix tools on Mac
+# Use GNU versions of basic utilities rather than BSD
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
+
 export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
+
 export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
+
+# export PATH=/usr/local/opt/make/libexec/gnubin:$PATH
+# export MANPATH=/usr/local/opt/make/share/man:$MANPATH
+
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
+
 export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
+
 export PATH=/usr/local/opt/gnu-which/bin/which:$PATH
 export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
 
+# Temporary tmux fix for Sierra
 export EVENT_NOKQUEUE=1
+
+# eval `opam config env`
 
 # Source additional dotfiles
 for file in ~/.{bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
@@ -44,19 +50,22 @@ export VISUAL=vim
 set -o vi
 
 # Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-  source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion;
+if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]
+then
+  . "$(brew --prefix)/share/bash-completion/bash_completion"
+elif
+  [ -f /etc/bash_completion ]
+then
+  . /etc/bash_completion;
 fi;
 
 # Enable grc (generic colorizer)
 [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
 # Use homebrew-installed php
-if [ -f /usr/local/opt/php70/bin/php ]; then
-  export PATH=/usr/local/opt/php70/bin/php:$PATH
-fi
+# if [ -f /usr/local/opt/php70/bin/php ]; then
+#   export PATH=/usr/local/opt/php70/bin/php:$PATH
+# fi
 
 # Enable z
 [ -f "$HOME/z/z.sh" ] && . "$HOME/z/z.sh"
@@ -67,13 +76,19 @@ if which hub > /dev/null; then
 fi
 
 # Enable Grunt completion
-if which grunt > /dev/null; then
+if which grunt > /dev/null
+then
   eval "$(grunt --completion=bash)"
+else
+  npm install -g grunt-cli
 fi
 
 # Enable Gulp completion
-if which gulp > /dev/null; then
+if which gulp > /dev/null
+then
   eval "$(gulp --completion=bash)"
+else
+  npm install -g gulp-cli
 fi
 
 # Enable thefuck
@@ -153,3 +168,5 @@ alias lsd='ls -l | grep "^d"'
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

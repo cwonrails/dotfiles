@@ -31,10 +31,10 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias j='jobs'
 
 # View npm module docs via man-n
-alias man='man-n --link'
+# alias man='man-n --link'
 
 # Use GNU make
-alias make='gmake'
+# alias make='gmake'
 # alias gmake='make'
 
 # Enable making nested directories by default

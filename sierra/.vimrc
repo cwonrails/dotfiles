@@ -21,7 +21,7 @@ Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'exu/pgsql.vim'
-Plug 'fatih/vim-go', { 'do': 'GoInstallBinaries' }
+Plug 'fatih/vim-go'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
@@ -30,6 +30,8 @@ Plug 'itchyny/lightline.vim'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kewah/vim-stylefmt'
 Plug 'kurayama/systemd-vim-syntax'

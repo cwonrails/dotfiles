@@ -6,11 +6,11 @@ alias brewclean='brew cleanup -s --force && brew cask cleanup'
 # List installed formulas that depend on the given formula
 alias brewdep='brew uses --installed'
 
-# Clear screen quickly (works in tmux)
-alias c='clear'
+# Quicker cat
+alias c='cat'
 
 # Colorize cat output with pygments
-alias catcolor='pygmentize -O style=solarizeddark -f console256 -g'
+alias cc='pygmentize -O style=solarizeddark -f console256 -g'
 
 # Copy default blank package.json to current folder
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
@@ -21,7 +21,7 @@ alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
 # Print history
 alias h='history'
 
-# run htop without sudo
+# Use htop without having to type password (edited via visudo)
 alias htop='sudo htop'
 
 # Get ip address
@@ -29,13 +29,6 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Jobs
 alias j='jobs'
-
-# View npm module docs via man-n
-# alias man='man-n --link'
-
-# Use GNU make
-# alias make='gmake'
-# alias gmake='make'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
@@ -52,20 +45,11 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # Reload shell
 alias r='exec $SHELL -l'
 
-# Fast searching with sift
-# alias s='sift'
-
 # Fix 'ls' typing errors
 alias sl='ls'
 
-# Fix weird Sublime Text 3 behavior with 'subl'
-alias subl='subl -n'
-
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
-
-# Download website
-alias wsdl='wget -rkp -l3 -np -nH --cut-dirs=1'
 
 # Force delete trash on local + mounted file systems; trash Apple System Logs
 alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
@@ -74,7 +58,7 @@ alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv 
 alias x='exit'
 
 ## Dotfiles management ##
-# Quickly edit dotfiles
+# Quickly edit key dotfiles
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
@@ -85,44 +69,39 @@ alias vr='vim ~/.vimrc'
 alias dfbu='dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
+alias dflb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
 #
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
+alias dfdb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
 # Back up OSX dotfiles to Github repo and check diff
-alias dfgb='cd ~; cp .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/sierra && cd ~/github/repos/public/dotfiles/sierra && git diff'
+alias dfgb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/sierra && cd ~/github/repos/public/dotfiles/sierra && git diff'
 
 ## Git ##
 
-# TJ Hollowaychuck's git aliases
-# alias gd="git diff | subl"
+# Based on TJ Hollowaychuck's git aliases
 alias ga="git add"
-alias gbd="git branch -D"
-alias gs="git status"
-alias gc="git commit -m"
 alias gac="git commit -a -m"
+alias gaac="git commit -A -m"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbd="git branch -D"
+alias gc="git commit -m"
+alias gcl='git clone'
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gcp="git cherry-pick"
 alias gd='git diff'
 alias gdno='git diff --name-only'
-alias gm="git merge --ff"
-alias gpt="git push --tags"
-alias gp="git push"
-alias grh="git reset --hard"
-alias gb="git branch"
-alias gcob="git checkout -b"
-alias gco="git checkout"
-alias gba="git branch -a"
-alias gcp="git cherry-pick"
-# alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias gm="git merge --ff"
+alias gp="git push"
+alias gpt="git push --tags"
 alias gpom="git pull --rebase origin master"
 alias gpum="git pull --rebase upstream master"
 alias grau="git remote add upstream"
-alias gcd='cd "`git rev-parse --show-toplevel`"'
-
-# Personal Git aliases
-# Quick repository optimization'
-alias ggc='git gc'
+alias grh="git reset --hard"
+alias gs="git status"
 
 ## Navigation ##
 # Go back from current directory
@@ -165,13 +144,6 @@ alias ng='npm -g ls --depth=0'
 
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
-
-## nvm ##
-# alias ns='nvm use system'
-# alias n4='nvm use v4'
-# alias n5='nvm use v5'
-# alias n6='nvm use v6'
-# alias nvm-update='cd "$NVM_DIR" && git fetch origin && git checkout `git describe --abbrev=0 --tags`'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm

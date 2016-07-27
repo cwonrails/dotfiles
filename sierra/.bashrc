@@ -170,3 +170,4 @@ alias lsd='ls -l | grep "^d"'
 complete -W "NSGlobalDomain" defaults;
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+

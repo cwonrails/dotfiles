@@ -9,27 +9,18 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH="$HOME/bin":$PATH
 
-# Use GNU versions of basic utilities rather than BSD
+# Use GNU versions of basic utilities instead of macOS BSD versions
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
 
 export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
 
-export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/grep/share/man:$MANPATH
-
-# export PATH=/usr/local/opt/make/libexec/gnubin:$PATH
-# export MANPATH=/usr/local/opt/make/share/man:$MANPATH
-
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
 
 export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
-
-export PATH=/usr/local/opt/gnu-which/bin/which:$PATH
-export MANPATH=/usr/local/opt/gnu-which/share/man:$MANPATH
 
 # Temporary tmux fix for Sierra
 export EVENT_NOKQUEUE=1
@@ -41,6 +32,9 @@ for file in ~/.{bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
   [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file
+
+export HOMEBREW_RUBY_PATH="$(brew --prefix ruby)/bin/ruby"
+
 
 # Set vim as default editor
 export EDITOR=vim
@@ -62,7 +56,7 @@ fi;
 # Enable grc (generic colorizer)
 [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
-# Use homebrew-installed php
+# Use homebrew-installed php (not currently working)
 # if [ -f /usr/local/opt/php70/bin/php ]; then
 #   export PATH=/usr/local/opt/php70/bin/php:$PATH
 # fi
@@ -108,10 +102,11 @@ export GOPATH="$HOME/go"
 export GOOS="darwin"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
+# export PATH=/usr/local/go/bin:$PATH
 
 # s bash completion
-if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
-    . $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
+if [ -f "$GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash" ]; then
+    . "$GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash"
 fi
 
 # Case-insensitive globbing (used in pathname expansion)
@@ -132,7 +127,7 @@ bind '"\e[B": history-search-forward'
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
-# [ -f /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash ] && . /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash
+[ -f /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash ] && . /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash
 
 ## Colors ##
 # Use coreutils `ls` if possible
@@ -168,6 +163,8 @@ alias lsd='ls -l | grep "^d"'
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
+
+if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

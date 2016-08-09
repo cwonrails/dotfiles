@@ -8,19 +8,16 @@ call plug#begin('~/.vim/plug')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'alvan/vim-closetag'
 Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax' }
-Plug 'digitaltoad/vim-pug'
+Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax', 'do': 'npm install -g polylint' }
+Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elzr/vim-json'
-Plug 'exu/pgsql.vim'
+Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
 Plug 'fatih/vim-go'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
@@ -31,50 +28,37 @@ if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kewah/vim-stylefmt'
+Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'kurayama/systemd-vim-syntax'
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-Plug 'mitsuhiko/jinja2', { 'rtp': 'ext/Vim/' }
-Plug 'moll/vim-node'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
-Plug 'pearofducks/ansible-vim'
 Plug 'rhysd/committia.vim'
 if s:darwin
   Plug 'rizzatti/dash.vim'
 endif
 Plug 'scrooloose/syntastic'
-Plug 'SirVer/Ultisnips'
-Plug 'slim-template/vim-slim'
 Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/dbext.vim'
-Plug 'vim-scripts/PreserveNoEOL'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
@@ -87,12 +71,6 @@ syntax enable
 
 " Enable indentation for specific filetypes
 filetype plugin indent on
-
-" Reload vimrc after saving (simple)
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
-augroup END " }
 
 " ============================================================================
 " Basic key bindings
@@ -153,6 +131,9 @@ nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
+
+" Source .vimrc
+nnoremap <leader>sv :source ~/.vimrc<CR>
 
 " Toggle TagBar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -330,14 +311,6 @@ let g:lightline = {
 " matchit.vim
 " ----------------------------------------------------------------------------
 runtime macros/matchit.vim
-
-" ----------------------------------------------------------------------------
-" UltiSnips
-" ----------------------------------------------------------------------------
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 
 " ----------------------------------------------------------------------------
 " undotree

@@ -6,11 +6,11 @@ alias brewclean='brew cleanup -s --force && brew cask cleanup'
 # List installed formulas that depend on the given formula
 alias brewdep='brew uses --installed'
 
-# Quicker cat
-alias c='cat'
+# Clear screen (works with tmux)
+alias c='clear'
 
 # Colorize cat output with pygments
-alias cc='pygmentize -O style=solarizeddark -f console256 -g'
+alias ccat='pygmentize -O style=solarizeddark -f console256 -g'
 
 # Copy default blank package.json to current folder
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
@@ -58,7 +58,6 @@ alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv 
 alias x='exit'
 
 ## Dotfiles management ##
-# Quickly edit key dotfiles
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
@@ -78,11 +77,9 @@ alias dfdb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc 
 alias dfgb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/sierra && cd ~/github/repos/public/dotfiles/sierra && git diff'
 
 ## Git ##
-
-# Based on TJ Hollowaychuck's git aliases
+# based on TJ Hollowaychuck's git aliases
 alias ga="git add"
 alias gac="git commit -a -m"
-alias gaac="git commit -A -m"
 alias gb="git branch"
 alias gba="git branch -a"
 alias gbd="git branch -D"

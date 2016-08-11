@@ -25,6 +25,15 @@ export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
 # Temporary tmux fix for Sierra
 export EVENT_NOKQUEUE=1
 
+# TERMINFO fix for NeoVim
+export TERMINFO="$HOME/.terminfo"
+
+# Ignore shellcheck errors
+export SHELLCHECK_OPTS="-e SC1090,SC1091"
+
+# Enable iTerm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
 # eval `opam config env`
 
 # Source additional dotfiles
@@ -33,7 +42,8 @@ for file in ~/.{bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
 done;
 unset file
 
-export HOMEBREW_RUBY_PATH="$(brew --prefix ruby)/bin/ruby"
+export HOMEBREW_RUBY_PATH="/usr/local/opt/ruby/bin/ruby"
+# export HOMEBREW_RUBY_PATH="$(brew --prefix ruby)/bin/ruby"
 
 
 # Set vim as default editor
@@ -57,9 +67,9 @@ fi;
 [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
 # Use homebrew-installed php (not currently working)
-# if [ -f /usr/local/opt/php70/bin/php ]; then
-#   export PATH=/usr/local/opt/php70/bin/php:$PATH
-# fi
+if [ -f /usr/local/opt/php70/bin/php ]; then
+  export PATH=/usr/local/opt/php70/bin/php:$PATH
+fi
 
 # Enable z
 [ -f "$HOME/z/z.sh" ] && . "$HOME/z/z.sh"

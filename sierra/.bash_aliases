@@ -90,6 +90,8 @@ alias gcob="git checkout -b"
 alias gcp="git cherry-pick"
 alias gd='git diff'
 alias gdno='git diff --name-only'
+alias gdum='git diff upstream/master'
+alias gdumno='git diff upstream/master --name-only'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gm="git merge --ff"
 alias gp="git push"

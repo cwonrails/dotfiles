@@ -14,11 +14,12 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax', 'do': 'npm install -g polylint' }
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
@@ -49,6 +50,11 @@ if s:darwin
   Plug 'rizzatti/dash.vim'
 endif
 Plug 'scrooloose/syntastic'
+" Plug 'Shougo/neocomplete'
+" Plug 'Shougo/neocomplete'
+" Plug 'Shougo/neosnippet'
+" Plug 'Shougo/neosnippet-snippets'
+" Plug 'SirVer/Ultisnips'
 Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
@@ -57,7 +63,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-perl/vim-perl'
 Plug 'vim-ruby/vim-ruby'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
@@ -167,6 +172,13 @@ let g:syntastic_html_checkers = ['tidy']
 
 " Ignore Apple's W3-invalid html code for pinned favicons
 let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
+let g:syntastic_html_tidy_ignore_errors = [
+     \   '<link> proprietary attribute "color"',
+     \   '<link> proprietary attribute "crossorigin"',
+     \   '<link> proprietary attribute "integrity"',
+     \   '<script> proprietary attribute "crossorigin"',
+     \   '<script> proprietary attribute "integrity"'
+     \ ]
 
 " Javascript linting
 let g:syntastic_javascript_checkers = ['eslint']
@@ -266,7 +278,7 @@ set undoreload=1000
 set virtualedit=block
 set whichwrap=b,s
 set wildmenu
-set wildmode=list:longest,full
+" set wildmode=list:longest,full
 
 " Display column at 80 characters
 set textwidth=0
@@ -292,13 +304,39 @@ nnoremap [l :lprev<cr>zz
 " ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
-nnoremap <leader>bd :bd<cr>
+nnoremap <leader>bc :bc<cr>
 
 " ----------------------------------------------------------------------------
 " Tabs
 " ----------------------------------------------------------------------------
 nnoremap ]t :tabn<cr>
 nnoremap [t :tabp<cr>
+
+
+" ----------------------------------------------------------------------------
+" CtrlP
+" ----------------------------------------------------------------------------
+" Remap CtrlP to CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Use ag instead of grep
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  if !exists(":Ag")
+    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+    nnoremap \ :Ag<SPACE>
+  endif
+endif
+
 
 " ----------------------------------------------------------------------------
 " lightline.vim
@@ -338,4 +376,24 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 " Pulses the first match after hitting the enter keyan
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
+
+
+" ----------------------------------------------------------------------------
+" Autocomplete
+" ----------------------------------------------------------------------------
+
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+set wildmode=list:longest,list:full
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
 

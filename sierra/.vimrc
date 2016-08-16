@@ -8,13 +8,13 @@ call plug#begin('~/.vim/plug')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
+" Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax', 'do': 'npm install -g polylint' }
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax', 'do': 'npm install -g polylint' }
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
@@ -24,7 +24,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
@@ -33,7 +33,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'kurayama/systemd-vim-syntax'
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -50,11 +50,7 @@ if s:darwin
   Plug 'rizzatti/dash.vim'
 endif
 Plug 'scrooloose/syntastic'
-" Plug 'Shougo/neocomplete'
-" Plug 'Shougo/neocomplete'
-" Plug 'Shougo/neosnippet'
-" Plug 'Shougo/neosnippet-snippets'
-" Plug 'SirVer/Ultisnips'
+Plug 'SirVer/Ultisnips'
 Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
@@ -63,6 +59,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
@@ -153,12 +151,21 @@ nnoremap <leader>x :q!<CR>
 autocmd BufWritePre * StripWhitespace
 
 " Syntastic base settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_id_checkers = 1
-let g:syntastic_echo_current_error = 1
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_id_checkers = 1
+" let g:syntastic_echo_current_error = 1
 
 " CSS linting
 let g:syntastic_css_checkers = ['stylelint']
@@ -246,7 +253,7 @@ set modelines=2
 set mouse=a
 silent! set ttymouse=xterm2
 set noerrorbells
-set nofoldenable
+" set nofoldenable
 set nojoinspaces
 set noshowmode
 set nostartofline
@@ -304,7 +311,7 @@ nnoremap [l :lprev<cr>zz
 " ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
-nnoremap <leader>bc :bc<cr>
+nnoremap <leader>bd :bdelete<cr>
 
 " ----------------------------------------------------------------------------
 " Tabs
@@ -329,7 +336,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  " let g:ctrlp_use_caching = 0
 
   if !exists(":Ag")
     command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -337,13 +344,23 @@ if executable('ag')
   endif
 endif
 
+" ----------------------------------------------------------------------------
+" vim-airline
+" ----------------------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#quickfix#location_text = 'Location'
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
 
 " ----------------------------------------------------------------------------
 " lightline.vim
 " ----------------------------------------------------------------------------
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'solarized',
+"       \ }
 
 " ----------------------------------------------------------------------------
 " matchit.vim
@@ -376,7 +393,6 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 " Pulses the first match after hitting the enter keyan
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
-
 
 " ----------------------------------------------------------------------------
 " Autocomplete

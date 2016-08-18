@@ -8,26 +8,26 @@ call plug#begin('~/.vim/plug')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-" Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
+Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-" Plug 'cwonrails/vim-polymer', { 'branch': 'fix-css-syntax', 'do': 'npm install -g polylint' }
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
+Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
-" Plug 'itchyny/lightline.vim'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
+Plug 'isRuslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
@@ -50,7 +50,8 @@ if s:darwin
   Plug 'rizzatti/dash.vim'
 endif
 Plug 'scrooloose/syntastic'
-Plug 'SirVer/Ultisnips'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'SirVer/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
@@ -59,6 +60,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
@@ -151,24 +153,15 @@ nnoremap <leader>x :q!<CR>
 autocmd BufWritePre * StripWhitespace
 
 " Syntastic base settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_id_checkers = 1
-" let g:syntastic_echo_current_error = 1
+let g:syntastic_id_checkers = 1
+let g:syntastic_echo_current_error = 1
 
 " CSS linting
-let g:syntastic_css_checkers = ['stylelint']
+" let g:syntastic_css_checkers = ['stylelint']
 
 " HTML linting
 if s:darwin
@@ -221,7 +214,6 @@ endif
 
 " Editorconfig settings
 let g:EditorConfig_core_mode = 'external_command'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Fugitive shotcuts
 nnoremap <leader>gd :<Leader>Gdiff<cr>
@@ -253,7 +245,6 @@ set modelines=2
 set mouse=a
 silent! set ttymouse=xterm2
 set noerrorbells
-" set nofoldenable
 set nojoinspaces
 set noshowmode
 set nostartofline
@@ -285,7 +276,7 @@ set undoreload=1000
 set virtualedit=block
 set whichwrap=b,s
 set wildmenu
-" set wildmode=list:longest,full
+set wildmode=list:longest,full
 
 " Display column at 80 characters
 set textwidth=0
@@ -358,9 +349,9 @@ let g:airline#extensions#tagbar#enabled = 1
 " ----------------------------------------------------------------------------
 " lightline.vim
 " ----------------------------------------------------------------------------
-" let g:lightline = {
-"       \ 'colorscheme': 'solarized',
-"       \ }
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 
 " ----------------------------------------------------------------------------
 " matchit.vim
@@ -394,22 +385,39 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
-" ----------------------------------------------------------------------------
-" Autocomplete
-" ----------------------------------------------------------------------------
+" Completion functionality, unifying supertab, ultisnips, and YouCompleteMe
+" via http://stackoverflow.com/a/22253548/1626737
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
+"-----------------------------------------------------------
+" YouCompleteMe - Intelligent completion with fuzzy matching
+"-----------------------------------------------------------
+
+let g:ycm_dont_warn_on_startup = 0
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+
+let g:ycm_filetype_blacklist = {}
+
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+"--------------------------------------------------
+" Supertab - enhanced tab behavior based on context
+"--------------------------------------------------
+
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+
+"----------------------------------------
+" UltiSnips - Fancy snippet functionality
+"----------------------------------------
+
+let g:UltiSnipsSnippetsDir='~/.vim/snippets'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+
+nnoremap <leader>ue :UltiSnipsEdit<cr>
 

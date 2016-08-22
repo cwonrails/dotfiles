@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Get information on a homebrew formula quickly
+alias bi='brew info '
+
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force && brew cask cleanup'
 
@@ -21,7 +24,7 @@ alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
 # Print history
 alias h='history'
 
-# Use htop without having to type password (edited via visudo)
+# Use htop without having to type password
 alias htop='sudo htop'
 
 # Get ip address
@@ -29,6 +32,15 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Jobs
 alias j='jobs'
+
+# List all files in directory and search output with ag or sift
+if which ag &> /dev/null; then
+  alias lag='ls -la | ag '
+fi
+
+if which sift &> /dev/null; then
+  alias las='ls -la | sift '
+fi
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
@@ -38,9 +50,6 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 
 # Open current directory in OSX Finder
 alias o='open .'
-
-# Pretty print the path
-alias path='echo $PATH | tr -s ":" "\n"'
 
 # Reload shell
 alias r='exec $SHELL -l'
@@ -58,6 +67,7 @@ alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv 
 alias x='exit'
 
 ## Dotfiles management ##
+# Quickly edit dotfiles
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
@@ -69,7 +79,7 @@ alias dfbu='dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
 alias dflb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
-#
+
 # Back up OSX dotfiles to Dropbox
 alias dfdb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
 
@@ -77,7 +87,7 @@ alias dfdb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc 
 alias dfgb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/sierra && cd ~/github/repos/public/dotfiles/sierra && git diff'
 
 ## Git ##
-# based on TJ Hollowaychuck's git aliases
+# TJ Hollowaychuck's git aliases, modified
 alias ga="git add"
 alias gac="git commit -a -m"
 alias gb="git branch"
@@ -152,7 +162,7 @@ alias ua='bu && du && gitup && gu && vu && pu && tu && ncu -g'
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
 
 # Docker update all images (preserves tags)
-  # shellcheck disable=SC2142
+# shellcheck disable=SC2142
 alias du="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
 
 # Ruby: Update and clean up all gems

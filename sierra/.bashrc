@@ -7,34 +7,73 @@ export PLATFORM
 # Add $PATH entries
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export PATH="$HOME/bin":$PATH
+if [ -f "$HOME/bin" ]; then
+  export PATH="$HOME/bin":$PATH
+fi
 
-# Use GNU versions of basic utilities instead of macOS BSD versions
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
+## Mac-specific: activate homebrew-installed executables, config files etc. ##
 
-export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
+if PLATFORM="darwin"; then
+  # GNU core utilities
+  if [ -f /usr/local/opt/coreutils ]; then
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/coreutils/share/man:$MANPATH
+  fi
 
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
+  if [ -f /usr/local/opt/findutils ]; then
+    export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/findutils/nlibexec/gnuman:$MANPATH
+  fi
 
-export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
+  if [ -f /usr/local/opt/gnu-sed ]; then
+    export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/gnu-sed/share/man:$MANPATH
+  fi
 
-# Temporary tmux fix for Sierra
-export EVENT_NOKQUEUE=1
+  if [ -f /usr/local/opt/gnu-tar ]; then
+    export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
+  fi
 
-# TERMINFO fix for NeoVim
-export TERMINFO="$HOME/.terminfo"
+  # iTerm2 shell integration
+  if [ -f "${HOME}/.iterm2_shell_integration" ]; then
+    test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+  fi
 
-# Ignore shellcheck errors
-export SHELLCHECK_OPTS="-e SC1090,SC1091"
+  # bash-prexec
+  [[ -f $(brew --prefix)/etc/profile.d/bash-preexec.sh ]] && . "$(brew --prefix)/etc/profile.d/bash-preexec.sh"
 
-# Enable iTerm2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+  # brew command-not-found
+  if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
 
-# eval `opam config env`
+  # fzf
+  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+  # Neovim: termporary fix for startup TERMINFO error
+  if which nvim > /dev/null; then
+    export TERMINFO="$HOME/.terminfo"
+  fi
+
+  # ruby
+  if [ -f /usr/local/opt/ruby/bin/ruby ]; then
+    export HOMEBREW_RUBY_PATH="/usr/local/opt/ruby/bin/ruby"
+  fi
+
+  # php70
+  if [ -f /usr/local/opt/php70/bin/php ]; then
+    export PATH=/usr/local/opt/php70/bin/php:$PATH
+  fi
+
+  # tmux - temporary fix for startup error on Sierra
+  if which tmux > /dev/null; then
+    export EVENT_NOKQUEUE=1
+  fi
+
+  # z
+  if [ -f "$(brew --prefix)/etc/profile.d/z.sh" ]; then
+    . "$(brew --prefix)/etc/profile.d/z.sh"
+  fi
+fi
 
 # Source additional dotfiles
 for file in ~/.{bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
@@ -42,9 +81,10 @@ for file in ~/.{bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
 done;
 unset file
 
-export HOMEBREW_RUBY_PATH="/usr/local/opt/ruby/bin/ruby"
-# export HOMEBREW_RUBY_PATH="$(brew --prefix ruby)/bin/ruby"
-
+# Ignore shellcheck "Canot follow non-constant source" errors
+if which shellcheck > /dev/null; then
+  export SHELLCHECK_OPTS="-e SC1090,SC1091"
+fi
 
 # Set vim as default editor
 export EDITOR=vim
@@ -53,28 +93,16 @@ export VISUAL=vim
 # Enable vi mode in shell
 set -o vi
 
-# Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]
+# Source homebrew-installed bash completion
+if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]
 then
   . "$(brew --prefix)/share/bash-completion/bash_completion"
-elif
-  [ -f /etc/bash_completion ]
-then
-  . /etc/bash_completion;
-fi;
+fi
 
 # Enable grc (generic colorizer)
 [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
-# Use homebrew-installed php (not currently working)
-if [ -f /usr/local/opt/php70/bin/php ]; then
-  export PATH=/usr/local/opt/php70/bin/php:$PATH
-fi
-
-# Enable z
-[ -f "$HOME/z/z.sh" ] && . "$HOME/z/z.sh"
-
-# Alias hub to git
+# Enable hub, alias it hub to git
 if which hub > /dev/null; then
   eval "$(hub alias -s)"
 fi
@@ -84,7 +112,9 @@ if which grunt > /dev/null
 then
   eval "$(grunt --completion=bash)"
 else
-  npm install -g grunt-cli
+  if which npm > /dev/null;
+    then npm install -g grunt-cli
+  fi
 fi
 
 # Enable Gulp completion
@@ -92,10 +122,12 @@ if which gulp > /dev/null
 then
   eval "$(gulp --completion=bash)"
 else
-  npm install -g gulp-cli
+  if which npm > /dev/null;
+    then npm install -g gulp-cli
+  fi
 fi
 
-# Enable thefuck
+# Enable thefuck if installed
 if which thefuck > /dev/null; then
   eval "$(thefuck --alias)"
 fi
@@ -107,12 +139,14 @@ fi
 
 # Go #
 # Env configuation
-export PATH=/usr/local/opt/go/libexec/bin:$PATH
-export GOPATH="$HOME/go"
-export GOOS="darwin"
-export GOBIN="$GOPATH/bin"
-export PATH="$GOBIN:$PATH"
-# export PATH=/usr/local/go/bin:$PATH
+if which go > /dev/null; then
+  export PATH=/usr/local/opt/go/libexec/bin:$PATH
+  export GOPATH="$HOME/go"
+  export GOOS="darwin"
+  export GOBIN="$GOPATH/bin"
+  export PATH="$GOBIN:$PATH"
+  # export PATH=/usr/local/go/bin:$PATH
+fi
 
 # s bash completion
 if [ -f "$GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash" ]; then
@@ -132,12 +166,18 @@ shopt -s cdspell;
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-# Added by Travis-CI gem
+# Enable Travis CI (auto-inserted by Travis gem)
 [ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
-[ -f /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash ] && . /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash
+if which yo > /dev/null; then
+  [ -f /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash ] && . /usr/local/lib/node_modules/yo/node_modules/tabtab/.completions/yo.bash;
+else
+  if npm > /dev/null;
+    then npm install -g yo
+  fi
+fi
 
 ## Colors ##
 # Use coreutils `ls` if possible
@@ -150,6 +190,7 @@ else
   export colorflag="-G";
 fi
 
+# Force CLI colors
 export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
@@ -169,12 +210,4 @@ alias lsd='ls -l | grep "^d"'
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-
-# Add tab completion for `defaults read|write NSGlobalDomain`
-# You could just use `-g` instead, but I like being explicit
-complete -W "NSGlobalDomain" defaults;
-
-if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

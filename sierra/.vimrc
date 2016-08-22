@@ -63,6 +63,11 @@ Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
 
+" Enable fzf installed with homebrew
+if s:darwin
+  set rtp+=/usr/local/opt/fzf
+endif
+
 " Enable 256 colors in terminal
 set t_Co=256
 

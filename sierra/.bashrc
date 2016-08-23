@@ -93,10 +93,16 @@ export VISUAL=vim
 # Enable vi mode in shell
 set -o vi
 
-# Source homebrew-installed bash completion
-if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]
-then
-  . "$(brew --prefix)/share/bash-completion/bash_completion"
+# Enable Homebrew-installed bash completion
+if [ -f "$(brew --prefix)"/etc/bash_completion ]; then
+    . "$(brew --prefix)"/etc/bash_completion
+fi
+
+# Source additional bash completion entries
+if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+  . "$(brew --prefix)/share/bash-completion/bash_completion";
+elif [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion;
 fi
 
 # Enable grc (generic colorizer)

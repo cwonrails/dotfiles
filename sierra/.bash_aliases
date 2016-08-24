@@ -71,6 +71,7 @@ alias x='exit'
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
+alias nvr='nvim ~/.config/nvim/init.vim'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
@@ -156,7 +157,7 @@ alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
-alias ua='bu && du && gitup && gu && vu && pu && tu && ncu -g'
+alias ua='gitup && bu && du && gitup && gu && nvu && vu && pu && tu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
@@ -164,6 +165,9 @@ alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew
 # Docker update all images (preserves tags)
 # shellcheck disable=SC2142
 alias du="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
+
+# NeoVim: Upgrade vim-plug, update, install, and remove unused plugins
+alias nvu='nvim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'

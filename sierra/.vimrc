@@ -18,7 +18,7 @@ Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
@@ -121,8 +121,11 @@ nnoremap <leader>c :TComment<CR>
 nnoremap <leader>ft :set filetype?<CR>
 
 " Preview markdown files in Marked.app
-nnoremap <leader>mp :MarkedOpen!<CR>
-nnoremap <leader>mq :MarkedQuit<CR>
+
+if s:darwin
+  nnoremap <leader>mp :MarkedOpen!<CR>
+  nnoremap <leader>mq :MarkedQuit<CR>
+endif
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
@@ -353,9 +356,9 @@ autocmd User IncSearchExecute :call search_pulse#Pulse()
 " Completion functionality, unifying supertab, ultisnips, and YouCompleteMe
 " via http://stackoverflow.com/a/22253548/1626737
 
-"-----------------------------------------------------------
+" -----------------------------------------------------------
 " YouCompleteMe - Intelligent completion with fuzzy matching
-"-----------------------------------------------------------
+" -----------------------------------------------------------
 
 let g:ycm_dont_warn_on_startup = 0
 let g:ycm_complete_in_comments = 1
@@ -367,16 +370,16 @@ let g:ycm_filetype_blacklist = {}
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
-"--------------------------------------------------
+" --------------------------------------------------
 " Supertab - enhanced tab behavior based on context
-"--------------------------------------------------
+" --------------------------------------------------
 
 let g:SuperTabDefaultCompletionType    = '<C-n>'
 let g:SuperTabCrMapping                = 0
 
-"----------------------------------------
+" ----------------------------------------
 " UltiSnips - Fancy snippet functionality
-"----------------------------------------
+" ----------------------------------------
 
 let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 let g:UltiSnipsEditSplit='vertical'
@@ -385,4 +388,3 @@ let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 
 nnoremap <leader>ue :UltiSnipsEdit<cr>
-

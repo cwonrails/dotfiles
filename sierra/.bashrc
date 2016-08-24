@@ -64,6 +64,11 @@ if PLATFORM="darwin"; then
     export PATH=/usr/local/opt/php70/bin/php:$PATH
   fi
 
+  # td
+  if [ -f "$HOME/Dropbox/todo.json" ]; then
+    export TODO_DB_PATH=$HOME/Dropbox/todo.json
+  fi
+
   # tmux - temporary fix for startup error on Sierra
   if which tmux > /dev/null; then
     export EVENT_NOKQUEUE=1

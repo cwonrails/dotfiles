@@ -14,6 +14,7 @@ fi
 ## Mac-specific: activate homebrew-installed executables, config files etc. ##
 
 if PLATFORM="darwin"; then
+
   # GNU core utilities
   if [ -f /usr/local/opt/coreutils ]; then
     export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -49,7 +50,7 @@ if PLATFORM="darwin"; then
   # fzf
   [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-  # Neovim: termporary fix for startup TERMINFO error
+  # Neovim: (includes termporary fix for startup TERMINFO error)
   if which nvim > /dev/null; then
     export TERMINFO="$HOME/.terminfo"
   fi

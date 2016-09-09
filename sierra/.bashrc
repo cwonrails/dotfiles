@@ -10,6 +10,9 @@ export PATH=/usr/local/sbin:$PATH
 if [ -f "$HOME/bin" ]; then
   export PATH="$HOME/bin":$PATH
 fi
+if [ -f "$HOME/.composer/vendor/bin" ]; then
+  export PATH="$HOME/bin":$PATH
+fi
 
 ## Mac-specific: activate homebrew-installed executables, config files etc. ##
 
@@ -36,19 +39,11 @@ if PLATFORM="darwin"; then
     export MANPATH=/usr/local/opt/gnu-tar/share/man:$MANPATH
   fi
 
-  # iTerm2 shell integration
-  if [ -f "${HOME}/.iterm2_shell_integration" ]; then
-    test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-  fi
-
   # bash-prexec
-  [[ -f $(brew --prefix)/etc/profile.d/bash-preexec.sh ]] && . "$(brew --prefix)/etc/profile.d/bash-preexec.sh"
+  # [[ -f $(brew --prefix)/etc/profile.d/bash-preexec.sh ]] && . "$(brew --prefix)/etc/profile.d/bash-preexec.sh"
 
   # brew command-not-found
   if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
-
-  # fzf
-  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
   # Neovim: (includes termporary fix for startup TERMINFO error)
   if which nvim > /dev/null; then
@@ -79,6 +74,7 @@ if PLATFORM="darwin"; then
   if [ -f "$(brew --prefix)/etc/profile.d/z.sh" ]; then
     . "$(brew --prefix)/etc/profile.d/z.sh"
   fi
+
 fi
 
 # Source additional dotfiles
@@ -222,4 +218,10 @@ alias lsd='ls -l | grep "^d"'
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# Enable global .agignore
+alias ag='ag --path-to-agignore ~/.agignore'
+
+# Enable fzf installed via git
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

@@ -42,6 +42,9 @@ if which sift &> /dev/null; then
   alias las='ls -la | sift '
 fi
 
+# Automatically use sudo with mtr
+alias mtr='sudo mtr'
+
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
@@ -148,6 +151,9 @@ alias hd='cd ~'
 # Go Vagrant boxes directory
 alias vb='cd ~/vagrantboxes'
 
+# Create new WordPress site
+alias wpn='git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git && git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git && cd trellis && ansible-galaxy install -r requirements.yml'
+
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'
@@ -157,7 +163,7 @@ alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
-alias ua='gitup && bu && du && gitup && gu && nvu && vu && pu && tu && ncu -g'
+alias ua='git-repo-updater && bu && du && gitup && gu && nvu && vu && pu && tu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'

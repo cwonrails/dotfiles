@@ -1,5 +1,8 @@
 /alfredprefs*/
-/Dropbox/Alfred.alfredpreferences/
+/Dropbox/Alfred*
+/Dropbox/1Password*
 
-/bower_components/
-/node_modules/
+bower_components/
+node_modules/
+
+Library/

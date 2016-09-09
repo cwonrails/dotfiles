@@ -6,6 +6,7 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'ajh17/VimCompletesMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
@@ -13,21 +14,21 @@ Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
-Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
-Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
-Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'kurayama/systemd-vim-syntax'
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
@@ -39,6 +40,7 @@ Plug 'mbbill/undotree'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
+Plug 'myw/vim-polymer', { 'do': 'npm install -g polylint' }
 Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
@@ -48,25 +50,23 @@ if s:darwin
   Plug 'rizzatti/dash.vim'
 endif
 Plug 'scrooloose/syntastic'
-Plug 'SirVer/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby'
 Plug 'vim-ruby/vim-ruby'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
-
-" Enable fzf installed with homebrew
-if s:darwin
-  set rtp+=/usr/local/opt/fzf
-endif
 
 " Enable 256 colors in terminal
 set t_Co=256
@@ -120,8 +120,10 @@ nnoremap <leader>c :TComment<CR>
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
-" Preview markdown files in Marked.app
+" Remap fzf to fzf
+nnoremap <leader>fzf :FZF<SPACE>
 
+" Preview markdown files in Marked.app on Mac
 if s:darwin
   nnoremap <leader>mp :MarkedOpen!<CR>
   nnoremap <leader>mq :MarkedQuit<CR>
@@ -293,35 +295,6 @@ endif
 nnoremap Y y$
 
 " ----------------------------------------------------------------------------
-" Quickfix
-" ----------------------------------------------------------------------------
-nnoremap ]q :cnext<cr>zz
-nnoremap [q :cprev<cr>zz
-nnoremap ]l :lnext<cr>zz
-nnoremap [l :lprev<cr>zz
-
-" ----------------------------------------------------------------------------
-" Buffers
-" ----------------------------------------------------------------------------
-nnoremap ]b :bnext<cr>
-nnoremap [b :bprev<cr>
-nnoremap <leader>bd :bdelete<cr>
-
-" ----------------------------------------------------------------------------
-" Tabs
-" ----------------------------------------------------------------------------
-nnoremap ]t :tabn<cr>
-nnoremap [t :tabp<cr>
-
-"-----------------------------------------------------------------------------
-" lightline.vim
-"-----------------------------------------------------------------------------
-
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
-
-" ----------------------------------------------------------------------------
 " matchit.vim
 " ----------------------------------------------------------------------------
 runtime macros/matchit.vim
@@ -353,38 +326,23 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
-" Completion functionality, unifying supertab, ultisnips, and YouCompleteMe
-" via http://stackoverflow.com/a/22253548/1626737
+" ----------------------------------------------------------------------------
+" vim-airline
+" ----------------------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+let g:airline_enable_syntastic = 1
+let g:airline#extensions#tabline#buffer_nr_format = '%s '
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#fnamemod = ':t'
 
-" -----------------------------------------------------------
-" YouCompleteMe - Intelligent completion with fuzzy matching
-" -----------------------------------------------------------
+" ----------------------------------------------------------------------------
+" Buffers
+" ----------------------------------------------------------------------------
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprev<cr>
+nnoremap <leader>bd :bd<cr>
+nnoremap <leader>bn :e<space>
+nnoremap <leader>bx :bd!<cr>
 
-let g:ycm_dont_warn_on_startup = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-
-let g:ycm_filetype_blacklist = {}
-
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
-
-" --------------------------------------------------
-" Supertab - enhanced tab behavior based on context
-" --------------------------------------------------
-
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-
-" ----------------------------------------
-" UltiSnips - Fancy snippet functionality
-" ----------------------------------------
-
-let g:UltiSnipsSnippetsDir='~/.vim/snippets'
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-
-nnoremap <leader>ue :UltiSnipsEdit<cr>

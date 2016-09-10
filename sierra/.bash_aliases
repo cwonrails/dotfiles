@@ -162,7 +162,7 @@ alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
-alias ua='git-repo-updater && bu && du && gitup && gu && nvu && vu && pu && tu && ncu -g'
+alias ua='git-repo-updater && bu && du && gitup && gu && vu && pu && tu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'

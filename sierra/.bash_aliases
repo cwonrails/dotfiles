@@ -74,7 +74,6 @@ alias x='exit'
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
-alias nvr='nvim ~/.config/nvim/init.vim'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
@@ -171,9 +170,6 @@ alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew
 # Docker update all images (preserves tags)
 # shellcheck disable=SC2142
 alias du="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
-
-# NeoVim: Upgrade vim-plug, update, install, and remove unused plugins
-alias nvu='nvim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'

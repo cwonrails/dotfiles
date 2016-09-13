@@ -9,14 +9,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'ajh17/VimCompletesMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
+" Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
-Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
+" Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
+" Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -26,45 +26,46 @@ Plug 'inside/vim-search-pulse'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
-Plug 'kurayama/systemd-vim-syntax'
-Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
-Plug 'majutsushi/tagbar'
+" Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
+" Plug 'justinmk/vim-dirvish'
+" Plug 'justinmk/vim-sneak'
+" Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
+" Plug 'kurayama/systemd-vim-syntax'
+" Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
+" Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-Plug 'mustache/vim-mustache-handlebars'
+" Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-Plug 'myw/vim-polymer', { 'do': 'npm install -g polylint' }
-Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
+" Plug 'myw/vim-polymer', { 'do': 'npm install -g polylint' }
+" Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
-Plug 'rhysd/committia.vim'
-if s:darwin
-  Plug 'rizzatti/dash.vim'
-endif
+" Plug 'rhysd/committia.vim'
+" if s:darwin
+"   Plug 'rizzatti/dash.vim'
+" endif
 Plug 'scrooloose/syntastic'
 Plug 'stephpy/vim-yaml'
-Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+" Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
+" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+" Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-ruby/vim-ruby'
-Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+" Plug 'vim-ruby/vim-ruby'
+" Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
 
@@ -121,7 +122,7 @@ nnoremap <leader>c :TComment<CR>
 nnoremap <leader>ft :set filetype?<CR>
 
 " Remap fzf to fzf
-nnoremap <leader>fzf :FZF<SPACE>
+" nnoremap <leader>fzf :FZF<SPACE>
 
 " Preview markdown files in Marked.app on Mac
 if s:darwin
@@ -133,7 +134,7 @@ endif
 nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
-:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+" :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
@@ -143,10 +144,10 @@ nnoremap <leader>w :update<CR>
 nnoremap <leader>si :SyntasticInfo<CR>
 
 " Source .vimrc
-nnoremap <leader>sv :source ~/.vimrc<CR>
+" nnoremap <leader>sv :source ~/.vimrc<CR>
 
 " Toggle TagBar
-nnoremap <leader>t :TagbarToggle<CR>
+" nnoremap <leader>t :TagbarToggle<CR>
 
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
@@ -173,7 +174,7 @@ if s:darwin
   let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 endif
 
-let g:syntastic_html_checkers = ['tidy']
+" let g:syntastic_html_checkers = ['tidy']
 
 " Ignore Apple's W3-invalid html code for pinned favicons
 let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
@@ -192,7 +193,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers = ['jsonlint']
 
 " Pug linting
-let g:syntastic_pug_checkers = ['pug_lint']
+" let g:syntastic_pug_checkers = ['pug_lint']
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']
@@ -201,10 +202,10 @@ let g:syntastic_sh_checkers = ['shellcheck']
 autocmd filetype markdown setlocal spell
 
 " Activiate conceal for Markdown
-if has ('conceal')
-  autocmd filetype markdown set concealcursor=inv
-  autocmd filetype markdown set conceallevel=2
-endif
+" if has ('conceal')
+"   autocmd filetype markdown set concealcursor=inv
+"   autocmd filetype markdown set conceallevel=2
+" endif
 
 " Disable highlighting of non-capitalized terms in Markdown
 set spellcapcheck=
@@ -342,7 +343,12 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
-nnoremap <leader>bd :bd<cr>
-nnoremap <leader>bn :e<space>
-nnoremap <leader>bx :bd!<cr>
+" nnoremap <leader>bd :bd<cr>
+" nnoremap <leader>bn :e<space>
+" nnoremap <leader>bx :bd!<cr>
+
+" ----------------------------------------------------------------------------
+" sneak.vim
+" ----------------------------------------------------------------------------
+" let g:sneak#streak = 1
 

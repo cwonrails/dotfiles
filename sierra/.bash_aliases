@@ -38,12 +38,12 @@ if which ag &> /dev/null; then
   alias lag='ls -la | ag '
 fi
 
-if which sift &> /dev/null; then
-  alias las='ls -la | sift '
-fi
+# if which sift &> /dev/null; then
+#   alias las='ls -la | sift '
+# fi
 
 # Automatically use sudo with mtr
-alias mtr='sudo mtr'
+# alias mtr='sudo mtr'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'

@@ -150,9 +150,6 @@ alias hd='cd ~'
 # Go Vagrant boxes directory
 alias vb='cd ~/vagrantboxes'
 
-# Create new WordPress site
-alias wpn='git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git && git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git && cd trellis && ansible-galaxy install -r requirements.yml'
-
 ## npm ##
 # List top-level npm global modules
 alias ng='npm -g ls --depth=0'

@@ -9,14 +9,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'ajh17/VimCompletesMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-" Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
+Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 " Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
-" Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
+Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
+Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -26,46 +26,49 @@ Plug 'inside/vim-search-pulse'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
-" Plug 'junegunn/vim-easy-align'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Plug 'justinmk/vim-dirvish'
 " Plug 'justinmk/vim-sneak'
-" Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
+Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 " Plug 'kurayama/systemd-vim-syntax'
-" Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
-" Plug 'majutsushi/tagbar'
+Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
+Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-" Plug 'mustache/vim-mustache-handlebars'
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-" Plug 'myw/vim-polymer', { 'do': 'npm install -g polylint' }
-" Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
+Plug 'myw/vim-polymer', { 'do': 'npm install -g polylint' }
+Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
-" Plug 'rhysd/committia.vim'
-" if s:darwin
-"   Plug 'rizzatti/dash.vim'
-" endif
+Plug 'rhysd/committia.vim'
+if s:darwin
+  Plug 'rizzatti/dash.vim'
+endif
 Plug 'scrooloose/syntastic'
 Plug 'stephpy/vim-yaml'
-" Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
-" Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-" Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'vim-ruby/vim-ruby'
-" Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+Plug 'vim-ruby/vim-ruby'
+Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
 
@@ -114,6 +117,7 @@ set diffopt+=filler,vertical
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
 
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
@@ -144,10 +148,10 @@ nnoremap <leader>w :update<CR>
 nnoremap <leader>si :SyntasticInfo<CR>
 
 " Source .vimrc
-" nnoremap <leader>sv :source ~/.vimrc<CR>
+nnoremap <leader>sv :source ~/.vimrc<CR>
 
 " Toggle TagBar
-" nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
@@ -332,6 +336,7 @@ autocmd User IncSearchExecute :call search_pulse#Pulse()
 " ----------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline_enable_syntastic = 1
+let g:airline#extensions#obsession#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_format = '%s '
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -351,4 +356,6 @@ nnoremap [b :bprev<cr>
 " sneak.vim
 " ----------------------------------------------------------------------------
 " let g:sneak#streak = 1
+
+
 

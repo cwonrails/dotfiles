@@ -82,9 +82,9 @@ if [ -f "$(brew --prefix)"/share/bash-completion/bash_completion ]; then
   . "$(brew --prefix)"/share/bash-completion/bash_completion
 fi
 
-# if [ -f "$(brew --prefix)"/etc/bash_completion.d ]; then
-#   . "$(brew --prefix)"/etc/bash_completion.d
-# fi
+if [ -f "$(brew --prefix)"/etc/bash_completion.d ]; then
+  . "$(brew --prefix)"/etc/bash_completion.d
+fi
 
 # Enable grc (generic colorizer)
 [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
@@ -114,13 +114,13 @@ fi
 
 # Enable thefuck if installed
 if which thefuck > /dev/null; then
-eval "$(thefuck --alias)"
+  eval "$(thefuck --alias)"
 fi
 
 # Enable t completion (Twitter CLI client)
-if which t > /dev/null; then
-. "$HOME/t/etc/t-completion.sh"
-fi
+# if which t > /dev/null; then
+# . "$HOME/t/etc/t-completion.sh"
+# fi
 
 # Go #
 # Env configuation

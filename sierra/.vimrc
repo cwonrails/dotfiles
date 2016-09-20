@@ -14,7 +14,6 @@ Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
@@ -27,12 +26,7 @@ if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" Plug 'justinmk/vim-dirvish'
-" Plug 'justinmk/vim-sneak'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
-" Plug 'kurayama/systemd-vim-syntax'
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
@@ -56,15 +50,12 @@ Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
-" Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
@@ -80,6 +71,9 @@ syntax enable
 
 " Enable indentation for specific filetypes
 filetype plugin indent on
+
+" Enable homebrew-installed fzf
+set rtp+=/usr/local/opt/fzf
 
 " ============================================================================
 " Basic key bindings
@@ -125,8 +119,10 @@ nnoremap <leader>c :TComment<CR>
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
+
 " Remap fzf to fzf
 " nnoremap <leader>fzf :FZF<SPACE>
+
 
 " Preview markdown files in Marked.app on Mac
 if s:darwin

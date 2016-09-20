@@ -87,7 +87,7 @@ if [ -f "$(brew --prefix)"/etc/bash_completion.d ]; then
 fi
 
 # Enable grc (generic colorizer)
-[ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
+# [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
 # Enable hub and alias it to git
 if which hub > /dev/null; then
@@ -216,3 +216,4 @@ alias ag='ag --path-to-agignore ~/.agignore'
 # Enable fzf installed via git
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export HOMEBREW_NO_ANALYTICS=1

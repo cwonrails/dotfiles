@@ -43,7 +43,7 @@ fi
 # fi
 
 # Automatically use sudo with mtr
-# alias mtr='sudo mtr'
+alias mtr='sudo mtr'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'

@@ -7,12 +7,7 @@ export PLATFORM
 # Add $PATH entries
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-if [ -f "$HOME/bin" ]; then
-  export PATH="$HOME/bin":$PATH
-fi
-if [ -f "$HOME/.composer/vendor/bin" ]; then
-  export PATH="$HOME/bin":$PATH
-fi
+export PATH="$HOME/bin":$PATH
 
 # GNU coreutils
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -40,15 +35,23 @@ if [ -f /usr/local/opt/ruby/bin/ruby ]; then
   export HOMEBREW_RUBY_PATH="/usr/local/opt/ruby/bin/ruby"
 fi
 
+# composer
+if [ -f "$HOME/.composer/vendor/bin" ]; then
+  export PATH="$HOME/bin":$PATH
+fi
+
+export COMPOSER_DISABLE_XDEBUG_WARN=1
+
+
 # php70
 if [ -f /usr/local/opt/php70/bin/php ]; then
   export PATH=/usr/local/opt/php70/bin/php:$PATH
 fi
 
 # tmux - temporary fix for startup error on Sierra
-if which tmux > /dev/null; then
-  export EVENT_NOKQUEUE=1
-fi
+# if which tmux > /dev/null; then
+#   export EVENT_NOKQUEUE=1
+# fi
 
 # z
 if [ -f "$(brew --prefix)/etc/profile.d/z.sh" ]; then
@@ -211,7 +214,7 @@ alias lsd='ls -l | grep "^d"'
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # Enable global .agignore
-alias ag='ag --path-to-agignore ~/.agignore'
+# alias ag='ag --path-to-agignore ~/.agignore'
 
 # Enable fzf installed via git
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -1,9 +1,12 @@
-/alfredprefs*/
-Alfred*
-/Dropbox/Alfred*
-/Dropbox/1Password*
+/Alfred Sync/
+/Alfred.alfredpreferences/
+/alfredprefs-master/
 
-bower_components/
-node_modules/
+/Dropbox/
 
-Library/
+/Library/
+
+.git/
+
+bower_components
+node_modules

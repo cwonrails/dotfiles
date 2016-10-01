@@ -73,7 +73,7 @@ syntax enable
 filetype plugin indent on
 
 " Enable homebrew-installed fzf
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
 
 " ============================================================================
 " Basic key bindings
@@ -134,7 +134,7 @@ endif
 nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
-" :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
@@ -342,8 +342,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " ----------------------------------------------------------------------------
 " Buffers
 " ----------------------------------------------------------------------------
-nnoremap ]b :bnext<cr>
-nnoremap [b :bprev<cr>
+" nnoremap ]b :bnext<cr>
+" nnoremap [b :bprev<cr>
 " nnoremap <leader>bd :bd<cr>
 " nnoremap <leader>bn :e<space>
 " nnoremap <leader>bx :bd!<cr>

@@ -31,7 +31,7 @@ alias htop='sudo htop'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Jobs
-alias j='jobs'
+# alias j='jobs'
 
 # List all files in directory and search output with ag or sift
 if which ag &> /dev/null; then
@@ -90,6 +90,12 @@ alias dfdb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc 
 alias dfgb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/sierra && cd ~/github/repos/public/dotfiles/sierra && git diff'
 
 ## Git ##
+
+# Enable tab completion for `g` by marking it as an alias for `git`
+if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+  complete -o default -o nospace -F _git g;
+fi;
+
 # TJ Hollowaychuck's git aliases, modified
 alias ga="git add"
 alias gac="git commit -a -m"

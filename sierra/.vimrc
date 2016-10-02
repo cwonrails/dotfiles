@@ -188,6 +188,9 @@ let g:syntastic_html_tidy_ignore_errors = [
 
 " Javascript linting
 let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['standard']
+" autocmd bufwritepost *.js silent !standard-format -w %
+
 
 " JSON linting
 let g:syntastic_json_checkers = ['jsonlint']

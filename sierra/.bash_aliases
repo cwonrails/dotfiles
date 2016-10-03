@@ -168,7 +168,7 @@ alias nl='npm ls --depth=0'
 alias ua='git-repo-updater && bu && du && gitup && gu && vu && pu && tu && ncu -g'
 
 # Homebrew: Run daily operations
-alias bu='brew update; brew upgrade --all; brew cleanup; brew cask cleanup; brew prune; brew doctor'
+alias bu='brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor'
 
 # Docker update all images (preserves tags)
 # shellcheck disable=SC2142

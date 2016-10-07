@@ -36,11 +36,13 @@ if [ -f /usr/local/opt/ruby/bin/ruby ]; then
 fi
 
 # composer
-if [ -f "$HOME/.composer/vendor/bin" ]; then
-  export PATH="$HOME/bin":$PATH
-fi
+# if [ -f "$HOME/.composer/vendor/bin" ]; then
+#   export PATH="$HOME/.composer/vendor/bin":$PATH
+# fi
 
-export COMPOSER_DISABLE_XDEBUG_WARN=1
+export PATH=~/.composer/vendor/bin:$PATH
+
+# export COMPOSER_DISABLE_XDEBUG_WARN=1
 
 
 # php70

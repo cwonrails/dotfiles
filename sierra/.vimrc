@@ -299,6 +299,12 @@ endif
 nnoremap Y y$
 
 " ----------------------------------------------------------------------------
+" gist.vim
+" ----------------------------------------------------------------------------
+" Make gists private by default
+let g:gist_post_private = 1
+
+" ----------------------------------------------------------------------------
 " matchit.vim
 " ----------------------------------------------------------------------------
 runtime macros/matchit.vim
@@ -307,6 +313,19 @@ runtime macros/matchit.vim
 " undotree
 " ----------------------------------------------------------------------------
 let g:undotree_WindowLayout = 2
+
+" ----------------------------------------------------------------------------
+" vim-airline
+" ----------------------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+let g:airline_enable_syntastic = 1
+let g:airline#extensions#obsession#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_format = '%s '
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 
 " ----------------------------------------------------------------------------
 " vim-search-pulse
@@ -329,32 +348,4 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 " Pulses the first match after hitting the enter keyan
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
-
-" ----------------------------------------------------------------------------
-" vim-airline
-" ----------------------------------------------------------------------------
-let g:airline_powerline_fonts = 1
-let g:airline_enable_syntastic = 1
-let g:airline#extensions#obsession#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_format = '%s '
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamecollapse = 0
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" ----------------------------------------------------------------------------
-" Buffers
-" ----------------------------------------------------------------------------
-" nnoremap ]b :bnext<cr>
-" nnoremap [b :bprev<cr>
-" nnoremap <leader>bd :bd<cr>
-" nnoremap <leader>bn :e<space>
-" nnoremap <leader>bx :bd!<cr>
-
-" ----------------------------------------------------------------------------
-" sneak.vim
-" ----------------------------------------------------------------------------
-" let g:sneak#streak = 1
-
-
 

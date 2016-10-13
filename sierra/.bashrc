@@ -61,7 +61,7 @@ if [ -f "$(brew --prefix)/etc/profile.d/z.sh" ]; then
 fi
 
 # Source additional dotfiles
-for file in ~/.{bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
+for file in ~/.{aliases.local,bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
 [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file
@@ -102,19 +102,11 @@ fi
 # Enable Grunt completion
 if which grunt > /dev/null; then
   eval "$(grunt --completion=bash)"
-else
-if which npm > /dev/null; then
-  npm install -g grunt-cli
-fi
 fi
 
 # Enable Gulp completion
 if which gulp > /dev/null; then
-eval "$(gulp --completion=bash)"
-else
-if which npm > /dev/null; then
-  npm install -g gulp-cli
-fi
+  eval "$(gulp --completion=bash)"
 fi
 
 # Enable thefuck if installed

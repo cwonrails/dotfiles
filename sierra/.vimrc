@@ -26,9 +26,12 @@ if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
 Plug 'junegunn/vim-easy-align'
+" Plug 'honza/vim-snippets'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 Plug 'majutsushi/tagbar'
+" Plug 'maralla/completor.vim', { 'do': 'make js' }
+" Plug 'maralla/validator.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -46,6 +49,7 @@ if s:darwin
   Plug 'rizzatti/dash.vim'
 endif
 Plug 'scrooloose/syntastic'
+" Plug 'SirVer/Ultisnips'
 Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
 Plug 'tomtom/tComment_vim'
@@ -348,4 +352,14 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 " Pulses the first match after hitting the enter keyan
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
+
+" ----------------------------------------------------------------------------
+" completor.vim paths
+" ----------------------------------------------------------------------------
+
+" Python
+" let g:completor_python_binary = '/usr/local/bin/python'
+
+" Javascript
+" let g:completor_node_binary = '/usr/local/bin/node'
 

@@ -25,13 +25,11 @@ Plug 'inside/vim-search-pulse'
 if s:darwin
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 endif
-Plug 'junegunn/vim-easy-align'
-" Plug 'honza/vim-snippets'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 Plug 'majutsushi/tagbar'
-" Plug 'maralla/completor.vim', { 'do': 'make js' }
-" Plug 'maralla/validator.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -49,9 +47,9 @@ if s:darwin
   Plug 'rizzatti/dash.vim'
 endif
 Plug 'scrooloose/syntastic'
-" Plug 'SirVer/Ultisnips'
 Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
+Plug 'takac/vim-spotifysearch'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
@@ -59,10 +57,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
+Plug 'wakatime/vim-wakatime'
 Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
 
 call plug#end()
@@ -76,8 +76,18 @@ syntax enable
 " Enable indentation for specific filetypes
 filetype plugin indent on
 
-" Enable homebrew-installed fzf
-" set rtp+=/usr/local/opt/fzf
+" Source .vimrc on save, refreshing Airline UI if necessary
+function! RefreshUI()
+  if exists(':AirlineRefresh')
+    AirlineRefresh
+  else
+    " Clear & redraw the screen, then redraw all statuslines.
+    redraw!
+    redrawstatus!
+  endif
+endfunction
+
+au BufWritePost .vimrc source $MYVIMRC | :call RefreshUI()
 
 " ============================================================================
 " Basic key bindings
@@ -123,10 +133,8 @@ nnoremap <leader>c :TComment<CR>
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
-
 " Remap fzf to fzf
 " nnoremap <leader>fzf :FZF<SPACE>
-
 
 " Preview markdown files in Marked.app on Mac
 if s:darwin
@@ -330,7 +338,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-
 " ----------------------------------------------------------------------------
 " vim-search-pulse
 " ----------------------------------------------------------------------------
@@ -349,17 +356,13 @@ map # <Plug>(incsearch-nohl-#)<Plug>Pulse
 map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
 map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 
-" Pulses the first match after hitting the enter keyan
+" Pulses the first match after hitting the enter key
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
-" ----------------------------------------------------------------------------
-" completor.vim paths
-" ----------------------------------------------------------------------------
-
-" Python
-" let g:completor_python_binary = '/usr/local/bin/python'
-
-" Javascript
-" let g:completor_node_binary = '/usr/local/bin/node'
+" spotify.vim "
+let g:spotify_country_code = 'US'
+let g:spotify_prev_key = "<F9>"
+let g:spotify_playpause_key = "<F10>"
+let g:spotify_next_key = "<F11>"
 

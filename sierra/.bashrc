@@ -31,9 +31,11 @@ if brew command command-not-found-init > /dev/null; then
 fi
 
 # ruby
-if [ -f /usr/local/opt/ruby/bin/ruby ]; then
-  export HOMEBREW_RUBY_PATH="/usr/local/opt/ruby/bin/ruby"
-fi
+# if [ -f /usr/local/opt/ruby/bin/ruby ]; then
+#   export HOMEBREW_RUBY_PATH="/usr/local/opt/ruby/bin/ruby"
+# fi
+
+export ruby="/usr/local/bin/ruby"
 
 # composer
 # if [ -f "$HOME/.composer/vendor/bin" ]; then
@@ -41,19 +43,17 @@ fi
 # fi
 
 export PATH=~/.composer/vendor/bin:$PATH
+# export PATH=~/.yarn/bin:$PATH
+
+# cargo
+# export PATH=~/.cargo/bin:$PATH
 
 # export COMPOSER_DISABLE_XDEBUG_WARN=1
-
 
 # php70
 if [ -f /usr/local/opt/php70/bin/php ]; then
   export PATH=/usr/local/opt/php70/bin/php:$PATH
 fi
-
-# tmux - temporary fix for startup error on Sierra
-# if which tmux > /dev/null; then
-#   export EVENT_NOKQUEUE=1
-# fi
 
 # z
 if [ -f "$(brew --prefix)/etc/profile.d/z.sh" ]; then
@@ -62,13 +62,13 @@ fi
 
 # Source additional dotfiles
 for file in ~/.{aliases.local,bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
-[ -r "$file" ] && [ -f "$file" ] && . "$file";
+  [ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 unset file
 
 # Ignore shellcheck "Canot follow non-constant source" errors
 if which shellcheck > /dev/null; then
-export SHELLCHECK_OPTS="-e SC1090,SC1091"
+  export SHELLCHECK_OPTS="-e SC1090,SC1091"
 fi
 
 # Set vim as default editor
@@ -153,26 +153,26 @@ bind '"\e[B": history-search-forward'
 
 # Yeoman bash completion
 ###-begin-yo-completion-###
-if type complete &>/dev/null; then
-  _yo_completion () {
-    local words cword
-    if type _get_comp_words_by_ref &>/dev/null; then
-      _get_comp_words_by_ref -n = -n @ -w words -i cword
-    else
-      cword="$COMP_CWORD"
-      words=("${COMP_WORDS[@]}")
-    fi
-
-    local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           yo-complete completion -- "${words[@]}" \
-                           2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  complete -o default -F _yo_completion yo
-fi
+# if type complete &>/dev/null; then
+#   _yo_completion () {
+#     local words cword
+#     if type _get_comp_words_by_ref &>/dev/null; then
+#       _get_comp_words_by_ref -n = -n @ -w words -i cword
+#     else
+#       cword="$COMP_CWORD"
+#       words=("${COMP_WORDS[@]}")
+#     fi
+#
+#     local si="$IFS"
+#     IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
+#                            COMP_LINE="$COMP_LINE" \
+#                            COMP_POINT="$COMP_POINT" \
+#                            yo-complete completion -- "${words[@]}" \
+#                            2>/dev/null)) || return $?
+#     IFS="$si"
+#   }
+#   complete -o default -F _yo_completion yo
+# fi
 ###-end-yo-completion-###
 
 ## Colors ##

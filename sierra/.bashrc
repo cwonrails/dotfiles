@@ -31,18 +31,11 @@ if brew command command-not-found-init > /dev/null; then
 fi
 
 # composer
-if [ -f "$HOME/.composer/vendor/bin" ]; then
+# if [ -f "$HOME/.composer/vendor/bin" ]; then
   export PATH="$HOME/.composer/vendor/bin":$PATH
-fi
+# fi
 
-# yarn
-# if [ -f "$HOME/.yarn.bin" ]; then
-#   export PATH="$PATH:$HOME/.yarn/bin:$PATH"
-# fi
-#
-# if [ -f "$HOME/node_modules/.bin" ]; then
-#   export PATH="$PATH:$HOME/node_modules/.bin:$PATH"
-# fi
+export COMPOSER_DISABLE_XDEBUG_WARN=1
 
 # cargo
 if [ -f "$HOME/.cargo.bin" ]; then
@@ -178,3 +171,6 @@ alias lsd='ls -l | grep "^d"'
 
 # Enable fzf installed via git
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
+
+# yarn global binaries
+export PATH="$HOME/.yarn-config/global/node_modules/.bin:$PATH"

@@ -360,7 +360,9 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
-" spotify.vim "
+" ----------------------------------------------------------------------------
+" spotify.vim
+" ----------------------------------------------------------------------------
 let g:spotify_country_code = 'US'
 let g:spotify_prev_key = "<F9>"
 let g:spotify_playpause_key = "<F10>"

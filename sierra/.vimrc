@@ -27,6 +27,7 @@ if s:darwin
 endif
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/vim-slash'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 Plug 'majutsushi/tagbar'
@@ -49,7 +50,7 @@ endif
 Plug 'scrooloose/syntastic'
 Plug 'stephpy/vim-yaml'
 Plug 'syngan/vim-vimlint', { 'for': 'vim' }
-Plug 'takac/vim-spotifysearch'
+" Plug 'takac/vim-spotifysearch'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
@@ -360,11 +361,11 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
-" ----------------------------------------------------------------------------
-" spotify.vim
-" ----------------------------------------------------------------------------
-let g:spotify_country_code = 'US'
-let g:spotify_prev_key = "<F9>"
-let g:spotify_playpause_key = "<F10>"
-let g:spotify_next_key = "<F11>"
+" " ----------------------------------------------------------------------------
+" " spotify.vim
+" " ----------------------------------------------------------------------------
+" let g:spotify_country_code = 'US'
+" let g:spotify_prev_key = "<F9>"
+" let g:spotify_playpause_key = "<F10>"
+" let g:spotify_next_key = "<F11>"
 

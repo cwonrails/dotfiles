@@ -6,30 +6,26 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ajh17/VimCompletesMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'amperser/proselint', { 'rtp': '/plugins/vim/syntastic_proselint/' }
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
-Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim/' }
+Plug 'digitaltoad/vim-pug'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'elzr/vim-json'
+Plug 'fatih/vim-go'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'inside/vim-search-pulse'
 if s:darwin
-  Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+  Plug 'itspriddle/vim-marked'
 endif
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'junegunn/vim-slash'
-Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
-Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
+Plug 'kewah/vim-stylefmt'
+Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
@@ -38,8 +34,7 @@ Plug 'mbbill/undotree'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-Plug 'myw/vim-polymer', { 'do': 'npm install -g polylint' }
-Plug 'nginx/nginx', { 'rtp': 'contrib/vim/' }
+Plug 'myw/vim-polymer'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
@@ -49,22 +44,19 @@ if s:darwin
 endif
 Plug 'scrooloose/syntastic'
 Plug 'stephpy/vim-yaml'
-Plug 'syngan/vim-vimlint', { 'for': 'vim' }
-" Plug 'takac/vim-spotifysearch'
+Plug 'syngan/vim-vimlint'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wakatime/vim-wakatime'
-Plug 'ynkdir/vim-vimlparser', { 'for': 'vim' }
+Plug 'ynkdir/vim-vimlparser'
 
 call plug#end()
 
@@ -126,7 +118,6 @@ set diffopt+=filler,vertical
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
-" let g:solarized_termcolors=256
 
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
@@ -135,7 +126,7 @@ nnoremap <leader>c :TComment<CR>
 nnoremap <leader>ft :set filetype?<CR>
 
 " Remap fzf to fzf
-" nnoremap <leader>fzf :FZF<SPACE>
+nnoremap <leader>fzf :FZF<SPACE>
 
 " Preview markdown files in Marked.app on Mac
 if s:darwin
@@ -187,7 +178,7 @@ if s:darwin
   let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 endif
 
-" let g:syntastic_html_checkers = ['tidy']
+let g:syntastic_html_checkers = ['tidy']
 
 " Ignore Apple's W3-invalid html code for pinned favicons
 let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
@@ -360,12 +351,3 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 " Pulses the first match after hitting the enter key
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
-
-" " ----------------------------------------------------------------------------
-" " spotify.vim
-" " ----------------------------------------------------------------------------
-" let g:spotify_country_code = 'US'
-" let g:spotify_prev_key = "<F9>"
-" let g:spotify_playpause_key = "<F10>"
-" let g:spotify_next_key = "<F11>"
-

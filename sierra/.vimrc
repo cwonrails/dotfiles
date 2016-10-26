@@ -26,12 +26,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
 Plug 'leafgarland/typescript-vim'
+Plug 'lifepillar/vim-mucomplete'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'myw/vim-polymer'
@@ -42,9 +42,7 @@ Plug 'rhysd/committia.vim'
 if s:darwin
   Plug 'rizzatti/dash.vim'
 endif
-Plug 'scrooloose/syntastic'
 Plug 'stephpy/vim-yaml'
-Plug 'syngan/vim-vimlint'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive'
@@ -56,6 +54,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wakatime/vim-wakatime'
+Plug 'w0rp/ale'
 Plug 'ynkdir/vim-vimlparser'
 
 call plug#end()
@@ -70,17 +69,17 @@ syntax enable
 filetype plugin indent on
 
 " Source .vimrc on save, refreshing Airline UI if necessary
-function! RefreshUI()
-  if exists(':AirlineRefresh')
-    AirlineRefresh
-  else
+" function! RefreshUI()
+"   if exists(':AirlineRefresh')
+"     AirlineRefresh
+  " else
     " Clear & redraw the screen, then redraw all statuslines.
-    redraw!
-    redrawstatus!
-  endif
-endfunction
-
-au BufWritePost .vimrc source $MYVIMRC | :call RefreshUI()
+"     redraw!
+"     redrawstatus!
+"   endif
+" endfunction
+"
+" au BufWritePost .vimrc source $MYVIMRC | :call RefreshUI()
 
 " ============================================================================
 " Basic key bindings
@@ -138,14 +137,14 @@ endif
 nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
-:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+" :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
-nnoremap <leader>si :SyntasticInfo<CR>
+" nnoremap <leader>si :SyntasticInfo<CR>
 
 " Source .vimrc
 nnoremap <leader>sv :source ~/.vimrc<CR>
@@ -163,47 +162,47 @@ nnoremap <leader>x :q!<CR>
 autocmd BufWritePre * StripWhitespace
 
 " Syntastic base settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_id_checkers = 1
-let g:syntastic_echo_current_error = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_id_checkers = 1
+" let g:syntastic_echo_current_error = 1
 
 " CSS linting
 " let g:syntastic_css_checkers = ['stylelint']
 
 " HTML linting
-if s:darwin
-  let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-endif
+" if s:darwin
+"   let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+" endif
 
-let g:syntastic_html_checkers = ['tidy']
+" let g:syntastic_html_checkers = ['tidy']
 
 " Ignore Apple's W3-invalid html code for pinned favicons
-let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
-let g:syntastic_html_tidy_ignore_errors = [
-     \   '<link> proprietary attribute "color"',
-     \   '<link> proprietary attribute "crossorigin"',
-     \   '<link> proprietary attribute "integrity"',
-     \   '<script> proprietary attribute "crossorigin"',
-     \   '<script> proprietary attribute "integrity"'
-     \ ]
+" let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
+" let g:syntastic_html_tidy_ignore_errors = [
+"      \   '<link> proprietary attribute "color"',
+"      \   '<link> proprietary attribute "crossorigin"',
+"      \   '<link> proprietary attribute "integrity"',
+"      \   '<script> proprietary attribute "crossorigin"',
+"      \   '<script> proprietary attribute "integrity"'
+"      \ ]
 
 " Javascript linting
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_checkers = ['standard']
 " autocmd bufwritepost *.js silent !standard-format -w %
 
 
 " JSON linting
-let g:syntastic_json_checkers = ['jsonlint']
+" let g:syntastic_json_checkers = ['jsonlint']
 
 " Pug linting
 " let g:syntastic_pug_checkers = ['pug_lint']
 
 " Shell script / bash linting
-let g:syntastic_sh_checkers = ['shellcheck']
+" let g:syntastic_sh_checkers = ['shellcheck']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -322,7 +321,7 @@ let g:undotree_WindowLayout = 2
 " vim-airline
 " ----------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
-let g:airline_enable_syntastic = 1
+" let g:airline_enable_syntastic = 1
 let g:airline#extensions#obsession#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_format = '%s '
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -351,3 +350,10 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 " Pulses the first match after hitting the enter key
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
+
+"  ---------------------------------------------------------------------------
+"  ale
+"  ---------------------------------------------------------------------------
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

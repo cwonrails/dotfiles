@@ -119,7 +119,12 @@ alias gpom="git pull --rebase origin master"
 alias gpum="git pull --rebase upstream master"
 alias grau="git remote add upstream"
 alias grh="git reset --hard"
+
+
+alias gcb="git-create-branch"
+alias gdb="git-delete-branch"
 alias gs="git status"
+alias gws="git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'"
 
 ## Navigation ##
 # Go back from current directory

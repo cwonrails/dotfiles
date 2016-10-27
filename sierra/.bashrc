@@ -174,3 +174,7 @@ alias lsd='ls -l | grep "^d"'
 
 # yarn global binaries
 export PATH="$HOME/.yarn-config/global/node_modules/.bin:$PATH"
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash ] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash

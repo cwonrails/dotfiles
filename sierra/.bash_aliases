@@ -38,9 +38,9 @@ if which ag &> /dev/null; then
   alias lag='ls -la | ag '
 fi
 
-# if which sift &> /dev/null; then
-#   alias las='ls -la | sift '
-# fi
+if which sift &> /dev/null; then
+  alias las='ls -la | sift '
+fi
 
 # Automatically use sudo with mtr
 alias mtr='sudo mtr'
@@ -104,25 +104,25 @@ alias gba="git branch -a"
 alias gbd="git branch -D"
 alias gc="git commit -m"
 alias gcl='git clone'
-alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcp="git cherry-pick"
 alias gd='git diff'
-alias gdno='git diff --name-only'
-alias gdum='git diff upstream/master'
 alias gdumno='git diff upstream/master --name-only'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gm="git merge --ff"
-alias gp="git push"
 alias gpt="git push --tags"
 alias gpom="git pull --rebase origin master"
-alias gpum="git pull --rebase upstream master"
 alias grau="git remote add upstream"
 alias grh="git reset --hard"
 
-
 alias gcb="git-create-branch"
+alias gco="git checkout"
 alias gdb="git-delete-branch"
+alias gdno='git diff --name-only'
+alias gp="git push"
+alias gpf="git push --force"
+alias gpum="git pull --rebase upstream master"
+alias gdum='git diff upstream/master'
 alias gs="git status"
 alias gws="git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'"
 
@@ -168,9 +168,15 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
+## nvm ##
+alias n4='nvm use lts/argon'
+alias n6='nvm use lts/boron'
+alias n7='nvm use v7'
+alias ns='nvm use system'
+
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
-alias ua='git-repo-updater && bu && du && gitup && gu && vu && pu && tu && ncu -g'
+alias ua='git-repo-updater && bu && du && gu && vu && pu && tu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor'

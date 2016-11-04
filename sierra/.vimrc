@@ -20,13 +20,13 @@ Plug 'fatih/vim-go'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'inside/vim-search-pulse'
-if s:darwin
-  Plug 'itspriddle/vim-marked'
-endif
+Plug 'itspriddle/vim-marked'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kewah/vim-stylefmt'
 Plug 'leafgarland/typescript-vim'
+Plug 'lumiliet/vim-twig'
 Plug 'majutsushi/tagbar'
+Plug 'maralla/completor.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -37,9 +37,7 @@ Plug 'myw/vim-polymer'
 Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
 Plug 'rhysd/committia.vim'
-if s:darwin
-  Plug 'rizzatti/dash.vim'
-endif
+Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
 Plug 'stephpy/vim-yaml'
 Plug 'thirtythreeforty/lessspace.vim'
@@ -66,19 +64,6 @@ syntax enable
 
 " Enable indentation for specific filetypes
 filetype plugin indent on
-
-" Source .vimrc on save, refreshing Airline UI if necessary
-function! RefreshUI()
-  if exists(':AirlineRefresh')
-    AirlineRefresh
-  else
-    " Clear & redraw the screen, then redraw all statuslines.
-    redraw!
-    redrawstatus!
-  endif
-endfunction
-
-au BufWritePost .vimrc source $MYVIMRC | :call RefreshUI()
 
 " ============================================================================
 " Basic key bindings
@@ -143,7 +128,7 @@ nnoremap <leader>w :update<CR>
 nnoremap <leader>si :SyntasticInfo<CR>
 
 " Source .vimrc
-" nnoremap <leader>sv :source ~/.vimrc<CR>
+nnoremap <leader>sv :source ~/.vimrc<CR>
 
 " Toggle TagBar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -166,9 +151,7 @@ let g:syntastic_echo_current_error = 1
 " let g:syntastic_css_checkers = ['stylelint']
 
 " HTML linting
-if s:darwin
-  let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-endif
+let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 
 let g:syntastic_html_checkers = ['tidy']
 
@@ -201,10 +184,10 @@ let g:syntastic_sh_checkers = ['shellcheck']
 autocmd filetype markdown setlocal spell
 
 " Activiate conceal for Markdown
-if has ('conceal')
-  autocmd filetype markdown set concealcursor=inv
-  autocmd filetype markdown set conceallevel=2
-endif
+" if has ('conceal')
+"   autocmd filetype markdown set concealcursor=inv
+"   autocmd filetype markdown set conceallevel=2
+" endif
 
 " Disable highlighting of non-capitalized terms in Markdown
 set spellcapcheck=
@@ -213,9 +196,7 @@ set spellcapcheck=
 cmap w!! w !sudo tee > /dev/null %
 
 " Make vim use homebrew-installed bash
-if s:darwin
-  set shell=/usr/local/bin/bash
-endif
+set shell=/usr/local/bin/bash
 
 " Editorconfig settings
 let g:EditorConfig_core_mode = 'external_command'

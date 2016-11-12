@@ -22,7 +22,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
 Plug 'itspriddle/vim-marked'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
 Plug 'leafgarland/typescript-vim'
 Plug 'lumiliet/vim-twig'

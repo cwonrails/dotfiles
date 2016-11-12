@@ -21,6 +21,9 @@ alias dfpj='cp ~/default.package.json/package.json `pwd`'
 # Recursively delete `.DS_Store` files
 alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
 
+# Fix incorrectly entered command via thefuck
+alias f='fuck'
+
 # Print history
 alias h='history'
 

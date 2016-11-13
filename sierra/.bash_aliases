@@ -124,6 +124,7 @@ alias gdb="git-delete-branch"
 alias gdno='git diff --name-only'
 alias gp="git push"
 alias gpf="git push --force"
+alias gpu="git pull upstream"
 alias gpum="git pull --rebase upstream master"
 alias gdum='git diff upstream/master'
 alias gs="git status"

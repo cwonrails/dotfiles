@@ -172,16 +172,5 @@ alias lsd='ls -l | grep "^d"'
 # Enable fzf installed via git
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
-# yarn global binaries
-export PATH="$HOME/.yarn-config/global/node_modules/.bin:$PATH"
-
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-[ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash ] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash
-
-# activate nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-[[ -r $NVM_DIR/bash_completion ]] && . "$NVM_DIR/bash_completion"
-
+# Enable yarn nightly
+export PATH="$HOME/.yarn/bin:$PATH"

@@ -21,6 +21,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
+Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kewah/vim-stylefmt'
@@ -43,6 +44,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
+Plug 'taohex/lightline-buffer'
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
@@ -203,6 +205,8 @@ set shell=/usr/local/bin/bash
 
 " Editorconfig settings
 let g:EditorConfig_core_mode = 'external_command'
+let g:Editorconfig_exec_path = '/usr/local/bin/editorconfig'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Fugitive shotcuts
 nnoremap <leader>gd :<Leader>Gdiff<cr>
@@ -340,3 +344,49 @@ autocmd User IncSearchExecute :call search_pulse#Pulse()
 "  lessspace.vim
 "  ---------------------------------------------------------------------------
 let g:lessspace_blacklist = ['python']
+
+"  ---------------------------------------------------------------------------
+"  lightline-buffer
+"  ---------------------------------------------------------------------------
+" use lightline-buffer in lightline
+let g:lightline = {
+    \ 'tabline': {
+        \ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+        \ 'right': [ [ 'close' ], ],
+        \ },
+    \ 'component_expand': {
+        \ 'buffercurrent': 'lightline#buffer#buffercurrent2',
+        \ },
+    \ 'component_function': {
+        \ 'bufferbefore': 'lightline#buffer#bufferbefore',
+        \ 'bufferafter': 'lightline#buffer#bufferafter',
+        \ 'bufferinfo': 'lightline#buffer#bufferinfo',
+        \ },
+    \ }
+
+" Navigate buffers
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprev<cr>
+nnoremap <leader>bd :bdelete<cr>
+
+" lightline-buffer settings
+let g:lightline_buffer_readonly_icon = ''
+let g:lightline_buffer_modified_icon = '✭'
+let g:lightline_buffer_git_icon = ' '
+let g:lightline_buffer_ellipsis_icon = '..'
+let g:lightline_buffer_expand_left_icon = '◀ '
+let g:lightline_buffer_expand_right_icon = ' ▶'
+let g:lightline_buffer_active_buffer_left_icon = ''
+let g:lightline_buffer_active_buffer_right_icon = ''
+let g:lightline_buffer_separator_icon = ' '
+
+let g:lightline_buffer_show_bufnr = 1
+let g:lightline_buffer_rotate = 0
+let g:lightline_buffer_fname_mod = ':t'
+
+let g:lightline_buffer_maxflen = 30
+let g:lightline_buffer_maxfextlen = 3
+let g:lightline_buffer_minflen = 16
+let g:lightline_buffer_minfextlen = 3
+let g:lightline_buffer_reservelen = 20
+

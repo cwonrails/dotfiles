@@ -22,7 +22,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
 Plug 'itspriddle/vim-marked'
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kewah/vim-stylefmt'
 Plug 'leafgarland/typescript-vim'
 Plug 'lumiliet/vim-twig'
@@ -51,8 +51,8 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wakatime/vim-wakatime'
 " Plug 'w0rp/ale'
@@ -298,14 +298,14 @@ let g:undotree_WindowLayout = 2
 " ----------------------------------------------------------------------------
 " vim-airline
 " ----------------------------------------------------------------------------
-let g:airline_powerline_fonts = 1
-let g:airline_enable_syntastic = 1
-let g:airline#extensions#obsession#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_format = '%s '
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamecollapse = 0
-let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline_powerline_fonts = 1
+" let g:airline_enable_syntastic = 1
+" let g:airline#extensions#obsession#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_format = '%s '
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#fnamecollapse = 0
+" let g:airline#extensions#tabline#fnamemod = ':t'
 
 " ----------------------------------------------------------------------------
 " vim-search-pulse

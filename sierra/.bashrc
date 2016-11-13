@@ -31,9 +31,9 @@ if brew command command-not-found-init > /dev/null; then
 fi
 
 # composer
-if [ -f "$HOME/.composer/vendor/bin" ]; then
+# if [ -f "$HOME/.composer/vendor/bin" ]; then
   export PATH="$HOME/.composer/vendor/bin":$PATH
-fi
+# fi
 
 export COMPOSER_DISABLE_XDEBUG_WARN=1
 
@@ -169,6 +169,9 @@ alias lsd='ls -l | grep "^d"'
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
+# Enable fzf installed via git
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
+
 # yarn global binaries
 export PATH="$HOME/.yarn-config/global/node_modules/.bin:$PATH"
 
@@ -176,5 +179,9 @@ export PATH="$HOME/.yarn-config/global/node_modules/.bin:$PATH"
 # uninstall by removing these lines or running `tabtab uninstall yarn`
 [ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash ] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash
 
+# activate nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[[ -r $NVM_DIR/bash_completion ]] && . "$NVM_DIR/bash_completion"
+

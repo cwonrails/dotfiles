@@ -15,6 +15,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
+Plug 'dsawardekar/wordpress.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
@@ -47,7 +48,10 @@ Plug 'othree/yajs.vim'
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'Sirver/UltiSnips'
+Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'taohex/lightline-buffer'
 " Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
@@ -409,3 +413,8 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+" ----------------------------------------------------------------------------
+" javascript-libraries-syntax
+" ----------------------------------------------------------------------------
+
+let g:used_javascript_libs = 'jQuery,underscore,react,flux,requirejs,handlebars,vue'

@@ -69,6 +69,9 @@ alias sudo='sudo '
 # Force delete trash on local + mounted file systems; trash Apple System Logs
 alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
+# Start tmux
+alias tm='tmux'
+
 # Exit shell
 alias x='exit'
 

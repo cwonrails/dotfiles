@@ -6,7 +6,7 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ajh17/VimCompletesMe'
+" Plug 'ajh17/VimCompletesMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ap/vim-css-color'
@@ -14,8 +14,10 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'digitaltoad/vim-pug'
+Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
+Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
@@ -24,11 +26,11 @@ Plug 'inside/vim-search-pulse'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'kewah/vim-stylefmt'
-Plug 'leafgarland/typescript-vim'
+Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
+Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript' }
 Plug 'lumiliet/vim-twig'
 Plug 'majutsushi/tagbar'
-Plug 'maralla/completor.vim'
+" Plug 'maralla/completor.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -37,7 +39,10 @@ Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'myw/vim-polymer'
+Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'othree/html5.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim'
@@ -45,6 +50,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'taohex/lightline-buffer'
+" Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
@@ -55,6 +61,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wakatime/vim-wakatime'
+Plug 'wellle/targets.vim'
+Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py --gocode-completer --tern-completer' }
 " Plug 'w0rp/ale'
 
 call plug#end()
@@ -242,7 +250,6 @@ set nostartofline
 set nrformats=hex
 set number
 set numberwidth=5
-set omnifunc=syntaxcomplete#Complete
 set relativenumber
 set ruler
 set scrolloff=5
@@ -275,6 +282,11 @@ set textwidth=0
 if exists('&colorcolumn')
   set colorcolumn=80
 endif
+
+" Navigate buffers
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprev<cr>
+nnoremap <leader>bd :bdelete<cr>
 
 " ----------------------------------------------------------------------------
 " Fix for Y yanking text both before and after cursor
@@ -362,11 +374,6 @@ let g:lightline = {
         \ },
     \ }
 
-" Navigate buffers
-nnoremap ]b :bnext<cr>
-nnoremap [b :bprev<cr>
-nnoremap <leader>bd :bdelete<cr>
-
 " lightline-buffer settings
 let g:lightline_buffer_readonly_icon = ''
 let g:lightline_buffer_modified_icon = '✭'
@@ -387,4 +394,18 @@ let g:lightline_buffer_maxfextlen = 3
 let g:lightline_buffer_minflen = 16
 let g:lightline_buffer_minfextlen = 3
 let g:lightline_buffer_reservelen = 20
+
+" ----------------------------------------------------------------------------
+" YouCompleteMe, UltiSnips, and Supertab
+" ----------------------------------------------------------------------------
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 

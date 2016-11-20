@@ -54,7 +54,7 @@ Plug 'Sirver/UltiSnips'
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'taohex/lightline-buffer'
-" Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
+Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'

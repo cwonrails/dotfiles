@@ -72,6 +72,9 @@ alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv 
 # Start tmux
 alias tm='tmux'
 
+# Run locally built wpscan
+alias wpscan='ruby ~/github/clones/wpscan/wpscan.rb'
+
 # Exit shell
 alias x='exit'
 

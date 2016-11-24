@@ -172,5 +172,3 @@ alias lsd='ls -l | grep "^d"'
 # Enable fzf installed via git
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
-# Enable yarn nightly
-export PATH="$HOME/.yarn/bin:$PATH"

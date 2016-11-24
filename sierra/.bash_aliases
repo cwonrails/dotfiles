@@ -186,7 +186,7 @@ alias ns='nvm use system'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
-alias ua='git-repo-updater && bu && du && gu && vu && pu && tu && ncu -g'
+alias ua='git-repo-updater && bu && du && gu && yu && vu && pu && tu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor'
@@ -203,6 +203,9 @@ alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip i
 
 # Tmux: Update, install, and remove unused plugins
 alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
+
+# Upgrade yarn nightly version
+alias yu='cd ~/shell-scripts; ./upgrade-yarn.sh'
 
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'

@@ -186,7 +186,7 @@ alias ns='nvm use system'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
-alias ua='git-repo-updater && bu && du && gu && yu && vu && pu && tu && ncu -g'
+alias ua='git-repo-updater && bu && du && gu && yu && vu && pu && tu && ncu -g && cd ~'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor'

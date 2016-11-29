@@ -117,7 +117,9 @@
   sync = !legit sync
   switch = !legit switch
   resync = !legit resync
+
 [user]
-	signingkey = cwonrails@gmail.com
+  signingkey = cwonrails@gmail.com
+
 [commit]
-	gpgsign = true
+  gpgsign = true

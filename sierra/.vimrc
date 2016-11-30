@@ -6,81 +6,67 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'ajh17/VimCompletesMe'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
-" Plug 'chrisbra/csv.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
-" Plug 'dsawardekar/wordpress.vim'
+Plug 'dsawardekar/wordpress.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
-" Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-" Plug 'janko-m/vim-test'
+Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kewah/vim-stylefmt'
 Plug 'leafgarland/typescript-vim'
-" Plug 'lumiliet/vim-twig'
+Plug 'lumiliet/vim-twig'
 Plug 'majutsushi/tagbar'
-" Plug 'maralla/completor.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-Plug 'mhinz/vim-signify'
-" Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-" Plug 'myw/vim-polymer'
-" Plug 'neomake/neomake'
+Plug 'myw/vim-polymer'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'othree/html5.vim'
-" Plug 'othree/javascript-libraries-syntax.vim'
-" Plug 'othree/es.next.syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
-" Plug 'pbrisbin/vim-mkdir'
-" Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim'
-" Plug 'scrooloose/syntastic'
-" Plug 'shawncplus/phpcomplete.vim'
-" Plug 'Shougo/echodoc.vim'
-" Plug 'Shougo/neosnippet-snippets'
-" Plug 'Sirver/UltiSnips'
-" Plug 'StanAngeloff/php.vim'
+Plug 'scrooloose/syntastic'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Sirver/UltiSnips'
+Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-yaml'
-" Plug 'taohex/lightline-buffer'
-" Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
+Plug 'taohex/lightline-buffer'
+Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-" Plug 'tweekmonster/helpful.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wakatime/vim-wakatime'
-" Plug 'wellle/targets.vim'
-" Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py --gocode-completer --tern-completer' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'w0rp/ale'
+Plug 'wellle/targets.vim'
+Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py --gocode-completer --tern-completer' }
 
 call plug#end()
 
@@ -146,14 +132,14 @@ endif
 nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
-" :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
-" nnoremap <leader>si :SyntasticInfo<CR>
+nnoremap <leader>si :SyntasticInfo<CR>
 
 " Source .vimrc
 nnoremap <leader>sv :source ~/.vimrc<CR>
@@ -168,56 +154,42 @@ nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>x :q!<CR>
 
 " Syntastic base settings
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_id_checkers = 1
-" let g:syntastic_echo_current_error = 1
-
-" CSS linting
-" let g:syntastic_css_checkers = ['stylelint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_id_checkers = 1
+let g:syntastic_echo_current_error = 1
 
 " HTML linting
-" let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 
-" let g:syntastic_html_checkers = ['tidy']
+let g:syntastic_html_checkers = ['tidy']
 
 " Ignore Apple's W3-invalid html code for pinned favicons
-" let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
-" let g:syntastic_html_tidy_ignore_errors = [
-"      \   '<link> proprietary attribute "color"',
-"      \   '<link> proprietary attribute "crossorigin"',
-"      \   '<link> proprietary attribute "integrity"',
-"      \   '<script> proprietary attribute "crossorigin"',
-"      \   '<script> proprietary attribute "integrity"'
-"      \ ]
+let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
+let g:syntastic_html_tidy_ignore_errors = [
+     \   '<link> proprietary attribute "color"',
+     \   '<link> proprietary attribute "crossorigin"',
+     \   '<link> proprietary attribute "integrity"',
+     \   '<script> proprietary attribute "crossorigin"',
+     \   '<script> proprietary attribute "integrity"'
+     \ ]
 
 " Javascript linting
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_javascript_checkers = ['standard']
-" autocmd bufwritepost *.js silent !standard-format -w %
+let g:syntastic_javascript_checkers = ['eslint']
 
 " JSON linting
-" let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_json_checkers = ['jsonlint']
 
 " Pug linting
-" let g:syntastic_pug_checkers = ['pug_lint']
+let g:syntastic_pug_checkers = ['pug_lint']
 
 " Shell script / bash linting
-" let g:syntastic_sh_checkers = ['shellcheck']
-
-" VimL linting
-" let g:syntastic_vim_checkers = ['vint']
+let g:syntastic_sh_checkers = ['shellcheck']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
-
-" Activiate conceal for Markdown
-" if has ('conceal')
-"   autocmd filetype markdown set concealcursor=inv
-"   autocmd filetype markdown set conceallevel=2
-" endif
 
 " Disable highlighting of non-capitalized terms in Markdown
 set spellcapcheck=
@@ -231,7 +203,6 @@ set shell=/usr/local/bin/bash
 " Editorconfig settings
 let g:EditorConfig_core_mode = 'external_command'
 let g:Editorconfig_exec_path = '/usr/local/bin/editorconfig'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Fugitive shotcuts
 nnoremap <leader>gd :<Leader>Gdiff<cr>
@@ -273,7 +244,6 @@ set relativenumber
 set ruler
 set scrolloff=5
 set sessionoptions-=options
-" set statusline=%{ALEGetStatusLine()}
 set shiftwidth=2
 set shortmess=aIT
 set showcmd
@@ -330,18 +300,6 @@ runtime macros/matchit.vim
 let g:undotree_WindowLayout = 2
 
 " ----------------------------------------------------------------------------
-" vim-airline
-" ----------------------------------------------------------------------------
-let g:airline_powerline_fonts = 1
-" let g:airline_enable_syntastic = 1
-" let g:airline#extensions#obsession#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_format = '%s '
-" let g:airline#extensions#tabline#buffer_nr_show = 1
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#fnamecollapse = 0
-" let g:airline#extensions#tabline#fnamemod = ':t'
-
-" ----------------------------------------------------------------------------
 " vim-search-pulse
 " ----------------------------------------------------------------------------
 " integration with incsearch.vim
@@ -364,19 +322,6 @@ autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
 "  ---------------------------------------------------------------------------
-"  ale
-"  ---------------------------------------------------------------------------
-" let g:ale_linters = {
-"       \ 'javascript': ['eslint'],
-"       \}
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-nmap <silent> a[ <Plug>(ale_previous_wrap)
-nmap <silent> a] <Plug>(ale_next_wrap)
-
-"  ---------------------------------------------------------------------------
 "  lessspace.vim
 "  ---------------------------------------------------------------------------
 let g:lessspace_blacklist = ['python']
@@ -385,64 +330,56 @@ let g:lessspace_blacklist = ['python']
 "  lightline-buffer
 "  ---------------------------------------------------------------------------
 " use lightline-buffer in lightline
-" let g:lightline = {
-"     \ 'tabline': {
-"         \ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-"         \ 'right': [ [ 'close' ], ],
-"         \ },
-"     \ 'component_expand': {
-"         \ 'buffercurrent': 'lightline#buffer#buffercurrent2',
-"         \ },
-"     \ 'component_function': {
-"         \ 'bufferbefore': 'lightline#buffer#bufferbefore',
-"         \ 'bufferafter': 'lightline#buffer#bufferafter',
-"         \ 'bufferinfo': 'lightline#buffer#bufferinfo',
-"         \ },
-"     \ }
-"
-" " lightline-buffer settings
-" let g:lightline_buffer_readonly_icon = ''
-" let g:lightline_buffer_modified_icon = '✭'
-" let g:lightline_buffer_git_icon = ' '
-" let g:lightline_buffer_ellipsis_icon = '..'
-" let g:lightline_buffer_expand_left_icon = '◀ '
-" let g:lightline_buffer_expand_right_icon = ' ▶'
-" let g:lightline_buffer_active_buffer_left_icon = ''
-" let g:lightline_buffer_active_buffer_right_icon = ''
-" let g:lightline_buffer_separator_icon = ' '
-"
-" let g:lightline_buffer_show_bufnr = 1
-" let g:lightline_buffer_rotate = 0
-" let g:lightline_buffer_fname_mod = ':t'
-"
-" let g:lightline_buffer_maxflen = 30
-" let g:lightline_buffer_maxfextlen = 3
-" let g:lightline_buffer_minflen = 16
-" let g:lightline_buffer_minfextlen = 3
-" let g:lightline_buffer_reservelen = 20
+let g:lightline = {
+    \ 'tabline': {
+        \ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+        \ 'right': [ [ 'close' ], ],
+        \ },
+    \ 'component_expand': {
+        \ 'buffercurrent': 'lightline#buffer#buffercurrent2',
+        \ },
+    \ 'component_function': {
+        \ 'bufferbefore': 'lightline#buffer#bufferbefore',
+        \ 'bufferafter': 'lightline#buffer#bufferafter',
+        \ 'bufferinfo': 'lightline#buffer#bufferinfo',
+        \ },
+    \ }
 
-" " ----------------------------------------------------------------------------
-" " YouCompleteMe, UltiSnips, and Supertab
-" " ----------------------------------------------------------------------------
-"
-" " make YCM compatible with UltiSnips (using supertab)
-" " let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" " let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" " let g:SuperTabDefaultCompletionType = '<C-n>'
-"
-" " better key bindings for UltiSnipsExpandTrigger
-" " let g:UltiSnipsExpandTrigger = "<tab>"
-" " let g:UltiSnipsJumpForwardTrigger = "<tab>"
-" " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" lightline-buffer settings
+let g:lightline_buffer_readonly_icon = ''
+let g:lightline_buffer_modified_icon = '✭'
+let g:lightline_buffer_git_icon = ' '
+let g:lightline_buffer_ellipsis_icon = '..'
+let g:lightline_buffer_expand_left_icon = '◀ '
+let g:lightline_buffer_expand_right_icon = ' ▶'
+let g:lightline_buffer_active_buffer_left_icon = ''
+let g:lightline_buffer_active_buffer_right_icon = ''
+let g:lightline_buffer_separator_icon = ' '
+
+let g:lightline_buffer_show_bufnr = 1
+let g:lightline_buffer_rotate = 0
+let g:lightline_buffer_fname_mod = ':t'
+
+let g:lightline_buffer_maxflen = 30
+let g:lightline_buffer_maxfextlen = 3
+let g:lightline_buffer_minflen = 16
+let g:lightline_buffer_minfextlen = 3
+let g:lightline_buffer_reservelen = 20
+
+" ----------------------------------------------------------------------------
+" YouCompleteMe, UltiSnips, and Supertab
+" ----------------------------------------------------------------------------
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-
-" let g:used_javascript_libs = 'jQuery,underscore,react,flux,requirejs,handlebars,vue'
-
-" ----------------------------------------------------------------------------
-" vim-signify
-" ----------------------------------------------------------------------------
-
-let g:signify_vcs_list = [ 'git' ]
+let g:used_javascript_libs = 'jQuery,underscore,react,flux,requirejs,handlebars,vue'

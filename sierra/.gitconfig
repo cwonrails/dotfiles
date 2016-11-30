@@ -121,5 +121,5 @@
 [user]
   signingkey = cwonrails@gmail.com
 
-[commit]
-  gpgsign = true
+# [commit]
+  # gpgsign = true

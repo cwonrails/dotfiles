@@ -38,15 +38,15 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # List all files in directory and search output with ag or sift
 if which ag &> /dev/null; then
-  alias lag='ls -la | ag '
+  alias lag='ls -la | ag'
 fi
 
 if which sift &> /dev/null; then
-  alias las='ls -la | sift '
+  alias las='ls -la | sift'
 fi
 
 # Automatically use sudo with mtr
-alias mtr='sudo mtr'
+# alias mtr='sudo mtr'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'

@@ -30,6 +30,9 @@ if brew command command-not-found-init > /dev/null; then
   eval "$(brew command-not-found-init)";
 fi
 
+# grc (generic colourizer)
+# . /usr/local/etc/grc.bashrc
+
 # composer
 # if [ -f "$HOME/.composer/vendor/bin" ]; then
   export PATH="$HOME/.composer/vendor/bin":$PATH

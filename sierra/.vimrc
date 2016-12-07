@@ -12,13 +12,12 @@ Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
-Plug 'dsawardekar/wordpress.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elzr/vim-json'
+Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
@@ -27,8 +26,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'kewah/vim-stylefmt'
-Plug 'leafgarland/typescript-vim'
+Plug 'jwalton512/vim-blade'
+Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
+Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript tslint' }
 Plug 'lumiliet/vim-twig'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
@@ -46,7 +46,6 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
-Plug 'shawncplus/phpcomplete.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Sirver/UltiSnips'
 Plug 'StanAngeloff/php.vim'

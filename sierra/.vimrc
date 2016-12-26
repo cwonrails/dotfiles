@@ -26,10 +26,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'jwalton512/vim-blade'
+" Plug 'jwalton512/vim-blade'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript tslint' }
-Plug 'lumiliet/vim-twig'
+Plug 'lumiliet/vim-twig', { 'do': 'composer global require twig/twig:~1.0' }
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
@@ -40,7 +40,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'myw/vim-polymer'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
-Plug 'othree/html5.vim'
+Plug 'othree/html5.vim', { 'do': 'npm install -g htmlhint' }
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
@@ -48,7 +48,8 @@ Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Sirver/UltiSnips'
-Plug 'StanAngeloff/php.vim'
+" Plug 'StanAngeloff/php.vim'
+Plug 'syngan/vim-vimlint'
 Plug 'stephpy/vim-yaml'
 Plug 'taohex/lightline-buffer'
 Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
@@ -57,15 +58,16 @@ Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown', { 'do': 'npm install -g mdl; pip install proselint; pip install --upgrade proselint' }
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'do': 'gem install rubocop; gem update rubocop' }
 Plug 'wakatime/vim-wakatime'
 Plug 'wellle/targets.vim'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py --gocode-completer --tern-completer' }
+Plug 'ynkdir/vim-vimlparser'
 
 call plug#end()
 
@@ -163,7 +165,7 @@ let g:syntastic_echo_current_error = 1
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 
-let g:syntastic_html_checkers = ['tidy']
+let g:syntastic_html_checkers = ['tidy', 'htmlhint']
 
 " Ignore Apple's W3-invalid html code for pinned favicons
 let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
@@ -186,6 +188,9 @@ let g:syntastic_pug_checkers = ['pug_lint']
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']
+
+" VimL linting
+let g:syntastic_vim_checkers = ['vimlint']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -218,7 +223,6 @@ set complete-=i
 set completeopt=menuone,preview
 set directory=$HOME/.vim/swap
 set display+=lastline
-set encoding=utf-8
 set expandtab
 set formatoptions+=j
 set hidden
@@ -374,9 +378,9 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax

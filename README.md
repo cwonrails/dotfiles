@@ -1,4 +1,4 @@
-Setup(s) for making things.
+Dotfiles and scripts for macOS Sierra, Ubuntu Xenial, & Arch Linux
 
 License
 -------
@@ -10,17 +10,23 @@ Attribution
 
 Incorporates ideas and code by the following:
 
-**[thoughtbot](https://github.com/thoughtbot)**
-
-* [Dotfiles](https://github.com/thoughtbot/dotfiles)
-* [License](https://github.com/thoughtbot/dotfiles/blob/master/LICENSE)
-
 **[Mathias Bynens](https://github.com/mathiasbynens)**
 
 * [Dotfiles](https://github.com/mathiasbynens/dotfiles)
 * [License](https://github.com/mathiasbynens/dotfiles/blob/master/LICENSE-MIT.txt)
 
-**[junegunn](https://github.com/junegunn)**
+**[Junegunn Choi](https://github.com/junegunn)**
 
 * [Dotfiles](https://github.com/junegunn/dotfiles)
 * No license
+
+
+**[Paul Irish](https://github.com/thoughtbot)**
+
+* [Dotfiles](https://github.com/paulirish/dotfiles)
+* No license
+
+**[thoughtbot](https://github.com/thoughtbot)**
+
+* [Dotfiles](https://github.com/thoughtbot/dotfiles)
+* [License](https://github.com/thoughtbot/dotfiles/blob/master/LICENSE)

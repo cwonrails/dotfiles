@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Get information on a homebrew formula quickly
-alias bi='brew info '
-
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force && brew cask cleanup'
 
@@ -12,41 +9,14 @@ alias brewdep='brew uses --installed'
 # Clear screen (works with tmux)
 alias c='clear'
 
-# Colorize cat output with pygments
-alias ccat='pygmentize -O style=solarizeddark -f console256 -g'
-
-# Copy default blank package.json to current folder
-alias dfpj='cp ~/default.package.json/package.json `pwd`'
-
 # Recursively delete `.DS_Store` files
 alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
-
-# Fix incorrectly entered command via thefuck
-alias f='fuck'
 
 # Print history
 alias h='history'
 
-# Use htop without having to type password
-alias htop='sudo htop'
-
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-
-# Jobs
-# alias j='jobs'
-
-# List all files in directory and search output with ag or sift
-if which ag &> /dev/null; then
-  alias lag='ls -la | ag'
-fi
-
-if which sift &> /dev/null; then
-  alias las='ls -la | sift'
-fi
-
-# Automatically use sudo with mtr
-# alias mtr='sudo mtr'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
@@ -60,20 +30,11 @@ alias o='open .'
 # Reload shell
 alias r='exec $SHELL -l'
 
-# Fix 'ls' typing errors
-alias sl='ls'
-
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
 # Force delete trash on local + mounted file systems; trash Apple System Logs
 alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
-
-# Start tmux
-alias tm='tmux'
-
-# Run locally built wpscan
-alias wpscan='ruby ~/github/clones/wpscan/wpscan.rb'
 
 # Exit shell
 alias x='exit'
@@ -81,7 +42,6 @@ alias x='exit'
 ## Dotfiles management ##
 # Quickly edit dotfiles
 alias ba='vim ~/.bash_aliases'
-alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
@@ -98,24 +58,25 @@ alias dfdb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc 
 # Back up OSX dotfiles to Github repo and check diff
 alias dfgb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/sierra && cd ~/github/repos/public/dotfiles/sierra && git diff'
 
-## Git ##
-
-# Enable tab completion for `g` by marking it as an alias for `git`
-if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  complete -o default -o nospace -F _git g;
-fi;
-
-# TJ Hollowaychuck's git aliases, modified
-alias ga="git add"
-alias gac="git commit -a -m"
+# TJ Hollowaychuck's git aliases (customized)
+alias ga='git add'
 alias gb="git branch"
+alias gc="git commit -m"
+alias gcb="git-create-branch"
+alias gcl='git clone'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdb="git-delete-branch"
+alias gdno='git diff --name-only'
+alias gp="git push"
+alias gpf="git push --force"
+alias gs="git status"
+
+alias gac="git commit -a -m"
 alias gba="git branch -a"
 alias gbd="git branch -D"
-alias gc="git commit -m"
-alias gcl='git clone'
 alias gcob="git checkout -b"
 alias gcp="git cherry-pick"
-alias gd='git diff'
 alias gdumno='git diff upstream/master --name-only'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gm="git merge --ff"
@@ -123,17 +84,8 @@ alias gpt="git push --tags"
 alias gpom="git pull --rebase origin master"
 alias grau="git remote add upstream"
 alias grh="git reset --hard"
-
-alias gcb="git-create-branch"
-alias gco="git checkout"
-alias gdb="git-delete-branch"
-alias gdno='git diff --name-only'
-alias gp="git push"
-alias gpf="git push --force"
 alias gpu="git pull upstream"
 alias gpum="git pull --rebase upstream master"
-alias gdum='git diff upstream/master'
-alias gs="git status"
 alias gws="git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'"
 
 ## Navigation ##

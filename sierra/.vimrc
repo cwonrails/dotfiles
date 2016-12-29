@@ -1,6 +1,7 @@
 if &compatible
   set nocompatible
 end
+scriptencoding utf-8
 
 let s:darwin = has('mac')
 
@@ -14,7 +15,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
-Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim', { 'do': 'brew install editorconfig; pip install editorconfig; pip install --upgrade editorconfig' }
 Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
@@ -24,12 +25,9 @@ Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'jwalton512/vim-blade'
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript tslint' }
-Plug 'lumiliet/vim-twig', { 'do': 'composer global require twig/twig:~1.0' }
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
@@ -38,7 +36,6 @@ Plug 'mbbill/undotree'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-Plug 'myw/vim-polymer'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'othree/html5.vim', { 'do': 'npm install -g htmlhint' }
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -46,28 +43,20 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'Sirver/UltiSnips'
-" Plug 'StanAngeloff/php.vim'
-Plug 'syngan/vim-vimlint'
 Plug 'stephpy/vim-yaml'
 Plug 'taohex/lightline-buffer'
 Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'do': 'npm install -g mdl; pip install proselint; pip install --upgrade proselint' }
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', { 'do': 'gem install rubocop; gem update rubocop' }
 Plug 'wakatime/vim-wakatime'
-Plug 'wellle/targets.vim'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py --gocode-completer --tern-completer' }
-Plug 'ynkdir/vim-vimlparser'
 
 call plug#end()
 
@@ -190,7 +179,7 @@ let g:syntastic_pug_checkers = ['pug_lint']
 let g:syntastic_sh_checkers = ['shellcheck']
 
 " VimL linting
-let g:syntastic_vim_checkers = ['vimlint']
+let g:syntastic_vim_checkers = ['vint']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -321,6 +310,7 @@ map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
 map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 
 " Pulses the first match after hitting the enter key
+" vint: -ProhibitAutocmdWithNoGroup
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
@@ -385,4 +375,4 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-let g:used_javascript_libs = 'jQuery,underscore,react,flux,requirejs,handlebars,vue'
+let g:used_javascript_libs = 'react,flux,vue,requirejs,handlebars,vue,jquery'

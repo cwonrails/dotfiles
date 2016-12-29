@@ -30,26 +30,6 @@ if brew command command-not-found-init > /dev/null; then
   eval "$(brew command-not-found-init)";
 fi
 
-# grc (generic colourizer)
-# . /usr/local/etc/grc.bashrc
-
-# composer
-# if [ -f "$HOME/.composer/vendor/bin" ]; then
-  export PATH="$HOME/.composer/vendor/bin":$PATH
-# fi
-
-export COMPOSER_DISABLE_XDEBUG_WARN=1
-
-# cargo
-if [ -f "$HOME/.cargo.bin" ]; then
-  export PATH="$PATH:$HOME/.cargo/bin:$PATH"
-fi
-
-# php70
-if [ -f /usr/local/opt/php70/bin/php ]; then
-  export PATH="/usr/local/opt/php70/bin/php:$PATH"
-fi
-
 # z
 if [ -f "/usr/local/etc/profile.d/z.sh" ]; then
   . "/usr/local/etc/profile.d/z.sh"
@@ -92,16 +72,6 @@ fi
 # Enable hub and alias it to git
 if which hub > /dev/null; then
   eval "$(hub alias -s)"
-fi
-
-# Enable Grunt completion
-if which grunt > /dev/null; then
-  eval "$(grunt --completion=bash)"
-fi
-
-# Enable Gulp completion
-if which gulp > /dev/null; then
-  eval "$(gulp --completion=bash)"
 fi
 
 # Enable thefuck if installed

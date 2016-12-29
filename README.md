@@ -20,8 +20,7 @@ Incorporates ideas and code by the following:
 * [Dotfiles](https://github.com/junegunn/dotfiles)
 * No license
 
-
-**[Paul Irish](https://github.com/thoughtbot)**
+**[Paul Irish](https://github.com/paulirish)**
 
 * [Dotfiles](https://github.com/paulirish/dotfiles)
 * No license

@@ -29,9 +29,6 @@ alias c='clear'
 # Print history
 alias h='history'
 
-# Show jobs
-alias j='jobs'
-
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
@@ -60,14 +57,14 @@ alias ......='cd ../../../../../../'
 # Return to previous directory
 alias b='cd - '
 
+# Go to Dropbox folder
+alias db='cd ~/Dropbox'
+
 # Go to Downloads folder
-alias dl="cd ~/Downloads"
+alias dl='cd ~/Downloads'
 
 # Go to Desktop folder
-alias dt="cd ~/Desktop"
-
-# Go to GitHub folder
-alias gh="cd ~/github"
+alias dt='cd ~/Desktop'
 
 # Go to GitHub clones folder
 alias ghc='cd ~/github/clones'
@@ -77,12 +74,6 @@ alias ghf='cd ~/github/forks'
 
 # Go to Github repos folder
 alias ghr='cd ~/github/repos'
-
-# Go to Github public repos folder
-alias ghpublic='cd ~/github/repos/public'
-
-# Go to Github public repos folder
-alias ghprivate='cd ~/github/repos/private'
 
 # Go to Home directory
 alias hd='cd ~'
@@ -96,9 +87,6 @@ alias nl='npm ls --depth=0'
 
 # List outdated global modules
 alias ngo='ncu -g'
-
-# List outdated local modules
-alias nlo='ncu'
 
 # Upgrade vim-plug, update plugins, install new plugins, and remove unused plugins
 alias vu="vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean! +qall"

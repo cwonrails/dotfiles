@@ -1,7 +1,6 @@
 if &compatible
   set nocompatible
 end
-scriptencoding utf-8
 
 let s:darwin = has('mac')
 
@@ -179,7 +178,7 @@ let g:syntastic_pug_checkers = ['pug_lint']
 let g:syntastic_sh_checkers = ['shellcheck']
 
 " VimL linting
-let g:syntastic_vim_checkers = ['vint']
+" let g:syntastic_vim_checkers = ['vint']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -234,6 +233,7 @@ set number
 set numberwidth=5
 set relativenumber
 set ruler
+scriptencoding utf-8
 set scrolloff=5
 set sessionoptions-=options
 set shiftwidth=2

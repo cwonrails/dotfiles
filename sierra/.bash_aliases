@@ -64,6 +64,7 @@ alias gb="git branch"
 alias gc="git commit -m"
 alias gcb="git-create-branch"
 alias gcl='git clone'
+alias gclr='git clone --recursive'
 alias gco='git checkout'
 alias gd='git diff'
 alias gdb="git-delete-branch"

@@ -27,6 +27,7 @@ Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
 Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript tslint' }
+Plug 'LucHermitte/lh-vim-lib'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
@@ -45,7 +46,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'taohex/lightline-buffer'
-Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
+" Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
@@ -55,7 +56,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', { 'do': 'gem install rubocop; gem update rubocop' }
 Plug 'wakatime/vim-wakatime'
-Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py --gocode-completer --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py' }
 
 call plug#end()
 
@@ -376,3 +377,11 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
 let g:used_javascript_libs = 'react,flux,vue,requirejs,handlebars,vue,jquery'
+
+
+" ----------------------------------------------------------------------------
+" reformat ("fix") js based on eslint or standard
+" ----------------------------------------------------------------------------
+nnoremap <leader>ef bufwritepost *.js silent !eslint --fix %<CR>
+nnoremap <leader>sf bufwritepost *.js silent !standard --fix %<CR>
+

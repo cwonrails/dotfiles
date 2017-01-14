@@ -80,13 +80,21 @@ if which thefuck > /dev/null; then
 fi
 
 # Go #
-# Env configuation
 if which go > /dev/null; then
   export PATH=/usr/local/opt/go/libexec/bin:$PATH
   export GOPATH="$HOME/go"
   export GOOS="darwin"
   export GOBIN="$GOPATH/bin"
   export PATH="$GOBIN:$PATH"
+fi
+
+# Mono
+export MONO_GAC_PREFIX="/usr/local"
+
+# Rust
+## Cargo
+if which cargo > /dev/null; then
+  export PATH="$HOME/.cargo/bin":$PATH
 fi
 
 # s bash completion

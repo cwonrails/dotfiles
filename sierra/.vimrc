@@ -6,55 +6,63 @@ let s:darwin = has('mac')
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Chiel92/vim-autoformat'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'digitaltoad/vim-pug', { 'do': 'npm install -g pug-cli pug-lint' }
+Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
-Plug 'editorconfig/editorconfig-vim', { 'do': 'brew install editorconfig; pip install editorconfig; pip install --upgrade editorconfig' }
-Plug 'elzr/vim-json', { 'do': 'npm install -g jsonlint' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
-Plug 'itchyny/lightline.vim'
-Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+if s:darwin
+  Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+endif
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'kewah/vim-stylefmt', { 'do': 'npm install -g stylefmt' }
-Plug 'leafgarland/typescript-vim', { 'do': 'npm install -g typescript tslint' }
-Plug 'LucHermitte/lh-vim-lib'
+Plug 'junegunn/fzf.vim'
+Plug 'kewah/vim-stylefmt'
+Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
+Plug 'mhinz/vim-signify'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
-Plug 'othree/html5.vim', { 'do': 'npm install -g htmlhint' }
+Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
-Plug 'rizzatti/dash.vim'
+if s:darwin
+  Plug 'rizzatti/dash.vim'
+endif
 Plug 'scrooloose/syntastic'
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
-Plug 'taohex/lightline-buffer'
 " Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown', { 'do': 'npm install -g mdl; pip install proselint; pip install --upgrade proselint' }
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby', { 'do': 'gem install rubocop; gem update rubocop' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby'
 Plug 'wakatime/vim-wakatime'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py' }
 
@@ -78,9 +86,10 @@ let g:mapleader= ' '
 let g:maplocalleader= ' '
 
 " Remap Escape key to jk
-cnoremap jk <esc>
-inoremap jk <esc>
-xnoremap jk <esc>
+cnoremap jk <Esc>
+inoremap jk <Esc>
+vnoremap jk <Esc>
+xnoremap jk <Esc>
 
 " Navigate by visual rather than actual lines
 nnoremap k gk
@@ -131,17 +140,27 @@ nnoremap <leader>w :update<CR>
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
 
-" Source .vimrc
-nnoremap <leader>sv :source ~/.vimrc<CR>
+" ----------------------------------------------------------------------------
+" Save
+" ----------------------------------------------------------------------------
+nnoremap <leader>s :w<cr>
+
+" ----------------------------------------------------------------------------
+" Quit
+" ----------------------------------------------------------------------------
+nnoremap <Leader>q :wq<cr>
+nnoremap <Leader>x :q!<cr>
+
+augroup sourcevimrc
+  autocmd!
+  autocmd sourcevimrc BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END
 
 " Toggle TagBar
 nnoremap <leader>t :TagbarToggle<CR>
 
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
-
-" Exit without checking for changes
-nnoremap <leader>x :q!<CR>
 
 " Syntastic base settings
 let g:syntastic_always_populate_loc_list = 1
@@ -153,21 +172,20 @@ let g:syntastic_echo_current_error = 1
 
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-
 let g:syntastic_html_checkers = ['tidy', 'htmlhint']
 
 " Ignore Apple's W3-invalid html code for pinned favicons
 let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
 let g:syntastic_html_tidy_ignore_errors = [
-     \   '<link> proprietary attribute "color"',
-     \   '<link> proprietary attribute "crossorigin"',
-     \   '<link> proprietary attribute "integrity"',
-     \   '<script> proprietary attribute "crossorigin"',
-     \   '<script> proprietary attribute "integrity"'
-     \ ]
+      \   '<link> proprietary attribute "color"',
+      \   '<link> proprietary attribute "crossorigin"',
+      \   '<link> proprietary attribute "integrity"',
+      \   '<script> proprietary attribute "crossorigin"',
+      \   '<script> proprietary attribute "integrity"'
+      \ ]
 
 " Javascript linting
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint, standard']
 
 " JSON linting
 let g:syntastic_json_checkers = ['jsonlint']
@@ -177,9 +195,6 @@ let g:syntastic_pug_checkers = ['pug_lint']
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']
-
-" VimL linting
-" let g:syntastic_vim_checkers = ['vint']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -247,7 +262,7 @@ set softtabstop=2
 set smartcase
 set smartindent
 set smarttab
-set synmaxcol=128
+set synmaxcol=1000
 set tabstop=2
 set ttimeoutlen=500
 set ttyfast
@@ -266,10 +281,25 @@ if exists('&colorcolumn')
   set colorcolumn=80
 endif
 
-" Navigate buffers
+" ----------------------------------------------------------------------------
+" Buffers
+" ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
-nnoremap <leader>bd :bdelete<cr>
+
+" ----------------------------------------------------------------------------
+" Quickfix
+" ----------------------------------------------------------------------------
+nnoremap ]q :cnext<cr>zz
+nnoremap [q :cprev<cr>zz
+nnoremap ]l :lnext<cr>zz
+nnoremap [l :lprev<cr>zz
+
+" ----------------------------------------------------------------------------
+" Tabs
+" ----------------------------------------------------------------------------
+nnoremap ]t :tabn<cr>
+nnoremap [t :tabp<cr>
 
 " ----------------------------------------------------------------------------
 " Fix for Y yanking text both before and after cursor
@@ -311,54 +341,13 @@ map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
 map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 
 " Pulses the first match after hitting the enter key
-" vint: -ProhibitAutocmdWithNoGroup
 autocmd! User IncSearchExecute
 autocmd User IncSearchExecute :call search_pulse#Pulse()
 
-"  ---------------------------------------------------------------------------
-"  lessspace.vim
-"  ---------------------------------------------------------------------------
+" ---------------------------------------------------------------------------
+" lessspace.vim
+" ---------------------------------------------------------------------------
 let g:lessspace_blacklist = ['python']
-
-"  ---------------------------------------------------------------------------
-"  lightline-buffer
-"  ---------------------------------------------------------------------------
-" use lightline-buffer in lightline
-let g:lightline = {
-    \ 'tabline': {
-        \ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-        \ 'right': [ [ 'close' ], ],
-        \ },
-    \ 'component_expand': {
-        \ 'buffercurrent': 'lightline#buffer#buffercurrent2',
-        \ },
-    \ 'component_function': {
-        \ 'bufferbefore': 'lightline#buffer#bufferbefore',
-        \ 'bufferafter': 'lightline#buffer#bufferafter',
-        \ 'bufferinfo': 'lightline#buffer#bufferinfo',
-        \ },
-    \ }
-
-" lightline-buffer settings
-let g:lightline_buffer_readonly_icon = ''
-let g:lightline_buffer_modified_icon = '✭'
-let g:lightline_buffer_git_icon = ' '
-let g:lightline_buffer_ellipsis_icon = '..'
-let g:lightline_buffer_expand_left_icon = '◀ '
-let g:lightline_buffer_expand_right_icon = ' ▶'
-let g:lightline_buffer_active_buffer_left_icon = ''
-let g:lightline_buffer_active_buffer_right_icon = ''
-let g:lightline_buffer_separator_icon = ' '
-
-let g:lightline_buffer_show_bufnr = 1
-let g:lightline_buffer_rotate = 0
-let g:lightline_buffer_fname_mod = ':t'
-
-let g:lightline_buffer_maxflen = 30
-let g:lightline_buffer_maxfextlen = 3
-let g:lightline_buffer_minflen = 16
-let g:lightline_buffer_minfextlen = 3
-let g:lightline_buffer_reservelen = 20
 
 " ----------------------------------------------------------------------------
 " YouCompleteMe, UltiSnips, and Supertab
@@ -378,10 +367,13 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " ----------------------------------------------------------------------------
 let g:used_javascript_libs = 'react,flux,vue,requirejs,handlebars,vue,jquery'
 
+" ----------------------------------------------------------------------------
+" vim-airline
+" ----------------------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " ----------------------------------------------------------------------------
-" reformat ("fix") js based on eslint or standard
+" vim-signify
 " ----------------------------------------------------------------------------
-nnoremap <leader>ef bufwritepost *.js silent !eslint --fix %<CR>
-nnoremap <leader>sf bufwritepost *.js silent !standard --fix %<CR>
-
+let g:signify_vcs_list = ['git']

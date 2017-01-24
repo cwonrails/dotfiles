@@ -2,11 +2,9 @@ if &compatible
   set nocompatible
 end
 
-let s:darwin = has('mac')
-
 call plug#begin('~/.vim/plugged')
 
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
@@ -25,34 +23,36 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
 Plug 'inside/vim-search-pulse'
-if s:darwin
-  Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-endif
+Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
+" Plug 'maralla/completor.vim', { 'do': 'make js' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
+" Plug 'neomake/neomake'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
-if s:darwin
-  Plug 'rizzatti/dash.vim'
-endif
+Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
+Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/neosnippet-snippets'
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
-" Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
+Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
@@ -122,10 +122,8 @@ nnoremap <leader>c :TComment<CR>
 nnoremap <leader>ft :set filetype?<CR>
 
 " Preview markdown files in Marked.app on Mac
-if s:darwin
-  nnoremap <leader>mp :MarkedOpen!<CR>
-  nnoremap <leader>mq :MarkedQuit<CR>
-endif
+nnoremap <leader>mp :MarkedOpen!<CR>
+nnoremap <leader>mq :MarkedQuit<CR>
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
@@ -185,7 +183,7 @@ let g:syntastic_html_tidy_ignore_errors = [
       \ ]
 
 " Javascript linting
-let g:syntastic_javascript_checkers = ['eslint, standard']
+let g:syntastic_javascript_checkers = ['eslint', 'standard']
 
 " JSON linting
 let g:syntastic_json_checkers = ['jsonlint']
@@ -365,7 +363,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-let g:used_javascript_libs = 'react,flux,vue,requirejs,handlebars,vue,jquery'
+let g:used_javascript_libs = 'react,flux,vue,requirejs,handlebars,jquery'
 
 " ----------------------------------------------------------------------------
 " vim-airline
@@ -376,4 +374,28 @@ let g:airline#extensions#tabline#enabled = 1
 " ----------------------------------------------------------------------------
 " vim-signify
 " ----------------------------------------------------------------------------
-let g:signify_vcs_list = ['git']
+" let g:signify_vcs_list = ['git']
+
+" ----------------------------------------------------------------------------
+" enable font italics
+" ----------------------------------------------------------------------------
+" " highlight Comment cterm=italic
+
+" ----------------------------------------------------------------------------
+" completor.vim
+" ----------------------------------------------------------------------------
+" let g:completor_python_binary = '/usr/local/bin/python'
+" let g:completor_racer_binary = '$HOME/.cargo/bin/race'
+" let g:completer_gocode_binary = '$HOME/go/bin/gocode'
+" let g:completor_node_binary = '/usr/local/bin/node'
+
+" ----------------------------------------------------------------------------
+" neomake
+" ----------------------------------------------------------------------------
+" autocmd! BufWritePost * Neomake
+" let g:neomake_css_enabled_makers = ['stylelint']
+" let g:neomake_html_enabled_makers = ['tidy', 'htmlhint']
+" let g:neomake_javascript_enabled_makers = ['eslint', 'standard', 'semistandard']
+" let g:neomake_json_enabled_makers = ['jsonlint']
+" let g:neomake_pug_enabled_makers = ['pug-lint']
+" let g:neomake_ruby_enabled_makers = ['rubocop']

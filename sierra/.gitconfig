@@ -117,6 +117,7 @@
   sync = !legit sync
   switch = !legit switch
   resync = !legit resync
+  quick-stats = ! /usr/local/bin/git-quick-stats
 
 [user]
   signingkey = cwonrails@gmail.com

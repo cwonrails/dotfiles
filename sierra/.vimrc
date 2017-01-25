@@ -8,6 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
+" Plug 'beloglazov/vim-online-thesaurus'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Chiel92/vim-autoformat'
@@ -17,8 +18,8 @@ Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'fleischie/vim-styled-components'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
@@ -45,6 +46,7 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
+" Plug 'rhysd/vim-grammarous'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/echodoc.vim'
@@ -63,8 +65,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py' }
+Plug 'Yggdroot/indentline'
 
 call plug#end()
 
@@ -168,6 +172,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_id_checkers = 1
 let g:syntastic_echo_current_error = 1
 
+" CSS linting
+let g:syntastic_css_checkers = ['stylelint']
+let g:syntastic_styled_components = ['stylelint']
+
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 let g:syntastic_html_checkers = ['tidy', 'htmlhint']
@@ -191,8 +199,15 @@ let g:syntastic_json_checkers = ['jsonlint']
 " Pug linting
 let g:syntastic_pug_checkers = ['pug_lint']
 
+" When the type of shell script is /bin/sh, assume a POSIX-compatible
+" shell for syntax highlighting purposes.
+let g:is_posix = 1
+
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']
+
+" Mark various *.rc files as JSON
+autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -384,7 +399,7 @@ let g:airline#extensions#tabline#enabled = 1
 " ----------------------------------------------------------------------------
 " enable font italics
 " ----------------------------------------------------------------------------
-" " highlight Comment cterm=italic
+highlight Comment cterm=italic
 
 " ----------------------------------------------------------------------------
 " completor.vim

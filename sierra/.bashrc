@@ -41,7 +41,7 @@ for file in ~/.{aliases.local,bash_aliases,bash_prompt,exports,extras,inputrc,fu
 done;
 unset file
 
-# Ignore shellcheck "Canot follow non-constant source" errors
+# Ignore shellcheck "Cannot follow non-constant source" errors
 if which shellcheck > /dev/null; then
   export SHELLCHECK_OPTS="-e SC1090,SC1091"
 fi
@@ -172,3 +172,5 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
 else
   eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
 fi
+
+# export TERM=xterm-256color-italic

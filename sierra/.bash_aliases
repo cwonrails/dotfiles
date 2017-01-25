@@ -163,3 +163,5 @@ alias yu='cd ~/shell-scripts; ./upgrade-yarn.sh'
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
+# Maintain ligatures when sshing into server
+alias ssh='TERM=xterm-256color ssh'

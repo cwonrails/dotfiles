@@ -62,6 +62,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'travisjeffery/vim-auto-mkdir'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
@@ -226,7 +227,7 @@ let g:EditorConfig_core_mode = 'external_command'
 let g:Editorconfig_exec_path = '/usr/local/bin/editorconfig'
 
 " Fugitive shotcuts
-nnoremap <leader>gd :<Leader>Gdiff<cr>
+nnoremap <leader>gd :<Leader>Gdiff<cr>gg<c-n>
 nnoremap <leader>gs :<Leader>Gstatus<cr>
 
 " Core Vim settings
@@ -275,6 +276,7 @@ set softtabstop=2
 set smartcase
 set smartindent
 set smarttab
+set spellfile=$HOME/.vim-spell-en.utf-8.add
 set synmaxcol=1000
 set tabstop=2
 set ttimeoutlen=500
@@ -299,6 +301,7 @@ endif
 " ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
+nnoremap <leader>bd :bd<cr>
 
 " ----------------------------------------------------------------------------
 " Quickfix
@@ -380,6 +383,9 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+" Split UltiSnipsEditSplit vertically
+let g:UltiSnipsEditSplit="vertical"
+
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
@@ -399,7 +405,27 @@ let g:airline#extensions#tabline#enabled = 1
 " ----------------------------------------------------------------------------
 " enable font italics
 " ----------------------------------------------------------------------------
-highlight Comment cterm=italic
+hi htmlArg gui=italic
+hi Comment gui=italic
+" hi Constant   gui=italic
+" hi Identifier gui=italic
+" hi PreProc    gui=italic
+" hi Special    gui=italic
+" hi Statement  gui=italic
+" hi Todo       gui=italic
+hi Type         gui=italic
+" hi Underlined gui=italic
+
+hi htmlArg    cterm=italic
+hi Comment    cterm=italic
+" hi Constant   cterm=italic
+" hi Identifier cterm=italic
+" hi PreProc    cterm=italic
+" hi Special    cterm=italic
+" hi Statement  cterm=italic
+" hi Todo       cterm=italic
+hi Type       cterm=italic
+" hi Underlined cterm=italic
 
 " ----------------------------------------------------------------------------
 " completor.vim
@@ -420,3 +446,4 @@ highlight Comment cterm=italic
 " let g:neomake_pug_enabled_makers = ['pug-lint']
 " let g:neomake_ruby_enabled_makers = ['rubocop']
 
+" set complete+=kspell

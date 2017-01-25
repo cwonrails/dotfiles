@@ -419,3 +419,4 @@ highlight Comment cterm=italic
 " let g:neomake_json_enabled_makers = ['jsonlint']
 " let g:neomake_pug_enabled_makers = ['pug-lint']
 " let g:neomake_ruby_enabled_makers = ['rubocop']
+

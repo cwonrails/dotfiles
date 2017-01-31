@@ -8,7 +8,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
-" Plug 'beloglazov/vim-online-thesaurus'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Chiel92/vim-autoformat'
@@ -19,18 +18,16 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Plug 'fleischie/vim-styled-components'
+Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
 Plug 'honza/vim-snippets'
-Plug 'inside/vim-search-pulse'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
-" Plug 'maralla/completor.vim', { 'do': 'make js' }
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -39,14 +36,12 @@ Plug 'mbbill/undotree'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-" Plug 'neomake/neomake'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
-" Plug 'rhysd/vim-grammarous'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/echodoc.vim'
@@ -119,6 +114,11 @@ set diffopt+=filler,vertical
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
+
+" Incsearch.vim
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
@@ -206,6 +206,9 @@ let g:is_posix = 1
 
 " Shell script / bash linting
 let g:syntastic_sh_checkers = ['shellcheck']
+
+" VimL linting
+let g:syntastic_vim_checkers = ['vint']
 
 " Mark various *.rc files as JSON
 autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
@@ -343,28 +346,6 @@ runtime macros/matchit.vim
 " ----------------------------------------------------------------------------
 let g:undotree_WindowLayout = 2
 
-" ----------------------------------------------------------------------------
-" vim-search-pulse
-" ----------------------------------------------------------------------------
-" integration with incsearch.vim
-let g:vim_search_pulse_disable_auto_mappings = 1
-let g:incsearch#auto_nohlsearch = 1
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-" Next or previous match is followed by a Pulse
-map n <Plug>(incsearch-nohl-n)<Plug>Pulse
-map N <Plug>(incsearch-nohl-N)<Plug>Pulse
-map * <Plug>(incsearch-nohl-*)<Plug>Pulse
-map # <Plug>(incsearch-nohl-#)<Plug>Pulse
-map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
-map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
-
-" Pulses the first match after hitting the enter key
-autocmd! User IncSearchExecute
-autocmd User IncSearchExecute :call search_pulse#Pulse()
-
 " ---------------------------------------------------------------------------
 " lessspace.vim
 " ---------------------------------------------------------------------------
@@ -384,7 +365,7 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " Split UltiSnipsEditSplit vertically
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit='vertical'
 
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
@@ -405,7 +386,7 @@ let g:airline#extensions#tabline#enabled = 1
 " ----------------------------------------------------------------------------
 " enable font italics
 " ----------------------------------------------------------------------------
-hi htmlArg gui=italic
+" hi htmlArg gui=italic
 hi Comment gui=italic
 " hi Constant   gui=italic
 " hi Identifier gui=italic
@@ -413,10 +394,10 @@ hi Comment gui=italic
 " hi Special    gui=italic
 " hi Statement  gui=italic
 " hi Todo       gui=italic
-hi Type         gui=italic
+" hi Type         gui=italic
 " hi Underlined gui=italic
 
-hi htmlArg    cterm=italic
+" hi htmlArg    cterm=italic
 hi Comment    cterm=italic
 " hi Constant   cterm=italic
 " hi Identifier cterm=italic
@@ -424,26 +405,7 @@ hi Comment    cterm=italic
 " hi Special    cterm=italic
 " hi Statement  cterm=italic
 " hi Todo       cterm=italic
-hi Type       cterm=italic
+" hi Type       cterm=italic
 " hi Underlined cterm=italic
-
-" ----------------------------------------------------------------------------
-" completor.vim
-" ----------------------------------------------------------------------------
-" let g:completor_python_binary = '/usr/local/bin/python'
-" let g:completor_racer_binary = '$HOME/.cargo/bin/race'
-" let g:completer_gocode_binary = '$HOME/go/bin/gocode'
-" let g:completor_node_binary = '/usr/local/bin/node'
-
-" ----------------------------------------------------------------------------
-" neomake
-" ----------------------------------------------------------------------------
-" autocmd! BufWritePost * Neomake
-" let g:neomake_css_enabled_makers = ['stylelint']
-" let g:neomake_html_enabled_makers = ['tidy', 'htmlhint']
-" let g:neomake_javascript_enabled_makers = ['eslint', 'standard', 'semistandard']
-" let g:neomake_json_enabled_makers = ['jsonlint']
-" let g:neomake_pug_enabled_makers = ['pug-lint']
-" let g:neomake_ruby_enabled_makers = ['rubocop']
 
 " set complete+=kspell

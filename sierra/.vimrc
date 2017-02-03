@@ -32,7 +32,6 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-" Plug 'mhinz/vim-signify'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
@@ -379,11 +378,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " ----------------------------------------------------------------------------
-" vim-signify
-" ----------------------------------------------------------------------------
-" let g:signify_vcs_list = ['git']
-
-" ----------------------------------------------------------------------------
 " enable font italics
 " ----------------------------------------------------------------------------
 " hi htmlArg gui=italic
@@ -407,5 +401,3 @@ hi Comment    cterm=italic
 " hi Todo       cterm=italic
 " hi Type       cterm=italic
 " hi Underlined cterm=italic
-
-" set complete+=kspell

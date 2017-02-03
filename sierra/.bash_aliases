@@ -21,6 +21,9 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
+# Create new git project
+alias ngp='cp ~/new-git-project/.e* `pwd` && cp ~/new-git-project/.g* `pwd` && cp ~/new-git-project/* `pwd` && git-setup'
+
 # Use local npm executables if available
 alias npm-exec='PATH=$(npm bin):$PATH'
 
@@ -29,6 +32,9 @@ alias o='open .'
 
 # Reload shell
 alias r='exec $SHELL -l'
+
+# Correct accidental 'sl'
+alias sl='ls'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -153,7 +159,7 @@ alias du="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | 
 alias gu='gem update; gem cleanup'
 
 # Python: Upgrade all pip packages
-alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U && pip uninstall -y vim-vint && pip install vim-vint"
 
 # Tmux: Update, install, and remove unused plugins
 alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'

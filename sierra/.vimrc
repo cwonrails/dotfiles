@@ -16,29 +16,33 @@ Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
+Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
+Plug 'HerringtonDarkhole/yats.vim'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
+" Plug 'mhartington/oceanic-next'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/jspc.vim'
+" Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'rizzatti/dash.vim'
@@ -48,6 +52,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
+Plug 'sunaku/vim-shortcut'
 Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
@@ -67,11 +72,18 @@ Plug 'Yggdroot/indentline'
 
 call plug#end()
 
-" Enable 256 colors in terminal
-set t_Co=256
+set runtimepath+=/usr/local/opt/fzf
 
 " Enable syntax highlighting
 syntax enable
+
+" Enable 256 colors in terminal (vim 7)
+" set t_Co=256
+
+" Enable 256 colors in terminal (vim 8)
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " Enable indentation for specific filetypes
 filetype plugin indent on
@@ -109,10 +121,12 @@ set splitright
 " Always use vertical diffs
 set diffopt+=filler,vertical
 
-" Choose colorscheme
+" Set colorscheme
 set background=dark
+" set background=light
 colorscheme solarized
 let g:solarized_termtrans=1
+" colorscheme OceanicNext
 
 " Incsearch.vim
 map /  <Plug>(incsearch-forward)
@@ -126,8 +140,8 @@ nnoremap <leader>c :TComment<CR>
 nnoremap <leader>ft :set filetype?<CR>
 
 " Preview markdown files in Marked.app on Mac
-nnoremap <leader>mp :MarkedOpen!<CR>
-nnoremap <leader>mq :MarkedQuit<CR>
+" nnoremap <leader>mp :MarkedOpen!<CR>
+" nnoremap <leader>mq :MarkedQuit<CR>
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
@@ -141,11 +155,6 @@ nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
-
-" ----------------------------------------------------------------------------
-" Save
-" ----------------------------------------------------------------------------
-nnoremap <leader>s :w<cr>
 
 " ----------------------------------------------------------------------------
 " Quit
@@ -207,7 +216,7 @@ let g:is_posix = 1
 let g:syntastic_sh_checkers = ['shellcheck']
 
 " VimL linting
-let g:syntastic_vim_checkers = ['vint']
+" let g:syntastic_vim_checkers = ['vint']
 
 " Mark various *.rc files as JSON
 autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
@@ -376,6 +385,7 @@ let g:used_javascript_libs = 'react,flux,vue,requirejs,handlebars,jquery'
 " ----------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='oceanicnext'
 
 " ----------------------------------------------------------------------------
 " enable font italics
@@ -401,3 +411,6 @@ hi Comment    cterm=italic
 " hi Todo       cterm=italic
 " hi Type       cterm=italic
 " hi Underlined cterm=italic
+
+" Tmux and italics fix
+" set t_ut=

@@ -23,7 +23,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
-Plug 'HerringtonDarkhole/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -71,19 +71,16 @@ Plug 'Yggdroot/indentline'
 
 call plug#end()
 
-" Enable 256 colors in terminal
+" Enable 256 colors in terminal (vim 7)
 set t_Co=256
+
+" " Enable 256 colors in terminal (vim 8)
+" if (has('termguicolors'))
+"   set termguicolors
+" endif
 
 " Enable syntax highlighting
 syntax enable
-
-" Enable 256 colors in terminal (vim 7)
-" set t_Co=256
-
-" Enable 256 colors in terminal (vim 8)
-if (has("termguicolors"))
-  set termguicolors
-endif
 
 " Enable indentation for specific filetypes
 filetype plugin indent on

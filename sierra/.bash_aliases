@@ -15,6 +15,9 @@ alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
 # Print history
 alias h='history'
 
+# Fix incorrect typing of "install"
+alias insatll='install'
+
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 

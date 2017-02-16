@@ -26,7 +26,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'HerringtonDarkhole/yats.vim'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
 " Plug 'leafgarland/typescript-vim'
@@ -35,7 +35,6 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-" Plug 'mhartington/oceanic-next'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
@@ -72,7 +71,8 @@ Plug 'Yggdroot/indentline'
 
 call plug#end()
 
-set runtimepath+=/usr/local/opt/fzf
+" Enable 256 colors in terminal
+set t_Co=256
 
 " Enable syntax highlighting
 syntax enable
@@ -121,12 +121,11 @@ set splitright
 " Always use vertical diffs
 set diffopt+=filler,vertical
 
-" Set colorscheme
+" Choose colorscheme
 set background=dark
 " set background=light
 colorscheme solarized
 let g:solarized_termtrans=1
-" colorscheme OceanicNext
 
 " Incsearch.vim
 map /  <Plug>(incsearch-forward)
@@ -140,8 +139,8 @@ nnoremap <leader>c :TComment<CR>
 nnoremap <leader>ft :set filetype?<CR>
 
 " Preview markdown files in Marked.app on Mac
-" nnoremap <leader>mp :MarkedOpen!<CR>
-" nnoremap <leader>mq :MarkedQuit<CR>
+nnoremap <leader>mp :MarkedOpen!<CR>
+nnoremap <leader>mq :MarkedQuit<CR>
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
@@ -155,6 +154,11 @@ nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
+
+" ----------------------------------------------------------------------------
+" Save
+" ----------------------------------------------------------------------------
+nnoremap <leader>s :w<cr>
 
 " ----------------------------------------------------------------------------
 " Quit
@@ -216,7 +220,7 @@ let g:is_posix = 1
 let g:syntastic_sh_checkers = ['shellcheck']
 
 " VimL linting
-" let g:syntastic_vim_checkers = ['vint']
+let g:syntastic_vim_checkers = ['vint']
 
 " Mark various *.rc files as JSON
 autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
@@ -385,7 +389,6 @@ let g:used_javascript_libs = 'react,flux,vue,requirejs,handlebars,jquery'
 " ----------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='oceanicnext'
 
 " ----------------------------------------------------------------------------
 " enable font italics

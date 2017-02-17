@@ -29,7 +29,6 @@ Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
-" Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
@@ -41,7 +40,6 @@ Plug 'mxw/vim-jsx'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-" Plug 'othree/jspc.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'rizzatti/dash.vim'
@@ -163,6 +161,7 @@ nnoremap <leader>s :w<cr>
 nnoremap <Leader>q :wq<cr>
 nnoremap <Leader>x :q!<cr>
 
+" Source .vimrc on save
 augroup sourcevimrc
   autocmd!
   autocmd sourcevimrc BufWritePost $MYVIMRC nested source $MYVIMRC
@@ -185,6 +184,12 @@ let g:syntastic_echo_current_error = 1
 " CSS linting
 let g:syntastic_css_checkers = ['stylelint']
 let g:syntastic_styled_components = ['stylelint']
+
+" Fix highlighting problems for CSS3
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'

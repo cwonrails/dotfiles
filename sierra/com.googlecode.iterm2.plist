@@ -440,17 +440,17 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 31 599 514 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>8 144 796 473 0 0 1440 877 </string>
+	<string>8 92 937 512 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 593 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>723 4 714 873 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>3 4 714 873 0 0 1440 877 </string>
+	<string>723 4 714 873 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>963 4 954 1173 0 0 1920 1177 </string>
+	<string>723 4 714 873 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>963 4 954 1173 0 0 1920 1177 </string>
+	<string>3 4 714 873 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>1440 -136 1920 1053 1440 -140 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -1111,7 +1111,7 @@
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
-			<true/>
+			<false/>
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>

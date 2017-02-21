@@ -21,9 +21,6 @@ alias insatll='install'
 # Get ip address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-# mmake (Modern Make) https://github.com/tj/mmake
-alias make='mmake'
-
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 

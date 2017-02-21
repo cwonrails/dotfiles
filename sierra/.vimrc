@@ -42,6 +42,7 @@ Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
+Plug 'posva/vim-vue'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/echodoc.vim'
@@ -182,8 +183,8 @@ let g:syntastic_id_checkers = 1
 let g:syntastic_echo_current_error = 1
 
 " CSS linting
-let g:syntastic_css_checkers = ['stylelint']
-let g:syntastic_styled_components = ['stylelint']
+" let g:syntastic_css_checkers = ['stylelint']
+" let g:syntastic_styled_components = ['stylelint']
 
 " Fix highlighting problems for CSS3
 augroup VimCSS3Syntax
@@ -403,7 +404,7 @@ hi Comment gui=italic
 " hi Special    gui=italic
 " hi Statement  gui=italic
 " hi Todo       gui=italic
-" hi Type         gui=italic
+" hi Type       gui=italic
 " hi Underlined gui=italic
 
 " hi htmlArg    cterm=italic

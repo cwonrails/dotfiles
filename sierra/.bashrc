@@ -174,3 +174,7 @@ else
 fi
 
 # export TERM=xterm-256color-italic
+
+# mmake (Modern Make) https://github.com/tj/mmake
+alias make='mmake'
+

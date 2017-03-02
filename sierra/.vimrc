@@ -23,20 +23,23 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
 Plug 'majutsushi/tagbar'
+Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -47,11 +50,10 @@ Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/neosnippet-snippets'
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'sunaku/vim-shortcut'
-Plug 'ternjs/tern_for_vim', { 'dir': '~/.vim/plugged/tern_for_vim', 'do': 'npm install' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
@@ -63,10 +65,9 @@ Plug 'travisjeffery/vim-auto-mkdir'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
-Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': './install.py' }
-Plug 'Yggdroot/indentline'
+Plug 'wellle/tmux-complete.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
 
@@ -142,7 +143,8 @@ nnoremap <leader>mq :MarkedQuit<CR>
 nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
-:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+" :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
@@ -224,9 +226,10 @@ let g:syntastic_sh_checkers = ['shellcheck']
 
 " VimL linting
 let g:syntastic_vim_checkers = ['vint']
-
+" let g:syntastic_vim_checkers = ['vimlint']
+"
 " Mark various *.rc files as JSON
-autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
+" autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -367,6 +370,11 @@ let g:undotree_WindowLayout = 2
 let g:lessspace_blacklist = ['python']
 
 " ----------------------------------------------------------------------------
+" VimProc
+" ----------------------------------------------------------------------------
+nnoremap <leader>vp :VimProcBang<space>
+
+" ----------------------------------------------------------------------------
 " YouCompleteMe, UltiSnips, and Supertab
 " ----------------------------------------------------------------------------
 " make YCM compatible with UltiSnips (using supertab)
@@ -385,7 +393,7 @@ let g:UltiSnipsEditSplit='vertical'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-let g:used_javascript_libs = 'react,flux,vue,requirejs,handlebars,jquery'
+let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery'
 
 " ----------------------------------------------------------------------------
 " vim-airline
@@ -420,3 +428,17 @@ hi Comment    cterm=italic
 
 " Tmux and italics fix
 " set t_ut=
+
+" ----------------------------------------------------------------------------
+" incsearch.vim
+" ----------------------------------------------------------------------------
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" ----------------------------------------------------------------------------
+" incsearch-fuzzy.vim
+" ----------------------------------------------------------------------------
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)

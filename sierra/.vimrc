@@ -189,10 +189,10 @@ let g:syntastic_echo_current_error = 1
 " let g:syntastic_styled_components = ['stylelint']
 
 " Fix highlighting problems for CSS3
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
+" augroup VimCSS3Syntax
+"   autocmd!
+  " autocmd FileType css setlocal iskeyword+=-
+" augroup END
 
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'

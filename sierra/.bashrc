@@ -172,8 +172,10 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
 else
   eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
 fi
-
-# export TERM=xterm-256color-italic
-
 # mmake (Modern Make) https://github.com/tj/mmake
 alias make='mmake'
+
+# bash-prexec (https://github.com/rcaloras/bashhub-client)
+[ -f /usr/local/etc/profile.d/bash-preexec.sh ] && . /usr/local/etc/profile.d/bash-preexec.sh
+
+# export TERM=xterm-256color-italic

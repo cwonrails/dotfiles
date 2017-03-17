@@ -66,6 +66,10 @@ if [ -f "/usr/local/etc/bash_completion.d" ]; then
   . "/usr/local/etc/bash_completion.d"
 fi
 
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+    . /usr/local/share/bash-completion/bash_completion
+fi
+
 # Enable grc (generic colorizer)
 [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 

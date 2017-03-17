@@ -164,6 +164,10 @@ alias gu='gem update; gem cleanup'
 # Python: Upgrade all pip packages
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
+# Python: Upgrade all pip3 packages
+alias pu3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U"
+
+
 # Tmux: Update, install, and remove unused plugins
 alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
 

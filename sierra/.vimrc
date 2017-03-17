@@ -33,6 +33,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
 Plug 'majutsushi/tagbar'
 Plug 'MarcWeber/vim-addon-local-vimrc'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -48,13 +49,13 @@ Plug 'othree/yajs.vim'
 Plug 'posva/vim-vue'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'sunaku/vim-shortcut'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive'
@@ -62,11 +63,13 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'travisjeffery/vim-auto-mkdir'
+Plug 'tweekmonster/wstrip.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wakatime/vim-wakatime'
 Plug 'wellle/tmux-complete.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
@@ -135,9 +138,18 @@ nnoremap <leader>c :TComment<CR>
 " Get current filetype
 nnoremap <leader>ft :set filetype?<CR>
 
-" Preview markdown files in Marked.app on Mac
+" Preview markdown files in Marked.app (Mac-only)
 nnoremap <leader>mp :MarkedOpen!<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
+
+" Toggle NerdTree
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+" Show hidden files by default in NERDTree
+let g:NERDTreeShowHidden=1
+
+" Show status for files ignored by Git
+let g:NERDTreeShowIgnoredStatus = 1
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
@@ -347,6 +359,9 @@ nnoremap Y y$
 " autoformat
 " ----------------------------------------------------------------------------
 nnoremap <leader>af :Autoformat<cr>
+" autoformat standard (disable above if using)
+" " autocmd bufwritepost *.js silent !standard --fix %
+" " set autoread
 
 " ----------------------------------------------------------------------------
 " gist.vim
@@ -363,11 +378,6 @@ runtime macros/matchit.vim
 " undotree
 " ----------------------------------------------------------------------------
 let g:undotree_WindowLayout = 2
-
-" ---------------------------------------------------------------------------
-" lessspace.vim
-" ---------------------------------------------------------------------------
-let g:lessspace_blacklist = ['python']
 
 " ----------------------------------------------------------------------------
 " VimProc
@@ -442,3 +452,8 @@ map g/ <Plug>(incsearch-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
+
+" ----------------------------------------------------------------------------
+" WStrip.vim
+" ----------------------------------------------------------------------------
+let g:wstrip_auto = 1

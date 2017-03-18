@@ -112,8 +112,14 @@ shopt -s nocaseglob;
 # Append to the Bash history file rather than overwriting it
 shopt -s histappend;
 
-# Autocorrect typos in path names when using `cd`
+# Correct spelling errors in arguments supplied to cd
 shopt -s cdspell;
+
+# Autocorrect on directory names to match a glob.
+shopt -s dirspell 2> /dev/null
+
+# Turn on recursive globbing (enables ** to recurse all directories)
+shopt -s globstar 2> /dev/null
 
 # More intelligent Up/Down behavior
 bind '"\e[A": history-search-backward'
@@ -183,3 +189,6 @@ alias make='mmake'
 [ -f /usr/local/etc/profile.d/bash-preexec.sh ] && . /usr/local/etc/profile.d/bash-preexec.sh
 
 # export TERM=xterm-256color-italic
+
+# Automatically trim long paths in the prompt (requires Bash 4.x)
+# PROMPT_DIRTRIM=2

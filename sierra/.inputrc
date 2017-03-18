@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
-# Make Tab autocomplete regardless of filename case
+## SMARTER TAB-COMPLETION (Readline bindings) ##
+
+# Perform file completion in a case insensitive fashion
 set completion-ignore-case on
 
-# List all matches in case multiple possible completions are possible
+# Treat hyphens and underscores as equivalent
+set completion-map-case on
+
+# Display matches for ambiguous patterns at first tab press
 set show-all-if-ambiguous on
 
 # Immediately add a trailing slash when autocompleting symlinks to directories

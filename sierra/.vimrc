@@ -41,6 +41,7 @@ Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 Plug 'moorereason/vim-markdownfmt'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'moll/vim-node'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'

@@ -75,6 +75,7 @@ alias gc="git commit -m"
 alias gcb="git-create-branch"
 alias gcl='git clone'
 alias gclr='git clone --recursive'
+alias glcr='git clone --recursive' # fix command entry errors
 alias gco='git checkout'
 alias gd='git diff'
 alias gdb="git-delete-branch"
@@ -179,3 +180,4 @@ alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
 # Maintain ligatures when sshing into server
 alias ssh='TERM=xterm-256color ssh'
+

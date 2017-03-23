@@ -16,6 +16,8 @@
 	<true/>
 	<key>ConvertDosNewlines</key>
 	<true/>
+	<key>CopySelection</key>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Oceanic-Next</key>
@@ -715,29 +717,31 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1023 163 445 77 0 0 1920 1177 </string>
+	<string>665 305 934 94 0 0 1920 1177 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>345 734 735 382 0 0 1920 1177 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>652 753 616 174 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>610 417 700 622 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 31 599 514 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>952 642 918 381 0 0 1920 1177 </string>
+	<string>952 558 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 593 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMonoSSm-Book</key>
 	<string>346 60 260 616 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>962 726 730 451 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 4 955 1173 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>2 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>963 4 954 1173 0 0 1920 1177 </string>
+	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>963 4 954 1173 0 0 1920 1177 </string>
+	<string>2 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>1440 -136 1920 1053 1440 -140 1920 1057 </string>
+	<string>2 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>963 701 650 476 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
@@ -4754,7 +4758,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-06T16:16:46Z</date>
+	<date>2017-03-23T14:35:56Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -4771,6 +4775,8 @@
 	<integer>9</integer>
 	<key>TabStyle</key>
 	<integer>1</integer>
+	<key>TripleClickSelectsFullWrappedLines</key>
+	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
 	<real>1488639232</real>
 	<key>URLHandlersByGuid</key>
@@ -4793,6 +4799,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170306-nightly</string>
+	<string>3.1.20170323-nightly</string>
 </dict>
 </plist>

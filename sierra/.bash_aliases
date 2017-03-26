@@ -51,6 +51,7 @@ alias x='exit'
 ## Dotfiles management ##
 # Quickly edit dotfiles
 alias ba='vim ~/.bash_aliases'
+alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
 alias hj='vim ~/.hyper.js'
 alias tc='vim ~/.tmux.conf'

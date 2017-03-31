@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 # fcd - cd into the directory of the selected file
-fcd() {
-   local file
-   local dir
-   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-}
+# fcd() {
+#    local file
+#    local dir
+#    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+# }
+
 #
 # fkill - kill process
 # fkill() {
@@ -18,13 +19,19 @@ fcd() {
 # }
 
 
-fshow() {
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-      --bind "ctrl-m:execute:
-                (grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-                {}
-FZF-EOF"
+# fshow() {
+#   git log --graph --color=always \
+#       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+#   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+#       --bind "ctrl-m:execute:
+#                 (grep -o '[a-f0-9]\{7\}' | head -1 |
+#                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+#                 {}
+# FZF-EOF"
+# }
+
+function lazygit() {
+  git add .
+  git commit -a -m "$1"
+  git push
 }

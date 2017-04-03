@@ -201,8 +201,10 @@ alias make='mmake'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # bash completion for Docker.app
-# . /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
-# . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
-# . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+if [ -f "/Applications/Docker.app" ]; then
+  . /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+  . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+  . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

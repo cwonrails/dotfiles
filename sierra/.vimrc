@@ -366,9 +366,10 @@ nnoremap Y y$
 " autoformat
 " ----------------------------------------------------------------------------
 nnoremap <leader>af :Autoformat<cr>
-" autoformat standard (disable above if using)
-" " autocmd bufwritepost *.js silent !standard --fix %
-" " set autoread
+
+" " autoformat standard on save (disable above if using)
+" autocmd bufwritepost *.js silent !standard --fix %
+" set autoread
 
 " ----------------------------------------------------------------------------
 " gist.vim

@@ -183,4 +183,5 @@ alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 alias ssh='TERM=xterm-256color ssh'
 
 # Update specific go packages
-alias ggu='go get -u github.com/tj/mmake/cmd/mmake'
+alias ggu='go get -u github.com/tj/mmake/cmd/mmake github.com/zquestz/s/autocomplete'
+

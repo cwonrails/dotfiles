@@ -164,14 +164,10 @@ alias lsd='ls -l | grep "^d"'
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
 # Enable yarn nightly
-export PATH="$HOME/.yarn/bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$PATH"
 
 # Enable yarn nightly global binaries
-export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-[ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash ] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash
+# export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Automatically start gpg-agent daemon
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
@@ -182,6 +178,7 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
 else
   eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
 fi
+
 # mmake (Modern Make) https://github.com/tj/mmake
 alias make='mmake'
 
@@ -207,4 +204,10 @@ if [ -f "/Applications/Docker.app" ]; then
   . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
 fi
 
+# set global virtualenv wrapper
+
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash ] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash

@@ -1,3 +1,0 @@
-
-All global packages are up-to-date :)
-

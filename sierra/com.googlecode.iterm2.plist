@@ -723,7 +723,7 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>652 753 616 174 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>610 417 700 622 0 0 1920 1177 </string>
+	<string>1110 307 700 622 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 31 599 514 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -733,17 +733,17 @@
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMonoSSm-Book</key>
 	<string>346 60 260 616 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2 4 955 1173 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
 	<string>962 4 955 1173 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>2 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2 4 955 1173 0 0 1920 1177 </string>
+	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>2 4 955 1173 0 0 1920 1177 </string>
+	<string>0 4 1920 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>2 726 730 451 0 0 1920 1177 </string>
+	<string>2 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>963 701 650 476 0 0 1920 1177 </string>
+	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
 	<string>962 8 955 1166 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA</key>
@@ -4758,7 +4758,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-26T14:17:44Z</date>
+	<date>2017-04-08T23:06:24Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -4799,6 +4799,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170324-nightly</string>
+	<string>3.1.20170406-nightly</string>
 </dict>
 </plist>

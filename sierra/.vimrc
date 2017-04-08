@@ -56,6 +56,7 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'posva/vim-vue'
 Plug 'rizzatti/dash.vim'
+" Plug 'sbdchd/neoformat'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/echodoc.vim'
@@ -466,3 +467,25 @@ map zg/ <Plug>(incsearch-fuzzy-stay)
 " WStrip.vim
 " ----------------------------------------------------------------------------
 let g:wstrip_auto = 1
+
+" ----------------------------------------------------------------------------
+" vim-jsx
+" ----------------------------------------------------------------------------
+" let g:jsx_ext_required = 1
+
+" ----------------------------------------------------------------------------
+" prettier
+" ----------------------------------------------------------------------------
+" autocmd FileType javascript.jsx,javascript setlocal formatprg=prettier\ --stdin
+" autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
+
+" ----------------------------------------------------------------------------
+" prettier-standard
+" ----------------------------------------------------------------------------
+" autocmd FileType javascript set formatprg=prettier-standard
+" autocmd BufWritePre *.js :normal gggqG
+
+" ----------------------------------------------------------------------------
+" neoformat
+" ----------------------------------------------------------------------------
+" autocmd BufWritePre *.js Neoformat

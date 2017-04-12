@@ -93,7 +93,7 @@ if which go > /dev/null; then
 fi
 
 # Mono
-export MONO_GAC_PREFIX="/usr/local"
+# export MONO_GAC_PREFIX="/usr/local"
 
 # Rust
 ## Cargo
@@ -163,12 +163,6 @@ alias lsd='ls -l | grep "^d"'
 # Enable fzf installed via git
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
-# Enable yarn nightly
-# export PATH="$HOME/.yarn/bin:$PATH"
-
-# Enable yarn nightly global binaries
-# export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # Automatically start gpg-agent daemon
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   source ~/.gnupg/.gpg-agent-info
@@ -183,19 +177,21 @@ fi
 alias make='mmake'
 
 # bash-prexec (https://github.com/rcaloras/bashhub-client)
-[ -f /usr/local/etc/profile.d/bash-preexec.sh ] && . /usr/local/etc/profile.d/bash-preexec.sh
+# [ -f /usr/local/etc/profile.d/bash-preexec.sh ] && . /usr/local/etc/profile.d/bash-preexec.sh
 
 # export TERM=xterm-256color-italic
 
 # Automatically trim long paths in the prompt (requires Bash 4.x)
-# PROMPT_DIRTRIM=2
+## PROMPT_DIRTRIM=2
 
-# --files: List files that would be searched but do not search
-# --no-ignore: Do not respect .gitignore, etc...
-# --hidden: Search hidden files and folders
-# --follow: Follow symlinks
-# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+# set global virtualenv wrapper
+
+## --files: List files that would be searched but do not search
+## --no-ignore: Do not respect .gitignore, etc...
+## --hidden: Search hidden files and folders
+## --follow: Follow symlinks
+## --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # bash completion for Docker.app
 if [ -f "/Applications/Docker.app" ]; then
@@ -203,10 +199,6 @@ if [ -f "/Applications/Docker.app" ]; then
   . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
   . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
 fi
-
-# set global virtualenv wrapper
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`

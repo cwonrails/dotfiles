@@ -58,16 +58,23 @@ alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
 # Perform all dotfiles backup operations'
-alias dfbu='dflb && dfdb && dfgb'
+alias dfbu='gpl && dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .gvimrc .hyper.js .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/localdotfilesbackup'
+alias dflb='cp ~/global-package-lists/*.txt ~/localdotfilesbackup; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .gvimrc .hyper.js .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/Dropbox/dotfiles'
+alias dfdb='cp ~/global-package-lists/*.txt ~/Dropbox/dotfiles; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox/dotfiles'
 
-# Back up OSX dotfiles to Github repo and check diff
-alias dfgb='cd ~; cp .agignore .bash_aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .gitconfig .gvimrc .hyper.js .hushlogin .inputrc .sift.conf .tmux.conf .vimrc ~/github/repos/public/dotfiles/sierra && cd ~/github/repos/public/dotfiles/sierra && git diff'
+# Back up dotfiles to public github repo
+alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/sierra; cd ~/github/repos/public/dotfiles/sierra; git diff'
+
+# Create text files with lists of globally installed package binaries
+alias gpl='cd ~/global-package-lists; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl; pip list > pip.txt; pip3 list > pip3.txt'
+
+# get global list of npm installs and output to text file as reformatted simple list
+# shellcheck disable=SC2026
+alias ngl='npm -g ls --depth=0 | cut -c 11- | sed -e '1d' > npm-global.txt'
 
 # TJ Hollowaychuck's git aliases (customized)
 alias ga='git add'
@@ -144,14 +151,14 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## nvm ##
-alias n4='nvm use lts/argon'
-alias n6='nvm use lts/boron'
-alias n7='nvm use v7'
-alias ns='nvm use system'
+# alias n4='nvm use lts/argon'
+# alias n6='nvm use lts/boron'
+# alias n7='nvm use v7'
+# alias ns='nvm use system'
 
 ## Package manager updates ##
 # Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
-alias ua='git-repo-updater && bu && diu && gu && yu && vu && pu && tu && ncu -g && cd ~'
+alias ua='git-repo-updater && bu && diu && gu && vu && pu && pu3 && ggu && tu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor'
@@ -169,12 +176,8 @@ alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip i
 # Python: Upgrade all pip3 packages
 alias pu3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U"
 
-
 # Tmux: Update, install, and remove unused plugins
 alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
-
-# Upgrade yarn nightly version
-alias yu='cd ~/shell-scripts; ./upgrade-yarn.sh'
 
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
@@ -183,5 +186,4 @@ alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 alias ssh='TERM=xterm-256color ssh'
 
 # Update specific go packages
-alias ggu='go get -u github.com/tj/mmake/cmd/mmake github.com/zquestz/s/autocomplete'
-
+alias ggu='go get -u github.com/tj/mmake/cmd/mmake'

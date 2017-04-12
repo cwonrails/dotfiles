@@ -18,6 +18,7 @@ binutils
 borg
 homebrew/php/box
 brew-cask-completion
+brotli
 bzip2
 caddy
 ccat

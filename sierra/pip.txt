@@ -6,6 +6,7 @@ ansicolor                    0.2.4
 appdirs                      1.4.3      
 args                         0.1.0      
 asn1crypto                   0.22.0     
+awscli                       1.11.76    
 backports-abc                0.5        
 backports.ssl-match-hostname 3.5.0.1    
 batinfo                      0.4.2      
@@ -51,6 +52,7 @@ GitPython                    2.1.1
 gitup                        0.4.dev0   
 Glances                      2.9.1      
 google-common                0.0.1      
+haxor-news                   0.4.3      
 howdoi                       1.1.9      
 http-prompt                  0.9.3      
 httpie                       0.9.9      
@@ -113,7 +115,7 @@ Pykka                        1.2.1
 pymdstat                     0.4.2      
 pyparsing                    2.2.0      
 pyquery                      1.2.17     
-pysmi                        0.1.1      
+pysmi                        0.1.2      
 pysnmp                       4.3.5      
 pystache                     0.5.4      
 python-daemon                2.1.2      
@@ -124,6 +126,7 @@ requests                     2.13.0
 requests-cache               0.4.13     
 rsa                          3.4.2      
 s3transfer                   0.1.10     
+saws                         0.4.3      
 scandir                      1.5        
 setuptools                   34.4.1     
 simplejson                   3.10.0     

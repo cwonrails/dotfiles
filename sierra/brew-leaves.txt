@@ -24,6 +24,7 @@ caddy
 ccat
 certbot
 certigo
+cloudfoundry/tap/cf-cli
 checkstyle
 chrome-cli
 clang-format
@@ -53,7 +54,6 @@ exiftool
 extract_url
 fdupes
 ffind
-ffmpeg
 file-formula
 findutils
 fio
@@ -108,10 +108,12 @@ gzip
 hadolint
 highlight
 hiredis
+hr
 htop
 httest
 httpflow
 httpie
+httpstat
 hub
 hugo
 homebrew/php/igbinary
@@ -136,6 +138,7 @@ libarchive
 libav
 libconfig
 libdvdnav
+libebur128
 libedit
 libiconv
 libidn
@@ -166,6 +169,7 @@ mighttpd2
 minio-mc
 moreutils
 mpc
+mps-youtube
 msgpack
 mtr
 nano
@@ -199,7 +203,6 @@ psgrep
 pulseaudio
 pv
 mopidy/mopidy/python-pykka
-python3
 ranger
 rclone
 thoughtbot/formulae/rcm
@@ -230,6 +233,7 @@ shfmt
 shpotify
 siege
 sift
+slackcat
 socat
 speedtest_cli
 spidermonkey
@@ -282,7 +286,6 @@ xonsh
 yajl
 yarn
 you-get
-youtube-dl
 yubico-piv-tool
 z
 zlib

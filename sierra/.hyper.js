@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 14,
 
     // font family with optional fallbacks
     fontFamily: 'Operator Mono SSm for Powerline, "Menlo", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -10,7 +10,7 @@ module.exports = {
     cursorColor: 'rgba(248,28,229,0.8)',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-    cursorShape: 'BLOCK',
+    cursorShape: 'UNDERLINE',
 
     // color of the text
     foregroundColor: '#fff',
@@ -37,7 +37,8 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+    // padding: '12px 14px',
+    padding: '',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -79,7 +80,7 @@ module.exports = {
     bell: false,
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    copyOnSelect: true
 
     // if true, on right click selected text will be copied or pasted if no
     // selection is present (true by default on Windows)
@@ -97,7 +98,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-solarized-dark', 'hyper-blink'],
+  plugins: ['hyper-blink', "hyper-solarized-dark"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

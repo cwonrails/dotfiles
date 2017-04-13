@@ -331,6 +331,7 @@ set virtualedit=block
 set whichwrap=b,s
 set wildmenu
 set wildmode=list:longest,full
+set wrapmargin=0
 
 " Display column at 80 characters
 set textwidth=0

@@ -43,7 +43,7 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 Plug 'moorereason/vim-markdownfmt'
-Plug 'mhinz/vim-grepper'
+" Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'moll/vim-node'
 Plug 'mtscout6/syntastic-local-eslint.vim'

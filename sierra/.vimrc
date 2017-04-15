@@ -25,6 +25,7 @@ Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'haya14busa/go-vimlparser'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'HerringtonDarkholme/yats.vim'

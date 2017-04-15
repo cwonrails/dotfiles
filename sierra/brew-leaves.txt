@@ -34,6 +34,7 @@ cmus
 compose2kube
 composer-completion
 confuse
+convox
 coreutils
 ctop
 curl
@@ -78,6 +79,7 @@ git-archive-all
 git-extras
 git-lfs
 git-now
+git-open
 gitless
 gitter-cli
 global

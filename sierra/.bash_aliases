@@ -150,14 +150,7 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
-## nvm ##
-# alias n4='nvm use lts/argon'
-# alias n6='nvm use lts/boron'
-# alias n7='nvm use v7'
-# alias ns='nvm use system'
-
 ## Package manager updates ##
-# Update all (brew, gems, go packages, git clones, pip packages, tmux plugins, vim plugins) and check npm
 alias ua='git-repo-updater && bu && diu && gu && vu && pu && pu3 && ggu && tu && ncu -g'
 
 # Homebrew: Run daily operations
@@ -186,4 +179,15 @@ alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 alias ssh='TERM=xterm-256color ssh'
 
 # Update specific go packages
-alias ggu='go get -u github.com/{tj/mmake/cmd/mmake,rapidloop/rtop,asciimoo/wuzz,gchaincl/httplab,haya14busa/go-vimlparser/cmd/vimlparser}; go get -u github.com/ponzu-cms/ponzu/...'
+alias ggu="go get -u \
+             honnef.co/go/tools/cmd/gosimple \
+             honnef.co/go/tools/cmd/staticcheck \
+             github.com/tj/mmake/cmd/mmake \
+             github.com/rapidloop/rtop \
+             github.com/asciimoo/wuzz \
+             github.com/gchainl/httplab \
+             github.com/alecthomas/gometalinter \
+             github.com/russross/blackfriday-tool"
+
+             # fix this
+             # github.com/haya14busa/vimlparser \

@@ -5,49 +5,39 @@ end
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+
 Plug 'altercation/vim-colors-solarized'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'Chiel92/vim-autoformat'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'digitaltoad/vim-pug'
-Plug 'dNitro/vim-pug-complete'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
 Plug 'editorconfig/editorconfig-vim'
+
 Plug 'elzr/vim-json'
-Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'haya14busa/go-vimlparser'
+Plug 'haya14busa/go-vimlparser', { 'do': 'go get -u github.com/haya14busa/go-vimlparser/cmd/vimlparser' }
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'jreybert/vimagit'
 Plug 'kewah/vim-stylefmt'
-Plug 'kchmck/vim-coffee-script'
 Plug 'majutsushi/tagbar'
-Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 Plug 'moorereason/vim-markdownfmt'
-" Plug 'mhinz/vim-grepper'
-Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'moll/vim-node'
-Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
@@ -57,11 +47,8 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'posva/vim-vue'
 Plug 'rizzatti/dash.vim'
-" Plug 'sbdchd/neoformat'
-Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/echodoc.vim'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'sunaku/vim-shortcut'
@@ -77,7 +64,10 @@ Plug 'tweekmonster/wstrip.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
+
 Plug 'wakatime/vim-wakatime'
+Plug 'w0rp/ale'
+
 Plug 'wellle/tmux-complete.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -166,14 +156,11 @@ nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
 " :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
-windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+" windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>
-
-" Get Syntastic info for current buffer
-nnoremap <leader>si :SyntasticInfo<CR>
 
 " ----------------------------------------------------------------------------
 " Save
@@ -198,60 +185,6 @@ nnoremap <leader>t :TagbarToggle<CR>
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 
-" Syntastic base settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_id_checkers = 1
-let g:syntastic_echo_current_error = 1
-
-" CSS linting
-" let g:syntastic_css_checkers = ['stylelint']
-" let g:syntastic_styled_components = ['stylelint']
-
-" Fix highlighting problems for CSS3
-" augroup VimCSS3Syntax
-"   autocmd!
-  " autocmd FileType css setlocal iskeyword+=-
-" augroup END
-
-" HTML linting
-let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-let g:syntastic_html_checkers = ['tidy', 'htmlhint']
-
-" Ignore Apple's W3-invalid html code for pinned favicons
-let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
-let g:syntastic_html_tidy_ignore_errors = [
-      \   '<link> proprietary attribute "color"',
-      \   '<link> proprietary attribute "crossorigin"',
-      \   '<link> proprietary attribute "integrity"',
-      \   '<script> proprietary attribute "crossorigin"',
-      \   '<script> proprietary attribute "integrity"'
-      \ ]
-
-" Javascript linting
-let g:syntastic_javascript_checkers = ['eslint', 'standard']
-
-" JSON linting
-let g:syntastic_json_checkers = ['jsonlint']
-
-" Pug linting
-let g:syntastic_pug_checkers = ['pug_lint']
-
-" When the type of shell script is /bin/sh, assume a POSIX-compatible
-" shell for syntax highlighting purposes.
-let g:is_posix = 1
-
-" Shell script / bash linting
-let g:syntastic_sh_checkers = ['shellcheck']
-
-" VimL linting
-let g:syntastic_vim_checkers = ['vint']
-" let g:syntastic_vim_checkers = ['vimlint']
-"
-" Mark various *.rc files as JSON
-" autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -266,6 +199,7 @@ cmap w!! w !sudo tee > /dev/null %
 set shell=/usr/local/bin/bash
 
 " Editorconfig settings
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:EditorConfig_core_mode = 'external_command'
 let g:Editorconfig_exec_path = '/usr/local/bin/editorconfig'
 
@@ -367,15 +301,6 @@ nnoremap [t :tabp<cr>
 nnoremap Y y$
 
 " ----------------------------------------------------------------------------
-" autoformat
-" ----------------------------------------------------------------------------
-nnoremap <leader>af :Autoformat<cr>
-
-" " autoformat standard on save (disable above if using)
-" autocmd bufwritepost *.js silent !standard --fix %
-" set autoread
-
-" ----------------------------------------------------------------------------
 " gist.vim
 " ----------------------------------------------------------------------------
 " Make gists private by default
@@ -390,11 +315,6 @@ runtime macros/matchit.vim
 " undotree
 " ----------------------------------------------------------------------------
 let g:undotree_WindowLayout = 2
-
-" ----------------------------------------------------------------------------
-" VimProc
-" ----------------------------------------------------------------------------
-nnoremap <leader>vp :VimProcBang<space>
 
 " ----------------------------------------------------------------------------
 " YouCompleteMe, UltiSnips, and Supertab
@@ -488,6 +408,14 @@ let g:wstrip_auto = 1
 " autocmd BufWritePre *.js :normal gggqG
 
 " ----------------------------------------------------------------------------
-" neoformat
+" ale
 " ----------------------------------------------------------------------------
-" autocmd BufWritePre *.js Neoformat
+let g:ale_linters = {
+\   'bash': ['shellcheck,-n flag'],
+\   'css': ['stylelint'],
+\   'html': ['HTMLHint,tidy'],
+\   'javascript': ['standard'],
+\   'python': ['flake8'],
+\   'ruby': ['rubocop'],
+\   'scss': ['sass-lint,stylelint']
+\}

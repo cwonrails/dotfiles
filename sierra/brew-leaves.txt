@@ -48,6 +48,7 @@ docutils
 docx2txt
 duplicity
 ed
+elm
 enchant
 entr
 exiftags
@@ -117,7 +118,6 @@ httpflow
 httpie
 httpstat
 hub
-hugo
 homebrew/php/igbinary
 imagejs
 imagemagick
@@ -270,6 +270,7 @@ v
 vagrant-completion
 vapoursynth
 vault
+vaulted
 vifm
 vim
 vnu

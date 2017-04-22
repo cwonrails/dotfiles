@@ -9,22 +9,30 @@ Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'ConradIrwin/vim-bracketed-paste'
+
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'elzr/vim-json'
+
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
+
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
+
 Plug 'haya14busa/go-vimlparser', { 'do': 'go get -u github.com/haya14busa/go-vimlparser/cmd/vimlparser' }
+
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
+
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
@@ -33,28 +41,45 @@ Plug 'junegunn/fzf.vim'
 Plug 'kewah/vim-stylefmt'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
+
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
+
 Plug 'mbbill/undotree'
+
 Plug 'moorereason/vim-markdownfmt'
+
 Plug 'moll/vim-node'
+
 Plug 'mustache/vim-mustache-handlebars'
+
 Plug 'mxw/vim-jsx'
-Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
+
 Plug 'othree/html5.vim'
+
 Plug 'othree/javascript-libraries-syntax.vim'
+
 Plug 'othree/es.next.syntax.vim'
+
 Plug 'othree/yajs.vim'
+
 Plug 'posva/vim-vue'
+
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/echodoc.vim'
 Plug 'Sirver/UltiSnips'
+
 Plug 'stephpy/vim-yaml'
+
 Plug 'sunaku/vim-shortcut'
+
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+
 Plug 'tomtom/tComment_vim'
+
 Plug 'tmux-plugins/vim-tmux'
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
@@ -69,7 +94,9 @@ Plug 'wakatime/vim-wakatime'
 Plug 'w0rp/ale'
 
 Plug 'wellle/tmux-complete.vim'
+
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
@@ -411,11 +438,19 @@ let g:wstrip_auto = 1
 " ale
 " ----------------------------------------------------------------------------
 let g:ale_linters = {
-\   'bash': ['shellcheck,-n flag'],
+\   'bash': ['shellcheck'],
 \   'css': ['stylelint'],
 \   'html': ['HTMLHint,tidy'],
-\   'javascript': ['standard'],
+\   'jsx': ['stylelint','eslint'],
+\   'javascript': ['eslint'],
 \   'python': ['flake8'],
 \   'ruby': ['rubocop'],
 \   'scss': ['sass-lint,stylelint']
 \}
+
+let g:ale_linter_aliases = {'jsx': 'css'}
+
+" Display Ale status in Airline
+call airline#parts#define_function('ALE', 'ALEGetStatusLine')
+call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
+let g:airline_section_error = airline#section#create_right(['ALE'])

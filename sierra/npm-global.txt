@@ -1,6 +1,6 @@
 @angular/cli@1.0.0
 ava@0.19.1
-babel-eslint@7.2.2
+babel-eslint@7.2.3
 bower@1.8.0
 browserify@14.3.0
 builtwith-cli@1.0.0
@@ -13,10 +13,11 @@ csstree-cli@1.0.0
 csstree-validator@1.0.8
 diff-so-fancy@0.11.4
 dockerfile_lint@0.2.7
+eslint@3.19.0
 eslint-plugin-vue@2.0.1
 fast-cli@0.2.1
 fkill-cli@3.6.0
-gatsby@0.12.44
+gatsby@0.12.45
 generate-schema@2.5.0
 generator-generator@3.1.0
 generator-keystone@0.5.1
@@ -42,8 +43,9 @@ leven-cli@1.0.0
 lighthouse@1.6.3
 markdownlint-cli@0.3.1
 mdx-it@0.2.0
+micro-analytics-cli@1.1.0
 ndjson-cli@0.3.0
-now@4.11.1
+now@4.11.2
 now-redirect@1.1.1
 now-serve@0.5.1
 npm@4.5.0
@@ -52,8 +54,9 @@ nsp@2.6.3
 nwb@0.15.6
 pageres-cli@4.0.0
 pm2@2.4.5
-prettier-eslint-cli@3.3.0
-prettier-standard@3.0.1
+prettier@1.2.2
+prettier-eslint-cli@3.4.2
+prettier-standard@4.1.0
 pug@2.0.0-beta11
 pug-cli@1.0.0-alpha6
 pug-lint@2.4.0
@@ -65,7 +68,7 @@ rebase-editor@2.0.4
 release@1.2.1
 remark-cli@3.0.0
 remove-github-forks@1.4.2
-repng@1.0.0-b7
+repng@1.0.0
 sass-lint@1.10.2
 serve@5.1.4
 sharp-cli@1.3.0
@@ -89,7 +92,7 @@ webcomponent-bundle-analyzer@0.1.1
 webpack@2.4.1
 webpack-bundle-analyzer@2.4.0
 webpack-dashboard@0.3.0
-webpack-dev-server@2.4.2
+webpack-dev-server@2.4.3
 write-good@0.11.0
 yarn-completions@0.0.8
 yo@1.8.5

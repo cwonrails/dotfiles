@@ -6,7 +6,7 @@ ansicolor                    0.2.4
 appdirs                      1.4.3      
 args                         0.1.0      
 asn1crypto                   0.22.0     
-awscli                       1.11.78    
+awscli                       1.11.80    
 backports-abc                0.5        
 backports.ssl-match-hostname 3.5.0.1    
 batinfo                      0.4.2      
@@ -16,7 +16,7 @@ beets                        1.4.3
 bernhard                     0.2.5      
 boto                         2.46.1     
 boto3                        1.4.4      
-botocore                     1.5.41     
+botocore                     1.5.43     
 bottle                       0.12.13    
 cairocffi                    0.8.0      
 certifi                      2017.4.17  
@@ -88,7 +88,7 @@ paramiko                     2.1.2
 parsimonious                 0.7.0      
 passlib                      1.7.1      
 pathlib                      1.0.1      
-pbr                          2.1.0      
+pbr                          3.0.0      
 pika                         0.10.0     
 Pillow                       4.1.0      
 pip                          9.0.1      

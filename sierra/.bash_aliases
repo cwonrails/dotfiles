@@ -185,9 +185,9 @@ alias ggu="go get -u \
              github.com/tj/mmake/cmd/mmake \
              github.com/rapidloop/rtop \
              github.com/asciimoo/wuzz \
-             github.com/gchainl/httplab \
              github.com/alecthomas/gometalinter \
              github.com/russross/blackfriday-tool"
 
              # fix this
+             # github.com/gchainl/httplab \
              # github.com/haya14busa/vimlparser \

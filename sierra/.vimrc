@@ -5,120 +5,67 @@ end
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-
 Plug 'altercation/vim-colors-solarized'
-
-" Plug 'AndrewRadev/splitjoin.vim'
-
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
-
-" Plug 'Chiel92/vim-autoformat'
-
+Plug 'Chiel92/vim-autoformat'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
-
 Plug 'ConradIrwin/vim-bracketed-paste'
-
 Plug 'digitaltoad/vim-pug'
-
-" Plug 'dNitro/vim-pug-complete'
-
+Plug 'dNitro/vim-pug-complete'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
 Plug 'editorconfig/editorconfig-vim'
-
 Plug 'elzr/vim-json'
-
 " Plug 'embear/vim-localvimrc'
-
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
-
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
+Plug 'gregsexton/gitv'
 Plug 'hail2u/vim-css3-syntax'
-
-" Plug 'haya14busa/go-vimlparser'
 " Plug 'haya14busa/go-vimlparser', { 'do': 'go get -u github.com/haya14busa/go-vimlparser/cmd/vimlparser' }
-
 Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
-
+" Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-
 " Plug 'jreybert/vimagit'
-
 " Plug 'junegunn/vim-easy-align'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" Plug 'kchmck/vim-coffee-script'
-
+Plug 'kchmck/vim-coffee-script'
 Plug 'kewah/vim-stylefmt'
 Plug 'majutsushi/tagbar'
-
-" Plug 'Matt-Deacalion/vim-systemd-syntax'
-
+Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
-
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-
 Plug 'mbbill/undotree'
-
-" Plug 'mhinz/vim-grepper'
-" Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-
 Plug 'moorereason/vim-markdownfmt'
-
 Plug 'moll/vim-node'
-
-" Plug 'mtscout6/syntastic-local-eslint.vim'
-
+Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
-
 Plug 'mxw/vim-jsx'
-
-" Plug 'nginx/nginx', { 'rtp': '/contrib/syntax/vim/' }
-
 Plug 'othree/html5.vim'
-
 Plug 'othree/javascript-libraries-syntax.vim'
-
 Plug 'othree/es.next.syntax.vim'
-
 Plug 'othree/yajs.vim'
-
 Plug 'posva/vim-vue'
-
 Plug 'rizzatti/dash.vim'
-
 " Plug 'sbdchd/neoformat'
-
 Plug 'scrooloose/nerdtree'
-
-" Plug 'scrooloose/syntastic'
-
+Plug 'scrooloose/syntastic'
 Plug 'Shougo/echodoc.vim'
-
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-
 Plug 'Sirver/UltiSnips'
-
 Plug 'stephpy/vim-yaml'
-
-Plug 'sunaku/vim-shortcut'
-
+" Plug 'sunaku/vim-shortcut'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-
 Plug 'tomtom/tComment_vim'
-
 Plug 'tmux-plugins/vim-tmux'
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
@@ -128,15 +75,10 @@ Plug 'tweekmonster/wstrip.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
-
 Plug 'wakatime/vim-wakatime'
-
-Plug 'w0rp/ale'
-
+" Plug 'w0rp/ale'
 Plug 'wellle/tmux-complete.vim'
-
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
@@ -194,11 +136,6 @@ set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
 
-" Incsearch.vim
-" map /  <Plug>(incsearch-forward)
-" map ?  <Plug>(incsearch-backward)
-" map g/ <Plug>(incsearch-stay)
-
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
 
@@ -231,7 +168,8 @@ nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
-" nnoremap <leader>si :SyntasticInfo<CR>
+nnoremap <leader>si :SyntasticInfo<CR>
+
 " ----------------------------------------------------------------------------
 " Save
 " ----------------------------------------------------------------------------
@@ -255,60 +193,50 @@ nnoremap <leader>t :TagbarToggle<CR>
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 
-" " Syntastic base settings
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_id_checkers = 1
-" let g:syntastic_echo_current_error = 1
-"
-" " CSS linting
-" " let g:syntastic_css_checkers = ['stylelint']
-" " let g:syntastic_styled_components = ['stylelint']
-"
-" " Fix highlighting problems for CSS3
-" " augroup VimCSS3Syntax
-" "   autocmd!
-"   " autocmd FileType css setlocal iskeyword+=-
-" " augroup END
-"
-" " HTML linting
-" let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-" let g:syntastic_html_checkers = ['tidy', 'htmlhint']
-"
-" " Ignore Apple's W3-invalid html code for pinned favicons
-" let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
-" let g:syntastic_html_tidy_ignore_errors = [
-"       \   '<link> proprietary attribute "color"',
-"       \   '<link> proprietary attribute "crossorigin"',
-"       \   '<link> proprietary attribute "integrity"',
-"       \   '<script> proprietary attribute "crossorigin"',
-"       \   '<script> proprietary attribute "integrity"'
-"       \ ]
-"
-" " Javascript linting
-" let g:syntastic_javascript_checkers = ['eslint', 'standard']
-"
-" " JSON linting
-" let g:syntastic_json_checkers = ['jsonlint']
-"
-" " Pug linting
-" let g:syntastic_pug_checkers = ['pug_lint']
-"
-" " When the type of shell script is /bin/sh, assume a POSIX-compatible
-" " shell for syntax highlighting purposes.
-" let g:is_posix = 1
-"
-" " Shell script / bash linting
-" let g:syntastic_sh_checkers = ['shellcheck']
-"
-" " VimL linting
-" let g:syntastic_vim_checkers = ['vint']
-" " let g:syntastic_vim_checkers = ['vimlint']
-" "
-" " Mark various *.rc files as JSON
-" " autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
+" Syntastic base settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_id_checkers = 1
+let g:syntastic_echo_current_error = 1
+
+" CSS linting
+" let g:syntastic_css_checkers = ['stylelint']
+" let g:syntastic_styled_components = ['stylelint']
+
+" Fix highlighting problems for CSS3
+" augroup VimCSS3Syntax
+"   autocmd!
+  " autocmd FileType css setlocal iskeyword+=-
+" augroup END
+
+" HTML linting
+let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+let g:syntastic_html_checkers = ['tidy', 'htmlhint']
+
+" Ignore Apple's W3-invalid html code for pinned favicons
+let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
+let g:syntastic_html_tidy_ignore_errors = [
+      \   '<link> proprietary attribute "color"',
+      \   '<link> proprietary attribute "crossorigin"',
+      \   '<link> proprietary attribute "integrity"',
+      \   '<script> proprietary attribute "crossorigin"',
+      \   '<script> proprietary attribute "integrity"'
+      \ ]
+
+" Javascript linting
+let g:syntastic_javascript_checkers = ['eslint', 'standard']
+
+" JSON linting
+let g:syntastic_json_checkers = ['jsonlint']
+
+" Pug linting
+let g:syntastic_pug_checkers = ['pug_lint']
+
+" Shell / bash script linting
+let g:syntastic_sh_checkers = ['shellcheck']
+
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
 
@@ -423,14 +351,14 @@ nnoremap [t :tabp<cr>
 " ----------------------------------------------------------------------------
 nnoremap Y y$
 
-" " ----------------------------------------------------------------------------
-" " autoformat
-" " ----------------------------------------------------------------------------
-" nnoremap <leader>af :Autoformat<cr>
-"
-" " " autoformat standard on save (disable above if using)
-" " autocmd bufwritepost *.js silent !standard --fix %
-" " set autoread
+" ----------------------------------------------------------------------------
+" autoformat
+" ----------------------------------------------------------------------------
+nnoremap <leader>af :Autoformat<cr>
+
+" " autoformat standard on save (disable above if using)
+" autocmd bufwritepost *.js silent !standard --fix %
+" set autoread
 
 " ----------------------------------------------------------------------------
 " gist.vim
@@ -472,7 +400,7 @@ let g:UltiSnipsEditSplit='vertical'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery'
+let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
 
 " ----------------------------------------------------------------------------
 " vim-airline
@@ -518,9 +446,9 @@ map g/ <Plug>(incsearch-stay)
 " ----------------------------------------------------------------------------
 " incsearch-fuzzy.vim
 " ----------------------------------------------------------------------------
-map z/ <Plug>(incsearch-fuzzy-/)
-map z? <Plug>(incsearch-fuzzy-?)
-map zg/ <Plug>(incsearch-fuzzy-stay)
+" map z/ <Plug>(incsearch-fuzzy-/)
+" map z? <Plug>(incsearch-fuzzy-?)
+" map zg/ <Plug>(incsearch-fuzzy-stay)
 
 " ----------------------------------------------------------------------------
 " WStrip.vim
@@ -549,23 +477,24 @@ let g:wstrip_auto = 1
 " ----------------------------------------------------------------------------
 " autocmd BufWritePre *.js Neoformat
 
-" ----------------------------------------------------------------------------
-" ale
-" ----------------------------------------------------------------------------
-let g:ale_linters = {
-\   'bash': ['shellcheck'],
-\   'css': ['stylelint'],
-\   'html': ['HTMLHint,tidy'],
-\   'jsx': ['stylelint','eslint'],
-\   'javascript': ['eslint'],
-\   'python': ['flake8'],
-\   'ruby': ['rubocop'],
-\   'scss': ['sass-lint,stylelint']
-\}
-
-let g:ale_linter_aliases = {'jsx': 'css'}
-
-" Display Ale status in Airline
-call airline#parts#define_function('ALE', 'ALEGetStatusLine')
-call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
-let g:airline_section_error = airline#section#create_right(['ALE'])
+" " ----------------------------------------------------------------------------
+" " ale
+" " ----------------------------------------------------------------------------
+" let g:ale_linters = {
+" \   'bash': ['shellcheck'],
+" \   'css': ['stylelint'],
+" \   'html': ['HTMLHint,tidy'],
+" \   'jsx': ['stylelint','eslint'],
+" \   'javascript': ['eslint'],
+" \   'python': ['flake8'],
+" \   'ruby': ['rubocop'],
+" \   'scss': ['sass-lint,stylelint']
+" \}
+"
+" let g:ale_linter_aliases = {'jsx': 'css'}
+"
+" " Display Ale status in Airline
+" call airline#parts#define_function('ALE', 'ALEGetStatusLine')
+" call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
+"
+" let g:airline_section_error = airline#section#create_right(['ALE'])

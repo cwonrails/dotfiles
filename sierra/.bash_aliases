@@ -150,7 +150,7 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
-##  Update all packages and repositories ##
+## Package manager updates ##
 alias ua='git-repo-updater && bu && diu && gu && vu && pu && pu3 && ggu && tu && ncu -g'
 
 # Homebrew: Run daily operations
@@ -186,6 +186,8 @@ alias ggu="go get -u \
              github.com/rapidloop/rtop \
              github.com/asciimoo/wuzz \
              github.com/alecthomas/gometalinter \
-             github.com/russross/blackfriday-tool \
-             github.com/go-vimlparser/cmd/vimlparser \
-             github.com/gchainl/httplab"
+             github.com/russross/blackfriday-tool"
+
+             # fix this
+             # github.com/gchainl/httplab \
+             # github.com/haya14busa/vimlparser \

@@ -716,6 +716,11 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>665 188 934 77 0 0 1920 1177 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
@@ -727,19 +732,19 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 31 599 514 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>952 672 796 473 0 0 1920 1177 </string>
+	<string>952 639 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 593 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMonoSSm-Book</key>
 	<string>346 60 260 616 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>962 4 955 1173 0 0 1920 1177 </string>
+	<string>2 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2882 160 955 1057 1920 160 1920 1057 </string>
+	<string>0 4 1920 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>1920 160 1920 1057 1920 160 1920 1057 </string>
+	<string>-1920 160 1920 1057 -1920 160 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>2 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -5412,7 +5417,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-04-14T17:43:21Z</date>
+	<date>2017-04-22T15:46:32Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -5453,6 +5458,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170412-nightly</string>
+	<string>3.1.20170419-nightly</string>
 </dict>
 </plist>

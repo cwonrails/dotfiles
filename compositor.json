@@ -7,30 +7,26 @@
   "title": "Dotfiles",
   "branch": "master",
   "style": {
-    "name": "Humanist",
+    "name": "Williamsburg",
     "componentSet": {
       "nav": "nav/BasicNav",
       "header": "header/LightBannerHeader",
       "article": "article/ReaderArticle",
       "footer": "footer/BasicFooter"
     },
-    "fontFamily": "Athelas, Georgia, serif",
+    "fontFamily": "Montserrat, sans-serif",
     "heading": {
-      "fontWeight": 400,
-      "textTransform": "uppercase",
+      "fontWeight": 600,
       "letterSpacing": "0.1em"
     },
     "colors": {
-      "text": "#121212",
+      "text": "#346",
       "background": "#fff",
-      "primary": "#ee5544",
-      "secondary": "#005499",
-      "highlight": "#00bd78",
-      "border": "#ddd",
-      "muted": "#f3f3f3"
-    },
-    "layout": {
-      "maxWidth": 768
+      "primary": "#0099e0",
+      "secondary": "#ab61ff",
+      "highlight": "#f7b",
+      "muted": "#fffab3",
+      "border": "#ccd"
     }
   },
   "content": [

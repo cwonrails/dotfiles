@@ -654,33 +654,6 @@
 	<integer>0</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
-	<key>NSFontPanelPreviewHeight</key>
-	<real>100</real>
-	<key>NSFontPanelSizeList</key>
-	<array>
-		<string>9</string>
-		<string>10</string>
-		<string>11</string>
-		<string>12</string>
-		<string>13</string>
-		<string>14</string>
-		<string>15</string>
-		<string>16</string>
-		<string>18</string>
-		<string>24</string>
-		<string>36</string>
-		<string>48</string>
-		<string>64</string>
-		<string>72</string>
-		<string>96</string>
-		<string>144</string>
-		<string>288</string>
-		<string>17</string>
-	</array>
-	<key>NSFontPanelSizeSliderParams</key>
-	<string>2 0 100</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/github/repos/public/dotfiles/sierra</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -716,41 +689,14 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>665 188 934 77 0 0 1920 1177 </string>
-	<key>NSWindow Frame ProfilesPanel</key>
-	<string>345 734 735 382 0 0 1920 1177 </string>
-	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>652 753 616 174 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>610 417 700 622 0 0 1920 1177 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 31 599 514 0 0 1440 877 </string>
+	<string>2570 659 620 392 1920 160 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>952 639 796 473 0 0 1920 1177 </string>
+	<string>602 413 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>155 593 592 584 0 0 1920 1177 </string>
-	<key>NSWindow Frame com.apple.typography_panel_OperatorMonoSSm-Book</key>
-	<string>346 60 260 616 0 0 1920 1177 </string>
+	<string>-55 525 592 584 -1920 160 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2 4 955 1173 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>962 4 955 1173 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 4 1920 1173 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>-1920 160 1920 1057 -1920 160 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>2 4 955 1173 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
-	<string>962 4 955 1173 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 6</key>
-	<string>962 8 955 1166 0 0 1920 1177 </string>
+	<string>595 362 730 452 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA_selection</key>
@@ -5253,106 +5199,16 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
-	<key>NoSyncConfirmShellIntegrationCommand</key>
-	<true/>
-	<key>NoSyncConfirmShellIntegrationCommand_selection</key>
-	<integer>0</integer>
-	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
-	<integer>1</integer>
-	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
-	<true/>
-	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
-	<integer>0</integer>
-	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
-	<key>NoSyncInstallUtilitiesPackage</key>
-	<true/>
-	<key>NoSyncInstallUtilitiesPackage_selection</key>
-	<integer>0</integer>
 	<key>NoSyncInstallationId</key>
-	<string>7697867C-39D0-45A6-AF74-0FAB18C2F82D</string>
-	<key>NoSyncLastTipTime</key>
-	<real>509031525.82117403</real>
+	<string>B8ED0238-C68F-4424-85F8-6A487F3F0071</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
-	<key>NoSyncPermissionToShowTip</key>
-	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>500746181.372886</real>
-	<key>NoSyncTipsToNotShow</key>
-	<array>
-		<string>000</string>
-		<string>0000</string>
-		<string>0001</string>
-		<string>0002</string>
-		<string>0003</string>
-		<string>0004</string>
-		<string>0005</string>
-		<string>0006</string>
-		<string>0007</string>
-		<string>0008</string>
-		<string>0009</string>
-		<string>0010</string>
-		<string>0011</string>
-		<string>0012</string>
-		<string>0013</string>
-		<string>0014</string>
-		<string>0015</string>
-		<string>0016</string>
-		<string>0017</string>
-		<string>0018</string>
-		<string>0019</string>
-		<string>0020</string>
-		<string>0021</string>
-		<string>0022</string>
-		<string>0023</string>
-		<string>0024</string>
-		<string>0025</string>
-		<string>0026</string>
-		<string>0027</string>
-		<string>0028</string>
-		<string>0029</string>
-		<string>0030</string>
-		<string>0031</string>
-		<string>0032</string>
-		<string>0033</string>
-		<string>0034</string>
-		<string>0035</string>
-		<string>0036</string>
-		<string>0037</string>
-		<string>0038</string>
-		<string>0039</string>
-		<string>0040</string>
-		<string>0041</string>
-		<string>0042</string>
-		<string>0043</string>
-		<string>0044</string>
-		<string>0045</string>
-		<string>0046</string>
-		<string>0047</string>
-		<string>0048</string>
-		<string>0049</string>
-		<string>0050</string>
-		<string>0051</string>
-		<string>0052</string>
-		<string>0053</string>
-		<string>0054</string>
-		<string>0055</string>
-		<string>0056</string>
-		<string>0057</string>
-		<string>0058</string>
-		<string>0059</string>
-		<string>0060</string>
-		<string>0061</string>
-		<string>0062</string>
-		<string>0063</string>
-		<string>0064</string>
-		<string>0065</string>
-	</array>
+	<real>514668007.08299798</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OptionClickMovesCursor</key>
@@ -5406,18 +5262,16 @@
 	<string>/Users/christopherwatson/github/repos/public/dotfiles/sierra</string>
 	<key>PromptOnQuit</key>
 	<false/>
-	<key>SUAutomaticallyUpdate</key>
-	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly.xml?shard=53</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=8</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-04-22T15:46:32Z</date>
+	<date>2017-04-23T19:29:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -5437,7 +5291,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1488639232</real>
+	<real>1492975360</real>
 	<key>URLHandlersByGuid</key>
 	<dict>
 		<key>ssh</key>
@@ -5458,6 +5312,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170419-nightly</string>
+	<string>3.1.beta.3</string>
 </dict>
 </plist>

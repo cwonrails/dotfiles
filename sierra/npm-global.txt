@@ -17,7 +17,7 @@ eslint@3.19.0
 eslint-plugin-vue@2.0.1
 fast-cli@0.2.1
 fkill-cli@3.6.0
-gatsby@0.12.45
+gatsby@0.12.46
 generate-schema@2.5.0
 generator-generator@3.1.0
 generator-keystone@0.5.1
@@ -27,7 +27,7 @@ gh@1.12.8
 git-recall@1.1.10
 git-upload@1.1.2
 grunt-cli@1.2.0
-gulp-cli@1.2.2
+gulp-cli@1.3.0
 hpm-cli@2.0.1
 htmlhint@0.9.13
 http-server@0.9.0
@@ -40,7 +40,7 @@ jsonreduce@1.0.1
 jsonstats@1.0.0
 karma-cli@1.0.1
 leven-cli@1.0.0
-lighthouse@1.6.3
+lighthouse@1.6.5
 markdownlint-cli@0.3.1
 mdx-it@0.2.0
 micro-analytics-cli@1.1.0
@@ -92,7 +92,7 @@ webcomponent-bundle-analyzer@0.1.1
 webpack@2.4.1
 webpack-bundle-analyzer@2.4.0
 webpack-dashboard@0.3.0
-webpack-dev-server@2.4.3
+webpack-dev-server@2.4.4
 write-good@0.11.0
 yarn-completions@0.0.8
 yo@1.8.5

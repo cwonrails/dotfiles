@@ -14,7 +14,7 @@ hyper
 imagealpha
 imageoptim
 intellij-idea
-iterm2-nightly
+iterm2
 java
 karabiner
 keybase
@@ -38,6 +38,7 @@ sketchpacks
 sparkleshare
 sublime-text-dev
 transmission
+tweeten
 vagrant
 virtualbox
 visual-studio-code

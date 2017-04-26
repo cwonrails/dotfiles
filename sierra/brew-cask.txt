@@ -5,7 +5,7 @@ caffeine
 caprine
 chromium
 daisydisk
-docker-beta
+docker
 firefoxdeveloperedition
 firefoxnightly
 gitter

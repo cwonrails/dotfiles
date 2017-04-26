@@ -19,8 +19,10 @@ borg
 homebrew/php/box
 brew-cask-completion
 brotli
+burl
 bzip2
 caddy
+carthage
 ccat
 certbot
 certigo
@@ -78,6 +80,7 @@ gimme
 git
 git-archive-all
 git-extras
+git-fresh
 git-lfs
 git-now
 git-open
@@ -118,6 +121,7 @@ httpflow
 httpie
 httpstat
 hub
+hugo
 homebrew/php/igbinary
 imagejs
 imagemagick
@@ -211,7 +215,6 @@ thoughtbot/formulae/rcm
 reattach-to-user-namespace
 rename
 rhino
-ripgrep
 rlwrap
 rmlint
 grammarly/tap/rocker

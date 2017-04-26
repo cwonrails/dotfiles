@@ -41,7 +41,7 @@ EditorConfig                 0.12.1
 elasticsearch                5.3.0      
 enum-compat                  0.0.2      
 enum34                       1.1.6      
-Fabric                       1.13.1     
+Fabric                       1.13.2     
 flake8                       3.3.0      
 functools32                  3.2.3.post2
 future                       0.16.0     
@@ -148,7 +148,7 @@ tornado                      4.5.1
 trollius                     2.1        
 Unidecode                    0.4.20     
 urlclean                     0.5.4      
-urllib3                      1.20       
+urllib3                      1.21       
 urwid                        1.3.1      
 vim-vint                     0.3.11     
 virtualenv                   15.1.0     
@@ -157,7 +157,7 @@ virtualenvwrapper            4.7.2
 wcwidth                      0.1.7      
 websocket-client             0.40.0     
 wheel                        0.24.0     
-yamllint                     1.6.1      
+yamllint                     1.7.0      
 yasm                         0.0        
 yolk                         0.4.3      
 zeroconf                     0.19.0     

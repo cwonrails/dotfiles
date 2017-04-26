@@ -57,12 +57,13 @@ Plug 'posva/vim-vue'
 Plug 'rizzatti/dash.vim'
 " Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'Shougo/echodoc.vim'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
 " Plug 'sunaku/vim-shortcut'
+Plug 'vim-syntastic/syntastic'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
@@ -159,9 +160,7 @@ let g:NERDTreeShowIgnoredStatus = 1
 nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
-" :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
-" windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
-windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
@@ -202,14 +201,15 @@ let g:syntastic_id_checkers = 1
 let g:syntastic_echo_current_error = 1
 
 " CSS linting
-" let g:syntastic_css_checkers = ['stylelint']
-" let g:syntastic_styled_components = ['stylelint']
+let g:syntastic_css_checkers = ['stylelint']
+let g:syntastic_styled_components = ['stylelint']
+
 
 " Fix highlighting problems for CSS3
-" augroup VimCSS3Syntax
-"   autocmd!
-  " autocmd FileType css setlocal iskeyword+=-
-" augroup END
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'

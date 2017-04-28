@@ -16,7 +16,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'digitaltoad/vim-pug'
 Plug 'dNitro/vim-pug-complete'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 " Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
@@ -58,6 +58,7 @@ Plug 'rizzatti/dash.vim'
 " Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree'
 " Plug 'scrooloose/syntastic'
+Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/echodoc.vim'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Sirver/UltiSnips'
@@ -250,9 +251,9 @@ cmap w!! w !sudo tee > /dev/null %
 set shell=/usr/local/bin/bash
 
 " Editorconfig settings
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-let g:EditorConfig_core_mode = 'external_command'
-let g:Editorconfig_exec_path = '/usr/local/bin/editorconfig'
+" let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" let g:EditorConfig_core_mode = 'external_command'
+" let g:Editorconfig_exec_path = '/usr/local/bin/editorconfig'
 
 " Fugitive shotcuts
 nnoremap <leader>gd :<Leader>Gdiff<cr>gg<c-n>

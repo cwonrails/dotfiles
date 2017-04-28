@@ -689,14 +689,23 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2570 659 620 392 1920 160 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>602 413 796 473 0 0 1920 1177 </string>
+	<string>602 379 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>-55 525 592 584 -1920 160 1920 1057 </string>
+	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>595 362 730 452 0 0 1920 1177 </string>
+	<string>0 0 1920 1177 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>962 4 955 1173 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>962 0 955 1177 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA_selection</key>
@@ -5203,12 +5212,21 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>B8ED0238-C68F-4424-85F8-6A487F3F0071</string>
+	<key>NoSyncLastTipTime</key>
+	<real>514991643.70392001</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>514668007.08299798</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OptionClickMovesCursor</key>
@@ -5271,7 +5289,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-04-23T19:29:08Z</date>
+	<date>2017-04-27T13:14:17Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -5291,7 +5309,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1492975360</real>
+	<real>1493036800</real>
 	<key>URLHandlersByGuid</key>
 	<dict>
 		<key>ssh</key>

@@ -9,6 +9,7 @@ asio
 wallix/awless/awless
 aws-shell
 awscli
+bandcamp-dl
 bash-completion@2
 bash-preexec
 bats
@@ -110,6 +111,7 @@ gst-plugins-ugly
 gst-python
 guetzli
 guile
+guile@2.0
 gzip
 hadolint
 highlight

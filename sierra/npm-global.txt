@@ -21,7 +21,6 @@ eslint@3.19.0
 eslint-plugin-vue@2.0.1
 fast-cli@0.2.1
 fkill-cli@3.6.0
-gatsby@0.12.46
 generate-schema@2.5.0
 generator-generator@3.1.0
 generator-keystone@0.5.1
@@ -40,12 +39,13 @@ instant-markdown-d@0.1.0
 joi@10.4.1
 jscodeshift@0.3.30
 jsonlint@1.6.2
-jsonmap@1.6.3
+jsonmap@2.0.0
 jsonreduce@1.0.1
 jsonstats@1.0.0
 karma-cli@1.0.1
 leven-cli@1.0.0
 lighthouse@1.6.5
+mad@0.4.0
 markdownlint-cli@0.3.1
 mdx-it@0.2.0
 micro@7.3.2
@@ -59,7 +59,7 @@ npm-install-missing@0.1.4
 nsp@2.6.3
 nwb@0.15.6
 pageres-cli@4.0.0
-pm2@2.4.5
+pm2@2.4.6
 prettier@1.2.2
 prettier-eslint-cli@3.4.2
 prettier-standard@4.1.0
@@ -97,8 +97,8 @@ vue-cli@2.8.1
 webcomponent-bundle-analyzer@0.1.1
 webpack@2.4.1
 webpack-bundle-analyzer@2.4.0
-webpack-dashboard@0.3.0
-webpack-dev-server@2.4.4
+webpack-dashboard@0.4.0
+webpack-dev-server@2.4.5
 wreck@12.1.0
 write-good@0.11.0
 yarn-completions@0.0.8

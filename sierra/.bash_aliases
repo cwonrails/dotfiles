@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# burl
+alias GET='burl GET'
+alias HEAD='burl -I'
+alias POST='burl POST'
+alias PUT='burl PUT'
+alias PATCH='burl PATCH'
+alias DELETE='burl DELETE'
+alias OPTIONS='burl OPTIONS'
+
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force && brew cask cleanup'
 

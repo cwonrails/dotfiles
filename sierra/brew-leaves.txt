@@ -62,6 +62,8 @@ ffind
 file-formula
 findutils
 fio
+firebase-cli
+flif
 flow
 fontforge
 fonttools
@@ -184,7 +186,6 @@ nano
 nativefier
 ncdu
 oath-toolkit
-opam
 open-completion
 openssh
 opusfile
@@ -251,6 +252,7 @@ sslyze
 startup-notification
 svg2png
 svgcleaner
+svgo
 sysdig
 t-completion
 tcl-tk

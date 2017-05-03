@@ -9,6 +9,7 @@ browserify@14.3.0
 builtwith-cli@1.0.0
 coffee-script@1.12.5
 crconsole@1.4.0
+create-next-app@0.4.7
 create-react-app@1.3.0
 create-react-native-app@0.0.6
 crmux@0.0.6
@@ -33,8 +34,8 @@ grunt-cli@1.2.0
 gulp-cli@1.3.0
 hpm-cli@2.0.1
 htmlhint@0.9.13
-http-server@0.9.0
-ignite-cli@2.0.0-beta.8
+http-server@0.10.0
+ignite-cli@2.0.0-beta.9
 instant-markdown-d@0.1.0
 joi@10.4.1
 jscodeshift@0.3.30
@@ -48,9 +49,10 @@ lighthouse@1.6.5
 mad@0.4.0
 markdownlint-cli@0.3.1
 mdx-it@0.2.0
+mediumtoolkit@0.1.0
 micro@7.3.2
 ndjson-cli@0.3.0
-now@4.11.2
+now@5.1.2
 now-redirect@1.1.1
 now-serve@0.5.1
 npm@4.5.0
@@ -59,11 +61,12 @@ npm-install-missing@0.1.4
 nsp@2.6.3
 nwb@0.15.6
 pageres-cli@4.0.0
+pkg@3.0.1
 pm2@2.4.6
-prettier@1.2.2
+prettier@1.3.0
 prettier-eslint-cli@3.4.2
 prettier-standard@4.1.0
-pug@2.0.0-beta.12
+pug@2.0.0-rc.1
 pug-cli@1.0.0-alpha6
 pug-lint@2.4.0
 pure-prompt@1.5.2
@@ -72,7 +75,7 @@ pushstate-server@3.0.0
 react-native-cli@2.0.1
 rebase-editor@2.0.5
 release@1.2.1
-remark-cli@3.0.0
+remark-cli@3.0.1
 remove-github-forks@1.4.2
 repng@1.0.0
 sass-lint@1.10.2
@@ -85,7 +88,6 @@ standard-format@2.2.4
 standard-summary@1.0.0
 starring@0.2.1
 stylefmt@5.3.2
-svgo@0.7.2
 svgstore-cli@1.3.0
 tachyons-cli@1.0.11
 tidy-markdown@2.0.5

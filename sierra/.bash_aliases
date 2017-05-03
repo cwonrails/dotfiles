@@ -195,8 +195,7 @@ alias ggu="go get -u \
              github.com/rapidloop/rtop \
              github.com/asciimoo/wuzz \
              github.com/alecthomas/gometalinter \
-             github.com/russross/blackfriday-tool"
-
-             # fix this
-             # github.com/gchainl/httplab \
-             # github.com/haya14busa/vimlparser \
+             github.com/russross/blackfriday-tool \
+             github.com/ericchiang/pup \
+             github.com/haya14busa/go-vimlparser/cmd/vimlparser \
+             github.com/gchaincl/httplab/cmd/httplab"

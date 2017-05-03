@@ -18,7 +18,7 @@ Plug 'dNitro/vim-pug-complete'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
 " Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
-" Plug 'embear/vim-localvimrc'
+Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
@@ -227,7 +227,7 @@ let g:syntastic_html_tidy_ignore_errors = [
       \ ]
 
 " Javascript linting
-let g:syntastic_javascript_checkers = ['eslint', 'standard']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " JSON linting
 let g:syntastic_json_checkers = ['jsonlint']
@@ -237,6 +237,9 @@ let g:syntastic_pug_checkers = ['pug_lint']
 
 " Shell / bash script linting
 let g:syntastic_sh_checkers = ['shellcheck']
+
+" Typescript linting
+let g:syntastic_sh_checkers = ['tslint']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell

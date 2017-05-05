@@ -6,9 +6,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
+Plug 'alvan/vim-closetag'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'cespare/vim-toml'
 Plug 'Chiel92/vim-autoformat'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -16,29 +18,35 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'digitaltoad/vim-pug'
 Plug 'dNitro/vim-pug-complete'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
-" Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'ElmCast/elm-vim'
 Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
+Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
 Plug 'gregsexton/gitv'
+Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
-" Plug 'haya14busa/go-vimlparser', { 'do': 'go get -u github.com/haya14busa/go-vimlparser/cmd/vimlparser' }
+Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch.vim'
-" Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'heavenshell/vim-jsdoc'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'honza/vim-snippets'
+Plug 'isobit/vim-caddyfile'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-" Plug 'jreybert/vimagit'
-" Plug 'junegunn/vim-easy-align'
+Plug 'jbgutierrez/vim-babel'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kewah/vim-stylefmt'
 Plug 'majutsushi/tagbar'
+Plug 'maralla/vim-toml-enhance'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
@@ -53,23 +61,25 @@ Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
+Plug 'pearofducks/ansible-vim'
+Plug 'phenomenes/ansible-snippets'
+Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
+Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'rizzatti/dash.vim'
-" Plug 'sbdchd/neoformat'
+Plug 'robertbasic/vim-hugo-helper'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'scrooloose/syntastic'
-Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/echodoc.vim'
-" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
-" Plug 'sunaku/vim-shortcut'
 Plug 'vim-syntastic/syntastic'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'travisjeffery/vim-auto-mkdir'
@@ -77,21 +87,16 @@ Plug 'tweekmonster/wstrip.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/PreserveNoEOL'
 Plug 'wakatime/vim-wakatime'
-" Plug 'w0rp/ale'
 Plug 'wellle/tmux-complete.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
 
-" Enable 256 colors in terminal (vim 7)
+" Enable 256 colors in terminal
 set t_Co=256
-
-" " Enable 256 colors in terminal (vim 8)
-" if (has('termguicolors'))
-"   set termguicolors
-" endif
 
 " Enable syntax highlighting
 syntax enable
@@ -140,9 +145,6 @@ let g:solarized_termtrans=1
 
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
-
-" Get current filetype
-nnoremap <leader>ft :set filetype?<CR>
 
 " Preview markdown files in Marked.app (Mac-only)
 nnoremap <leader>mp :MarkedOpen!<CR>
@@ -253,10 +255,10 @@ cmap w!! w !sudo tee > /dev/null %
 " Make vim use homebrew-installed bash
 set shell=/usr/local/bin/bash
 
-" Editorconfig settings
-" let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-" let g:EditorConfig_core_mode = 'external_command'
-" let g:Editorconfig_exec_path = '/usr/local/bin/editorconfig'
+" Editorconfig settings (official plugin)
+let g:Editorconfig_core_mode = "external_command"
+let g:Editorconfig_exec_path = ['usr/local/bin/editorconfig']
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Fugitive shotcuts
 nnoremap <leader>gd :<Leader>Gdiff<cr>gg<c-n>
@@ -380,11 +382,6 @@ runtime macros/matchit.vim
 " ----------------------------------------------------------------------------
 let g:undotree_WindowLayout = 2
 
-" " ----------------------------------------------------------------------------
-" " VimProc
-" " ----------------------------------------------------------------------------
-" nnoremap <leader>vp :VimProcBang<space>
-
 " ----------------------------------------------------------------------------
 " YouCompleteMe, UltiSnips, and Supertab
 " ----------------------------------------------------------------------------
@@ -450,9 +447,9 @@ map g/ <Plug>(incsearch-stay)
 " ----------------------------------------------------------------------------
 " incsearch-fuzzy.vim
 " ----------------------------------------------------------------------------
-" map z/ <Plug>(incsearch-fuzzy-/)
-" map z? <Plug>(incsearch-fuzzy-?)
-" map zg/ <Plug>(incsearch-fuzzy-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
 
 " ----------------------------------------------------------------------------
 " WStrip.vim
@@ -462,43 +459,15 @@ let g:wstrip_auto = 1
 " ----------------------------------------------------------------------------
 " vim-jsx
 " ----------------------------------------------------------------------------
-" let g:jsx_ext_required = 1
+let g:jsx_ext_required = 1
 
 " ----------------------------------------------------------------------------
-" prettier
+" vim-esearch
 " ----------------------------------------------------------------------------
-" autocmd FileType javascript.jsx,javascript setlocal formatprg=prettier\ --stdin
-" autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
-
-" ----------------------------------------------------------------------------
-" prettier-standard
-" ----------------------------------------------------------------------------
-" autocmd FileType javascript set formatprg=prettier-standard
-" autocmd BufWritePre *.js :normal gggqG
-
-" ----------------------------------------------------------------------------
-" neoformat
-" ----------------------------------------------------------------------------
-" autocmd BufWritePre *.js Neoformat
-
-" " ----------------------------------------------------------------------------
-" " ale
-" " ----------------------------------------------------------------------------
-" let g:ale_linters = {
-" \   'bash': ['shellcheck'],
-" \   'css': ['stylelint'],
-" \   'html': ['HTMLHint,tidy'],
-" \   'jsx': ['stylelint','eslint'],
-" \   'javascript': ['eslint'],
-" \   'python': ['flake8'],
-" \   'ruby': ['rubocop'],
-" \   'scss': ['sass-lint,stylelint']
-" \}
-"
-" let g:ale_linter_aliases = {'jsx': 'css'}
-"
-" " Display Ale status in Airline
-" call airline#parts#define_function('ALE', 'ALEGetStatusLine')
-" call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
-"
-" let g:airline_section_error = airline#section#create_right(['ALE'])
+let g:esearch = {
+  \ 'adapter':    'ag',
+  \ 'backend':    'vimproc',
+  \ 'out':        'win',
+  \ 'batch_size': 1000,
+  \ 'use':        ['visual', 'hlsearch', 'last'],
+  \}

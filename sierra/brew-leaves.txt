@@ -51,6 +51,7 @@ docutils
 docx2txt
 duplicity
 ed
+editorconfig
 elm
 enchant
 entr

@@ -16,11 +16,11 @@ imageoptim
 intellij-idea
 iterm2
 java
+kap
 karabiner
 keybase
 keyboard-cleaner
 ksdiff
-licecap
 limechat
 malwarebytes-anti-malware
 master-password

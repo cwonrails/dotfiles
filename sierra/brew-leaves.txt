@@ -40,7 +40,6 @@ confuse
 convox
 coreutils
 ctop
-curl
 dante
 devd
 diffutils

@@ -89,6 +89,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'wakatime/vim-wakatime'
+Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -459,7 +460,7 @@ let g:wstrip_auto = 1
 " ----------------------------------------------------------------------------
 " vim-jsx
 " ----------------------------------------------------------------------------
-let g:jsx_ext_required = 1
+let g:jsx_ext_required = 0
 
 " ----------------------------------------------------------------------------
 " vim-esearch
@@ -471,3 +472,9 @@ let g:esearch = {
   \ 'batch_size': 1000,
   \ 'use':        ['visual', 'hlsearch', 'last'],
   \}
+
+" ----------------------------------------------------------------------------
+" tmux-complete
+" ----------------------------------------------------------------------------
+let g:tmuxcomplete#trigger = 'omnifunc'
+

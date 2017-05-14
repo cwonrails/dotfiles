@@ -8,7 +8,6 @@ asciinema
 asio
 wallix/awless/awless
 aws-shell
-awscli
 bandcamp-dl
 bash-completion@2
 bash-preexec
@@ -24,6 +23,7 @@ burl
 bzip2
 caddy
 carthage
+cassandra
 ccat
 certbot
 certigo
@@ -39,6 +39,8 @@ composer-completion
 confuse
 convox
 coreutils
+couchdb
+csvtomd
 ctop
 dante
 devd
@@ -51,6 +53,7 @@ docx2txt
 duplicity
 ed
 editorconfig
+elasticsearch
 elm
 enchant
 entr
@@ -101,6 +104,7 @@ googler
 gotags
 yudai/gotty/gotty
 gpatch
+gperftools
 gpg-agent
 gpm
 graphicsmagick
@@ -130,10 +134,14 @@ homebrew/php/igbinary
 imagejs
 imagemagick
 imap-uw
+imlib2
+influxdb
+jenkins
 simeji/jid/jid
 jpeg-turbo
 jpegoptim
 jq
+loadimpact/k6/k6
 known_hosts
 kompose
 kube-aws
@@ -171,6 +179,7 @@ macvim
 make
 markdown
 mas
+homebrew/science/matplotlib
 maven
 mcrypt
 md5sha1sum
@@ -188,6 +197,7 @@ ncdu
 oath-toolkit
 open-completion
 openssh
+openvpn
 opusfile
 caryll/tap/otfcc-mac64
 p7zip
@@ -242,9 +252,9 @@ shpotify
 siege
 sift
 slackcat
+sngrep
 socat
 speedtest_cli
-spidermonkey
 ssh-audit
 ssh-copy-id
 sshrc
@@ -290,7 +300,6 @@ wget
 wifi-password
 wput
 wslay
-wxmac
 xhyve
 xonsh
 yajl

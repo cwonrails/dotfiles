@@ -11,9 +11,10 @@ packaging      16.8
 pafy           0.5.3.1
 pip            9.0.1  
 pyparsing      2.2.0  
-requests       2.13.0 
+requests       2.14.2 
+scandir        1.5    
 scdl           1.6.4  
-setuptools     34.4.1 
+setuptools     35.0.2 
 six            1.10.0 
 sncli          0.1.4  
 termcolor      1.1.0  

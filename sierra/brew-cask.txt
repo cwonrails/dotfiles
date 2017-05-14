@@ -5,7 +5,6 @@ caffeine
 caprine
 chromium
 daisydisk
-docker
 firefoxdeveloperedition
 firefoxnightly
 gitter
@@ -13,7 +12,6 @@ gitup
 hyper
 imagealpha
 imageoptim
-intellij-idea
 iterm2
 java
 kap
@@ -23,8 +21,6 @@ keyboard-cleaner
 ksdiff
 limechat
 malwarebytes-anti-malware
-master-password
-nanobox
 provisioning
 qlcolorcode
 qlimagesize

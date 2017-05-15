@@ -74,6 +74,8 @@ Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-syntastic/syntastic'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomtom/tComment_vim'
@@ -173,6 +175,9 @@ nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
 nnoremap <leader>si :SyntasticInfo<CR>
+
+" Run terminal commands
+" nnoremap <leader>vp :VimProcBang<space>
 
 " ----------------------------------------------------------------------------
 " Save
@@ -478,4 +483,3 @@ let g:esearch = {
 " tmux-complete
 " ----------------------------------------------------------------------------
 let g:tmuxcomplete#trigger = 'omnifunc'
-

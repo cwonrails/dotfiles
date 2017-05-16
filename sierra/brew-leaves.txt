@@ -97,6 +97,7 @@ glog
 gnu-sed
 gnu-tar
 gnu-which
+gnupg
 gnuplot
 gnustep-make
 godep
@@ -105,7 +106,6 @@ gotags
 yudai/gotty/gotty
 gpatch
 gperftools
-gpg-agent
 gpm
 graphicsmagick
 graphviz
@@ -210,6 +210,7 @@ perl
 phantomjs
 pidcat
 pidof
+pinentry-mac
 pip-completion
 pipes-sh
 png2ico

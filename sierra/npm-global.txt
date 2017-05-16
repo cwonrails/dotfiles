@@ -21,7 +21,7 @@ dockerfile_lint@0.2.7
 emoj@1.1.0
 emoji@0.3.2
 eslint-plugin-vue@2.0.1
-fast-cli@0.2.1
+fast-cli@1.0.0
 fkill-cli@3.6.0
 generate-schema@2.5.0
 generator-generator@3.1.0
@@ -61,10 +61,10 @@ micro@7.3.3
 native-css@1.2.5
 ndjson-cli@0.3.0
 netlify-cli@1.2.2
-now@5.2.3
+now@5.3.0
 now-redirect@1.1.1
 now-serve@0.5.1
-npm@4.5.0
+npm@4.6.1
 npm-check@5.4.4
 npm-check-updates@2.11.1
 npm-install-missing@0.1.4
@@ -108,11 +108,11 @@ tlapse@0.1.8
 tslint@5.2.0
 typings@2.1.1
 updtr@1.0.0
-vue-cli@2.8.1
+vue-cli@2.8.2
 webcomponent-bundle-analyzer@0.1.1
 webpack@2.5.1
 webpack-bundle-analyzer@2.8.1
-webpack-cli@1.3.1
+webpack-cli@1.3.2
 webpack-dashboard@0.4.0
 webpack-dev-server@2.4.5
 wreck@12.2.0

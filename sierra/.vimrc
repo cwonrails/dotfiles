@@ -212,11 +212,11 @@ let g:syntastic_css_checkers = ['stylelint']
 let g:syntastic_styled_components = ['stylelint']
 
 
-" Fix highlighting problems for CSS3
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
+" " Fix highlighting problems for CSS3
+" augroup VimCSS3Syntax
+"   autocmd!
+"   autocmd FileType css setlocal iskeyword+=-
+" augroup END
 
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
@@ -252,6 +252,9 @@ autocmd filetype markdown setlocal spell
 
 " Disable highlighting of non-capitalized terms in Markdown
 set spellcapcheck=
+
+" Recognize some config files as JSON
+au BufReadPost .babelrc set syntax=JSON
 
 " Allow saving of files as sudo if not opened with sudo vim
 cmap w!! w !sudo tee > /dev/null %

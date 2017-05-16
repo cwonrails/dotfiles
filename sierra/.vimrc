@@ -52,7 +52,6 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-Plug 'moorereason/vim-markdownfmt'
 Plug 'moll/vim-node'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
@@ -63,7 +62,6 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'phenomenes/ansible-snippets'
-Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'rizzatti/dash.vim'
@@ -74,14 +72,13 @@ Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-syntastic/syntastic'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'travisjeffery/vim-auto-mkdir'
@@ -177,7 +174,7 @@ nnoremap <leader>w :update<CR>
 nnoremap <leader>si :SyntasticInfo<CR>
 
 " Run terminal commands
-" nnoremap <leader>vp :VimProcBang<space>
+nnoremap <leader>vp :VimProcBang<space>
 
 " ----------------------------------------------------------------------------
 " Save
@@ -296,6 +293,7 @@ set modelines=2
 set mouse=a
 silent! set ttymouse=xterm2
 set noerrorbells
+set nofoldenable
 set nojoinspaces
 set noshowmode
 set nostartofline
@@ -483,3 +481,4 @@ let g:esearch = {
 " tmux-complete
 " ----------------------------------------------------------------------------
 let g:tmuxcomplete#trigger = 'omnifunc'
+

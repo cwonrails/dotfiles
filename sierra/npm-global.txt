@@ -39,6 +39,7 @@ htmlhint@0.9.13
 http-server@0.10.0
 ignite-cli@2.0.0-beta.9
 instant-markdown-d@0.1.0
+itunes-remote@2.1.0
 jest@20.0.1
 joi@10.4.2
 jscodeshift@0.3.30

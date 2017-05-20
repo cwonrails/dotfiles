@@ -4,9 +4,10 @@ ansible                      2.3.0.0
 ansible-lint                 3.4.13     
 ansicolor                    0.2.4      
 appdirs                      1.4.3      
+apsw                         3.9.2.post1
 args                         0.1.0      
 asn1crypto                   0.22.0     
-awscli                       1.11.86    
+awscli                       1.11.89    
 backports-abc                0.5        
 backports.ssl-match-hostname 3.5.0.1    
 batinfo                      0.4.2      
@@ -16,7 +17,7 @@ beets                        1.4.3
 bernhard                     0.2.5      
 boto                         2.46.1     
 boto3                        1.4.4      
-botocore                     1.5.49     
+botocore                     1.5.52     
 bottle                       0.12.13    
 cairocffi                    0.8.0      
 cassandra-driver             3.9.0      
@@ -25,7 +26,7 @@ cffi                         1.10.0
 chardet                      2.3.0      
 click                        6.7        
 clint                        0.5.1      
-CodeIntel                    0.9.3      
+CodeIntel                    0.10.0     
 colorama                     0.3.9      
 configobj                    5.0.6      
 configparser                 3.5.0      
@@ -34,12 +35,12 @@ cryptography                 1.8.1
 cssselect                    1.0.1      
 cycler                       0.10.0     
 Django                       1.11.1     
-docker                       2.2.1      
+docker                       2.3.0      
 docker-pycreds               0.2.1      
 docopt                       0.6.2      
 docutils                     0.13.1     
 ecdsa                        0.13       
-elasticsearch                5.3.0      
+elasticsearch                5.4.0      
 enum-compat                  0.0.2      
 enum34                       1.1.6      
 Fabric                       1.13.2     
@@ -91,7 +92,7 @@ parsimonious                 0.7.0
 passlib                      1.7.1      
 pathlib                      1.0.1      
 pbkdf2                       1.3        
-pbr                          3.0.0      
+pbr                          3.0.1      
 pika                         0.10.0     
 Pillow                       4.1.1      
 pip                          9.0.1      
@@ -108,7 +109,7 @@ pyasn1                       0.2.3
 pycodestyle                  2.3.1      
 pycparser                    2.17       
 pycrypto                     2.6.1      
-pycryptodome                 3.4.5      
+pycryptodome                 3.4.6      
 pyenchant                    1.6.8      
 pyflakes                     1.5.0      
 pygal                        2.3.1      
@@ -119,7 +120,7 @@ Pykka                        1.2.1
 pymdstat                     0.4.2      
 pyparsing                    2.2.0      
 pyquery                      1.2.17     
-pysmi                        0.1.2      
+pysmi                        0.1.3      
 pysnmp                       4.3.5      
 pystache                     0.5.4      
 python-daemon                2.1.2      
@@ -141,7 +142,7 @@ six                          1.10.0
 smmap                        0.9.0      
 smmap2                       2.0.1      
 spotipy                      2.4.4      
-SQLAlchemy                   1.1.9      
+SQLAlchemy                   1.1.10     
 statsd                       3.2.1      
 stevedore                    1.21.0     
 subprocess32                 3.2.7      

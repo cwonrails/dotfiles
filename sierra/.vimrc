@@ -73,6 +73,7 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'vim-syntastic/syntastic'
+Plug 'vimwiki/vimwiki'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'

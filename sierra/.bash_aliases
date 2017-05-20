@@ -120,10 +120,10 @@ alias gws="git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\
 ## Navigation ##
 # Go back from current directory
 alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../../'
-alias ......='cd ../../../../../../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
 
 # Go back to previous directory
 alias b='cd - '
@@ -198,4 +198,5 @@ alias ggu="go get -u \
              github.com/russross/blackfriday-tool \
              github.com/ericchiang/pup \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
-             github.com/gchaincl/httplab/cmd/httplab"
+             github.com/gchaincl/httplab/cmd/httplab \
+             github.com/posener/complete/gocomplete"

@@ -184,9 +184,12 @@ maven
 mcrypt
 md5sha1sum
 media-info
+megacmd
+megatools
 mighttpd2
 minio-mc
 moreutils
+mp3splt
 mpc
 mps-youtube
 msgpack

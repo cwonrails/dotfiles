@@ -212,3 +212,5 @@ fi
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
 [ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash ] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash
+
+complete -C /Users/christopherwatson/go/bin/gocomplete go

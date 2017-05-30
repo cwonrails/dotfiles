@@ -89,11 +89,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/PreserveNoEOL'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer' }
 Plug 'wakatime/vim-wakatime'
 Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 

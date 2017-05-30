@@ -654,6 +654,8 @@
 	<integer>0</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/github/repos/public/dotfiles/sierra</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -697,17 +699,19 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 589 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>602 423 796 473 0 0 1920 1177 </string>
+	<string>82 382 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>640 4 640 773 0 0 1280 777 </string>
+	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 4 640 773 0 0 1280 777 </string>
+	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 4 640 773 0 0 1280 777 </string>
+	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>640 4 640 773 0 0 1280 777 </string>
+	<string>2 4 955 1173 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA_selection</key>
@@ -2615,7 +2619,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>B8ED0238-C68F-4424-85F8-6A487F3F0071</string>
 	<key>NoSyncLastTipTime</key>
-	<real>516462964.56728399</real>
+	<real>517686017.60573</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2642,6 +2646,19 @@
 		<string>0012</string>
 		<string>0013</string>
 		<string>0014</string>
+		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
+		<string>0026</string>
+		<string>0027</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
@@ -2707,7 +2724,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-14T13:56:46Z</date>
+	<date>2017-05-28T17:41:43Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-# burl
-alias GET='burl GET'
-alias HEAD='burl -I'
-alias POST='burl POST'
-alias PUT='burl PUT'
-alias PATCH='burl PATCH'
-alias DELETE='burl DELETE'
-alias OPTIONS='burl OPTIONS'
-
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force && brew cask cleanup'
 
@@ -19,16 +10,16 @@ alias brewdep='brew uses --installed'
 alias c='clear'
 
 # Recursively delete `.DS_Store` files
-alias dskill="find . -type f -name '*.DS_Store' -ls -delete"
+alias dskill='find . -type f -name "*.DS_Store" -ls -delete'
 
 # Print history
 alias h='history'
 
-# Fix incorrect typing of "install"
+# Fix incorrect typing of 'install'
 alias insatll='install'
 
 # Get ip address
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
@@ -52,7 +43,7 @@ alias sl='ls'
 alias sudo='sudo '
 
 # Force delete trash on local + mounted file systems; trash Apple System Logs
-alias te="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias te='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl'
 
 # Exit shell
 alias x='exit'
@@ -87,35 +78,35 @@ alias ngl='npm -g ls --depth=0 | cut -c 11- | sed -e '1d' > npm-global.txt'
 
 # TJ Hollowaychuck's git aliases (customized)
 alias ga='git add'
-alias gb="git branch"
-alias gc="git commit -m"
-alias gcb="git-create-branch"
+alias gb='git branch'
+alias gc='git commit -m'
+alias gcb='git-create-branch'
 alias gcl='git clone'
 alias gclr='git clone --recursive'
 alias glcr='git clone --recursive' # fix command entry errors
 alias gco='git checkout'
 alias gd='git diff'
-alias gdb="git-delete-branch"
+alias gdb='git-delete-branch'
 alias gdno='git diff --name-only'
-alias gp="git push"
-alias gpf="git push --force"
-alias gs="git status"
+alias gp='git push'
+alias gpf='git push --force'
+alias gs='git status'
 
-alias gac="git commit -a -m"
-alias gba="git branch -a"
-alias gbd="git branch -D"
-alias gcob="git checkout -b"
-alias gcp="git cherry-pick"
+alias gac='git commit -a -m'
+alias gba='git branch -a'
+alias gbd='git branch -D'
+alias gcob='git checkout -b'
+alias gcp='git cherry-pick'
 alias gdumno='git diff upstream/master --name-only'
-alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-alias gm="git merge --ff"
-alias gpt="git push --tags"
-alias gpom="git pull --rebase origin master"
-alias grau="git remote add upstream"
-alias grh="git reset --hard"
-alias gpu="git pull upstream"
-alias gpum="git pull --rebase upstream master"
-alias gws="git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'"
+alias gl='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --'
+alias gm='git merge --ff'
+alias gpt='git push --tags'
+alias gpom='git pull --rebase origin master'
+alias grau='git remote add upstream'
+alias grh='git reset --hard'
+alias gpu='git pull upstream'
+alias gpum='git pull --rebase upstream master'
+alias gws='git grep -I --name-only -z -e '' | xargs -0 sed -i -e "s/[ \t]\+\(\r\?\)$/\1/"'
 
 ## Navigation ##
 # Go back from current directory
@@ -160,7 +151,7 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
-alias ua='git-repo-updater && bu && diu && gu && vu && pu && pu3 && ggu && tu && ncu -g'
+alias ua='git-repo-updater && bu && diu && gu && vu && pu && pu3 && ggu && tu && update-nvm && cd ~/ && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor'
@@ -171,6 +162,11 @@ alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' |
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
+
+# nvm
+alias ns='nvm use system'
+alias n6='nvm use v6'
+alias n7='nvm use v7'
 
 # Python: Upgrade all pip packages
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
@@ -200,3 +196,6 @@ alias ggu="go get -u \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/gchaincl/httplab/cmd/httplab \
              github.com/posener/complete/gocomplete"
+
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'

@@ -21,6 +21,7 @@ brew-cask-completion
 brotli
 burl
 bzip2
+cabextract
 caddy
 carthage
 cassandra
@@ -117,7 +118,6 @@ gst-plugins-ugly
 gst-python
 guetzli
 guile
-guile@2.0
 gzip
 hadolint
 highlight
@@ -130,9 +130,9 @@ httpie
 httpstat
 hub
 hugo
+icdiff
 homebrew/php/igbinary
 imagejs
-imagemagick
 imap-uw
 imlib2
 influxdb
@@ -211,6 +211,7 @@ pdfgrep
 peco
 perl
 phantomjs
+homebrew/php/php70
 pidcat
 pidof
 pinentry-mac
@@ -281,9 +282,10 @@ tmux
 todolist
 vapor/tap/toolbox
 tree
+ttygif
 uchardet
+unar
 unibilium
-unixodbc
 joshuaclayton/formulae/unused
 unzip
 utf8proc
@@ -302,6 +304,7 @@ wdiff
 wego
 wget
 wifi-password
+homebrew/php/wp-cli
 wput
 wslay
 xhyve
@@ -313,5 +316,4 @@ yubico-piv-tool
 z
 zlib
 zopfli
-zsh
 zsh-syntax-highlighting

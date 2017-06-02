@@ -10,7 +10,6 @@ wallix/awless/awless
 aws-shell
 bandcamp-dl
 bash-completion@2
-bash-preexec
 bats
 berkeley-db@4
 bfg
@@ -66,7 +65,6 @@ ffind
 file-formula
 findutils
 fio
-firebase-cli
 flif
 flow
 fontforge
@@ -77,7 +75,6 @@ jhawthorn/fzy/fzy
 gawk
 gcc
 gem-completion
-generate-json-schema
 geoip
 get-flash-videos
 ghi
@@ -92,7 +89,6 @@ git-lfs
 git-now
 git-open
 gitless
-gitter-cli
 global
 glog
 gnu-sed
@@ -131,7 +127,6 @@ httpstat
 hub
 hugo
 icdiff
-homebrew/php/igbinary
 imagejs
 imap-uw
 imlib2
@@ -195,7 +190,6 @@ mps-youtube
 msgpack
 mtr
 nano
-nativefier
 ncdu
 oath-toolkit
 open-completion
@@ -211,7 +205,10 @@ pdfgrep
 peco
 perl
 phantomjs
-homebrew/php/php70
+homebrew/php/php70-gmp
+homebrew/php/php70-memcached
+homebrew/php/php70-redis
+homebrew/php/php70-xdebug
 pidcat
 pidof
 pinentry-mac
@@ -267,7 +264,6 @@ sslyze
 startup-notification
 svg2png
 svgcleaner
-svgo
 sysdig
 t-completion
 tcl-tk
@@ -310,7 +306,6 @@ wslay
 xhyve
 xonsh
 yajl
-yarn
 you-get
 yubico-piv-tool
 z

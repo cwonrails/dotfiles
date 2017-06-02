@@ -96,9 +96,6 @@ if which go > /dev/null; then
   export PATH="$GOBIN:$PATH"
 fi
 
-# Mono
-# export MONO_GAC_PREFIX="/usr/local"
-
 # Rust
 ## Cargo
 if which cargo > /dev/null; then
@@ -195,9 +192,6 @@ if [ -f /usr/local/opt/php70/bin/php ]; then
   export PATH="/usr/local/opt/php70/bin/php:$PATH"
 fi
 
-# bash-prexec (https://github.com/rcaloras/bashhub-client)
-# [ -f /usr/local/etc/profile.d/bash-preexec.sh ] && . /usr/local/etc/profile.d/bash-preexec.sh
-
 # export TERM=xterm-256color-italic
 
 # Automatically trim long paths in the prompt (requires Bash 4.x)
@@ -230,6 +224,3 @@ if [ -d ~/.bash_completion.d ]; then
     . $file
   done
 fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"

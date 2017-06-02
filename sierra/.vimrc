@@ -250,6 +250,9 @@ let g:syntastic_sh_checkers = ['shellcheck']
 " Typescript linting
 let g:syntastic_sh_checkers = ['tslint']
 
+" VimL linting
+let g:syntastic_vim_checkers= ['vint']
+
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
 
@@ -257,7 +260,7 @@ autocmd filetype markdown setlocal spell
 set spellcapcheck=
 
 " Recognize some config files as JSON
-au BufReadPost .babelrc set syntax=JSON
+autocmd BufRead,BufNewFile .babelrc set filetype=json
 
 " Allow saving of files as sudo if not opened with sudo vim
 cmap w!! w !sudo tee > /dev/null %
@@ -266,7 +269,7 @@ cmap w!! w !sudo tee > /dev/null %
 set shell=/usr/local/bin/bash
 
 " Editorconfig settings (official plugin)
-let g:Editorconfig_core_mode = "external_command"
+let g:Editorconfig_core_mode = 'external_command'
 let g:Editorconfig_exec_path = ['usr/local/bin/editorconfig']
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 

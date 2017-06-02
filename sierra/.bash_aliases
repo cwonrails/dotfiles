@@ -137,6 +137,9 @@ alias ghf='cd ~/github/forks'
 # Go to GitHub repos directory
 alias ghr='cd ~/github/repos'
 
+# Go to GitHub repos directory
+alias ghdot='cd ~/github/repos/public/dotfiles/sierra'
+
 # Go to home directory
 alias hd='cd ~'
 
@@ -151,10 +154,10 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
-alias ua='git-repo-updater && bu && diu && gu && vu && pu && pu3 && ggu && tu && update-nvm && cd ~/ && ncu -g'
+alias ua='git-repo-updater && bu && diu && gu && vu && ggu && tu && pu && pu3'
 
 # Homebrew: Run daily operations
-alias bu='brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor'
+alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
 
 # Docker update all images (preserves tags)
 # shellcheck disable=SC2142
@@ -162,11 +165,6 @@ alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' |
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
-
-# nvm
-alias ns='nvm use system'
-alias n6='nvm use v6'
-alias n7='nvm use v7'
 
 # Python: Upgrade all pip packages
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
@@ -187,9 +185,11 @@ alias ssh='TERM=xterm-256color ssh'
 alias ggu="go get -u \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck \
+             github.com/GoogleChrome/simplehttp2server \
              github.com/tj/mmake/cmd/mmake \
              github.com/rapidloop/rtop \
              github.com/asciimoo/wuzz \
+             github.com/ddo/fast \
              github.com/alecthomas/gometalinter \
              github.com/russross/blackfriday-tool \
              github.com/ericchiang/pup \

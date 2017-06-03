@@ -6,12 +6,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'alvan/vim-closetag'
+" Plug 'alvan/vim-closetag'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
-Plug 'Chiel92/vim-autoformat'
+" Plug 'Chiel92/vim-autoformat'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -19,80 +19,92 @@ Plug 'digitaltoad/vim-pug'
 Plug 'dNitro/vim-pug-complete'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'ElmCast/elm-vim'
+" Plug 'elixir-lang/vim-elixir'
+" Plug 'ElmCast/elm-vim'
 Plug 'elzr/vim-json'
-Plug 'embear/vim-localvimrc'
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
+" Plug 'embear/vim-localvimrc'
+" Plug 'epilande/vim-es2015-snippets'
+" Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
-Plug 'gregsexton/gitv'
+" Plug 'gregsexton/gitv'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'heavenshell/vim-jsdoc'
+" Plug 'heavenshell/vim-jsdoc'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'honza/vim-snippets'
-Plug 'isobit/vim-caddyfile'
+" Plug 'iamcco/markdown-preview.vim'
+Plug 'lmeijvogel/vim-yaml-helper'
+" Plug 'isobit/vim-caddyfile'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'jbgutierrez/vim-babel'
+" Plug 'JamshedVesuna/vim-markdown-preview'
+" Plug 'jbgutierrez/vim-babel'
+" Plug 'joeyespo/grip'
+" Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'kchmck/vim-coffee-script'
+" Plug 'kchmck/vim-coffee-script'
 Plug 'kewah/vim-stylefmt'
 Plug 'majutsushi/tagbar'
 Plug 'maralla/vim-toml-enhance'
-Plug 'Matt-Deacalion/vim-systemd-syntax'
+" Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
+" Plug 'mattn/vim-sqlfmt'
 Plug 'mattn/webapi-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
-Plug 'moll/vim-node'
+Plug 'mlaursen/vim-react-snippets'
+" Plug 'moll/vim-node'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
+" Plug 'othree/xml.vim'
 Plug 'othree/yajs.vim'
+" Plug 'plasticboy/vim-markdown'
+Plug 'pbrisbin/vim-mkdir'
 Plug 'pearofducks/ansible-vim'
 Plug 'phenomenes/ansible-snippets'
 Plug 'posva/vim-vue'
-Plug 'PotatoesMaster/i3-vim-syntax'
+" Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'rizzatti/dash.vim'
 Plug 'robertbasic/vim-hugo-helper'
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/echodoc.vim'
+" Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Sirver/UltiSnips'
+" Plug 'sjl/gundo.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'vim-syntastic/syntastic'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'travisjeffery/vim-auto-mkdir'
-Plug 'trkw/yarn.vim'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/PreserveNoEOL'
-Plug 'vim-scripts/ReplaceWithRegister'
+" Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer' }
 Plug 'wakatime/vim-wakatime'
-Plug 'wellle/targets.vim'
+" Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentLine'
@@ -216,10 +228,10 @@ let g:syntastic_styled_components = ['stylelint']
 
 
 " " Fix highlighting problems for CSS3
-" augroup VimCSS3Syntax
-"   autocmd!
-"   autocmd FileType css setlocal iskeyword+=-
-" augroup END
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
@@ -374,7 +386,7 @@ nnoremap Y y$
 " ----------------------------------------------------------------------------
 " autoformat
 " ----------------------------------------------------------------------------
-nnoremap <leader>af :Autoformat<cr>
+" nnoremap <leader>af :Autoformat<cr>
 
 " " autoformat standard on save (disable above if using)
 " autocmd bufwritepost *.js silent !standard --fix %
@@ -415,7 +427,7 @@ let g:UltiSnipsEditSplit='vertical'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
+" let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
 
 " ----------------------------------------------------------------------------
 " vim-airline
@@ -473,7 +485,7 @@ let g:wstrip_auto = 1
 " ----------------------------------------------------------------------------
 " vim-jsx
 " ----------------------------------------------------------------------------
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 " ----------------------------------------------------------------------------
 " vim-esearch

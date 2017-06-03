@@ -1,12 +1,13 @@
 adobe-creative-cloud
 atom
+brave
 caffeine
 caprine
 chromium
 daisydisk
-docker-edge
 expandrive
 firefoxdeveloperedition
+firefoxnightly
 font-3270
 font-3270-nerd-font
 font-3270-nerd-font-mono
@@ -149,7 +150,6 @@ keyboard-cleaner
 ksdiff
 limechat
 malwarebytes-anti-malware
-opera
 provisioning
 qlcolorcode
 qlimagesize
@@ -158,6 +158,7 @@ qlprettypatch
 qlstephen
 quicklook-csv
 quicklook-json
+safari-technology-preview
 sketchpacks
 skype
 sparkleshare
@@ -168,6 +169,7 @@ tweeten
 vagrant
 virtualbox
 visual-studio-code
+webkit-nightly
 webpquicklook
 webstorm
 xld

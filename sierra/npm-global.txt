@@ -6,6 +6,7 @@ create-react-app@1.3.1
 diff-so-fancy@0.11.4
 diff2html-cli@2.5.0
 dockerfile_lint@0.2.7
+git-open@1.3.0
 hpm-cli@2.0.1
 ignite-cli@2.0.0-rc.2
 jsonlint@1.6.2
@@ -27,6 +28,7 @@ repng@1.0.0
 sass-lint@1.10.2
 serve@5.2.0
 standard@10.0.2
+stylefmt@6.0.0
 typescript@2.3.4
 ungit@1.1.19
 write-good@0.11.1

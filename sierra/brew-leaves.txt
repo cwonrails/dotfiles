@@ -218,6 +218,7 @@ png2ico
 pngcrush
 pngquant
 pre-commit
+proctools
 proselint
 protobuf
 psgrep

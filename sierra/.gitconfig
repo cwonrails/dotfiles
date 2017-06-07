@@ -8,7 +8,6 @@
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
   trustctime = false
-  # pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
 
@@ -64,6 +63,7 @@
 [merge]
 
   log = true
+  tool = Kaleidoscope
 
 [pager]
 
@@ -73,7 +73,6 @@
 [rebase]
 
   autosquash = true
-
 
 [push]
 
@@ -123,17 +122,24 @@
 [gpg]
   program = gpg2
 
+[diff]
+  tool = Kaleidoscope
+
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
+[difftool]
+  prompt = false
+
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustexitcode = true
+
+[mergetool]
+  prompt = false
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
-  # process = git-lfs filter-process
   required = true
   process = git-lfs filter-process
 

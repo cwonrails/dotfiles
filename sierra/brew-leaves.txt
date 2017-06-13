@@ -60,6 +60,7 @@ entr
 exiftags
 exiftool
 extract_url
+fd
 fdupes
 ffind
 file-formula
@@ -272,7 +273,6 @@ tcpdump
 td
 terminal-notifier
 texinfo
-thefuck
 tidy-html5
 tldr
 tmux

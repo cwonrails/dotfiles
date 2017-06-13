@@ -145,11 +145,6 @@ keyboard-cleaner
 ksdiff
 limechat
 provisioning
-qlcolorcode
-qlimagesize
-qlmarkdown
-qlprettypatch
-qlstephen
 quicklook-csv
 quicklook-json
 sublime-text-dev
@@ -158,7 +153,6 @@ tweeten
 vagrant
 virtualbox
 visual-studio-code
-webpquicklook
 webstorm
 xld
 xquartz

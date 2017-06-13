@@ -83,9 +83,9 @@ if which hub > /dev/null; then
 fi
 
 # Enable thefuck if installed
-if which thefuck > /dev/null; then
-  eval "$(thefuck --alias)"
-fi
+# if which thefuck > /dev/null; then
+#   eval "$(thefuck --alias)"
+# fi
 
 # Go #
 if which go > /dev/null; then

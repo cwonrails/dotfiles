@@ -57,17 +57,20 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 " Plug 'mattn/vim-sqlfmt'
 Plug 'mattn/webapi-vim'
-Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
+Plug 'mitermayer/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 Plug 'mlaursen/vim-react-snippets'
 " Plug 'moll/vim-node'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mustache/vim-mustache-handlebars'
-" Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 " Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
-" Plug 'othree/xml.vim'
+Plug 'othree/xml.vim'
 Plug 'othree/yajs.vim'
 " Plug 'plasticboy/vim-markdown'
 Plug 'pbrisbin/vim-mkdir'
@@ -86,7 +89,7 @@ Plug 'Sirver/UltiSnips'
 Plug 'stephpy/vim-yaml'
 Plug 'vim-syntastic/syntastic'
 " Plug 'vimwiki/vimwiki'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+" Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomtom/tComment_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-eunuch'
@@ -102,7 +105,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/PreserveNoEOL'
 " Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'wakatime/vim-wakatime'
 " Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
@@ -503,3 +506,7 @@ let g:esearch = {
 " ----------------------------------------------------------------------------
 let g:tmuxcomplete#trigger = 'omnifunc'
 
+" ----------------------------------------------------------------------------
+"  vim-prettier
+" ----------------------------------------------------------------------------
+let g:prettier#exec_cmd_async = 1

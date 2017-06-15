@@ -14,7 +14,7 @@ packaging      16.8
 pafy           0.5.3.1  
 pip            9.0.1    
 pyparsing      2.2.0    
-requests       2.17.3   
+requests       2.18.1   
 scandir        1.5      
 scdl           1.6.4    
 setuptools     35.0.2   

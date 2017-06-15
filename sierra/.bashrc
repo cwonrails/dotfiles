@@ -29,6 +29,9 @@ export MANPATH="/usr/local/opt/gnu-sed/share/man:$MANPATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/share/man:$MANPATH"
 
+# Homebrew curl
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
 # brew command-not-found
 if brew command command-not-found-init > /dev/null; then
   eval "$(brew command-not-found-init)";
@@ -83,9 +86,9 @@ if which hub > /dev/null; then
 fi
 
 # Enable thefuck if installed
-# if which thefuck > /dev/null; then
-#   eval "$(thefuck --alias)"
-# fi
+if which thefuck > /dev/null; then
+  eval "$(thefuck --alias)"
+fi
 
 # Go #
 if which go > /dev/null; then

@@ -114,30 +114,39 @@
   quick-stats = ! /usr/local/bin/git-quick-stats
 
 [user]
+
   signingkey = cwonrails@gmail.com
 
 [commit]
+
   gpgsign = true
 
 [gpg]
+
   program = gpg2
 
 [diff]
+
   tool = Kaleidoscope
 
 [difftool "Kaleidoscope"]
+
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
 [difftool]
+
   prompt = false
 
 [mergetool "Kaleidoscope"]
+
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 
 [mergetool]
+
   prompt = false
 
 [filter "lfs"]
+
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   required = true

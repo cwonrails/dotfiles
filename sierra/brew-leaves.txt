@@ -46,6 +46,7 @@ dante
 devd
 diffutils
 dirmngr
+dnsmasq
 docker-clean
 doctl
 docutils
@@ -67,7 +68,6 @@ file-formula
 findutils
 fio
 flif
-flow
 fontforge
 fonttools
 fpp
@@ -155,7 +155,6 @@ libdvdnav
 libebur128
 libedit
 libiconv
-libidn
 librdkafka
 libressl
 librsvg
@@ -192,7 +191,9 @@ msgpack
 mtr
 nano
 ncdu
+netcat
 oath-toolkit
+opam
 open-completion
 openssh
 openvpn
@@ -273,6 +274,7 @@ tcpdump
 td
 terminal-notifier
 texinfo
+thefuck
 tidy-html5
 tldr
 tmux
@@ -295,6 +297,7 @@ vifm
 vim
 vnu
 wakatime-cli
+warp
 watch
 watchman
 wdiff

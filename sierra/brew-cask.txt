@@ -4,6 +4,8 @@ caffeine
 caprine
 chromium
 daisydisk
+firefoxdeveloperedition
+firefoxnightly
 font-3270
 font-3270-nerd-font
 font-3270-nerd-font-mono
@@ -147,12 +149,14 @@ limechat
 provisioning
 quicklook-csv
 quicklook-json
+safari-technology-preview
 sublime-text-dev
 transmission
 tweeten
 vagrant
 virtualbox
 visual-studio-code
+webkit-nightly
 webstorm
 xld
 xquartz

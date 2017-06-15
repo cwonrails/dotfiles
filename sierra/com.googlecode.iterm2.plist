@@ -5,7 +5,7 @@
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -703,13 +703,13 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>962 4 955 1173 0 0 1920 1177 </string>
+	<string>0 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>962 4 955 1173 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
 	<string>2 4 955 1173 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>-958 160 955 1057 -1920 160 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>962 4 955 1173 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA</key>
@@ -2619,7 +2619,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>B8ED0238-C68F-4424-85F8-6A487F3F0071</string>
 	<key>NoSyncLastTipTime</key>
-	<real>517686017.60573</real>
+	<real>519143816.19039702</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2659,6 +2659,21 @@
 		<string>0025</string>
 		<string>0026</string>
 		<string>0027</string>
+		<string>0028</string>
+		<string>0029</string>
+		<string>0030</string>
+		<string>0031</string>
+		<string>0032</string>
+		<string>0033</string>
+		<string>0034</string>
+		<string>0035</string>
+		<string>0036</string>
+		<string>0037</string>
+		<string>0038</string>
+		<string>0039</string>
+		<string>0040</string>
+		<string>0041</string>
+		<string>0042</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
@@ -2720,11 +2735,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=8</string>
+	<string>https://iterm2.com/appcasts/nightly.xml?shard=8</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-28T17:41:43Z</date>
+	<date>2017-06-14T15:27:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2744,7 +2759,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1493036800</real>
+	<real>1497453952</real>
 	<key>URLHandlersByGuid</key>
 	<dict>
 		<key>ssh</key>
@@ -2765,6 +2780,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.beta.4</string>
+	<string>3.1.20170613-nightly</string>
 </dict>
 </plist>

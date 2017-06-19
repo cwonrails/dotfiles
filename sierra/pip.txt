@@ -7,7 +7,7 @@ appdirs                      1.4.0
 apsw                         3.9.2.post1
 args                         0.1.0      
 asn1crypto                   0.22.0     
-awscli                       1.11.105   
+awscli                       1.11.107   
 backports-abc                0.5        
 backports.ssl-match-hostname 3.5.0.1    
 batinfo                      0.4.2      
@@ -18,7 +18,7 @@ beets                        1.4.4
 bernhard                     0.2.5      
 boto                         2.47.0     
 boto3                        1.4.4      
-botocore                     1.5.68     
+botocore                     1.5.70     
 bottle                       0.12.13    
 cairocffi                    0.8.0      
 cassandra-driver             3.10       
@@ -59,7 +59,7 @@ haxor-news                   0.4.3
 howdoi                       1.1.9      
 http-prompt                  0.10.1     
 httpie                       0.9.9      
-hugophotoswipe               0.0.16     
+hugophotoswipe               0.1.0      
 idna                         2.5        
 Inflector                    2.0.11     
 influxdb                     4.1.1      
@@ -139,7 +139,7 @@ s3transfer                   0.1.10
 saws                         0.4.3      
 scandir                      1.5        
 setuptools                   36.0.1     
-simplejson                   3.10.0     
+simplejson                   3.11.0     
 simplenote                   1.0.3      
 singledispatch               3.4.0.3    
 six                          1.10.0     
@@ -168,8 +168,8 @@ virtualenv                   15.1.0
 virtualenv-clone             0.2.6      
 virtualenvwrapper            4.7.2      
 wcwidth                      0.1.7      
-websocket-client             0.40.0     
-wheel                        0.24.0     
+websocket-client             0.42.1     
+wheel                        0.29.0     
 wifi                         0.3.8      
 yamllint                     1.7.0      
 yasm                         0.0        

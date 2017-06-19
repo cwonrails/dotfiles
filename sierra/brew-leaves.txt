@@ -49,7 +49,6 @@ dirmngr
 dnsmasq
 docker-clean
 doctl
-docutils
 docx2txt
 duplicity
 ed
@@ -226,7 +225,6 @@ protobuf
 psgrep
 pulseaudio
 pv
-mopidy/mopidy/python-pykka
 ranger
 rclone
 thoughtbot/formulae/rcm
@@ -273,6 +271,7 @@ tcl-tk
 tcpdump
 td
 terminal-notifier
+terraform
 texinfo
 thefuck
 tidy-html5

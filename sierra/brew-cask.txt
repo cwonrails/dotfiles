@@ -152,8 +152,6 @@ quicklook-json
 safari-technology-preview
 sublime-text-dev
 transmission
-tweeten
-vagrant
 virtualbox
 visual-studio-code
 webkit-nightly

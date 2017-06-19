@@ -30,8 +30,19 @@
 # FZF-EOF"
 # }
 
-function lazygit() {
+lazygit() {
   git add .
   git commit -a -m "$1"
   git push
+}
+
+# Create new git project
+ngp ()
+{
+    mkdir -p -- "$1" &&
+    cd -P -- "$1" &&
+    cp ~/new-project/.e* `pwd`
+    cp ~/new-project/*.g `pwd`
+    cp ~/new-project/* `pwd`
+    git-setup
 }

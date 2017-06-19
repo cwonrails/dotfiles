@@ -225,7 +225,6 @@ let g:syntastic_echo_current_error = 1
 let g:syntastic_css_checkers = ['stylelint']
 let g:syntastic_styled_components = ['stylelint']
 
-
 " " Fix highlighting problems for CSS3
 augroup VimCSS3Syntax
   autocmd!

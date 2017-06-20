@@ -154,7 +154,6 @@ sublime-text-dev
 transmission
 virtualbox
 visual-studio-code
-vivaldi
 webkit-nightly
 webstorm
 xld

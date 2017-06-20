@@ -25,7 +25,7 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias mkdir='mkdir -p'
 
 # Create new git project
-alias ngp='cp ~/new-git-project/.e* `pwd` && cp ~/new-git-project/.g* `pwd` && cp ~/new-git-project/* `pwd` && git-setup'
+# alias ngp='cp ~/new-git-project/.e* `pwd` && cp ~/new-git-project/.g* `pwd` && cp ~/new-git-project/* `pwd` && git-setup'
 
 # Use local npm executables if available
 alias npm-exec='PATH=$(npm bin):$PATH'

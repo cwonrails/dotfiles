@@ -135,7 +135,6 @@ font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
 gitter
-gitup
 hyper
 imagealpha
 imageoptim
@@ -146,6 +145,7 @@ karabiner
 keyboard-cleaner
 ksdiff
 limechat
+malwarebytes-anti-malware
 provisioning
 quicklook-csv
 quicklook-json

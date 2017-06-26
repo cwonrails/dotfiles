@@ -128,6 +128,9 @@ alias dl='cd ~/Downloads'
 # Go to desktop directory
 alias dt='cd ~/Desktop'
 
+# Go to GitHub directory
+alias gh='cd ~/github'
+
 # Go to GitHub clones directory
 alias ghc='cd ~/github/clones'
 
@@ -154,7 +157,7 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
-alias ua='git-repo-updater && bu && diu && gu && vu && ggu && tu && pu && pu3 && ncu -g'
+alias ua='npm i -g yarn && gitup && bu && diu && gu && vu && ggu && tu && pu && pu3 && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'

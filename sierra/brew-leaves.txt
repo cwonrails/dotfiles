@@ -40,6 +40,7 @@ confuse
 convox
 coreutils
 couchdb
+cscope
 csvtomd
 ctop
 dante
@@ -57,6 +58,7 @@ elasticsearch
 elm
 enchant
 entr
+erlang
 exiftags
 exiftool
 extract_url
@@ -169,7 +171,6 @@ livestreamer
 luvit
 m-cli
 m4
-macvim
 make
 markdown
 mas

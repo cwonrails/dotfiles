@@ -30,7 +30,7 @@ export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/share/man:$MANPATH"
 
 # Homebrew curl
-export PATH="/usr/local/opt/curl/bin:$PATH"
+# export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # brew command-not-found
 if brew command command-not-found-init > /dev/null; then
@@ -131,6 +131,9 @@ bind '"\e[B": history-search-forward'
 
 # Enable Travis CI (auto-inserted by Travis gem)
 [ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
+
+# Use Homebrew-installed curl
+export PATH="usr/local/opt/curl/bin:$PATH"
 
 ## Colors ##
 # Use coreutils `ls` if possible

@@ -192,6 +192,7 @@ mtr
 nano
 ncdu
 netcat
+nnn
 oath-toolkit
 opam
 open-completion
@@ -271,6 +272,7 @@ t-completion
 tcl-tk
 tcpdump
 td
+teleport
 terminal-notifier
 terraform
 texinfo

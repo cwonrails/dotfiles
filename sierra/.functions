@@ -52,3 +52,4 @@ ngp ()
     cp ~/new-project/* `pwd`
     git-setup
 }
+

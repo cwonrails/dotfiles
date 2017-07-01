@@ -233,3 +233,8 @@ fi
 
 . ~/.t-completion.sh
 . ~/.yarn-completion
+
+function lc()
+{
+  ruby ~/github/clones/colorls/colorls.rb $1;
+}

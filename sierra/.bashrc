@@ -231,4 +231,5 @@ if [ -d ~/.bash_completion.d ]; then
   done
 fi
 
+. ~/.t-completion.sh
 . ~/.yarn-completion

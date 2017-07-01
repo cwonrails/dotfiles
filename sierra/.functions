@@ -30,10 +30,16 @@
 # FZF-EOF"
 # }
 
-lazygit() {
-  git add .
-  git commit -a -m "$1"
-  git push
+# lazygit() {
+#   git add .
+#   git commit -a -m "$1"
+#   git push
+# }
+
+function lazygit() {
+    git add .
+    git commit -a -m "$1"
+    git push
 }
 
 # Create new git project

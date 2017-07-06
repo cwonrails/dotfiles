@@ -67,7 +67,7 @@ alias dflb='cp ~/global-package-lists/*.txt ~/localdotfilesbackup; cp ~/.{agigno
 alias dfdb='cp ~/global-package-lists/*.txt ~/Dropbox/dotfiles; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox/dotfiles'
 
 # Back up dotfiles to public github repo
-alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/sierra; cd ~/github/repos/public/dotfiles/sierra; git diff'
+alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
 
 # Create text files with lists of globally installed package binaries
 alias gpl='cd ~/global-package-lists; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl; pip list > pip.txt; pip3 list > pip3.txt'
@@ -141,7 +141,7 @@ alias ghf='cd ~/github/forks'
 alias ghr='cd ~/github/repos'
 
 # Go to GitHub repos directory
-alias ghdot='cd ~/github/repos/public/dotfiles/sierra'
+alias ghdot='cd ~/github/repos/public/dotfiles/high-sierra'
 
 # Go to home directory
 alias hd='cd ~'
@@ -157,7 +157,7 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
-alias ua='npm i -g yarn && gitup && bu && diu && gu && vu && ggu && tu && pu && pu3 && ncu -g'
+alias ua='npm i -g yarn && gitup && bu && diu && gu && hu && vu && ggu && tu && pu && pu3 && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
@@ -168,6 +168,9 @@ alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' |
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
+
+# Update Hugo
+alias hu='go get -u -v github.com/gohugoio/hugo'
 
 # Python: Upgrade all pip packages
 alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
@@ -188,6 +191,7 @@ alias ssh='TERM=xterm-256color ssh'
 alias ggu="go get -u \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck \
+             github.com/jackc/sqlfmt/cmd/sqlfmt \
              github.com/GoogleChrome/simplehttp2server \
              github.com/tj/mmake/cmd/mmake \
              github.com/rapidloop/rtop \
@@ -198,7 +202,9 @@ alias ggu="go get -u \
              github.com/ericchiang/pup \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/gchaincl/httplab/cmd/httplab \
-             github.com/posener/complete/gocomplete"
+             github.com/posener/complete/gocomplete \
+             github.com/posener/complete/gocomplete \
+             github.com/kardianos/govendor"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'

@@ -17,7 +17,7 @@ Plug 'conradirwin/vim-bracketed-paste'
 " Plug 'dNitro/vim-pug-complete'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 " Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
@@ -26,7 +26,7 @@ Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
-" Plug 'flowtype/vim-flow'
+Plug 'flowtype/vim-flow'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-terraform'
@@ -40,31 +40,33 @@ Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 " Plug 'jamshedvesuna/vim-markdown-preview'
 " Plug 'joeyespo/grip'
-Plug 'joukevandermaas/vim-ember-hbs'
+" Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'kchmck/vim-coffee-script'
-Plug 'kewah/vim-stylefmt'
+" Plug 'kewah/vim-stylefmt'
 " Plug 'lmeijvogel/vim-yaml-helper'
-Plug 'majutsushi/tagbar'
-Plug 'maralla/vim-toml-enhance'
+" Plug 'majutsushi/tagbar'
+" Plug 'maralla/vim-toml-enhance'
 " Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 " Plug 'mattn/vim-sqlfmt'
 Plug 'mattn/webapi-vim'
-" Plug 'maxmellon/vim-jsx-pretty'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
+" Plug 'mhinz/vim-startify'
 Plug 'mitermayer/vim-prettier', {
         \ 'do': 'yarn install',
         \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 " Plug 'mlaursen/vim-react-snippets'
 " Plug 'moll/vim-node'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
+" Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/xml.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pallets/jinja', { 'rtp': '/ext/vim/jinja.vim'}
@@ -77,15 +79,19 @@ Plug 'posva/vim-vue'
 " Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'robertbasic/vim-hugo-helper'
+" Plug 'xuyuanp/nerdtree-git-plugin'
+" Plug 'ryanoasis/vim-devicons'
 " Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/nerdtree'
-" Plug 'sgur/vim-editorconfig'
-" Plug 'shougo/echodoc.vim'
+" Plug 'scrooloose/nerdtree'
+Plug 'sgur/vim-editorconfig'
+Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', {'do': 'make'}
 Plug 'sirver/ultiSnips'
 " Plug 'sjl/gundo.vim'
 " Plug 'stephpy/vim-yaml'
 " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+" Plug 'thirtythreeforty/lessspace.vim'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
 Plug 'tpope/vim-eunuch'
@@ -107,7 +113,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'wakatime/vim-wakatime'
 " Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
-Plug 'xuyuanp/nerdtree-git-plugin'
+" Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentLine'
 
 call plug#end()
@@ -168,13 +174,13 @@ nnoremap <leader>mp :MarkedOpen!<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NerdTree
-nnoremap <leader>n :NERDTreeToggle<CR>
+" nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Show hidden files by default in NERDTree
-let g:NERDTreeShowHidden=1
+" let g:NERDTreeShowHidden=1
 
 " Show status for files ignored by Git
-let g:NERDTreeShowIgnoredStatus = 1
+" let g:NERDTreeShowIgnoredStatus = 1
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
@@ -210,7 +216,7 @@ augroup sourcevimrc
 augroup END
 
 " Toggle TagBar
-nnoremap <leader>t :TagbarToggle<CR>
+" nnoremap <leader>t :TagbarToggle<CR>
 
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
@@ -281,14 +287,14 @@ cmap w!! w !sudo tee > /dev/null %
 set shell=/usr/local/bin/bash
 
 " Editorconfig settings (official plugin)
-let g:Editorconfig_core_mode = 'external_command'
-let g:Editorconfig_exec_path = ['usr/local/bin/editorconfig']
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" let g:Editorconfig_core_mode = 'external_command'
+" let g:Editorconfig_exec_path = ['usr/local/bin/editorconfig']
+" let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-"" Editorconfig settings (unofficial plugin)
-" let g:editorconfig_blacklist = {
-"     \ 'filetype': ['git.*', 'fugitive'],
-"     \ 'pattern': ['\.un~$']}
+" Editorconfig settings (unofficial plugin)
+let g:editorconfig_blacklist = {
+    \ 'filetype': ['git.*', 'fugitive'],
+    \ 'pattern': ['\.un~$']}
 
 " Fugitive shotcuts
 nnoremap <leader>gd :<Leader>Gdiff<cr>gg<c-n>
@@ -512,3 +518,11 @@ let g:tmuxcomplete#trigger = 'omnifunc'
 "  vim-prettier
 " ----------------------------------------------------------------------------
 let g:prettier#exec_cmd_async = 1
+
+" ----------------------------------------------------------------------------
+"  vim-devicons
+" ----------------------------------------------------------------------------
+" let g:webdevicons_enable = 1
+" let g:webdevicons_enable_nerdtree = 1
+" let g:webdevicons_enable_tabline = 1
+" let g:webdevicons_enable_statusline = 1

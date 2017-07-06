@@ -18,8 +18,8 @@ export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 
 # GNU make
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
+# export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+# export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
 
 # GNU sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -30,7 +30,7 @@ export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/share/man:$MANPATH"
 
 # Homebrew curl
-# export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # brew command-not-found
 if brew command command-not-found-init > /dev/null; then
@@ -194,9 +194,9 @@ fi
 alias make='mmake'
 
 # PHP
-if [ -f /usr/local/opt/php70/bin/php ]; then
-  export PATH="/usr/local/opt/php70/bin/php:$PATH"
-fi
+# if [ -f /usr/local/opt/php70/bin/php ]; then
+#   export PATH="/usr/local/opt/php70/bin/php:$PATH"
+# fi
 
 # export TERM=xterm-256color-italic
 
@@ -234,7 +234,11 @@ fi
 . ~/.t-completion.sh
 . ~/.yarn-completion
 
+# Colorls (https://github.com/athityakumar/colorls)
+
 function lc()
 {
   ruby ~/github/clones/colorls/colorls.rb $1;
 }
+
+alias lc='lc -r'

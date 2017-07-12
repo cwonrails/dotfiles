@@ -193,6 +193,9 @@ fi
 # mmake (Modern Make) https://github.com/tj/mmake
 alias make='mmake'
 
+# go-search
+alias gos='go-search'
+
 # PHP
 # if [ -f /usr/local/opt/php70/bin/php ]; then
 #   export PATH="/usr/local/opt/php70/bin/php:$PATH"

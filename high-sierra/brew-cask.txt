@@ -1,3 +1,8 @@
+adobe-creative-cloud-cleaner-tool
+adobe-illustrator-cc
+adobe-photoshop-cc
+adobe-photoshop-lightroom
+adobe-photoshop-lightroom600
 atom
 brave
 caffeine
@@ -134,6 +139,7 @@ font-ubuntu
 font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
+gitter
 hyper
 imagealpha
 imageoptim

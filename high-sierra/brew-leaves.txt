@@ -25,6 +25,7 @@ fdupes
 git-now
 sbtenv
 mas
+gimme
 checkstyle
 ghi
 vapoursynth
@@ -87,6 +88,7 @@ oath-toolkit
 certbot
 homebrew/php/composer
 perl
+arping
 openssh
 libconfig
 exiftags

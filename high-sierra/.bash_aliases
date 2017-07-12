@@ -194,6 +194,7 @@ alias ggu="go get -u \
              github.com/jackc/sqlfmt/cmd/sqlfmt \
              github.com/GoogleChrome/simplehttp2server \
              github.com/tj/mmake/cmd/mmake \
+             github.com/tj/go-search \
              github.com/rapidloop/rtop \
              github.com/asciimoo/wuzz \
              github.com/ddo/fast \

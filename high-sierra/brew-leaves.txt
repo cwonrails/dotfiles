@@ -109,7 +109,6 @@ asio
 dirmngr
 fonttools
 rsync
-carthage
 geoip
 teleport
 libebur128

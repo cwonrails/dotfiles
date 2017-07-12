@@ -157,7 +157,7 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
-alias ua='npm i -g yarn && gitup && bu && diu && gu && hu && vu && ggu && tu && pu && pu3 && ncu -g'
+alias ua='npm i -g yarn && gitup && bu && gu && hu && vu && ggu && tu && pu && pu3 && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
@@ -203,7 +203,6 @@ alias ggu="go get -u \
              github.com/ericchiang/pup \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/gchaincl/httplab/cmd/httplab \
-             github.com/posener/complete/gocomplete \
              github.com/posener/complete/gocomplete \
              github.com/whyrusleeping/gx \
              github.com/kardianos/govendor"

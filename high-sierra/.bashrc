@@ -18,8 +18,8 @@ export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 
 # GNU make
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
+# export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+# export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
 
 # GNU sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -31,6 +31,9 @@ export MANPATH="/usr/local/opt/gnu-tar/share/man:$MANPATH"
 
 # Homebrew curl
 export PATH="/usr/local/opt/curl/bin:$PATH"
+
+# Homebrew python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # brew command-not-found
 if brew command command-not-found-init > /dev/null; then
@@ -182,6 +185,7 @@ else
   eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
 fi
 
+## Alternatives to above (still getting warnings when starting new sessions)
 # if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 #     source ~/.gnupg/.gpg-agent-info
 #     export GPG_AGENT_INFO
@@ -196,35 +200,12 @@ alias make='mmake'
 # go-search
 alias gos='go-search'
 
-# PHP
-# if [ -f /usr/local/opt/php70/bin/php ]; then
-#   export PATH="/usr/local/opt/php70/bin/php:$PATH"
-# fi
-
-# export TERM=xterm-256color-italic
-
-# Automatically trim long paths in the prompt (requires Bash 4.x)
-## PROMPT_DIRTRIM=2
-
-# set global virtualenv wrapper
-
-## --files: List files that would be searched but do not search
-## --no-ignore: Do not respect .gitignore, etc...
-## --hidden: Search hidden files and folders
-## --follow: Follow symlinks
-## --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-
 # bash completion for Docker.app
 if [ -f "/Applications/Docker.app" ]; then
   . /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
   . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
   . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
 fi
-
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-# [ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash ] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.bash
 
 complete -C /Users/christopherwatson/go/bin/gocomplete go
 
@@ -239,10 +220,5 @@ fi
 
 # Colorls (https://github.com/athityakumar/colorls)
 
-# function lc()
-# {
-#   ruby ~/github/clones/colorls/colorls.rb $1;
-# }
+alias lc='colorls -r'
 
-# alias lc='lc -r'
-# alias lc='colorls -sd -r'

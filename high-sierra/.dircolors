@@ -1026,6 +1026,9 @@ TERM screen-w
 TERM screen.linux
 TERM screen.rxvt
 TERM terminator
+
+TERM tmux
+
 TERM vt100
 TERM xterm
 TERM xterm-16color

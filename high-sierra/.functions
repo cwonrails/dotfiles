@@ -1,55 +1,7 @@
 #!/usr/bin/env bash
 
-# fcd - cd into the directory of the selected file
-# fcd() {
-#    local file
-#    local dir
-#    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-# }
-
-#
-# fkill - kill process
-# fkill() {
-#   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-#
-#   if [ "x$pid" != "x" ]
-#   then
-#     kill -${1:-9} $pid
-#   fi
-# }
-
-
-# fshow() {
-#   git log --graph --color=always \
-#       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-#   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-#       --bind "ctrl-m:execute:
-#                 (grep -o '[a-f0-9]\{7\}' | head -1 |
-#                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-#                 {}
-# FZF-EOF"
-# }
-
-# lazygit() {
-#   git add .
-#   git commit -a -m "$1"
-#   git push
-# }
-
 function lazygit() {
     git add .
     git commit -a -m "$1"
     git push
 }
-
-# Create new git project
-ngp ()
-{
-    mkdir -p -- "$1" &&
-    cd -P -- "$1" &&
-    cp ~/new-project/.e* `pwd`
-    cp ~/new-project/.g* `pwd`
-    cp ~/new-project/* `pwd`
-    git-setup
-}
-

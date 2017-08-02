@@ -1,12 +1,10 @@
+.git/
+
 /Alfred Sync/
 /Alfred.alfredpreferences/
 /alfredprefs-master/
-
 /Dropbox/
-
 /Library/
-
-.git/
 
 bower_components
 node_modules

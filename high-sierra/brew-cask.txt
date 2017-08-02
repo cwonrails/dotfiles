@@ -9,6 +9,8 @@ caffeine
 caprine
 chromium
 daisydisk
+discord
+docker-edge
 firefoxdeveloperedition
 firefoxnightly
 font-3270
@@ -149,11 +151,13 @@ kap
 karabiner
 keyboard-cleaner
 ksdiff
+limechat
 malwarebytes-anti-malware
-min
+mpv
 provisioning
 quicklook-csv
 quicklook-json
+retinizer
 skype
 sublime-text-dev
 transmission

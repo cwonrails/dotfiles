@@ -14,12 +14,13 @@ Plug 'chr4/nginx.vim'
 " Plug 'chr4/sslsecure.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-" Plug 'dNitro/vim-pug-complete'
+" Plug 'cwonrails/tern_for_vim', { 'do': 'yarn install; yarn upgrade --latest' }
+Plug 'dNitro/vim-pug-complete'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 " Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
-" Plug 'embear/vim-localvimrc'
+Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
@@ -37,36 +38,43 @@ Plug 'herringtondarkholme/yats.vim'
 Plug 'honza/vim-snippets'
 " Plug 'iamcco/markdown-preview.vim'
 " Plug 'isobit/vim-caddyfile'
+Plug 'isomoar/vim-css-to-inline'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 " Plug 'jamshedvesuna/vim-markdown-preview'
+Plug 'janko-m/vim-test'
 " Plug 'joeyespo/grip'
-" Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/heytmux', { 'do': 'gem install heytmux; gem update heytmux' }
 " Plug 'kchmck/vim-coffee-script'
-" Plug 'kewah/vim-stylefmt'
+Plug 'kewah/vim-stylefmt'
 " Plug 'lmeijvogel/vim-yaml-helper'
-" Plug 'majutsushi/tagbar'
-" Plug 'maralla/vim-toml-enhance'
+Plug 'majutsushi/tagbar'
+" Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
 " Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-" Plug 'mattn/vim-sqlfmt'
+Plug 'mattn/vim-sqlfmt'
 Plug 'mattn/webapi-vim'
-Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
-" Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
+" Plug 'mitermayer/vim-prettier', {
+"          \ 'do': 'yarn install',
+"          \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 Plug 'mitermayer/vim-prettier', {
-        \ 'do': 'yarn install',
-        \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+         \ 'do': 'yarn install; yarn upgrade --latest',
+         \ 'for': 'javascript' }
 " Plug 'mlaursen/vim-react-snippets'
 " Plug 'moll/vim-node'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-" Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 " Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
-" Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/xml.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pallets/jinja', { 'rtp': '/ext/vim/jinja.vim'}
@@ -76,19 +84,19 @@ Plug 'pbrisbin/vim-mkdir'
 " Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
 " Plug 'potatoesmaster/i3-vim-syntax'
-" Plug 'rhysd/committia.vim'
+Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'robertbasic/vim-hugo-helper'
-" Plug 'xuyuanp/nerdtree-git-plugin'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 " Plug 'rust-lang/rust.vim'
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'sgur/vim-editorconfig'
 Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', {'do': 'make'}
 Plug 'sirver/ultiSnips'
 " Plug 'sjl/gundo.vim'
-" Plug 'stephpy/vim-yaml'
+Plug 'stephpy/vim-yaml'
 " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 " Plug 'thirtythreeforty/lessspace.vim'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -100,7 +108,7 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/wstrip.vim'
-Plug 'valloric/youCompleteme', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-pandoc/vim-pandoc'
@@ -113,7 +121,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'wakatime/vim-wakatime'
 " Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
-" Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentLine'
 
 call plug#end()
@@ -174,13 +181,13 @@ nnoremap <leader>mp :MarkedOpen!<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NerdTree
-" nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Show hidden files by default in NERDTree
-" let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1
 
 " Show status for files ignored by Git
-" let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeShowIgnoredStatus = 1
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
@@ -216,7 +223,7 @@ augroup sourcevimrc
 augroup END
 
 " Toggle TagBar
-" nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
@@ -233,11 +240,11 @@ let g:syntastic_echo_current_error = 1
 let g:syntastic_css_checkers = ['stylelint']
 let g:syntastic_styled_components = ['stylelint']
 
-" " Fix highlighting problems for CSS3
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
+" Fix highlighting problems for CSS3
+" augroup VimCSS3Syntax
+"   autocmd!
+"   autocmd FileType css setlocal iskeyword+=-
+" augroup END
 
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
@@ -438,7 +445,7 @@ let g:UltiSnipsEditSplit='vertical'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-" let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
+let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
 
 " ----------------------------------------------------------------------------
 " vim-airline
@@ -496,7 +503,7 @@ let g:wstrip_auto = 1
 " ----------------------------------------------------------------------------
 " vim-jsx
 " ----------------------------------------------------------------------------
-" let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0
 
 " ----------------------------------------------------------------------------
 " vim-esearch
@@ -522,7 +529,7 @@ let g:prettier#exec_cmd_async = 1
 " ----------------------------------------------------------------------------
 "  vim-devicons
 " ----------------------------------------------------------------------------
-" let g:webdevicons_enable = 1
-" let g:webdevicons_enable_nerdtree = 1
-" let g:webdevicons_enable_tabline = 1
-" let g:webdevicons_enable_statusline = 1
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_tabline = 1
+let g:webdevicons_enable_statusline = 1

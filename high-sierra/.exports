@@ -38,9 +38,6 @@ export MANPAGER='less -X';
 command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
 eval "$(gdircolors -b ~/.dircolors)"
 
-# Make FZF use ag (useful for .node_modules and other folders)
-# export FZF_DEFAULT_COMMAND='ag -g ""'
-
 # set virtualenv directory
 export WORKON_HOME=~/.virtualenvs
 . /usr/local/bin/virtualenvwrapper.sh

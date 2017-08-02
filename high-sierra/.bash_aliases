@@ -9,6 +9,9 @@ alias brewdep='brew uses --installed'
 # Clear screen (works with tmux)
 alias c='clear'
 
+# Copy default package.json to current directory
+alias dfpj='cp ~/default.package.json/package.json `pwd`'
+
 # Recursively delete `.DS_Store` files
 alias dskill='find . -type f -name "*.DS_Store" -ls -delete'
 
@@ -24,9 +27,10 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
-# Create new git project
-# alias ngp='cp ~/new-git-project/.e* `pwd` && cp ~/new-git-project/.g* `pwd` && cp ~/new-git-project/* `pwd` && git-setup'
+# Create new project
+alias np='cp ~/new-project/.* `pwd`; cp ~/new-project/* `pwd`'
 
+## This has now been replaced by npx in npm 5
 # Use local npm executables if available
 alias npm-exec='PATH=$(npm bin):$PATH'
 
@@ -70,7 +74,7 @@ alias dfdb='cp ~/global-package-lists/*.txt ~/Dropbox/dotfiles; cp ~/.{agignore,
 alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
 
 # Create text files with lists of globally installed package binaries
-alias gpl='cd ~/global-package-lists; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl; pip list > pip.txt; pip3 list > pip3.txt'
+alias gpl='cd ~/global-package-lists; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl; pip2 list > pip2.txt; pip3 list > pip3.txt'
 
 # get global list of npm installs and output to text file as reformatted simple list
 # shellcheck disable=SC2026
@@ -157,7 +161,7 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
-alias ua='npm i -g yarn && gitup && bu && gu && hu && vu && ggu && tu && pu && pu3 && ncu -g'
+alias ua='npm i -g yarn && gitup && bu && gu && diu && vu && ggu && tu && pu && pu3 && tu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
@@ -173,7 +177,7 @@ alias gu='gem update; gem cleanup'
 alias hu='go get -u -v github.com/gohugoio/hugo'
 
 # Python: Upgrade all pip packages
-alias pu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias pu="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 # Python: Upgrade all pip3 packages
 alias pu3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U"

@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
 function lazygit() {
-    git add .
-    git commit -a -m "$1"
-    git push
+  git add .
+  git commit -a -m "$1"
+  git push
+}
+
+function nvm-upgrade() {
+(
+  cd "$NVM_DIR"
+  git fetch origin
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+) && . "$NVM_DIR/nvm.sh"
 }

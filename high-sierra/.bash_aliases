@@ -161,7 +161,7 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
-alias ua='npm i -g yarn && gitup && bu && gu && diu && vu && ggu && tu && pu && pu3 && tu && ncu -g'
+alias ua='npm i -g yarn && gitup && bu && gu && vu && ggu && tu && pu && pu3 && tu && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'

@@ -196,6 +196,7 @@ alias ggu="go get -u \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck \
              github.com/jackc/sqlfmt/cmd/sqlfmt \
+             github.com/golang/dep/cmd/dep \
              github.com/GoogleChrome/simplehttp2server \
              github.com/tj/mmake/cmd/mmake \
              github.com/tj/go-search \

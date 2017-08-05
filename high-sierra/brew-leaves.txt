@@ -45,6 +45,7 @@ startup-notification
 simeji/jid/jid
 gnuplot
 netcat
+sslmate
 libuv
 imap-uw
 closure-compiler
@@ -258,7 +259,9 @@ ncdu
 tldr
 extract_url
 ssh-copy-id
+zsh
 jq
+zsh-syntax-highlighting
 uchardet
 librdkafka
 fftw

@@ -45,7 +45,7 @@ Plug 'janko-m/vim-test'
 " Plug 'joeyespo/grip'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/heytmux', { 'do': 'gem install heytmux; gem update heytmux' }
 " Plug 'kchmck/vim-coffee-script'

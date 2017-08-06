@@ -27,7 +27,7 @@ Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
-Plug 'flowtype/vim-flow'
+" Plug 'flowtype/vim-flow'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-terraform'
@@ -45,7 +45,7 @@ Plug 'janko-m/vim-test'
 " Plug 'joeyespo/grip'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/heytmux', { 'do': 'gem install heytmux; gem update heytmux' }
 " Plug 'kchmck/vim-coffee-script'
@@ -53,7 +53,7 @@ Plug 'kewah/vim-stylefmt'
 " Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'majutsushi/tagbar'
 " Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
-" Plug 'matt-deacalion/vim-systemd-syntax'
+Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/vim-sqlfmt'

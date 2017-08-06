@@ -233,7 +233,6 @@ devd
 rmlint
 md5sha1sum
 livestreamer
-pcre2
 youtube-dl
 rename
 httpie

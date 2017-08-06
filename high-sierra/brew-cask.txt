@@ -10,6 +10,7 @@ caprine
 chromium
 daisydisk
 discord
+docker
 firefoxdeveloperedition
 firefoxnightly
 font-3270
@@ -140,6 +141,7 @@ font-ubuntu
 font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
+ghost
 gitter
 hyper
 imagealpha
@@ -152,16 +154,21 @@ keyboard-cleaner
 ksdiff
 limechat
 malwarebytes-anti-malware
+min
 mpv
 provisioning
 quicklook-csv
 quicklook-json
 retinizer
+sequel-pro
 skype
 sublime-text-dev
+torbrowser
 transmission
+tweeten
 virtualbox
 visual-studio-code
+vivaldi
 vlc
 webstorm
 xld

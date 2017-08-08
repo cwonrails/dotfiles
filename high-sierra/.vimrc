@@ -66,7 +66,7 @@ Plug 'mitermayer/vim-prettier', {
          \ 'for': 'javascript' }
 " Plug 'mlaursen/vim-react-snippets'
 " Plug 'moll/vim-node'
-Plug 'mtscout6/syntastic-local-eslint.vim'
+" Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mxw/vim-jsx'
 " Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/es.next.syntax.vim'
@@ -78,6 +78,7 @@ Plug 'othree/yajs.vim'
 Plug 'pbrisbin/vim-mkdir'
 " Plug 'pearofducks/ansible-vim'
 " Plug 'phenomenes/ansible-snippets'
+Plug 'phpstan/vim-phpstan'
 " Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
 " Plug 'potatoesmaster/i3-vim-syntax'
@@ -114,11 +115,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 " Plug 'vimwiki/vimwiki'
 Plug 'wakatime/vim-wakatime'
 " Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
+Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
 
 call plug#end()
@@ -198,7 +200,7 @@ nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>
 
 " Get Syntastic info for current buffer
-nnoremap <leader>si :SyntasticInfo<CR>
+" nnoremap <leader>si :SyntasticInfo<CR>
 
 " Run terminal commands
 nnoremap <leader>vp :VimProcBang<space>
@@ -227,16 +229,16 @@ nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " Syntastic base settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_id_checkers = 1
-let g:syntastic_echo_current_error = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_id_checkers = 1
+" let g:syntastic_echo_current_error = 1
 
 " CSS linting
-let g:syntastic_css_checkers = ['stylelint']
-let g:syntastic_styled_components = ['stylelint']
+" let g:syntastic_css_checkers = ['stylelint']
+" let g:syntastic_styled_components = ['stylelint']
 
 " Fix highlighting problems for CSS3
 augroup VimCSS3Syntax
@@ -245,36 +247,36 @@ augroup VimCSS3Syntax
 augroup END
 
 " HTML linting
-let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-let g:syntastic_html_checkers = ['tidy', 'htmlhint']
+" let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+" let g:syntastic_html_checkers = ['tidy', 'htmlhint']
 
 " Ignore Apple's W3-invalid html code for pinned favicons
-let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
-let g:syntastic_html_tidy_ignore_errors = [
-      \   '<link> proprietary attribute "color"',
-      \   '<link> proprietary attribute "crossorigin"',
-      \   '<link> proprietary attribute "integrity"',
-      \   '<script> proprietary attribute "crossorigin"',
-      \   '<script> proprietary attribute "integrity"'
-      \ ]
+" let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
+" let g:syntastic_html_tidy_ignore_errors = [
+      " \   '<link> proprietary attribute "color"',
+      " \   '<link> proprietary attribute "crossorigin"',
+      " \   '<link> proprietary attribute "integrity"',
+      " \   '<script> proprietary attribute "crossorigin"',
+      " \   '<script> proprietary attribute "integrity"'
+      " \ ]
 
 " Javascript linting
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
 
 " JSON linting
-let g:syntastic_json_checkers = ['jsonlint']
+" let g:syntastic_json_checkers = ['jsonlint']
 
 " Pug linting
-let g:syntastic_pug_checkers = ['pug_lint']
+" let g:syntastic_pug_checkers = ['pug_lint']
 
 " Shell / bash script linting
-let g:syntastic_sh_checkers = ['shellcheck']
+" let g:syntastic_sh_checkers = ['shellcheck']
 
 " Typescript linting
-let g:syntastic_sh_checkers = ['tslint']
+" let g:syntastic_sh_checkers = ['tslint']
 
 " VimL linting
-let g:syntastic_vim_checkers= ['vint']
+" let g:syntastic_vim_checkers= ['vint']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -544,3 +546,20 @@ let g:flow#enable = 0
 let g:localvimrc_sandbox = 1
 let g:localvimrc_persistent = 1
 let g:localvimrc_whitelist='$HOME/github/forks/cwoncasper'
+
+" ----------------------------------------------------------------------------
+" ale settings
+" ----------------------------------------------------------------------------
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_set_loclist = 1
+" let g:ale_set_quixfix = 1
+let g:ale_open_list = 1
+
+" let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+" let g:ale_linter_aliases = {'jsx': 'css'}
+
+nmap <silent> <leader>an <Plug>(ale_next_wrap)
+nmap <silent> <leader>ap <Plug>(ale_previous_wrap)

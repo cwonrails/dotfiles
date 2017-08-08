@@ -99,7 +99,7 @@ if which go > /dev/null; then
 fi
 
 # PHP 7.1 #
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+export PATH="usr/local/opt/php71/bin/php:$PATH"
 
 # Rust
 ## Cargo
@@ -211,7 +211,7 @@ complete -C /Users/christopherwatson/go/bin/gocomplete go
 
 if [ -d ~/.bash_completion.d ]; then
   for file in ~/.bash_completion.d/*; do
-    . $file
+    . "$file"
   done
 fi
 
@@ -230,7 +230,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # lunchy
- LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
- if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
-   . $LUNCHY_DIR/lunchy-completion.bash
- fi
+if [ -f "/usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash" ]; then
+  . /usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash
+fi

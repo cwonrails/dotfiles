@@ -212,5 +212,3 @@ alias ggu="go get -u \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
 
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
-# alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'

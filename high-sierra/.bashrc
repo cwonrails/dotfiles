@@ -18,8 +18,8 @@ export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 
 # GNU make
-# export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-# export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
 
 # GNU sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -68,16 +68,12 @@ if [ -f "/usr/local/etc/bash_completion" ]; then
   . "/usr/local/etc/bash_completion"
 fi
 
-if [ -f "/usr/local/share/bash-completion/bash_completion" ]; then
-  . "/usr/local/share/bash-completion/bash_completion"
-fi
-
 if [ -f "/usr/local/etc/bash_completion.d" ]; then
   . "/usr/local/etc/bash_completion.d"
 fi
 
 if [ -f "/usr/local/share/bash-completion/bash_completion" ]; then
-    . "/usr/local/share/bash-completion/bash_completion"
+  . "/usr/local/share/bash-completion/bash_completion"
 fi
 
 # Enable grc (generic colorizer)
@@ -101,6 +97,9 @@ if which go > /dev/null; then
   export GOBIN="$GOPATH/bin"
   export PATH="$GOBIN:$PATH"
 fi
+
+# PHP 7.1 #
+export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 
 # Rust
 ## Cargo
@@ -207,6 +206,7 @@ if [ -f "/Applications/Docker.app" ]; then
   . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
 fi
 
+# built-in Go completion
 complete -C /Users/christopherwatson/go/bin/gocomplete go
 
 if [ -d ~/.bash_completion.d ]; then
@@ -215,7 +215,10 @@ if [ -d ~/.bash_completion.d ]; then
   done
 fi
 
+# t completion
 . ~/.t-completion.sh
+
+# yarn completion
 . ~/.yarn-completion
 
 # Colorls (https://github.com/athityakumar/colorls)
@@ -223,5 +226,11 @@ alias lc='colorls -r'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# lunchy
+ LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+ if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
+   . $LUNCHY_DIR/lunchy-completion.bash
+ fi

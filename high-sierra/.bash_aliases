@@ -193,24 +193,24 @@ alias ssh='TERM=xterm-256color ssh'
 
 # Update specific go packages
 alias ggu="go get -u \
-             honnef.co/go/tools/cmd/gosimple \
-             honnef.co/go/tools/cmd/staticcheck \
-             github.com/jackc/sqlfmt/cmd/sqlfmt \
-             github.com/golang/dep/cmd/dep \
-             github.com/GoogleChrome/simplehttp2server \
-             github.com/tj/mmake/cmd/mmake \
-             github.com/tj/go-search \
-             github.com/rapidloop/rtop \
+             github.com/alecthomas/gometalinter \
              github.com/asciimoo/wuzz \
              github.com/ddo/fast \
-             github.com/alecthomas/gometalinter \
-             github.com/russross/blackfriday-tool \
              github.com/ericchiang/pup \
-             github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/gchaincl/httplab/cmd/httplab \
+             github.com/golang/dep/cmd/dep \
+             github.com/GoogleChrome/simplehttp2server \
+             github.com/haya14busa/go-vimlparser/cmd/vimlparser \
+             github.com/jackc/sqlfmt/cmd/sqlfmt \
+             github.com/kardianos/govendor \
              github.com/posener/complete/gocomplete \
+             github.com/rapidloop/rtop \
+             github.com/russross/blackfriday-tool \
+             github.com/tj/mmake/cmd/mmake \
+             github.com/tj/go-search \
              github.com/whyrusleeping/gx \
-             github.com/kardianos/govendor"
+             honnef.co/go/tools/cmd/gosimple \
+             honnef.co/go/tools/cmd/staticcheck"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'
+# alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'

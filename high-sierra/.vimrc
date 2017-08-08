@@ -11,14 +11,11 @@ Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
 Plug 'chr4/nginx.vim'
-" Plug 'chr4/sslsecure.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-" Plug 'cwonrails/tern_for_vim', { 'do': 'yarn install; yarn upgrade --latest' }
 Plug 'dNitro/vim-pug-complete'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
-" Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
@@ -27,7 +24,7 @@ Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
-" Plug 'flowtype/vim-flow'
+Plug 'flowtype/vim-flow'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-terraform'
@@ -47,10 +44,10 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'junegunn/heytmux', { 'do': 'gem install heytmux; gem update heytmux' }
-" Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script'
 Plug 'kewah/vim-stylefmt'
 " Plug 'lmeijvogel/vim-yaml-helper'
+" Plug 'LnL7/vim-nix'
 Plug 'majutsushi/tagbar'
 " Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
 Plug 'matt-deacalion/vim-systemd-syntax'
@@ -75,7 +72,7 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-" Plug 'othree/xml.vim'
+Plug 'othree/xml.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pallets/jinja', { 'rtp': '/ext/vim/jinja.vim'}
 Plug 'pbrisbin/vim-mkdir'
@@ -96,6 +93,7 @@ Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', {'do': 'make'}
 Plug 'sirver/ultiSnips'
 " Plug 'sjl/gundo.vim'
+Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-yaml'
 " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 " Plug 'thirtythreeforty/lessspace.vim'
@@ -241,10 +239,10 @@ let g:syntastic_css_checkers = ['stylelint']
 let g:syntastic_styled_components = ['stylelint']
 
 " Fix highlighting problems for CSS3
-" augroup VimCSS3Syntax
-"   autocmd!
-"   autocmd FileType css setlocal iskeyword+=-
-" augroup END
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css sass scss setlocal iskeyword+=-
+augroup END
 
 " HTML linting
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
@@ -533,3 +531,16 @@ let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_tabline = 1
 let g:webdevicons_enable_statusline = 1
+
+" ----------------------------------------------------------------------------
+"  vim-flow
+" ----------------------------------------------------------------------------
+let g:flow#autoclose = 1
+let g:flow#enable = 0
+
+" ----------------------------------------------------------------------------
+" vim-localvimrc
+" ----------------------------------------------------------------------------
+let g:localvimrc_sandbox = 1
+let g:localvimrc_persistent = 1
+let g:localvimrc_whitelist='$HOME/github/forks/cwoncasper'

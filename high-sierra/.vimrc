@@ -9,7 +9,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'cespare/vim-toml'
+" Plug 'cespare/vim-toml'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
@@ -24,7 +24,7 @@ Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fleischie/vim-styled-components'
-Plug 'flowtype/vim-flow'
+" Plug 'flowtype/vim-flow'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'hashivim/vim-terraform'
@@ -53,11 +53,11 @@ Plug 'majutsushi/tagbar'
 Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-Plug 'mattn/vim-sqlfmt'
+" Plug 'mattn/vim-sqlfmt'
 Plug 'mattn/webapi-vim'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 " Plug 'mitermayer/vim-prettier', {
 "          \ 'do': 'yarn install',
 "          \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
@@ -72,7 +72,7 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/xml.vim'
+" Plug 'othree/xml.vim'
 Plug 'othree/yajs.vim'
 " Plug 'pallets/jinja', { 'rtp': '/ext/vim/jinja.vim'}
 Plug 'pbrisbin/vim-mkdir'
@@ -84,13 +84,13 @@ Plug 'posva/vim-vue'
 " Plug 'potatoesmaster/i3-vim-syntax'
 Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim'
-Plug 'robertbasic/vim-hugo-helper'
-Plug 'xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'robertbasic/vim-hugo-helper'
+" Plug 'xuyuanp/nerdtree-git-plugin'
+" Plug 'ryanoasis/vim-devicons'
 " Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'sgur/vim-editorconfig'
-Plug 'shougo/echodoc.vim'
+" Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', {'do': 'make'}
 Plug 'sirver/ultiSnips'
 " Plug 'sjl/gundo.vim'
@@ -181,7 +181,7 @@ nnoremap <leader>mp :MarkedOpen!<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
 " Toggle NerdTree
-nnoremap <leader>n :NERDTreeToggle<CR>
+" nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Show hidden files by default in NERDTree
 let g:NERDTreeShowHidden=1
@@ -243,7 +243,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " Fix highlighting problems for CSS3
 augroup VimCSS3Syntax
   autocmd!
-  autocmd FileType css sass scss setlocal iskeyword+=-
+  autocmd FileType [css,sass,scss] setlocal iskeyword+=-
 augroup END
 
 " HTML linting
@@ -529,21 +529,21 @@ let g:prettier#exec_cmd_async = 1
 " ----------------------------------------------------------------------------
 "  vim-devicons
 " ----------------------------------------------------------------------------
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_enable_tabline = 1
-let g:webdevicons_enable_statusline = 1
+" let g:webdevicons_enable = 1
+" let g:webdevicons_enable_nerdtree = 1
+" let g:webdevicons_enable_tabline = 1
+" let g:webdevicons_enable_statusline = 1
 
 " ----------------------------------------------------------------------------
 "  vim-flow
 " ----------------------------------------------------------------------------
-let g:flow#autoclose = 1
-let g:flow#enable = 0
+" let g:flow#autoclose = 1
+" let g:flow#enable = 0
 
 " ----------------------------------------------------------------------------
 " vim-localvimrc
 " ----------------------------------------------------------------------------
-let g:localvimrc_sandbox = 1
+let g:localvimrc_sandbox = 0
 let g:localvimrc_persistent = 1
 let g:localvimrc_whitelist='$HOME/github/forks/cwoncasper'
 
@@ -557,9 +557,36 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 1
 " let g:ale_set_quixfix = 1
 let g:ale_open_list = 1
+let g:ale_keep_list_window_open = 0
 
+"" Use stylelint and eslint for jsx files
+" augroup FiletypeGroup
+"     autocmd!
+"     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+" augroup END
 " let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
 " let g:ale_linter_aliases = {'jsx': 'css'}
 
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
+
+let g:ale_linters = {
+  \ 'ansible': ['ansible-lint'],
+  \ 'asciidoc': ['proselint'],
+  \ 'awk': ['gawk'],
+  \ 'bash': ['-n flag','shellcheck'],
+  \ 'bourne_shell': ['-n flag','shellcheck'],
+  \ 'cmake': ['cmakelint'],
+  \ 'css': ['stylelint'],
+  \ 'elm': ['elm-make'],
+  \ 'go': ['gofmt -e'],
+  \ 'html': ['HTMLHint', 'tidy'],
+  \ 'javascript': ['eslint','standard','prettier'],
+  \ 'json': ['jsonlint'],
+  \ 'ruby': ['rubocop'],
+  \ 'sass': ['sass-lint','stylelint'],
+  \ 'scss': ['sass-lint','stylelint'],
+  \ 'text^': ['vale'],
+  \ 'vim': ['vint'],
+  \ 'xml': ['xmllint']
+  \}

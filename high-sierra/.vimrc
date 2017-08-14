@@ -68,6 +68,7 @@ Plug 'mitermayer/vim-prettier', {
 " Plug 'moll/vim-node'
 " Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mxw/vim-jsx'
+Plug 'mustache/vim-mustache-handlebars'
 " Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
@@ -78,7 +79,7 @@ Plug 'othree/yajs.vim'
 Plug 'pbrisbin/vim-mkdir'
 " Plug 'pearofducks/ansible-vim'
 " Plug 'phenomenes/ansible-snippets'
-Plug 'phpstan/vim-phpstan'
+Plug 'phpstan/vim-phpstan', {'for': 'php'}
 " Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
 " Plug 'potatoesmaster/i3-vim-syntax'
@@ -94,7 +95,7 @@ Plug 'sgur/vim-editorconfig'
 Plug 'shougo/vimproc.vim', {'do': 'make'}
 Plug 'sirver/ultiSnips'
 " Plug 'sjl/gundo.vim'
-Plug 'StanAngeloff/php.vim'
+Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'stephpy/vim-yaml'
 " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 " Plug 'thirtythreeforty/lessspace.vim'
@@ -555,17 +556,17 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 1
-" let g:ale_set_quixfix = 1
+" let g:ale_set_quickfix = 0
 let g:ale_open_list = 1
 let g:ale_keep_list_window_open = 0
 
-"" Use stylelint and eslint for jsx files
-" augroup FiletypeGroup
-"     autocmd!
-"     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-" augroup END
-" let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
-" let g:ale_linter_aliases = {'jsx': 'css'}
+" Use stylelint and eslint for jsx files
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+let g:ale_linter_aliases = {'jsx': 'css'}
 
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
@@ -579,9 +580,8 @@ let g:ale_linters = {
   \ 'cmake': ['cmakelint'],
   \ 'css': ['stylelint'],
   \ 'elm': ['elm-make'],
-  \ 'go': ['gofmt -e'],
-  \ 'html': ['HTMLHint', 'tidy'],
-  \ 'javascript': ['eslint','standard','prettier'],
+  \ 'html': ['HTMLHint','tidy'],
+  \ 'javascript': ['eslint'],
   \ 'json': ['jsonlint'],
   \ 'ruby': ['rubocop'],
   \ 'sass': ['sass-lint','stylelint'],

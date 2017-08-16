@@ -13,6 +13,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
+Plug 'cwonrails/ale', { 'branch': 'close-window-on-quit' }
 Plug 'dNitro/vim-pug-complete'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
@@ -44,6 +45,7 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vader.vim', { 'for': 'vim' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'kewah/vim-stylefmt'
 " Plug 'lmeijvogel/vim-yaml-helper'
@@ -62,8 +64,7 @@ Plug 'mbbill/undotree'
 "          \ 'do': 'yarn install',
 "          \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 Plug 'mitermayer/vim-prettier', {
-         \ 'do': 'yarn install; yarn upgrade --latest',
-         \ 'for': 'javascript' }
+         \ 'do': 'yarn install; yarn upgrade --latest' }
 " Plug 'mlaursen/vim-react-snippets'
 " Plug 'moll/vim-node'
 " Plug 'mtscout6/syntastic-local-eslint.vim'
@@ -121,7 +122,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
 " Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
 
 call plug#end()
@@ -185,16 +186,16 @@ nnoremap <leader>mq :MarkedQuit<CR>
 " nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Show hidden files by default in NERDTree
-let g:NERDTreeShowHidden=1
+" let g:NERDTreeShowHidden=1
 
 " Show status for files ignored by Git
-let g:NERDTreeShowIgnoredStatus = 1
+" let g:NERDTreeShowIgnoredStatus = 1
 
 " Save file and quit
 nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
-:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+" :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
@@ -209,12 +210,12 @@ nnoremap <leader>vp :VimProcBang<space>
 " ----------------------------------------------------------------------------
 " Save
 " ----------------------------------------------------------------------------
-nnoremap <leader>s :w<cr>
+" nnoremap <leader>s :w<cr>
 
 " ----------------------------------------------------------------------------
 " Quit
 " ----------------------------------------------------------------------------
-nnoremap <Leader>q :wq<cr>
+" nnoremap <Leader>q :wq<cr>
 nnoremap <Leader>x :q!<cr>
 
 " Source .vimrc on save
@@ -544,9 +545,9 @@ let g:prettier#exec_cmd_async = 1
 " ----------------------------------------------------------------------------
 " vim-localvimrc
 " ----------------------------------------------------------------------------
-let g:localvimrc_sandbox = 0
-let g:localvimrc_persistent = 1
-let g:localvimrc_whitelist='$HOME/github/forks/cwoncasper'
+" let g:localvimrc_sandbox = 1
+" let g:localvimrc_persistent = 1
+" let g:localvimrc_whitelist='$HOME/github/forks/cwoncasper/'
 
 " ----------------------------------------------------------------------------
 " ale settings
@@ -558,7 +559,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 1
 " let g:ale_set_quickfix = 0
 let g:ale_open_list = 1
-let g:ale_keep_list_window_open = 0
+" let g:ale_keep_list_window_open = 0
 
 " Use stylelint and eslint for jsx files
 augroup FiletypeGroup

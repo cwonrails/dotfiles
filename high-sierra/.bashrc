@@ -17,9 +17,16 @@ export MANPATH="/usr/local/opt/coreutils/share/man:$MANPATH"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 
+# GNU getopt
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export MANPATH="/usr/local/opt/gnu-getopt/share/man:$MANPATH"
+
 # GNU make
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
+
+# mmake (Modern Make) https://github.com/tj/mmake
+alias make='mmake'
 
 # GNU sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -34,6 +41,7 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # Homebrew python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export MANPATH="/usr/local/opt/python2/share/man:$MANPATH"
 
 # brew command-not-found
 if brew command command-not-found-init > /dev/null; then
@@ -192,9 +200,6 @@ fi
 #     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 #     eval $(gpg-agent --daemon ~/.gnupg/.gpg-agent-info)
 # fi
-
-# mmake (Modern Make) https://github.com/tj/mmake
-alias make='mmake'
 
 # go-search
 alias gos='go-search'

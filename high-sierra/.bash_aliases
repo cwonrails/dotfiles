@@ -212,3 +212,5 @@ alias ggu="go get -u \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
 
+# Opposite of workon pip package for python virtualenvs
+alias workoff='deactivate'

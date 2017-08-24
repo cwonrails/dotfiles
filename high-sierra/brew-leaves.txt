@@ -16,6 +16,7 @@ wakatime-cli
 cppcheck
 libiconv
 wget
+bash-snippets
 minio-mc
 bats
 dante
@@ -23,7 +24,7 @@ doctl
 ranger
 msgpack
 augeas
-homebrew/php/phpcpd
+json-c
 fdupes
 git-now
 sbtenv
@@ -37,12 +38,11 @@ vapoursynth
 libdv
 thefuck
 exiftool
-homebrew/php/php71-memcached
 homebrew/php/box
 gst-plugins-ugly
 kube-aws
+bit
 entr
-pulseaudio
 pidcat
 valelint/vale/vale
 terminal-notifier
@@ -70,7 +70,6 @@ gnu-tar
 sysdig
 p7zip
 pidof
-redis
 librsync
 highlight
 proselint
@@ -92,6 +91,7 @@ libexif
 wifi-password
 markdown
 brotli
+gtk-doc
 gotags
 pipes-sh
 maven
@@ -100,6 +100,7 @@ joshuaclayton/formulae/unused
 path-extractor
 wata727/tflint/tflint
 fd
+shared-mime-info
 unzip
 mtr
 oath-toolkit
@@ -123,7 +124,6 @@ hiredis
 s-search
 elm-format
 utf8proc
-r
 asio
 dirmngr
 fonttools
@@ -157,6 +157,7 @@ zlib
 fpp
 cabextract
 xhyve
+unixodbc
 chrome-cli
 shfmt
 grep
@@ -171,7 +172,6 @@ slackcat
 htop
 diffutils
 sngrep
-docker-clean
 icdiff
 leiningen
 gst-python
@@ -179,7 +179,6 @@ siege
 enchant
 media-info
 todolist
-rxvt-unicode
 imagejs
 mighttpd2
 libwebm
@@ -233,6 +232,7 @@ tmux
 sbt
 warp
 rhino
+assh
 bfg
 closure-linter
 gem-completion
@@ -248,11 +248,9 @@ libressl
 vifm
 devd
 rmlint
-homebrew/php/php71-gmp
 md5sha1sum
 livestreamer
 youtube-dl
-homebrew/php/php71-xdebug
 rename
 httpie
 nnn
@@ -261,7 +259,6 @@ httpflow
 cloc
 yubico-piv-tool
 gitup
-homebrew/php/phpmd
 open-completion
 libidn
 m-cli
@@ -271,9 +268,12 @@ shpotify
 t-completion
 reattach-to-user-namespace
 libspiro
+libsoxr
 texinfo
 git-fresh
 spidermonkey
+diff-pdf
+speexdsp
 opusfile
 ncdu
 tldr
@@ -287,10 +287,8 @@ librdkafka
 fftw
 grammarly/tap/rocker
 fontforge
-wpscan
 yajl
 vnu
-homebrew/php/php71-redis
 you-get
 tcpdump
 check
@@ -331,7 +329,8 @@ gnu-which
 pip-completion
 git-extras
 vault
-homebrew/php/php-code-sniffer
+gopass
+homebrew/php/igbinary
 diff-so-fancy
 libvterm
 svg2png

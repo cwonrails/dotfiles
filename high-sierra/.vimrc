@@ -13,7 +13,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-Plug 'cwonrails/ale', { 'branch': 'close-window-on-quit' }
+" Plug 'cwonrails/ale', { 'branch': 'close-window-on-quit' }
 Plug 'dNitro/vim-pug-complete'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
@@ -59,6 +59,7 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
+" Plug 'metakirby5/codi.vim'
 " Plug 'mhinz/vim-startify'
 " Plug 'mitermayer/vim-prettier', {
 "          \ 'do': 'yarn install',
@@ -122,7 +123,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
 " Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
 
 call plug#end()
@@ -580,6 +581,7 @@ let g:ale_linters = {
   \ 'bourne_shell': ['-n flag','shellcheck'],
   \ 'cmake': ['cmakelint'],
   \ 'css': ['stylelint'],
+  \ 'Dockerfile': ['hadolint'],
   \ 'elm': ['elm-make'],
   \ 'html': ['HTMLHint','tidy'],
   \ 'javascript': ['eslint'],

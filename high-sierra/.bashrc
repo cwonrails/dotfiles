@@ -238,3 +238,6 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f "/usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash" ]; then
   . /usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash
 fi
+
+# start Docker-Machine with every login
+# eval "$(docker-machine env default)"

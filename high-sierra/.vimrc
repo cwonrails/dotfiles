@@ -40,6 +40,7 @@ Plug 'isomoar/vim-css-to-inline'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 " Plug 'jamshedvesuna/vim-markdown-preview'
 Plug 'janko-m/vim-test'
+" Plug 'jeetsukumaran/vim-filebeagle'
 " Plug 'joeyespo/grip'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
@@ -129,7 +130,7 @@ Plug 'yggdroot/indentLine'
 call plug#end()
 
 " Enable 256 colors in terminal
-set t_Co=256
+" set t_Co=256
 
 " Enable syntax highlighting
 syntax enable
@@ -355,7 +356,7 @@ set showtabline=2
 set sidescrolloff=5
 set softtabstop=2
 set smartcase
-set smartindent
+" set smartindent
 set smarttab
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 set synmaxcol=1000

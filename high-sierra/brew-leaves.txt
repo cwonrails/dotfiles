@@ -30,6 +30,7 @@ git-now
 sbtenv
 mas
 gimme
+http_load
 compose2kube
 checkstyle
 aalib

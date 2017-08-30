@@ -189,7 +189,8 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   GPG_TTY=$(tty)
   export GPG_TTY
 else
-  eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
+  eval "$(gpg-agent --daemon ~/.gnupg/.gpg-agent-info)"
+  # eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
 fi
 
 ## Alternatives to above (still getting warnings when starting new sessions)
@@ -241,3 +242,16 @@ fi
 
 # start Docker-Machine with every login
 # eval "$(docker-machine env default)"
+
+# NativeScript development paths
+
+# shellcheck disable=SC2155
+export JAVA_HOME=$(/usr/libexec/java_home)
+# export ANDROID_HOME=/usr/local/share/android-sdk
+
+###-tns-completion-start-###
+# if [ -f /Users/christopherwatson/.tnsrc ]; then
+#     source /Users/christopherwatson/.tnsrc
+# fi
+###-tns-completion-end-###
+

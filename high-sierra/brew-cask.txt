@@ -8,6 +8,7 @@ caffeine
 caprine
 chromium
 daisydisk
+docker-edge
 firefoxdeveloperedition
 firefoxnightly
 font-3270

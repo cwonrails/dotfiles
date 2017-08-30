@@ -11,7 +11,7 @@ args                               0.1.0
 asn1crypto                         0.22.0     
 astroid                            1.5.3      
 autopep8                           1.3.2      
-awscli                             1.11.140   
+awscli                             1.11.142   
 Babel                              2.5.0      
 backports-abc                      0.5        
 backports.functools-lru-cache      1.4        
@@ -24,8 +24,8 @@ beautifulsoup4                     4.6.0
 beets                              1.4.5      
 bernhard                           0.2.5      
 boto                               2.48.0     
-boto3                              1.4.6      
-botocore                           1.6.7      
+boto3                              1.4.7      
+botocore                           1.7.0      
 bottle                             0.12.13    
 cairocffi                          0.8.0      
 cassandra-driver                   3.11.0     
@@ -46,7 +46,7 @@ CouchDB                            1.1
 cryptography                       2.0.3      
 cssselect                          1.0.1      
 cycler                             0.10.0     
-Cython                             0.26       
+Cython                             0.26.1     
 decorator                          4.1.2      
 Django                             1.11.4     
 docker                             2.5.1      
@@ -54,12 +54,12 @@ docker-pycreds                     0.2.1
 docopt                             0.6.2      
 docutils                           0.14       
 dodgy                              0.1.9      
-droopescan                         1.37.1     
+droopescan                         1.37.5     
 ecdsa                              0.13       
 elasticsearch                      5.4.0      
 enum-compat                        0.0.2      
 enum34                             1.1.6      
-Fabric                             1.13.2     
+Fabric                             1.14.0     
 fire                               0.1.0      
 flake8                             3.4.1      
 frosted                            1.4.1      
@@ -124,7 +124,7 @@ pexpect                            4.2.1
 pickleshare                        0.7.4      
 pies                               2.6.7      
 pies2overrides                     2.6.7      
-pika                               0.10.0     
+pika                               0.11.0     
 Pillow                             4.2.1      
 pip                                9.0.1      
 ply                                3.10       
@@ -137,11 +137,11 @@ psutil                             5.2.2
 ptyprocess                         0.5.2      
 py-cpuinfo                         3.3.0      
 pyaml                              17.8.0     
-pyasn1                             0.3.2      
+pyasn1                             0.3.3      
 pycodestyle                        2.3.1      
 pycparser                          2.18       
 pycrypto                           2.6.1      
-pycryptodome                       3.4.6      
+pycryptodome                       3.4.7      
 pydocstyle                         2.0.0      
 pyenchant                          1.6.11     
 pyflakes                           1.6.0      
@@ -178,7 +178,7 @@ s3transfer                         0.1.10
 saws                               0.4.3      
 scandir                            1.5        
 setoptconf                         0.2.0      
-setuptools                         36.2.7     
+setuptools                         36.3.0     
 simplegeneric                      0.8.1      
 simplejson                         3.11.1     
 simplenote                         1.0.3      
@@ -200,7 +200,7 @@ svn                                0.3.45
 terminal-velocity                  0.1.9      
 tmux2html                          0.1.11     
 tmuxp                              1.3.2      
-tornado                            4.5.1      
+tornado                            4.5.2      
 tqdm                               4.15.0     
 traitlets                          4.3.2      
 trollius                           2.1        
@@ -214,7 +214,7 @@ vim-vint                           0.3.14
 virtualenv                         15.1.0     
 virtualenv-clone                   0.2.6      
 virtualenvwrapper                  4.7.2      
-vulture                            0.25       
+vulture                            0.26       
 wcwidth                            0.1.7      
 websocket-client                   0.44.0     
 wheel                              0.29.0     

@@ -4,6 +4,7 @@ git-lfs
 png2ico
 little-cms
 imlib2
+hg-fast-export
 kubernetes-helm
 vim
 sift
@@ -41,6 +42,7 @@ thefuck
 exiftool
 homebrew/php/box
 gst-plugins-ugly
+lynx
 kube-aws
 bit
 entr
@@ -138,7 +140,6 @@ gzip
 libarchive
 composer-completion
 gnustep-make
-gcc
 elm
 zopfli
 screenresolution
@@ -151,6 +152,7 @@ gst-plugins-bad
 td
 wego
 mp3splt
+xerces-c
 godep
 libedit
 certigo
@@ -244,6 +246,7 @@ m4
 s3cmd
 watch
 burl
+isl
 wslay
 libressl
 vifm
@@ -329,6 +332,7 @@ jpeg-turbo
 gnu-which
 pip-completion
 git-extras
+libmpc
 vault
 gopass
 homebrew/php/igbinary

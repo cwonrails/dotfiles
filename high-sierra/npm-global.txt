@@ -11,10 +11,10 @@ dockerfile_lint@0.2.7
 doiuse@3.0.1
 ember-cli@2.15.0
 ember-template-lint@0.8.3
-eslint@4.5.0
+eslint@4.6.0
 fast-cli@1.0.0
 flow-bin@0.54.0
-gatsby@1.9.20
+gatsby@1.9.21
 ghost-cli@1.1.1
 grunt-cli@1.2.0
 gtop@0.1.5
@@ -35,7 +35,7 @@ markdownlint-cli@0.3.1
 mediumcli@1.4.2
 netlify-cli@1.2.2
 now@7.4.0
-npm@5.3.0
+npm@5.4.0
 npm-check@5.4.5
 npm-check-updates@2.12.1
 nsp@2.7.0
@@ -50,7 +50,7 @@ pug-cli@1.0.0-alpha6
 pug-lint@2.4.0
 pure-prompt@1.5.2
 purify-css@1.2.5
-relab@1.0.0-20
+relab@1.0.0-23
 remark-cli@4.0.0
 sass-lint@1.11.1
 serve@6.0.6

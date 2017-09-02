@@ -13,12 +13,12 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-" Plug 'cwonrails/ale', { 'branch': 'close-window-on-quit' }
+Plug 'cwonrails/ale', { 'branch': 'quitpre' }
 Plug 'dNitro/vim-pug-complete'
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json'
-Plug 'embear/vim-localvimrc'
+" Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
@@ -46,8 +46,8 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vader.vim', { 'for': 'vim' }
-Plug 'kchmck/vim-coffee-script'
+" Plug 'junegunn/vader.vim', { 'for': 'vim' }
+" Plug 'kchmck/vim-coffee-script'
 Plug 'kewah/vim-stylefmt'
 " Plug 'lmeijvogel/vim-yaml-helper'
 " Plug 'LnL7/vim-nix'
@@ -86,7 +86,7 @@ Plug 'phpstan/vim-phpstan', {'for': 'php'}
 " Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
 " Plug 'potatoesmaster/i3-vim-syntax'
-Plug 'rhysd/committia.vim'
+" Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim'
 " Plug 'robertbasic/vim-hugo-helper'
 " Plug 'xuyuanp/nerdtree-git-plugin'
@@ -105,10 +105,10 @@ Plug 'stephpy/vim-yaml'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -124,7 +124,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
 " Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
 
 call plug#end()
@@ -507,7 +507,7 @@ let g:wstrip_auto = 1
 " ----------------------------------------------------------------------------
 " vim-jsx
 " ----------------------------------------------------------------------------
-let g:jsx_ext_required = 1
+let g:jsx_ext_required = 0
 
 " ----------------------------------------------------------------------------
 " vim-esearch

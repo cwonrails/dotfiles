@@ -9,6 +9,9 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
+# LLVM
+# export PATH="/usr/local/opt/llvm/bin:$PATH"
+
 # GNU coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/share/man:$MANPATH"

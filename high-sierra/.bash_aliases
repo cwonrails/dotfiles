@@ -162,6 +162,7 @@ alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
 alias ua='npm i -g yarn && gitup && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g'
+# alias ua='npm i -g yarn && gitup -f -p && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
@@ -174,7 +175,7 @@ alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' |
 alias gu='gem update; gem cleanup'
 
 # Update Hugo
-alias hu='go get -u -v github.com/gohugoio/hugo'
+# alias hu='go get -u -v github.com/gohugoio/hugo'
 
 # Python: Upgrade all pip packages
 alias pu="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"

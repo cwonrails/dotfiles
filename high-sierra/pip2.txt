@@ -11,7 +11,7 @@ args                               0.1.0
 asn1crypto                         0.22.0     
 astroid                            1.5.3      
 autopep8                           1.3.2      
-awscli                             1.11.142   
+awscli                             1.11.144   
 Babel                              2.5.0      
 backports-abc                      0.5        
 backports.functools-lru-cache      1.4        
@@ -25,7 +25,7 @@ beets                              1.4.5
 bernhard                           0.2.5      
 boto                               2.48.0     
 boto3                              1.4.7      
-botocore                           1.7.0      
+botocore                           1.7.2      
 bottle                             0.12.13    
 cairocffi                          0.8.0      
 cassandra-driver                   3.11.0     
@@ -133,7 +133,7 @@ prometheus-client                  0.0.20
 prompt-toolkit                     1.0.15     
 prospector                         0.12.7     
 protobuf                           3.4.0      
-psutil                             5.2.2      
+psutil                             5.3.0      
 ptyprocess                         0.5.2      
 py-cpuinfo                         3.3.0      
 pyaml                              17.8.0     
@@ -174,7 +174,7 @@ requests                           2.18.4
 requests-cache                     0.4.13     
 requirements-detector              0.5.2      
 rsa                                3.4.2      
-s3transfer                         0.1.10     
+s3transfer                         0.1.11     
 saws                               0.4.3      
 scandir                            1.5        
 setoptconf                         0.2.0      

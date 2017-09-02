@@ -130,7 +130,7 @@ Plug 'yggdroot/indentLine'
 call plug#end()
 
 " Enable 256 colors in terminal
-" set t_Co=256
+set t_Co=256
 
 " Enable syntax highlighting
 syntax enable
@@ -356,7 +356,7 @@ set showtabline=2
 set sidescrolloff=5
 set softtabstop=2
 set smartcase
-" set smartindent
+set smartindent
 set smarttab
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 set synmaxcol=1000
@@ -507,7 +507,7 @@ let g:wstrip_auto = 1
 " ----------------------------------------------------------------------------
 " vim-jsx
 " ----------------------------------------------------------------------------
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 
 " ----------------------------------------------------------------------------
 " vim-esearch

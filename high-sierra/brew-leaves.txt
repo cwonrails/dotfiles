@@ -140,6 +140,7 @@ gzip
 libarchive
 composer-completion
 gnustep-make
+gcc
 elm
 zopfli
 screenresolution
@@ -195,6 +196,7 @@ gnu-sed
 git-open
 brew-cask-completion
 libuninameslist
+kompose
 crystal-lang
 gifsicle
 pngquant
@@ -246,7 +248,6 @@ m4
 s3cmd
 watch
 burl
-isl
 wslay
 libressl
 vifm
@@ -332,7 +333,6 @@ jpeg-turbo
 gnu-which
 pip-completion
 git-extras
-libmpc
 vault
 gopass
 homebrew/php/igbinary

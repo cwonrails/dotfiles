@@ -8,7 +8,7 @@ caffeine
 caprine
 chromium
 daisydisk
-docker-edge
+docker
 firefoxdeveloperedition
 firefoxnightly
 font-3270
@@ -141,6 +141,7 @@ font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
 ghost
 gitter
+hyper
 imagealpha
 imageoptim
 iterm2
@@ -149,6 +150,7 @@ karabiner
 keyboard-cleaner
 kitematic
 limechat
+ngrok
 provisioning
 quicklook-csv
 quicklook-json

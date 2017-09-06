@@ -1737,25 +1737,29 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>44 655 1645 276 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>412 527 616 174 0 0 1440 877 </string>
+	<string>652 752 616 174 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 786 400 129 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-939 398 796 473 -1920 160 1920 1057 </string>
+	<string>0 307 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1177 0 0 1920 1177 </string>
+	<string>2 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1922 160 955 1057 1920 160 1920 1057 </string>
+	<string>962 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>595 363 730 451 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
 	<string>2 0 955 1177 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>4 0 712 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>962 4 955 1173 0 0 1920 1177 </string>
+	<string>724 0 712 877 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>4 0 712 877 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>4 0 712 877 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA_selection</key>
@@ -4470,7 +4474,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-08-02T14:31:20Z</date>
+	<date>2017-09-06T15:49:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -4511,6 +4515,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170801-nightly</string>
+	<string>3.1.20170905-nightly</string>
 </dict>
 </plist>

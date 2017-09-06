@@ -24,6 +24,7 @@ dante
 doctl
 ranger
 msgpack
+mdp
 augeas
 json-c
 fdupes
@@ -170,7 +171,6 @@ openexr
 googler
 moreutils
 borg
-termius
 dialog
 slackcat
 htop
@@ -215,7 +215,6 @@ librsvg
 vaulted
 screen
 tcl-tk
-graphviz
 libxkbcommon
 psgrep
 vapor/tap/toolbox
@@ -234,7 +233,6 @@ confuse
 loadimpact/k6/k6
 libaacs
 tmux
-sbt
 warp
 rhino
 assh
@@ -286,7 +284,6 @@ extract_url
 ssh-copy-id
 zsh
 jq
-zsh-syntax-highlighting
 uchardet
 librdkafka
 fftw
@@ -304,6 +301,7 @@ pdfgrep
 verilator
 guetzli
 findutils
+fish
 guile
 gst-plugins-good
 jpegoptim

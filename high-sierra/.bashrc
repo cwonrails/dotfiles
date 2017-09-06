@@ -10,7 +10,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # LLVM
-# export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # GNU coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -88,7 +88,7 @@ if [ -f "/usr/local/share/bash-completion/bash_completion" ]; then
 fi
 
 # Enable grc (generic colorizer)
-[ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
+# [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
 # Enable hub and alias it to git
 if which hub > /dev/null; then
@@ -208,11 +208,11 @@ fi
 alias gos='go-search'
 
 # bash completion for Docker.app
-if [ -f "/Applications/Docker.app" ]; then
+# if [ -f "/Applications/Docker.app" ]; then
   . /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
   . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
   . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
-fi
+# fi
 
 # built-in Go completion
 complete -C /Users/christopherwatson/go/bin/gocomplete go

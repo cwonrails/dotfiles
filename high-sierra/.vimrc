@@ -564,12 +564,12 @@ let g:ale_open_list = 1
 " let g:ale_keep_list_window_open = 0
 
 " Use stylelint and eslint for jsx files
-augroup FiletypeGroup
-    autocmd!
-    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
-let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
-let g:ale_linter_aliases = {'jsx': 'css'}
+" augroup FiletypeGroup
+"     autocmd!
+"     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+" augroup END
+" let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+" let g:ale_linter_aliases = {'jsx': 'css'}
 
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
@@ -584,8 +584,8 @@ let g:ale_linters = {
   \ 'css': ['stylelint'],
   \ 'Dockerfile': ['hadolint'],
   \ 'elm': ['elm-make'],
-  \ 'html': ['HTMLHint','tidy'],
-  \ 'javascript': ['eslint'],
+  \ 'html': ['htmlhint'],
+  \ 'javascript': ['eslint','standard'],
   \ 'json': ['jsonlint'],
   \ 'ruby': ['rubocop'],
   \ 'sass': ['sass-lint','stylelint'],
@@ -594,3 +594,9 @@ let g:ale_linters = {
   \ 'vim': ['vint'],
   \ 'xml': ['xmllint']
   \}
+
+let g:ale_fixers = {
+  \ 'javascript': ['eslint'],
+  \}
+
+let g:ale_completion_enabled = 1

@@ -227,7 +227,7 @@ fi
 . ~/.t-completion.sh
 
 # yarn completion
-. ~/.yarn-completion
+# . ~/.yarn-completion
 
 # Colorls (https://github.com/athityakumar/colorls)
 alias lc='colorls -r'

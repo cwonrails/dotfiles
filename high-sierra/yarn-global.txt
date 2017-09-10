@@ -1,0 +1,35 @@
+yarn global v1.0.0
+info "@storybook/cli@3.2.9" has binaries:
+   - getstorybook
+info "create-react-app@1.4.0" has binaries:
+   - create-react-app
+info "dockerfile_lint@0.2.7" has binaries:
+   - dockerfile_lint
+info "flow-bin@0.54.1" has binaries:
+   - flow
+info "gqlint@1.4.0" has binaries:
+   - gqlint
+info "grunt-cli@1.2.0" has binaries:
+   - grunt
+info "gulp-cli@1.4.0" has binaries:
+   - gulp
+info "hpm-cli@2.0.1" has binaries:
+   - hpm
+info "immutable-css-cli@1.1.1" has binaries:
+   - immutable-css
+info "jsonlint@1.6.2" has binaries:
+   - jsonlint
+info "prettier@1.6.1" has binaries:
+   - prettier
+info "pug-lint@2.5.0" has binaries:
+   - pug-lint
+info "serve@6.0.6" has binaries:
+   - serve
+info "tslint@5.7.0" has binaries:
+   - tslint
+info "typescript@2.5.2" has binaries:
+   - tsc
+   - tsserver
+info "uglify-es@3.0.28" has binaries:
+   - uglifyjs
+Done in 2.43s.

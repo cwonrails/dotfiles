@@ -74,7 +74,7 @@ alias dfdb='cp ~/global-package-lists/*.txt ~/Dropbox/dotfiles; cp ~/.{agignore,
 alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
 
 # Create text files with lists of globally installed package binaries
-alias gpl='cd ~/global-package-lists; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl; pip2 list > pip2.txt; pip3 list > pip3.txt'
+alias gpl='cd ~; yarn global list > ~/global-package-lists/yarn-global.txt; cd ~/global-package-lists; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl; pip2 list > pip2.txt; pip3 list > pip3.txt'
 
 # get global list of npm installs and output to text file as reformatted simple list
 # shellcheck disable=SC2026
@@ -145,7 +145,7 @@ alias ghf='cd ~/github/forks'
 alias ghr='cd ~/github/repos'
 
 # Go to GitHub repos directory
-alias ghdot='cd ~/github/repos/public/dotfiles/high-sierra'
+alias ghdot='cd ~/github/repos/public/dotfiles'
 
 # Go to home directory
 alias hd='cd ~'

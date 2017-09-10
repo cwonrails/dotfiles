@@ -3,6 +3,7 @@ adobe-photoshop-cc
 adobe-photoshop-lightroom
 adobe-photoshop-lightroom600
 atom
+atom-beta
 brave
 caffeine
 caprine
@@ -159,6 +160,7 @@ transmission
 vagrant
 virtualbox
 visual-studio-code
+visual-studio-code-insiders
 vlc
 webstorm
 xld

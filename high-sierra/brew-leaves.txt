@@ -76,7 +76,6 @@ p7zip
 pidof
 librsync
 highlight
-proselint
 par2
 aws-shell
 cscope
@@ -126,6 +125,7 @@ proctools
 dmd
 hiredis
 s-search
+llvm
 elm-format
 utf8proc
 asio
@@ -178,6 +178,7 @@ diffutils
 sngrep
 icdiff
 leiningen
+duo_unix
 gst-python
 siege
 enchant
@@ -197,7 +198,6 @@ git-open
 brew-cask-completion
 libuninameslist
 kompose
-crystal-lang
 gifsicle
 pngquant
 scala
@@ -207,6 +207,7 @@ mpc
 httpstat
 hadolint
 megacmd
+dfc
 make
 armor
 vagrant-completion
@@ -220,6 +221,7 @@ psgrep
 vapor/tap/toolbox
 mcrypt
 watchman
+swiftformat
 mobile-shell
 asciinema
 algernon
@@ -284,6 +286,7 @@ extract_url
 ssh-copy-id
 zsh
 jq
+zsh-syntax-highlighting
 uchardet
 librdkafka
 fftw

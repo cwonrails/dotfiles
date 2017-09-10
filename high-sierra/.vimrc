@@ -12,9 +12,10 @@ Plug 'cakebaker/scss-syntax.vim'
 " Plug 'cespare/vim-toml'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
+" Plug 'cocopon/vaffle.vim'
 Plug 'conradirwin/vim-bracketed-paste'
 Plug 'cwonrails/ale'
-Plug 'dNitro/vim-pug-complete'
+Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json'
@@ -37,6 +38,7 @@ Plug 'honza/vim-snippets'
 " Plug 'iamcco/markdown-preview.vim'
 " Plug 'isobit/vim-caddyfile'
 Plug 'isomoar/vim-css-to-inline'
+Plug 'isRuslan/vim-es6'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 " Plug 'jamshedvesuna/vim-markdown-preview'
 Plug 'janko-m/vim-test'
@@ -48,7 +50,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/vader.vim', { 'for': 'vim' }
 " Plug 'kchmck/vim-coffee-script'
-Plug 'kewah/vim-stylefmt'
+Plug 'kewah/vim-stylefmt', { 'for': 'css' }
 " Plug 'lmeijvogel/vim-yaml-helper'
 " Plug 'LnL7/vim-nix'
 Plug 'majutsushi/tagbar'
@@ -73,11 +75,11 @@ Plug 'mitermayer/vim-prettier', {
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 " Plug 'ntpeters/vim-better-whitespace'
-Plug 'othree/es.next.syntax.vim'
+" Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 " Plug 'othree/xml.vim'
-Plug 'othree/yajs.vim'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 " Plug 'pallets/jinja', { 'rtp': '/ext/vim/jinja.vim'}
 Plug 'pbrisbin/vim-mkdir'
 " Plug 'pearofducks/ansible-vim'
@@ -91,23 +93,23 @@ Plug 'rizzatti/dash.vim'
 " Plug 'robertbasic/vim-hugo-helper'
 " Plug 'xuyuanp/nerdtree-git-plugin'
 " Plug 'ryanoasis/vim-devicons'
-" Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " Plug 'scrooloose/nerdtree'
 Plug 'sgur/vim-editorconfig'
 " Plug 'shougo/echodoc.vim'
-Plug 'shougo/vimproc.vim', {'do': 'make'}
+Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sirver/ultiSnips'
 " Plug 'sjl/gundo.vim'
-Plug 'StanAngeloff/php.vim', {'for': 'php'}
+Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
-" Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+" Plug 'ternjs/tern_for_vim', { 'do': 'yarn install; yarn upgrade --latest' }
 " Plug 'thirtythreeforty/lessspace.vim'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
 " Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/wstrip.vim'
@@ -245,10 +247,10 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " let g:syntastic_styled_components = ['stylelint']
 
 " Fix highlighting problems for CSS3
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType [css,sass,scss] setlocal iskeyword+=-
-augroup END
+" augroup VimCSS3Syntax
+"   autocmd!
+"   autocmd FileType [css,sass,scss] setlocal iskeyword+=-
+" augroup END
 
 " HTML linting
 " let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
@@ -288,7 +290,7 @@ autocmd filetype markdown setlocal spell
 " Disable highlighting of non-capitalized terms in Markdown
 set spellcapcheck=
 
-" Recognize some config files as JSON
+" Recognize babelrc as json
 autocmd BufRead,BufNewFile .babelrc set filetype=json
 
 " Allow saving of files as sudo if not opened with sudo vim
@@ -406,15 +408,6 @@ nnoremap [t :tabp<cr>
 nnoremap Y y$
 
 " ----------------------------------------------------------------------------
-" autoformat
-" ----------------------------------------------------------------------------
-" nnoremap <leader>af :Autoformat<cr>
-
-" " autoformat standard on save (disable above if using)
-" autocmd bufwritepost *.js silent !standard --fix %
-" set autoread
-
-" ----------------------------------------------------------------------------
 " gist.vim
 " ----------------------------------------------------------------------------
 " Make gists private by default
@@ -507,7 +500,7 @@ let g:wstrip_auto = 1
 " ----------------------------------------------------------------------------
 " vim-jsx
 " ----------------------------------------------------------------------------
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 
 " ----------------------------------------------------------------------------
 " vim-esearch
@@ -529,14 +522,6 @@ let g:tmuxcomplete#trigger = 'omnifunc'
 "  vim-prettier
 " ----------------------------------------------------------------------------
 let g:prettier#exec_cmd_async = 1
-
-" ----------------------------------------------------------------------------
-"  vim-devicons
-" ----------------------------------------------------------------------------
-" let g:webdevicons_enable = 1
-" let g:webdevicons_enable_nerdtree = 1
-" let g:webdevicons_enable_tabline = 1
-" let g:webdevicons_enable_statusline = 1
 
 " ----------------------------------------------------------------------------
 "  vim-flow
@@ -563,40 +548,72 @@ let g:ale_set_loclist = 1
 let g:ale_open_list = 1
 " let g:ale_keep_list_window_open = 0
 
-" Use stylelint and eslint for jsx files
+" Check JSX files with both stylelint and eslint
 " augroup FiletypeGroup
 "     autocmd!
 "     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 " augroup END
 " let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
 " let g:ale_linter_aliases = {'jsx': 'css'}
-
+"
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 
 let g:ale_linters = {
+  \ 'asm': ['gcc'],
   \ 'ansible': ['ansible-lint'],
   \ 'asciidoc': ['proselint'],
   \ 'awk': ['gawk'],
   \ 'bash': ['-n flag','shellcheck'],
   \ 'bourne_shell': ['-n flag','shellcheck'],
+  \ 'c': ['gcc','clang','clang-format'],
+  \ 'c++': ['gcc','clang','clang-format'],
+  \ 'chef': ['foodcritic'],
   \ 'cmake': ['cmakelint'],
-  \ 'css': ['stylelint'],
+  \ 'css': ['stylelint','prettier'],
   \ 'Dockerfile': ['hadolint'],
-  \ 'elm': ['elm-make'],
+  \ 'elm': ['elm-format'],
+  \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
+  \ 'graphql': ['gqlint'],
+  \ 'haml': ['haml-lint'],
+  \ 'handlebars': ['ember-template-lint'],
   \ 'html': ['htmlhint'],
-  \ 'javascript': ['eslint','standard'],
-  \ 'json': ['jsonlint'],
-  \ 'ruby': ['rubocop'],
+  \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint'],
+  \ 'json': ['jsonlint','prettier'],
+  \ 'lua': ['luacheck'],
+  \ 'markdown': ['proselint','vale'],
+  \ 'objective-c': ['clang'],
+  \ 'objective-c++': ['clang'],
+  \ 'python': ['autopep8','flake8','pycodestyle','yapf'],
+  \ 'reStructredText': ['proselint'],
+  \ 'php': ['phpstan'],
+  \ 'ruby': ['rubocop','reek'],
+  \ 'rust': ['rustc'],
   \ 'sass': ['sass-lint','stylelint'],
-  \ 'scss': ['sass-lint','stylelint'],
-  \ 'text^': ['vale'],
+  \ 'scala': ['scalac','scalastyle'],
+  \ 'scss': ['sass-lint','stylelint','prettier'],
+  \ 'slim': ['slimt-lint'],
+  \ 'stylus': ['stylelint'],
+  \ 'sql': ['sqlint'],
+  \ 'swift': ['swiftlint','swiftformat'],
+  \ 'texinfo': ['proselint'],
+  \ 'text^': ['proselint','vale'],
+  \ 'typescript': ['tslint'],
+  \ 'verilog': ['iverilog','verilator'],
   \ 'vim': ['vint'],
   \ 'xml': ['xmllint']
   \}
 
 let g:ale_fixers = {
+  \ 'go': ['gofmt'],
   \ 'javascript': ['eslint'],
+  \ 'json': ['prettier']
   \}
 
 let g:ale_completion_enabled = 1
+
+" All currently available JavaScript checkers
+  " \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint','xo'],
+
+" All currently available Typescript checkers
+  " \ 'typescript': ['eslint','tslint','tsserver','typecheck','prettier'],

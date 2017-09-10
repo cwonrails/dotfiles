@@ -197,6 +197,7 @@ alias ggu="go get -u \
              github.com/alecthomas/gometalinter \
              github.com/asciimoo/wuzz \
              github.com/ddo/fast \
+             github.com/dwarvesf/glod \
              github.com/ericchiang/pup \
              github.com/gchaincl/httplab/cmd/httplab \
              github.com/golang/dep/cmd/dep \
@@ -209,6 +210,7 @@ alias ggu="go get -u \
              github.com/russross/blackfriday-tool \
              github.com/tj/mmake/cmd/mmake \
              github.com/tj/go-search \
+             github.com/zquestz/s \
              github.com/whyrusleeping/gx \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"

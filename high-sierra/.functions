@@ -6,7 +6,7 @@ function lazygit() {
   git push
 }
 
-function nvm-upgrade() {
+function upgrade-nvm() {
 (
   cd "$NVM_DIR"
   git fetch origin

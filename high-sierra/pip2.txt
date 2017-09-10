@@ -69,6 +69,7 @@ futures                            3.1.1
 gitdb                              0.6.4      
 gitdb2                             2.0.0      
 GitPython                          2.1.1      
+Glances                            2.11.1     
 google-common                      0.0.1      
 haxor-news                         0.4.3      
 howdoi                             1.1.9      
@@ -134,7 +135,7 @@ prompt-toolkit                     1.0.15
 proselint                          0.8.0      
 prospector                         0.12.7     
 protobuf                           3.4.0      
-psutil                             5.3.0      
+psutil                             5.3.1      
 ptyprocess                         0.5.2      
 py-cpuinfo                         3.3.0      
 pyaml                              17.8.0     

@@ -8,7 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 " Plug 'cespare/vim-toml'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -42,7 +42,6 @@ Plug 'isRuslan/vim-es6'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 " Plug 'jamshedvesuna/vim-markdown-preview'
 Plug 'janko-m/vim-test'
-" Plug 'jeetsukumaran/vim-filebeagle'
 " Plug 'joeyespo/grip'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
@@ -52,7 +51,6 @@ Plug 'junegunn/fzf.vim'
 " Plug 'kchmck/vim-coffee-script'
 Plug 'kewah/vim-stylefmt', { 'for': 'css' }
 " Plug 'lmeijvogel/vim-yaml-helper'
-" Plug 'LnL7/vim-nix'
 Plug 'majutsushi/tagbar'
 " Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
 Plug 'matt-deacalion/vim-systemd-syntax'
@@ -62,7 +60,7 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
-" Plug 'metakirby5/codi.vim'
+Plug 'metakirby5/codi.vim'
 " Plug 'mhinz/vim-startify'
 " Plug 'mitermayer/vim-prettier', {
 "          \ 'do': 'yarn install',
@@ -234,55 +232,11 @@ nnoremap <leader>t :TagbarToggle<CR>
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 
-" Syntastic base settings
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_id_checkers = 1
-" let g:syntastic_echo_current_error = 1
-
-" CSS linting
-" let g:syntastic_css_checkers = ['stylelint']
-" let g:syntastic_styled_components = ['stylelint']
-
 " Fix highlighting problems for CSS3
 " augroup VimCSS3Syntax
 "   autocmd!
 "   autocmd FileType [css,sass,scss] setlocal iskeyword+=-
 " augroup END
-
-" HTML linting
-" let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-" let g:syntastic_html_checkers = ['tidy', 'htmlhint']
-
-" Ignore Apple's W3-invalid html code for pinned favicons
-" let g:syntastic_html_tidy_ignore_errors = [ '<link> proprietary attribute "color"' ]
-" let g:syntastic_html_tidy_ignore_errors = [
-      " \   '<link> proprietary attribute "color"',
-      " \   '<link> proprietary attribute "crossorigin"',
-      " \   '<link> proprietary attribute "integrity"',
-      " \   '<script> proprietary attribute "crossorigin"',
-      " \   '<script> proprietary attribute "integrity"'
-      " \ ]
-
-" Javascript linting
-" let g:syntastic_javascript_checkers = ['eslint']
-
-" JSON linting
-" let g:syntastic_json_checkers = ['jsonlint']
-
-" Pug linting
-" let g:syntastic_pug_checkers = ['pug_lint']
-
-" Shell / bash script linting
-" let g:syntastic_sh_checkers = ['shellcheck']
-
-" Typescript linting
-" let g:syntastic_sh_checkers = ['tslint']
-
-" VimL linting
-" let g:syntastic_vim_checkers= ['vint']
 
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
@@ -291,18 +245,13 @@ autocmd filetype markdown setlocal spell
 set spellcapcheck=
 
 " Recognize babelrc as json
-autocmd BufRead,BufNewFile .babelrc set filetype=json
+autocmd BufRead,BufNewFile .{babel,proselint}rc set filetype=json
 
 " Allow saving of files as sudo if not opened with sudo vim
 cmap w!! w !sudo tee > /dev/null %
 
 " Make vim use homebrew-installed bash
 set shell=/usr/local/bin/bash
-
-" Editorconfig settings (official plugin)
-" let g:Editorconfig_core_mode = 'external_command'
-" let g:Editorconfig_exec_path = ['usr/local/bin/editorconfig']
-" let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Editorconfig settings (unofficial plugin)
 let g:editorconfig_blacklist = {

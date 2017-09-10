@@ -19,6 +19,8 @@ info "immutable-css-cli@1.1.1" has binaries:
    - immutable-css
 info "jsonlint@1.6.2" has binaries:
    - jsonlint
+info "pkg@4.2.4" has binaries:
+   - pkg
 info "prettier@1.6.1" has binaries:
    - prettier
 info "pug-lint@2.5.0" has binaries:
@@ -30,6 +32,9 @@ info "tslint@5.7.0" has binaries:
 info "typescript@2.5.2" has binaries:
    - tsc
    - tsserver
-info "uglify-es@3.0.28" has binaries:
+info "uglify-es@3.1.0" has binaries:
    - uglifyjs
-Done in 2.43s.
+info "yo@2.0.0" has binaries:
+   - yo
+   - yo-complete
+Done in 3.11s.

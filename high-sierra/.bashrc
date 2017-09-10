@@ -110,9 +110,9 @@ if which go > /dev/null; then
 fi
 
 # PHP 7.1 #
-export PATH="usr/local/opt/php71/bin/php:$PATH"
+# export PATH="usr/local/opt/php71/bin/php:$PATH"
 
-# Rust
+# Rust #
 ## Cargo
 if which cargo > /dev/null; then
   export PATH="$HOME/.cargo/bin":$PATH
@@ -247,8 +247,7 @@ fi
 
 # NativeScript development paths
 
-# shellcheck disable=SC2155
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 # export ANDROID_HOME=/usr/local/share/android-sdk
 
 ###-tns-completion-start-###

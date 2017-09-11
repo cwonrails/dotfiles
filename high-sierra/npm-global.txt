@@ -10,5 +10,5 @@ pure-prompt@1.5.2
 relab@1.0.0-23
 stylefmt@6.0.0
 ungit@1.1.29
-yarn@1.0.0
+yarn@1.0.1
 

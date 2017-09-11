@@ -1,4 +1,4 @@
-yarn global v1.0.0
+yarn global v1.0.1
 info "@storybook/cli@3.2.9" has binaries:
    - getstorybook
 info "create-react-app@1.4.0" has binaries:
@@ -37,4 +37,4 @@ info "uglify-es@3.1.0" has binaries:
 info "yo@2.0.0" has binaries:
    - yo
    - yo-complete
-Done in 3.11s.
+Done in 4.34s.

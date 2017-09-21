@@ -110,13 +110,14 @@ if which go > /dev/null; then
 fi
 
 # PHP 7.1 #
-# export PATH="usr/local/opt/php71/bin/php:$PATH"
+export PATH="usr/local/opt/php71/bin/php:$PATH"
 
 # Rust #
-## Cargo
-if which cargo > /dev/null; then
+
+# Cargo
+# if which cargo > /dev/null; then
   export PATH="$HOME/.cargo/bin":$PATH
-fi
+# fi
 
 # s bash completion
 if [ -f "$GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash" ]; then
@@ -238,16 +239,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # lunchy
-if [ -f "/usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash" ]; then
-  . /usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash
-fi
+# if [ -f "/usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash" ]; then
+#   . /usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash
+# fi
 
 # start Docker-Machine with every login
 # eval "$(docker-machine env default)"
 
 # NativeScript development paths
 
-# export JAVA_HOME=$(/usr/libexec/java_home)
+# shellcheck disable=SC2155
+export JAVA_HOME=$(/usr/libexec/java_home)
 # export ANDROID_HOME=/usr/local/share/android-sdk
 
 ###-tns-completion-start-###

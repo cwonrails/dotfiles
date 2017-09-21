@@ -60,7 +60,7 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
-Plug 'metakirby5/codi.vim'
+" Plug 'metakirby5/codi.vim'
 " Plug 'mhinz/vim-startify'
 " Plug 'mitermayer/vim-prettier', {
 "          \ 'do': 'yarn install',
@@ -521,7 +521,7 @@ let g:ale_linters = {
   \ 'cmake': ['cmakelint'],
   \ 'css': ['stylelint','prettier'],
   \ 'Dockerfile': ['hadolint'],
-  \ 'elm': ['elm-format'],
+  \ 'elm': ['elm-format', 'elm-make'],
   \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
   \ 'graphql': ['gqlint'],
   \ 'haml': ['haml-lint'],
@@ -554,8 +554,6 @@ let g:ale_linters = {
   \}
 
 let g:ale_fixers = {
-  \ 'go': ['gofmt'],
-  \ 'javascript': ['eslint'],
   \ 'json': ['prettier']
   \}
 

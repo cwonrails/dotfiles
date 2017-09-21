@@ -3,7 +3,6 @@ adobe-photoshop-cc
 adobe-photoshop-lightroom
 adobe-photoshop-lightroom600
 atom
-atom-beta
 brave
 caffeine
 caprine
@@ -152,15 +151,16 @@ keyboard-cleaner
 kitematic
 limechat
 ngrok
+now
 provisioning
 quicklook-csv
 quicklook-json
 sublime-text-dev
 transmission
+tweeten
 vagrant
 virtualbox
 visual-studio-code
-visual-studio-code-insiders
 vlc
 webstorm
 xld

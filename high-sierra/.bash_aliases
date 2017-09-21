@@ -92,15 +92,16 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gdb='git-delete-branch'
 alias gdno='git diff --name-only'
+alias gdnoum='git diff --name-only upstream/master'
 alias gp='git push'
 alias gpf='git push --force'
 alias gs='git status'
-
 alias gac='git commit -a -m'
 alias gba='git branch -a'
 alias gbd='git branch -D'
 alias gcob='git checkout -b'
 alias gcp='git cherry-pick'
+alias gdum='git diff upstream/master'
 alias gdumno='git diff upstream/master --name-only'
 alias gl='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --'
 alias gm='git merge --ff'
@@ -160,8 +161,11 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
+# Upgrade Apex
+alias au='apex upgrade'
+
 ## Package manager updates ##
-alias ua='npm i -g yarn@latest && gitup && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g && yarn global upgrade-interactive'
+alias ua='npm i -g yarn && gitup && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g && yarn global upgrade-interactive'
 # alias ua='npm i -g yarn && gitup -f -p && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g'
 
 # Homebrew: Run daily operations
@@ -186,6 +190,9 @@ alias pu3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip
 # Tmux: Update, install, and remove unused plugins
 alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
 
+# Upgrade up
+alias uu='curl -sfL https://raw.githubusercontent.com/apex/up/master/install.sh | sh'
+
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
@@ -208,6 +215,7 @@ alias ggu="go get -u \
              github.com/posener/complete/gocomplete \
              github.com/rapidloop/rtop \
              github.com/russross/blackfriday-tool \
+             github.com/sourcegraph/go-langserver \
              github.com/tj/mmake/cmd/mmake \
              github.com/tj/go-search \
              github.com/zquestz/s \

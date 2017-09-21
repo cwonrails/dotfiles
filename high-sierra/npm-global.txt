@@ -1,14 +1,16 @@
-alfred-npms@1.1.0
-build.sh@0.2.2
+@storybook/cli@3.2.9
+build.sh@0.2.4
 elm-format@0.6.1-alpha
+gatsby@1.9.42
 gtop@0.1.5
-htmlhint@0.9.14 (github:cwonrails/htmlhint#b3d1fd4471f6171671b9e5fe2443ba5302719a15)
 live-doc@1.0.0-9
-npm@5.4.1
+live-server@1.2.0
+npm@5.4.2
 npm-check-updates@2.12.1
 pure-prompt@1.5.2
 relab@1.0.0-23
+serve@6.1.0
 stylefmt@6.0.0
 ungit@1.1.29
-yarn@1.0.1
+yarn@1.0.2
 

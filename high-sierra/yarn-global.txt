@@ -1,5 +1,5 @@
-yarn global v1.0.2
-info "create-react-app@1.4.0" has binaries:
+yarn global v1.1.0
+info "create-react-app@1.4.1" has binaries:
    - create-react-app
 info "dockerfile_lint@0.2.7" has binaries:
    - dockerfile_lint
@@ -19,8 +19,12 @@ info "jshint@2.9.5" has binaries:
    - jshint
 info "jsonlint@1.6.2" has binaries:
    - jsonlint
+info "nativefier@7.4.1" has binaries:
+   - nativefier
 info "node-gyp@3.6.2" has binaries:
    - node-gyp
+info "now@8.3.7" has binaries:
+   - now
 info "pkg@4.2.4" has binaries:
    - pkg
 info "pug-cli@1.0.0-alpha6" has binaries:
@@ -29,10 +33,10 @@ info "pug-lint@2.5.0" has binaries:
    - pug-lint
 info "tslint@5.7.0" has binaries:
    - tslint
-info "typescript@2.5.2" has binaries:
+info "typescript@2.5.3" has binaries:
    - tsc
    - tsserver
 info "yo@2.0.0" has binaries:
    - yo
    - yo-complete
-Done in 5.35s.
+Done in 5.86s.

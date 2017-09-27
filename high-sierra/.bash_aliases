@@ -165,7 +165,7 @@ alias nl='npm ls --depth=0'
 alias au='apex upgrade'
 
 ## Package manager updates ##
-alias ua='npm i -g yarn && gitup && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g && yarn global upgrade-interactive'
+alias ua='gitup && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g && yarn global upgrade-interactive'
 # alias ua='npm i -g yarn && gitup -f -p && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g'
 
 # Homebrew: Run daily operations
@@ -202,6 +202,7 @@ alias ssh='TERM=xterm-256color ssh'
 # Update specific go packages
 alias ggu="go get -u \
              github.com/alecthomas/gometalinter \
+             github.com/apex/static/cmd/static-docs \
              github.com/asciimoo/wuzz \
              github.com/ddo/fast \
              github.com/dwarvesf/glod \

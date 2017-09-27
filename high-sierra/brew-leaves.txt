@@ -40,6 +40,7 @@ ghi
 vapoursynth
 libdv
 thefuck
+mycli
 exiftool
 homebrew/php/php71-memcached
 homebrew/php/box
@@ -131,6 +132,7 @@ s-search
 llvm
 elm-format
 utf8proc
+certstrap
 asio
 dirmngr
 fonttools
@@ -142,6 +144,7 @@ ssh-audit
 binutils
 ffind
 gzip
+the_platinum_searcher
 libarchive
 composer-completion
 gnustep-make
@@ -159,7 +162,6 @@ td
 wego
 mp3splt
 xerces-c
-godep
 libedit
 certigo
 yarn
@@ -354,3 +356,4 @@ dirac
 packer
 known_hosts
 flow
+help2man

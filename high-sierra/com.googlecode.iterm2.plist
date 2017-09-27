@@ -12,6 +12,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ConvertDosNewlines</key>
@@ -1743,19 +1745,19 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 786 400 129 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 588 620 392 0 0 1920 1177 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>0 467 796 473 0 0 1920 1177 </string>
+	<string>0 511 770 429 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 189 1920 1057 1920 189 1920 1057 </string>
+	<string>724 0 712 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2 0 955 1177 0 0 1920 1177 </string>
+	<string>724 0 712 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2 0 955 1177 0 0 1920 1177 </string>
+	<string>4 0 712 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>2 726 730 451 0 0 1920 1177 </string>
+	<string>2 0 955 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>962 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -4476,7 +4478,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-10T01:46:32Z</date>
+	<date>2017-09-25T11:18:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -4519,6 +4521,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170909-nightly</string>
+	<string>3.1.20170925-nightly</string>
 </dict>
 </plist>

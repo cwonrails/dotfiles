@@ -139,9 +139,7 @@ font-ubuntu
 font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
-ghost
 gitter
-hyper
 imagealpha
 imageoptim
 iterm2
@@ -151,13 +149,11 @@ keyboard-cleaner
 kitematic
 limechat
 ngrok
-now
 provisioning
 quicklook-csv
 quicklook-json
 sublime-text-dev
 transmission
-tweeten
 vagrant
 virtualbox
 visual-studio-code

@@ -21,7 +21,7 @@ pip            9.0.1
 pyparsing      2.2.0      
 requests       2.18.4     
 scandir        1.5        
-scdl           1.6.8      
+scdl           1.6.9      
 setuptools     36.2.0     
 six            1.11.0     
 sncli          0.1.4      

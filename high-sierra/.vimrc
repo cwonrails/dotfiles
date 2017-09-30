@@ -14,7 +14,7 @@ Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'cocopon/vaffle.vim'
 Plug 'conradirwin/vim-bracketed-paste'
-Plug 'cwonrails/ale'
+" Plug 'cwonrails/ale'
 Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
 Plug 'digitaltoad/vim-pug'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
@@ -49,7 +49,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/vader.vim', { 'for': 'vim' }
 " Plug 'kchmck/vim-coffee-script'
-Plug 'kewah/vim-stylefmt', { 'for': 'css' }
+Plug 'kewah/vim-stylefmt'
 " Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'majutsushi/tagbar'
 " Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
@@ -69,7 +69,6 @@ Plug 'mitermayer/vim-prettier', {
          \ 'do': 'yarn install; yarn upgrade --latest' }
 " Plug 'mlaursen/vim-react-snippets'
 " Plug 'moll/vim-node'
-" Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 " Plug 'ntpeters/vim-better-whitespace'
@@ -85,14 +84,9 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'phpstan/vim-phpstan', {'for': 'php'}
 " Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
-" Plug 'potatoesmaster/i3-vim-syntax'
 " Plug 'rhysd/committia.vim'
 Plug 'rizzatti/dash.vim'
-" Plug 'robertbasic/vim-hugo-helper'
-" Plug 'xuyuanp/nerdtree-git-plugin'
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-" Plug 'scrooloose/nerdtree'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
 " Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
@@ -102,29 +96,23 @@ Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
 " Plug 'ternjs/tern_for_vim', { 'do': 'yarn install; yarn upgrade --latest' }
 " Plug 'thirtythreeforty/lessspace.vim'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-" Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
-" Plug 'vim-syntastic/syntastic'
-" Plug 'vimwiki/vimwiki'
 Plug 'wakatime/vim-wakatime'
-" Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
 
 call plug#end()
@@ -184,27 +172,15 @@ nnoremap <leader>c :TComment<CR>
 nnoremap <leader>mp :MarkedOpen!<CR>
 nnoremap <leader>mq :MarkedQuit<CR>
 
-" Toggle NerdTree
-" nnoremap <leader>n :NERDTreeToggle<CR>
-
-" Show hidden files by default in NERDTree
-" let g:NERDTreeShowHidden=1
-
-" Show status for files ignored by Git
-" let g:NERDTreeShowIgnoredStatus = 1
-
 " Save file and quit
 nnoremap <leader>q :wq<CR>
 
 " Automatically close quickfix and location list upon closing buffer
-" :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>
-
-" Get Syntastic info for current buffer
-" nnoremap <leader>si :SyntasticInfo<CR>
 
 " Run terminal commands
 nnoremap <leader>vp :VimProcBang<space>
@@ -212,7 +188,7 @@ nnoremap <leader>vp :VimProcBang<space>
 " ----------------------------------------------------------------------------
 " Save
 " ----------------------------------------------------------------------------
-" nnoremap <leader>s :w<cr>
+nnoremap <leader>s :w<cr>
 
 " ----------------------------------------------------------------------------
 " Quit
@@ -526,14 +502,14 @@ let g:ale_linters = {
   \ 'graphql': ['gqlint'],
   \ 'haml': ['haml-lint'],
   \ 'handlebars': ['ember-template-lint'],
-  \ 'html': ['htmlhint'],
+  \ 'html': ['htmlhint','tidy'],
   \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint'],
   \ 'json': ['jsonlint','prettier'],
   \ 'lua': ['luacheck'],
   \ 'markdown': ['proselint','vale'],
   \ 'objective-c': ['clang'],
   \ 'objective-c++': ['clang'],
-  \ 'python': ['autopep8','flake8','pycodestyle','yapf'],
+  \ 'python': ['flake8','pycodestyle','yapf'],
   \ 'reStructredText': ['proselint'],
   \ 'php': ['phpstan'],
   \ 'ruby': ['rubocop','reek'],

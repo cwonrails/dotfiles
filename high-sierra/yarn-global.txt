@@ -23,7 +23,7 @@ info "nativefier@7.4.1" has binaries:
    - nativefier
 info "node-gyp@3.6.2" has binaries:
    - node-gyp
-info "now@8.3.7" has binaries:
+info "now@8.3.9" has binaries:
    - now
 info "pkg@4.2.4" has binaries:
    - pkg
@@ -39,4 +39,4 @@ info "typescript@2.5.3" has binaries:
 info "yo@2.0.0" has binaries:
    - yo
    - yo-complete
-Done in 5.86s.
+Done in 5.42s.

@@ -175,26 +175,15 @@ nnoremap <leader>mq :MarkedQuit<CR>
 " Save file and quit
 nnoremap <leader>q :wq<CR>
 
+" Quit without saving
+nnoremap <Leader>x :q!<cr>
+
 " Automatically close quickfix and location list upon closing buffer
 :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
 
 " Save file
 nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>
-
-" Run terminal commands
-nnoremap <leader>vp :VimProcBang<space>
-
-" ----------------------------------------------------------------------------
-" Save
-" ----------------------------------------------------------------------------
-nnoremap <leader>s :w<cr>
-
-" ----------------------------------------------------------------------------
-" Quit
-" ----------------------------------------------------------------------------
-" nnoremap <Leader>q :wq<cr>
-nnoremap <Leader>x :q!<cr>
 
 " Source .vimrc on save
 augroup sourcevimrc
@@ -208,7 +197,10 @@ nnoremap <leader>t :TagbarToggle<CR>
 " Toggle Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 
-" Fix highlighting problems for CSS3
+" Run terminal commands
+nnoremap <leader>vp :VimProcBang<space>
+
+" Fix highlighting problems for CSS3 (from Thoughtbot dotfiles)
 " augroup VimCSS3Syntax
 "   autocmd!
 "   autocmd FileType [css,sass,scss] setlocal iskeyword+=-

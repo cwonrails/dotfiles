@@ -178,9 +178,6 @@ nnoremap <leader>q :wq<CR>
 " Quit without saving
 nnoremap <Leader>x :q!<cr>
 
-" Automatically close quickfix and location list upon closing buffer
-:windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
-
 " Save file
 nnoremap <leader>s :write<CR>
 nnoremap <leader>w :update<CR>
@@ -522,7 +519,8 @@ let g:ale_linters = {
   \}
 
 let g:ale_fixers = {
-  \ 'json': ['prettier']
+  \ 'json': ['prettier'],
+  \ 'ruby': ['rubocop']
   \}
 
 let g:ale_completion_enabled = 1

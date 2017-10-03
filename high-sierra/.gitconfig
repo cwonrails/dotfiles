@@ -1,17 +1,26 @@
 [apply]
 
-  # whitespace = fix
+  whitespace = fix
 
 [core]
 
   # autocrlf = input
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
   trustctime = false
+  precomposeunicode = false
+  untrackedCache = true
 
 [color]
 
   ui = auto
+
+[color "branch"]
+
+  current = yellow reverse
+  local = yellow
+  remote = green
 
 [color "diff"]
 
@@ -28,12 +37,6 @@
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
-
-[color "branch"]
-
-  current = yellow reverse
-  local = yellow
-  remote = green
 
 [color "status"]
 
@@ -58,6 +61,7 @@
   # diffFilter = "diff-so-fancy"
 
 [log]
+
   date = relative
 
 [merge]
@@ -70,15 +74,14 @@
   diff = diff-so-fancy | less --tabs=4 -RFX
   show = diff-so-fancy | less --tabs=4 -RFX
 
+[push]
+
+  default = current
+  followTags = true
+
 [rebase]
 
   autosquash = true
-
-[push]
-
-  # default = simple
-  default = current
-  followTags = true
 
 [url "git@github.com:"]
 

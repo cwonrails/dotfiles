@@ -110,7 +110,7 @@ if which go > /dev/null; then
 fi
 
 # PHP 7.1 #
-# export PATH="usr/local/opt/php71/bin/php:$PATH"
+export PATH="usr/local/opt/php71/bin/php:$PATH"
 
 # Rust #
 

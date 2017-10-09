@@ -1,16 +1,18 @@
-@storybook/cli@3.2.10
-build.sh@0.2.6
+@storybook/cli@3.2.12
 elm-format@0.6.1-alpha
-gatsby@1.9.49
+fkill-cli@3.7.0
+gatsby@1.9.55
 gtop@0.1.5
 live-doc@1.0.0-9
 live-server@1.2.0
+nativefier@7.4.1
 npm@5.4.2
-npm-check-updates@2.12.1
+npm-check-updates@2.13.0
 pure-prompt@1.5.2
 relab@1.0.0-23
-repng@1.0.0
-serve@6.1.0
+serve@6.2.0
 stylefmt@6.0.0
-ungit@1.1.29
+textexpander-to-alfred3@0.1.1
+ungit@1.1.30
+yarn@1.1.0
 

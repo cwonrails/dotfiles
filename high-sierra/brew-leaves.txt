@@ -14,7 +14,6 @@ tree
 coreutils
 pv
 wakatime-cli
-postgresql
 cppcheck
 libiconv
 wget
@@ -37,6 +36,7 @@ imagemagick@6
 http_load
 compose2kube
 checkstyle
+gnu-prolog
 aalib
 ghi
 vapoursynth
@@ -44,8 +44,6 @@ libdv
 thefuck
 mycli
 exiftool
-homebrew/php/php71-memcached
-homebrew/php/box
 gst-plugins-ugly
 lynx
 kube-aws
@@ -81,7 +79,6 @@ gnu-tar
 sysdig
 p7zip
 pidof
-redis
 librsync
 highlight
 par2
@@ -115,7 +112,6 @@ unzip
 mtr
 oath-toolkit
 certbot
-homebrew/php/composer
 perl
 gwt
 arping
@@ -169,6 +165,7 @@ mp3splt
 xerces-c
 libedit
 certigo
+yarn
 zlib
 fpp
 cabextract
@@ -189,10 +186,12 @@ leiningen
 duo_unix
 gst-python
 siege
+enchant
 media-info
 todolist
 imagejs
 mighttpd2
+noti
 libwebm
 sassc
 gperftools
@@ -204,6 +203,7 @@ gnu-sed
 git-open
 brew-cask-completion
 knqyf263/pet/pet
+lftp
 ghq
 libuninameslist
 kompose
@@ -224,7 +224,6 @@ vagrant-completion
 pdf2svg
 vaulted
 screen
-mysql
 tcl-tk
 dep
 libxkbcommon
@@ -264,12 +263,10 @@ libressl
 vifm
 devd
 rmlint
-homebrew/php/php71-gmp
 md5sha1sum
 livestreamer
 fn
 youtube-dl
-homebrew/php/php71-xdebug
 rename
 httpie
 nnn
@@ -279,8 +276,8 @@ cloc
 yubico-piv-tool
 gitup
 open-completion
-libidn
 m-cli
+groovy
 ttyrec
 socat
 shpotify
@@ -308,7 +305,6 @@ grammarly/tap/rocker
 fontforge
 yajl
 vnu
-homebrew/php/php71-redis
 you-get
 tcpdump
 check
@@ -330,7 +326,6 @@ gnupg
 cgrep
 wdiff
 global
-swiftlint
 caddy
 httest
 pinentry-mac

@@ -9,11 +9,10 @@ module.exports = {
     updateChannel: 'canary',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 12,
 
     // font family with optional fallbacks
-    // fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
-    fontFamily: 'Operator Mono SSm for Powerline, "Menlo", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -22,7 +21,7 @@ module.exports = {
     cursorShape: 'BLOCK',
 
     // set to true for blinking cursor
-    cursorBlink: true,
+    cursorBlink: false,
 
     // color of the text
     foregroundColor: '#fff',
@@ -85,7 +84,7 @@ module.exports = {
     //
     // Powershell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '/usr/local/bin/bash',
+    shell: '',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
@@ -95,10 +94,10 @@ module.exports = {
     env: {},
 
     // set to false for no bell
-    bell: 'false',
+    bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect:true
+    copyOnSelect: false
 
     // if true, on right click selected text will be copied or pasted if no
     // selection is present (true by default on Windows)
@@ -116,7 +115,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-solarized-vim"],
+  plugins: [],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

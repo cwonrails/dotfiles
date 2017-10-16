@@ -127,9 +127,10 @@ font-ubuntu
 font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
-hyper-canary
+hyper
 imagealpha
 imageoptim
+intellij-idea
 iterm2
 java
 karabiner

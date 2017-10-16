@@ -109,8 +109,11 @@ if which go > /dev/null; then
   export PATH="$GOBIN:$PATH"
 fi
 
+# Groovy #
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
 # PHP 7.1 #
-export PATH="usr/local/opt/php71/bin/php:$PATH"
+# export PATH="usr/local/opt/php71/bin/php:$PATH"
 
 # Rust #
 

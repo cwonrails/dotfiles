@@ -57,7 +57,6 @@ alias x='exit'
 alias ba='vim ~/.bash_aliases'
 alias bp='vim ~/.bash_profile'
 alias br='vim ~/.bashrc'
-alias hj='vim ~/.hyper.js'
 alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
@@ -161,12 +160,11 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
+## Package manager updates ##
+alias ua='gitup && bu && gu && vu && ggu && tu && au && uu && pu && pu3 && ncu -g && yarn global upgrade'
+
 # Upgrade Apex
 alias au='apex upgrade'
-
-## Package manager updates ##
-alias ua='gitup && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g && yarn global upgrade-interactive'
-# alias ua='npm i -g yarn && gitup -f -p && bu && gu && vu && ggu && tu && pu && pu3 && ncu -g'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
@@ -175,31 +173,7 @@ alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
 # shellcheck disable=SC2142
 alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
 
-# Ruby: Update and clean up all gems
-alias gu='gem update; gem cleanup'
-
-# Update Hugo
-# alias hu='go get -u -v github.com/gohugoio/hugo'
-
-# Python: Upgrade all pip packages
-alias pu="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
-
-# Python: Upgrade all pip3 packages
-alias pu3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U"
-
-# Tmux: Update, install, and remove unused plugins
-alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
-
-# Upgrade up
-alias uu='curl -sfL https://raw.githubusercontent.com/apex/up/master/install.sh | sh'
-
-# Vim: Upgrade vim-plug, update, install, and remove unused plugins
-alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
-
-# Maintain ligatures when sshing into server
-alias ssh='TERM=xterm-256color ssh'
-
-# Update specific go packages
+# Update go packages
 alias ggu="go get -u \
              github.com/alecthomas/gometalinter \
              github.com/apex/static/cmd/static-docs \
@@ -221,8 +195,31 @@ alias ggu="go get -u \
              github.com/tj/go-search \
              github.com/zquestz/s \
              github.com/whyrusleeping/gx \
+             gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
+
+
+# Ruby: Update and clean up all gems
+alias gu='gem update; gem cleanup'
+
+# Python: Upgrade all pip packages
+alias pu="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+
+# Python: Upgrade all pip3 packages
+alias pu3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U"
+
+# Tmux: Update, install, and remove unused plugins
+alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
+
+# Upgrade up
+alias uu='curl -sfL https://raw.githubusercontent.com/apex/up/master/install.sh | sh'
+
+# Vim: Upgrade vim-plug, update, install, and remove unused plugins
+alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
+
+# Maintain ligatures when sshing into server
+alias ssh='TERM=xterm-256color ssh'
 
 # Opposite of workon pip package for python virtualenvs
 alias workoff='deactivate'

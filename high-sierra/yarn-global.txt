@@ -1,12 +1,14 @@
-yarn global v1.1.0
+yarn global v1.2.1
+info "config-hyperterm@1.0.1" has binaries:
+   - config-hyperterm
 info "create-react-app@1.4.1" has binaries:
    - create-react-app
 info "dockerfile_lint@0.2.7" has binaries:
    - dockerfile_lint
 info "gqlint@1.4.0" has binaries:
    - gqlint
-info "hpm-cli@2.0.1" has binaries:
-   - hpm
+info "grunt-cli@1.2.0" has binaries:
+   - grunt
 info "htmlhint@0.9.15" has binaries:
    - htmlhint
 info "jsonlint@1.6.2" has binaries:
@@ -24,4 +26,4 @@ info "tslint@5.7.0" has binaries:
 info "typescript@2.5.3" has binaries:
    - tsc
    - tsserver
-Done in 3.42s.
+Done in 3.23s.

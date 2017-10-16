@@ -5,9 +5,11 @@ end
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
+" Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 " Plug 'cespare/vim-toml'
 Plug 'chr4/nginx.vim'

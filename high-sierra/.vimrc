@@ -510,8 +510,6 @@ let g:ale_linters = {
   \ 'scss': ['sass-lint','stylelint','prettier'],
   \ 'slim': ['slimt-lint'],
   \ 'stylus': ['stylelint'],
-  \ 'sql': ['sqlint'],
-  \ 'swift': ['swiftlint','swiftformat'],
   \ 'texinfo': ['proselint'],
   \ 'text^': ['proselint','vale'],
   \ 'typescript': ['tslint'],
@@ -519,6 +517,9 @@ let g:ale_linters = {
   \ 'vim': ['vint'],
   \ 'xml': ['xmllint']
   \}
+
+  " \ 'sql': ['sqlint'],
+  " \ 'swift': ['swiftlint','swiftformat'],
 
 let g:ale_fixers = {
   \ 'json': ['prettier'],

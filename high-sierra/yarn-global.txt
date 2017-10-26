@@ -21,9 +21,9 @@ info "pug-cli@1.0.0-alpha6" has binaries:
    - pug
 info "pug-lint@2.5.0" has binaries:
    - pug-lint
-info "tslint@5.7.0" has binaries:
+info "tslint@5.8.0" has binaries:
    - tslint
 info "typescript@2.5.3" has binaries:
    - tsc
    - tsserver
-Done in 3.23s.
+Done in 2.39s.

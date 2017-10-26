@@ -161,7 +161,7 @@ alias ng='npm -g ls --depth=0'
 alias nl='npm ls --depth=0'
 
 ## Package manager updates ##
-alias ua='gitup && bu && gu && vu && ggu && tu && au && uu && pu && pu3 && ncu -g && yarn global upgrade'
+alias ua='gitup && bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && pu && pu3 && yarn global upgrade && ncu -g'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -183,6 +183,7 @@ alias ggu="go get -u \
              github.com/ericchiang/pup \
              github.com/gchaincl/httplab/cmd/httplab \
              github.com/golang/dep/cmd/dep \
+             github.com/google/git-appraise/git-appraise \
              github.com/GoogleChrome/simplehttp2server \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/jackc/sqlfmt/cmd/sqlfmt \

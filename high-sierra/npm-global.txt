@@ -1,4 +1,5 @@
-@storybook/cli@3.2.12
+@storybook/cli@3.2.13
+alfred-cacher@1.0.2
 alfred-npms@1.1.0
 elm-format@0.6.1-alpha
 fkill-cli@3.7.0
@@ -10,8 +11,8 @@ nativefier@7.4.1
 npm@5.5.1
 npm-check-updates@2.13.0
 relab@1.0.0-23
-serve@6.2.0
+serve@6.3.1
 stylefmt@6.0.0
 textexpander-to-alfred3@0.1.1
-ungit@1.1.30
+ungit@1.1.33
 

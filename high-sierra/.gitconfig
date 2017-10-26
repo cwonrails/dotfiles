@@ -115,6 +115,7 @@
   switch = !legit switch
   resync = !legit resync
   quick-stats = ! /usr/local/bin/git-quick-stats
+  appraise = !/Users/christopherwatson/go/bin/git-appraise
 
 [user]
 

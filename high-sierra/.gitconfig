@@ -58,7 +58,7 @@
 
 [interactive]
 
-  # diffFilter = "diff-so-fancy"
+  diffFilter = "diff-so-fancy"
 
 [log]
 

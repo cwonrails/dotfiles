@@ -509,7 +509,9 @@ let g:ale_linters = {
   \ 'scala': ['scalac','scalastyle'],
   \ 'scss': ['sass-lint','stylelint','prettier'],
   \ 'slim': ['slimt-lint'],
+  \ 'sql': ['sqlint'],
   \ 'stylus': ['stylelint'],
+  \ 'swift': ['swiftlint','swiftformat'],
   \ 'texinfo': ['proselint'],
   \ 'text^': ['proselint','vale'],
   \ 'typescript': ['tslint'],
@@ -518,10 +520,9 @@ let g:ale_linters = {
   \ 'xml': ['xmllint']
   \}
 
-  " \ 'sql': ['sqlint'],
-  " \ 'swift': ['swiftlint','swiftformat'],
 
 let g:ale_fixers = {
+  \ 'javascript': ['eslint'],
   \ 'json': ['prettier'],
   \ 'ruby': ['rubocop']
   \}

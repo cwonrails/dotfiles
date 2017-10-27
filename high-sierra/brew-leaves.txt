@@ -298,6 +298,7 @@ startup-notification
 svg2png
 svgcleaner
 swiftformat
+swiftlint
 sysdig
 t-completion
 taglib

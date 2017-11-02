@@ -5,22 +5,19 @@ end
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-" Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
-" Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 " Plug 'cespare/vim-toml'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'cocopon/vaffle.vim'
 Plug 'conradirwin/vim-bracketed-paste'
-" Plug 'cwonrails/ale'
 Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
-Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
-Plug 'elzr/vim-json'
+Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'embear/vim-localvimrc'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
@@ -49,7 +46,7 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'junegunn/vader.vim', { 'for': 'vim' }
+Plug 'junegunn/vader.vim', { 'for': 'vim' }
 " Plug 'kchmck/vim-coffee-script'
 Plug 'kewah/vim-stylefmt'
 " Plug 'lmeijvogel/vim-yaml-helper'
@@ -64,17 +61,15 @@ Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 " Plug 'metakirby5/codi.vim'
 " Plug 'mhinz/vim-startify'
-" Plug 'mitermayer/vim-prettier', {
-"          \ 'do': 'yarn install',
-"          \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 Plug 'mitermayer/vim-prettier', {
-         \ 'do': 'yarn install; yarn upgrade --latest' }
+         \ 'do': 'yarn install; yarn upgrade --latest',
+         \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 " Plug 'mlaursen/vim-react-snippets'
 " Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 " Plug 'ntpeters/vim-better-whitespace'
-" Plug 'othree/es.next.syntax.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 " Plug 'othree/xml.vim'
@@ -465,20 +460,20 @@ let g:ale_open_list = 1
 " let g:ale_keep_list_window_open = 0
 
 " Check JSX files with both stylelint and eslint
-" augroup FiletypeGroup
-"     autocmd!
-"     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-" augroup END
-" let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
-" let g:ale_linter_aliases = {'jsx': 'css'}
-"
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+let g:ale_linter_aliases = {'jsx': 'css'}
+
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 
 let g:ale_linters = {
   \ 'asm': ['gcc'],
   \ 'ansible': ['ansible-lint'],
-  \ 'asciidoc': ['proselint'],
+  \ 'asciidoc': ['proselint', 'write-good'],
   \ 'awk': ['gawk'],
   \ 'bash': ['-n flag','shellcheck'],
   \ 'bourne_shell': ['-n flag','shellcheck'],
@@ -489,6 +484,8 @@ let g:ale_linters = {
   \ 'css': ['stylelint','prettier'],
   \ 'Dockerfile': ['hadolint'],
   \ 'elm': ['elm-format', 'elm-make'],
+  \ 'fortran': ['gcc'],
+  \ 'fusion-lint': ['fusion-lint'],
   \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
   \ 'graphql': ['gqlint'],
   \ 'haml': ['haml-lint'],
@@ -512,12 +509,14 @@ let g:ale_linters = {
   \ 'sql': ['sqlint'],
   \ 'stylus': ['stylelint'],
   \ 'swift': ['swiftlint','swiftformat'],
-  \ 'texinfo': ['proselint'],
+  \ 'texinfo': ['proselint','write-good'],
   \ 'text^': ['proselint','vale'],
   \ 'typescript': ['tslint'],
   \ 'verilog': ['iverilog','verilator'],
   \ 'vim': ['vint'],
-  \ 'xml': ['xmllint']
+  \ 'vim help^': ['proselint','write-good'],
+  \ 'xml': ['xmllint'],
+  \ 'yaml': ['yamllint']
   \}
 
 

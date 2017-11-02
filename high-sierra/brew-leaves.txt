@@ -13,6 +13,7 @@ atlassian/tap/atlassian-plugin-sdk
 wallix/awless/awless
 azure-cli
 bash-completion@2
+bash-preexec
 bash-snippets
 bashdb
 bats
@@ -82,6 +83,7 @@ fish
 flif
 flow
 fn
+folly
 fontforge
 fonttools
 fpp
@@ -107,7 +109,6 @@ git-quick-stats
 gitless
 gitup
 global
-glog
 gnu-prolog
 gnu-sed
 gnu-tar
@@ -133,6 +134,7 @@ gst-python
 gtk-doc
 guetzli
 guile
+gutenberg
 gwt
 gzip
 hadolint
@@ -176,7 +178,6 @@ lftp
 libaacs
 libarchive
 libav
-libconfig
 libdv
 libdvdnav
 libebur128
@@ -292,6 +293,7 @@ spidermonkey
 ssh-audit
 ssh-copy-id
 sshrc
+sslh
 sslmate
 sslyze
 startup-notification
@@ -354,7 +356,9 @@ you-get
 youtube-dl
 yubico-piv-tool
 z
+zip
 zlib
 zopfli
 zsh
 zsh-syntax-highlighting
+zsync

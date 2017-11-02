@@ -1,25 +1,42 @@
 yarn global v1.2.1
+info "@storybook/cli@3.2.14" has binaries:
+   - getstorybook
 info "config-hyperterm@1.0.1" has binaries:
    - config-hyperterm
 info "dockerfile_lint@0.2.7" has binaries:
    - dockerfile_lint
+info "download-cli@1.0.5" has binaries:
+   - download
+info "elm-format@0.6.1-alpha" has binaries:
+   - elm-format
+info "fkill-cli@3.7.0" has binaries:
+   - fkill
 info "gqlint@1.4.0" has binaries:
    - gqlint
 info "grunt-cli@1.2.0" has binaries:
    - grunt
+info "hpm-cli@2.0.1" has binaries:
+   - hpm
 info "jsonlint@1.6.2" has binaries:
    - jsonlint
+info "nativefier@7.4.1" has binaries:
+   - nativefier
 info "node-gyp@3.6.2" has binaries:
    - node-gyp
-info "now@8.3.10" has binaries:
+info "now@8.3.11" has binaries:
    - now
 info "pug-cli@1.0.0-alpha6" has binaries:
    - pug
 info "pug-lint@2.5.0" has binaries:
    - pug-lint
+info "serve@6.4.0" has binaries:
+   - serve
 info "tslint@5.8.0" has binaries:
    - tslint
-info "typescript@2.5.3" has binaries:
+info "typescript@2.6.1" has binaries:
    - tsc
    - tsserver
-Done in 3.55s.
+info "write-good@0.11.3" has binaries:
+   - write-good
+   - writegood
+Done in 6.72s.

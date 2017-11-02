@@ -39,10 +39,14 @@ export MANPATH="/usr/local/opt/gnu-sed/share/man:$MANPATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/share/man:$MANPATH"
 
+# GNU zip
+export PATH="/usr/local/opt/zip/bin:$PATH"
+export MANPATH="/usr/local/opt/zip/share/man:$MANPATH"
+
 # Homebrew curl
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
-# Homebrew python
+# Homebrew Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export MANPATH="/usr/local/opt/python2/share/man:$MANPATH"
 
@@ -260,3 +264,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 #     source /Users/christopherwatson/.tnsrc
 # fi
 ###-tns-completion-end-###
+
+### bash-preexec ###
+[ -f /usr/local/etc/profile.d/bash-preexec.sh ] && . /usr/local/etc/profile.d/bash-preexec.sh

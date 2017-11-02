@@ -139,6 +139,7 @@ karabiner
 keyboard-cleaner
 limechat
 min
+mpv
 omnifocus
 provisioning
 quicklook-csv
@@ -153,7 +154,6 @@ visual-studio-code
 vivaldi
 vlc
 webcatalog
-webpack-dashboard
 webstorm
 xld
 xquartz

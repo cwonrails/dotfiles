@@ -1,21 +1,12 @@
-@storybook/cli@3.2.13
 alfred-cacher@1.0.2
 alfred-npms@1.1.0
-create-react-app@1.4.1
-elm-format@0.6.1-alpha
-fkill-cli@3.7.0
-gatsby-cli@1.1.11
+firebase-tools@3.14.0
+gatsby-cli@1.1.18
 gtop@0.1.5
-hpm-cli@2.0.1
-live-doc@1.0.0-9
-live-server@1.2.0
-nativefier@7.4.1
+htmlhint@0.9.13
 npm@5.5.1
 npm-check-updates@2.13.0
-react-static@3.0.6
-relab@1.0.0-23
-serve@6.3.1
-stylefmt@6.0.0
+react-static@4.0.1
 textexpander-to-alfred3@0.1.1
-ungit@1.1.33
+ungit@1.2.0
 

@@ -24,6 +24,9 @@ alias insatll='install'
 # Get ip address
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+# just
+# alias j='just'
+
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
@@ -160,8 +163,13 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
+## nvm ##
+alias ns='nvm use system'
+alias n9='nvm use v9'
+
 ## Package manager updates ##
-alias ua='gitup && bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && pu && pu3 && yarn global upgrade && ncu -g'
+# alias ua='gitup && bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && pu && pu3 && yarn global upgrade && ncu -g'
+alias ua='bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && pu && pu3 && npm cache verify && yarn global upgrade && ncu -g'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -196,10 +204,10 @@ alias ggu="go get -u \
              github.com/tj/go-search \
              github.com/zquestz/s \
              github.com/whyrusleeping/gx \
-             gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
 
+             # gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira \
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'

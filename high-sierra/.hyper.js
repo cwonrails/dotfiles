@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'canary',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 14,
 
     // font family with optional fallbacks
     fontFamily: 'Operator Mono SSm for Powerline, "Menlo", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',

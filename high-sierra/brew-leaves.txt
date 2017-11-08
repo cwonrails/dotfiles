@@ -46,6 +46,7 @@ composer-completion
 confuse
 coreutils
 cppcheck
+csvkit
 csvtomd
 ctop
 dante
@@ -110,12 +111,12 @@ gitless
 gitup
 global
 gnu-prolog
-gnu-sed
 gnu-tar
 gnu-which
 gnupg
 gnuplot
 gnustep-make
+gomplate
 googler
 gopass
 gotags
@@ -138,6 +139,7 @@ gutenberg
 gwt
 gzip
 hadolint
+hashcat
 help2man
 hg-fast-export
 hh
@@ -163,6 +165,7 @@ jpeg-turbo
 jpegoptim
 jq
 json-c
+just
 loadimpact/k6/k6
 known_hosts
 kompose
@@ -260,6 +263,7 @@ ranger
 rclone
 reattach-to-user-namespace
 rename
+repo
 rhino
 rlwrap
 rmlint

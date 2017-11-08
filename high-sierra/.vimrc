@@ -100,6 +100,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tweekmonster/helpful.vim'
+Plug 'tweekmonster/startuptime.vim'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
@@ -508,7 +510,6 @@ let g:ale_linters = {
   \ 'slim': ['slimt-lint'],
   \ 'sql': ['sqlint'],
   \ 'stylus': ['stylelint'],
-  \ 'swift': ['swiftlint','swiftformat'],
   \ 'texinfo': ['proselint','write-good'],
   \ 'text^': ['proselint','vale'],
   \ 'typescript': ['tslint'],
@@ -533,3 +534,6 @@ let g:ale_completion_enabled = 1
 
 " All currently available Typescript checkers
   " \ 'typescript': ['eslint','tslint','tsserver','typecheck','prettier'],
+
+
+  " \ 'swift': ['swiftlint','swiftformat'],

@@ -5,7 +5,6 @@ caffeine
 caprine
 chromium
 daisydisk
-discord
 docker
 firefoxdeveloperedition
 firefoxnightly
@@ -128,17 +127,16 @@ font-ubuntu
 font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
-gitter
 hyper
 imagealpha
 imageoptim
 intellij-idea
 iterm2
 java
+kap
 karabiner
 keyboard-cleaner
 limechat
-min
 mpv
 omnifocus
 provisioning
@@ -151,7 +149,6 @@ the-unarchiver
 transmission
 virtualbox
 visual-studio-code
-vivaldi
 vlc
 webcatalog
 webstorm

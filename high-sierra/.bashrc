@@ -200,7 +200,8 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   GPG_TTY=$(tty)
   export GPG_TTY
 else
-  eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
+  eval "$(gpg-agent --daemon)"
+  # eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
 fi
 
 ## Alternatives to above (still getting warnings when starting new sessions)

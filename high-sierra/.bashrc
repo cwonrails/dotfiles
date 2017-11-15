@@ -31,6 +31,9 @@ export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
 # mmake (Modern Make) https://github.com/tj/mmake
 alias make='mmake'
 
+# GNU ncurses
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+
 # GNU sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-sed/share/man:$MANPATH"

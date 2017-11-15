@@ -12,11 +12,12 @@ idna           2.6
 meson          0.43.0   
 msgpack-python 0.4.8    
 mutagen        1.39     
-mypy           0.540    
+mypy           0.550    
 numpy          1.13.3   
 packaging      16.8     
 pafy           0.5.3.1  
 pip            9.0.1    
+psutil         5.4.1    
 pyparsing      2.2.0    
 requests       2.18.4   
 scandir        1.6      

@@ -61,14 +61,14 @@ Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 " Plug 'metakirby5/codi.vim'
 " Plug 'mhinz/vim-startify'
-Plug 'mitermayer/vim-prettier', {
-         \ 'do': 'yarn install; yarn upgrade --latest',
-         \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'json', 'graphql'] }
 " Plug 'mlaursen/vim-react-snippets'
 " Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
-" Plug 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
@@ -102,7 +102,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/helpful.vim'
 Plug 'tweekmonster/startuptime.vim'
-Plug 'tweekmonster/wstrip.vim'
+" Plug 'tweekmonster/wstrip.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -434,6 +434,7 @@ let g:tmuxcomplete#trigger = 'omnifunc'
 " ----------------------------------------------------------------------------
 "  vim-prettier
 " ----------------------------------------------------------------------------
+let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
 
 " ----------------------------------------------------------------------------
@@ -457,7 +458,7 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 1
-" let g:ale_set_quickfix = 0
+let g:ale_set_quickfix = 0
 let g:ale_open_list = 1
 " let g:ale_keep_list_window_open = 0
 
@@ -523,7 +524,6 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
   \ 'javascript': ['eslint'],
-  \ 'json': ['prettier'],
   \ 'ruby': ['rubocop']
   \}
 
@@ -537,3 +537,6 @@ let g:ale_completion_enabled = 1
 
 
   " \ 'swift': ['swiftlint','swiftformat'],
+
+" vim-better-whitespace
+autocmd BufEnter * EnableStripWhitespaceOnSave

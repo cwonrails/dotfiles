@@ -1,5 +1,5 @@
 yarn global v1.3.2
-info "@storybook/cli@3.2.14" has binaries:
+info "@storybook/cli@3.2.15" has binaries:
    - getstorybook
 info "axe-cli@1.1.1" has binaries:
    - axe
@@ -24,11 +24,11 @@ info "joblint@2.3.2" has binaries:
    - joblint
 info "jsonlint@1.6.2" has binaries:
    - jsonlint
-info "nativefier@7.4.1" has binaries:
+info "nativefier@7.5.1" has binaries:
    - nativefier
 info "node-gyp@3.6.2" has binaries:
    - node-gyp
-info "now@8.4.0" has binaries:
+info "now@8.5.1" has binaries:
    - now
 info "pug-cli@1.0.0-alpha6" has binaries:
    - pug
@@ -44,4 +44,4 @@ info "typescript@2.6.1" has binaries:
 info "write-good@0.11.3" has binaries:
    - write-good
    - writegood
-Done in 4.64s.
+Done in 4.94s.

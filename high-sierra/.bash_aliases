@@ -82,6 +82,8 @@ alias gpl='cd ~; yarn global list > ~/global-package-lists/yarn-global.txt; cd ~
 # shellcheck disable=SC2026
 alias ngl='npm -g ls --depth=0 | cut -c 11- | sed -e '1d' > npm-global.txt'
 
+alias gup='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;'
+
 # TJ Hollowaychuck's git aliases (customized)
 alias ga='git add'
 alias gb='git branch'
@@ -108,7 +110,8 @@ alias gdumno='git diff upstream/master --name-only'
 alias gl='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --'
 alias gm='git merge --ff'
 alias gpt='git push --tags'
-alias gpom='git pull --rebase origin master'
+alias gpo='git pull origin'
+alias gprom='git pull --rebase origin master'
 alias grau='git remote add upstream'
 alias grh='git reset --hard'
 alias gpu='git pull upstream'

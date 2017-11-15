@@ -137,6 +137,7 @@ kap
 karabiner
 keyboard-cleaner
 limechat
+mailspring
 mpv
 omnifocus
 provisioning

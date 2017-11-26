@@ -1,7 +1,7 @@
 atom
-avira-antivirus
 brave
 caffeine
+calibre
 caprine
 chromium
 daisydisk
@@ -127,7 +127,7 @@ font-ubuntu
 font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
-hyper
+hyper-canary
 imagealpha
 imageoptim
 intellij-idea
@@ -143,6 +143,7 @@ omnifocus
 provisioning
 quicklook-csv
 quicklook-json
+retinizer
 rightfont
 skype
 sublime-text-dev

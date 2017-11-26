@@ -112,6 +112,7 @@ alias gm='git merge --ff'
 alias gpt='git push --tags'
 alias gpo='git pull origin'
 alias gprom='git pull --rebase origin master'
+alias gr='git remote'
 alias grau='git remote add upstream'
 alias grh='git reset --hard'
 alias gpu='git pull upstream'
@@ -168,11 +169,13 @@ alias nl='npm ls --depth=0'
 
 ## nvm ##
 alias ns='nvm use system'
+alias n8='nvm use v8'
 alias n9='nvm use v9'
 
 ## Package manager updates ##
-# alias ua='gitup && bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && pu && pu3 && yarn global upgrade && ncu -g'
-alias ua='bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && pu && pu3 && npm cache verify && yarn global upgrade && ncu -g'
+# alias ua='bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && pu && pu3 npm cache verify && yarn global upgrade'
+# alias ua='gitup && bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && npm cache verify && yarn global upgrade'
+alias ua='gitup && bu && ggu && tu && gu && vu && yarn global upgrade'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -203,14 +206,15 @@ alias ggu="go get -u \
              github.com/rapidloop/rtop \
              github.com/russross/blackfriday-tool \
              github.com/sourcegraph/go-langserver \
-             github.com/tj/mmake/cmd/mmake \
              github.com/tj/go-search \
+             github.com/tj/mmake/cmd/mmake \
+             github.com/tj/node-prune/cmd/node-prune \
              github.com/zquestz/s \
              github.com/whyrusleeping/gx \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
 
-             # gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira \
+# gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira \
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'

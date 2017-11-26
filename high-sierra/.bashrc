@@ -54,8 +54,8 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export MANPATH="/usr/local/opt/python2/share/man:$MANPATH"
 
 # brew command-not-found
-if brew command command-not-found-init > /dev/null; then
-  eval "$(brew command-not-found-init)";
+if brew command command-not-found-init >/dev/null; then
+  eval "$(brew command-not-found-init)"
 fi
 
 # z
@@ -65,12 +65,12 @@ fi
 
 # Source additional dotfiles
 for file in ~/.{aliases.local,bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
-  [ -r "$file" ] && [ -f "$file" ] && . "$file";
-done;
+  [ -r "$file" ] && [ -f "$file" ] && . "$file"
+done
 unset file
 
 # Ignore shellcheck "Cannot follow non-constant source" errors
-if which shellcheck > /dev/null; then
+if which shellcheck >/dev/null; then
   export SHELLCHECK_OPTS="-e SC1090,SC1091"
 fi
 
@@ -98,17 +98,17 @@ fi
 # [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
 
 # Enable hub and alias it to git
-if which hub > /dev/null; then
+if which hub >/dev/null; then
   eval "$(hub alias -s)"
 fi
 
 # Enable thefuck if installed
-if which thefuck > /dev/null; then
+if which thefuck >/dev/null; then
   eval "$(thefuck --alias)"
 fi
 
 # Go #
-if which go > /dev/null; then
+if which go >/dev/null; then
   export PATH=/usr/local/opt/go/libexec/bin:$PATH
   export GOPATH="$HOME/go"
   export GOOS="darwin"
@@ -126,7 +126,7 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # Cargo
 # if which cargo > /dev/null; then
-  export PATH="$HOME/.cargo/bin":$PATH
+export PATH="$HOME/.cargo/bin":$PATH
 # fi
 
 # s bash completion
@@ -135,19 +135,19 @@ if [ -f "$GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash" ]; the
 fi
 
 # Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob;
+shopt -s nocaseglob
 
 # Append to the Bash history file rather than overwriting it
-shopt -s histappend;
+shopt -s histappend
 
 # Correct spelling errors in arguments supplied to cd
-shopt -s cdspell;
+shopt -s cdspell
 
 # Autocorrect on directory names to match a glob.
-shopt -s dirspell 2> /dev/null
+shopt -s dirspell 2>/dev/null
 
 # Turn on recursive globbing (enables ** to recurse all directories)
-shopt -s globstar 2> /dev/null
+shopt -s globstar 2>/dev/null
 
 # More intelligent Up/Down behavior
 bind '"\e[A": history-search-backward'
@@ -164,10 +164,10 @@ export PATH="usr/local/opt/curl/bin:$PATH"
 hash gls >/dev/null 2>&1 || alias gls="ls"
 
 # Always use color, even when piping
-if gls --color > /dev/null 2>&1; then
-  export colorflag="--color";
+if gls --color >/dev/null 2>&1; then
+  export colorflag="--color"
 else
-  export colorflag="-G";
+  export colorflag="-G"
 fi
 
 # Force CLI colors
@@ -189,7 +189,7 @@ alias lh='ls -d .* ${colorflag}'
 alias lsd='ls -l | grep "^d"'
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh
 
 # Enable fzf installed via git
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
@@ -209,11 +209,11 @@ fi
 
 ## Alternatives to above (still getting warnings when starting new sessions)
 # if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-#     source ~/.gnupg/.gpg-agent-info
-#     export GPG_AGENT_INFO
+#   source ~/.gnupg/.gpg-agent-info
+#   export GPG_AGENT_INFO
 # else
-#     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-#     eval $(gpg-agent --daemon ~/.gnupg/.gpg-agent-info)
+#   eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+#   eval $(gpg-agent --daemon ~/.gnupg/.gpg-agent-info)
 # fi
 
 # go-search
@@ -221,9 +221,9 @@ alias gos='go-search'
 
 # bash completion for Docker.app
 # if [ -f "/Applications/Docker.app" ]; then
-  . /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
-  . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
-  . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+. /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+. /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+. /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
 # fi
 
 # built-in Go completion
@@ -245,9 +245,9 @@ fi
 alias lc='colorls -r'
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # lunchy
 # if [ -f "/usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash" ]; then

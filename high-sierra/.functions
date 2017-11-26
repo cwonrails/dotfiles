@@ -6,6 +6,11 @@ function lazygit() {
   git push
 }
 
+# Open a file with iA Writer
+function writer() {
+    open "$@" -a ia\ Writer
+}
+
 function upgrade-nvm() {
 (
   cd "$NVM_DIR"

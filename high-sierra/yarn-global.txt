@@ -1,41 +1,58 @@
 yarn global v1.3.2
-info "@storybook/cli@3.2.15" has binaries:
+info "@storybook/cli@3.2.16" has binaries:
    - getstorybook
-info "axe-cli@1.1.1" has binaries:
+info "axe-cli@1.3.0" has binaries:
    - axe
 info "config-hyperterm@1.0.1" has binaries:
    - config-hyperterm
 info "deviceframe@1.0.1" has binaries:
    - deviceframe
    - dframe
+info "do-not-disturb@1.0.1" has binaries:
+   - do-not-disturb
 info "dockerfile_lint@0.2.7" has binaries:
    - dockerfile_lint
 info "download-cli@1.0.5" has binaries:
    - download
 info "fkill-cli@3.7.0" has binaries:
    - fkill
+info "gatsby-cli@1.1.23" has binaries:
+   - gatsby
 info "gqlint@1.6.1" has binaries:
    - gqlint
 info "grunt-cli@1.2.0" has binaries:
    - grunt
-info "hpm-cli@2.0.1" has binaries:
-   - hpm
+info "htmlhint@0.9.13" has binaries:
+   - htmlhint
+info "http-server@0.10.0" has binaries:
+   - http-server
+   - hs
 info "joblint@2.3.2" has binaries:
    - joblint
 info "jsonlint@1.6.2" has binaries:
    - jsonlint
-info "nativefier@7.5.1" has binaries:
+info "nativefier@7.5.4" has binaries:
    - nativefier
+info "nativescript@3.4.0-2017-11-15-10117" has binaries:
+   - tns
+   - nativescript
 info "node-gyp@3.6.2" has binaries:
    - node-gyp
-info "now@8.5.1" has binaries:
+info "now@8.5.4" has binaries:
    - now
+info "nyc@11.3.0" has binaries:
+   - nyc
+info "polyjuice@2.2.4" has binaries:
+   - polyjuice
 info "pug-cli@1.0.0-alpha6" has binaries:
    - pug
 info "pug-lint@2.5.0" has binaries:
    - pug-lint
 info "serve@6.4.1" has binaries:
    - serve
+info "textexpander-to-alfred3@0.1.1" has binaries:
+   - textexpander-to-alfred3
+   - te2a3
 info "tslint@5.8.0" has binaries:
    - tslint
 info "typescript@2.6.1" has binaries:
@@ -44,4 +61,4 @@ info "typescript@2.6.1" has binaries:
 info "write-good@0.11.3" has binaries:
    - write-good
    - writegood
-Done in 4.94s.
+Done in 6.32s.

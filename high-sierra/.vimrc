@@ -9,90 +9,68 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-" Plug 'cespare/vim-toml'
 Plug 'chr4/nginx.vim'
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'cocopon/vaffle.vim'
 Plug 'conradirwin/vim-bracketed-paste'
 Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-" Plug 'embear/vim-localvimrc'
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
+Plug 'epilande/vim-es2015-snippets', { 'for': ['javascript', 'jsx'] }
+Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'jsx'] }
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'fleischie/vim-styled-components'
-" Plug 'flowtype/vim-flow'
-Plug 'groenewege/vim-less'
-Plug 'hail2u/vim-css3-syntax'
-" Plug 'hashivim/vim-terraform'
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch.vim'
-" Plug 'heavenshell/vim-jsdoc'
-Plug 'herringtondarkholme/yats.vim'
+Plug 'herringtondarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'honza/vim-snippets'
-" Plug 'iamcco/markdown-preview.vim'
-" Plug 'isobit/vim-caddyfile'
 Plug 'isomoar/vim-css-to-inline'
 Plug 'isRuslan/vim-es6'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-" Plug 'jamshedvesuna/vim-markdown-preview'
 Plug 'janko-m/vim-test'
-" Plug 'joeyespo/grip'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vader.vim', { 'for': 'vim' }
-" Plug 'kchmck/vim-coffee-script'
-Plug 'kewah/vim-stylefmt'
-" Plug 'lmeijvogel/vim-yaml-helper'
+Plug 'kewah/vim-stylefmt', { 'for': ['css', 'scss'] }
 Plug 'majutsushi/tagbar'
-" Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
 Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-" Plug 'mattn/vim-sqlfmt'
+Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
 Plug 'mattn/webapi-vim'
-" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mbbill/undotree'
 " Plug 'metakirby5/codi.vim'
 " Plug 'mhinz/vim-startify'
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
+  \ 'do': 'rm -rf yarn.lock node_modules && yarn install',
   \ 'for': ['javascript', 'json', 'graphql'] }
-" Plug 'mlaursen/vim-react-snippets'
-" Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'othree/es.next.syntax.vim'
+Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'jsx'] }
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-" Plug 'othree/xml.vim'
+Plug 'othree/xml.vim', { 'for': 'xml' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-" Plug 'pallets/jinja', { 'rtp': '/ext/vim/jinja.vim'}
 Plug 'pbrisbin/vim-mkdir'
-" Plug 'pearofducks/ansible-vim'
-" Plug 'phenomenes/ansible-snippets'
 Plug 'phpstan/vim-phpstan', {'for': 'php'}
-" Plug 'plasticboy/vim-markdown'
-Plug 'posva/vim-vue'
-" Plug 'rhysd/committia.vim'
+Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'rizzatti/dash.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
-" Plug 'shougo/echodoc.vim'
+Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sirver/ultiSnips'
-" Plug 'sjl/gundo.vim'
 Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
-" Plug 'ternjs/tern_for_vim', { 'do': 'yarn install; yarn upgrade --latest' }
-" Plug 'thirtythreeforty/lessspace.vim'
+Plug 'ternjs/tern_for_vim', { 'do': 'yarn install' }
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
 Plug 'tpope/vim-eunuch'
@@ -100,19 +78,17 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tweekmonster/helpful.vim'
-Plug 'tweekmonster/startuptime.vim'
-" Plug 'tweekmonster/wstrip.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
 Plug 'wellle/tmux-complete.vim'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 
 call plug#end()
 
@@ -196,20 +172,11 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " Run terminal commands
 nnoremap <leader>vp :VimProcBang<space>
 
-" Fix highlighting problems for CSS3 (from Thoughtbot dotfiles)
-" augroup VimCSS3Syntax
-"   autocmd!
-"   autocmd FileType [css,sass,scss] setlocal iskeyword+=-
-" augroup END
-
 " Enable spellchecking for Markdown
 autocmd filetype markdown setlocal spell
 
 " Disable highlighting of non-capitalized terms in Markdown
 set spellcapcheck=
-
-" Recognize babelrc as json
-autocmd BufRead,BufNewFile .{babel,proselint}rc set filetype=json
 
 " Allow saving of files as sudo if not opened with sudo vim
 cmap w!! w !sudo tee > /dev/null %
@@ -326,6 +293,9 @@ nnoremap Y y$
 " Make gists private by default
 let g:gist_post_private = 1
 
+" Open browser after posting gist
+let g:gist_open_browser_after_post =1
+
 " ----------------------------------------------------------------------------
 " matchit.vim
 " ----------------------------------------------------------------------------
@@ -438,40 +408,22 @@ let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
 
 " ----------------------------------------------------------------------------
-"  vim-flow
-" ----------------------------------------------------------------------------
-" let g:flow#autoclose = 1
-" let g:flow#enable = 0
-
-" ----------------------------------------------------------------------------
-" vim-localvimrc
-" ----------------------------------------------------------------------------
-" let g:localvimrc_sandbox = 1
-" let g:localvimrc_persistent = 1
-" let g:localvimrc_whitelist='$HOME/github/forks/cwoncasper/'
-
-" ----------------------------------------------------------------------------
 " ale settings
 " ----------------------------------------------------------------------------
 let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_set_loclist = 1
-let g:ale_set_quickfix = 0
-let g:ale_open_list = 1
-" let g:ale_keep_list_window_open = 0
+" let g:ale_open_list = 1
+" let g:ale_set_loclist = 1
+" let g:ale_set_quickfix = 0
+let g:ale_lint_delay = 1000
+nmap ]a <Plug>(ale_next_wrap)
+nmap [a <Plug>(ale_previous_wrap)
 
 " Check JSX files with both stylelint and eslint
-augroup FiletypeGroup
-    autocmd!
-    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
 let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
 let g:ale_linter_aliases = {'jsx': 'css'}
-
-nmap <silent> <leader>an <Plug>(ale_next_wrap)
-nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 
 let g:ale_linters = {
   \ 'asm': ['gcc'],
@@ -521,22 +473,27 @@ let g:ale_linters = {
   \ 'yaml': ['yamllint']
   \}
 
-
 let g:ale_fixers = {
-  \ 'javascript': ['eslint'],
-  \ 'ruby': ['rubocop']
+  \ 'javascript': ['eslint','prettier'],
+  \ 'sh': 'shfmt'
   \}
 
 let g:ale_completion_enabled = 1
 
-" All currently available JavaScript checkers
-  " \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint','xo'],
-
-" All currently available Typescript checkers
-  " \ 'typescript': ['eslint','tslint','tsserver','typecheck','prettier'],
-
-
-  " \ 'swift': ['swiftlint','swiftformat'],
+let g:ale_sh_shfmt_options = '-i 2'
 
 " vim-better-whitespace
-autocmd BufEnter * EnableStripWhitespaceOnSave
+augroup whitespace
+  autocmd BufEnter * EnableStripWhitespaceOnSave
+augroup END
+
+" recognize filetypes
+augroup Setfiletype
+  au BufNewFile,BufRead *.csv setfiletype csv
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  au BufNewFile,BufRead *.jinja2,*.j2,*.jinja,*.nunj*,*.njk set filetype=jinja
+  au BufNewFile,BufRead *.vue setfiletype vue
+augroup END
+
+" vim-shfmt
+let g:shfmt_extra_args = '-i 2'

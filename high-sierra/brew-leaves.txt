@@ -1,7 +1,6 @@
 aalib
 ack
 algernon
-ant
 apm-bash-completion
 argon2
 aria2
@@ -15,6 +14,7 @@ atlassian/tap/atlassian-plugin-sdk
 autoconf-archive
 automake
 wallix/awless/awless
+aws-shell
 azure-cli
 bash-completion@2
 bash-preexec
@@ -28,6 +28,7 @@ bit
 borg
 brew-cask-completion
 brotli
+facebook/fb/buck
 burl
 bzip2
 cabal-install
@@ -50,8 +51,10 @@ cmus
 compose2kube
 composer-completion
 confuse
+conjure-up
 coreutils
 cppcheck
+cscope
 csvkit
 csvtomd
 ctop
@@ -67,6 +70,7 @@ diffutils
 dirac
 dirmngr
 dmd
+docker-ls
 doctl
 docx2txt
 doitlive
@@ -109,6 +113,7 @@ ghi
 ghq
 gifsicle
 gimme
+gist
 git
 git-archive-all
 git-extras
@@ -118,7 +123,6 @@ git-now
 git-open
 git-quick-stats
 gitless
-gitup
 glide
 global
 gnu-prolog
@@ -178,7 +182,6 @@ itstool
 simeji/jid/jid
 jpeg-turbo
 jpegoptim
-jq
 json-c
 just
 loadimpact/k6/k6
@@ -218,6 +221,7 @@ libwebm
 libwebsockets
 libxdg-basedir
 libxkbcommon
+libxo
 libxslt
 livestreamer
 llvm
@@ -227,7 +231,6 @@ lzip
 lzo
 m-cli
 m4
-macvim
 make
 makedepend
 markdown
@@ -239,6 +242,7 @@ mdp
 media-info
 megacmd
 meson
+micro
 mighttpd2
 minio-mc
 moreutils
@@ -265,7 +269,6 @@ path-extractor
 pdf2svg
 pdfgrep
 peco
-knqyf263/pet/pet
 phantomjs
 pidcat
 pidof
@@ -371,7 +374,6 @@ watch
 watchman
 wdiff
 wego
-wget
 wifi-password
 wput
 wslay
@@ -391,5 +393,3 @@ zip
 zlib
 zopfli
 zsh
-zsh-syntax-highlighting
-zsync

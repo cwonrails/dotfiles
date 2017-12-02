@@ -204,27 +204,15 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   export GPG_TTY
 else
   eval "$(gpg-agent --daemon)"
-  # eval "$(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)"
 fi
-
-## Alternatives to above (still getting warnings when starting new sessions)
-# if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-#   source ~/.gnupg/.gpg-agent-info
-#   export GPG_AGENT_INFO
-# else
-#   eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-#   eval $(gpg-agent --daemon ~/.gnupg/.gpg-agent-info)
-# fi
 
 # go-search
 alias gos='go-search'
 
-# bash completion for Docker.app
-# if [ -f "/Applications/Docker.app" ]; then
+# Docker.app completion
 . /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
 . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
 . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
-# fi
 
 # built-in Go completion
 complete -C /Users/christopherwatson/go/bin/gocomplete go
@@ -238,36 +226,12 @@ fi
 # t completion
 . ~/.t-completion.sh
 
-# yarn completion
-# . ~/.yarn-completion
-
-# Colorls (https://github.com/athityakumar/colorls)
-alias lc='colorls -r'
-
-# nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# lunchy
-# if [ -f "/usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash" ]; then
-#   . /usr/local/lib/ruby/gems/2.4.0/gems/lunchy-0.10.4/extras/lunchy-completion.bash
-# fi
-
-# start Docker-Machine with every login
-# eval "$(docker-machine env default)"
-
-# NativeScript development paths
-
 # shellcheck disable=SC2155
 export JAVA_HOME=$(/usr/libexec/java_home)
-# export ANDROID_HOME=/usr/local/share/android-sdk
 
-###-tns-completion-start-###
-# if [ -f /Users/christopherwatson/.tnsrc ]; then
-#     source /Users/christopherwatson/.tnsrc
-# fi
-###-tns-completion-end-###
-
-### bash-preexec ###
-[ -f /usr/local/etc/profile.d/bash-preexec.sh ] && . /usr/local/etc/profile.d/bash-preexec.sh
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/christopherwatson/.config/yarn/global/node_modules/tabtab/.completions/serverless.bash ] && . /Users/christopherwatson/.config/yarn/global/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/christopherwatson/.config/yarn/global/node_modules/tabtab/.completions/sls.bash ] && . /Users/christopherwatson/.config/yarn/global/node_modules/tabtab/.completions/sls.bash

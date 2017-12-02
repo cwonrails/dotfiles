@@ -44,13 +44,13 @@ Pygments              2.2.0
 pylint                1.7.4    
 pyparsing             2.2.0    
 PyPrint               0.2.6    
-pyroma                2.2      
+pyroma                2.3      
 PyYAML                3.12     
 requests              2.18.4   
 sarge                 0.1.4    
 scandir               1.6      
 scdl                  1.6.10   
-setuptools            37.0.0   
+setuptools            38.2.3   
 six                   1.11.0   
 smmap2                2.0.3    
 sncli                 0.2.0    

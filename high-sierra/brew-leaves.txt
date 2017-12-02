@@ -24,7 +24,7 @@ bats
 bench
 bfg
 binutils
-bit
+boost-python
 borg
 brew-cask-completion
 brotli
@@ -39,9 +39,11 @@ certbot
 certigo
 certstrap
 cgrep
+chamber
 check
 checkstyle
 chrome-cli
+chromedriver
 clang-format
 cloc
 closure-compiler
@@ -68,6 +70,7 @@ diff-pdf
 diff-so-fancy
 diffutils
 dirac
+direnv
 dirmngr
 dmd
 docker-ls
@@ -90,6 +93,7 @@ faas-cli
 fd
 fdupes
 ffind
+kevingimbel/tap/fget
 file-formula
 findutils
 fio
@@ -106,6 +110,7 @@ fswatch
 jhawthorn/fzy/fzy
 gawk
 gcc
+geckodriver
 gem-completion
 geoip
 ghc@8.0
@@ -135,6 +140,7 @@ godep
 gomplate
 googler
 gopass
+kevingimbel/tap/goserve
 gotags
 govendor
 gpatch
@@ -178,6 +184,7 @@ imagemagick@6
 imap-uw
 imlib2
 intltool
+kevingimbel/tap/isup
 itstool
 simeji/jid/jid
 jpeg-turbo
@@ -191,6 +198,7 @@ kompose
 kops
 kube-aws
 kubectx
+kubeless
 kubernetes-helm
 ldns
 legit
@@ -213,6 +221,7 @@ librsync
 libsoxr
 libspiro
 libtermkey
+libtorrent-rasterbar
 libuninameslist
 libusb-compat
 libuv
@@ -223,6 +232,7 @@ libxdg-basedir
 libxkbcommon
 libxo
 libxslt
+kevingimbel/tap/license
 livestreamer
 llvm
 luvit
@@ -288,6 +298,7 @@ re2c
 reattach-to-user-namespace
 rename
 repo
+restic
 rhino
 rlwrap
 rmlint
@@ -306,6 +317,7 @@ screen
 screenfetch
 screenresolution
 selecta
+selenium-server-standalone
 shared-mime-info
 shellcheck
 shellshare
@@ -316,10 +328,10 @@ sift
 slackcat
 sngrep
 socat
+spdylay
 speedtest-cli
 speexdsp
 sphinx-doc
-spidermonkey
 ssh-audit
 ssh-copy-id
 sshrc
@@ -393,3 +405,4 @@ zip
 zlib
 zopfli
 zsh
+zsh-syntax-highlighting

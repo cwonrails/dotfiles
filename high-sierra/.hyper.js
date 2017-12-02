@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'canary',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 14,
 
     // font family with optional fallbacks
     fontFamily: 'Operator Mono SSm for Powerline, "Menlo", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -115,7 +115,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-solarized-vim"],
+  plugins: [""],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

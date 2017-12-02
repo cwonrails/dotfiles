@@ -167,15 +167,8 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
-## nvm ##
-alias ns='nvm use system'
-alias n8='nvm use v8'
-alias n9='nvm use v9'
-
 ## Package manager updates ##
-# alias ua='bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && pu && pu3 npm cache verify && yarn global upgrade'
-# alias ua='gitup && bu && gu && vu && ggu && tu && au && uu && upgrade-nvm && npm cache verify && yarn global upgrade'
-alias ua='gitup && bu && ggu && tu && gu && vu && yarn global upgrade'
+alias ua='au && uu && gu && ggu && gitup && bu && tu && vu && upgrade-nvm && yarn global upgrade-interactive'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -207,13 +200,13 @@ alias ggu="go get -u \
              github.com/russross/blackfriday-tool \
              github.com/sourcegraph/go-langserver \
              github.com/tj/go-search \
-             github.com/tj/mmake/cmd/mmake \
              github.com/tj/node-prune/cmd/node-prune \
              github.com/zquestz/s \
              github.com/whyrusleeping/gx \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
 
+# github.com/tj/mmake/cmd/mmake \
 # gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira \
 
 # Ruby: Update and clean up all gems

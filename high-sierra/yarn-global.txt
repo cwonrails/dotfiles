@@ -71,4 +71,4 @@ info "webdriver-manager@12.0.6" has binaries:
 info "write-good@0.11.3" has binaries:
    - write-good
    - writegood
-Done in 4.98s.
+Done in 4.71s.

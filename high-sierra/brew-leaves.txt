@@ -17,7 +17,6 @@ wallix/awless/awless
 aws-shell
 azure-cli
 bash-completion@2
-bash-preexec
 bashdb
 bats
 bench
@@ -138,7 +137,6 @@ gnustep-make
 godep
 gomplate
 googler
-gopass
 kevingimbel/tap/goserve
 gotags
 govendor
@@ -344,7 +342,6 @@ svg2png
 svgcleaner
 swig
 sysdig
-t-completion
 taglib
 tbb
 tcl-tk

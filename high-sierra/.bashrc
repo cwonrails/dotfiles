@@ -82,16 +82,18 @@ export VISUAL=vim
 set -o vi
 
 # Enable Homebrew-installed bash completion
-if [ -f "/usr/local/etc/bash_completion" ]; then
-  . "/usr/local/etc/bash_completion"
+[ -f /etc/bash_completion ] && . /etc/bash_completion
+
+if [ -d ~/.bash_completion.d ]; then
+  for file in ~/.bash_completion.d/*; do
+    . "$file"
+  done
 fi
 
-if [ -f "/usr/local/etc/bash_completion.d" ]; then
-  . "/usr/local/etc/bash_completion.d"
-fi
-
-if [ -f "/usr/local/share/bash-completion/bash_completion" ]; then
-  . "/usr/local/share/bash-completion/bash_completion"
+if [ -d /usr/local/etc/bash_completion.d ]; then
+  for file in /usr/local/etc/bash_completion.d/*; do
+    . "$file"
+  done
 fi
 
 # Enable grc (generic colorizer)
@@ -156,9 +158,6 @@ bind '"\e[B": history-search-forward'
 # Enable Travis CI (auto-inserted by Travis gem)
 [ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 
-# Use Homebrew-installed curl
-export PATH="usr/local/opt/curl/bin:$PATH"
-
 ## Colors ##
 # Use coreutils `ls` if possible
 hash gls >/dev/null 2>&1 || alias gls="ls"
@@ -217,25 +216,9 @@ alias gos='go-search'
 # built-in Go completion
 complete -C /Users/christopherwatson/go/bin/gocomplete go
 
-# no idea what this completion file alias does?
-if [ -d ~/.bash_completion.d ]; then
-  for file in ~/.bash_completion.d/*; do
-    . "$file"
-  done
-fi
-
 # t completion
 . ~/t/etc/t-completion.sh
 
 # shellcheck disable=SC2155
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/christopherwatson/.config/yarn/global/node_modules/tabtab/.completions/serverless.bash ] && . /Users/christopherwatson/.config/yarn/global/node_modules/tabtab/.completions/serverless.bash
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/christopherwatson/.config/yarn/global/node_modules/tabtab/.completions/sls.bash ] && . /Users/christopherwatson/.config/yarn/global/node_modules/tabtab/.completions/sls.bash
-
-
-if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi

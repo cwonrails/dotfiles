@@ -7,6 +7,7 @@ chromium
 daisydisk
 docker
 firefoxdeveloperedition
+firefoxnightly
 font-anonymous-pro
 font-anonymouspro-nerd-font
 font-anonymouspro-nerd-font-mono
@@ -126,7 +127,6 @@ font-ubuntu
 font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
-hyper
 hyper-canary
 imagealpha
 imageoptim

@@ -167,6 +167,13 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
+## yarn ##
+# List yarn global installs
+alias yg='yarn global list'
+
+# List top-level npm local modules
+alias yl='yarn list'
+
 ## Package manager updates ##
 alias ua='au && uu && gu && ggu && gitup && bu && tu && vu && upgrade-nvm && yarn global upgrade-interactive'
 

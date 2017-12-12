@@ -18,7 +18,6 @@ aws-shell
 azure-cli
 bash-completion@2
 bash-preexec
-bash-snippets
 bashdb
 bats
 bench
@@ -252,7 +251,6 @@ mdp
 media-info
 megacmd
 meson
-micro
 mighttpd2
 minio-mc
 moreutils
@@ -274,6 +272,7 @@ openssh
 opusfile
 caryll/tap/otfcc-mac64
 p7zip
+pandoc
 par2
 path-extractor
 pdf2svg
@@ -291,6 +290,7 @@ pngquant
 pre-commit
 proctools
 psgrep
+pup
 pv
 ranger
 rclone

@@ -422,8 +422,8 @@ nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
 
 " Check JSX files with both stylelint and eslint
-let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
-let g:ale_linter_aliases = {'jsx': 'css'}
+" let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+" let g:ale_linter_aliases = {'jsx': 'css'}
 
 let g:ale_linters = {
   \ 'asm': ['gcc'],
@@ -446,7 +446,8 @@ let g:ale_linters = {
   \ 'haml': ['haml-lint'],
   \ 'handlebars': ['ember-template-lint'],
   \ 'html': ['htmlhint','tidy'],
-  \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint'],
+  \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
+  \ 'javascript.jsx': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
   \ 'json': ['jsonlint','prettier'],
   \ 'lua': ['luacheck'],
   \ 'markdown': ['proselint','vale'],

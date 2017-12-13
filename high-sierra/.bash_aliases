@@ -33,10 +33,6 @@ alias mkdir='mkdir -p'
 # Create new project
 alias np='cp ~/new-project/.* `pwd`; cp ~/new-project/* `pwd`'
 
-## This has now been replaced by npx in npm 5
-# Use local npm executables if available
-alias npm-exec='PATH=$(npm bin):$PATH'
-
 # Open current directory in OSX Finder
 alias o='open .'
 
@@ -67,13 +63,13 @@ alias vr='vim ~/.vimrc'
 alias dfbu='gpl && dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cp ~/global-package-lists/*.txt ~/localdotfilesbackup; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
+alias dflb='cp ~/global-package-lists/*.txt ~/localdotfilesbackup; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cp ~/global-package-lists/*.txt ~/Dropbox/dotfiles; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox/dotfiles'
+alias dfdb='cp ~/global-package-lists/*.txt ~/Dropbox/dotfiles; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox/dotfiles'
 
 # Back up dotfiles to public github repo
-alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hyper.js,hushlogin,inputrc,sift.conf,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
+alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
 
 # Create text files with lists of globally installed package binaries
 alias gpl='cd ~; yarn global list > ~/global-package-lists/yarn-global.txt; cd ~/global-package-lists; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl; pip2 list > pip2.txt; pip3 list > pip3.txt'
@@ -82,6 +78,7 @@ alias gpl='cd ~; yarn global list > ~/global-package-lists/yarn-global.txt; cd ~
 # shellcheck disable=SC2026
 alias ngl='npm -g ls --depth=0 | cut -c 11- | sed -e '1d' > npm-global.txt'
 
+# Fast updating of git repositories
 alias gup='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;'
 
 # TJ Hollowaychuck's git aliases (customized)
@@ -167,15 +164,20 @@ alias ng='npm -g ls --depth=0'
 # List top-level npm local modules
 alias nl='npm ls --depth=0'
 
+## nvm ##
+alias ns='nvm use system'
+alias n8='nvm use v8'
+alias n9='nvm use v9'
+
 ## yarn ##
 # List yarn global installs
 alias yg='yarn global list'
 
-# List top-level npm local modules
-alias yl='yarn list'
+# Update global yarn packages
+alias ygu='yarn global upgrade --latest'
 
 ## Package manager updates ##
-alias ua='au && uu && gu && ggu && gitup && bu && tu && vu && upgrade-nvm && yarn global upgrade-interactive'
+alias ua='au; uu; gu; ggu; tu; diu; gitup; vu; bu; pu; ygu'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -207,23 +209,26 @@ alias ggu="go get -u \
              github.com/russross/blackfriday-tool \
              github.com/sourcegraph/go-langserver \
              github.com/tj/go-search \
+             github.com/tj/mmake/cmd/mmake \
              github.com/tj/node-prune/cmd/node-prune \
              github.com/zquestz/s \
              github.com/whyrusleeping/gx \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
 
-# github.com/tj/mmake/cmd/mmake \
-# gopkg.in/Netflix-Skunkworks/go-jira.v1/cmd/jira \
-
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
 
-# Python: Upgrade all pip packages
-alias pu="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+# Python: Upgrade all pip2 and pip3 packages
+alias pu="p2u; p3u"
 
-# Python: Upgrade all pip3 packages
-alias pu3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U"
+# shellcheck disable=SC1117
+# Python 2: Upgrade all pip2 packages
+alias p2u="pip2 freeze --local |sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo; echo Processing \1 ...; pip2 install -U \1/p' |sh"
+
+# shellcheck disable=SC1117
+# Python 3: Upgrade all pip3 packages
+alias p3u="pip3 freeze --local |sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo; echo Processing \1 ...; pip3 install -U \1/p' |sh"
 
 # Tmux: Update, install, and remove unused plugins
 alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'

@@ -36,8 +36,6 @@ font-firacode-nerd-font
 font-firacode-nerd-font-mono
 font-firamono-nerd-font
 font-firamono-nerd-font-mono
-font-fontawesome
-font-foundation-icons
 font-gentium-basic
 font-gentium-book-basic
 font-gentium-plus
@@ -62,7 +60,6 @@ font-inconsolata-g-for-powerline
 font-inconsolata-lgc
 font-inconsolata-nerd-font
 font-inconsolata-nerd-font-mono
-font-ionicons
 font-iosevka-nerd-font
 font-iosevka-nerd-font-mono
 font-league-gothic
@@ -76,7 +73,6 @@ font-liberation-sans
 font-liberationmono-nerd-font
 font-liberationmono-nerd-font-mono
 font-ligature-symbols
-font-material-icons
 font-materialdesignicons-webfont
 font-menlo-for-powerline
 font-merriweather
@@ -136,7 +132,6 @@ kap
 karabiner
 keyboard-cleaner
 limechat
-mailspring
 mpv
 omnifocus
 provisioning

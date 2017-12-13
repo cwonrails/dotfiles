@@ -222,3 +222,7 @@ complete -C /Users/christopherwatson/go/bin/gocomplete go
 # shellcheck disable=SC2155
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

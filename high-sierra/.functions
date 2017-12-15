@@ -8,71 +8,86 @@ function lazygit() {
 
 # Open a file with iA Writer
 function writer() {
-    open "$@" -a ia\ Writer
+  open "$@" -a ia\ Writer
 }
 
 function upgrade-nvm() {
-(
-  cd "$NVM_DIR"
-  git fetch origin
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-) && . "$NVM_DIR/nvm.sh"
+  (
+    cd "$NVM_DIR"
+    git fetch origin
+    git checkout $(git describe --abbrev=0 --tags --match "v[0-9]*" origin)
+  ) && . "$NVM_DIR/nvm.sh"
+}
+
+function upgrade-t() {
+  (
+    cd "$HOME/t"
+    git fetch origin
+    git checkout $(git describe --abbrev=0 --tags --match "v[0-9]*" origin)
+  )
+}
+
+function upgrade-z() {
+  (
+    cd "$HOME/z"
+    git fetch origin
+    git checkout $(git describe --abbrev=0 --tags --match "v[0-9]*" origin)
+  )
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
-  local tmpFile="${@%/}.tar";
-  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
+  local tmpFile="${@%/}.tar"
+  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
 
   size=$(
-    stat -f"%z" "${tmpFile}" 2> /dev/null; # macOS `stat`
-    stat -c"%s" "${tmpFile}" 2> /dev/null;  # GNU `stat`
-  );
+    stat -f"%z" "${tmpFile}" 2>/dev/null # macOS `stat`
+    stat -c"%s" "${tmpFile}" 2>/dev/null # GNU `stat`
+  )
 
-  local cmd="";
-  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+  local cmd=""
+  if ((size < 52428800)) && hash zopfli 2>/dev/null; then
     # the .tar file is smaller than 50 MB and Zopfli is available; use it
-    cmd="zopfli";
+    cmd="zopfli"
   else
-    if hash pigz 2> /dev/null; then
-      cmd="pigz";
+    if hash pigz 2>/dev/null; then
+      cmd="pigz"
     else
-      cmd="gzip";
-    fi;
-  fi;
+      cmd="gzip"
+    fi
+  fi
 
-  echo "Compressing .tar ($((size / 1000)) kB) using \`${cmd}\`…";
-  "${cmd}" -v "${tmpFile}" || return 1;
-  [ -f "${tmpFile}" ] && rm "${tmpFile}";
+  echo "Compressing .tar ($((size / 1000)) kB) using \`${cmd}\`…"
+  "${cmd}" -v "${tmpFile}" || return 1
+  [ -f "${tmpFile}" ] && rm "${tmpFile}"
 
   zippedSize=$(
-    stat -f"%z" "${tmpFile}.gz" 2> /dev/null; # macOS `stat`
-    stat -c"%s" "${tmpFile}.gz" 2> /dev/null; # GNU `stat`
-  );
+    stat -f"%z" "${tmpFile}.gz" 2>/dev/null # macOS `stat`
+    stat -c"%s" "${tmpFile}.gz" 2>/dev/null # GNU `stat`
+  )
 
-  echo "${tmpFile}.gz ($((zippedSize / 1000)) kB) created successfully.";
+  echo "${tmpFile}.gz ($((zippedSize / 1000)) kB) created successfully."
 }
 
 # Compare original and gzipped file size
 function gz() {
-  local origsize=$(wc -c < "$1");
-  local gzipsize=$(gzip -c "$1" | wc -c);
-  local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
-  printf "orig: %d bytes\n" "$origsize";
-  printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
+  local origsize=$(wc -c <"$1")
+  local gzipsize=$(gzip -c "$1" | wc -c)
+  local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l)
+  printf "orig: %d bytes\n" "$origsize"
+  printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
 }
 
 # Determine size of a file or total size of a directory
 function fs() {
-  if du -b /dev/null > /dev/null 2>&1; then
-    local arg=-sbh;
+  if du -b /dev/null >/dev/null 2>&1; then
+    local arg=-sbh
   else
-    local arg=-sh;
+    local arg=-sh
   fi
   if [[ -n "$@" ]]; then
-    du $arg -- "$@";
+    du $arg -- "$@"
   else
-    du $arg .[^.]* ./*;
-  fi;
+    du $arg .[^.]* ./*
+  fi
 }
-

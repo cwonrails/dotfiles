@@ -24,9 +24,6 @@ alias insatll='install'
 # Get ip address
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
-# just
-# alias j='just'
-
 # Enable making nested directories by default
 alias mkdir='mkdir -p'
 
@@ -38,6 +35,9 @@ alias o='open .'
 
 # Reload shell
 alias r='exec $SHELL -l'
+
+# Reload bash
+alias rb='. ~/.bashrc'
 
 # Correct accidental 'sl'
 alias sl='ls'
@@ -142,14 +142,14 @@ alias gh='cd ~/github'
 # Go to GitHub clones directory
 alias ghc='cd ~/github/clones'
 
+# Go to GitHub repos directory
+alias ghd='cd ~/github/repos/public/dotfiles'
+
 # Go to GitHub forks directory
 alias ghf='cd ~/github/forks'
 
 # Go to GitHub repos directory
 alias ghr='cd ~/github/repos'
-
-# Go to GitHub repos directory
-alias ghdot='cd ~/github/repos/public/dotfiles'
 
 # Go to home directory
 alias hd='cd ~'
@@ -173,11 +173,14 @@ alias n9='nvm use v9'
 # List yarn global installs
 alias yg='yarn global list'
 
+# Install global yarn package
+alias yga='yarn global add'
+
 # Update global yarn packages
 alias ygu='yarn global upgrade --latest'
 
 ## Package manager updates ##
-alias ua='au; uu; gu; ggu; tu; diu; gitup; vu; bu; pu; ygu'
+alias ua='au; uu; gu; ggu; tu; diu; gitup; vu; bu; pu; uy; ycu; ygu'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -236,8 +239,14 @@ alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/
 # Upgrade up
 alias uu='curl -sfL https://raw.githubusercontent.com/apex/up/master/install.sh | sh'
 
+# Upgrade Yarn Nightly
+alias uy='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
+
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
+
+# Upgrade yarn-completion
+alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash'
 
 # Maintain ligatures when sshing into server
 alias ssh='TERM=xterm-256color ssh'

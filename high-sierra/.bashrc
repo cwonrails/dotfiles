@@ -9,8 +9,12 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-# LLVM
-export PATH="/usr/local/opt/llvm/bin:$PATH"
+# Set vim as default editor
+export EDITOR=vim
+export VISUAL=vim
+
+# Enable vi mode in shell
+set -o vi
 
 # GNU coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -24,12 +28,12 @@ export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export MANPATH="/usr/local/opt/gnu-getopt/share/man:$MANPATH"
 
+# GNU LLVM
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
 # GNU make
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
-
-# mmake (Modern Make) https://github.com/tj/mmake
-alias make='mmake'
 
 # GNU ncurses
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
@@ -51,17 +55,12 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # Homebrew Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export MANPATH="/usr/local/opt/python2/share/man:$MANPATH"
 
-# brew command-not-found
-if brew command command-not-found-init >/dev/null; then
-  eval "$(brew command-not-found-init)"
-fi
+# z https://github.com/rupa/z
+. "$HOME/z/z.sh"
 
-# z
-if [ -f "/usr/local/etc/profile.d/z.sh" ]; then
-  . "/usr/local/etc/profile.d/z.sh"
-fi
+# mmake (Modern Make) https://github.com/tj/mmake
+alias make='mmake'
 
 # Source additional dotfiles
 for file in ~/.{aliases.local,bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
@@ -70,16 +69,14 @@ done
 unset file
 
 # Ignore shellcheck "Cannot follow non-constant source" errors
-if which shellcheck >/dev/null; then
+if which shellcheck >/dev/null 2>&1; then
   export SHELLCHECK_OPTS="-e SC1090,SC1091"
 fi
 
-# Set vim as default editor
-export EDITOR=vim
-export VISUAL=vim
-
-# Enable vi mode in shell
-set -o vi
+# brew command-not-found
+if brew command command-not-found-init >/dev/null 2>&1; then
+  eval "$(brew command-not-found-init)";
+fi
 
 # Enable Homebrew-installed bash completion
 [ -f /etc/bash_completion ] && . /etc/bash_completion
@@ -96,21 +93,18 @@ if [ -d /usr/local/etc/bash_completion.d ]; then
   done
 fi
 
-# Enable grc (generic colorizer)
-# [ -f /usr/local/etc/grc.bashrc ] && . /usr/local/etc/grc.bashrc
-
 # Enable hub and alias it to git
-if which hub >/dev/null; then
+if which hub >/dev/null 2>&1; then
   eval "$(hub alias -s)"
 fi
 
 # Enable thefuck if installed
-if which thefuck >/dev/null; then
+if which thefuck >/dev/null 2>&1; then
   eval "$(thefuck --alias)"
 fi
 
 # Go #
-if which go >/dev/null; then
+if which go >/dev/null 2>&1; then
   export PATH=/usr/local/opt/go/libexec/bin:$PATH
   export GOPATH="$HOME/go"
   export GOOS="darwin"
@@ -118,11 +112,8 @@ if which go >/dev/null; then
   export PATH="$GOBIN:$PATH"
 fi
 
-# Groovy #
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
-
-# PHP 7.1 #
-# export PATH="usr/local/opt/php71/bin/php:$PATH"
+# PHP #
+export PATH="usr/local/opt/php72/bin/php:$PATH"
 
 # Rust #
 
@@ -219,10 +210,11 @@ complete -C /Users/christopherwatson/go/bin/gocomplete go
 # t completion
 . ~/t/etc/t-completion.sh
 
-# shellcheck disable=SC2155
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"
+. "$HOME/.yarn-completion"

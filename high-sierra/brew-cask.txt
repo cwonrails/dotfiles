@@ -1,7 +1,6 @@
 atom
 brave
 caffeine
-calibre
 caprine
 chromium
 daisydisk
@@ -144,6 +143,7 @@ skype
 sublime-text-dev
 the-unarchiver
 transmission
+vagrant
 virtualbox
 visual-studio-code
 webstorm

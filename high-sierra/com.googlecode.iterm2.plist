@@ -1749,23 +1749,23 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>934 498 937 512 0 0 1920 1177 </string>
+	<string>934 498 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2 0 955 1177 0 0 1920 1177 </string>
+	<string>962 0 955 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>962 0 955 1177 0 0 1920 1177 </string>
+	<string>2 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>962 0 955 1177 0 0 1920 1177 </string>
+	<string>962 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>962 0 955 1177 0 0 1920 1177 </string>
+	<string>2 0 955 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>2 0 955 1177 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
 	<string>962 0 955 1177 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>2 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>2 0 955 1177 0 0 1920 1177 </string>
+	<string>962 0 955 1177 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_A47A44B1-E3C7-4A0B-9378-436DF08112FA_selection</key>
@@ -3836,7 +3836,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-13T16:24:18Z</date>
+	<date>2017-12-15T13:08:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

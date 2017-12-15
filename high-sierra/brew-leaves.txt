@@ -10,11 +10,11 @@ asciidoc
 asciinema
 asio
 assh
-atlassian/tap/atlassian-plugin-sdk
 autoconf-archive
 automake
 wallix/awless/awless
 aws-shell
+awscli
 azure-cli
 bash-completion@2
 bashdb
@@ -51,7 +51,6 @@ cmus
 compose2kube
 composer-completion
 confuse
-conjure-up
 coreutils
 cppcheck
 cscope
@@ -61,7 +60,6 @@ ctop
 cunit
 cython
 dante
-dep
 devd
 dfc
 diff-pdf
@@ -126,7 +124,7 @@ git-now
 git-open
 git-quick-stats
 gitless
-glide
+gitup
 global
 gnu-prolog
 gnu-sed
@@ -134,20 +132,17 @@ gnu-tar
 gnu-which
 gnuplot
 gnustep-make
-godep
+go
 gomplate
 googler
 kevingimbel/tap/goserve
 gotags
-govendor
 gpatch
 gperftools
-gpm
 gradle
 graphicsmagick
 grc
 grep
-groovy
 gst-plugins-bad
 gst-plugins-good
 gst-plugins-ugly
@@ -186,6 +181,7 @@ itstool
 simeji/jid/jid
 jpeg-turbo
 jpegoptim
+jq
 json-c
 just
 loadimpact/k6/k6
@@ -221,7 +217,6 @@ libtermkey
 libtorrent-rasterbar
 libuninameslist
 libusb-compat
-libuv
 libvterm
 libwebm
 libwebsockets
@@ -255,13 +250,13 @@ moreutils
 mosh
 mp3splt
 mpc
-mtr
 mycli
 nano
 nasm
 ncdu
 netcat
 nnn
+node
 noti
 oath-toolkit
 opam
@@ -279,6 +274,7 @@ peco
 phantomjs
 pidcat
 pidof
+pigz
 pinentry-mac
 pip-completion
 pipes-sh
@@ -290,10 +286,12 @@ proctools
 psgrep
 pup
 pv
+pwgen
 ranger
 rclone
 re2c
 reattach-to-user-namespace
+redis
 rename
 repo
 restic
@@ -383,6 +381,7 @@ watch
 watchman
 wdiff
 wego
+wget
 wifi-password
 wput
 wslay
@@ -392,7 +391,6 @@ xmlstarlet
 xmlto
 xonsh
 yajl
-yarn
 yasm
 you-get
 youtube-dl

@@ -143,7 +143,7 @@ alias gh='cd ~/github'
 alias ghc='cd ~/github/clones'
 
 # Go to GitHub repos directory
-alias ghd='cd ~/github/repos/public/dotfiles'
+alias ghdf='cd ~/github/repos/public/dotfiles'
 
 # Go to GitHub forks directory
 alias ghf='cd ~/github/forks'
@@ -166,6 +166,7 @@ alias nl='npm ls --depth=0'
 
 ## nvm ##
 alias ns='nvm use system'
+alias n6='nvm use v6'
 alias n8='nvm use v8'
 alias n9='nvm use v9'
 

@@ -1,6 +1,7 @@
 atom
 brave
 caffeine
+calibre
 caprine
 chromium
 daisydisk
@@ -122,7 +123,6 @@ font-ubuntu
 font-ubuntu-mono-derivative-powerline
 font-ubuntumono-nerd-font
 font-ubuntumono-nerd-font-mono
-hyper-canary
 imagealpha
 imageoptim
 iterm2

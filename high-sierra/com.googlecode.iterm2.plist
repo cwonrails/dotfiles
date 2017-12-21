@@ -18,6 +18,8 @@
 	<true/>
 	<key>ConvertDosNewlines</key>
 	<true/>
+	<key>CopyLastNewline</key>
+	<false/>
 	<key>CopySelection</key>
 	<true/>
 	<key>Custom Color Presets</key>
@@ -1692,6 +1694,8 @@
 	<true/>
 	<key>IRMemory</key>
 	<integer>0</integer>
+	<key>JobName</key>
+	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSAllowsDefaultLineBreakStrategy</key>
@@ -1749,13 +1753,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>934 498 796 473 0 0 1920 1177 </string>
+	<string>-1825 627 796 473 -1920 173 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>962 0 955 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2 726 730 451 0 0 1920 1177 </string>
+	<string>2 0 955 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>962 726 730 451 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -3188,6 +3192,8 @@
 			<true/>
 			<key>Blur</key>
 			<false/>
+			<key>Blur Radius</key>
+			<real>0.10000000000000001</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3355,13 +3361,6 @@
 					<key>Text</key>
 					<string>[1;6A</string>
 				</dict>
-				<key>0xf700-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x41</string>
-				</dict>
 				<key>0xf701-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -3382,13 +3381,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;6B</string>
-				</dict>
-				<key>0xf701-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x42</string>
 				</dict>
 				<key>0xf702-0x220000</key>
 				<dict>
@@ -3411,13 +3403,6 @@
 					<key>Text</key>
 					<string>[1;6D</string>
 				</dict>
-				<key>0xf702-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
-				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -3438,13 +3423,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;6C</string>
-				</dict>
-				<key>0xf703-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -3597,11 +3575,11 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>9999</integer>
+			<integer>1000</integer>
 			<key>Scrollback With Status Bar</key>
-			<true/>
+			<false/>
 			<key>Scrollback in Alternate Screen</key>
-			<true/>
+			<false/>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3637,7 +3615,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>3</integer>
+			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unicode Version</key>
@@ -3800,30 +3778,12 @@
 			<key>Action</key>
 			<string>kPasteFromClipboardPointerAction</string>
 		</dict>
-		<key>Gesture,ThreeFingerSwipeDown,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kPrevWindowPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeLeft,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kPrevTabPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeRight,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kNextTabPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeUp,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kNextWindowPointerAction</string>
-		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/christopherwatson/github/repos/public/dotfiles/high-sierra</string>
 	<key>PromptOnQuit</key>
+	<false/>
+	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
@@ -3836,10 +3796,12 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-15T13:08:59Z</date>
+	<date>2017-12-16T15:55:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
+	<false/>
+	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
@@ -3848,9 +3810,9 @@
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
-	<false/>
+	<true/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.27195763221153846</real>
+	<real>0.22034254807692305</real>
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>SwitchPaneModifier</key>

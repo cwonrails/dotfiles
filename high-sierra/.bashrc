@@ -37,6 +37,7 @@ export MANPATH="/usr/local/opt/make/libexec/gnuman:$MANPATH"
 
 # GNU ncurses
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export MANPATH="/usr/local/opt/ncurses/share/man:$MANPATH"
 
 # GNU sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -52,6 +53,7 @@ export MANPATH="/usr/local/opt/zip/share/man:$MANPATH"
 
 # Homebrew curl
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
 
 # Homebrew Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
@@ -216,5 +218,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # yarn
-export PATH="$HOME/.yarn/bin:$PATH"
-. "$HOME/.yarn-completion"
+# export PATH="$HOME/.yarn/bin:$PATH"
+# . "$HOME/.yarn-completion"

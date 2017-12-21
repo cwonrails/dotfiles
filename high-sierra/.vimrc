@@ -4,25 +4,29 @@ end
 
 call plug#begin('~/.vim/plugged')
 
+" Plug 'ahmedelgabri/vim-ava-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+" Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
-Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
-Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
+" Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
+" Plug 'direnv/direnv.vim'
+" Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
+" Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'epilande/vim-es2015-snippets', { 'for': ['javascript', 'jsx'] }
-Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'jsx'] }
+" Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'epilande/vim-es2015-snippets',  { 'for': ['javascript', 'jsx', 'javascript.jsx'] }
+Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'jsx', 'javascript.jsx'] }
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'fleischie/vim-styled-components'
+Plug 'godlygeek/tabular'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
 Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -33,55 +37,60 @@ Plug 'isomoar/vim-css-to-inline'
 Plug 'isRuslan/vim-es6'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
-Plug 'joukevandermaas/vim-ember-hbs'
+" Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vader.vim', { 'for': 'vim' }
-Plug 'kewah/vim-stylefmt', { 'for': ['css', 'scss'] }
+" Plug 'junegunn/vader.vim', { 'for': 'vim' }
+" Plug 'kewah/vim-stylefmt', { 'for': ['css', 'scss'] }
 Plug 'majutsushi/tagbar'
-Plug 'matt-deacalion/vim-systemd-syntax'
+" Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
+" Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 " Plug 'metakirby5/codi.vim'
 " Plug 'mhinz/vim-startify'
+" Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'jsx', 'javascript.jsx'] }
+Plug 'othree/html5.vim'
+" Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+" Plug 'othree/xml.vim', { 'for': 'xml' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'pbrisbin/vim-mkdir'
+" Plug 'phpstan/vim-phpstan', {'for': 'php'}
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'rm -rf yarn.lock node_modules && yarn install',
   \ 'for': ['javascript', 'json', 'graphql'] }
-Plug 'mxw/vim-jsx'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'jsx'] }
-Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-Plug 'othree/xml.vim', { 'for': 'xml' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'pbrisbin/vim-mkdir'
-Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'posva/vim-vue', { 'for': 'vue' }
-Plug 'rizzatti/dash.vim'
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+" Plug 'Quramy/tsuquyomi', { 'for' typescript' }
+" Plug 'rizzatti/dash.vim'
+" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
 Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sirver/ultiSnips'
-Plug 'StanAngeloff/php.vim', { 'for': 'php'}
+" Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
-Plug 'ternjs/tern_for_vim', { 'do': 'yarn install' }
+" Plug 'ternjs/tern_for_vim', { 'do': 'yarn install' }
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+" Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
@@ -325,7 +334,7 @@ let g:UltiSnipsEditSplit='vertical'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
+" let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
 
 " ----------------------------------------------------------------------------
 " vim-airline
@@ -389,7 +398,7 @@ let g:jsx_ext_required = 1
 " vim-esearch
 " ----------------------------------------------------------------------------
 let g:esearch = {
-  \ 'adapter':    'ag',
+  \ 'adapter':    'rg',
   \ 'backend':    'vimproc',
   \ 'out':        'win',
   \ 'batch_size': 1000,

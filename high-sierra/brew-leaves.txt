@@ -105,7 +105,6 @@ freetds
 fswatch
 jhawthorn/fzy/fzy
 gawk
-gcc
 geckodriver
 gem-completion
 geoip
@@ -256,7 +255,6 @@ nasm
 ncdu
 netcat
 nnn
-node
 noti
 oath-toolkit
 opam
@@ -265,7 +263,8 @@ openssh
 opusfile
 caryll/tap/otfcc-mac64
 p7zip
-pandoc
+pandoc-citeproc
+pandoc-crossref
 par2
 path-extractor
 pdf2svg
@@ -391,6 +390,7 @@ xmlstarlet
 xmlto
 xonsh
 yajl
+yarn
 yasm
 you-get
 youtube-dl

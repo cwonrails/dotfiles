@@ -181,7 +181,7 @@ alias yga='yarn global add'
 alias ygu='yarn global upgrade --latest'
 
 ## Package manager updates ##
-alias ua='au; uu; gu; ggu; tu; diu; gitup; vu; bu; pu; uy; ycu; ygu'
+alias ua='au; uu; gu; ggu; tu; diu; gitup; bu; vu; ycu'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -241,7 +241,7 @@ alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/
 alias uu='curl -sfL https://raw.githubusercontent.com/apex/up/master/install.sh | sh'
 
 # Upgrade Yarn Nightly
-alias uy='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
+# alias uy='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
 
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'

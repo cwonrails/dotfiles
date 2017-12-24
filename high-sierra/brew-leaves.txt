@@ -15,7 +15,6 @@ automake
 wallix/awless/awless
 aws-shell
 awscli
-azure-cli
 bash-completion@2
 bashdb
 bats
@@ -78,7 +77,6 @@ duo_unix
 dwarfutils
 ed
 editorconfig
-elm
 elm-format
 enchant
 entr
@@ -108,7 +106,6 @@ gawk
 geckodriver
 gem-completion
 geoip
-ghc@8.0
 ghi
 ghq
 gifsicle
@@ -131,14 +128,13 @@ gnu-tar
 gnu-which
 gnuplot
 gnustep-make
-go
 gomplate
 googler
 kevingimbel/tap/goserve
 gotags
+gox
 gpatch
 gperftools
-gradle
 graphicsmagick
 grc
 grep
@@ -150,7 +146,6 @@ gtk-doc
 guetzli
 guile
 gutenberg
-gwt
 gzip
 hadolint
 hashcat
@@ -244,6 +239,7 @@ media-info
 megacmd
 meson
 mighttpd2
+minio/stable/minio
 minio-mc
 moreutils
 mosh
@@ -263,8 +259,6 @@ openssh
 opusfile
 caryll/tap/otfcc-mac64
 p7zip
-pandoc-citeproc
-pandoc-crossref
 par2
 path-extractor
 pdf2svg
@@ -345,6 +339,7 @@ tcl-tk
 tcpdump
 td
 terminal-notifier
+terraform
 testssl
 texi2html
 texinfo

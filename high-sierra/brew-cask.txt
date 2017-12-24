@@ -137,13 +137,11 @@ provisioning
 quicklook-csv
 quicklook-json
 retinizer
-rightfont
 safari-technology-preview
 skype
 sublime-text-dev
 the-unarchiver
 transmission
-vagrant
 virtualbox
 visual-studio-code
 webstorm

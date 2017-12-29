@@ -29,6 +29,7 @@ Plug 'fleischie/vim-styled-components'
 Plug 'godlygeek/tabular'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
+Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'herringtondarkholme/yats.vim', { 'for': 'typescript' }
@@ -39,6 +40,7 @@ Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
 " Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
+Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/vader.vim', { 'for': 'vim' }
@@ -64,8 +66,8 @@ Plug 'pbrisbin/vim-mkdir'
 " Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'rm -rf yarn.lock node_modules && yarn install',
-  \ 'for': ['javascript', 'json', 'graphql'] }
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 Plug 'posva/vim-vue', { 'for': 'vue' }
 " Plug 'Quramy/tsuquyomi', { 'for' typescript' }
 " Plug 'rizzatti/dash.vim'
@@ -413,8 +415,43 @@ let g:tmuxcomplete#trigger = 'omnifunc'
 " ----------------------------------------------------------------------------
 "  vim-prettier
 " ----------------------------------------------------------------------------
-let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
+let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
+
+" max line length that prettier will wrap on
+" let g:prettier#config#print_width = 80
+
+" number of spaces per indentation level
+" let g:prettier#config#tab_width = 2
+
+" use tabs over spaces
+" let g:prettier#config#use_tabs = 'false'
+
+" print semicolons
+" let g:prettier#config#semi = 'true'
+" let g:prettier#config#semi = 'false'
+
+" single quotes over double quotes
+" let g:prettier#config#single_quote = 'true'
+
+" print spaces between brackets
+" let g:prettier#config#bracket_spacing = 'false'
+
+" put > on the last line instead of new line
+" let g:prettier#config#jsx_bracket_same_line = 'true'
+
+" none|es5|all
+" let g:prettier#config#trailing_comma = 'all'
+
+" flow|babylon|typescript|css|less|scss|json|graphql|markdown
+" let g:prettier#config#parser = 'flow'
+
+" cli-override|file-override|prefer-file
+" let g:prettier#config#config_precedence = 'prefer-file'
+
+" always|never|preserve
+" let g:prettier#config#prose_wrap = 'preserve'
 
 " ----------------------------------------------------------------------------
 " ale settings
@@ -436,7 +473,6 @@ nmap [a <Plug>(ale_previous_wrap)
 
 let g:ale_linters = {
   \ 'asm': ['gcc'],
-  \ 'ansible': ['ansible-lint'],
   \ 'asciidoc': ['proselint', 'write-good'],
   \ 'awk': ['gawk'],
   \ 'bash': ['-n flag','shellcheck'],
@@ -507,3 +543,6 @@ augroup END
 
 " vim-shfmt
 let g:shfmt_extra_args = '-i 2'
+
+" vim-terraform
+let g:terraform_align = 1

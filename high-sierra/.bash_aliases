@@ -63,16 +63,16 @@ alias vr='vim ~/.vimrc'
 alias dfbu='gpl && dflb && dfdb && dfgb'
 
 # Back up OSX dotfiles to local directory
-alias dflb='cp ~/global-package-lists/*.txt ~/localdotfilesbackup; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
+alias dflb='cp ~/global-package-lists/*.txt ~/localdotfilesbackup; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
 
 # Back up OSX dotfiles to Dropbox
-alias dfdb='cp ~/global-package-lists/*.txt ~/Dropbox/dotfiles; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox/dotfiles'
+alias dfdb='cp ~/global-package-lists/*.txt Dropbox\ \(Personal\)/dotfiles; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox\ \(Personal\)/'
 
 # Back up dotfiles to public github repo
-alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,eslintignore,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
+alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
 
 # Create text files with lists of globally installed package binaries
-alias gpl='cd ~; yarn global list > ~/global-package-lists/yarn-global.txt; cd ~/global-package-lists; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl; pip2 list > pip2.txt; pip3 list > pip3.txt'
+alias gpl='cd ~/global-package-lists; yarn global list > yarn-global.txt; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl > npm-global.txt; pip2 list > pip2.txt; pip3 list > pip3.txt; cd ~'
 
 # get global list of npm installs and output to text file as reformatted simple list
 # shellcheck disable=SC2026
@@ -127,8 +127,11 @@ alias ......='cd ../../../../../'
 # Go back to previous directory
 alias b='cd - '
 
-# Go to Dropbox directory
-alias db='cd ~/Dropbox'
+# Go to Dropbox personal directory
+alias dbp='cd ~/Dropbox (Personal)'
+
+# Go to Dropbox business directory
+alias dbb='cd ~/Dropbox (Chris Watson Online)'
 
 # Go to downloads directory
 alias dl='cd ~/Downloads'
@@ -181,7 +184,8 @@ alias yga='yarn global add'
 alias ygu='yarn global upgrade --latest'
 
 ## Package manager updates ##
-alias ua='au; uu; gu; ggu; tu; diu; gitup; bu; vu; ycu'
+# alias ua='au; uu; gu; ggu; tu; diu; gitup; bu; vu; ycu'
+alias ua='au; gu; ggu; tu; diu; gitup; bu; vu; ycu'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -208,6 +212,8 @@ alias ggu="go get -u \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/jackc/sqlfmt/cmd/sqlfmt \
              github.com/kardianos/govendor \
+             github.com/mikefarah/yq \
+             github.com/mitchellh/gox \
              github.com/posener/complete/gocomplete \
              github.com/rapidloop/rtop \
              github.com/russross/blackfriday-tool \
@@ -238,10 +244,8 @@ alias p3u="pip3 freeze --local |sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo; echo P
 alias tu='~/.tmux/plugins/tpm/bin/update_plugins all && ~/.tmux/plugins/tpm/bin/install_plugins && ~/.tmux/plugins/tpm/bin/clean_plugins'
 
 # Upgrade up
-alias uu='curl -sfL https://raw.githubusercontent.com/apex/up/master/install.sh | sh'
-
-# Upgrade Yarn Nightly
-# alias uy='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
+# alias uu='curl -sfL https://raw.githubusercontent.com/apex/up/master/install.sh | sh'
+alias uu='up upgrade'
 
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'

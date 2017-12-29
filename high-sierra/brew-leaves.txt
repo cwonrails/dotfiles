@@ -40,7 +40,6 @@ chamber
 check
 checkstyle
 chrome-cli
-chromedriver
 clang-format
 cloc
 closure-compiler
@@ -103,11 +102,11 @@ freetds
 fswatch
 jhawthorn/fzy/fzy
 gawk
-geckodriver
 gem-completion
 geoip
 ghi
 ghq
+gibo
 gifsicle
 gimme
 gist
@@ -166,7 +165,7 @@ hyper
 icarus-verilog
 icdiff
 imagejs
-imagemagick@6
+imagemagick
 imap-uw
 imlib2
 intltool
@@ -239,7 +238,6 @@ media-info
 megacmd
 meson
 mighttpd2
-minio/stable/minio
 minio-mc
 moreutils
 mosh
@@ -253,6 +251,7 @@ netcat
 nnn
 noti
 oath-toolkit
+odt2txt
 opam
 open-completion
 openssh
@@ -284,7 +283,6 @@ ranger
 rclone
 re2c
 reattach-to-user-namespace
-redis
 rename
 repo
 restic
@@ -293,8 +291,6 @@ rlwrap
 rmlint
 grammarly/tap/rocker
 rsync
-ruby-build
-ruby-completion
 rust
 rustup-init
 s-search
@@ -306,7 +302,6 @@ screen
 screenfetch
 screenresolution
 selecta
-selenium-server-standalone
 shared-mime-info
 shellcheck
 shellshare
@@ -366,7 +361,6 @@ vapoursynth
 vault
 vaulted
 verilator
-vifm
 vim
 vnu
 wakatime-cli
@@ -389,8 +383,6 @@ yarn
 yasm
 you-get
 youtube-dl
-yubico-piv-tool
-z
 zip
 zlib
 zopfli

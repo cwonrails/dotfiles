@@ -50,7 +50,7 @@ requests              2.18.4
 sarge                 0.1.4    
 scandir               1.6      
 scdl                  1.6.10   
-setuptools            38.2.4   
+setuptools            38.2.5   
 six                   1.11.0   
 smmap2                2.0.3    
 sncli                 0.2.0    

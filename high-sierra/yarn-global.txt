@@ -1,2 +1,2 @@
 yarn global v1.3.2
-Done in 0.59s.
+Done in 0.60s.

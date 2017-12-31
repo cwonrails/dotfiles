@@ -128,10 +128,10 @@ alias ......='cd ../../../../../'
 alias b='cd - '
 
 # Go to Dropbox personal directory
-alias dbp='cd ~/Dropbox (Personal)'
+alias dbp='cd ~/Dropbox\ \(Personal\)/'
 
 # Go to Dropbox business directory
-alias dbb='cd ~/Dropbox (Chris Watson Online)'
+alias dbb='cd ~/Dropbox\ \(Chris\ Watson\ Online\)/'
 
 # Go to downloads directory
 alias dl='cd ~/Downloads'

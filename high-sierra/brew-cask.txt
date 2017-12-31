@@ -23,6 +23,7 @@ iterm2
 java
 kap
 karabiner
+keybase
 keyboard-cleaner
 limechat
 mpv

@@ -58,6 +58,7 @@ ctop
 cunit
 cython
 dante
+dep
 devd
 dfc
 diff-pdf
@@ -179,6 +180,7 @@ json-c
 just
 loadimpact/k6/k6
 kakoune
+karn
 known_hosts
 kompose
 kops
@@ -316,6 +318,7 @@ spdylay
 speedtest-cli
 speexdsp
 sphinx-doc
+spotctl
 ssh-audit
 ssh-copy-id
 sshrc

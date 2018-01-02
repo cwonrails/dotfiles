@@ -8,10 +8,10 @@ apsw                               3.9.2.post1
 args                               0.1.0      
 asn1crypto                         0.24.0     
 astroid                            1.6.0      
-attrs                              17.3.0     
+attrs                              17.4.0     
 Automat                            0.6.0      
 autopep8                           1.3.3      
-awscli                             1.14.16    
+awscli                             1.14.17    
 Babel                              2.5.1      
 backports-abc                      0.5        
 backports.functools-lru-cache      1.4        
@@ -26,8 +26,8 @@ bernhard                           0.2.6
 bleach                             2.1.2      
 blinker                            1.4        
 boto                               2.48.0     
-boto3                              1.5.6      
-botocore                           1.8.20     
+boto3                              1.5.7      
+botocore                           1.8.21     
 bottle                             0.12.13    
 brotlipy                           0.7.0      
 cairocffi                          0.8.0      
@@ -152,7 +152,7 @@ ordereddict                        1.1
 packaging                          16.8       
 pandocfilters                      1.4.2      
 paramiko                           2.4.0      
-parsel                             1.2.0      
+parsel                             1.3.1      
 parsimonious                       0.8.0      
 parso                              0.1.1      
 passlib                            1.7.1      
@@ -169,7 +169,7 @@ pickleshare                        0.7.4
 pies                               2.6.7      
 pies2overrides                     2.6.7      
 pika                               0.11.2     
-Pillow                             4.3.0      
+Pillow                             5.0.0      
 pip                                9.0.1      
 pipdeptree                         0.10.1     
 pluggy                             0.6.0      
@@ -180,7 +180,7 @@ prompt-toolkit                     1.0.15
 proselint                          0.8.0      
 prospector                         0.12.7     
 protobuf                           3.5.1      
-psutil                             5.4.2      
+psutil                             5.4.3      
 ptyprocess                         0.5.2      
 py                                 1.5.2      
 py-cpuinfo                         3.3.0      
@@ -221,7 +221,7 @@ pystache                           0.5.4
 python-daemon                      2.1.2      
 python-dateutil                    2.6.1      
 python-language-server             0.12.1     
-python-libtorrent                  1.1.5      
+python-libtorrent                  1.1.6      
 pytz                               2017.3     
 pytzdata                           2017.3.1   
 PyYAML                             3.12       
@@ -241,7 +241,7 @@ ruamel.yaml                        0.15.35
 s3transfer                         0.1.12     
 saws                               0.4.3      
 scandir                            1.6        
-Scrapy                             1.4.0      
+Scrapy                             1.5.0      
 service-identity                   17.0.0     
 setoptconf                         0.2.0      
 setuptools                         38.2.5     
@@ -289,8 +289,8 @@ vulture                            0.26
 w3lib                              1.18.0     
 wcwidth                            0.1.7      
 webencodings                       0.5.1      
-websocket-client                   0.45.0     
-Werkzeug                           0.13       
+websocket-client                   0.46.0     
+Werkzeug                           0.14.1     
 wheel                              0.30.0     
 whitenoise                         3.3.1      
 widgetsnbextension                 3.1.0      

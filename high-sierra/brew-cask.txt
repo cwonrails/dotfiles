@@ -17,7 +17,6 @@ font-source-code-pro
 font-source-sans-pro
 font-source-serif-pro
 gpg-suite
-hyper-canary
 imagealpha
 imageoptim
 iterm2

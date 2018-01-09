@@ -69,6 +69,9 @@ alias ghc='cd ~/github/clones'
 # Go to GitHub forks directory
 alias ghf='cd ~/github/forks'
 
+# Go to GitHub forks directory
+alias ghr='cd ~/github/repos'
+
 # Go to home directory
 alias hd='cd ~'
 
@@ -136,7 +139,7 @@ alias gpl='cd ~/global-package-lists; yarn global list > yarn-global.txt; brew l
 
 ## Package manager updates ##
 # Upgrade all
-alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; ycu; pu; vu; gitup; npm -g outdated'
+alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; pu; vu; gitup; npm -g outdated'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -173,6 +176,7 @@ alias ggu="go get -u \
              github.com/rapidloop/rtop \
              github.com/russross/blackfriday-tool \
              github.com/sourcegraph/go-langserver \
+             github.com/spencercdixon/palettes \
              github.com/tj/go-search \
              github.com/tj/mmake/cmd/mmake \
              github.com/tj/node-prune/cmd/node-prune \

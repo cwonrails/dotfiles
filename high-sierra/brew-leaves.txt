@@ -13,9 +13,8 @@ assh
 autoconf-archive
 automake
 wallix/awless/awless
-aws-shell
-awscli
 bash-completion@2
+bash-snippets
 bashdb
 bats
 bench
@@ -121,6 +120,7 @@ git-open
 git-quick-stats
 gitless
 gitup
+glide
 global
 gnu-prolog
 gnu-sed
@@ -155,7 +155,6 @@ hh
 highlight
 hiredis
 hr
-htop
 httest
 http_load
 httpflow
@@ -184,7 +183,6 @@ karn
 known_hosts
 kompose
 kops
-kube-aws
 kubectx
 kubeless
 kubernetes-helm
@@ -250,6 +248,7 @@ nano
 nasm
 ncdu
 netcat
+ngrep
 nnn
 noti
 oath-toolkit
@@ -295,6 +294,7 @@ grammarly/tap/rocker
 rsync
 rust
 rustup-init
+s-lang
 s-search
 s3cmd
 sassc

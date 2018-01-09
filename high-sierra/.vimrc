@@ -520,7 +520,7 @@ let g:ale_linters = {
   \}
 
 let g:ale_fixers = {
-  \ 'javascript': ['eslint','prettier'],
+  \ 'javascript': ['eslint','prettier','standard'],
   \ 'sh': 'shfmt'
   \}
 

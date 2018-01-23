@@ -55,7 +55,7 @@ alias .......='cd ../../../../../../'
 alias b='cd - '
 
 # Go to Dropbox folder
-alias db='/Users/christopherwatson/Dropbox (Personal)'
+alias db='cd /Users/christopherwatson/Dropbox\ \(Personal\)'
 
 # Go to downloads directory
 alias dl='cd ~/Downloads'

@@ -221,6 +221,13 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.yarn-completion"
 # export PATH="$HOME/.yarn/bin:$PATH"
 
-complete -C /usr/local/Cellar/terraform/0.11.1/bin/terraform terraform
+complete -C /usr/local/Cellar/terraform/0.11.2/bin/terraform terraform
 
 eval "$(direnv hook bash)"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/christopherwatson/.nvm/versions/node/v6.10.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /Users/christopherwatson/.nvm/versions/node/v6.10.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/christopherwatson/.nvm/versions/node/v6.10.3/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /Users/christopherwatson/.nvm/versions/node/v6.10.3/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash

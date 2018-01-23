@@ -4,31 +4,31 @@ end
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'ahmedelgabri/vim-ava-snippets'
+Plug 'ahmedelgabri/vim-ava-snippets', { 'for': 'javascript' }
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
-" Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-" Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
-" Plug 'direnv/direnv.vim'
-" Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
-" Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
+Plug 'direnv/direnv.vim'
+Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
+Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-" Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'epilande/vim-es2015-snippets',  { 'for': ['javascript', 'jsx', 'javascript.jsx'] }
-Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'jsx', 'javascript.jsx'] }
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'fleischie/vim-styled-components'
 Plug 'godlygeek/tabular'
 Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
+Plug 'hail2u/vim-css3-syntax'
 Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch.vim'
@@ -43,7 +43,7 @@ Plug 'jparise/vim-graphql'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'junegunn/vader.vim', { 'for': 'vim' }
+Plug 'junegunn/vader.vim', { 'for': 'vim' }
 " Plug 'kewah/vim-stylefmt', { 'for': ['css', 'scss'] }
 Plug 'majutsushi/tagbar'
 " Plug 'matt-deacalion/vim-systemd-syntax'
@@ -56,22 +56,23 @@ Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-startify'
 " Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
+Plug 'NLKNguyen/cloudformation-syntax.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'jsx', 'javascript.jsx'] }
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
 " Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 " Plug 'othree/xml.vim', { 'for': 'xml' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'othree/yajs.vim'
 Plug 'pbrisbin/vim-mkdir'
 " Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
-Plug 'posva/vim-vue', { 'for': 'vue' }
-" Plug 'Quramy/tsuquyomi', { 'for' typescript' }
-" Plug 'rizzatti/dash.vim'
-" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'posva/vim-vue'
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+Plug 'rizzatti/dash.vim'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
 Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
@@ -81,7 +82,7 @@ Plug 'stephpy/vim-yaml'
 " Plug 'ternjs/tern_for_vim', { 'do': 'yarn install' }
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
-" Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Plug 'tpope/vim-repeat'
@@ -92,14 +93,13 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-pandoc/vim-pandoc'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
 Plug 'wellle/tmux-complete.vim'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
-Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+Plug 'z0mbix/vim-shfmt'
 
 call plug#end()
 
@@ -342,6 +342,7 @@ let g:UltiSnipsEditSplit='vertical'
 " vim-airline
 " ----------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled= 1
 let g:airline#extensions#tabline#enabled = 1
 
 " ----------------------------------------------------------------------------
@@ -442,7 +443,7 @@ let g:prettier#autoformat = 0
 " let g:prettier#config#jsx_bracket_same_line = 'true'
 
 " none|es5|all
-" let g:prettier#config#trailing_comma = 'all'
+" let g:prettier#config#trailing_comma = 'none'
 
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown
 " let g:prettier#config#parser = 'flow'
@@ -506,7 +507,7 @@ let g:ale_linters = {
   \ 'sass': ['sass-lint','stylelint'],
   \ 'scala': ['scalac','scalastyle'],
   \ 'scss': ['sass-lint','stylelint','prettier'],
-  \ 'slim': ['slimt-lint'],
+  \ 'slim': ['slim-lint'],
   \ 'sql': ['sqlint'],
   \ 'stylus': ['stylelint'],
   \ 'texinfo': ['proselint','write-good'],
@@ -520,12 +521,16 @@ let g:ale_linters = {
   \}
 
 let g:ale_fixers = {
-  \ 'javascript': ['eslint','prettier','standard'],
+  \ 'bash': 'shfmt',
+  \ 'javascript': ['standard'],
   \ 'sh': 'shfmt'
   \}
 
+let g:ale_fix_on_save = 1
+
 let g:ale_completion_enabled = 1
 
+" vim-shfmt + ale
 let g:ale_sh_shfmt_options = '-i 2'
 
 " vim-better-whitespace
@@ -536,13 +541,10 @@ augroup END
 " recognize filetypes
 augroup Setfiletype
   au BufNewFile,BufRead *.csv setfiletype csv
-  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  " au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   au BufNewFile,BufRead *.jinja2,*.j2,*.jinja,*.nunj*,*.njk set filetype=jinja
   au BufNewFile,BufRead *.vue setfiletype vue
 augroup END
-
-" vim-shfmt
-let g:shfmt_extra_args = '-i 2'
 
 " vim-terraform
 let g:terraform_align = 1

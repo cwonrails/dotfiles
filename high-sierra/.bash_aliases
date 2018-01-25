@@ -9,6 +9,9 @@ alias brewdep='brew uses --installed'
 # Clear screen (works with tmux)
 alias c='clear'
 
+# Copy default package.json
+alias dfpj='cp ~/default.package.json/package.json `pwd`'
+
 # Print history
 alias h='history'
 

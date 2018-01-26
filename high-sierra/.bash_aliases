@@ -66,6 +66,9 @@ alias dl='cd ~/Downloads'
 # Go to desktop directory
 alias dt='cd ~/Desktop'
 
+# Go to GitHub directory
+alias gh='cd ~/github'
+
 # Go to GitHub clones directory
 alias ghc='cd ~/github/clones'
 

@@ -1,5 +1,6 @@
+1password-cli
 atom
-betterzip
+aws-vault
 brave
 caffeine
 caprine
@@ -10,7 +11,11 @@ dropbox
 firefoxdeveloperedition
 firefoxnightly
 font-fira-code
+font-fira-mono
+font-fira-sans
 font-hack
+font-hasklig
+font-ia-writer-duospace
 font-ibm-plex
 font-open-sans
 font-source-code-pro

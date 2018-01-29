@@ -11,7 +11,7 @@ clint                 0.5.1
 coala                 0.11.0   
 coala-utils           0.7.0    
 colorama              0.3.9    
-colorlog              3.1.0    
+colorlog              3.1.2    
 dependency-management 0.4.0    
 docopt                0.6.2    
 docutils              0.14     
@@ -58,7 +58,7 @@ sncli                 0.2.1
 stevedore             1.28.0   
 template-remover      0.1.9    
 termcolor             1.1.0    
-testfixtures          5.3.1    
+testfixtures          5.4.0    
 typed-ast             1.1.0    
 unidiff               0.5.5    
 urllib3               1.22     

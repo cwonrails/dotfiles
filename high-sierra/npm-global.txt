@@ -1,13 +1,13 @@
-@compositor/gen@1.0.0-4-electron
+@compositor/gen@1.0.0-4
 @compositor/img@0.0.7
-@compositor/lab@1.0.0-38-0
+@compositor/lab@1.0.0-37
 @compositor/x0@3.1.1
 @google-cloud/functions-emulator@1.0.0-alpha.29
 @johno/nt@0.0.4
-@storybook/cli@3.4.0-alpha.5
+@storybook/cli@3.3.11
 alfred-github-tools@1.3.0
 aws-sam-local@0.2.6
-bit-bin@0.12.2
+bit-bin@0.12.3
 dockerfile_lint@0.2.7
 domain-cli@0.1.16
 firebase-tools@3.17.4

@@ -6,6 +6,9 @@ alias brewclean='brew cleanup -s --force && brew cask cleanup'
 # List installed formulas that depend on the given formula
 alias brewdep='brew uses --installed'
 
+# Quickly get brew info
+alias bi='brew info'
+
 # Clear screen (works with tmux)
 alias c='clear'
 

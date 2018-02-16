@@ -144,7 +144,7 @@ alias dfdb='cp ~/global-package-lists/*.txt Dropbox\ \(Personal\)/dotfiles; cp ~
 alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
 
 # Create text files with lists of globally installed package binaries
-alias gpl='cd ~/global-package-lists; yarn global list > yarn-global.txt; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ngl > npm-global.txt; pip2 list > pip2.txt; pip3 list > pip3.txt; cd ~'
+alias gpl='cd ~/global-package-lists; yarn global list > yarn-global.txt; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ng > npm-global.txt; pip2 list > pip2.txt; pip3 list > pip3.txt; cd ~'
 
 ## Package manager updates ##
 # Upgrade all
@@ -196,7 +196,7 @@ alias ggu="go get -u \
 
 # get global list of npm installs
 # shellcheck disable=SC2026
-alias ngl='npm -g ls --depth=0 | cut -c 11- | sed -e '1d''
+alias ng='npm -g ls --depth=0 | cut -c 11- | sed -e '1d''
 
 # Python: Upgrade all pip2 and pip3 packages
 alias pu="p2u; p3u"

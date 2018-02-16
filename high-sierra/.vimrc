@@ -35,7 +35,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'herringtondarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'honza/vim-snippets'
 Plug 'isomoar/vim-css-to-inline'
-Plug 'isRuslan/vim-es6'
+" Plug 'isRuslan/vim-es6'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
 " Plug 'joukevandermaas/vim-ember-hbs'

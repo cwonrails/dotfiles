@@ -4,6 +4,7 @@ asciinema
 automake
 awscli
 bash-completion@2
+bashdb
 bats
 bfg
 binutils
@@ -101,6 +102,7 @@ hashcat
 help2man
 hh
 highlight
+howdoi
 hr
 httest
 httpflow
@@ -121,12 +123,12 @@ jpegoptim
 jq
 json-c
 json-glib
-jsoncpp
 just
 loadimpact/k6/k6
 kakoune
 karn
 known_hosts
+kubernetes-cli
 ldns
 legit
 leiningen
@@ -194,6 +196,7 @@ nano
 nasm
 ncdu
 netcat
+netlify/netlifyctl/netlifyctl
 ngrep
 nnn
 noti
@@ -259,10 +262,12 @@ startup-notification
 subversion
 svg2png
 svgcleaner
+sysdig
 tcl-tk
 tcpdump
 terminal-notifier
 terraform
+texi2html
 the_silver_searcher
 thefuck
 tidy-html5
@@ -282,5 +287,7 @@ watchman
 wdiff
 wget
 yarn
+yasm
 youtube-dl
 zip
+zsync

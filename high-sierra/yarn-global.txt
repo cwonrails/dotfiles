@@ -1,4 +1,0 @@
-yarn global v1.3.2
-info "node-gyp@3.6.2" has binaries:
-   - node-gyp
-Done in 4.56s.

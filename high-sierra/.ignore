@@ -1,0 +1,6 @@
+.git
+*.lock
+*lfred*
+Dropbox
+Library
+node_modules

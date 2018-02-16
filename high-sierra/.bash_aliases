@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Set default command for ag
+alias ag='ag --path-to-ignore ~/.ignore'
+
 # Clean up homebrew cached downloads
 alias brewclean='brew cleanup -s --force && brew cask cleanup'
 
@@ -134,21 +137,18 @@ alias vr='vim ~/.vimrc'
 # Perform all dotfiles backup operations'
 alias dfbu='gpl && dflb && dfdb && dfgb'
 
-# Back up OSX dotfiles to local directory
-alias dflb='cp ~/global-package-lists/*.txt ~/localdotfilesbackup; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
+# Back up dotfiles to local directory
+alias dflb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
 
-# Back up OSX dotfiles to Dropbox
-alias dfdb='cp ~/global-package-lists/*.txt Dropbox\ \(Personal\)/dotfiles; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox\ \(Personal\)/'
+# Back up dotfiles to Dropbox folder
+alias dflb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox\ \(Personal\)/dotfiles'
 
 # Back up dotfiles to public github repo
-alias dfgb='cp ~/global-package-lists/*.txt ~/github/repos/public/dotfiles/high-sierra; cp ~/.{agignore,bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,gvimrc,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra; cd ~/github/repos/public/dotfiles/high-sierra; git diff'
-
-# Create text files with lists of globally installed package binaries
-alias gpl='cd ~/global-package-lists; yarn global list > yarn-global.txt; brew leaves > brew-leaves.txt; brew cask list > brew-cask.txt; gem list > gems.txt; ng > npm-global.txt; pip2 list > pip2.txt; pip3 list > pip3.txt; cd ~'
+alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra'
 
 ## Package manager updates ##
 # Upgrade all
-alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; pu; vu; gitup; npm -g outdated'
+alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; p2u; p3u; ncu -g'
 
 # Upgrade Apex
 alias au='apex upgrade'

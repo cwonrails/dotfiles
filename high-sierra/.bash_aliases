@@ -148,7 +148,7 @@ alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,export
 
 ## Package manager updates ##
 # Upgrade all
-alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; p2u; p3u; ncu -g'
+alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; p2u; p3u; ncu -g'
 
 # Upgrade Apex
 alias au='apex upgrade'

@@ -1701,7 +1701,7 @@
 	<key>NSAllowsDefaultLineBreakStrategy</key>
 	<true/>
 	<key>NSFontPanelAttributes</key>
-	<string>1, 5</string>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/github/repos/public/dotfiles/high-sierra</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -1743,21 +1743,21 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>44 655 1645 276 0 0 1920 1177 </string>
+	<string>-1876 869 1645 142 -1920 300 1920 1057 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>652 752 616 174 0 0 1920 1177 </string>
+	<string>412 527 616 174 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>760 786 400 129 0 0 1920 1177 </string>
+	<string>520 561 400 129 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 588 620 392 0 0 1920 1177 </string>
+	<string>236 680 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1825 627 796 473 -1920 173 1920 1057 </string>
+	<string>1534 472 796 473 1440 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>962 0 955 1177 0 0 1920 1177 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 0 955 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3796,7 +3796,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-16T15:55:21Z</date>
+	<date>2018-02-17T18:01:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -3849,6 +3849,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20171210-nightly</string>
+	<string>3.2.20180214-nightly</string>
 </dict>
 </plist>

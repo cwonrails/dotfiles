@@ -135,13 +135,13 @@ alias tc='vim ~/.tmux.conf'
 alias vr='vim ~/.vimrc'
 
 # Perform all dotfiles backup operations'
-alias dfbu='gpl && dflb && dfdb && dfgb'
+alias dfbu='dflb && dfdb && dfgb'
 
 # Back up dotfiles to local directory
 alias dflb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
 
 # Back up dotfiles to Dropbox folder
-alias dflb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox\ \(Personal\)/dotfiles'
+alias dfdb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox\ \(Personal\)/dotfiles'
 
 # Back up dotfiles to public github repo
 alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra'
@@ -175,7 +175,6 @@ alias ggu="go get -u \
              github.com/golang/dep/cmd/dep \
              github.com/google/git-appraise/git-appraise \
              github.com/GoogleChrome/simplehttp2server \
-             github.com/gopherjs/gopherjs \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/jackc/sqlfmt/cmd/sqlfmt \
              github.com/kardianos/govendor \
@@ -193,6 +192,8 @@ alias ggu="go get -u \
              github.com/whyrusleeping/gx \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
+
+             # github.com/gopherjs/gopherjs \
 
 # get global list of npm installs
 # shellcheck disable=SC2026

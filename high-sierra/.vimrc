@@ -35,36 +35,32 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'herringtondarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'honza/vim-snippets'
 Plug 'isomoar/vim-css-to-inline'
-" Plug 'isRuslan/vim-es6'
+Plug 'isRuslan/vim-es6'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
-" Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vader.vim', { 'for': 'vim' }
-" Plug 'kewah/vim-stylefmt', { 'for': ['css', 'scss'] }
 Plug 'majutsushi/tagbar'
-" Plug 'matt-deacalion/vim-systemd-syntax'
+Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-" Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
+Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
-" Plug 'metakirby5/codi.vim'
-" Plug 'mhinz/vim-startify'
-" Plug 'mustache/vim-mustache-handlebars'
+Plug 'mhinz/vim-startify'
 Plug 'mxw/vim-jsx'
 Plug 'NLKNguyen/cloudformation-syntax.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
-" Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-" Plug 'othree/xml.vim', { 'for': 'xml' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'othree/xml.vim', { 'for': 'xml' }
 Plug 'othree/yajs.vim'
 Plug 'pbrisbin/vim-mkdir'
-" Plug 'phpstan/vim-phpstan', {'for': 'php'}
+Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -74,32 +70,27 @@ Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
-Plug 'shougo/echodoc.vim'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sirver/ultiSnips'
-" Plug 'StanAngeloff/php.vim', { 'for': 'php'}
+Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
-" Plug 'ternjs/tern_for_vim', { 'do': 'yarn install' }
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-" Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
-" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
 Plug 'wellle/tmux-complete.vim'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
-Plug 'z0mbix/vim-shfmt'
 
 call plug#end()
 
@@ -147,7 +138,6 @@ set diffopt+=filler,vertical
 
 " Choose colorscheme
 set background=dark
-" set background=light
 colorscheme solarized
 let g:solarized_termtrans=1
 
@@ -336,7 +326,7 @@ let g:UltiSnipsEditSplit='vertical'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-" let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
+let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
 
 " ----------------------------------------------------------------------------
 " vim-airline
@@ -388,14 +378,16 @@ map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
 " ----------------------------------------------------------------------------
-" WStrip.vim
+" vim-better-whitespace
 " ----------------------------------------------------------------------------
-let g:wstrip_auto = 1
+augroup whitespace
+  autocmd BufEnter * EnableStripWhitespaceOnSave
+augroup END
 
 " ----------------------------------------------------------------------------
 " vim-jsx
 " ----------------------------------------------------------------------------
-let g:jsx_ext_required = 1
+" let g:jsx_ext_required = 1
 
 " ----------------------------------------------------------------------------
 " vim-esearch
@@ -455,29 +447,21 @@ let g:prettier#autoformat = 0
 " let g:prettier#config#prose_wrap = 'preserve'
 
 " ----------------------------------------------------------------------------
-" ale settings
+" vim-terraform
+" ----------------------------------------------------------------------------
+let g:terraform_align = 1
+
+" ----------------------------------------------------------------------------
+" ale
 " ----------------------------------------------------------------------------
 let g:airline#extensions#ale#enabled = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" let g:ale_open_list = 1
-" let g:ale_set_loclist = 1
-" let g:ale_set_quickfix = 0
-let g:ale_lint_delay = 1000
 nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
 
-" Check JSX files with both stylelint and eslint
-" let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
-" let g:ale_linter_aliases = {'jsx': 'css'}
-
 let g:ale_linters = {
-  \ 'asm': ['gcc'],
-  \ 'asciidoc': ['proselint', 'write-good'],
   \ 'awk': ['gawk'],
-  \ 'bash': ['-n flag','shellcheck'],
-  \ 'bourne_shell': ['-n flag','shellcheck'],
+  \ 'bash': ['shellcheck'],
+  \ 'bourne_shell': ['shellcheck'],
   \ 'c': ['gcc','clang','clang-format'],
   \ 'c++': ['gcc','clang','clang-format'],
   \ 'chef': ['foodcritic'],
@@ -495,56 +479,19 @@ let g:ale_linters = {
   \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
   \ 'javascript.jsx': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
   \ 'json': ['jsonlint','prettier'],
-  \ 'lua': ['luacheck'],
   \ 'markdown': ['proselint','vale'],
-  \ 'objective-c': ['clang'],
-  \ 'objective-c++': ['clang'],
   \ 'python': ['flake8','pycodestyle','yapf'],
   \ 'reStructredText': ['proselint'],
   \ 'php': ['phpstan'],
   \ 'ruby': ['rubocop','reek'],
   \ 'rust': ['rustc'],
-  \ 'sass': ['sass-lint','stylelint'],
-  \ 'scala': ['scalac','scalastyle'],
   \ 'scss': ['sass-lint','stylelint','prettier'],
-  \ 'slim': ['slim-lint'],
   \ 'sql': ['sqlint'],
-  \ 'stylus': ['stylelint'],
-  \ 'texinfo': ['proselint','write-good'],
+  \ 'terraform': ['tflint'],
   \ 'text^': ['proselint','vale'],
   \ 'typescript': ['tslint'],
-  \ 'verilog': ['iverilog','verilator'],
   \ 'vim': ['vint'],
-  \ 'vim help^': ['proselint','write-good'],
+  \ 'vue': ['prettier'],
   \ 'xml': ['xmllint'],
   \ 'yaml': ['yamllint']
   \}
-
-let g:ale_fixers = {
-  \ 'bash': 'shfmt',
-  \ 'javascript': ['standard'],
-  \ 'sh': 'shfmt'
-  \}
-
-let g:ale_fix_on_save = 1
-
-let g:ale_completion_enabled = 1
-
-" vim-shfmt + ale
-let g:ale_sh_shfmt_options = '-i 2'
-
-" vim-better-whitespace
-augroup whitespace
-  autocmd BufEnter * EnableStripWhitespaceOnSave
-augroup END
-
-" recognize filetypes
-augroup Setfiletype
-  au BufNewFile,BufRead *.csv setfiletype csv
-  " au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-  au BufNewFile,BufRead *.jinja2,*.j2,*.jinja,*.nunj*,*.njk set filetype=jinja
-  au BufNewFile,BufRead *.vue setfiletype vue
-augroup END
-
-" vim-terraform
-let g:terraform_align = 1

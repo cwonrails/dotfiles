@@ -58,71 +58,53 @@ export MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
 # Homebrew Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-# z https://github.com/rupa/z
-. "$HOME/z/z.sh"
-
-# mmake (Modern Make) https://github.com/tj/mmake
-alias make='mmake'
-
 # Source additional dotfiles
 for file in ~/.{aliases.local,bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
   [ -r "$file" ] && [ -f "$file" ] && . "$file"
 done
 unset file
 
+# enable mmake
+alias make='mmake'
+
+# enable z
+. "$HOME/z/z.sh"
+
 # Ignore shellcheck "Cannot follow non-constant source" errors
-if which shellcheck >/dev/null 2>&1; then
-  export SHELLCHECK_OPTS="-e SC1090,SC1091"
-fi
+export SHELLCHECK_OPTS="-e SC1090,SC1091"
 
 # brew command-not-found
-if brew command command-not-found-init >/dev/null 2>&1; then
-  eval "$(brew command-not-found-init)";
-fi
+eval "$(brew command-not-found-init)"
 
 # Enable Homebrew-installed bash completion
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
-if [ -d ~/.bash_completion.d ]; then
-  for file in ~/.bash_completion.d/*; do
-    . "$file"
-  done
-fi
+for file in ~/.bash_completion.d/*; do
+  . "$file"
+done
 
-if [ -d /usr/local/etc/bash_completion.d ]; then
-  for file in /usr/local/etc/bash_completion.d/*; do
-    . "$file"
-  done
-fi
+for file in /usr/local/etc/bash_completion.d/*; do
+  . "$file"
+done
 
 # Enable hub and alias it to git
-if which hub >/dev/null 2>&1; then
-  eval "$(hub alias -s)"
-fi
+eval "$(hub alias -s)"
 
 # Enable thefuck if installed
-if which thefuck >/dev/null 2>&1; then
-  eval "$(thefuck --alias)"
-fi
+eval "$(thefuck --alias)"
 
 # Go #
-if which go >/dev/null 2>&1; then
-  export PATH=/usr/local/opt/go/libexec/bin:$PATH
-  export GOPATH="$HOME/go"
-  export GOOS="darwin"
-  export GOBIN="$GOPATH/bin"
-  export PATH="$GOBIN:$PATH"
-fi
-
-# PHP #
-export PATH="usr/local/opt/php72/bin/php:$PATH"
-
-# Rust #
+export PATH=/usr/local/opt/go/libexec/bin:$PATH
+export GOPATH="$HOME/go"
+export GOOS="darwin"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
 
 # Cargo
-# if which cargo > /dev/null; then
 export PATH="$HOME/.cargo/bin":$PATH
-# fi
+
+# Mono
+export MONO_GAC_PREFIX="/usr/local"
 
 # s bash completion
 if [ -f "$GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash" ]; then
@@ -210,17 +192,26 @@ alias gos='go-search'
 complete -C /Users/christopherwatson/go/bin/gocomplete go
 
 # t completion
-. ~/t/etc/t-completion.sh
+. "$HOME/t/etc/t-completion.sh"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# yarn
+# yarn completion and global path
 . "$HOME/.yarn-completion"
 # export PATH="$HOME/.yarn/bin:$PATH"
 
+# Terraform completion
 complete -C /usr/local/Cellar/terraform/0.11.3/bin/terraform terraform
 
+# enable direnv
 eval "$(direnv hook bash)"
+
+# enable virtualenvwrapper and set virtualenv directory
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+# shellcheck disable=SC1072
+. /usr/local/bin/virtualenvwrapper.sh

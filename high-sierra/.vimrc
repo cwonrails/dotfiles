@@ -4,7 +4,7 @@ end
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ahmedelgabri/vim-ava-snippets', { 'for': 'javascript' }
+Plug 'ahmedelgabri/vim-ava-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
@@ -20,12 +20,12 @@ Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
+Plug 'epilande/vim-es2015-snippets', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
-Plug 'fleischie/vim-styled-components'
+Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'godlygeek/tabular'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax'
@@ -34,8 +34,8 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'herringtondarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'honza/vim-snippets'
-Plug 'isomoar/vim-css-to-inline'
-Plug 'isRuslan/vim-es6'
+Plug 'isomoar/vim-css-to-inline', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'isRuslan/vim-es6', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
 Plug 'joukevandermaas/vim-ember-hbs'
@@ -51,20 +51,20 @@ Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
-Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'NLKNguyen/cloudformation-syntax.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'othree/es.next.syntax.vim'
+Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'othree/xml.vim', { 'for': 'xml' }
-Plug 'othree/yajs.vim'
+Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
+  \ 'for': ['javascript', 'javascript.jsx', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 Plug 'posva/vim-vue'
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
@@ -81,7 +81,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --js-completer --rust-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -495,3 +495,4 @@ let g:ale_linters = {
   \ 'xml': ['xmllint'],
   \ 'yaml': ['yamllint']
   \}
+

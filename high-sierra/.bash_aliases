@@ -138,13 +138,13 @@ alias vr='vim ~/.vimrc'
 alias dfbu='dflb && dfdb && dfgb'
 
 # Back up dotfiles to local directory
-alias dflb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
+alias dflb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/localdotfilesbackup'
 
 # Back up dotfiles to Dropbox folder
-alias dfdb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox\ \(Personal\)/dotfiles'
+alias dfdb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/Dropbox\ \(Personal\)/dotfiles'
 
 # Back up dotfiles to public github repo
-alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra'
+alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editorconfig,exports,functions,gemrc,gitconfig,hushlogin,inputrc,tmux.conf,vimrc,vintrc.yaml} ~/github/repos/public/dotfiles/high-sierra'
 
 ## Package manager updates ##
 # Upgrade all

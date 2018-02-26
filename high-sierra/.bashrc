@@ -213,5 +213,5 @@ eval "$(direnv hook bash)"
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# shellcheck disable=SC1072
+# shellcheck disable=SC1072,SC1094
 . /usr/local/bin/virtualenvwrapper.sh

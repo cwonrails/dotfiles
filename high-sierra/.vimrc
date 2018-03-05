@@ -476,8 +476,8 @@ let g:ale_linters = {
   \ 'haml': ['haml-lint'],
   \ 'handlebars': ['ember-template-lint'],
   \ 'html': ['htmlhint','tidy'],
-  \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
-  \ 'javascript.jsx': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
+  \ 'javascript': ['standard'],
+  \ 'javascript.jsx': ['standard'],
   \ 'json': ['jsonlint','prettier'],
   \ 'markdown': ['proselint','vale'],
   \ 'python': ['flake8','pycodestyle','yapf'],
@@ -496,3 +496,8 @@ let g:ale_linters = {
   \ 'yaml': ['yamllint']
   \}
 
+  " \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
+  " \ 'javascript.jsx': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
+  "
+autocmd bufwritepost {*.js,*.jsx} silent !standard --fix %
+set autoread

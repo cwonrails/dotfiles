@@ -295,7 +295,7 @@ nnoremap Y y$
 let g:gist_post_private = 1
 
 " Open browser after posting gist
-" let g:gist_open_browser_after_post =1
+let g:gist_open_browser_after_post =1
 
 " ----------------------------------------------------------------------------
 " matchit.vim
@@ -326,7 +326,7 @@ let g:UltiSnipsEditSplit='vertical'
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
 " ----------------------------------------------------------------------------
-let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
+" let g:used_javascript_libs = 'react,vue,flux,handlebars,jquery,underscore'
 
 " ----------------------------------------------------------------------------
 " vim-airline

@@ -56,7 +56,7 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
 
 # Homebrew Python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python@2/bin:$PATH"
 
 # Source additional dotfiles
 for file in ~/.{aliases.local,bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
@@ -211,7 +211,7 @@ eval "$(direnv hook bash)"
 
 # enable virtualenvwrapper and set virtualenv directory
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python@2/bin/python2.7
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 # shellcheck disable=SC1072,SC1094
 . /usr/local/bin/virtualenvwrapper.sh

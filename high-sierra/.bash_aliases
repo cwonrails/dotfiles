@@ -101,7 +101,7 @@ alias gclr='git clone --recursive'
 alias glcr='git clone --recursive' # fix command entry errors
 alias gco='git checkout'
 alias gd='git diff'
-alias gdb='git-delete-branch'
+alias gdb='git-delete-branch -r'
 alias gdno='git diff --name-only'
 alias gdnoum='git diff --name-only upstream/master'
 alias gp='git push'
@@ -148,7 +148,9 @@ alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editor
 
 ## Package manager updates ##
 # Upgrade all
-alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; p2u; p3u; ncu -g'
+# alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; p2u; p3u; ncu -g'
+alias ua='bu; au; uu; ycu; tu; gu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; ncu -g'
+alias uaa='p2u; p3u; ggu'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -170,6 +172,7 @@ alias ggu="go get -u \
              github.com/asciimoo/wuzz \
              github.com/ddo/fast \
              github.com/dwarvesf/glod \
+             github.com/elgs/gojq \
              github.com/ericchiang/pup \
              github.com/gchaincl/httplab/cmd/httplab \
              github.com/golang/dep/cmd/dep \
@@ -182,6 +185,8 @@ alias ggu="go get -u \
              github.com/mitchellh/gox \
              github.com/posener/complete/gocomplete \
              github.com/rapidloop/rtop \
+             github.com/rs/jaggr \
+             github.com/rs/jplot \
              github.com/russross/blackfriday-tool \
              github.com/sourcegraph/go-langserver \
              github.com/spencercdixon/palettes \

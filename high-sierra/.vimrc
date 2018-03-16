@@ -499,5 +499,5 @@ let g:ale_linters = {
   " \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
   " \ 'javascript.jsx': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
   "
-autocmd bufwritepost {*.js,*.jsx} silent !standard --fix %
-set autoread
+" autocmd bufwritepost {*.js,*.jsx} silent !standard --fix %
+" set autoread

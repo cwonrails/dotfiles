@@ -201,7 +201,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # yarn completion and global path
 . "$HOME/.yarn-completion"
-# export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 
 # Terraform completion
 complete -C /usr/local/Cellar/terraform/0.11.4/bin/terraform terraform

@@ -11,10 +11,11 @@
   trustctime = false
   precomposeunicode = false
   untrackedCache = true
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
 
-  ui = auto
+  ui = true
 
 [color "branch"]
 
@@ -24,8 +25,8 @@
 
 [color "diff"]
 
-  meta = yellow bold
-  commit = green bold
+  meta = yellow
+  commit = yellow bold
   frag = magenta bold
   old = red bold
   new = green bold
@@ -69,14 +70,9 @@
   log = true
   tool = Kaleidoscope
 
-[pager]
-
-  diff = diff-so-fancy | less --tabs=4 -RFX
-  show = diff-so-fancy | less --tabs=4 -RFX
-
 [push]
 
-  default = matching
+  default = simple
   followTags = true
 
 [rebase]

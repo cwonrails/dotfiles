@@ -149,8 +149,7 @@ alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editor
 ## Package manager updates ##
 # Upgrade all
 # alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; p2u; p3u; ncu -g'
-alias ua='bu; au; uu; ycu; tu; gu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; ncu -g'
-alias uaa='p2u; p3u; ggu'
+alias ua='bu; au; uu; yu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; yarn global outdated'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -178,11 +177,13 @@ alias ggu="go get -u \
              github.com/golang/dep/cmd/dep \
              github.com/google/git-appraise/git-appraise \
              github.com/GoogleChrome/simplehttp2server \
+             github.com/gopherjs/gopherjs \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/jackc/sqlfmt/cmd/sqlfmt \
              github.com/kardianos/govendor \
              github.com/mikefarah/yq \
              github.com/mitchellh/gox \
+             github.com/mvdan.cc/sh/cmd/shfmt \
              github.com/posener/complete/gocomplete \
              github.com/rapidloop/rtop \
              github.com/rs/jaggr \
@@ -197,8 +198,6 @@ alias ggu="go get -u \
              github.com/whyrusleeping/gx \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
-
-             # github.com/gopherjs/gopherjs \
 
 # get global list of npm installs
 # shellcheck disable=SC2026
@@ -224,5 +223,11 @@ alias uu='up upgrade'
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
+alias yu='ynu && ycu'
+
 # Upgrade yarn-completion
 alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash'
+
+# Upgrade yarn nightly
+alias ynu='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
+

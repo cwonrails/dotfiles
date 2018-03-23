@@ -11,15 +11,15 @@ Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
-" Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-" Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'direnv/direnv.vim'
-" Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
+Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-" Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'epilande/vim-es2015-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ervandew/supertab'
@@ -27,7 +27,8 @@ Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'godlygeek/tabular'
-" Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -44,10 +45,10 @@ Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-" Plug 'matt-deacalion/vim-systemd-syntax'
+Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
-" Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
+Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
@@ -57,23 +58,23 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-" Plug 'othree/xml.vim', { 'for': 'xml' }
+Plug 'othree/xml.vim', { 'for': 'xml' }
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pbrisbin/vim-mkdir'
-" Plug 'phpstan/vim-phpstan', {'for': 'php'}
+Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'javascript.jsx', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
+  \ 'for': ['javascript', 'javascript.jsx', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 Plug 'posva/vim-vue'
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
-" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sirver/ultiSnips'
 Plug 'sodapopcan/vim-twiggy'
-" Plug 'StanAngeloff/php.vim', { 'for': 'php'}
+Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
@@ -82,10 +83,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'urbainvaes/vim-remembrall'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
@@ -481,7 +483,7 @@ let g:ale_linters = {
   \ 'javascript.jsx': ['standard'],
   \ 'json': ['jsonlint','prettier'],
   \ 'markdown': ['proselint','vale'],
-  \ 'python': ['flake8','pycodestyle','yapf'],
+  \ 'python': ['yapf','pylint'],
   \ 'reStructredText': ['proselint'],
   \ 'php': ['phpstan'],
   \ 'ruby': ['rubocop','reek'],
@@ -496,6 +498,24 @@ let g:ale_linters = {
   \ 'xml': ['xmllint'],
   \ 'yaml': ['yamllint']
   \}
+
+let g:ale_fixers = {
+  \ 'css': ['stylelint'],
+  \ 'javascript': ['standard'],
+  \ 'javascript.jsx': ['standard'],
+  \ 'json': ['prettier'],
+  \ 'python': ['yapf'],
+  \ 'scss': ['stylelint']
+  \}
+
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+nnoremap <Leader>af :ALEFix<CR>
 
   " \ 'javascript': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],
   " \ 'javascript.jsx': ['eslint','standard','flow','prettier','prettier-eslint','stylelint'],

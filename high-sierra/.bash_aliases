@@ -149,7 +149,7 @@ alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editor
 ## Package manager updates ##
 # Upgrade all
 # alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; p2u; p3u; ncu -g'
-alias ua='bu; au; uu; yu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; yarn global outdated'
+alias ua='bu; au; uu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; yu'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -223,11 +223,13 @@ alias uu='up upgrade'
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
-alias yu='ynu && ycu'
+alias yu='ygu && ycu'
 
 # Upgrade yarn-completion
 alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash'
 
+alias ygu='yarn global upgrade'
+
 # Upgrade yarn nightly
-alias ynu='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
+# alias ynu='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
 

@@ -204,7 +204,7 @@ export NVM_DIR="$HOME/.nvm"
 # export PATH="$HOME/.yarn/bin:$PATH"
 
 # Terraform completion
-complete -C /usr/local/Cellar/terraform/0.11.4/bin/terraform terraform
+complete -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform
 
 # enable direnv
 eval "$(direnv hook bash)"

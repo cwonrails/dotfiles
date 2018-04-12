@@ -461,22 +461,54 @@ let g:airline#extensions#ale#enabled = 1
 nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
 
+" let g:ale_linters = {
+"   \ 'awk': ['gawk'],
+"   \ 'bash': ['shellcheck'],
+"   \ 'bourne_shell': ['shellcheck'],
+"   \ 'c': ['gcc','clang','clang-format'],
+"   \ 'c++': ['gcc','clang','clang-format'],
+"   \ 'chef': ['foodcritic'],
+"   \ 'cmake': ['cmakelint'],
+"   \ 'css': ['stylelint','prettier'],
+"   \ 'Dockerfile': ['hadolint'],
+"   \ 'elm': ['elm-format', 'elm-make'],
+"   \ 'fortran': ['gcc'],
+"   \ 'fusion-lint': ['fusion-lint'],
+"   \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
+"   \ 'graphql': ['gqlint'],
+"   \ 'haml': ['haml-lint'],
+"   \ 'handlebars': ['ember-template-lint'],
+"   \ 'html': ['htmlhint','tidy'],
+"   \ 'javascript': ['standard'],
+"   \ 'javascript.jsx': ['standard'],
+"   \ 'json': ['jsonlint','prettier'],
+"   \ 'markdown': ['proselint','vale'],
+"   \ 'python': ['yapf','pylint'],
+"   \ 'reStructredText': ['proselint'],
+"   \ 'php': ['phpstan'],
+"   \ 'ruby': ['rubocop','reek'],
+"   \ 'rust': ['rustc'],
+"   \ 'scss': ['sass-lint','stylelint','prettier'],
+"   \ 'sql': ['sqlint'],
+"   \ 'terraform': ['tflint'],
+"   \ 'text^': ['proselint','vale'],
+"   \ 'typescript': ['tslint'],
+"   \ 'vim': ['vint'],
+"   \ 'vue': ['prettier'],
+"   \ 'xml': ['xmllint'],
+"   \ 'yaml': ['yamllint']
+"   \}
+
 let g:ale_linters = {
   \ 'awk': ['gawk'],
   \ 'bash': ['shellcheck'],
   \ 'bourne_shell': ['shellcheck'],
   \ 'c': ['gcc','clang','clang-format'],
-  \ 'c++': ['gcc','clang','clang-format'],
-  \ 'chef': ['foodcritic'],
   \ 'cmake': ['cmakelint'],
   \ 'css': ['stylelint','prettier'],
   \ 'Dockerfile': ['hadolint'],
   \ 'elm': ['elm-format', 'elm-make'],
-  \ 'fortran': ['gcc'],
-  \ 'fusion-lint': ['fusion-lint'],
   \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
-  \ 'graphql': ['gqlint'],
-  \ 'haml': ['haml-lint'],
   \ 'handlebars': ['ember-template-lint'],
   \ 'html': ['htmlhint','tidy'],
   \ 'javascript': ['standard'],
@@ -489,24 +521,21 @@ let g:ale_linters = {
   \ 'ruby': ['rubocop','reek'],
   \ 'rust': ['rustc'],
   \ 'scss': ['sass-lint','stylelint','prettier'],
-  \ 'sql': ['sqlint'],
   \ 'terraform': ['tflint'],
   \ 'text^': ['proselint','vale'],
   \ 'typescript': ['tslint'],
   \ 'vim': ['vint'],
-  \ 'vue': ['prettier'],
-  \ 'xml': ['xmllint'],
   \ 'yaml': ['yamllint']
   \}
 
-let g:ale_fixers = {
-  \ 'css': ['stylelint'],
-  \ 'javascript': ['standard'],
-  \ 'javascript.jsx': ['standard'],
-  \ 'json': ['prettier'],
-  \ 'python': ['yapf'],
-  \ 'scss': ['stylelint']
-  \}
+" let g:ale_fixers = {
+"   \ 'css': ['stylelint'],
+"   \ 'javascript': ['standard'],
+"   \ 'javascript.jsx': ['standard'],
+"   \ 'json': ['prettier'],
+"   \ 'python': ['yapf'],
+"   \ 'scss': ['stylelint']
+"   \}
 
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1

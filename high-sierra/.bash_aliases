@@ -15,6 +15,10 @@ alias bi='brew info'
 # Clear screen (works with tmux)
 alias c='clear'
 
+# Gron (https://github.com/tomnomnom/gron/)
+alias norg="gron --ungron"
+alias ungron="gron --ungron"
+
 # Copy default package.json
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
 
@@ -183,7 +187,6 @@ alias ggu="go get -u \
              github.com/kardianos/govendor \
              github.com/mikefarah/yq \
              github.com/mitchellh/gox \
-             github.com/mvdan.cc/sh/cmd/shfmt \
              github.com/posener/complete/gocomplete \
              github.com/rapidloop/rtop \
              github.com/rs/jaggr \
@@ -198,6 +201,9 @@ alias ggu="go get -u \
              github.com/whyrusleeping/gx \
              honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
+
+
+             # github.com/mvdan.cc/sh/cmd/shfmt \
 
 # get global list of npm installs
 # shellcheck disable=SC2026

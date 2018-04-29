@@ -9,6 +9,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
@@ -22,7 +26,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'epilande/vim-es2015-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'] }
@@ -84,7 +88,7 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'urbainvaes/vim-remembrall'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -95,7 +99,13 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
 
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
 call plug#end()
+
+let g:deoplete#enable_at_startup = 1
 
 " Enable 256 colors in terminal
 set t_Co=256
@@ -314,17 +324,17 @@ let g:undotree_WindowLayout = 2
 " YouCompleteMe, UltiSnips, and Supertab
 " ----------------------------------------------------------------------------
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
-" Split UltiSnipsEditSplit vertically
-let g:UltiSnipsEditSplit='vertical'
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+"
+" " better key bindings for UltiSnipsExpandTrigger
+" let g:UltiSnipsExpandTrigger = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+"
+" " Split UltiSnipsEditSplit vertically
+" let g:UltiSnipsEditSplit='vertical'
 
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
@@ -551,3 +561,57 @@ nnoremap <Leader>af :ALEFix<CR>
   "
 " autocmd bufwritepost {*.js,*.jsx} silent !standard --fix %
 " set autoread
+
+" deoplete.vim contains vim settings relevant to the deoplete autocompletion
+" plugin
+" for more details about my neovim setup see:
+" http://afnan.io/2018-04-12/my-neovim-development-setup/
+
+" deoplete options
+let g:deoplete#enable_smart_case = 1
+
+" disable autocomplete by default
+" let b:deoplete_disable_auto_complete=1
+" let g:deoplete_disable_auto_complete=1
+" call deoplete#custom#buffer_option('auto_complete', v:false)
+"
+" if !exists('g:deoplete#omni#input_patterns')
+"     let g:deoplete#omni#input_patterns = {}
+" endif
+
+" Disable the candidates in Comment/String syntaxes.
+" call deoplete#custom#source('_',
+"             \ 'disabled_syntaxes', ['Comment', 'String'])
+
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" set sources
+" let g:deoplete#sources = {}
+" let g:deoplete#sources.cpp = ['LanguageClient']
+" let g:deoplete#sources.python = ['LanguageClient']
+" let g:deoplete#sources.python3 = ['LanguageClient']
+" let g:deoplete#sources.rust = ['LanguageClient']
+" let g:deoplete#sources.c = ['LanguageClient']
+
+" deoplete-racer config
+" let g:deoplete#sources#rust#racer_binary='/Users/aenayet/.cargo/bin/racer'
+" let g:deoplete#sources#rust#rust_source_path= '/Users/aenayet/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+
+
+call deoplete#custom#option('sources', {
+    \ '_': ['file', 'buffer'],
+    \ 'sh': ['LanguageClient', 'ultisnips'],
+    \ 'python': ['LanguageClient', 'ultisnips'],
+    \ 'python3': ['LanguageClient', 'ultisnips'],
+    \ 'rust': ['LanguageClient', 'ultisnips']
+\})
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'sh': ['bash-language-server', 'start']
+    \ }
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>

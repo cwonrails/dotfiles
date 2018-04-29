@@ -105,7 +105,7 @@ alias gclr='git clone --recursive'
 alias glcr='git clone --recursive' # fix command entry errors
 alias gco='git checkout'
 alias gd='git diff'
-alias gdb='git-delete-branch -r'
+alias gdb='git-delete-branch'
 alias gdno='git diff --name-only'
 alias gdnoum='git diff --name-only upstream/master'
 alias gp='git push'
@@ -238,4 +238,3 @@ alias ygu='yarn global upgrade'
 
 # Upgrade yarn nightly
 # alias ynu='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
-

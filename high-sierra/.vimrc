@@ -528,14 +528,14 @@ let g:ale_linters = {
   \ 'yaml': ['yamllint']
   \}
 
-" let g:ale_fixers = {
-"   \ 'css': ['stylelint'],
-"   \ 'javascript': ['standard'],
-"   \ 'javascript.jsx': ['standard'],
-"   \ 'json': ['prettier'],
-"   \ 'python': ['yapf'],
-"   \ 'scss': ['stylelint']
-"   \}
+let g:ale_fixers = {
+  \ 'css': ['stylelint'],
+  \ 'javascript': ['standard'],
+  \ 'javascript.jsx': ['standard'],
+  \ 'json': ['prettier'],
+  \ 'python': ['yapf'],
+  \ 'scss': ['stylelint']
+  \}
 
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
@@ -551,3 +551,4 @@ nnoremap <Leader>af :ALEFix<CR>
   "
 " autocmd bufwritepost {*.js,*.jsx} silent !standard --fix %
 " set autoread
+

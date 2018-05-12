@@ -73,6 +73,9 @@ alias db='cd /Users/christopherwatson/Dropbox\ \(Personal\)'
 # Go to downloads directory
 alias dl='cd ~/Downloads'
 
+# Go to documents directory
+alias doc='cd ~/Documents'
+
 # Go to desktop directory
 alias dt='cd ~/Desktop'
 

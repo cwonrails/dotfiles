@@ -37,6 +37,9 @@ alias o='open .'
 # Reload shell
 alias r='exec $SHELL -l'
 
+# Default config options for shfmt
+alias shfmt='shfmt -i 2 -s'
+
 # Maintain ligatures when sshing into server
 alias ssh='TERM=xterm-256color ssh'
 

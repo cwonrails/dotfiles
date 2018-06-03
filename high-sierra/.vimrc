@@ -132,6 +132,12 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Same as above but in terminal
+tnoremap <C-j> <C-w>j
+tnoremap <C-k> <C-w>k
+tnoremap <C-h> <C-w>h
+tnoremap <C-l> <C-w>l
+
 " Open new split panes to right and bottom
 set splitbelow
 set splitright
@@ -552,3 +558,9 @@ nnoremap <Leader>af :ALEFix<CR>
 " autocmd bufwritepost {*.js,*.jsx} silent !standard --fix %
 " set autoread
 
+" Quickly open terminal
+cnoremap <leader>z :terminal<CR>
+inoremap <leader>z :terminal<CR>
+nnoremap <leader>z :terminal<CR>
+vnoremap <leader>z :terminal<CR>
+xnoremap <leader>z :terminal<CR>

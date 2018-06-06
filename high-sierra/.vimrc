@@ -4,28 +4,28 @@ end
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ahmedelgabri/vim-ava-snippets', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'ahmedelgabri/vim-ava-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'andrewradev/splitjoin.vim'
+" Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+" Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
+" Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'direnv/direnv.vim'
-Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
-Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
+" Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
+" Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'elmcast/elm-vim', { 'for': 'elm' }
+" Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'epilande/vim-es2015-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
-Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'godlygeek/tabular'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -39,13 +39,13 @@ Plug 'isomoar/vim-css-to-inline', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'isRuslan/vim-es6', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
-Plug 'joukevandermaas/vim-ember-hbs'
+" Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-Plug 'matt-deacalion/vim-systemd-syntax'
+" Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
@@ -61,7 +61,7 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascri
 Plug 'othree/xml.vim', { 'for': 'xml' }
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pbrisbin/vim-mkdir'
-Plug 'phpstan/vim-phpstan', {'for': 'php'}
+" Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -69,12 +69,12 @@ Plug 'prettier/vim-prettier', {
 Plug 'posva/vim-vue'
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sirver/ultiSnips'
 Plug 'sodapopcan/vim-twiggy'
-Plug 'StanAngeloff/php.vim', { 'for': 'php'}
+" Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
@@ -83,11 +83,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'urbainvaes/vim-remembrall'
+" Plug 'urbainvaes/vim-remembrall'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
@@ -133,10 +133,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Same as above but in terminal
-tnoremap <C-j> <C-w>j
-tnoremap <C-k> <C-w>k
-tnoremap <C-h> <C-w>h
-tnoremap <C-l> <C-w>l
+" tnoremap <C-j> <C-w>j
+" tnoremap <C-k> <C-w>k
+" tnoremap <C-h> <C-w>h
+" tnoremap <C-l> <C-w>l
 
 " Open new split panes to right and bottom
 set splitbelow
@@ -425,17 +425,17 @@ let g:prettier#autoformat = 0
 " let g:prettier#config#print_width = 80
 
 " number of spaces per indentation level
-" let g:prettier#config#tab_width = 2
+let g:prettier#config#tab_width = 2
 
 " use tabs over spaces
-" let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#use_tabs = 'false'
 
 " print semicolons
 " let g:prettier#config#semi = 'true'
-" let g:prettier#config#semi = 'false'
+let g:prettier#config#semi = 'false'
 
 " single quotes over double quotes
-" let g:prettier#config#single_quote = 'true'
+let g:prettier#config#single_quote = 'true'
 
 " print spaces between brackets
 " let g:prettier#config#bracket_spacing = 'false'
@@ -450,7 +450,7 @@ let g:prettier#autoformat = 0
 " let g:prettier#config#parser = 'flow'
 
 " cli-override|file-override|prefer-file
-" let g:prettier#config#config_precedence = 'prefer-file'
+let g:prettier#config#config_precedence = 'prefer-file'
 
 " always|never|preserve
 " let g:prettier#config#prose_wrap = 'preserve'
@@ -467,55 +467,23 @@ let g:airline#extensions#ale#enabled = 1
 nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
 
-" let g:ale_linters = {
-"   \ 'awk': ['gawk'],
-"   \ 'bash': ['shellcheck'],
-"   \ 'bourne_shell': ['shellcheck'],
-"   \ 'c': ['gcc','clang','clang-format'],
-"   \ 'c++': ['gcc','clang','clang-format'],
-"   \ 'chef': ['foodcritic'],
-"   \ 'cmake': ['cmakelint'],
-"   \ 'css': ['stylelint','prettier'],
-"   \ 'Dockerfile': ['hadolint'],
-"   \ 'elm': ['elm-format', 'elm-make'],
-"   \ 'fortran': ['gcc'],
-"   \ 'fusion-lint': ['fusion-lint'],
-"   \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
-"   \ 'graphql': ['gqlint'],
-"   \ 'haml': ['haml-lint'],
-"   \ 'handlebars': ['ember-template-lint'],
-"   \ 'html': ['htmlhint','tidy'],
-"   \ 'javascript': ['standard'],
-"   \ 'javascript.jsx': ['standard'],
-"   \ 'json': ['jsonlint','prettier'],
-"   \ 'markdown': ['proselint','vale'],
-"   \ 'python': ['yapf','pylint'],
-"   \ 'reStructredText': ['proselint'],
-"   \ 'php': ['phpstan'],
-"   \ 'ruby': ['rubocop','reek'],
-"   \ 'rust': ['rustc'],
-"   \ 'scss': ['sass-lint','stylelint','prettier'],
-"   \ 'sql': ['sqlint'],
-"   \ 'terraform': ['tflint'],
-"   \ 'text^': ['proselint','vale'],
-"   \ 'typescript': ['tslint'],
-"   \ 'vim': ['vint'],
-"   \ 'vue': ['prettier'],
-"   \ 'xml': ['xmllint'],
-"   \ 'yaml': ['yamllint']
-"   \}
-
 let g:ale_linters = {
   \ 'awk': ['gawk'],
   \ 'bash': ['shellcheck'],
   \ 'bourne_shell': ['shellcheck'],
   \ 'c': ['gcc','clang','clang-format'],
+  \ 'c++': ['gcc','clang','clang-format'],
+  \ 'chef': ['foodcritic'],
   \ 'cmake': ['cmakelint'],
   \ 'css': ['stylelint','prettier'],
   \ 'Dockerfile': ['hadolint'],
   \ 'elm': ['elm-format', 'elm-make'],
+  \ 'fortran': ['gcc'],
+  \ 'fusion-lint': ['fusion-lint'],
+  \ 'graphql': ['gqlint'],
   \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
   \ 'handlebars': ['ember-template-lint'],
+  \ 'haml': ['haml-lint'],
   \ 'html': ['htmlhint','tidy'],
   \ 'javascript': ['standard'],
   \ 'javascript.jsx': ['standard'],
@@ -527,10 +495,13 @@ let g:ale_linters = {
   \ 'ruby': ['rubocop','reek'],
   \ 'rust': ['rustc'],
   \ 'scss': ['sass-lint','stylelint','prettier'],
+  \ 'sql': ['sqlint'],
   \ 'terraform': ['tflint'],
   \ 'text^': ['proselint','vale'],
   \ 'typescript': ['tslint'],
   \ 'vim': ['vint'],
+  \ 'vue': ['prettier'],
+  \ 'xml': ['xmllint'],
   \ 'yaml': ['yamllint']
   \}
 
@@ -559,8 +530,8 @@ nnoremap <Leader>af :ALEFix<CR>
 " set autoread
 
 " Quickly open terminal
-cnoremap <leader>z :terminal<CR>
-inoremap <leader>z :terminal<CR>
-nnoremap <leader>z :terminal<CR>
-vnoremap <leader>z :terminal<CR>
-xnoremap <leader>z :terminal<CR>
+" cnoremap <leader>z :terminal<CR>
+" inoremap <leader>z :terminal<CR>
+" nnoremap <leader>z :terminal<CR>
+" vnoremap <leader>z :terminal<CR>
+" xnoremap <leader>z :terminal<CR>

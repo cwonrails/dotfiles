@@ -159,7 +159,7 @@ alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editor
 ## Package manager updates ##
 # Upgrade all
 # alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; p2u; p3u; ncu -g'
-alias ua='bu; au; uu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; yu'
+alias ua='bu; au; uu; tu; gu; ggu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; yu'
 
 # Upgrade Apex
 alias au='apex upgrade'
@@ -169,7 +169,7 @@ alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
 
 # Docker update all images (preserves tags)
 # shellcheck disable=SC2142
-alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
+# alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'

@@ -50,3 +50,11 @@ function fs() {
     du $arg .[^.]* ./*
   fi
 }
+
+function v() {
+  if [ $# -eq 0 ]; then
+    vim .
+  else
+    vim "$@"
+  fi
+}

@@ -184,9 +184,9 @@ fi
 alias gos='go-search'
 
 # Docker.app completion
-# . /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
-# . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
-# . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+. /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+. /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+. /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
 
 # built-in Go completion
 complete -C /Users/christopherwatson/go/bin/gocomplete go
@@ -199,9 +199,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# yarn completion and global path
+# yarn completion and global path (nightly)
 . "$HOME/.yarn-completion"
-# export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Terraform completion
 complete -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform

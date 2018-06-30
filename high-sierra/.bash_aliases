@@ -169,7 +169,7 @@ alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
 
 # Docker update all images (preserves tags)
 # shellcheck disable=SC2142
-# alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
+alias diu="docker images | awk 'BEGIN {OFS=\":\";}NR<2 {next}{print \$1, \$2}' | xargs -L1 docker pull"
 
 # Ruby: Update and clean up all gems
 alias gu='gem update; gem cleanup'
@@ -184,6 +184,7 @@ alias ggu="go get -u \
              github.com/elgs/gojq \
              github.com/ericchiang/pup \
              github.com/gchaincl/httplab/cmd/httplab \
+             github.com/genuinetools/img \
              github.com/golang/dep/cmd/dep \
              github.com/google/git-appraise/git-appraise \
              github.com/GoogleChrome/simplehttp2server \
@@ -198,6 +199,8 @@ alias ggu="go get -u \
              github.com/rs/jaggr \
              github.com/rs/jplot \
              github.com/russross/blackfriday-tool \
+             github.com/sgreben/jp/cmd/jp \
+             github.com/sourcegraph/go-langserver \
              github.com/sourcegraph/go-langserver \
              github.com/spencercdixon/palettes \
              github.com/tj/go-search \
@@ -235,12 +238,14 @@ alias uu='up upgrade'
 # Vim: Upgrade vim-plug, update, install, and remove unused plugins
 alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
-alias yu='ygu && ycu'
+# Upgrade yarn
+# alias yu='ycu; ygu'
+alias yu='ynu; ycu; ygu'
 
 # Upgrade yarn-completion
 alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash'
 
-alias ygu='yarn global upgrade'
+alias ygu='yarn global upgrade --L'
 
 # Upgrade yarn nightly
-# alias ynu='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
+alias ynu='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'

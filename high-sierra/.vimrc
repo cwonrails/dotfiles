@@ -4,32 +4,32 @@ end
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ahmedelgabri/vim-ava-snippets', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'ahmedelgabri/vim-ava-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'airblade/vim-gitgutter'
-Plug 'alampros/vim-styled-jsx'
+" Plug 'alampros/vim-styled-jsx'
 Plug 'altercation/vim-colors-solarized'
-Plug 'andrewradev/splitjoin.vim'
+" Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+" Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 " Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
-Plug 'c9s/vikube.vim'
-Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
+" Plug 'c9s/vikube.vim'
+" Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'direnv/direnv.vim'
-Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
-Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
+" Plug 'dNitro/vim-pug-complete', { 'for': 'pug' }
+" Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'elmcast/elm-vim', { 'for': 'elm' }
+" Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'epilande/vim-es2015-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
-Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'], 'branch': 'main' }
+" Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'], 'branch': 'main' }
 Plug 'godlygeek/tabular'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -43,14 +43,14 @@ Plug 'isomoar/vim-css-to-inline', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'isRuslan/vim-es6', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'janko-m/vim-test'
-Plug 'joukevandermaas/vim-ember-hbs'
+" Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-sneak'
 Plug 'majutsushi/tagbar'
-Plug 'matt-deacalion/vim-systemd-syntax'
+" Plug 'matt-deacalion/vim-systemd-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/vim-sqlfmt', { 'for': 'sql' }
@@ -66,7 +66,7 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascri
 Plug 'othree/xml.vim', { 'for': 'xml' }
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pbrisbin/vim-mkdir'
-Plug 'phpstan/vim-phpstan', {'for': 'php'}
+" Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/asyncomplete.vim'
@@ -79,11 +79,11 @@ Plug 'rizzatti/dash.vim'
 " Plug 'roxma/vim-tmux-clipboard'
 " Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
-Plug 'Shougo/context_filetype.vim'
+" Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sirver/ultiSnips'
 Plug 'sodapopcan/vim-twiggy'
-Plug 'StanAngeloff/php.vim', { 'for': 'php'}
+" Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tomtom/tComment_vim'
@@ -92,15 +92,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'urbainvaes/vim-remembrall'
+" Plug 'urbainvaes/vim-remembrall'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
-" Plug 'wellle/tmux-complete.vim'
+Plug 'wellle/tmux-complete.vim'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
 
@@ -223,8 +223,8 @@ set autoindent
 set autoread
 set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
-set clipboard+=unnamed
-" set clipboard=unnamed
+" set clipboard+=unnamed
+set clipboard=unnamed
 set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview
@@ -428,7 +428,7 @@ let g:esearch = {
 " ----------------------------------------------------------------------------
 " tmux-complete
 " ----------------------------------------------------------------------------
-" let g:tmuxcomplete#trigger = 'omnifunc'
+let g:tmuxcomplete#trigger = 'omnifunc'
 
 " ----------------------------------------------------------------------------
 "  vim-prettier
@@ -479,7 +479,6 @@ let g:terraform_align = 1
 " ----------------------------------------------------------------------------
 " ale
 " ----------------------------------------------------------------------------
-" let g:airline#extensions#ale#enabled = 1
 nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
 
@@ -556,4 +555,4 @@ nnoremap <Leader>af :ALEFix<CR>
 " xnoremap <leader>z :terminal<CR>
 "
 " vim-sneak
-let g:sneak#label = 1
+" let g:sneak#label = 1

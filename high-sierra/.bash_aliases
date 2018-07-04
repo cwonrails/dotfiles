@@ -248,4 +248,4 @@ alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford
 alias ygu='yarn global upgrade --L'
 
 # Upgrade yarn nightly
-alias ynu='rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
+alias ynu='cd ~/ && rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'

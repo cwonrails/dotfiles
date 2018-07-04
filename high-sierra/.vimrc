@@ -27,7 +27,7 @@ Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
-Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'], 'branch': 'main' }
 Plug 'godlygeek/tabular'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -212,7 +212,7 @@ set autoindent
 set autoread
 set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
-set clipboard=unnamed
+set clipboard+=unnamed
 set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview

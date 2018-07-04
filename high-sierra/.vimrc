@@ -223,8 +223,8 @@ set autoindent
 set autoread
 set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
-" set clipboard+=unnamed
-set clipboard=unnamed
+set clipboard+=unnamed
+" set clipboard=unnamed
 set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview

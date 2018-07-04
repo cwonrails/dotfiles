@@ -14,6 +14,7 @@ Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+" Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'conradirwin/vim-bracketed-paste'
 Plug 'c9s/vikube.vim'
@@ -67,13 +68,16 @@ Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'javascript.jsx', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 Plug 'posva/vim-vue'
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+" Plug 'roxma/vim-tmux-clipboard'
+" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -96,7 +100,7 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'wakatime/vim-wakatime'
-Plug 'wellle/tmux-complete.vim'
+" Plug 'wellle/tmux-complete.vim'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentLine'
 
@@ -424,7 +428,7 @@ let g:esearch = {
 " ----------------------------------------------------------------------------
 " tmux-complete
 " ----------------------------------------------------------------------------
-let g:tmuxcomplete#trigger = 'omnifunc'
+" let g:tmuxcomplete#trigger = 'omnifunc'
 
 " ----------------------------------------------------------------------------
 "  vim-prettier

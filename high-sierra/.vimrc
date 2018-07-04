@@ -353,8 +353,7 @@ let g:UltiSnipsEditSplit='vertical'
 " vim-airline
 " ----------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
-" let g:airline_theme='base16_nord'
-" let g:airline#extensions#ale#enabled= 1
+let g:airline#extensions#ale#enabled= 1
 let g:airline#extensions#tabline#enabled = 1
 
 " ----------------------------------------------------------------------------
@@ -476,7 +475,7 @@ let g:terraform_align = 1
 " ----------------------------------------------------------------------------
 " ale
 " ----------------------------------------------------------------------------
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
 

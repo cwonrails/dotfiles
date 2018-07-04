@@ -10,6 +10,7 @@ Plug 'alampros/vim-styled-jsx'
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-css-color'
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
@@ -154,6 +155,12 @@ set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
 
+" let g:nord_italic = 1
+" let g:nord_italic_comments = 1
+" let g:nord_underline = 1
+" let g:nord_cursor_line_number_background = 1
+" let g:nord_comment_brightness = 20
+
 " Comment one or more lines
 nnoremap <leader>c :TComment<CR>
 
@@ -213,6 +220,7 @@ set autoread
 set backspace=indent,eol,start
 set backupdir=$HOME/.vim/backup
 set clipboard+=unnamed
+" set clipboard=unnamed
 set colorcolumn=+1
 set complete-=i
 set completeopt=menuone,preview
@@ -345,7 +353,8 @@ let g:UltiSnipsEditSplit='vertical'
 " vim-airline
 " ----------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#ale#enabled= 1
+" let g:airline_theme='base16_nord'
+" let g:airline#extensions#ale#enabled= 1
 let g:airline#extensions#tabline#enabled = 1
 
 " ----------------------------------------------------------------------------

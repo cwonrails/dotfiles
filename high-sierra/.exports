@@ -37,3 +37,4 @@ export MANPAGER='less -X'
 # Set LS_COLORS
 command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
 eval "$(gdircolors -b ~/.dircolors)"
+# eval "$(gdircolors -b ~/.dir_colors)"

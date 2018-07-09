@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC2164
+
+function lazygit() {
+  git add .
+  git commit -a -m "$1"
+  git push
+}
+
+# Open a file with iA Writer
+function writer() {
+  open "$@" -a ia\ Writer
+}
+
+function upgrade-nvm() {
+  (
+    cd "$NVM_DIR"
+    git fetch origin
+    git checkout "$(git describe --abbrev=0 --tags --match "v[0-9]*" origin)"
+  ) && . "$NVM_DIR/nvm.sh"
+}
+
+function upgrade-t() {
+  (
+    cd "$HOME/t"
+    git fetch origin
+    git checkout "$(git describe --abbrev=0 --tags --match "v[0-9]*" origin)"
+  )
+}
+
+function upgrade-z() {
+  (
+    cd "$HOME/z"
+    git fetch origin
+    git checkout "$(git describe --abbrev=0 --tags --match "v[0-9]*" origin)"
+  )
+}
+
+# Determine size of a file or total size of a directory
+function fs() {
+  if du -b /dev/null >/dev/null 2>&1; then
+    local arg=-sbh
+  else
+    local arg=-sh
+  fi
+  if [[ -n "$*" ]]; then
+    du $arg -- "$@"
+  else
+    du $arg .[^.]* ./*
+  fi
+}
+
+function v() {
+  if [ $# -eq 0 ]; then
+    vim .
+  else
+    vim "$@"
+  fi
+}

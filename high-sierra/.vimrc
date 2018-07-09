@@ -15,13 +15,9 @@ Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-
 " Plug 'christoomey/vim-system-copy'
-
 Plug 'christoomey/vim-tmux-navigator'
-
 Plug 'conradirwin/vim-bracketed-paste'
-
 Plug 'c9s/vikube.vim'
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'direnv/direnv.vim'

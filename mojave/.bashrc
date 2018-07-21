@@ -217,3 +217,8 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 # shellcheck disable=SC1072,SC1094
 . /usr/local/bin/virtualenvwrapper.sh
 
+# Add Dart 2 SDK for direct sass install
+export PATH="/usr/local/opt/dart@2/bin:$PATH"
+
+# Enable jump (https://github.com/gsamokovarov/jump)
+eval "$(jump shell)"

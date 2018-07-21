@@ -115,15 +115,15 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 786 400 129 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>295 234 796 486 0 0 1440 877 </string>
+	<string>156 184 918 536 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 308 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 426 730 451 0 0 1440 877 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 0 955 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1982,6 +1982,8 @@
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
+			<key>Title Components</key>
+			<integer>2</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unicode Normalization</key>
@@ -2024,6 +2026,8 @@
 	<true/>
 	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
 	<integer>1</integer>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallUtilitiesPackage</key>
@@ -2214,7 +2218,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-04T18:44:28Z</date>
+	<date>2018-07-18T17:15:32Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2244,7 +2248,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1497453952</real>
+	<real>1531167488</real>
 	<key>URLHandlersByGuid</key>
 	<dict>
 		<key>ssh</key>
@@ -2260,6 +2264,8 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>disableMetalWhenUnplugged</key>
+	<false/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>
@@ -2267,6 +2273,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.20180704-nightly</string>
+	<string>3.2.20180717-nightly</string>
 </dict>
 </plist>

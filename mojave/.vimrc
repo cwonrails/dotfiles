@@ -366,9 +366,9 @@ let g:airline#extensions#tabline#enabled = 1
 " ----------------------------------------------------------------------------
 " enable font italics
 " ----------------------------------------------------------------------------
-" hi htmlArg gui=italic
 hi Comment gui=italic
 " hi Constant   gui=italic
+" hi htmlArg    gui=italic
 " hi Identifier gui=italic
 " hi PreProc    gui=italic
 " hi Special    gui=italic
@@ -377,11 +377,11 @@ hi Comment gui=italic
 " hi Type       gui=italic
 " hi Underlined gui=italic
 
-" hi htmlArg    cterm=italic
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 hi Comment    cterm=italic
 " hi Constant   cterm=italic
+" hi htmlArg    cterm=italic
 " hi Identifier cterm=italic
 " hi PreProc    cterm=italic
 " hi Special    cterm=italic

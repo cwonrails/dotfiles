@@ -11,7 +11,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'Andrewradev/splitjoin.vim'
 Plug 'Andrewradev/switch.vim'
 Plug 'ap/vim-css-color'
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
@@ -379,6 +378,8 @@ hi Comment gui=italic
 " hi Underlined gui=italic
 
 " hi htmlArg    cterm=italic
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 hi Comment    cterm=italic
 " hi Constant   cterm=italic
 " hi Identifier cterm=italic
@@ -390,7 +391,7 @@ hi Comment    cterm=italic
 " hi Underlined cterm=italic
 
 " Tmux and italics fix
-set t_ut=
+" set t_ut=
 
 " ----------------------------------------------------------------------------
 " incsearch.vim

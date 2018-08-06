@@ -79,9 +79,9 @@ eval "$(brew command-not-found-init)"
 # Enable Homebrew-installed bash completion
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
-for file in ~/.bash_completion.d/*; do
-  . "$file"
-done
+# for file in ~/.bash_completion.d/*; do
+#   . "$file"
+# done
 
 for file in /usr/local/etc/bash_completion.d/*; do
   . "$file"
@@ -201,7 +201,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # yarn completion and global path (nightly)
 . "$HOME/.yarn-completion"
-export PATH="$HOME/.yarn/bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$PATH"
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Terraform completion

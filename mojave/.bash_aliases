@@ -184,7 +184,6 @@ alias ggu="go get -u \
              github.com/elgs/gojq \
              github.com/ericchiang/pup \
              github.com/gchaincl/httplab/cmd/httplab \
-             github.com/genuinetools/img \
              github.com/golang/dep/cmd/dep \
              github.com/google/git-appraise/git-appraise \
              github.com/GoogleChrome/simplehttp2server \
@@ -240,7 +239,8 @@ alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 
 # Upgrade yarn
 # alias yu='ycu; ygu'
-alias yu='ynu; ycu; ygu'
+# alias yu='ynu; ycu; ygu'
+alias yu='ycu; ygu'
 
 # Upgrade yarn-completion
 alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash'
@@ -248,4 +248,4 @@ alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford
 alias ygu='yarn global upgrade --L'
 
 # Upgrade yarn nightly
-alias ynu='cd ~/ && rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'
+# alias ynu='cd ~/ && rm -rf ~/.yarn && curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly'

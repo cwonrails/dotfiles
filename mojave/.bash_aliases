@@ -240,10 +240,10 @@ alias vu='vim +PlugUpgrade +PlugUpdate +PlugInstall +PlugClean +qall'
 # Upgrade yarn
 # alias yu='ycu; ygu'
 # alias yu='ynu; ycu; ygu'
-alias yu='ycu; ygu'
+alias yu='ygu'
 
 # Upgrade yarn-completion
-alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash'
+# alias ycu='curl -o ~/.yarn-completion https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash'
 
 alias ygu='yarn global upgrade --L'
 

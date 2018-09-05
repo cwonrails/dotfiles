@@ -2,11 +2,17 @@
 
 # shellcheck disable=SC2164
 
-function lazygit() {
+function lg() {
   git add .
   git commit -a -m "$1"
   git push
 }
+
+# function lazygit() {
+#   git add .
+#   git commit -a -m "$1"
+#   git push
+# }
 
 # Open a file with iA Writer
 function writer() {

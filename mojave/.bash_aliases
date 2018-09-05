@@ -4,7 +4,7 @@
 alias ag='ag --path-to-ignore ~/.ignore'
 
 # Clean up homebrew cached downloads
-alias brewclean='brew cleanup -s --force && brew cask cleanup'
+alias brewclean='brew cleanup -s'
 
 # List installed formulas that depend on the given formula
 alias brewdep='brew uses --installed'

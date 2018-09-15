@@ -94,14 +94,14 @@ eval "$(hub alias -s)"
 eval "$(thefuck --alias)"
 
 # Go #
-export PATH=/usr/local/opt/go/libexec/bin:$PATH
+export PATH=/usr/local/opt/go/libexec/bin:"$PATH"
 export GOPATH="$HOME/go"
 export GOOS="darwin"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
 
 # Cargo
-export PATH="$HOME/.cargo/bin":$PATH
+export PATH="$HOME/.cargo/bin":"$PATH"
 
 # Mono
 export MONO_GAC_PREFIX="/usr/local"
@@ -211,7 +211,7 @@ complete -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform
 eval "$(direnv hook bash)"
 
 # enable virtualenvwrapper and set virtualenv directory
-export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME="$HOME"/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python@2/bin/python2.7
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 # shellcheck disable=SC1072,SC1094

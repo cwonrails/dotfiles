@@ -79,9 +79,9 @@ eval "$(brew command-not-found-init)"
 # Enable Homebrew-installed bash completion
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
-# for file in ~/.bash_completion.d/*; do
-#   . "$file"
-# done
+for file in ~/.bash_completion.d/*; do
+  . "$file"
+done
 
 for file in /usr/local/etc/bash_completion.d/*; do
   . "$file"

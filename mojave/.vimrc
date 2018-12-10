@@ -34,6 +34,7 @@ Plug 'godlygeek/tabular'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 " Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax'
+Plug 'haishanh/night-owl.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch.vim'
@@ -165,6 +166,11 @@ set diffopt+=filler,vertical
 
 " Choose colorscheme
 set background=dark
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
+
+" colorscheme night-owl
 colorscheme solarized
 let g:solarized_termtrans=1
 
@@ -448,7 +454,7 @@ let g:tmuxcomplete#trigger = 'omnifunc'
 " ----------------------------------------------------------------------------
 let g:prettier#exec_cmd_async = 1
 let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
 
 " max line length that prettier will wrap on
 " let g:prettier#config#print_width = 80
@@ -461,10 +467,10 @@ let g:prettier#config#use_tabs = 'false'
 
 " print semicolons
 " let g:prettier#config#semi = 'true'
-let g:prettier#config#semi = 'false'
+" let g:prettier#config#semi = 'false'
 
 " single quotes over double quotes
-let g:prettier#config#single_quote = 'true'
+" let g:prettier#config#single_quote = 'true'
 
 " print spaces between brackets
 " let g:prettier#config#bracket_spacing = 'false'
@@ -513,8 +519,8 @@ let g:ale_linters = {
   \ 'handlebars': ['ember-template-lint'],
   \ 'haml': ['haml-lint'],
   \ 'html': ['htmlhint','tidy'],
-  \ 'javascript': ['standard'],
-  \ 'javascript.jsx': ['standard'],
+  \ 'javascript': ['eslint'],
+  \ 'javascript.jsx': ['eslint'],
   \ 'json': ['jsonlint','prettier'],
   \ 'markdown': ['proselint','vale'],
   \ 'python': ['yapf','pylint'],
@@ -533,14 +539,65 @@ let g:ale_linters = {
   \ 'yaml': ['yamllint']
   \}
 
+" let g:ale_linters = {
+"   \ 'awk': ['gawk'],
+"   \ 'bash': ['shellcheck'],
+"   \ 'bourne_shell': ['shellcheck'],
+"   \ 'c': ['gcc','clang','clang-format'],
+"   \ 'c++': ['gcc','clang','clang-format'],
+"   \ 'chef': ['foodcritic'],
+"   \ 'cmake': ['cmakelint'],
+"   \ 'css': ['stylelint','prettier'],
+"   \ 'Dockerfile': ['hadolint'],
+"   \ 'elm': ['elm-format', 'elm-make'],
+"   \ 'fortran': ['gcc'],
+"   \ 'fusion-lint': ['fusion-lint'],
+"   \ 'graphql': ['gqlint'],
+"   \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
+"   \ 'handlebars': ['ember-template-lint'],
+"   \ 'haml': ['haml-lint'],
+"   \ 'html': ['htmlhint','tidy'],
+"   \ 'javascript': ['standard'],
+"   \ 'javascript.jsx': ['standard'],
+"   \ 'json': ['jsonlint','prettier'],
+"   \ 'markdown': ['proselint','vale'],
+"   \ 'python': ['yapf','pylint'],
+"   \ 'reStructredText': ['proselint'],
+"   \ 'php': ['phpstan'],
+"   \ 'ruby': ['rubocop','reek'],
+"   \ 'rust': ['rustc'],
+"   \ 'scss': ['sass-lint','stylelint','prettier'],
+"   \ 'sql': ['sqlint'],
+"   \ 'terraform': ['tflint'],
+"   \ 'text^': ['proselint','vale'],
+"   \ 'typescript': ['tslint'],
+"   \ 'vim': ['vint'],
+"   \ 'vue': ['prettier'],
+"   \ 'xml': ['xmllint'],
+"   \ 'yaml': ['yamllint']
+"   \}
+
+" let g:ale_fixers = {
+"   \ 'css': ['stylelint'],
+"   \ 'javascript': ['standard'],
+"   \ 'javascript.jsx': ['standard'],
+"   \ 'json': ['fixjson','prettier'],
+"   \ 'python': ['yapf'],
+"   \ 'scss': ['stylelint'],
+"   \ 'sh': ['shfmt']
+"   \}
+"
+
 let g:ale_fixers = {
-  \ 'css': ['stylelint'],
-  \ 'javascript': ['standard'],
-  \ 'javascript.jsx': ['standard'],
-  \ 'json': ['fixjson','prettier'],
+  \ 'css': ['prettier'],
+  \ 'html': ['prettier'],
+  \ 'javascript': ['prettier'],
+  \ 'javascript.jsx': ['prettier'],
+  \ 'json': ['prettier'],
   \ 'python': ['yapf'],
-  \ 'scss': ['stylelint'],
-  \ 'sh': ['shfmt']
+  \ 'scss': ['prettier'],
+  \ 'sh': ['shfmt'],
+  \ 'typescript': ['prettier']
   \}
 
 let g:ale_sh_shfmt_options = 'shfmt -i 2 -s'

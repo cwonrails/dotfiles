@@ -58,6 +58,9 @@ export MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
 # Homebrew Python
 export PATH="/usr/local/opt/python@2/bin:$PATH"
 
+# Homebrew Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # Source additional dotfiles
 for file in ~/.{aliases.local,bash_aliases,bash_prompt,exports,extras,inputrc,functions}; do
   [ -r "$file" ] && [ -f "$file" ] && . "$file"

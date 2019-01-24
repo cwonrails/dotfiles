@@ -165,7 +165,7 @@ alias ua='bu; au; uu; tu; gu; ggu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z;
 alias au='apex upgrade'
 
 # Homebrew: Run daily operations
-alias bu='brew update; brew upgrade; brew prune; brewclean; brew doctor'
+alias bu='brew update; brew upgrade; brewclean; brew doctor'
 
 # Docker update all images (preserves tags)
 # shellcheck disable=SC2142

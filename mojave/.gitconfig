@@ -153,4 +153,5 @@
   process = git-lfs filter-process
 
 [credential]
-	helper = osxkeychain
+
+  helper = osxkeychain

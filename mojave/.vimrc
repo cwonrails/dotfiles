@@ -11,7 +11,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'Andrewradev/splitjoin.vim'
 " Plug 'Andrewradev/switch.vim'
 Plug 'ap/vim-css-color'
-" Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'chr4/nginx.vim'
 " Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 " Plug 'christoomey/vim-system-copy'
@@ -29,7 +29,7 @@ Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
-" Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'], 'branch': 'main' }
+Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'], 'branch': 'main' }
 Plug 'godlygeek/tabular'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 " Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -38,9 +38,9 @@ Plug 'haishanh/night-owl.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch.vim'
-" Plug 'herringtondarkholme/yats.vim', { 'for': 'typescript' }
+Plug 'herringtondarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'honza/vim-snippets'
-" Plug 'isomoar/vim-css-to-inline', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'isomoar/vim-css-to-inline', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'isRuslan/vim-es6', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 " Plug 'janko-m/vim-test'

@@ -187,7 +187,6 @@ alias ggu="go get -u \
              github.com/golang/dep/cmd/dep \
              github.com/google/git-appraise/git-appraise \
              github.com/GoogleChrome/simplehttp2server \
-             github.com/gopherjs/gopherjs \
              github.com/haya14busa/go-vimlparser/cmd/vimlparser \
              github.com/jackc/sqlfmt/cmd/sqlfmt \
              github.com/kardianos/govendor \

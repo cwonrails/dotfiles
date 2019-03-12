@@ -4,9 +4,8 @@ end
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'ahmedelgabri/vim-ava-snippets', { 'for': ['javascript', 'javascript.jsx'] }
+
 Plug 'airblade/vim-gitgutter'
-" Plug 'alampros/vim-styled-jsx'
 Plug 'altercation/vim-colors-solarized'
 Plug 'Andrewradev/splitjoin.vim'
 " Plug 'Andrewradev/switch.vim'
@@ -32,7 +31,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'], 'branch': 'main' }
 Plug 'godlygeek/tabular'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
-" Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'haishanh/night-owl.vim'
 Plug 'hashivim/vim-terraform'
@@ -63,6 +62,7 @@ Plug 'mbbill/undotree'
 " Plug 'mhinz/vim-startify'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'NLKNguyen/cloudformation-syntax.vim'
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/html5.vim'
@@ -77,7 +77,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'javascript.jsx', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+  \ 'for': ['javascript', 'javascript.jsx', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 Plug 'posva/vim-vue'
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
@@ -597,7 +597,7 @@ let g:ale_fixers = {
   \ 'python': ['yapf'],
   \ 'scss': ['prettier'],
   \ 'sh': ['shfmt'],
-  \ 'typescript': ['prettier']
+  \ 'typescript': ['tslint']
   \}
 
 let g:ale_sh_shfmt_options = 'shfmt -i 2 -s'

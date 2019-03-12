@@ -113,17 +113,17 @@
   quick-stats = ! /usr/local/bin/git-quick-stats
   appraise = !/Users/christopherwatson/go/bin/git-appraise
 
-[user]
-
-  signingkey = cwonrails@gmail.com
-
-[commit]
-
-  gpgsign = true
-
-[gpg]
-
-  program = gpg
+# [user]
+#
+#   signingkey = cwonrails@gmail.com
+#
+# [commit]
+#
+#   gpgsign = true
+#
+# [gpg]
+#
+# program = gpg
 
 [diff]
 

@@ -206,7 +206,6 @@ alias ggu="go get -u \
              github.com/tj/node-prune/cmd/node-prune \
              github.com/zquestz/s \
              github.com/whyrusleeping/gx \
-             honnef.co/go/tools/cmd/gosimple \
              honnef.co/go/tools/cmd/staticcheck"
 
 

@@ -159,10 +159,10 @@ alias dfgb='cp ~/.{bash_aliases,bash_profile,bash_prompt,bashrc,dircolors,editor
 ## Package manager updates ##
 # Upgrade all
 # alias ua='bu; au; uu; ycu; tu; gu; ggu; diu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; p2u; p3u; ncu -g'
-alias ua='bu; au; uu; tu; gu; ggu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; yu'
+alias ua='bu; uu; tu; gu; ggu; vu; gitup; upgrade-nvm; upgrade-t; upgrade-z; yu'
 
-# Upgrade Apex
-alias au='apex upgrade'
+# Upgrade Apex (no longer maintained)
+# alias au='apex upgrade'
 
 # Homebrew: Run daily operations
 alias bu='brew update; brew upgrade; brewclean; brew doctor'

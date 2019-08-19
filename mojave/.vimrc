@@ -23,30 +23,30 @@ Plug 'conradirwin/vim-bracketed-paste'
 Plug 'docker/docker', { 'rtp': '/contrib/syntax/vim/' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
-Plug 'ervandew/supertab'
+" Plug 'epilande/vim-es2015-snippets'
+" Plug 'epilande/vim-react-snippets'
+" Plug 'ervandew/supertab'
 Plug 'eugen0329/vim-esearch'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
-Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'], 'branch': 'main' }
-Plug 'godlygeek/tabular'
+" Plug 'fleischie/vim-styled-components', { 'for': ['javascript', 'javascript.jsx'], 'branch': 'main' }
+" Plug 'godlygeek/tabular'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
-Plug 'groenewege/vim-less', { 'for': 'less' }
+" Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'hail2u/vim-css3-syntax'
-Plug 'haishanh/night-owl.vim'
+" Plug 'haishanh/night-owl.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'herringtondarkholme/yats.vim', { 'for': 'typescript' }
-Plug 'honza/vim-snippets'
-Plug 'isomoar/vim-css-to-inline', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'honza/vim-snippets'
+" Plug 'isomoar/vim-css-to-inline', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'isRuslan/vim-es6', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 " Plug 'janko-m/vim-test'
 Plug 'jxnblk/vim-mdx-js'
 " Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'jparise/vim-graphql'
-Plug 'juliosueiras/vim-terraform-completion'
+" Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'gv.vim'
@@ -86,8 +86,18 @@ Plug 'rizzatti/dash.vim'
 " Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'sgur/vim-editorconfig'
 " Plug 'Shougo/context_filetype.vim'
+
+" deoplete completion plugin package
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
+" neosnippet plugins
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'sirver/ultiSnips'
+" Plug 'sirver/ultiSnips'
 " Plug 'skywind3000/asyncrun.vim'
 Plug 'sodapopcan/vim-twiggy'
 " Plug 'StanAngeloff/php.vim', { 'for': 'php'}
@@ -102,7 +112,7 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 " Plug 'urbainvaes/vim-remembrall'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -353,17 +363,17 @@ let g:undotree_WindowLayout = 2
 " YouCompleteMe, UltiSnips, and Supertab
 " ----------------------------------------------------------------------------
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" let g:UltiSnipsExpandTrigger = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " Split UltiSnipsEditSplit vertically
-let g:UltiSnipsEditSplit='vertical'
+" let g:UltiSnipsEditSplit='vertical'
 
 " ----------------------------------------------------------------------------
 " javascript-libraries-syntax
@@ -519,8 +529,6 @@ let g:ale_linters = {
   \ 'handlebars': ['ember-template-lint'],
   \ 'haml': ['haml-lint'],
   \ 'html': ['htmlhint','tidy'],
-  \ 'javascript': ['eslint'],
-  \ 'javascript.jsx': ['eslint'],
   \ 'json': ['jsonlint','prettier'],
   \ 'markdown': ['proselint','vale'],
   \ 'python': ['yapf','pylint'],
@@ -557,8 +565,8 @@ let g:ale_linters = {
 "   \ 'handlebars': ['ember-template-lint'],
 "   \ 'haml': ['haml-lint'],
 "   \ 'html': ['htmlhint','tidy'],
-"   \ 'javascript': ['standard'],
-"   \ 'javascript.jsx': ['standard'],
+"   \ 'javascript': ['eslint'],
+"   \ 'javascript.jsx': ['eslint'],
 "   \ 'json': ['jsonlint','prettier'],
 "   \ 'markdown': ['proselint','vale'],
 "   \ 'python': ['yapf','pylint'],
@@ -576,17 +584,6 @@ let g:ale_linters = {
 "   \ 'xml': ['xmllint'],
 "   \ 'yaml': ['yamllint']
 "   \}
-
-" let g:ale_fixers = {
-"   \ 'css': ['stylelint'],
-"   \ 'javascript': ['standard'],
-"   \ 'javascript.jsx': ['standard'],
-"   \ 'json': ['fixjson','prettier'],
-"   \ 'python': ['yapf'],
-"   \ 'scss': ['stylelint'],
-"   \ 'sh': ['shfmt']
-"   \}
-"
 
 let g:ale_fixers = {
   \ 'css': ['prettier'],
@@ -626,3 +623,6 @@ nnoremap <Leader>af :ALEFix<CR>
 "
 " vim-sneak
 " let g:sneak#label = 1
+
+" deoplete.vim
+let g:deoplete#enable_at_startup = 1

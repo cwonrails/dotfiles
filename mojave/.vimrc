@@ -92,6 +92,10 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
+" adding tabnine
+" Plug 'zxqfl/tabnine-vim'
+" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+
 " neosnippet plugins
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
@@ -529,6 +533,8 @@ let g:ale_linters = {
   \ 'handlebars': ['ember-template-lint'],
   \ 'haml': ['haml-lint'],
   \ 'html': ['htmlhint','tidy'],
+  \ 'javascript': ['eslint'],
+  \ 'javascript.jsx': ['eslint'],
   \ 'json': ['jsonlint','prettier'],
   \ 'markdown': ['proselint','vale'],
   \ 'python': ['yapf','pylint'],
@@ -546,44 +552,6 @@ let g:ale_linters = {
   \ 'xml': ['xmllint'],
   \ 'yaml': ['yamllint']
   \}
-
-" let g:ale_linters = {
-"   \ 'awk': ['gawk'],
-"   \ 'bash': ['shellcheck'],
-"   \ 'bourne_shell': ['shellcheck'],
-"   \ 'c': ['gcc','clang','clang-format'],
-"   \ 'c++': ['gcc','clang','clang-format'],
-"   \ 'chef': ['foodcritic'],
-"   \ 'cmake': ['cmakelint'],
-"   \ 'css': ['stylelint','prettier'],
-"   \ 'Dockerfile': ['hadolint'],
-"   \ 'elm': ['elm-format', 'elm-make'],
-"   \ 'fortran': ['gcc'],
-"   \ 'fusion-lint': ['fusion-lint'],
-"   \ 'graphql': ['gqlint'],
-"   \ 'go': ['gofmt','go vet','golint','gosimple','staticcheck'],
-"   \ 'handlebars': ['ember-template-lint'],
-"   \ 'haml': ['haml-lint'],
-"   \ 'html': ['htmlhint','tidy'],
-"   \ 'javascript': ['eslint'],
-"   \ 'javascript.jsx': ['eslint'],
-"   \ 'json': ['jsonlint','prettier'],
-"   \ 'markdown': ['proselint','vale'],
-"   \ 'python': ['yapf','pylint'],
-"   \ 'reStructredText': ['proselint'],
-"   \ 'php': ['phpstan'],
-"   \ 'ruby': ['rubocop','reek'],
-"   \ 'rust': ['rustc'],
-"   \ 'scss': ['sass-lint','stylelint','prettier'],
-"   \ 'sql': ['sqlint'],
-"   \ 'terraform': ['tflint'],
-"   \ 'text^': ['proselint','vale'],
-"   \ 'typescript': ['tslint'],
-"   \ 'vim': ['vint'],
-"   \ 'vue': ['prettier'],
-"   \ 'xml': ['xmllint'],
-"   \ 'yaml': ['yamllint']
-"   \}
 
 let g:ale_fixers = {
   \ 'css': ['prettier'],
@@ -626,3 +594,9 @@ nnoremap <Leader>af :ALEFix<CR>
 
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
+
+" deoplete-tabnine
+" call deoplete#custom#var('tabnine', {
+" \ 'line_limit': 500,
+" \ 'max_num_results': 20,
+" \ })

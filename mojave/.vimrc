@@ -84,6 +84,13 @@ Plug 'rizzatti/dash.vim'
 " Plug 'roxma/vim-tmux-clipboard'
 " Plug 'RRethy/vim-illuminate'
 " Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+"
+" NerdTree plugins
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'jistr/vim-nerdtree-tabs', { 'for': 'NERDTreeToggle' }
+Plug 'low-ghost/nerdtree-fugitive', { 'on': 'NerdTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+
 Plug 'sgur/vim-editorconfig'
 " Plug 'Shougo/context_filetype.vim'
 
@@ -114,6 +121,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 " Plug 'urbainvaes/vim-remembrall'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -210,6 +218,12 @@ augroup sourcevimrc
   autocmd!
   autocmd sourcevimrc BufWritePost $MYVIMRC nested source $MYVIMRC
 augroup END
+
+" FZF
+nnoremap <leader>fzf :FZF<CR>
+
+" Toggle NERDTree
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Toggle TagBar
 " nnoremap <leader>t :TagbarToggle<CR>

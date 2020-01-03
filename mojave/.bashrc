@@ -28,6 +28,10 @@ export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export MANPATH="/usr/local/opt/gnu-getopt/share/man:$MANPATH"
 
+# GNU grep
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
+
 # GNU LLVM
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
@@ -46,6 +50,9 @@ export MANPATH="/usr/local/opt/gnu-sed/share/man:$MANPATH"
 # GNU tar
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/share/man:$MANPATH"
+
+# Debian whois
+export PATH="/usr/local/bin/whois:$PATH"
 
 # GNU zip
 export PATH="/usr/local/opt/zip/bin:$PATH"
@@ -82,13 +89,17 @@ eval "$(brew command-not-found-init)"
 # Enable Homebrew-installed bash completion
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+
+# for file in /usr/local/etc/bash_completion.d/*; do
+#   . "$file"
+# done
+
 for file in ~/.bash_completion.d/*; do
   . "$file"
 done
 
-for file in /usr/local/etc/bash_completion.d/*; do
-  . "$file"
-done
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Enable hub and alias it to git
 eval "$(hub alias -s)"
@@ -208,7 +219,7 @@ export NVM_DIR="$HOME/.nvm"
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Terraform completion
-complete -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform
+complete -C /usr/local/Cellar/terraform/0.11.8/bin/terraform terraform
 
 # enable direnv
 eval "$(direnv hook bash)"

@@ -64,6 +64,7 @@ export MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
 
 # Homebrew Python
 export PATH="/usr/local/opt/python@2/bin:$PATH"
+# export PATH="/usr/local/opt/python@3/bin:$PATH"
 
 # Homebrew Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
@@ -200,7 +201,7 @@ alias gos='go-search'
 # Docker.app completion
 . /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
 . /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
-. /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+# . /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
 
 # built-in Go completion
 complete -C /Users/christopherwatson/go/bin/gocomplete go
@@ -236,3 +237,5 @@ export PATH="/usr/local/opt/dart@2/bin:$PATH"
 
 # Enable jump (https://github.com/gsamokovarov/jump)
 eval "$(jump shell)"
+
+source /Users/christopherwatson/Library/Preferences/org.dystroy.broot/launcher/bash/br

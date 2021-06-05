@@ -22,6 +22,9 @@ alias ungron="gron --ungron"
 # Copy default package.json
 alias dfpj='cp ~/default.package.json/package.json `pwd`'
 
+# Fix legit bash completion
+alias fixlegit='sed -i 's/\r//' /usr/local/etc/bash_completion.d/legit'
+
 # Print history
 alias h='history'
 
@@ -83,7 +86,7 @@ alias doc='cd ~/Documents'
 alias dt='cd ~/Desktop'
 
 # Go to GitHub directory
-alias gh='cd ~/github'
+alias ghh='cd ~/github'
 
 # Go to GitHub clones directory
 alias ghc='cd ~/github/clones'
@@ -93,6 +96,9 @@ alias ghf='cd ~/github/forks'
 
 # Go to GitHub forks directory
 alias ghr='cd ~/github/repos'
+
+# Go to Hades Mods directory
+alias hm='cd ~/Library/Application\ Support/Steam/steamapps/common/Hades/Game.macOS.app/Contents/Resources/Content'
 
 # Go to home directory
 alias hd='cd ~'
@@ -176,7 +182,6 @@ alias gu='gem update; gem cleanup'
 
 # Update go packages
 alias ggu="go get -u \
-             github.com/alecthomas/gometalinter \
              github.com/apex/static/cmd/static-docs \
              github.com/asciimoo/wuzz \
              github.com/ddo/fast \
@@ -195,21 +200,21 @@ alias ggu="go get -u \
              github.com/posener/complete/gocomplete \
              github.com/rapidloop/rtop \
              github.com/rs/jaggr \
-             github.com/rs/jplot \
              github.com/russross/blackfriday-tool \
              github.com/sgreben/jp/cmd/jp \
-             github.com/sourcegraph/go-langserver \
-             github.com/sourcegraph/go-langserver \
              github.com/spencercdixon/palettes \
              github.com/tj/go-search \
              github.com/tj/mmake/cmd/mmake \
-             github.com/tj/node-prune/cmd/node-prune \
              github.com/zquestz/s \
              github.com/whyrusleeping/gx \
              honnef.co/go/tools/cmd/staticcheck"
 
-
+             # github.com/alecthomas/gometalinter \
              # github.com/mvdan.cc/sh/cmd/shfmt \
+             # github.com/rs/jplot \
+             # github.com/sourcegraph/go-langserver \
+             # github.com/tj/node-prune/cmd/node-prune \
+
 
 # get global list of npm installs
 # shellcheck disable=SC2026

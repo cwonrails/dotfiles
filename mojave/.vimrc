@@ -71,7 +71,7 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascri
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
-" Plug 'phpstan/vim-phpstan', {'for': 'php'}
+Plug 'phpstan/vim-phpstan', {'for': 'php'}
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/asyncomplete.vim'
@@ -95,9 +95,9 @@ Plug 'sgur/vim-editorconfig'
 " Plug 'Shougo/context_filetype.vim'
 
 " deoplete completion plugin package
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
 
 " adding tabnine
 " Plug 'zxqfl/tabnine-vim'
@@ -111,7 +111,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'sirver/ultiSnips'
 " Plug 'skywind3000/asyncrun.vim'
 Plug 'sodapopcan/vim-twiggy'
-" Plug 'StanAngeloff/php.vim', { 'for': 'php'}
+Plug 'StanAngeloff/php.vim', { 'for': 'php'}
 Plug 'stephpy/vim-yaml'
 " Plug 'svermeulen/vim-easyclip'
 Plug 'tmux-plugins/vim-tmux'
@@ -607,7 +607,7 @@ nnoremap <Leader>af :ALEFix<CR>
 " let g:sneak#label = 1
 
 " deoplete.vim
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " deoplete-tabnine
 " call deoplete#custom#var('tabnine', {

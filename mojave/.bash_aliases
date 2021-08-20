@@ -94,6 +94,9 @@ alias ghc='cd ~/github/clones'
 # Go to GitHub forks directory
 alias ghf='cd ~/github/forks'
 
+# Go to Github private repos directory
+alias ghp='cd ~/github/private'
+
 # Go to GitHub forks directory
 alias ghr='cd ~/github/repos'
 
